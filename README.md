@@ -4,10 +4,10 @@
 # GUIDE
 
 Pour facilement avoir accès à tout les branches,
-après avoir cloner le repo,faite:
+après avoir cloner le repo :
  ```bach git worktree add ../<nom dossier> <nom branche>  ```
 
 pour plus, d'info <a href="https://morgan.cugerone.com/blog/how-to-use-git-worktree-and-in-a-clean-way/">ici</a>
 
 
-
+Pour le serveur il est conseillé d'utiliser Filezilla ou WinSCP en synchronisant son répertoire de travail et le dossier public_html de l'univ
