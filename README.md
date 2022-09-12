@@ -15,3 +15,7 @@ Pour le serveur il est conseillé d'utiliser Filezilla ou WinSCP en synchronisan
 # FIGMA
 
 <a href="https://www.figma.com/file/JoDxjyH653MXO4MKjn987D/SNCF?node-id=10%3A10">lien</a>
+
+# SNCF DATA
+<a href="https://ressources.data.sncf.com/explore/dataset/referentiel-gares-voyageurs/table/?disjunctive.gare_ug_libelle&sort=gare_alias_libelle_noncontraint">Gares</a>
+<a href="https://ressources.data.sncf.com/explore/dataset/liste-des-quais/table/">Quais</a>
