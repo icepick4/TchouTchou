@@ -11,3 +11,7 @@ pour plus, d'info <a href="https://morgan.cugerone.com/blog/how-to-use-git-workt
 
 
 Pour le serveur il est conseillé d'utiliser Filezilla ou WinSCP en synchronisant son répertoire de travail et le dossier public_html de l'univ
+
+# FIGMA
+
+<a href="https://www.figma.com/file/JoDxjyH653MXO4MKjn987D/SNCF?node-id=10%3A10">lien</a>
