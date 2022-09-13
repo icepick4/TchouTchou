@@ -19,3 +19,26 @@ Pour le serveur il est conseillé d'utiliser Filezilla ou WinSCP en synchronisan
 # SNCF DATA
 <a href="https://ressources.data.sncf.com/explore/dataset/referentiel-gares-voyageurs/table/?disjunctive.gare_ug_libelle&sort=gare_alias_libelle_noncontraint">Gares</a>
 <a href="https://ressources.data.sncf.com/explore/dataset/liste-des-quais/table/">Quais</a>
+
+
+# DOCKER
+
+Il faut évidemment avoir docker installer
+
+L’objectif de docker est de crée un serveur php en local,
+ce qui permet de dev en local sans passer par le serveur de l’iut.
+
+ 
+Il faut commencer par récupérer l”ios”:
+
+```docker pull 2233466866/lnmp```
+
+Pour lancer le serveur:
+
+```docker run -it  -p 80:80  -p 443:443  -p 3306:3306  -p 9000:9000  --mount type=bind,source=<chemin vers le git> ,target=/www   --privileged=true  --name=lnmp 2233466866/lnmp```
+
+<chemin vers le git> exemple : /D/projet_internet/SAE-SNCF/sae-sncf
+
+Finalement pour arreter le serveur:
+
+```docker stop lnmp```
