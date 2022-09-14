@@ -46,18 +46,18 @@ Finalement pour arreter le serveur:
 
 # Première idée des requêtes nécessaires:
 
-Tableau d'arrivée des trains en gars
-Tableau de départ des trains en gars
+- Tableau d'arrivée des trains en gars
+- Tableau de départ des trains en gars
 
-Liste des lignes
+- Liste des lignes
     Liste des arrêts d’une ligne
     Le temps théorique entre chaque arrêt
 
-Liste des quais par gars
+- Liste des quais par gars
     Liste des quais disponible
     <span style="color:lightblue;">La mise en maintenance d’un quais</span>
 
-Liste des trains
-Pour un train sa prochaine arrivé en gars
-Pour un train son nombre de place restant
-Pour un train son statut (arrêt/ marche)
+- Liste des trains
+    Pour un train sa prochaine arrivé en gars
+    Pour un train son nombre de place restant
+    Pour un train son statut (arrêt/ marche)
