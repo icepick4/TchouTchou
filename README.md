@@ -37,8 +37,27 @@ Pour lancer le serveur:
 
 ```docker run -it  -p 80:80  -p 443:443  -p 3306:3306  -p 9000:9000  --mount type=bind,source=<chemin vers le git> ,target=/www   --privileged=true  --name=lnmp 2233466866/lnmp```
 
-<chemin vers le git> exemple : /D/projet_internet/SAE-SNCF/sae-sncf
+<chemin vers le git> exemple : `/D/projet_internet/SAE-SNCF/sae-sncf`
 
 Finalement pour arreter le serveur:
 
 ```docker stop lnmp```
+
+
+# Première idée des requêtes nécessaires:
+
+Tableau d'arrivée des trains en gars
+Tableau de départ des trains en gars
+
+Liste des lignes
+    Liste des arrêts d’une ligne
+    Le temps théorique entre chaque arrêt
+
+Liste des quais par gars
+    Liste des quais disponible
+    <span style="color:lightblue;">La mise en maintenance d’un quais</span>
+
+Liste des trains
+Pour un train sa prochaine arrivé en gars
+Pour un train son nombre de place restant
+Pour un train son statut (arrêt/ marche)
