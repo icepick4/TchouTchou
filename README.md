@@ -75,3 +75,57 @@ Pour un train son statut (arrêt/ marche)
 
 - liste de billets
 
+# Idée base de donnée
+
+|   |
+
+| USER  |
+|---|
+| USER_ID  |
+| USER_MAIL  |
+| USER_PASS  |
+| USER_LASTNAME  |
+| USER_FIRSTNAME  |
+| USER_CATEGORIE  |
+
+
+| TICKET  |
+|---|
+| LINE_ID  |
+| TRAIN_ID  |
+| USER_ID  |
+| DEPATURE_STATION  |
+| ARRIVAL_STATION  |
+
+| LINE  |
+|---|
+| LINE_ID  |
+| START_STATION  |
+| END_STATION  |
+
+| LINE_STOP  |
+|---|
+| LINE_ID  |
+| STATION_ID  |
+| EDT  |
+
+| STATION  |
+|---|
+| STATION_ID  |
+| STATION_NAME  |
+| STATION_ID  |
+| TURN_AROUND_TIME  |
+
+| PLATFORM  |
+|---|
+| PLATFROM_LETTER  |
+| STATION_ID  |
+| PLATFROM_STATUS  |
+| PLATFROM_LENGHT  |
+
+| TRAIN  |
+|---|
+| TRAIN_ID  |
+| TRAIN_CAPACITY  |
+| TRAIN_LENGHT  |
+| TRAIN_STATUS  |
