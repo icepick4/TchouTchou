@@ -51,20 +51,27 @@ Finalement pour arreter le serveur:
 
 - Liste des lignes
 
-        - Liste des arrêts d’une ligne
+Liste des arrêts d’une ligne
 
-        - Le temps théorique entre chaque arrêt
+Le temps théorique entre chaque arrêt
 
 - Liste des quais par gars
 
-        - Liste des quais disponible
+Liste des quais disponible
 
-        - <span style="color:lightblue;">La mise en maintenance d’un quais</span>
+*La mise en maintenance d’un quais*
 
 - Liste des trains
 
-        - Pour un train sa prochaine arrivé en gars
+Pour un train sa prochaine arrivé en gars
 
-        - Pour un train son nombre de place restant
+Pour un train son nombre de place restant
         
-        - Pour un train son statut (arrêt/ marche)
+Pour un train son statut (arrêt/ marche)
+
+- Crée un compte
+
+- Se connecter
+
+- liste de billets
+
