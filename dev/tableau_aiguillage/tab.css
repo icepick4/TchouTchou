@@ -2,6 +2,7 @@ body{
 	background-color: black;
 	color: white;
 	margin: 0;
+	font-family: sans-serif;
 }
 
 div{
@@ -15,7 +16,8 @@ div.aiguillage{
 	position: relative;
 	width: 100%;
 	height: 80vh;
-	background-color: darkblue;
+	background-color: rgb(0,0,10);
+	overflow: scroll;
 }
 div.list_quai{
 	display: grid;
@@ -31,20 +33,54 @@ div.list_quai .quai{
 	z-index: 1;
 	background-color: red;
 	margin: auto;
+	height: 10px;
+	width: 70%;
+}
+
+div.list_quai .quai.free{
+	background-color: green;
+
+}
+
+.quai label{
+	position: relative;
+	font-weight: bold;
+	font-size: 30px;
+	top:  -40px;
+
+}
+
+.quai button.btn_actif{
+	position: relative;
+	top: -45px;
+	margin: 5px;
+	background-color: black;
+	border: 3px solid red;
+	color:  red;
+	height: 30px;
+	font-size: 20px;
+	text-transform: uppercase;
+
+}
+
+.quai button.btn_actif.actif{
+	border: 3px solid green;
+	color:  green;
+
 }
 
 div.start{
 	background-color: gray;
 	position: absolute;
 	left: 0px;
-	top: 200px;
+	top: 50%;
 }
 
 div.finish{
 	background-color: gray;
 	position: absolute;
 	right: 0px;
-	top: 100px;
+	top: 50%;
 }
 
 .arrow{
@@ -57,4 +93,7 @@ div.finish{
 svg.rail{
 	position: absolute;
 	top: 0px;
+	height:100%;
+	width:100%;
 }
+
