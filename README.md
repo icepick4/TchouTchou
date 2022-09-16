@@ -75,6 +75,11 @@ Pour un train son statut (arrêt/ marche)
 
 - liste de billets
 
+# Idées
+
+- Choix de la place dans le train (Client)
+
+- Différencier les types de trains (Vitesse , longueur, place)
 # Idée base de donnée
 
 
@@ -88,9 +93,9 @@ Pour un train son statut (arrêt/ marche)
 | USER_FIRSTNAME  |
 | USER_CATEGORIE  |
 
-
 | TICKET  |
 |---|
+| TICKET_ID  |
 | LINE_ID  |
 | TRAIN_ID  |
 | USER_ID  |
@@ -107,13 +112,13 @@ Pour un train son statut (arrêt/ marche)
 |---|
 | LINE_ID  |
 | STATION_ID  |
-| EDT  |
+| DURATION_TIME  |
+| ORDER_STOP  |
 
 | STATION  |
 |---|
 | STATION_ID  |
 | STATION_NAME  |
-| STATION_ID  |
 | TURN_AROUND_TIME  |
 
 | PLATFORM  |
@@ -121,6 +126,7 @@ Pour un train son statut (arrêt/ marche)
 | PLATFROM_LETTER  |
 | STATION_ID  |
 | PLATFROM_STATUS  |
+| UTILISATION_STATUS  |
 | PLATFROM_LENGHT  |
 
 | TRAIN  |
@@ -129,3 +135,9 @@ Pour un train son statut (arrêt/ marche)
 | TRAIN_CAPACITY  |
 | TRAIN_LENGHT  |
 | TRAIN_STATUS  |
+| TIME_LATE  |
+
+| TRAIN TYPE  |
+|---|
+| TRAIN_SPEED  |
+| TRAIN_TYPE  |
