@@ -8,23 +8,92 @@
 	<title></title>
 </head>
 <body>
-
-	<div class="aiguillage">
-	<div class="start"></div>
-
-	<div class="finish"></div>
-	<div class="list_quai">
-	<div class="quai free"><label>D</label><button class="btn_actif actif">Actif</button></div>
-	<div class="quai"><label>F</label><button class="btn_actif ">Actif</button></div>
-	<div class="quai"><label>D</label><button class="btn_actif ">Actif</button></div>
-	<div class="quai"><label>F</label><button class="btn_actif actif">Actif</button></div>
+	<div class="menu_gestion_quai">
+		<div class="up_comming_train">
+			<div class="UCT_line UCT_line_title">
+				<label>Upcoming train :</label>
+				
+			</div>
+			<div class="UCT_line">
+				<label>7526 FROM Paris</label>
+				<select>
+					<option>none</option>
+					<option>A</option>
+					<option>B</option>
+					<option>C</option>
+				</select>
+			</div>
+			<div class="UCT_line">
+				<label>52210 FROM Marseille</label>
+				<select>
+					<option>none</option>
+					<option>A</option>
+					<option>B</option>
+					<option>C</option>
+				</select>
+			</div>
+			<div class="UCT_line">
+				<label>3245 FROM Lille</label>
+				<select>
+					<option>none</option>
+					<option>A</option>
+					<option>B</option>
+					<option>C</option>
+				</select>
+			</div>
+		</div>
+		<div class="left">
+			<form>
+				<div class="gare_status_switch">
+			<input type="radio" name="auto"><label class="radio" id="manu">Manuel</label></div>
+				<div class="gare_status_switch">
+			<input type="radio" name="auto" checked><label class="radio">Automatique</label></div></form></div>
 	</div>
+	<div class="aiguillage">
+	
+	<div class="suport_rail">
+		<div id="reference"></div>
+		<div class="start"></div>
 
-	<template id="connection">
+		<div class="finish"></div>
+		<template id="connection">
 	<svg class="rail">
 		  <line x1="50" y1="100" x2="200" y2="10" class="arrow" />
 		</svg>
 	</template>
+	</div>
+	<div class="list_quai">
+	<div class="quai free">
+		<div class="quai_info">
+			<label>A</label>
+			<button class="btn_actif actif">Actif</button>
+			<div class="train_icon_box">
+			<img class="logo_train visible_train" src="logo.svg"></div>
+			<label class="train_number">8385</label></div></div>
+	<div class="quai">
+		<div class="quai_info">
+			<label>B</label>
+			<button class="btn_actif ">Actif</button>
+		<div class="train_icon_box">
+			<img class="logo_train visible_train" src="logo.svg"></div>
+			<label class="train_number">23385</label></div></div>
+	<div class="quai">
+		<div class="quai_info">
+			<label>C</label>
+			<button class="btn_actif ">Actif</button>
+		<div class="train_icon_box">
+			<img class="logo_train  no_train" src="logo.svg"></div>
+		</div></div>
+	<div class="quai">
+		<div class="quai_info">
+			<label>D</label>
+			<button class="btn_actif actif">Actif</button>
+			<div class="train_icon_box">
+			<img class="logo_train visible_train" src="logo.svg"></div>
+		<label class="train_number">5385</label></div></div>
+	</div>
+
+	
 		
 	</div>
 
