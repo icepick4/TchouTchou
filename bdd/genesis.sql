@@ -26,6 +26,18 @@ CREATE TABLE Train_Type
 
     CONSTRAINT PK_Train_Type PRIMARY KEY (Train_Type_ID)
 );
+
+CREATE TABLE Train
+(
+    Train_ID INT NOT NULL,
+    Train_Type_ID INT NOT NULL,
+    Train_Status_ID INT DEFAULT 0,
+    
+    CONSTRAINT PK_Train PRIMARY KEY (Train_ID),
+    CONSTRAINT FK_Train_Type FOREIGN KEY (Train_Type_ID) REFERENCES Train_Type(Train_Type_ID),
+    CONSTRAINT FK_Train_Status FOREIGN KEY (Train_Status_ID) REFERENCES Train_Status(Train_Status_ID)
+);
+
 /*##################################################################*/
 CREATE TABLE User_Categorie
 (
@@ -39,6 +51,7 @@ CREATE TABLE User
 (
     User_ID INT NOT NULL,
     User_Mail VARCHAR2(255) NOT NULL,
+    User_Phone VARCHAR2(10),
     User_Password VARCHAR2(255) NOT NULL,
     User_Lastname VARCHAR2(255) NOT NULL,
     User_Firstname VARCHAR2(255) NOT NULL,
@@ -146,11 +159,45 @@ CREATE TABLE Platform
 );
 
 /*##################################################################*/
-CREATE TABLE Train
+CREATE TABLE Line
 (
+    Line_ID INT NOT NULL,
+    Start_Station_ID INT NOT NULL,
+    End_Station_ID INT NOT NULL,
 
-);
+    CONSTRAINT PK_Line PRIMARY KEY (Line_ID),
+    CONSTRAINT FK_Start_Station_ID FOREIGN KEY (Start_Station_ID) REFERENCES Station(Station_ID),
+    CONSTRAINT FK_End_Station_ID FOREIGN KEY (End_Station_ID) REFERENCES Station(Station_ID),
+    CONSTRAINT CK_Diff_Start_End CHECK (Start_Station_ID != End_Station_ID)
+)
 
+CREATE TABLE Line_Stop
+(
+    Line_ID INT NOT NULL,
+    Station_ID INT NOT NULL,
+    Order_STop INT NOT NULL,
+    Duration_Time TIME NOT NULL,
+
+    CONSTRAINT PK_Line_STation_ID PRIMARY KEY (Line_ID,Station_ID),
+    CONSTRAINT FK_Line_ID FOREIGN KEY (Line_ID) REFERENCES Line(Line_ID),
+    CONSTRAINT FK_Station_ID FOREIGN KEY (Station_ID) REFERENCES Station(Station_ID),
+)
+
+/*##################################################################*/
+CREATE TABLE Travel
+(
+    Travel_ID INT NOT NULL,
+    Travel_DateTime DATETIME NOT NULL,
+    Line_ID INT NOT NULL,
+    Train_ID INT NOT NULL,
+    Driver_ID INT NOT NULL,
+    End_Datetime DATETIME,
+    Late_Time 
+
+
+
+
+)
 
 
 
