@@ -1,0 +1,36 @@
+body{
+	background-color: black;
+	color: white;
+}
+
+div.anim{
+	margin: auto;
+	margin-top: 100px;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border: 1px white solid;
+}
+div.anim img{
+	margin-top: 25%;
+	animation: 2s cubic-bezier(1,-0.11, 1, 1) 0s infinite move_train;
+}
+
+div.anim img#lin{
+
+	animation: 2s linear 0s infinite move_train;
+}
+
+div.anim img#slow{
+
+	animation: 4s cubic-bezier(0.81, 0.21, 0.26, 0.57) 0s infinite move_train;
+}
+
+@keyframes move_train { 
+	from { 
+		transform: translateX(-110%); 
+	} 
+	to { 
+		transform: translateX(25%); 
+	}  
+}

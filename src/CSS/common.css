@@ -1,0 +1,9 @@
+--main-color: #FF9B05;
+--second-color: #FF6B08;
+--bg-white-color: #EFEDED;
+--bg-black-color: #FFFFFF;
+
+body {
+	background-color: var(--bg-black-color);
+	color: white;
+}
