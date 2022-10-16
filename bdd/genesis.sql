@@ -1,13 +1,72 @@
+DROP CONSTRAINT CK_Diff_Start_End;
+DROP CONSTRAINT CK_Distance;
+
+DROP CONSTRAINT FK_User;
+DROP CONSTRAINT FK_Travel;
+DROP CONSTRAINT FK_Start_Station_ID;
+DROP CONSTRAINT FK_End_Station_ID;
+DROP CONSTRAINT FK_Train_Type;
+DROP CONSTRAINT FK_Train_Status;
+DROP CONSTRAINT FK_User_Categorie;
+DROP CONSTRAINT FK_Employee_User;
+DROP CONSTRAINT FK_Employee_Company;
+DROP CONSTRAINT FK_User;
+DROP CONSTRAINT FK_Driver_ID;
+DROP CONSTRAINT FK_Train_Type;
+DROP CONSTRAINT FK_Country_ID;
+DROP CONSTRAINT FK_Region_ID;
+DROP CONSTRAINT FK_City_ID;
+DROP CONSTRAINT FK_Station_ID;
+DROP CONSTRAINT FK_Start_Station_ID;
+DROP CONSTRAINT FK_End_Station_ID;
+DROP CONSTRAINT FK_Line_ID;
+DROP CONSTRAINT FK_Station_ID;
+DROP CONSTRAINT FK_Start_Station_ID;
+DROP CONSTRAINT FK_End_Station_ID;
+DROP CONSTRAINT FK_Line;
+DROP CONSTRAINT FK_Train_ID;
+DROP CONSTRAINT FK_Driver;
+
+DROP CONSTRAINT PK_Train_Status;
+DROP CONSTRAINT PK_Train_Type;
+DROP CONSTRAINT PK_Train;
+DROP CONSTRAINT PK_User_Categorie;
+DROP CONSTRAINT PK_User;
+DROP CONSTRAINT PK_Company;
+DROP CONSTRAINT PK_Employee;
+DROP CONSTRAINT PK_Driver;
+DROP CONSTRAINT PK_Driver_Ability;
+DROP CONSTRAINT PK_Country;
+DROP CONSTRAINT PK_Region_ID;
+DROP CONSTRAINT PK_City_ID;
+DROP CONSTRAINT PK_Station_ID;
+DROP CONSTRAINT PK_Platform;
+DROP CONSTRAINT PK_Line;
+DROP CONSTRAINT PK_Line_Stop;
+DROP CONSTRAINT PK_Distance;
+DROP CONSTRAINT PK_Travel;
+DROP CONSTRAINT PK_Ticket;
+
 DROP TABLE Train_Status;
 DROP TABLE Train_Type;
 DROP TABLE Train;
 DROP TABLE User_Categorie;
 DROP TABLE User;
+DROP TABLE Company;
+DROP TABLE Employees;
+DROP TABLE Driver;
+DROP TABLE Driver_Ability;
 DROP TABLE Country;
 DROP TABLE Region;
 DROP TABLE City;
 DROP TABLE Station;
 DROP TABLE Platform;
+DROP TABLE Line;
+DROP TABLE Line_Stop;
+DROP TABLE Distance;
+DROP TABLE Travel;
+DROP TABLE Ticket;
+
 
 CREATE TABLE Train_Status
 (
@@ -22,6 +81,7 @@ CREATE TABLE Train_Type
     Train_Type_ID INT NOT NULL,
     Train_Type_Label VARCHAR2(255) NOT NULL,
     Train_Capacity INT NOT NULL,
+    Train_Speed INT NOT NULL,
     Train_Length FLOAT NOT NULL,
 
     CONSTRAINT PK_Train_Type PRIMARY KEY (Train_Type_ID)
@@ -151,7 +211,7 @@ CREATE TABLE Platform
     Platform_Letter VARCHAR2(1) NOT NULL,
     Station_ID INT NOT NULL,
     Platform_Status BOOLEAN DEFAULT false,
-    Platform_Utilisation DEFAULT false,
+    Platform_Utilisation BOOLEAN DEFAULT false,
     Platform_length FLOAT NOT NULL,
 
     CONSTRAINT PK_Platform PRIMARY KEY (Platform_Letter,Station_ID),
@@ -175,14 +235,25 @@ CREATE TABLE Line_Stop
 (
     Line_ID INT NOT NULL,
     Station_ID INT NOT NULL,
-    Order_STop INT NOT NULL,
+    Order_Stop INT NOT NULL,
     Duration_Time TIME NOT NULL,
 
-    CONSTRAINT PK_Line_STation_ID PRIMARY KEY (Line_ID,Station_ID),
+    CONSTRAINT PK_Line_Stop PRIMARY KEY (Line_ID,Station_ID),
     CONSTRAINT FK_Line_ID FOREIGN KEY (Line_ID) REFERENCES Line(Line_ID),
     CONSTRAINT FK_Station_ID FOREIGN KEY (Station_ID) REFERENCES Station(Station_ID),
 )
 
+CREATE TABLE Distance
+(
+    Start_Station_ID INT NOT NULL,
+    End_Station_ID INT NOT NULL,
+    Distance INT NOT NULL,
+
+    CONSTRAINT PK_Distance PRIMARY KEY (Start_Station_ID,End_Station_ID),
+    CONSTRAINT FK_Start_Station_ID FOREIGN KEY (Start_Station_ID) REFERENCES Station(Station_ID),
+    CONSTRAINT FK_End_Station_ID FOREIGN KEY (End_Station_ID) REFERENCES Station(Station_ID),
+    CONSTRAINT CK_Distance CHECK (Distance > 0)
+)
 /*##################################################################*/
 CREATE TABLE Travel
 (
@@ -191,13 +262,32 @@ CREATE TABLE Travel
     Line_ID INT NOT NULL,
     Train_ID INT NOT NULL,
     Driver_ID INT NOT NULL,
-    End_Datetime DATETIME,
-    Late_Time 
+    End_Datetime DATETIME NOT NULL,
+    Start_Time DATETIME NOT NULL,
+    Late_Time DATETIME NOT NULL,
 
+    CONSTRAINT PK_Travel PRIMARY KEY (Travel_ID),
+    CONSTRAINT FK_Line FOREIGN KEY (Line_ID) REFERENCES Line(Line_ID),
+    CONSTRAINT FK_Train_ID FOREIGN KEY (Train_ID) REFERENCES Train(Train_ID),
+    CONSTRAINT FK_Driver FOREIGN KEY (Driver_ID) REFERENCES Driver(Driver_ID)
+)
 
+CREATE TABLE Ticket
+(
+    User_ID INT NOT NULL,
+    Travel_ID INT NOT NULL,
+    Start_Station_ID INT NOT NULL,
+    End_Station_ID INT NOT NULL,
 
+    CONSTRAINT PK_Ticket PRIMARY KEY (User_ID,Travel_ID),
+    CONSTRAINT FK_User FOREIGN KEY (User_ID) REFERENCES Employees(User_ID),
+    CONSTRAINT FK_Travel FOREIGN KEY (Travel_ID) REFERENCES Travel(Travel_ID),
+    CONSTRAINT FK_Start_Station_ID FOREIGN KEY (Start_Station_ID) REFERENCES Station(Station_ID),
+    CONSTRAINT FK_End_Station_ID FOREIGN KEY (End_Station_ID) REFERENCES Station(Station_ID)
 
 )
 
-
-
+/*
+CONSTRAINT PK_ PRIMARY KEY (),
+CONSTRAINT FK_ FOREIGN KEY () REFERENCES (),
+*/
