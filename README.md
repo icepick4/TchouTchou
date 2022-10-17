@@ -1,6 +1,18 @@
 # SAE-SNCF
-<img src="src/ASSETS/fav.png">
+![MKT](https://img.shields.io/badge/license-copyleft-red.svg)
+![MKT](https://img.shields.io/badge/version-v1.0.0-blue.svg)
+![MKT](https://img.shields.io/badge/languages-PHP_JS_HTML_CSS-orange.svg)
+![MKT](https://img.shields.io/badge/platform-Web-1ightgrey.svg)
 
+<img src="src/ASSETS/fav.png">Connue pour posséder le second plus grand chemin de fer en Europe, la France a pour moyen de transport prédominant sur son territoire le train. Disposant de 2 734 km de ligne à grande vitesse qui transporte chaque année se sont plus de 1 milliards de passagers qui transitent sur ce réseau. Pour rendre ce système fonctionnel il a donc fallu faire appel à des outils de gestion tant pour les achats des clients que pour les opérations techniques.
+Afin de moderniser ses services, la SNCF lance en 2021 son application de réservation : SNCF Connect. Cette dernière vient s’implanter aux côtés d’autres applications de réservation comme Trainline ou Tictactrip.
+Étant nous-mêmes utilisateurs de ces applications nous avons pu constater leurs défauts, leurs qualités mais également les améliorations que nous aurions aimé y apporter. Au vu de ce constat, nous avons donc cherché à proposer une solution technique à ce postulat.
+# Objectif
+
+L'objet de ce projet est de réaliser un site de réservation de billets de train avec des options pour consulter le trafic. Le projet consiste d’un site internet avec une version PC et mobile pour lesun clients mais aussi d’une partie internet pour l’entreprise afin de gérer le trafic.
+
+# Périmètre
+Ce projet est réalisé par un groupe de 5 personnes d’un niveau équivalent en 2ème année du BUT informatique. Le projet n'utilisera pas de framework, ni de PWA. Le développement du projet se fait en dehors des heures de cours avec deux heures toutes les deux semaines de réunion avec notre tuteur. Le projet se déroule sur 4 mois et se termine par une soutenance de 40 minutes.
 # GUIDE
 
 Pour facilement avoir accès à tout les branches,
@@ -42,102 +54,3 @@ Pour lancer le serveur:
 Finalement pour arreter le serveur:
 
 ```docker stop lnmp```
-
-
-# Première idée des requêtes nécessaires:
-
-- Tableau d'arrivée des trains en gars
-- Tableau de départ des trains en gars
-
-- Liste des lignes
-
-Liste des arrêts d’une ligne
-
-Le temps théorique entre chaque arrêt
-
-- Liste des quais par gars
-
-Liste des quais disponible
-
-*La mise en maintenance d’un quais*
-
-- Liste des trains
-
-Pour un train sa prochaine arrivé en gars
-
-Pour un train son nombre de place restant
-        
-Pour un train son statut (arrêt/ marche)
-
-- Crée un compte
-
-- Se connecter
-
-- liste de billets
-
-# Idées
-
-- Choix de la place dans le train (Client)
-
-- Différencier les types de trains (Vitesse , longueur, place)
-# Idée base de donnée
-
-
-
-| USER  |
-|---|
-| USER_ID  |
-| USER_MAIL  |
-| USER_PASS  |
-| USER_LASTNAME  |
-| USER_FIRSTNAME  |
-| USER_CATEGORIE  |
-
-| TICKET  |
-|---|
-| TICKET_ID  |
-| LINE_ID  |
-| TRAIN_ID  |
-| USER_ID  |
-| DEPATURE_STATION  |
-| ARRIVAL_STATION  |
-
-| LINE  |
-|---|
-| LINE_ID  |
-| START_STATION  |
-| END_STATION  |
-
-| LINE_STOP  |
-|---|
-| LINE_ID  |
-| STATION_ID  |
-| DURATION_TIME  |
-| ORDER_STOP  |
-
-| STATION  |
-|---|
-| STATION_ID  |
-| STATION_NAME  |
-| TURN_AROUND_TIME  |
-
-| PLATFORM  |
-|---|
-| PLATFROM_LETTER  |
-| STATION_ID  |
-| PLATFROM_STATUS  |
-| UTILISATION_STATUS  |
-| PLATFROM_LENGHT  |
-
-| TRAIN  |
-|---|
-| TRAIN_ID  |
-| TRAIN_CAPACITY  |
-| TRAIN_LENGHT  |
-| TRAIN_STATUS  |
-| TIME_LATE  |
-
-| TRAIN TYPE  |
-|---|
-| TRAIN_SPEED  |
-| TRAIN_TYPE  |
