@@ -118,8 +118,7 @@ CREATE TABLE User
     User_Categorie_ID INT DEFAULT 0,
 
     CONSTRAINT PK_User PRIMARY KEY (User_ID),
-    CONSTRAINT FK_User_Categorie FOREIGN KEY (User_Categorie_ID) REFERENCES User_Categorie(User_Categorie_ID),
-    /*CONSTRAINT CK_User_Mail CHECK (User_Mail NOT IN (Select User_Mail FROM User))*/
+    CONSTRAINT FK_User_Categorie FOREIGN KEY (User_Categorie_ID) REFERENCES User_Categorie(User_Categorie_ID)
 );
 
 CREATE TABLE Company
@@ -166,9 +165,7 @@ CREATE TABLE Country
     Country_Name VARCHAR2(255) NOT NULL,
     Country_Label VARCHAR2(2) NOT NULL,
 
-    CONSTRAINT PK_Country PRIMARY KEY (Country_ID),
-    /*CONSTRAINT CK_Country_Name CHECK (Country_Name NOT IN (Select Country_Name FROM Country)),*/
-    /*CONSTRAINT CK_Country_Label CHECK (Country_Label NOT IN (Select Country_Label FROM Country))*/
+    CONSTRAINT PK_Country PRIMARY KEY (Country_ID)
 );
 
 CREATE TABLE Region
@@ -177,22 +174,21 @@ CREATE TABLE Region
     Country_ID INT NOT NULL,
     Region_Name VARCHAR2(255) NOT NULL,
 
-    CONSTRAINT PK_Region_ID PRIMARY KEY (Region_ID),
-    CONSTRAINT FK_Country_ID FOREIGN KEY (Country_ID) REFERENCES Country(Country_ID),
-    /*CONSTRAINT CK_Region_Name CHECK (Region_Name NOT IN (Select Region_Name FROM Region))*/
+    CONSTRAINT PK_Region_ID PRIMARY KEY (Country_ID,Region_ID),
+    CONSTRAINT FK_Country_ID FOREIGN KEY (Country_ID) REFERENCES Country(Country_ID)
 );
 
 CREATE TABLE City
 (
     City_ID INT NOT NULL,
+    Country_ID INT NOT NULL,
     Region_ID INT NOT NULL,
     Postal INT,
     City_Name VARCHAR2(255) NOT NULL,
 
 
     CONSTRAINT PK_City_ID PRIMARY KEY (City_ID),
-    CONSTRAINT FK_Region_ID FOREIGN KEY (Region_ID) REFERENCES Region(Region_ID),
-    /*CONSTRAINT CK_City_Different CHECK (Postal NOT IN (SELECT Postal FROM City WHERE City_Name = City.City_Name))*/
+    CONSTRAINT FK_Region_ID FOREIGN KEY (Country_ID,Region_ID) REFERENCES Region(Country_ID,Region_ID)
 );
 /*##################################################################*/
 CREATE TABLE Station 
@@ -202,8 +198,7 @@ CREATE TABLE Station
     Station_Name VARCHAR2(255) NOT NULL,
 
     CONSTRAINT PK_Station_ID PRIMARY KEY (Station_ID),
-    CONSTRAINT FK_City_ID FOREIGN KEY (City_ID) REFERENCES City(City_ID),
-    /*CONSTRAINT CK_Station_Name CHECK (Station_Name NOT IN (SELECT Station_Name FROM Station))*/
+    CONSTRAINT FK_City_ID FOREIGN KEY (City_ID) REFERENCES City(City_ID)
 );
 
 CREATE TABLE Platform
@@ -286,8 +281,3 @@ CREATE TABLE Ticket
     CONSTRAINT FK_End_Station_ID FOREIGN KEY (End_Station_ID) REFERENCES Station(Station_ID)
 
 )
-
-/*
-CONSTRAINT PK_ PRIMARY KEY (),
-CONSTRAINT FK_ FOREIGN KEY () REFERENCES (),
-*/
