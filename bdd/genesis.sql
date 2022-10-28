@@ -204,12 +204,14 @@ CREATE TABLE Station
 CREATE TABLE Platform
 (
     Platform_Letter VARCHAR2(1) NOT NULL,
+    Hall_ID INT NOT NULL,
     Station_ID INT NOT NULL,
     Platform_Status BOOLEAN DEFAULT false,
     Platform_Utilisation BOOLEAN DEFAULT false,
+    Platform_User INT,
     Platform_length FLOAT NOT NULL,
 
-    CONSTRAINT PK_Platform PRIMARY KEY (Platform_Letter,Station_ID),
+    CONSTRAINT PK_Platform PRIMARY KEY (Platform_Letter,Hall,ID,Station_ID),
     CONSTRAINT FK_Station_ID FOREIGN KEY (Station_ID) REFERENCES Station(Station_ID)
 );
 
