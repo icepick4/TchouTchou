@@ -1,3 +1,7 @@
+:root{
+	--margin2: 20px;
+}
+
 /*a modif*/
 div.tmp{
 	height: 50px;
@@ -12,8 +16,9 @@ div.tmp{
 article{
 	background-color: var(--bg-black-color);
 	border-radius: var(--radius);
-	width: 80vh;
-	height: 300px;
+	width: 80vw;
+	/*max-width: 900px;*/
+	/*height: 300px;*/
 	display: flex;
 	margin-left: var(--margin);
 	margin-top: 30px;
@@ -29,21 +34,23 @@ article:nth-child(2n){
 
 
 
-article img{
-	width: 40vh;
+article > img{
+	width: 35vw;
 	height: auto;
+	/*max-width: 390px;*/
+	max-height: 90%;
 	margin-top: auto;
 	margin-bottom: auto;
-	margin-left: var(--margin);
-	margin-right: var(--margin);
+	margin: var(--margin2);
+
 }
 
 article div.arti{
 	height: auto;
 	margin-top: auto;
 	margin-bottom: auto;
-	margin-left: var(--margin);
-	margin-right: var(--margin);
+	margin-left: var(--margin2);
+	margin-right: var(--margin2);
 }
 
 
@@ -82,4 +89,17 @@ article div.arti{
 
 article div.arti .btn{
 	width: 80%;
+}
+
+/* mobile */
+@media (max-width: 800px) {
+  article:nth-child(n){
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: var(--margin2);
+    margin-bottom: var(--margin2);
+  }
+  .btn{
+  	margin: var(--margin2);
+  }
 }
