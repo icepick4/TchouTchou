@@ -107,7 +107,7 @@ CREATE TABLE User_Categorie
     CONSTRAINT PK_User_Categorie PRIMARY KEY (User_Categorie_ID)
 );
     
-CREATE TABLE User
+CREATE TABLE User_Data
 (
     User_ID INT NOT NULL,
     User_Mail VARCHAR2(255) NOT NULL,
@@ -129,6 +129,14 @@ CREATE TABLE Company
     CONSTRAINT PK_Company PRIMARY KEY (Company_ID) 
 );
 
+CREATE TABLE Employee_Categorie
+(
+    Employee_Categorie_ID INT NOT NULL,
+    Employee_Categorie_Label VARCHAR2(255) NOT NULL,
+
+    CONSTRAINT PK_User_Categorie PRIMARY KEY (User_Categorie_ID)
+);
+
 CREATE TABLE Employees
 (
     User_ID INT NOT NULL,
@@ -137,7 +145,8 @@ CREATE TABLE Employees
 
     CONSTRAINT PK_Employee PRIMARY KEY (User_ID),
     CONSTRAINT FK_Employee_User FOREIGN KEY (User_ID) REFERENCES User(User_ID),
-    CONSTRAINT FK_Employee_Company FOREIGN KEY (Company_ID) REFERENCES Company(Company_ID) 
+    CONSTRAINT FK_Employee_Company FOREIGN KEY (Company_ID) REFERENCES Company(Company_ID),
+    CONSTRAINT FK_Employee_Access FOREIGN KEY (Employee_Access) REFERENCES Employee_Categorie(Employee_Categorie_ID)
 );
 
 CREATE TABLE Driver
