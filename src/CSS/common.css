@@ -1,9 +1,17 @@
+:root{
 --main-color: #FF9B05;
 --second-color: #FF6B08;
 --bg-white-color: #EFEDED;
---bg-black-color: #FFFFFF;
+--bg-black-color: #231B13;
+--bg-black-second-color: ##4F3510;
+--radius: 8px;
+--margin: 4px;
+}
 
 body {
-	background-color: var(--bg-black-color);
-	color: white;
+	font-family: Poppins, sans-serif;
+	background-color: #000;
+	color: var(--bg-white-color);
 }
+
+
