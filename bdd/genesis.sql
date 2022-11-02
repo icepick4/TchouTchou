@@ -240,11 +240,11 @@ CREATE TABLE Line_Stop
     CONSTRAINT FK_Station_ID FOREIGN KEY (Station_ID) REFERENCES Station(Station_ID),
 )
 
-CREATE TABLE Distance
+CREATE TABLE Delta_Time
 (
     Start_Station_ID INT NOT NULL,
     End_Station_ID INT NOT NULL,
-    Distance INT NOT NULL,
+    Delta_Time INT NOT NULL,
 
     CONSTRAINT PK_Distance PRIMARY KEY (Start_Station_ID,End_Station_ID),
     CONSTRAINT FK_Start_Station_ID FOREIGN KEY (Start_Station_ID) REFERENCES Station(Station_ID),
