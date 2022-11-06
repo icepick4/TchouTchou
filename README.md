@@ -26,7 +26,8 @@ pour plus, d'info <a href="https://morgan.cugerone.com/blog/how-to-use-git-workt
 Pour le serveur il est conseillé d'utiliser Filezilla ou WinSCP en synchronisant son répertoire de travail et le dossier public_html de l'univ
 # Base de données
 
-Les trajets disponibles au tier 1 sont disponible <a href="(https://forge.univ-lyon1.fr/p2103642/sae-sncf/bdd/-/jobs/artifacts/main/raw/overview.pdf?job=build">ici</a>
+Les trajets disponibles au tier 1 sont disponible
+<embed src="/bdd/overview.pdf" type="application/pdf">
 # FIGMA
 
 <a href="https://www.figma.com/file/JoDxjyH653MXO4MKjn987D/SNCF?node-id=10%3A10">lien</a>
