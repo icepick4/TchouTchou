@@ -2,6 +2,11 @@
  
 const DEBUG = true; // production : false; dev : true
 
+
+error_reporting(E_ALL);
+ini_set('display_errors','On');
+
+
 // Accès base de données
 const BD_HOST = 'tchoutchou.ovh';
 const BD_DBNAME = '';
