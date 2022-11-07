@@ -14,7 +14,13 @@ body {
 	color: var(--bg-white-color);
 }
 
-  
+/* ############## Header ##############*/
+:is(.header-navbar, .dropdowns) {
+	position: fixed;
+	top: 0;
+	width: 100%;
+  }
+/* ############## Header ##############*/
 button {
 	border: 0;
 	padding: 0;
@@ -22,7 +28,6 @@ button {
 	cursor: pointer;
 	line-height: 1;
 	color: inherit;
-	font-family: "Euclid Circular A";
 	font-size: 20px;
   }
   
@@ -46,28 +51,6 @@ button {
 	height: 72px;
 	background: #19191c;
 	color: #f9f9f9;
-  }
-  
-  .burger {
-	z-index: 3;
-	right: 0;
-	display: grid;
-	place-items: center;
-	width: 72px;
-	height: 72px;
-	background-image: url("menu.svg");
-	background-repeat: no-repeat;
-	background-position: center;
-  }
-  
-  body.open .burger {
-	background-image: url("close.svg");
-  }
-  
-  @media (width >= 500px) {
-	.burger {
-	  display: none;
-	}
   }
   
   .button {
@@ -113,17 +96,11 @@ button {
 	transition-property: opacity, visibility;
 	transition-duration: 0.3s;
   }
-  
-  @media (width < 500px) {
-	body.open .dropdowns {
-	  opacity: 1;
-	  visibility: visible;
-	  left: 0;
-	}
-  }
+
   
   @media (width >= 500px) {
 	.dropdowns {
+      height: 100%;
 	  position: static;
 	  flex-direction: row;
 	  justify-content: flex-start;
@@ -131,6 +108,35 @@ button {
 	  opacity: 1;
 	  visibility: visible;
 	}
+
+	.dropdown-menu {
+		position: absolute;
+		top: 72px;
+		left: 0;
+		width: 180px;
+		padding: 6px 24px 10px;
+		margin-bottom: 0;
+		place-items: start;
+		background: #19191c;
+		opacity: 0;
+		visibility: hidden;
+		translate: 0 24px;
+		transition: 0.3s;
+	  }
+	
+	  .dropdown:hover .dropdown-menu {
+		opacity: 1;
+		visibility: visible;
+		translate: 0 0;
+	  }
+
+	  .dropdown-menu > button {
+		opacity: 0.6;
+	  }
+	
+	  .dropdown:hover .button {
+		opacity: 1;
+	  }
   }
   
   .dropdown {
@@ -145,48 +151,10 @@ button {
 	margin-bottom: 28px;
   }
   
-  @media (width >= 500px) {
-	.dropdown {
-	  height: 100%;
-	  flex-direction: row;
-	}
-  
-	.dropdown-menu {
-	  position: absolute;
-	  top: 72px;
-	  left: 0;
-	  width: 180px;
-	  padding: 6px 24px 10px;
-	  margin-bottom: 0;
-	  place-items: start;
-	  background: #19191c;
-	  opacity: 0;
-	  visibility: hidden;
-	  translate: 0 24px;
-	  transition: 0.3s;
-	}
-  
-	.dropdown:hover .dropdown-menu {
-	  opacity: 1;
-	  visibility: visible;
-	  translate: 0 0;
-	}
-  }
-  
   .dropdown-menu > button {
 	color: #f9f9f9;
 	opacity: 1;
 	height: 40px;
-  }
-  
-  @media (width >= 500px) {
-	.dropdown-menu > button {
-	  opacity: 0.6;
-	}
-  
-	.dropdown:hover .button {
-	  opacity: 1;
-	}
   }
   
   .dropdown-menu > button:hover {
