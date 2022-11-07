@@ -44,7 +44,7 @@ L’objectif de docker est de crée un serveur php en local,
 ce qui permet de dev en local sans passer par le serveur de l’iut.
 
  
-Il faut commencer par récupérer l”ios”:
+Il faut commencer par récupérer l”os”:
 
 ```docker pull 2233466866/lnmp```
 
