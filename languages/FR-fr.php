@@ -6,5 +6,6 @@ define('TITLE_PURCHASE','Achats');
 define('TITLE_SEARCH','Rechercher');
 define('TITLE_TICKET','Vos billets');
 define('TITLE_INFORMATION','Informations');
+define('STATION_INFORMATION','Gares & Quais');
 
 ?>

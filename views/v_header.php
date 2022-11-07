@@ -29,9 +29,7 @@
             <img src="./assets/images/dropdown.svg" />
           </button>
           <div class="dropdown-menu">
-            <button>Learn CSS Ebook</button>
-            <button>Security Course</button>
-            <button>Masterclass Bundle</button>
+            <button><?= STATION_INFORMATION ?></button>
           </div>
         </div>
       </div>
