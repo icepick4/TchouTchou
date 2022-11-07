@@ -19,13 +19,13 @@
             <img src="./assets/images/dropdown.svg" />
           </button>
           <div class="dropdown-menu">
-            <button><?= echo TITLE_SEARCH ?></button>
-            <button><?= echo TITLE_TICKET ?></button>
+            <button><?= TITLE_SEARCH ?></button>
+            <button><?= TITLE_TICKET ?></button>
           </div>
         </div>
         <div class="dropdown">
           <button class="button">
-            <?= echo TITLE_INFORMATION ?>
+            <?= TITLE_INFORMATION ?>
             <img src="./assets/images/dropdown.svg" />
           </button>
           <div class="dropdown-menu">
