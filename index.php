@@ -9,12 +9,12 @@
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  */
-/*
+
 // Initialisation des paramètres du site
 require_once('./config/configuration.php');
 require_once('./lib/foncBase.php');
 require_once(PATH_CONST.'const.php');
-require_once(PATH_TEXTES.LANG.'.php');
+//require_once(PATH_TEXTES.LANG.'.php');
 
 //vérification de la page demandée 
 
@@ -31,5 +31,5 @@ else
 
 //appel du controller
 require_once(PATH_CONTROLLERS.$page.'.php'); 
-*/
+
 ?>
