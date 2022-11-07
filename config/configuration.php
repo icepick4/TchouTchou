@@ -24,6 +24,7 @@ define('PATH_LIB','./lib/');
 define('PATH_MODELS','./models/');
 define('PATH_VIEWS','./views/v_');
 define('PATH_CONST','./config/');
+define('PATH_TEXTES','./languages/');
 
 //sous dossiers
 define('PATH_CSS', PATH_ASSETS.'css/');

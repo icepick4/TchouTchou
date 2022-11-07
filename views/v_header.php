@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="Language" content="<?= LANG ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?= TITLE ?></title>
-    <link href="./styles.css" rel="stylesheet" />
+    <title><?= echo TITLE ?></title>
+    <link href="<?php echo PATH_CSS."common.css" ?>" rel="stylesheet" />
   </head>
   <body>
     <nav class="navbar">
@@ -18,31 +19,19 @@
             <img src="./assets/images/dropdown.svg" />
           </button>
           <div class="dropdown-menu">
-            <button>UX/UI Design</button>
-            <button>Web Applications</button>
-            <button>SEO Advice</button>
+            <button><?= echo TITLE_SEARCH ?></button>
+            <button><?= echo TITLE_TICKET ?></button>
           </div>
         </div>
         <div class="dropdown">
           <button class="button">
-            Products
-            <img src="chevron.svg" />
+            <?= echo TITLE_INFORMATION ?>
+            <img src="./assets/images/dropdown.svg" />
           </button>
           <div class="dropdown-menu">
             <button>Learn CSS Ebook</button>
             <button>Security Course</button>
             <button>Masterclass Bundle</button>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="button">
-            Support
-            <img src="chevron.svg" />
-          </button>
-          <div class="dropdown-menu">
-            <button>Live Chat</button>
-            <button>Send Email</button>
-            <button>Request Help</button>
           </div>
         </div>
       </div>
