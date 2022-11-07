@@ -15,6 +15,23 @@ body {
 }
 
   
+button {
+	border: 0;
+	padding: 0;
+	background: transparent;
+	cursor: pointer;
+	line-height: 1;
+	color: inherit;
+	font-family: "Euclid Circular A";
+	font-size: 20px;
+  }
+  
+  @media (width >= 500px) {
+	button {
+	  font-size: 16px;
+	}
+  }
+  
   :is(.navbar, .burger, .dropdowns) {
 	position: fixed;
 	top: 0;
@@ -47,6 +64,12 @@ body {
 	background-image: url("close.svg");
   }
   
+  @media (width >= 500px) {
+	.burger {
+	  display: none;
+	}
+  }
+  
   .button {
 	display: flex;
 	align-items: center;
@@ -58,6 +81,22 @@ body {
   
   .button > img {
 	display: none;
+  }
+  
+  @media (width >= 500px) {
+	.button {
+	  padding: 0 10px 0 24px;
+	}
+  
+	.button > img {
+	  display: block;
+	}
+  }
+  
+  @media (width >= 500px) {
+	.dropdown:hover .button {
+	  opacity: 1;
+	}
   }
   
   .dropdowns {
@@ -73,6 +112,65 @@ body {
 	visibility: hidden;
 	transition-property: opacity, visibility;
 	transition-duration: 0.3s;
+  }
+  
+  @media (width < 500px) {
+	body.open .dropdowns {
+	  opacity: 1;
+	  visibility: visible;
+	  left: 0;
+	}
+  }
+  
+  @media (width >= 500px) {
+	.dropdowns {
+	  position: static;
+	  flex-direction: row;
+	  justify-content: flex-start;
+	  background: transparent;
+	  opacity: 1;
+	  visibility: visible;
+	}
+  }
+  
+  .dropdown {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+  }
+  
+  .dropdown-menu {
+	display: grid;
+	margin-bottom: 28px;
+  }
+  
+  @media (width >= 500px) {
+	.dropdown {
+	  height: 100%;
+	  flex-direction: row;
+	}
+  
+	.dropdown-menu {
+	  position: absolute;
+	  top: 72px;
+	  left: 0;
+	  width: 180px;
+	  padding: 6px 24px 10px;
+	  margin-bottom: 0;
+	  place-items: start;
+	  background: #19191c;
+	  opacity: 0;
+	  visibility: hidden;
+	  translate: 0 24px;
+	  transition: 0.3s;
+	}
+  
+	.dropdown:hover .dropdown-menu {
+	  opacity: 1;
+	  visibility: visible;
+	  translate: 0 0;
+	}
   }
   
   .dropdown-menu > button {
