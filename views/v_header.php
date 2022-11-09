@@ -6,36 +6,24 @@
     <meta name="Language" content="<?= LANG ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= TITLE ?></title>
+    <link rel="shortcut icon" type="image/png" href="<?php echo PATH_IMAGES."favicon.ico"?>"/>
     <link href="<?php echo PATH_CSS."common.css" ?>" rel="stylesheet" />
+    <link href="<?php echo PATH_CSS."header.css" ?>" rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar">
-      <button onclick="toggleMenu()" class="burger"></button>
-      <button class="button"><?= TITLE_HOME ?></button>
-      <div class="dropdowns">
-        <div class="dropdown">
-          <button class="button">
-            <?= TITLE_PURCHASE ?>
-            <img src="./assets/images/dropdown.svg" />
-          </button>
-          <div class="dropdown-menu">
-            <button><?= TITLE_SEARCH ?></button>
-            <button><?= TITLE_TICKET ?></button>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="button">
-            <?= TITLE_INFORMATION ?>
-            <img src="./assets/images/dropdown.svg" />
-          </button>
-          <div class="dropdown-menu">
-            <button><?= STATION_INFORMATION ?></button>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <script>
-      const toggleMenu = () => document.body.classList.toggle("open");
-    </script>
+    <header>
+      <nav>
+        <a class="a-logo" href=""><img src="<?php echo PATH_IMAGES."logo.svg"?>" class="logo"></a>
+        <ul>
+            <li><a href=""><?php echo TITLE_HOME ?></a></li>
+            <li><a href=""><?php echo TITLE_PURCHASE ?></a></li>
+            <li><a href=""><?php echo TITLE_INFORMATION ?></a></li>
+        </ul>
+      </nav>
+      <nav>
+        <a href=""><img src="<?php echo PATH_IMAGES."account.svg"?>" class="logo"></a>
+        <a href=""><img src="<?php echo PATH_IMAGES."shopping.svg"?>" class="logo"></a> 
+      </nav>
+    </header>
   </body>
 </html>

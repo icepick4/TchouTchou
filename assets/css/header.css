@@ -1,0 +1,77 @@
+header
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	background-color: #202121;
+}
+header nav
+{
+	width: 50%;
+	min-height: 100%;
+	display: flex;	
+}
+header ul
+{
+	display: flex;
+	padding: 0;
+	margin:0;
+	min-height: 100%;
+    width: 50%;
+}
+header ul li
+{
+    flex:1;
+	list-style-type: none;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    transition-duration: 0.7s;
+}
+
+header ul li a
+{
+    flex: 1;
+	height: 100%;
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: var(--main-color);
+    transition-duration: 0.7s;
+}
+
+header ul li:hover
+{
+    background-color: var(--main-color);
+    transition-duration: 0.7s;
+}
+
+header ul li a:hover
+{
+    color: white;
+    transition-duration: 0.7s;  
+}
+.logo
+{
+	width: 4em;
+    margin: 0;
+}
+
+.a-logo
+{
+    width: fit-content;
+    height: fit-content;
+}
+
+header> :nth-child(2n)
+{
+    flex-direction: row-reverse;
+    
+}
+header> :nth-child(2n)>*
+{
+    margin: 0 1%;
+}
