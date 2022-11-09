@@ -3,15 +3,38 @@
 --second-color: #FF6B08;
 --bg-white-color: #EFEDED;
 --bg-black-color: #202121;
---bg-black-second-color: ##4F3510;
+--bg-black-second-color: #4F3510;
 --radius: 8px;
 --margin: 4px;
 }
 
 body {
 	font-family: Poppins, sans-serif;
-	background-color: #000;
+	background-color: var(--bg-black-color);
 	color: var(--bg-white-color);
 	margin:0px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh ;
+	
 }
 
+#main
+{
+	flex-grow: 1;
+}
+
+.alert
+{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	
+}
+
+.alert strong
+{
+	padding-top: 10%;
+	padding-bottom: 5%;
+}

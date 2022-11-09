@@ -13,17 +13,16 @@
   <body>
     <header>
       <nav>
-        <a class="a-logo" href=""><img src="<?php echo PATH_IMAGES."logo.svg"?>" class="logo"></a>
+        <a class="a-logo" href="index.php?page=home"><img src="<?php echo PATH_IMAGES."logo.svg"?>" class="logo"></a>
         <ul>
-            <li><a href=""><?php echo TITLE_HOME ?></a></li>
-            <li><a href=""><?php echo TITLE_PURCHASE ?></a></li>
-            <li><a href=""><?php echo TITLE_INFORMATION ?></a></li>
+            <li><a href="index.php?page=home"><?php echo TITLE_HOME ?></a></li>
+            <li><a href="index.php?page=purchase"><?php echo TITLE_PURCHASE ?></a></li>
+            <li><a href="index.php?page=informations"><?php echo TITLE_INFORMATION ?></a></li>
         </ul>
       </nav>
       <nav>
-        <a href=""><img src="<?php echo PATH_IMAGES."account.svg"?>" class="logo"></a>
-        <a href=""><img src="<?php echo PATH_IMAGES."shopping.svg"?>" class="logo"></a> 
+        <a href="index.php?page=account"><img src="<?php echo PATH_IMAGES."account.svg"?>" class="logo"></a>
+        <a href="index.php?page=shopping"><img src="<?php echo PATH_IMAGES."shopping.svg"?>" class="logo"></a> 
       </nav>
     </header>
-  </body>
-</html>
+    <section id="main">

@@ -4,8 +4,9 @@ header
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
-	background-color: #202121;
+	background-color: #151616;
 }
+
 header nav
 {
 	width: 50%;
