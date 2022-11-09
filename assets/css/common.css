@@ -2,7 +2,7 @@
 --main-color: #FF9B05;
 --second-color: #FF6B08;
 --bg-white-color: #EFEDED;
---bg-black-color: #202121;
+--bg-black-color: #1E1E1E;
 --bg-black-second-color: #4F3510;
 --radius: 8px;
 --margin: 4px;
@@ -41,6 +41,30 @@ body {
 
 .cgu
 {
-	padding: 20em;
-	background-color: #FF6B08;
+	margin: 6%;
+	
+}
+
+.cgu a
+{
+	color :white;
+}
+
+.cgu h1
+{
+	font-size: 170%;
+	background-color: var(--main-color);
+	width: fit-content;
+	padding: 1vh;
+	border-radius: 1em;
+}
+
+.cgu h2
+{
+	color:var(--main-color);
+}
+
+.cgu h3
+{
+	color:var(--second-color);
 }

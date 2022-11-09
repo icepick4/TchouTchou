@@ -9,13 +9,14 @@
     <link rel="shortcut icon" type="image/png" href="<?php echo PATH_IMAGES."favicon.ico"?>"/>
     <link href="<?php echo PATH_CSS."common.css" ?>" rel="stylesheet" />
     <link href="<?php echo PATH_CSS."header.css" ?>" rel="stylesheet" />
+    <link href="<?php echo PATH_CSS."footer.css" ?>" rel="stylesheet" />
   </head>
   <body>
     <header>
       <nav>
         <a class="a-logo" href="index.php?page=home"><img src="<?php echo PATH_IMAGES."logo.svg"?>" class="logo"></a>
         <ul>
-            <li><a href="index.php?page=cgu"><?php echo TITLE_HOME ?></a></li>
+            <li><a href="index.php?page=home"><?php echo TITLE_HOME ?></a></li>
             <li><a href="index.php?page=purchase"><?php echo TITLE_PURCHASE ?></a></li>
             <li><a href="index.php?page=informations"><?php echo TITLE_INFORMATION ?></a></li>
         </ul>
