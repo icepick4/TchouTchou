@@ -17,7 +17,6 @@ require_once(PATH_CONST.'const.php');
 require_once(PATH_TEXTES.LANG.'.php');
 
 //vérification de la page demandée 
-
 if(isset($_GET['page']))
 {
   $page = htmlspecialchars($_GET['page']); // http://.../index.php?page=toto
