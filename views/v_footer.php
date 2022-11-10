@@ -16,6 +16,7 @@
 			<nav>
 			<h1>Accès Rapide</h1>
 			<a href="index.php?page=home"><?php echo TITLE_HOME ?></a>
+			<a href="index.php?page=login"><?php echo TITLE_LOGIN ?></a>
 			</nav>
 			</section>
 			<p>Tchoutchou Copyright ©2022</p>

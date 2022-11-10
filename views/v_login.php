@@ -17,7 +17,9 @@
 </form>
 <?php } ?>
 
-
+<?php if($_SESSION['logged']){
+    echo '<a href="index.php?page=unlog">se déconnecter</a>';
+}?>
 <!--  Fin de la page -->
 
 <!--  Pied de page -->
