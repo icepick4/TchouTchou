@@ -16,7 +16,7 @@ const BD_PORT = '5521';
 const BD_SID = 'xe';
 
 // Langue du site
-const LANG ='FR-fr';
+const LANG = 'FR-fr';
 
 // Paramètres du site : nom de l'auteur ou des auteurs
 const AUTEUR = 'TchouTchou'; 

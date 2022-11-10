@@ -1,5 +1,6 @@
 header
 {
+	position: fixed;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -55,24 +56,26 @@ header ul li a:hover
     color: white;
     transition-duration: 0.7s;  
 }
+
 .logo
 {
 	width: 4em;
     margin: 0;
 }
 
-.a-logo
+header nav>a
 {
-    width: fit-content;
-    height: fit-content;
+	padding: 0 2%;
+	transition-duration: 0.7s; 
+}
+
+header nav>a:hover
+{
+	background-color: white;
+	transition-duration: 0.7s; 
 }
 
 header> :nth-child(2n)
 {
-    flex-direction: row-reverse;
-    
-}
-header> :nth-child(2n)>*
-{
-    margin: 0 1%;
+    flex-direction: row-reverse; 
 }
