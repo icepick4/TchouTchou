@@ -8,7 +8,16 @@ class Connexion
   //appelée par new
   private function __construct ()
   {
-	$this->_bdd = new PDO('mysql:host='.BD_HOST.'; dbname='.BD_DBNAME.'; charset=utf8', BD_USER, BD_PWD);
+    $tns = "
+        (DESCRIPTION =
+            (ADDRESS = (PROTOCOL = TCP)(HOST = tchoutchou.ovh)(PORT = 5521))
+            (CONNECT_DATA =
+                (SID = xe )
+            )
+        )
+    ";
+  $pdo_string = 'oci:dbname='.$tns; 
+	$this->_bdd = new PDO($pdo_string,BD_USER, BD_PWD);
 	$this->_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
 
