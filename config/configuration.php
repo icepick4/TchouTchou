@@ -39,3 +39,9 @@ define('PATH_SCRIPTS', PATH_ASSETS.'js/');
 //fichiers
 define('PATH_LOGO', PATH_IMAGES.'fav.png');
 define('PATH_MENU', PATH_VIEWS.'menu.php');
+
+
+session_start () ;
+if (!isset($_SESSION['logged'])) {
+    $_SESSION['logged']=false;
+}

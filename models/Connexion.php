@@ -10,9 +10,9 @@ class Connexion
   {
     $tns = "
         (DESCRIPTION =
-            (ADDRESS = (PROTOCOL = TCP)(HOST = tchoutchou.ovh)(PORT = 5521))
+            (ADDRESS = (PROTOCOL = TCP)(HOST = ".BD_HOST.")(PORT = ".BD_PORT."))
             (CONNECT_DATA =
-                (SID = xe )
+                (SID = ".BD_SID." )
             )
         )
     ";
