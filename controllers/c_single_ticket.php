@@ -5,9 +5,5 @@ if (!$_SESSION['logged']) {
     $page = "login";
 } else {
     $user = new UserDAO(true);
-    $result = $user->getUserId($_SESSION['user_id']);
+    $ticket = $user->getSingleTicket($_SESSION['user_id'], $_GET['id']);
 }
-
-
-
-require_once(PATH_VIEWS . $page . '.php');
