@@ -1,40 +1,32 @@
-@media (prefers-color-scheme: dark) {
-    footer
-    {
-        background-color: var(--main-color);
-    }
-    footer section nav a
-    {
-        color:var(--bg-white-color);
-    }
-}
-footer
-{
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 80%;
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 80%;
+  background-color: var(--main-color);
 }
 
-footer section 
-{
-    display: flex;
-    flex-grow: 1;
-    width: 100%;
-    align-items: center;
-    
+footer section {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  align-items: center;
 }
 
-footer section nav
-{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-grow: 1;
+footer section nav {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  color: var(--txt-white-color);
 }
 
-footer section nav a
-{
-    font-size: 78%;
+footer section nav h1,
+footer section nav a,
+footer p {
+  color: var(--txt-white-color);
+}
+
+footer section nav a {
+  font-size: 78%;
 }

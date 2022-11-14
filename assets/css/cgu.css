@@ -1,32 +1,26 @@
 @media (prefers-color-scheme: dark) {
-	.cgu a
-	{
-		color :var(--bg-white-color);
-	}
-	.cgu h1
-	{
-		background-color: var(--main-color);
-	}
-	.cgu h2
-	{
-		color:var(--main-color);
-	}
+  .cgu a {
+    color: var(--bg-white-color);
+  }
+  .cgu h1 {
+    background-color: var(--main-color);
+  }
+  .cgu h2 {
+    color: var(--main-color);
+  }
 
-	.cgu h3
-	{
-		color:var(--second-color);
-	}
+  .cgu h3 {
+    color: var(--second-color);
+  }
 }
 
-.cgu
-{
-	margin: 6%;
+.cgu {
+  margin: 6%;
 }
 
-.cgu h1
-{
-	font-size: 170%;
-	width: fit-content;
-	padding: 1vh;
-	border-radius: 1em;
+.cgu h1 {
+  font-size: 170%;
+  width: fit-content;
+  padding: 1vh;
+  border-radius: 1em;
 }
