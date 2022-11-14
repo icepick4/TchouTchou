@@ -1,19 +1,38 @@
+@media (prefers-color-scheme: dark) {
+	header
+	{
+		background-color: var(--bg-header-color);
+	}
+	
+	header ul li a
+	{
+		color: var(--main-color);
+	}
+
+	header ul li:hover
+	{
+    background-color: var(--main-color);
+	}
+
+	header ul li a:hover
+	{
+    color: var(--bg-white-color);
+	}
+	header nav>a:hover
+	{
+	background-color: var(--bg-white-color);
+	}
+}
 header
 {
 	/*position: fixed;*/
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 100%;
-	
+	width: 100%;	
 }
 
-@media (prefers-color-scheme: dark) {
-	header
-	{
-		background-color: #151616;
-	}
-	}
+
 header nav
 {
 	width: 50%;
@@ -47,19 +66,17 @@ header ul li a
     justify-content: center;
 	align-items: center;
 	text-decoration: none;
-	color: var(--main-color);
+	
     transition-duration: 0.7s;
 }
 
 header ul li:hover
 {
-    background-color: var(--main-color);
     transition-duration: 0.7s;
 }
 
 header ul li a:hover
 {
-    color: white;
     transition-duration: 0.7s;  
 }
 
@@ -77,7 +94,6 @@ header nav>a
 
 header nav>a:hover
 {
-	background-color: white;
 	transition-duration: 0.7s; 
 }
 
