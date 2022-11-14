@@ -12,7 +12,7 @@ body {
 	font-family: Poppins, sans-serif;
 	background-color: var(--bg-black-color);
 	color: var(--bg-white-color);
-	margin:0px;
+	margin: 0;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh ;
