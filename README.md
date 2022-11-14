@@ -50,7 +50,7 @@ Il faut commencer par récupérer l”os”:
 
 Pour lancer le serveur:
 
-```docker run -it  -p 80:80  -p 443:443  -p 3306:3306  -p 9000:9000  --mount type=bind,source=<chemin vers le git> ,target=/www   --privileged=true  --name=lnmp 2233466866/lnmp```
+```docker run -it  -p 80:80 --mount type=bind,source=$(pwd),target=/var/www/html  --name=t1 kmcgill88/php-oracle    ```
 
 <chemin vers le git> exemple : `/D/projet_internet/SAE-SNCF/sae-sncf`
 
