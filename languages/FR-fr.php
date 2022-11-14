@@ -13,6 +13,7 @@ define('TITLE_SEARCH','Rechercher');
 define('TITLE_TICKET','Vos billets');
 define('TITLE_LOGIN','Se connecter');
 define('TITLE_INFORMATION','Informations');
+define('TITLE_CONTACT','Nous Contacter');
 define('STATION_INFORMATION','Gares & Quais');
 define('TERMS_OF_USE','Condtions Générales');
 define('PRIVACY_POLICY','Politique de Confidentialité');
