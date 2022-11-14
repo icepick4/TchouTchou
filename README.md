@@ -50,7 +50,14 @@ Il faut commencer par récupérer l”os”:
 
 Pour lancer le serveur:
 
-```docker run -it  -p 80:80 --mount type=bind,source=$(pwd),target=/var/www/html  --name=t1 kmcgill88/php-oracle    ```
+```docker run -it  -p 80:80 --mount type=bind,source=$(pwd),target=/var/www/html  --name=web kmcgill88/php-oracle    ```
+pour construire et lancer le serveur la permière fois
+
+``` docker stop web```
+pour l'arreter
+
+``` docker start web```
+pour le demarrer
 
 <chemin vers le git> exemple : `/D/projet_internet/SAE-SNCF/sae-sncf`
 
