@@ -11,7 +11,7 @@
   <link href="<?php echo PATH_CSS . "common.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . "header.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . "footer.css" ?>" rel="stylesheet" />
-  <link href="<?php echo PATH_CSS . "single_ticket.css" ?>" rel="stylesheet" />
+  <link href="<?php echo PATH_CSS . $page .".css" ?>" rel="stylesheet"/>
 </head>
 
 <body>
