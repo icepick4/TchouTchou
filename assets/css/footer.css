@@ -1,6 +1,16 @@
+@media (prefers-color-scheme: dark) {
+    footer
+    {
+        background-color: var(--main-color);
+    }
+    footer section nav a
+    {
+        color:var(--bg-white-color);
+    }
+}
 footer
 {
-    background-color: #FF9B05;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,6 +36,5 @@ footer section nav
 
 footer section nav a
 {
-    color:white;
     font-size: 78%;
 }
