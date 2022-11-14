@@ -7,6 +7,7 @@ $conn = oci_connect('Tchou', 'Tchoutchou69', $connect);
 if (!$conn) {
     $e = oci_error();
     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+    echo "failed";
 }
 
 $stid = oci_parse($conn, 'SELECT * FROM Travel');
