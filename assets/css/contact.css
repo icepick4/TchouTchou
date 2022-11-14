@@ -1,23 +1,22 @@
-body {
-  background-color: #171712;
-}
 h1 {
   color: white;
   font-size: 2rem;
+  margin-left: 10rem;
 }
 form {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 input,
 textarea {
-  border: 0.15rem solid #ff9b05;
+  border: 0.15rem solid var(--main-color);
   border-radius: 5px;
-  background-color: #171712;
+  background-color: var(--bg-black-color);
   margin-bottom: 2%;
-  color: white;
+  color: var(--bg-white-color);
   padding: 0.5rem;
   font-size: 0.8rem;
   resize: none;
@@ -35,9 +34,29 @@ textarea:focus {
   font-family: Poppins, sans-serif;
 }
 button {
-  background-color: orange;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--bg-white-color);
   padding: 1rem;
   width: 50%;
   border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  height: 10px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: var(--bg-white-color);
+  -webkit-border-radius: 16px;
+}
+::-webkit-scrollbar-thumb:vertical {
+  height: 10px;
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  -webkit-border-radius: 16px;
 }
