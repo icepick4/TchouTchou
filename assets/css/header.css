@@ -1,12 +1,11 @@
 header
 {
-	position: fixed;
+	/*position: fixed;*/
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
 	background-color: #151616;
-	height: 4em;
 }
 
 header nav
