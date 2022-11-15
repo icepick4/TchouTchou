@@ -1,22 +1,16 @@
 <?php
-require_once(PATH_LIB . 'connexionBDD.php');
+require_once(PATH_MODELS . 'userDAO.php');
 
 if (isset($_POST["mail"]) && isset($_POST["password"])) {
-
     $mail = $_POST["mail"];
+    $user = new userDAO();
+    $result = $user->getUser($mail);
 
-    $request = 'SELECT * FROM USER_DATA where USER_MAIL = :mail';
-    $stid = oci_parse($conn, $request);
-    oci_bind_by_name($stid, ':mail', $mail);
-    oci_execute($stid);
-    $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
-    // print_r($row);
-
-    if (!empty($row)) {
-        if (password_verify($_POST["password"], $row['USER_PASSWORD'])) {
+    if (!empty($result)) {
+        if (password_verify($_POST["password"], $result['USER_PASSWORD'])) {
             //$TODO : faire un notif quand connexion réussie
             $_SESSION['logged'] = true;
-            $_SESSION['user_id'] = $row['USER_ID'];
+            $_SESSION['user_id'] = $result['USER_ID'];
         } else {
             $alert = choixAlert('unknown_password');
         }
