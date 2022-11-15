@@ -1,15 +1,90 @@
-.link-profile {
-    margin-left: 3%;
+.links a {
+    /* margin-left: 3%; */
+    font-size: 2em;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
     color: #000;
-    font-size: 14px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.links a::before {
+    content: '';
+    background-color: var(--main-color);
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 5px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+}
+
+.links a:hover::before {
+    bottom: 0;
+    height: 100%;
+}
+
+.links a:hover {
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+#title {
+    font-size: 2em;
     font-weight: 600;
     text-decoration: none;
     display: block;
     padding: 10px 0;
     border-bottom: 1px solid #e5e5e5;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 2%;
+
+
+}
+
+.infos {
+    display: flex;
+    justify-content: center;
+}
+
+.infos table {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 2%;
+    /*space between columns*/
+    border-spacing: 30px 30px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    background-color: var(--main-color);
+}
+
+/*border between rows*/
+.infos table td:nth-child(odd) {
+    border-bottom: 2px solid #e5e5e5;
+    color: #fff;
+
 }
 
 .links {
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.content {
+    display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    margin-top: 6%;
 }

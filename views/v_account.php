@@ -13,20 +13,36 @@
 <?php
 
 if ($_SESSION['logged']) {
-    echo 'Bonjour ' . $result['USER_FIRSTNAME'];
 ?>
+    <h1 id="title">Bonjour <?php echo $result['USER_FIRSTNAME'] ?></h1>
     <!-- no style on this, getting data for the moment -->
-    <div class="links">
-        <a class="link-profile" href="index.php?page=ticket_list">My tickets</a>
-        <a class="link-profile" href="index.php?page=shopping">Get tickets</a>
-        <a class="link-profile" href="index.php?page=logout">Logout</a>
+    <div class="content">
+        <div class="links">
+            <a class="link-profile" href="index.php?page=ticket_list">My tickets</a>
+            <a class="link-profile" href="index.php?page=shopping">Get tickets</a>
+            <a class="link-profile" href="index.php?page=logout">Logout</a>
+        </div>
+        <div class="infos">
+            <table>
+                <tr>
+                    <td>First name</td>
+                    <td><?php echo $result['USER_FIRSTNAME'] ?></td>
+                </tr>
+                <tr>
+                    <td>Last name</td>
+                    <td><?php echo $result['USER_LASTNAME'] ?></td>
+                </tr>
+                <tr>
+                    <td>Phone number</td>
+                    <td><?php echo $result['USER_PHONE'] ?></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><?php echo $result['USER_MAIL'] ?></td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <p>Last name : <?php echo $result['USER_LASTNAME'] ?></p>
-    <p>First name : <?php echo $result['USER_FIRSTNAME'] ?></p>
-    <p>ID : <?php echo $result['USER_ID'] ?></p>
-    <p>Category : <?php echo $result['USER_CATEGORIE_ID'] ?></p>
-    <p>Phone : <?php echo $result['USER_PHONE'] ?></p>
-    <p>Mail : <?php echo $result['USER_MAIL'] ?></p>
 <?php
 
 }
