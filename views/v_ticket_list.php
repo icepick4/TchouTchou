@@ -9,11 +9,18 @@
 if ($_SESSION['logged']) {
     echo 'Here are your tickets' . $_SESSION['user_id'];
     //no style on this, getting data for the moment
-    while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
-        foreach ($result as $ticket) {
-            echo $ticket['DEPARTURE_STATION'];
-            echo $ticket['ARRIVAL_STATION'];
-        }
+    for ($i = 0; $i < count($tickets); $i++) {
+?>
+        <div class="tickets">
+            <div class="ticket">
+                <p>From</p>
+                <p> <?php echo $tickets[$i]['START_STATION_ID'] ?> </p>
+                <p>To</p>
+                <p> <?php echo $tickets[$i]['END_STATION_ID'] ?> </p>
+            </div>
+
+        </div>
+<?php
     }
 }
 ?>

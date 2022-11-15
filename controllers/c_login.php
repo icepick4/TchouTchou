@@ -1,10 +1,10 @@
 <?php
-require_once(PATH_MODELS . 'userDAO.php');
+require_once(PATH_MODELS . 'UserDAO.php');
 
 if (isset($_POST["mail"]) && isset($_POST["password"])) {
     $mail = $_POST["mail"];
     $user = new userDAO();
-    $result = $user->getUser($mail);
+    $result = $user->getUserByMail($mail);
 
     if (!empty($result)) {
         if (password_verify($_POST["password"], $result['USER_PASSWORD'])) {
