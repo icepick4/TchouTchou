@@ -4,6 +4,9 @@
     height: 50%;
     color: white;
     margin: 0 auto;
+    padding: 20px;
+    border: 4px solid var(--second-color);
+    border-radius: var(--radius);
 }
 
 .stations {
@@ -34,7 +37,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 30px;
 }
 
 .link-ticket-list {
@@ -49,4 +53,31 @@
     margin: 20px;
     display: flex;
     justify-content: center;
+}
+
+#title-trip {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.colored {
+    color: var(--main-color);
+}
+
+#separator {
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--main-color);
+    border-radius: var(--radius);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.infos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

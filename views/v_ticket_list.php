@@ -9,7 +9,7 @@
 if ($_SESSION['logged']) {
 ?>
     <div id="title-ticket-list">
-        <h1>Here are your ticket</h1>
+        <h1>Here are your tickets</h1>
     </div>
     <?php
     //no style on this, getting data for the moment
@@ -24,7 +24,7 @@ if ($_SESSION['logged']) {
                 <p> The <?php //get hour and date of the date
                         $date = new DateTime($tickets[$i]['DATE']);
                         echo $date->format('d/m/Y H:i:s'); ?> </p>
-                <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">Details</a>
+                <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">More...</a>
             </div>
 
         </div>

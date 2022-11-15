@@ -40,9 +40,16 @@ class TrainDAO extends DAO
         $travel = $this->getTravelInfos($travel_id);
         $ticket['START_STATION_ID'] = $this->getStationInfos($ticket['START_STATION_ID'])['STATION_NAME'];
         $ticket['END_STATION_ID'] = $this->getStationInfos($ticket['END_STATION_ID'])['STATION_NAME'];
-        $ticket['DATE'] = $travel['TRAVEL_DATETIME'];
-        $ticket['START_TIME'] = $this->getTravelInfos($travel_id)['START_TIME'];
-        $ticket['END_TIME'] = $this->getTravelInfos($travel_id)['END_DATETIME'];
+        $date = $travel['TRAVEL_DATETIME'];
+        $date = new DateTime($date);
+        $ticket['DATE'] = $date->format('d/m/Y');
+        $startTime = $this->getTravelInfos($travel_id)['START_TIME'];
+        //get only hours and minutes
+        $ticket['START_TIME'] = substr($startTime, 10, 15);
+        $endTime = $this->getTravelInfos($travel_id)['END_DATETIME'];
+        //get only hours and minutes
+        $ticket['END_TIME'] = substr($endTime, 10, 15);
+
         return $ticket;
     }
 }

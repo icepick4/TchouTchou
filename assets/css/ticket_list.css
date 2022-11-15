@@ -9,6 +9,7 @@
 .ticket {
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
     margin: 1%;
     background-color: var(--main-color);
 }
@@ -18,6 +19,11 @@
     font-weight: bold;
     color: white;
     margin: 20px;
+}
+
+.ticket a {
+    text-decoration: none;
+    color: #000;
 }
 
 #title-ticket-list {
