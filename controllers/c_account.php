@@ -5,7 +5,7 @@ if (!$_SESSION['logged']) {
     header("Location: index.php?page=login");
     die();
 } else {
-    
+
     $request = 'SELECT * FROM USER_DATA where USER_ID = :id';
     $stid = oci_parse($conn, $request);
 
@@ -13,8 +13,7 @@ if (!$_SESSION['logged']) {
 
     oci_execute($stid);
 
-    $result = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS);
-
+    $result = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
 }
 
 
