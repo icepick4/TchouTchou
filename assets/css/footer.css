@@ -15,6 +15,7 @@ footer section {
 
 footer section nav {
   display: flex;
+  width: 33.3%;
   align-items: center;
   flex-direction: column;
   flex-grow: 1;
