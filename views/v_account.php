@@ -16,9 +16,11 @@ if ($_SESSION['logged']) {
     echo 'Bonjour ' . $result['USER_FIRSTNAME'];
 ?>
     <!-- no style on this, getting data for the moment -->
-    <a href="index.php?page=logout">Logout</a>
-    <a href="index.php?page=ticket_list">My tickets</a>
-    <a href="index.php?page=shopping">Get tickets</a>
+    <div class="links">
+        <a class="link-profile" href="index.php?page=ticket_list">My tickets</a>
+        <a class="link-profile" href="index.php?page=shopping">Get tickets</a>
+        <a class="link-profile" href="index.php?page=logout">Logout</a>
+    </div>
     <p>Last name : <?php echo $result['USER_LASTNAME'] ?></p>
     <p>First name : <?php echo $result['USER_FIRSTNAME'] ?></p>
     <p>ID : <?php echo $result['USER_ID'] ?></p>

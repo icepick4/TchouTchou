@@ -1,0 +1,15 @@
+.link-profile {
+    margin-left: 3%;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+}
