@@ -14,7 +14,7 @@
 
 if ($_SESSION['logged']) {
 ?>
-    <h1 id="title">Bonjour <?php echo $result['USER_FIRSTNAME'] ?></h1>
+    <h1 id="title">Hello <?php echo $result['USER_FIRSTNAME'] ?></h1>
     <!-- no style on this, getting data for the moment -->
     <div class="content">
         <div class="links">

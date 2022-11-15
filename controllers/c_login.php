@@ -3,7 +3,7 @@ require_once(PATH_MODELS . 'UserDAO.php');
 
 if (isset($_POST["mail"]) && isset($_POST["password"])) {
     $mail = $_POST["mail"];
-    $user = new userDAO();
+    $user = new UserDAO();
     $result = $user->getUserByMail($mail);
 
     if (!empty($result)) {

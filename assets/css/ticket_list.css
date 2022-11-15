@@ -19,3 +19,17 @@
     color: white;
     margin: 20px;
 }
+
+#title-ticket-list {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.link-ticket-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
