@@ -46,7 +46,7 @@ ce qui permet de dev en local sans passer par le serveur de l’iut.
  
 Il faut commencer par récupérer l”os”:
 
-```docker pull 2233466866/lnmp```
+```docker pull kmcgill88/php-oracle```
 
 Pour lancer le serveur:
 
