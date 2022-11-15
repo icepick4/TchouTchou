@@ -46,9 +46,11 @@ ce qui permet de dev en local sans passer par le serveur de l’iut.
  
 Il faut commencer par récupérer l”os”:
 
-```docker pull 2233466866/lnmp```
+```docker pull kmcgill88/php-oracle```
 
 Pour lancer le serveur:
+
+déplacez vous dans le dossier que vous voulez faire héberger puis ,<br>
 
 ```docker run -it  -p 80:80 --mount type=bind,source=$(pwd),target=/var/www/html  --name=web kmcgill88/php-oracle    ```
 pour construire et lancer le serveur la permière fois
@@ -59,11 +61,7 @@ pour l'arreter
 ``` docker start web```
 pour le demarrer
 
-<chemin vers le git> exemple : `/D/projet_internet/SAE-SNCF/sae-sncf`
 
-Finalement pour arreter le serveur:
-
-```docker stop lnmp```
 
 # ORACLE
  voici les informations de connections vers notre serveur Oracle
