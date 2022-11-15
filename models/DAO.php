@@ -6,20 +6,20 @@ abstract class DAO{
     // $request = 'SELECT * FROM USER_DATA where USER_ID = :id';
     // $args = array(':dname' => 'IT Support', ':loc' => 1700);
     
+    private $conn;
 
-    public function connection(){
+    function __construct() {
         $connect = '(DESCRIPTION=(ADDRESS= (PROTOCOL=TCP)(HOST=' . BD_HOST . ')(PORT=' . BD_PORT . ' ))(CONNECT_DATA = (SID =' . BD_SID . ')))';
-        $conn = oci_connect(BD_USER, BD_PWD, $connect);
-        if (!$conn) {
+        $this->conn = oci_pconnect(BD_USER, BD_PWD, $connect);
+        if (!$this->conn) {
             $e = oci_error();
             trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
             echo "failed";
-        }
-        return $conn;
+        };
     }
+
     public function queryRow($request, $args = null){
-        $conn = $this->connection();
-        $stid = oci_parse($conn, $request);
+        $stid = oci_parse($this->conn, $request);
         if ($args == null) {
         }else{
             foreach ($args as $key => $val) {
@@ -32,8 +32,7 @@ abstract class DAO{
     }
 
     public function queryAll($request, $args = null){
-        $conn = $this->connection();
-        $stid = oci_parse($conn, $request);
+        $stid = oci_parse($this->conn, $request);
         if ($args == null) {
            
         }else{
