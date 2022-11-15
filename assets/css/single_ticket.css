@@ -1,11 +1,9 @@
 .content {
     background-color: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40%;
-    height: 30%;
+    width: 50%;
+    height: 50%;
+    color: white;
+    margin: 0 auto;
 }
 
 .stations {
@@ -37,4 +35,18 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.link-ticket-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+#title-ticket-list {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
 }

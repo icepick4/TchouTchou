@@ -16,11 +16,17 @@ class UserDAO extends DAO
         $args = array(':id' => $id,);
         return $this->queryRow($sql, $args);
     }
-    public function getTickets($id)
+    public function getTicketsById($id)
     {
         $sql = 'SELECT * FROM TICKET where USER_ID = :id';
         $args = array(':id' => $id,);
         return $this->queryAll($sql, $args);
+    }
+    public function getTicketById($id, $user_id)
+    {
+        $sql = 'SELECT * FROM TICKET where TRAVEL_ID = :id AND USER_ID = :user_id';
+        $args = array(':id' => $id, ':user_id' => $user_id);
+        return $this->queryRow($sql, $args);
     }
     public function getAllUser()
     {
