@@ -11,6 +11,9 @@ if (isset($_POST["mail"]) && isset($_POST["password"])) {
             //$TODO : faire un notif quand connexion réussie
             $_SESSION['logged'] = true;
             $_SESSION['user_id'] = $result['USER_ID'];
+            $_SESSION['first_name'] = $result['USER_FIRSTNAME'];
+            header("Location: index.php?page=home");
+            die();
         } else {
             $alert = choixAlert('unknown_password');
         }

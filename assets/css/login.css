@@ -1,0 +1,58 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+form input {
+    width: 20%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 0.15rem solid #696969;
+    border-radius: var(--radius);
+    font-size: 1.2em;
+    color: #696969;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+}
+
+form input[type="submit"] {
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+}
+
+#title {
+    font-size: 5em;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10%;
+    color: var(--main-color);
+}
+
+.links {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.links a {
+    margin-right: 3%;
+}
+
+
+* {
+    box-sizing: border-box
+}

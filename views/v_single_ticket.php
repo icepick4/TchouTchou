@@ -38,7 +38,7 @@ if ($_SESSION['logged']) {
         </div>
         <div id="separator"></div>
         <div class="infos">
-            <p>Duration : </p>
+            <p>Duration : <?php echo $ticket['DURATION'] ?> minutes</p>
             <p>Train : <?php echo $ticket['TRAIN_ID'] ?></p>
             <p>Travel : <?php echo $ticket['TRAVEL_ID'] ?></p>
         </div>

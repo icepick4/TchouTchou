@@ -10,16 +10,16 @@
 
 
 <?php if (!$_SESSION['logged']) { ?>
+    <h1 id="title">Connexion</h1>
     <form method="post" action="index.php?page=login">
-        <label>mail :<input type="mail" name="mail" id="mail"></input></label>
-        <label>mot de passe :<input type="password" name="password" id="password"></input></label>
-        <button type="submit">envoyer</button>
+        <input type="mail" name="mail" id="mail" placeholder="Email"></input>
+        <input type="password" name="password" id="password" placeholder="Password"></input>
+        <input type="submit" value="Login"></input>
     </form>
+    <div class="links">
+        <a href="index.php?page=register">Register</a>
+    </div>
 <?php } ?>
-
-<?php if ($_SESSION['logged']) {
-    echo '<a href="index.php?page=logout">se déconnecter</a>';
-} ?>
 <!--  Fin de la page -->
 
 <!--  Pied de page -->
