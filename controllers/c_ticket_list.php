@@ -1,15 +1,15 @@
 <?php
-require_once(PATH_LIB . 'connexionBDD.php');
+require_once(PATH_MODELS . 'UserDAO.php');
+require_once(PATH_MODELS . 'TrainDAO.php');
 
 
 if (!$_SESSION['logged']) {
     header("Location: index.php?page=login");
     die();
 } else {
-    $request = 'SELECT * FROM TICKET where USER_ID = :id';
-    $stid = oci_parse($conn, $request);
-    oci_bind_by_name($stid, ':id', $_SESSION['user_id']);
-    oci_execute($stid);
+    $user = new UserDAO(true);
+    $train = new TrainDAO(true);
+    $tickets = $user->getTicketsById($_SESSION['user_id']);
 }
 
 require_once(PATH_VIEWS . $page . '.php');

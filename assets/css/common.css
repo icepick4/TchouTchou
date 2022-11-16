@@ -6,6 +6,7 @@
   --bg-black-color: #1e1e1e;
   --bg-black-second-color: #4f3510;
   --bg-header-color: #151616;
+  --border-input: #343434;
   --radius: 8px;
   --margin: 4px;
   --hover: 0.5s;
@@ -16,12 +17,15 @@
     background-color: var(--bg-black-color);
     color: var(--bg-white-color);
   }
+
   .cgu a {
     color: var(--bg-white-color);
   }
+
   .cgu h1 {
     background-color: var(--main-color);
   }
+
   .cgu h2 {
     color: var(--main-color);
   }
@@ -48,6 +52,43 @@ body {
   align-items: center;
   flex-direction: column;
   text-align: center;
+}
+
+.links a {
+  /* margin-left: 3%; */
+  font-size: 2em;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 0;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  color: #000;
+  width: 100%;
+  text-align: center;
+}
+
+
+.links a::before {
+  content: '';
+  background-color: var(--main-color);
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 5px;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+.links a:hover::before {
+  bottom: 0;
+  height: 100%;
+}
+
+.links a:hover {
+  color: #fff;
+  transition: all .3s ease-in-out;
 }
 
 .alert strong {

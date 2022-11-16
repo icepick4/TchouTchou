@@ -1,44 +1,67 @@
 h1 {
-  color: white;
   font-size: 2rem;
-  margin-left: 10rem;
+  grid-column: 2;
+  grid-row: 1;
+  margin-left: 15rem;
 }
+
+div {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+}
+
 form {
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  grid-column: 2;
+  grid-row: 2;
+  min-width: max-content;
 }
 
 input,
 textarea {
-  border: 0.15rem solid var(--main-color);
+  border: 0.15rem solid #696969;
   border-radius: 5px;
-  background-color: var(--bg-black-color);
   margin-bottom: 2%;
-  color: var(--bg-white-color);
   padding: 0.5rem;
   font-size: 0.8rem;
   resize: none;
   width: 50%;
 }
+
 input:focus,
 textarea:focus {
-  outline: #dfdfdf;
+  outline: none;
+  border-color: var(--main-color);
 }
+
 ::placeholder {
-  color: #dfdfdf;
   font-size: 0.8rem;
   font-style: italic;
   vertical-align: center;
   font-family: Poppins, sans-serif;
 }
 button {
-  background-color: var(--main-color);
+  background: linear-gradient(270deg, #ffc805 0%, rgba(255, 155, 5, 0) 50%),
+    #ff9b05;
   color: var(--bg-white-color);
+  font-size: 2rem;
   padding: 1rem;
-  width: 50%;
-  border-radius: 5px;
+  width: 25%;
+  height: 4rem;
+  border-radius: 30px;
+  border-style: none;
+  align-items: left;
+  margin-bottom: 1rem;
+  margin-left: 15rem;
+  grid-column: 2;
+  grid-row: 3;
+}
+button:hover {
+  background: linear-gradient(to right, var(--main-color), var(--second-color));
 }
 
 ::-webkit-scrollbar {
@@ -59,4 +82,19 @@ button {
   background-color: var(--main-color);
   border: 1px solid var(--main-color);
   -webkit-border-radius: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  h1 {
+    color: white;
+  }
+  ::placeholder {
+    color: #dfdfdf;
+  }
+
+  input,
+  textarea {
+    background-color: var(--bg-black-color);
+    color: var(--bg-white-color);
+  }
 }

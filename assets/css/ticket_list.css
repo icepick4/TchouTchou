@@ -1,0 +1,41 @@
+.tickets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ticket {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 1%;
+    background-color: var(--main-color);
+}
+
+.ticket p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    margin: 20px;
+}
+
+.ticket a {
+    text-decoration: none;
+    color: #000;
+}
+
+#title-ticket-list {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.link-ticket-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
