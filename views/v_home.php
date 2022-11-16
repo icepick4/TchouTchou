@@ -14,8 +14,8 @@ if (!$_SESSION['logged']) {
 ?>
     <div class="content">
         <div class="links">
-            <a href="index.php?page=login">Login</a>
-            <a href="index.php?page=register">Register</a>
+            <a href="index.php?page=login"><?= LOGIN ?></a>
+            <a href="index.php?page=register"><?= REGISTER ?></a>
         </div>
     </div>
 <?php

@@ -115,4 +115,7 @@ header > :nth-child(2n) {
   .logo:hover * {
     stroke: var(--txt-white-color);
   }
+  :focus {
+    outline-color: var(--main-color);
+  }
 }

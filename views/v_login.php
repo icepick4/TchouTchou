@@ -11,20 +11,20 @@
 
 
 <?php if (!$_SESSION['logged']) { ?>
-    <h1 id="title">Connexion</h1>
+    <h1 id="title"><?= LOGIN ?></h1>
     <form method="post" action="index.php?page=login">
-        <label id="info">Invalid Email</label>
-        <input type="mail" name="mail" id="email" placeholder="Email"></input>
-        <input type="password" name="password" id="password" placeholder="Password"></input>
+        <label id="info"><?= ERROR_MAIL ?></label>
+        <input type="mail" name="mail" id="email" placeholder="<?= INPUT_EMAIL ?>"></input>
+        <input type="password" name="password" id="password" placeholder="<?= INPUT_PASSWORD ?>"></input>
         <input type="submit" value="Login"></input>
     </form>
     <div class="links">
-        <a href="index.php?page=register">Register</a>
+        <a href="index.php?page=register"><?= REGISTER ?></a>
     </div>
 <?php } else {
 ?>
     <div class="links">
-        <a href="index.php?page=logout">Logout</a>
+        <a href="index.php?page=logout"><?= LOGOUT ?></a>
     </div>
 <?php
 }
