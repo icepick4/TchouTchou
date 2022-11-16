@@ -46,14 +46,16 @@ if ($_SESSION['logged']) {
         </div>
     </div>
 
-    <div class="link-ticket-list">
-        <div class="links">
-            <a href="index.php?page=ticket_list">Back to your tickets</a>
+    <div class="links-content">
+        <div class="link-ticket-list">
+            <div class="links">
+                <a href="index.php?page=ticket_list">Back to your tickets</a>
+            </div>
         </div>
-    </div>
-    <div class="link-ticket-list">
-        <div class="links">
-            <a href="index.php?page=shopping">Get tickets</a>
+        <div class="link-ticket-list">
+            <div class="links">
+                <a href="index.php?page=shopping">Get tickets</a>
+            </div>
         </div>
     </div>
 <?php

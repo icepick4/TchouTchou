@@ -18,12 +18,12 @@ if ($_SESSION['logged']) {
         <div class="tickets">
             <div class="ticket">
                 <p>From</p>
-                <p> <?php echo $tickets[$i]['START_STATION_ID'] ?> </p>
+                <p> <?php echo $tickets[$i]['START_STATION_NAME'] ?> </p>
                 <p>To</p>
-                <p> <?php echo $tickets[$i]['END_STATION_ID'] ?> </p>
+                <p> <?php echo $tickets[$i]['END_STATION_NAME'] ?> </p>
                 <p> The <?php //get hour and date of the date
-                        $date = new DateTime($tickets[$i]['DATE']);
-                        echo $date->format('d/m/Y H:i:s'); ?> </p>
+                        $date = new DateTime($tickets[$i]['TRAVEL_DATETIME']);
+                        echo $date->format('d/m/Y'); ?> </p>
                 <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">More...</a>
             </div>
 

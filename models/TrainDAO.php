@@ -43,10 +43,10 @@ class TrainDAO extends DAO
         $date = $travel['TRAVEL_DATETIME'];
         $date = new DateTime($date);
         $ticket['DATE'] = $date->format('d/m/Y');
-        $startTime = $this->getTravelInfos($travel_id)['START_TIME'];
+        $startTime = $travel['START_TIME'];
         //get only hours and minutes
         $ticket['START_TIME'] = substr($startTime, 10, 15);
-        $endTime = $this->getTravelInfos($travel_id)['END_DATETIME'];
+        $endTime = $travel['END_DATETIME'];
         //get only hours and minutes
         $ticket['END_TIME'] = substr($endTime, 10, 15);
 

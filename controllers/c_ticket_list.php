@@ -10,7 +10,6 @@ if (!$_SESSION['logged']) {
     $user = new UserDAO(true);
     $train = new TrainDAO(true);
     $tickets = $user->getTicketsById($_SESSION['user_id']);
-    $tickets = $train->getAllTickets($tickets);
 }
 
 require_once(PATH_VIEWS . $page . '.php');

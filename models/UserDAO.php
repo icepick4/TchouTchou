@@ -18,7 +18,7 @@ class UserDAO extends DAO
     }
     public function getTicketsById($id)
     {
-        $sql = 'SELECT * FROM TICKET where USER_ID = :id';
+        $sql = 'SELECT (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.START_STATION_ID) START_STATION_NAME, (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.END_STATION_ID) END_STATION_NAME, TRAVEL_DATETIME, START_TIME, END_DATETIME, T.TRAVEL_ID FROM TICKET T, TRAVEL TR WHERE TR.TRAVEL_ID = T.TRAVEL_ID AND USER_ID = :id';
         $args = array(':id' => $id,);
         return $this->queryAll($sql, $args);
     }

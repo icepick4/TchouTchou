@@ -44,7 +44,11 @@
 .link-ticket-list {
     display: flex;
     justify-content: center;
-    margin-top: 3%;
+
+}
+
+.links-content .link-ticket-list {
+    margin-top: 25px;
 }
 
 #title-ticket-list {
