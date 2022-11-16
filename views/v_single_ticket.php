@@ -13,9 +13,9 @@ if ($_SESSION['logged']) {
     </div>
     <div class="content">
         <div class="header-ticket">
-            <h2 id="title-trip">Trip to <p class="colored"><?php echo $ticket['END_STATION_ID'] ?></p>
+            <h2 id="title-trip">Trip to <p class="colored"><?php echo $ticket['END_STATION_NAME'] ?></p>
             </h2>
-            <p> <?php echo $ticket['DATE'] ?> </p>
+            <p> <?php echo $date ?> </p>
         </div>
         <div class="stations">
             <div class="station">
@@ -23,7 +23,7 @@ if ($_SESSION['logged']) {
                     <p class="colored"><?php echo $ticket['START_TIME'] ?></p>
                 </div>
                 <div class="station-name">
-                    <h3><?php echo $ticket['START_STATION_ID'] ?></h3>
+                    <h3><?php echo $ticket['START_STATION_NAME'] ?></h3>
                 </div>
 
             </div>
@@ -32,17 +32,15 @@ if ($_SESSION['logged']) {
                     <p class="colored"><?php echo $ticket['END_TIME'] ?></p>
                 </div>
                 <div class="station-name">
-                    <h3><?php echo $ticket['END_STATION_ID'] ?></h3>
+                    <h3><?php echo $ticket['END_STATION_NAME'] ?></h3>
                 </div>
             </div>
         </div>
         <div id="separator"></div>
         <div class="infos">
-            <p>Duration : <?php //get duration of the trip
-                            $start = new DateTime($ticket['START_TIME']);
-                            $end = new DateTime($ticket['END_TIME']);
-                            $interval = $start->diff($end);
-                            echo $interval->format('%Hh %Im'); ?> </p>
+            <p>Duration : </p>
+            <p>Train : <?php echo $ticket['TRAIN_ID'] ?></p>
+            <p>Travel : <?php echo $ticket['TRAVEL_ID'] ?></p>
         </div>
     </div>
 
