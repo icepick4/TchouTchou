@@ -18,6 +18,14 @@ define('STATION_INFORMATION','Gares & Quais');
 define('TERMS_OF_USE','Condtions Générales');
 define('PRIVACY_POLICY','Politique de Confidentialité');
 
+//contact
+define('INPUT_NAME', 'Nom');
+define('INPUT_FIRST_NAME','Prénom');
+define('INPUT_PHONE','Numéro de téléphone');
+define('INPUT_EMAIL','Email');
+define('INPUT_SUBJECT','Sujet');
+define('INPUT_DESC','Description');
+define('INPUT_SUBMIT','Envoyer');
 
 // erreur
 define('TEXTE_PAGE_404','Oops, la page demandée n\'existe pas !');

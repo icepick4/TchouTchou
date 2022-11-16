@@ -1,24 +1,23 @@
-h1 {
-  font-size: 2rem;
-  grid-column: 2;
-  grid-row: 1;
-  margin-left: 15rem;
-}
-
-div {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 5fr 1fr;
-}
-
-form {
-  align-items: center;
+#page {
   display: flex;
   flex-direction: column;
+  margin-bottom: 3%;
+}
+
+h1 {
+  align-self: center;
+  font-size: 2rem;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 1rem;
-  grid-column: 2;
-  grid-row: 2;
-  min-width: max-content;
+}
+
+.links {
+  align-self: center;
 }
 
 input,
@@ -44,26 +43,8 @@ textarea:focus {
   vertical-align: center;
   font-family: Poppins, sans-serif;
 }
-button {
-  background: linear-gradient(270deg, #ffc805 0%, rgba(255, 155, 5, 0) 50%),
-    #ff9b05;
-  color: var(--bg-white-color);
-  font-size: 2rem;
-  padding: 1rem;
-  width: 25%;
-  height: 4rem;
-  border-radius: 30px;
-  border-style: none;
-  align-items: left;
-  margin-bottom: 1rem;
-  margin-left: 15rem;
-  grid-column: 2;
-  grid-row: 3;
-}
-button:hover {
-  background: linear-gradient(to right, var(--main-color), var(--second-color));
-}
 
+/*Scrollbar*/
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -84,6 +65,7 @@ button:hover {
   -webkit-border-radius: 16px;
 }
 
+/*Dark Mode*/
 @media (prefers-color-scheme: dark) {
   h1 {
     color: white;
