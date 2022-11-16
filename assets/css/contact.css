@@ -1,23 +1,27 @@
+#main {
+  display: flex;
+  justify-content: center;
+}
+
 #page {
   display: flex;
   flex-direction: column;
   margin-bottom: 3%;
+  width: max(800px, 60vw);
 }
 
 h1 {
-  align-self: center;
+  align-self: left;
   font-size: 2rem;
 }
 
 #form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .links {
-  align-self: center;
+  align-self: left;
 }
 
 input,
@@ -28,7 +32,7 @@ textarea {
   padding: 0.5rem;
   font-size: 0.8rem;
   resize: none;
-  width: 50%;
+  width: 100%;
 }
 
 input:focus,
