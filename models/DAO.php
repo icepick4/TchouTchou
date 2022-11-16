@@ -43,7 +43,6 @@ abstract class DAO
                 oci_bind_by_name($stid, $key, $args[$key]);
             }
         }
-        echo $stid;
         oci_execute($stid);
         $i = 0;
         $result = array();
