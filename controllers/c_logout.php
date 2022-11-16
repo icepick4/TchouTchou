@@ -2,5 +2,5 @@
 
 $_SESSION['logged'] = false;
 
-header("Location: index.php?page=login");
+header("Location: index.php?page=home");
 die();

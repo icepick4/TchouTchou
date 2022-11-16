@@ -3,6 +3,7 @@
 ?>
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
+<script src=<?= PATH_JS . 'login.js' ?> type="module" defer></script>
 <!--  Zone message d'alerte -->
 <?php require_once(PATH_VIEWS . 'alert.php'); ?>
 
@@ -10,16 +11,24 @@
 
 
 <?php if (!$_SESSION['logged']) { ?>
+    <h1 id="title">Connexion</h1>
     <form method="post" action="index.php?page=login">
-        <label>mail :<input type="mail" name="mail" id="mail"></input></label>
-        <label>mot de passe :<input type="password" name="password" id="password"></input></label>
-        <button type="submit">envoyer</button>
+        <label id="info">Invalid Email</label>
+        <input type="mail" name="mail" id="email" placeholder="Email"></input>
+        <input type="password" name="password" id="password" placeholder="Password"></input>
+        <input type="submit" value="Login"></input>
     </form>
-<?php } ?>
-
-<?php if ($_SESSION['logged']) {
-    echo '<a href="index.php?page=logout">se déconnecter</a>';
-} ?>
+    <div class="links">
+        <a href="index.php?page=register">Register</a>
+    </div>
+<?php } else {
+?>
+    <div class="links">
+        <a href="index.php?page=logout">Logout</a>
+    </div>
+<?php
+}
+?>
 <!--  Fin de la page -->
 
 <!--  Pied de page -->
