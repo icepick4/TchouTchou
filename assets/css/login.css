@@ -16,11 +16,6 @@ form input {
     color: #696969;
 }
 
-form input:focus,
-form textarea:focus {
-    outline: none;
-    border-color: var(--main-color);
-}
 
 form input[type="submit"] {
     background-color: var(--main-color);
@@ -48,9 +43,26 @@ form input[type="submit"] {
     text-align: center;
 }
 
-.links a {
-    margin-right: 3%;
+.is-valid {
+    border-color: green;
 }
+
+.is-invalid {
+    border-color: red;
+}
+
+#info {
+    display: none;
+
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+}
+
+
 
 
 * {
