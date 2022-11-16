@@ -20,7 +20,7 @@ if ($_SESSION['logged']) {
         <div class="stations">
             <div class="station">
                 <div class="station-time">
-                    <p class="colored"><?php echo $ticket['START_TIME'] ?></p>
+                    <p class="colored"><?php echo $ticket['START_TIME_HOUR'] ?>:<?php echo $ticket['START_TIME_MINUTE'] ?></p>
                 </div>
                 <div class="station-name">
                     <h3><?php echo $ticket['START_STATION_NAME'] ?></h3>
@@ -29,7 +29,7 @@ if ($_SESSION['logged']) {
             </div>
             <div class="station">
                 <div class="station-time">
-                    <p class="colored"><?php echo $ticket['END_TIME'] ?></p>
+                    <p class="colored"><?php echo $ticket['END_TIME_HOUR'] ?>:<?php echo $ticket['END_TIME_MINUTE'] ?></p>
                 </div>
                 <div class="station-name">
                     <h3><?php echo $ticket['END_STATION_NAME'] ?></h3>

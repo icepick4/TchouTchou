@@ -31,7 +31,10 @@ class UserDAO extends DAO
         $sql = 'SELECT (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.START_STATION_ID) START_STATION_NAME,
             (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.END_STATION_ID) END_STATION_NAME, 
             TRAVEL_DATETIME, 
-            START_TIME, 
+            extract (hour from START_TIME) START_TIME_HOUR, 
+            extract (minute from START_TIME) START_TIME_MINUTE,
+            extract (hour from END_TIME) END_TIME_HOUR,
+            extract (minute from END_TIME) END_TIME_MINUTE,
             END_TIME, 
             T.TRAVEL_ID, 
             TR.TRAIN_ID 
