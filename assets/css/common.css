@@ -49,21 +49,19 @@ body {
   background-color: var(--main-color);
   position: absolute;
   left: 0;
-  bottom: 3px;
+  bottom: 0;
   width: 100%;
   height: 5px;
   z-index: -1;
   transition: all 0.3s ease-in-out;
 }
 
-.links a:hover::before,
-.links a:focus {
+.links a:hover::before {
   bottom: 0;
   height: 100%;
 }
 
-.links a:hover,
-.links a:focus {
+.links a:hover {
   color: #fff;
   transition: all 0.3s ease-in-out;
 }

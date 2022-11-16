@@ -31,3 +31,7 @@ footer p {
 footer section nav a {
   font-size: 78%;
 }
+
+#copyright {
+  user-select: none;
+}

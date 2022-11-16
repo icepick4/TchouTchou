@@ -21,7 +21,7 @@
 			<a href="index.php?page=contact"><?php echo TITLE_CONTACT ?></a>
 		</nav>
 	</section>
-	<p>Tchoutchou Copyright ©2022</p>
+	<p id="copyright">Tchoutchou Copyright ©2022</p>
 </footer>
 </body>
 
