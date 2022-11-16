@@ -7,10 +7,10 @@ if (!$_SESSION['logged']) {
     header("Location: index.php?page=login");
     die();
 } else {
-    $train = new TrainDAO(true);
     $user = new UserDAO(true);
     $ticket = $user->getTicketById($_GET['ticket'], $_SESSION['user_id']);
-    $ticket = $train->getSingleTicketInfos($ticket);
+    $date = new DateTime($ticket['TRAVEL_DATETIME']);
+    $date = $date->format('d/m/Y');
 }
 
 require_once(PATH_VIEWS . $page . '.php');

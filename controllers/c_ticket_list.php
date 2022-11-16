@@ -8,7 +8,6 @@ if (!$_SESSION['logged']) {
     die();
 } else {
     $user = new UserDAO(true);
-    $train = new TrainDAO(true);
     $tickets = $user->getTicketsById($_SESSION['user_id']);
 }
 

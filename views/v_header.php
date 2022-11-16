@@ -16,9 +16,7 @@
 <body>
   <header>
     <nav>
-      <a href="index.php?page=home">
-        <img src="<?php echo PATH_IMAGES . "logo_orange.svg" ?>" class="logo">
-      </a>
+      <a href="index.php?page=home" class="logo"><?= SVG_LOGO ?></a>
       <ul>
         <li><a href="index.php?page=home"><?php echo TITLE_HOME ?></a></li>
         <li><a href="index.php?page=purchase"><?php echo TITLE_PURCHASE ?></a></li>
@@ -26,8 +24,8 @@
       </ul>
     </nav>
     <nav>
-      <a href="index.php?page=account"><img src="<?php echo PATH_IMAGES . "account_orange.svg" ?>" class="logo"></a>
-      <a href="index.php?page=shopping"><img src="<?php echo PATH_IMAGES . "shopping_orange.svg" ?>" class="logo"></a>
+      <a href="index.php?page=account" class="logo"><?= SVG_ACCOUNT ?></a>
+      <a href="index.php?page=shopping" id="shop" class="logo"><?= SVG_SHOPPING ?></a>
     </nav>
   </header>
   <section id="main">

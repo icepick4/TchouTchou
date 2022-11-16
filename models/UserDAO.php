@@ -18,13 +18,27 @@ class UserDAO extends DAO
     }
     public function getTicketsById($id)
     {
-        $sql = 'SELECT (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.START_STATION_ID) START_STATION_NAME, (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.END_STATION_ID) END_STATION_NAME, TRAVEL_DATETIME, START_TIME, END_DATETIME, T.TRAVEL_ID FROM TICKET T, TRAVEL TR WHERE TR.TRAVEL_ID = T.TRAVEL_ID AND USER_ID = :id';
+        $sql = 'SELECT (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.START_STATION_ID) START_STATION_NAME, 
+            (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.END_STATION_ID) END_STATION_NAME, 
+            TRAVEL_DATETIME,
+            T.TRAVEL_ID 
+            FROM TICKET T, TRAVEL TR WHERE TR.TRAVEL_ID = T.TRAVEL_ID AND USER_ID = :id';
         $args = array(':id' => $id,);
         return $this->queryAll($sql, $args);
     }
     public function getTicketById($id, $user_id)
     {
-        $sql = 'SELECT * FROM TICKET where TRAVEL_ID = :id AND USER_ID = :user_id';
+        $sql = 'SELECT (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.START_STATION_ID) START_STATION_NAME,
+            (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.END_STATION_ID) END_STATION_NAME, 
+            TRAVEL_DATETIME, 
+            extract (hour from START_TIME) START_TIME_HOUR, 
+            extract (minute from START_TIME) START_TIME_MINUTE,
+            extract (hour from END_TIME) END_TIME_HOUR,
+            extract (minute from END_TIME) END_TIME_MINUTE,
+            END_TIME, 
+            T.TRAVEL_ID, 
+            TR.TRAIN_ID 
+            FROM TICKET T, TRAVEL TR WHERE TR.TRAVEL_ID = T.TRAVEL_ID AND USER_ID = :user_id AND T.TRAVEL_ID = :id';
         $args = array(':id' => $id, ':user_id' => $user_id);
         return $this->queryRow($sql, $args);
     }
