@@ -47,4 +47,10 @@ class UserDAO extends DAO
         $sql = 'SELECT * FROM USER_DATA';
         return $this->queryAll($sql);
     }
+
+    public function insertUser($mail,$phone,$password,$lastName,$firstName,$userCat){
+        $sql = "INSERT into USER_DATA(USER_MAIL,USER_PHONE,USER_PASSWORD,USER_LASTNAME,USER_FIRSTNAME,USER_CATEGORIE_ID) VALUES($mail,$phone,$password,$lastName,$firstName,$userCat)";
+        $this->querryAll($sql);
+    }
+    // 0
 }
