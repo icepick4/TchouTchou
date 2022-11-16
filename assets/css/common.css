@@ -8,6 +8,7 @@
   --bg-header-color: #151616;
   --radius: 8px;
   --margin: 4px;
+  --hover: 0.5s;
 }
 
 @media (prefers-color-scheme: dark) {
