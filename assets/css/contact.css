@@ -56,13 +56,13 @@ textarea:focus {
 }
 ::-webkit-scrollbar-track-piece {
   background-color: var(--bg-white-color);
-  -webkit-border-radius: 16px;
+  border-radius: 16px;
 }
 ::-webkit-scrollbar-thumb:vertical {
   height: 10px;
   background-color: var(--main-color);
   border: 1px solid var(--main-color);
-  -webkit-border-radius: 16px;
+  border-radius: 16px;
 }
 
 /*Dark Mode*/

@@ -50,11 +50,24 @@ header ul li a:hover {
   transition-duration: 0.7s;
 }
 
-.logo {
+/*SVG*/
+.logo * {
   width: 4em;
   margin: 0;
+  stroke: var(--txt-white-color);
+  transition-duration: 0.7s;
+}
+#shop svg circle {
+  fill: var(--txt-white-color);
 }
 
+.logo:hover * {
+  stroke: var(--main-color);
+  transition-duration: 0.7s;
+}
+#shop:hover svg circle {
+  fill: var(--main-color);
+}
 header nav > a {
   padding: 0 2%;
   transition-duration: 0.7s;
@@ -84,5 +97,22 @@ header > :nth-child(2n) {
 
   header ul li a:hover {
     color: var(--txt-white-color);
+  }
+
+  header nav > a:hover {
+    background-color: var(--main-color);
+  }
+
+  .logo * {
+    stroke: var(--main-color);
+  }
+  #shop svg circle {
+    fill: var(--main-color);
+  }
+  #shop:hover svg circle {
+    fill: var(--txt-white-color);
+  }
+  .logo:hover * {
+    stroke: var(--txt-white-color);
   }
 }
