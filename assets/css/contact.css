@@ -45,15 +45,18 @@ textarea:focus {
 }
 
 /*Scrollbar*/
+/*
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
+  background-color: transparent;
 }
+
 ::-webkit-scrollbar-button:start:decrement,
 ::-webkit-scrollbar-button:end:increment {
   height: 10px;
-  background-color: transparent;
 }
+
 ::-webkit-scrollbar-track-piece {
   background-color: var(--bg-white-color);
   border-radius: 16px;
@@ -64,6 +67,7 @@ textarea:focus {
   border: 1px solid var(--main-color);
   border-radius: 16px;
 }
+*/
 
 /*Dark Mode*/
 @media (prefers-color-scheme: dark) {
