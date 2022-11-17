@@ -39,7 +39,8 @@ define('INPUT_DESC','Description');
 define('INPUT_SUBMIT','Send');
 
 // erreur
-define('ERROR_MAIL','Mail invalide');
+define('ERROR_PHONE','Invalid Phone Number');
+define('ERROR_MAIL','Invalid Email');
 define('TEXTE_PAGE_404','Oops, la page demandée n\'existe pas !');
 define('MESSAGE_ERREUR',"Une erreur s'est produite");
 define('UNKWOWN_MAIL','Mail inconnu');

@@ -1,19 +1,20 @@
 <?php
 require_once(PATH_MODELS . 'UserDAO.php');
-
 if ( 
     isset($_POST["name"]) && 
     isset($_POST["fname"]) && 
-    isset($_POST["tel"]) &&
+    isset($_POST["phone"]) &&
     isset($_POST["email"]) &&
     isset($_POST["password"]) &&
-    isset($_POST["confirmpassword"])
+    isset($_POST["confirmPassword"])
     ) {
+        $user = new UserDAO();
         $name = $_POST["name"];
         $fname = $_POST["fname"];
-        $tel = $_POST["tel"];
+        $phone = $_POST["phone"];
         $email = $_POST["email"];
-        $password = $_POST["password"];
-        $confirmpassword = $_POST["confirmpassword"];
+        $password = $user->hashPassword($_POST["password"]);
+       
+        $user->insertUser($email,$phone,$password,$name,$fname,0);
     }
 require_once(PATH_VIEWS . $page . '.php');
