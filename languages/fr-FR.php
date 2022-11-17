@@ -28,6 +28,12 @@ define('TOREGISTER',"S'inscrire");
 define('INPUT_PASSWORD','Mot de passe');
 define('INPUT_CONFIRMPASSWORD','Confirmer le mot de passe');
 
+define('ERROR_MAIL','Mail invalide');
+define('ERROR_PHONE','Numéro de téléphone invalide');
+define('ERROR_PASSWORD_TOO_WEAK','Le mot de passe doit contenir au moins une lettre majuscule, une minuscule, un chiffre et être composé d\'au moins 8 caractères');
+define('ERROR_PASSWORD_DIFFERENT','Les mots de passe sont différents');
+define('ERROR_FORM','Veuillez corriger les erreurs avant d\'envoyer vos informations');
+
 //contact
 define('INPUT_NAME', 'Nom');
 define('INPUT_FIRST_NAME','Prénom');
@@ -38,7 +44,6 @@ define('INPUT_DESC','Description');
 define('INPUT_SUBMIT','Envoyer');
 
 // erreur
-define('ERROR_MAIL','Mail invalide');
 define('TEXTE_PAGE_404','Oops, la page demandée n\'existe pas !');
 define('MESSAGE_ERREUR',"Une erreur s'est produite");
 define('UNKWOWN_MAIL','Mail inconnu');

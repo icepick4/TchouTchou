@@ -50,8 +50,13 @@ form input[type="submit"] {
   border-color: red;
 }
 
-#info {
+.info {
   display: none;
+}
+
+p.info {
+  font-size: 2rem;
+  color: red;
 }
 
 form input:focus,
