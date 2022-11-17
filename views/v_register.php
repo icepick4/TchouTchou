@@ -1,6 +1,6 @@
 <?php require_once(PATH_VIEWS.'header.php');?>
 <h1 id="title"><?= REGISTER ?></h1>
-<form method="post" action="index.php?page=login">
+<form method="post" action="index.php?page=register">
         <input type="text" id="name" name="name" placeholder="<?= INPUT_NAME ?>">
         <input type="text" id="fname" name="fname" placeholder="<?= INPUT_FIRST_NAME ?>">
         <input type="tel" id="tel" name="tel" placeholder="<?= INPUT_PHONE ?>">
