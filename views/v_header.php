@@ -23,7 +23,7 @@
       </ul>
     </nav>
     <nav>
-      <a href="index.php?page=account" class="logo"><?= SVG_ACCOUNT ?></a>
+      <a href="index.php?page=<?php echo $_SESSION['logged'] ? "account" : "login" ?>" class="logo"><?= SVG_ACCOUNT ?></a>
       <a href="index.php?page=shopping" id="shop" class="logo"><?= SVG_SHOPPING ?></a>
     </nav>
   </header>

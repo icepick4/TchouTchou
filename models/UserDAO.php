@@ -48,14 +48,16 @@ class UserDAO extends DAO
         return $this->queryAll($sql);
     }
 
-    public function insertUser($mail,$phone,$password,$lastName,$firstName,$userCat){
-        $sql = "INSERT into USER_DATA(USER_MAIL,USER_PHONE,USER_PASSWORD,USER_LASTNAME,USER_FIRSTNAME,USER_CATEGORIE_ID) VALUES("."'"."$mail"."','"."$phone"."','"."$password"."','"."$lastName"."','"."$firstName"."'".",$userCat)";
-        $temp=$this->queryRow($sql);
+    public function insertUser($mail, $phone, $password, $lastName, $firstName, $userCat)
+    {
+        $sql = "INSERT into USER_DATA(USER_MAIL,USER_PHONE,USER_PASSWORD,USER_LASTNAME,USER_FIRSTNAME,USER_CATEGORIE_ID) VALUES(:user_mail,:user_phone,:user_password,:lastname,:firstname,:cat)";
+        $args = array(':user_mail' => $mail, ':user_phone' => $phone, ':user_password' => $password, ':lastname' => $lastName, ':firstname' => $firstName, ':cat' => $userCat);
+        $this->queryRow($sql, $args);
     }
 
     public function hashPassword($password)
     {
-        return password_hash($password,PASSWORD_DEFAULT);
+        return password_hash($password, PASSWORD_DEFAULT);
     }
     // 0
 }
