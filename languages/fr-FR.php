@@ -21,7 +21,7 @@ define('TERMS_OF_USE', 'Condtions Générales');
 define('PRIVACY_POLICY', 'Politique de Confidentialité');
 
 //Home
-define('WELCOME','Bonjour');
+define('WELCOME','Bonjour ');
 define('MY_ACCOUNT','Mon Compte');
 define('MY_TICKETS','Mes Billets');
 define('BUY_TICKET','Acheter un billet');
