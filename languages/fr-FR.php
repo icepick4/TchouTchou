@@ -28,6 +28,8 @@ define('TOREGISTER',"S'inscrire");
 define('INPUT_PASSWORD','Mot de passe');
 define('INPUT_CONFIRMPASSWORD','Confirmer le mot de passe');
 
+define('ERROR_NAME','Le nom ne peut contenir de nombre');
+define('ERROR_FIRSTNAME','Le prénom ne peut contenir de nombre');
 define('ERROR_MAIL','Mail invalide');
 define('ERROR_PHONE','Numéro de téléphone invalide');
 define('ERROR_PASSWORD_TOO_WEAK','Le mot de passe doit contenir au moins une lettre majuscule, une minuscule, un chiffre et être composé d\'au moins 8 caractères');
