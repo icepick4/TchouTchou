@@ -37,7 +37,7 @@ if ($_SESSION['logged']) {
                     <td><?php echo $result['USER_PHONE'] ?></td>
                 </tr>
                 <tr>
-                    <td><?= MAIL ?></td>
+                    <td><?= EMAIL ?></td>
                     <td><?php echo $result['USER_MAIL'] ?></td>
                 </tr>
             </table>
