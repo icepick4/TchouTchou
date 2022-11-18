@@ -56,3 +56,4 @@ function callFunction(source) {
   if (source.id == "password") return validatePassword(source.value);
   if (source.id == "confirmPassword") return source.value == password.value;
 }
+

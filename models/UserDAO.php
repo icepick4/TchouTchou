@@ -52,7 +52,7 @@ class UserDAO extends DAO
     {
         $sql = "INSERT into USER_DATA(USER_MAIL,USER_PHONE,USER_PASSWORD,USER_LASTNAME,USER_FIRSTNAME,USER_CATEGORIE_ID) VALUES(:user_mail,:user_phone,:user_password,:lastname,:firstname,:cat)";
         $args = array(':user_mail' => $mail, ':user_phone' => $phone, ':user_password' => $password, ':lastname' => $lastName, ':firstname' => $firstName, ':cat' => $userCat);
-        $this->queryRow($sql, $args);
+        $this->queryInsert($sql, $args);
     }
 
     public function hashPassword($password)
