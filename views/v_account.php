@@ -14,30 +14,30 @@
 
 if ($_SESSION['logged']) {
 ?>
-    <h1 id="title">Hello <?php echo $result['USER_FIRSTNAME'] ?></h1>
+    <h1 id="title"><?= WELCOME ?><?php echo $result['USER_FIRSTNAME'] ?></h1>
     <!-- no style on this, getting data for the moment -->
     <div class="content">
         <div class="links">
-            <a class="link-profile" href="index.php?page=ticket_list">My tickets</a>
-            <a class="link-profile" href="index.php?page=shopping">Get tickets</a>
-            <a class="link-profile" href="index.php?page=logout">Logout</a>
+            <a class="link-profile" href="index.php?page=ticket_list"><?= MY_TICKETS ?></a>
+            <a class="link-profile" href="index.php?page=shopping"><?= BUY_TICKET ?></a>
+            <a class="link-profile" href="index.php?page=logout"><?= LOGOUT ?> </a>
         </div>
         <div class="infos">
             <table>
                 <tr>
-                    <td>First name</td>
+                    <td><?= FIRST_NAME ?></td>
                     <td><?php echo $result['USER_FIRSTNAME'] ?></td>
                 </tr>
                 <tr>
-                    <td>Last name</td>
+                    <td><?= NAME ?></td>
                     <td><?php echo $result['USER_LASTNAME'] ?></td>
                 </tr>
                 <tr>
-                    <td>Phone number</td>
+                    <td><?= PHONE ?></td>
                     <td><?php echo $result['USER_PHONE'] ?></td>
                 </tr>
                 <tr>
-                    <td>Email</td>
+                    <td><?= MAIL ?></td>
                     <td><?php echo $result['USER_MAIL'] ?></td>
                 </tr>
             </table>

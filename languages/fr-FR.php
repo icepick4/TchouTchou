@@ -20,13 +20,19 @@ define('STATION_INFORMATION', 'Gares & Quais');
 define('TERMS_OF_USE', 'Condtions Générales');
 define('PRIVACY_POLICY', 'Politique de Confidentialité');
 
+//Home
+define('WELCOME','Bonjour');
+define('MY_ACCOUNT','Mon Compte');
+define('MY_TICKETS','Mes Billets');
+define('BUY_TICKET','Acheter un billet');
+ 
 // LOGIN & REGISTER
-define('LOGIN', 'Connexion');
-define('LOGOUT', 'Déconnexion');
-define('REGISTER', 'Inscription');
-define('TOREGISTER', "S'inscrire");
-define('INPUT_PASSWORD', 'Mot de passe');
-define('INPUT_CONFIRMPASSWORD', 'Confirmer le mot de passe');
+define('LOGIN','Connexion');
+define('LOGOUT','Déconnexion');
+define('REGISTER','Inscription');
+define('TOREGISTER',"S'inscrire");
+define('PASSWORD','Mot de passe');
+define('CONFIRMPASSWORD','Confirmer le mot de passe');
 
 define('ERROR_NAME', 'Le nom ne peut contenir de nombre');
 define('ERROR_FIRSTNAME', 'Le prénom ne peut contenir de nombre');
@@ -37,13 +43,13 @@ define('ERROR_PASSWORD_DIFFERENT', 'Les mots de passe sont différents');
 define('ERROR_FORM', 'Veuillez corriger les erreurs avant d\'envoyer vos informations');
 
 //contact
-define('INPUT_NAME', 'Nom');
-define('INPUT_FIRST_NAME', 'Prénom');
-define('INPUT_PHONE', 'Numéro de téléphone');
-define('INPUT_EMAIL', 'Email');
-define('INPUT_SUBJECT', 'Sujet');
-define('INPUT_DESC', 'Description');
-define('INPUT_SUBMIT', 'Envoyer');
+define('NAME', 'Nom');
+define('FIRST_NAME','Prénom');
+define('PHONE','Numéro de téléphone');
+define('EMAIL','Email');
+define('SUBJECT','Sujet');
+define('DESC','Description');
+define('SUBMIT','Envoyer');
 
 // erreur
 define('TEXTE_PAGE_404', 'Oops, la page demandée n\'existe pas !');

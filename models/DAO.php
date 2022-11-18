@@ -52,4 +52,17 @@ abstract class DAO
         }
         return $result;
     }
+
+    public function queryInsert($request, $args = null)
+    {
+        $stid = oci_parse($this->conn, $request);
+        if ($args == null) {
+        } else {
+            foreach ($args as $key => $val) {
+                oci_bind_by_name($stid, $key, $args[$key]);
+            }
+        }
+        oci_execute($stid);
+    }
+
 }

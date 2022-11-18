@@ -21,12 +21,12 @@ if (!$_SESSION['logged']) {
 <?php
 } else { ?>
     <div class="content">
-        <h1 id="title">Welcome <?php echo $_SESSION['first_name'] ?> !</h1>
+        <h1 id="title"><?= WELCOME ?><?php echo $_SESSION['first_name'] ?> !</h1>
         <div class="links">
-            <a href="index.php?page=account">My account</a>
-            <a href="index.php?page=ticket_list">My tickets</a>
-            <a href="index.php?page=shopping">Get tickets</a>
-            <a href="index.php?page=logout">Logout</a>
+            <a href="index.php?page=account"><?= MY_ACCOUNT ?></a>
+            <a href="index.php?page=ticket_list"><?= MY_TICKETS ?></a>
+            <a href="index.php?page=shopping"><?= BUY_TICKET ?></a>
+            <a href="index.php?page=logout"><?= LOGOUT ?></a>
         </div>
     </div>
 <?php
