@@ -17,7 +17,7 @@ form.addEventListener("submit", formVerify);
 function formVerify(evt) {
   if (
     !validateName(name.value) ||
-    !validatePhone(fname.value) ||
+    !validateName(fname.value) ||
     !validatePhone(phone.value) ||
     !validateEmail(email.value) ||
     !validatePassword(password.value) ||
