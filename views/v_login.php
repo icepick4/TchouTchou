@@ -14,8 +14,8 @@
     <h1 id="title"><?= LOGIN ?></h1>
     <form method="post" action="index.php?page=login">
         <label id="info"><?= ERROR_MAIL ?></label>
-        <input type="mail" name="mail" id="email" placeholder="<?= INPUT_EMAIL ?>"></input>
-        <input type="password" name="password" id="password" placeholder="<?= INPUT_PASSWORD ?>"></input>
+        <input type="mail" name="mail" id="email" placeholder="<?= EMAIL ?>"></input>
+        <input type="password" name="password" id="password" placeholder="<?= PASSWORD ?>"></input>
         <input type="submit" value="Login"></input>
     </form>
     <div class="links">
