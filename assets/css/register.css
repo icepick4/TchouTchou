@@ -52,6 +52,9 @@ form input[type="submit"] {
 
 .info {
   display: none;
+  color: red;
+  font-size: 0.7rem;
+  font-style: italic;
 }
 
 p.info {

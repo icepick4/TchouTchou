@@ -13,3 +13,8 @@ export function validatePhone(phoneNumber) {
   var regExPhone = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/g;
   return regExPhone.test(phoneNumber);
 }
+
+export function validateName(name) {
+  var regExName = new RegExp("#[^a-zA-Z0-9._]#");
+  return regExName.test(name);
+}

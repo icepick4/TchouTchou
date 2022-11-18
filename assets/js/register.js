@@ -1,5 +1,12 @@
-import { validateEmail, validatePassword, validatePhone } from "./functions.js";
+import {
+  validateEmail,
+  validateName,
+  validatePassword,
+  validatePhone,
+} from "./functions.js";
 
+const name = document.getElementsByTagName("input")[0];
+const fname = document.getElementsByTagName("input")[1];
 const phone = document.getElementsByTagName("input")[2];
 const email = document.getElementsByTagName("input")[3];
 const password = document.getElementsByTagName("input")[4];
@@ -9,6 +16,8 @@ form.addEventListener("submit", formVerify);
 
 function formVerify(evt) {
   if (
+    !validateName(name.value) ||
+    !validatePhone(fname.value) ||
     !validatePhone(phone.value) ||
     !validateEmail(email.value) ||
     !validatePassword(password.value) ||
@@ -19,6 +28,8 @@ function formVerify(evt) {
   }
 }
 
+name.addEventListener("change", verify);
+fname.addEventListener("change", verify);
 phone.addEventListener("change", verify);
 email.addEventListener("change", verify);
 password.addEventListener("change", verify);
@@ -29,16 +40,18 @@ function verify(evt) {
   if (callFunction(source)) {
     source.classList.remove("is-invalid");
     source.classList.add("is-valid");
-    source.previousElementSibling.style.display = "none";
+    source.nextElementSibling.style.display = "none";
   } else {
     source.classList.remove("is-valid");
     source.classList.add("is-invalid");
-    source.previousElementSibling.style.display = "block";
+    source.nextElementSibling.style.display = "block";
   }
 }
 
 function callFunction(source) {
-  if (source.id == "tel") return validatePhone(source.value);
+  if (source.id == "name") return validateName(source.value);
+  if (source.id == "fname") return validateName(source.value);
+  if (source.id == "phone") return validatePhone(source.value);
   if (source.id == "email") return validateEmail(source.value);
   if (source.id == "password") return validatePassword(source.value);
   if (source.id == "confirmPassword") return source.value == password.value;

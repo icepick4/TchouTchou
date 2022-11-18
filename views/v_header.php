@@ -11,7 +11,6 @@
   <link href="<?php echo PATH_CSS . "header.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . "footer.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . $page .".css" ?>" rel="stylesheet"/>
-  <script language="javascript" src="<?php echo PATH_SCRIPTS ."hover.js"?>"></script>
 </head>
 <body>
   <header>

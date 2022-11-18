@@ -39,6 +39,8 @@ define('INPUT_DESC','Description');
 define('INPUT_SUBMIT','Send');
 
 // erreur
+define('ERROR_NAME',"Your name can't contains number");
+define('ERROR_FIRSTNAME',"Your first name can't contains number");
 define('ERROR_PHONE','Invalid Phone Number');
 define('ERROR_MAIL','Invalid Email');
 define('TEXTE_PAGE_404','Oops, la page demandée n\'existe pas !');
