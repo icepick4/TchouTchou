@@ -7,7 +7,7 @@ form {
 }
 
 form input {
-    width: 20%;
+    width: 100%;
     margin: 10px 0;
     padding: 10px;
     border: 0.15rem solid #696969;
@@ -34,7 +34,6 @@ form input[type="submit"] {
     padding: 10px 0;
     text-align: center;
     margin: 0 auto;
-    margin-top: 10%;
     color: var(--main-color);
 }
 
@@ -54,6 +53,13 @@ form input[type="submit"] {
 #info {
     display: none;
 
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 form input:focus,
