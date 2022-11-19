@@ -72,5 +72,6 @@ pour le demarrer
  port `5521` <br>
  SID `xe` <br>
 
-
+# CONNEXION SERVEUR DISTANT
+```ssh vo269ma@tchoutchou.ovh -p 226```
 
