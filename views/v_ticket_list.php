@@ -9,7 +9,7 @@
 if ($_SESSION['logged']) {
 ?>
     <div id="title-ticket-list">
-        <h1>Here are your tickets</h1>
+        <h1><?= MY_TICKETS ?></h1>
     </div>
     <?php
     //no style on this, getting data for the moment
@@ -28,13 +28,20 @@ if ($_SESSION['logged']) {
             </div>
 
         </div>
+    <?php
+    }
+    if (count($tickets) == 0) {
+    ?>
+        <div id="title-ticket-list">
+            <h2><?= NO_TICKET ?></h2>
+        </div>
 <?php
     }
 }
 ?>
 <div class="link-ticket-list">
     <div class="links">
-        <a href="index.php?page=shopping">Get tickets</a>
+        <a href="index.php?page=shopping"><?= BUY_TICKET ?></a>
     </div>
 </div>
 

@@ -19,20 +19,22 @@ define('TITLE_QUICK_ACCESS', 'Accès Rapide');
 define('STATION_INFORMATION', 'Gares & Quais');
 define('TERMS_OF_USE', 'Condtions Générales');
 define('PRIVACY_POLICY', 'Politique de Confidentialité');
+define('STATION_LIST', 'Liste des Gares');
 
 //Home
-define('WELCOME','Bonjour ');
-define('MY_ACCOUNT','Mon Compte');
-define('MY_TICKETS','Mes Billets');
-define('BUY_TICKET','Acheter un billet');
- 
+define('WELCOME', 'Bonjour ');
+define('MY_ACCOUNT', 'Mon Compte');
+define('MY_TICKETS', 'Mes Billets');
+define('BUY_TICKET', 'Acheter un billet');
+define('NO_TICKET', 'Vous n\'avez pas de billet pour le moment !');
+
 // LOGIN & REGISTER
-define('LOGIN','Connexion');
-define('LOGOUT','Déconnexion');
-define('REGISTER','Inscription');
-define('TOREGISTER',"S'inscrire");
-define('PASSWORD','Mot de passe');
-define('CONFIRMPASSWORD','Confirmer le mot de passe');
+define('LOGIN', 'Connexion');
+define('LOGOUT', 'Déconnexion');
+define('REGISTER', 'Inscription');
+define('TOREGISTER', "S'inscrire");
+define('PASSWORD', 'Mot de passe');
+define('CONFIRMPASSWORD', 'Confirmer le mot de passe');
 
 define('ERROR_NAME', 'Le nom ne peut contenir de nombre');
 define('ERROR_FIRSTNAME', 'Le prénom ne peut contenir de nombre');
@@ -44,12 +46,12 @@ define('ERROR_FORM', 'Veuillez corriger les erreurs avant d\'envoyer vos informa
 
 //contact
 define('NAME', 'Nom');
-define('FIRST_NAME','Prénom');
-define('PHONE','Numéro de téléphone');
-define('EMAIL','Email');
-define('SUBJECT','Sujet');
-define('DESC','Description');
-define('SUBMIT','Envoyer');
+define('FIRST_NAME', 'Prénom');
+define('PHONE', 'Numéro de téléphone');
+define('EMAIL', 'Email');
+define('SUBJECT', 'Sujet');
+define('DESC', 'Description');
+define('SUBMIT', 'Envoyer');
 
 // erreur
 define('TEXTE_PAGE_404', 'Oops, la page demandée n\'existe pas !');

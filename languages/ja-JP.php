@@ -54,6 +54,6 @@ define('SUBMIT', '送信');
 //ERROR
 define('TEXTE_PAGE_404', 'ページが見つかりません');
 define('MESSAGE_ERREUR', 'エラーが発生しました');
-define('UNKNOW_MAIL', 'このメールアドレスは登録されていません');
-define('UNKNOW_PASSWORD', 'パスワードが間違っています');
+define('UNKNOWN_MAIL', 'このメールアドレスは登録されていません');
+define('UNKNOWN_PASSWORD', 'パスワードが間違っています');
 define('ERREUR_QUERY', 'クエリエラー');
