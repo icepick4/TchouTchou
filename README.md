@@ -16,6 +16,8 @@ L'objet de ce projet est de réaliser un site de réservation de billets de trai
 Ce projet est réalisé par un groupe de 5 personnes d’un niveau équivalent en 2ème année du BUT informatique. Le projet n'utilisera pas de framework, ni de PWA. Le développement du projet se fait en dehors des heures de cours avec deux heures toutes les deux semaines de réunion avec notre tuteur. Le projet se déroule sur 4 mois et se termine par une soutenance de 40 minutes.
 # GUIDE
 
+Pour update le server il suift de aller sur <a href="http://82.65.238.70:5569/">lien</a>
+
 Pour facilement avoir accès à toutes les branches,
 après avoir cloner le repo :
  ```git worktree add ../<nom dossier> <nom branche>  ```
