@@ -20,7 +20,7 @@ header ul {
   width: 50%;
 }
 header ul li {
-  flex: 1;
+  flex-grow: 1;
   list-style-type: none;
   height: 100%;
   display: flex;

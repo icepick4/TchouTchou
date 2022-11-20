@@ -59,3 +59,19 @@ define('MESSAGE_ERREUR', 'An error has occurred, please try again later');
 define('UNKNOWN_MAIL', 'Unknown mail');
 define('WRONG_PASSWORD', 'Wrong password');
 define('ERREUR_QUERY', 'An error has occurred, please try again later');
+
+// STATION DETAIL
+define('STATION', 'Station');
+define('CITY', 'City');
+define('REGION', 'Region');
+define('COUNTRY', 'Country');
+define('STATION_OF', 'Station of ');
+define('DEPARTURES', 'Departures');
+define('ARRIVALS', 'Arrivals');
+define('TRAIN_NUMBER', 'Train number');
+define('DESTINATION', 'Destination');
+define('DEPARTURE_TIME', 'Departure time');
+define('ARRIVAL_TIME' , 'Arrival time');
+define('NO_TRAIN', 'No train passes through this station');
+define('NO_DEPARTURE', 'No departure');
+define('NO_ARRIVAL', 'No arrival');

@@ -59,3 +59,20 @@ define('MESSAGE_ERREUR', "Une erreur s'est produite");
 define('UNKWOWN_MAIL', 'Mail inconnu');
 define('UNKNOWN_PASSWORD', 'Mot de passe incorrect');
 define('ERREUR_QUERY', 'Problème d\'accès à la base de données. Contactez l\'administrateur');
+
+//STATION DETAIL
+define('STATION', 'Gare');
+define('CITY', 'Ville');
+define('REGION', 'Département');
+define('COUNTRY', 'Pays');
+define('STATION_OF', 'Gare de ');
+define('DEPARTURES', 'Départs');
+define('ARRIVALS', 'Arrivées');
+define('TRAIN_NUMBER', 'Numéro de train');
+define('DESTINATION', 'Destination');
+define('DEPARTURE_TIME', 'Heure de départ');
+define('ARRIVAL_TIME', 'Heure d\'arrivée');
+define('NO_TRAIN', 'Aucun train prévu pour le moment');
+define('NO_ARRIVAL','Aucune arrivée prévue pour le moment');
+define('NO_DEPARTURE', 'Aucun départ prévu pour le moment');
+

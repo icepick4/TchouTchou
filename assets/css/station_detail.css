@@ -1,3 +1,14 @@
+h1 {
+  padding-left: 1em;
+  font-size: 4em;
+  color: var(--main-color);
+}
+
+h2 {
+  display: block;
+  text-align: center;
+  font-size: 3em;
+}
 table {
   border-collapse: collapse;
   table-layout: fixed;
@@ -32,10 +43,6 @@ table tr:first-child {
 
 table tr:nth-child(even) {
   background-color: var(--border-input);
-}
-
-table tr:hover {
-  background-color: var(--main-color);
 }
 
 table td {

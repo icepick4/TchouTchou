@@ -12,6 +12,7 @@
   <link href="<?php echo PATH_CSS . "header.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . "footer.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . $page . ".css" ?>" rel="stylesheet" />
+  <link href="<?= PATH_JS . "functions.js" ?>" rel="stylesheet" />
 </head>
 
 <body>

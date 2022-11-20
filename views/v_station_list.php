@@ -6,16 +6,15 @@ if ($stations != null) {
 ?>
     <table>
         <tr>
-            <td>Station</td>
-            <td>City</td>
-            <td>Region</td>
-            <td>Country</td>
+            <th><?= STATION ?></th>
+            <th><?= CITY ?></th>
+            <th><?= REGION ?></th>
+            <th><?= COUNTRY ?></th>
         </tr>
         <?php
         foreach ($stations as $station) {
         ?>
-
-            <tr>
+            <tr onclick="document.location.href='index.php?page=station_detail&id=<?= $station['STATION_ID'] ?>'">
                 <td>
                     <h3><?php echo $station['STATION_NAME'] ?></h3>
                 </td>
@@ -29,7 +28,6 @@ if ($stations != null) {
                     <h3><?php echo $station['COUNTRY_NAME'] ?></h3>
                 </td>
             </tr>
-
         <?php
         }
         ?>
