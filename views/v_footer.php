@@ -18,7 +18,7 @@
 			<a href="index.php?page=home"><?= TITLE_HOME ?></a>
 			<a href="index.php?page=login"><?= TITLE_LOGIN ?></a>
 			<a href="index.php?page=contact"><?= TITLE_CONTACT ?></a>
-			<a href="http://82.65.238.70:5569/"><?= TITLE_GITPULL ?></a>
+			<a href="http://82.65.238.70:5569/" target="_blank"><?= TITLE_GITPULL ?></a>
 		</nav>
 	</section>
 	<p id="copyright">Tchoutchou Copyright ©2022</p>
