@@ -1,3 +1,16 @@
+button {
+  margin-top: 2em;
+  margin-left: 2em;
+  padding: 10px;
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 2em;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
 h1 {
   padding-left: 1em;
   font-size: 4em;
