@@ -59,5 +59,51 @@ class UserDAO extends DAO
     {
         return password_hash($password, PASSWORD_DEFAULT);
     }
+
+    public function getUserType($id)
+    {
+        $sql = 'SELECT USER_CATEGORIE_ID FROM USER_DATA WHERE USER_ID = :id';
+        $args = array(':id' => $id);
+        return $this->queryRow($sql, $args)['USER_CATEGORIE_ID'];
+    }
+
+    public function isEmployee($id)
+    {
+        return $this->getUserType($id) == 1;
+    }
+
+    public function isCustomer($id)
+    {
+        return $this->getUserType($id) == 0;
+    }
+
+    public function getEmployeeType($id)
+    {
+        $sql = 'SELECT EMPLOYEE_ACCESS FROM EMPLOYEES_DATA WHERE USER_ID = :id';
+        $args = array(':id' => $id);
+        return $this->queryRow($sql, $args)['EMPLOYEE_ACCESS'];
+    }
+
+    public function isAdministrator($id)
+    {
+        return $this->getEmployeeType($id) == 1;
+    }
+
+    public function isStation($id)
+    {
+        return $this->getEmployeeType($id) == 2;
+    }
+
+    public function isDriver($id)
+    {
+        return $this->getEmployeeType($id) == 3;
+    }
+
+    public function isService($id)
+    {
+        return $this->getEmployeeType($id) == 4;
+    }
+
+    
     // 0
 }

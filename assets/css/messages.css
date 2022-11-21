@@ -1,0 +1,42 @@
+h1 {
+  font-size: 5em;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0.5em;
+  margin: 0 auto;
+  color: var(--main-color);
+}
+
+h3,
+p {
+  margin: 0;
+}
+#chat {
+  margin: 1em;
+  display: flex;
+  height: 100%;
+  border: 3px solid var(--main-color);
+  border-radius: 12px;
+}
+
+#resume {
+  width: 25%;
+  border-right: 1px solid #fff;
+}
+#resume div {
+  padding: 1em;
+  background-color: var(--main-color);
+  opacity: 0.4;
+  border-radius: 10px;
+  margin: 0.5em;
+}
+
+#resume div:hover {
+  opacity: 1;
+}
+
+#resume div * {
+  opacity: 1;
+  color: #fff;
+}

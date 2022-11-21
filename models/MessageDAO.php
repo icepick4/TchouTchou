@@ -27,5 +27,18 @@ class MessageDAO extends DAO
         $args = array(':discussion_id' => $discussion_id, ':message' => $message, ':sender' => 1);
 
         $this->queryInsert($sql, $args);
-    }   
+    }
+    
+    public function getAllDisussions()
+    {
+        $sql = 'SELECT * FROM DISCUSSION_SUPPORT ORDER BY DISCUSSION_ID DESC';
+        return $this->queryAll($sql);
+    }
+
+    public function getUserDisussions($user_id)
+    {
+        $sql = 'SELECT * FROM DISCUSSION_SUPPORT WHERE USER_ID = :user_id';
+        $args = array(':user_id' => $user_id);
+        return $this->queryAll($sql,$args);
+    }
 }
