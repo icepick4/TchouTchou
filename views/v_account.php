@@ -19,6 +19,7 @@ if ($_SESSION['logged']) {
     <div class="content">
         <div class="links">
             <a class="link-profile" href="index.php?page=ticket_list"><?= MY_TICKETS ?></a>
+            <a class="link-profile" href="index.php?page=messages"><?= MY_MESSAGES ?></a>
             <a class="link-profile" href="index.php?page=shopping"><?= BUY_TICKET ?></a>
             <a class="link-profile" href="index.php?page=logout"><?= LOGOUT ?> </a>
         </div>

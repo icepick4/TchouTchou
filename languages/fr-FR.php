@@ -22,10 +22,12 @@ define('PRIVACY_POLICY', 'Politique de Confidentialité');
 define('STATION_LIST', 'Liste des Gares');
 define('TITLE_GITPULL','git pull');
 
+
 //Home
 define('WELCOME', 'Bonjour ');
 define('MY_ACCOUNT', 'Mon Compte');
 define('MY_TICKETS', 'Mes Billets');
+define('MY_MESSAGES', 'Mes Messages');
 define('BUY_TICKET', 'Acheter un billet');
 define('NO_TICKET', 'Vous n\'avez pas de billet pour le moment !');
 

@@ -25,6 +25,7 @@ if (!$_SESSION['logged']) {
         <div class="links">
             <a href="index.php?page=account"><?= MY_ACCOUNT ?></a>
             <a href="index.php?page=ticket_list"><?= MY_TICKETS ?></a>
+            <a href="index.php?page=messages"><?= MY_MESSAGES ?></a>
             <a href="index.php?page=shopping"><?= BUY_TICKET ?></a>
             <a href="index.php?page=logout"><?= LOGOUT ?></a>
         </div>
