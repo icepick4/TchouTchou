@@ -51,4 +51,5 @@
             <tr>
         <?php
         }
-        }else{?><h2><?= NO_ARRIVAL ?></h2><?php }}; ?>
+        }else{?><h2><?= NO_ARRIVAL ?></h2><?php }} 
+ require_once(PATH_VIEWS . 'footer.php');

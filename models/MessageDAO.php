@@ -6,23 +6,25 @@ class MessageDAO extends DAO
 {
     public function insertDiscussion($subject,$user_id,$mail,$phone,$lastName,$firstname)
     {
+        $sql = 'SELECT MAX(DISCUSSION_ID) AS MAX FROM DISCUSSION_SUPPORT';
+        $discussion_id = $this->queryRow($sql);
         if (isset($user_id))
         {
-            $sql = 'INSERT INTO DISCUSSION (DISCUSSION_SUBJECT,DISCUSSION_USER_ID) VALUES (:subject,:user_id)';
-            $args = array(':subject' => $subject, ':user_id' => $user_id);
-
+            $sql = 'INSERT INTO DISCUSSION_SUPPORT (DISCUSSION_ID,DISCUSSION_SUBJECT,USER_ID) VALUES (:id,:subject,:user_id)';
+            $args = array(':id' => $discussion_id['MAX']+1,':subject' => $subject, ':user_id' => $_SESSION['user_id']);
         }
         else
-        {
-            $sql ='INSERT INTO DISCUSSION (DISCUSSION_SUBJECT,DISCUSSION_USER_MAIL,DISCUSSION_USER_PHONE,DISCUSSION_USER_LASTNAME,DISCUSSION_USER_FIRSTNAME) VALUES (:subject,:mail,:phone,:lastname,:firstname)';
-            $args = array(':subject' => $subject, ':mail' => $mail, ':phone' => $phone, ':lastname' => $lastName, ':firstname' => $firstname);
+        {   
+            $sql ='INSERT INTO DISCUSSION_SUPPORT (DISCUSSION_ID,DISCUSSION_SUBJECT,USER_MAIL,USER_PHONE,USER_LASTNAME,USER_FIRSTNAME) VALUES (:id,:subject,:mail,:phone,:lastname,:firstname)';
+            $args = array(':id' => $discussion_id['MAX']+1,':subject' => $subject, ':mail' => $mail, ':phone' => $phone, ':lastname' => $lastName, ':firstname' => $firstname);      
         }
         $this->queryInsert($sql, $args);
+        return $discussion_id['MAX']+1;
     }
-    public function insertMessage($message,$discussion_id,$sender)
+    public function insertMessageCustomer($message,$discussion_id)
     {
-        $sql = 'INSERT INTO MESSAGE_SUPPORT (DISCUSSION_ID,MESSAGE_TIME,MESSAGE_CONTENT,SENDER) VALUES (:discussion_id,:message_time,:message,:sender)';
-        $args = array(':discussion_id' => $discussion_id, ':message_time' => date('Y-m-d H:i:s'), ':message' => $message, ':sender' => $sender);
+        $sql = 'INSERT INTO MESSAGE_SUPPORT (DISCUSSION_ID,MESSAGE_CONTENT,SENDER) VALUES (:discussion_id,:message,:sender)';
+        $args = array(':discussion_id' => $discussion_id, ':message' => $message, ':sender' => 1);
 
         $this->queryInsert($sql, $args);
     }   

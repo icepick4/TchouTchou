@@ -10,15 +10,17 @@
 
     <div id='page'>
         <h1><?= TITLE_CONTACT ?></h1>
-        <form action="POST" id ='form'>
+        <form method="post" action="index.php?page=contact" id="form">
+            <?php if (!$_SESSION['logged']){ ?>
             <input type="text" id="name" name="name" placeholder="<?= NAME ?>">
             <input type="text" id="fname" name="fname" placeholder="<?= FIRST_NAME ?>">
             <input type="tel" id="tel" name="tel" placeholder="<?= PHONE ?>">
             <input type="email" id="email" name="email" placeholder="<?= EMAIL ?>">
+            <?php }?>
             <input type="text" id="subject" name="subject" placeholder="<?= SUBJECT ?>">
             <textarea id="desc" name="desc" rows="10" cols="30" placeholder="<?= DESC ?>"></textarea>
+            <input class='links' type="submit" value=<?= SUBMIT ?>></input>
         </form>
-        <div class='links'><a href="tkt" id="submit"><?= SUBMIT ?></a></div>
     </div>
 
 <!--  Fin de la page -->
