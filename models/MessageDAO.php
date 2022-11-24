@@ -41,4 +41,10 @@ class MessageDAO extends DAO
         $args = array(':user_id' => $user_id);
         return $this->queryAll($sql,$args);
     }
+
+    public function getAllMessages()
+    {
+        $sql = 'SELECT * FROM MESSAGE_SUPPORT ORDER BY MESSAGE_TIME DESC';
+        return $this->queryAll($sql);
+    }
 }

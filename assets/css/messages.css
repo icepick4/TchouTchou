@@ -12,6 +12,7 @@ h3,
 p {
   margin: 0;
 }
+
 #chat {
   margin: 1em;
   display: flex;
@@ -20,6 +21,13 @@ p {
   border-radius: 12px;
 }
 
+#messages div h2 {
+  width: 100%;
+  background-color: var(--border-input);
+  margin-top: 0;
+  /*padding: 0.2em;*/
+  border-top-right-radius: 12px;
+}
 #resume {
   width: 25%;
   border-right: 1px solid #fff;
@@ -39,4 +47,28 @@ p {
 #resume div * {
   opacity: 1;
   color: #fff;
+}
+
+#messages {
+  width: 90%;
+}
+#messages div {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+#messages div p {
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 10px;
+}
+.sender {
+  align-self: flex-start;
+  background-color: var(--border-input);
+}
+
+.receiver {
+  background-color: var(--main-color);
+  align-self: flex-end;
 }
