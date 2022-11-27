@@ -10,6 +10,7 @@ v_last_stop_time LINE_STOP.DURATION_TIME%type;
 v_start_time TRAVEL.START_TIME%type;
 v_last_STATION LINE_STOP.STATION_ID%type;
 v_delta_time DELTA_TIME_STATION.DELTA_TIME%type;
+v_late  TRAVEL.LATE_TIME%type;
 
 CURSOR c_next_stop is
      select ls.station_id, ls.duration_time from LINE_STOP ls, TRAVEl t  where t.travel_id=travel_id_ AND t.line_id=ls.line_id ORDER BY ORDER_STOP ASC;
@@ -25,31 +26,33 @@ v_last_STATION := v_next_stop.station_id;
     v_last_stop_time := v_next_stop.DURATION_TIME;
 
     train_status := 0; -- default train status is stop
-    
+
     -- get the starting station into v_last_STATION
- 
-    v_total_time :=0; -- set total time to 0 
+
+    select nvl(LATE_TIME,0) into v_total_time FROM TRAVEL WHERE TRAVEL_ID = travel_id_;
+    --v_total_time :=0; -- set total time to 0 
 
     -- get start time into v_start_time
     SELECT  START_TIME  into  v_start_time FROM TRAVEL t where travel_id_ = t.travel_id ;
 
     getETA(v_start_time,0,v_next_stop.DURATION_TIME,v_total_time,ETA, train_status);
-   
+    CheckCode(travel_id_,ETA, v_last_STATION,v_last_STATION,train_status,train_status,v_late);
+
     next_station_id := v_last_STATION;
 
     IF train_status= 0 THEN -- if turn arount time for depart si good
 
     -------------- LOOP
- 
+
     LOOP
     FETCH c_next_stop INTO v_next_stop ;
 
     IF c_next_stop%NOTFOUND THEN -- if no result 
-     
+
     exit;
     END IF;
-    
-    
+
+
     -- get next sation id
     next_station_id := v_next_stop.station_id;
 
@@ -60,9 +63,10 @@ v_last_STATION := v_next_stop.station_id;
     getDTS(v_last_STATION,next_station_id,v_delta_time);
 
     getETA(v_start_time,v_delta_time,v_next_stop.DURATION_TIME,v_total_time,ETA, train_status);
+    CheckCode(travel_id_,ETA, v_last_STATION,next_station_id,train_status,train_status,v_late);
     -- calculate diffrence bewteen the it shoud take and curent time
 
-    IF  train_status = 1 OR train_status = 2 OR train_status=3 then -- travel not finish or a quai
+    IF  train_status = 1 OR train_status = 2 OR train_status = 3 OR train_status = 4 OR train_status = 5 then -- travel not finish or a quai
         exit;
     END IF;
 
@@ -79,9 +83,16 @@ v_last_STATION := v_next_stop.station_id;
     IF train_status = 0 THEN
         dbms_output.put_line( 'update start time to 24h for travel id '||travel_id_); 
         UPDATE TRAVEL SET START_TIME=START_TIME+ interval '24' hour  where TRAVEL_ID = travel_id_;
+        Update PLATFORM SET PLATFORM_USER= NULL, PLATFORM_UTILISATION=0 WHERE PLATFORM_USER =train_id_;
+
         commit;
 
     END IF;
+    if v_late > 0 then
+
+         update TRAVEL  SET LATE_TIME = nvl(LATE_TIME,0) + v_late WHERE TRAVEL_ID =5;
+          commit;
+     end if;
 
     EXCEPTION
     WHEN NO_DATA_FOUND THEN
@@ -137,7 +148,7 @@ begin
     dbms_output.put_line('code status ' || v_code); 
 
 
- 
+
 
 end;
 
