@@ -15,8 +15,6 @@ for (let i = 0; i < discussionsResume.length; i++) {
   });
 }
 
-
-
 var message = document.getElementsByClassName("discussion_resume");
 
 //event listener for each discussion_resume
@@ -36,7 +34,6 @@ function test(e) {
       document.getElementById("test").innerHTML = this.responseText;
     }
   };
-  console.log(window.location.pathname);
-  xmlhttp.open("GET", "views/phpRequest.php?number=" + number, true);
+  xmlhttp.open("GET", "views/messageRequest.php?number=" + number, true);
   xmlhttp.send();
 }
