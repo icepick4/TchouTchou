@@ -37,4 +37,5 @@
     };?>
     </div>
 </div>
+<div id="test"></div>
 <?php require_once(PATH_VIEWS.'footer.php'); 
