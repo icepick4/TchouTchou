@@ -12,9 +12,11 @@ function choixAlert($message)
             break;
         case 'unknown_mail':
             $alert['messageAlert'] = UNKWOWN_MAIL;
+            $alert["typeAlert"] = "form";
             break;
         case 'unknown_password':
             $alert['messageAlert'] = UNKNOWN_PASSWORD;
+            $alert["typeAlert"] = "form";
             break;
         default:
             $alert['messageAlert'] = MESSAGE_ERREUR;

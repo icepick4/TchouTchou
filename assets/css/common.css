@@ -30,6 +30,12 @@ body {
   flex-direction: column;
   text-align: center;
 }
+.alert-form {
+  border: 2px solid red;
+  background-color: #ff000069;
+  border-radius: 5px;
+  padding: 5px 30px;
+}
 
 .links a {
   /* margin-left: 3%; */
