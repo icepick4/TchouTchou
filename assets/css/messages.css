@@ -51,6 +51,7 @@ p {
 
 #messages {
   width: 90%;
+  height: 100%;
 }
 #messages div {
   display: none;
@@ -71,4 +72,20 @@ p {
 .receiver {
   background-color: var(--main-color);
   align-self: flex-end;
+}
+
+form {
+  border: 1px solid var(--main-color);
+  margin: 0.5em;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+form input {
+  border: none;
+}
+
+form input[type="submit"] {
+  color: var(--main-color);
+  background-color: transparent;
 }

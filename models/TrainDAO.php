@@ -24,8 +24,9 @@ class TrainDAO extends DAO
         INNER JOIN ARRIVAL_TO_STATION ON TRAVEL.TRAVEL_ID = ARRIVAL_TO_STATION.TRAVEL_ID
         WHERE LINE_STOP.STATION_ID != LINE.END_STATION_ID 
         AND LINE_STOP.STATION_ID = :id 
-        AND ARRIVAL_TO_STATION.STATION_ID = :id 
-        AND DEPARTURE_TIME <= SYSDATE
+        AND ARRIVAL_TO_STATION.STATION_ID = :id
+        AND DEPARTURE_TIME >= SYSDATE
+        AND DEPARTURE_TIME <= SYSDATE+2/24
         ORDER BY DEPARTURE_TIME ASC';
         $args = array(':id' => $id);
         return $this->queryAll($sql, $args);
@@ -41,7 +42,8 @@ class TrainDAO extends DAO
         WHERE LINE_STOP.STATION_ID != LINE.START_STATION_ID 
         AND LINE_STOP.STATION_ID = :id 
         AND ARRIVAL_TO_STATION.STATION_ID = :id
-        AND DEPARTURE_TIME <= SYSDATE
+        AND DEPARTURE_TIME >= SYSDATE
+        AND DEPARTURE_TIME <= SYSDATE+2/24
         ORDER BY ARRIVAL_TIME ASC';
         $args = array(':id' => $id);
         return $this->queryAll($sql, $args);

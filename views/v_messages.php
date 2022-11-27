@@ -35,6 +35,10 @@
             </div>
         <?php
     };?>
+    <form>
+        <input type="text" id="message" name="message" placeholder="Votre message">
+        <input type="submit" id="submit" value="Envoyer">
+    </form>
     </div>
 </div>
 <div id="test"></div>
