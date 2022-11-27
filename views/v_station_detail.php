@@ -51,5 +51,7 @@
             <tr>
         <?php
         }
-        }else{?><h2><?= NO_ARRIVAL ?></h2><?php }} 
- require_once(PATH_VIEWS . 'footer.php');
+        ?></table><?php
+        }else{?><h2><?= NO_ARRIVAL ?></h2><?php }}?>
+ </section>
+ <? require_once(PATH_VIEWS . 'footer.php');
