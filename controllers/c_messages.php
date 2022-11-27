@@ -21,4 +21,8 @@ else
     $discussions = $mailbox->getUserDisussions($_SESSION['user_id']);
 }
 
+if (isset($_POST['message']))
+{
+    $mailbox->insertMessageSupport($_POST['message'],$_POST['discussion_id']);
+}
 require_once(PATH_VIEWS . $page . '.php');

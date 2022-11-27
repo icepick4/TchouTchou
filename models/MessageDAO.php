@@ -21,12 +21,22 @@ class MessageDAO extends DAO
         $this->queryInsert($sql, $args);
         return $discussion_id['MAX']+1;
     }
-    public function insertMessageCustomer($message,$discussion_id)
+    public function insertMessage($message,$discussion_id,$sender_id)
     {
         $sql = 'INSERT INTO MESSAGE_SUPPORT (DISCUSSION_ID,MESSAGE_CONTENT,SENDER) VALUES (:discussion_id,:message,:sender)';
-        $args = array(':discussion_id' => $discussion_id, ':message' => $message, ':sender' => 1);
+        $args = array(':discussion_id' => $discussion_id, ':message' => $message, ':sender' => $sender_id);
 
         $this->queryInsert($sql, $args);
+    }
+
+    public function insertMessageCustomer($message,$discussion_id)
+    {
+        $this->insertMessage($message,$discussion_id,1);
+    }
+
+    public function insertMessageSupport($message,$discussion_id)
+    {
+        $this->insertMessage($message,$discussion_id,2);
     }
     
     public function getAllDisussions()
@@ -44,7 +54,8 @@ class MessageDAO extends DAO
 
     public function getAllMessages()
     {
-        $sql = 'SELECT * FROM MESSAGE_SUPPORT ORDER BY MESSAGE_TIME DESC';
+        $sql = 'SELECT * FROM MESSAGE_SUPPORT ORDER BY MESSAGE_TIME ASC';
         return $this->queryAll($sql);
     }
+
 }

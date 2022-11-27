@@ -1,4 +1,6 @@
 let discussionsResume = document.getElementsByClassName("discussion_resume");
+let form = document.getElementsByTagName("form");
+let discussion_id = document.getElementById("discussion_id");
 for (let i = 0; i < discussionsResume.length; i++) {
   discussionsResume[i].addEventListener("click", function () {
     let messages = document
@@ -12,6 +14,11 @@ for (let i = 0; i < discussionsResume.length; i++) {
       discussionsResume[i].getElementsByTagName("h3")[0].innerText
     )[0];
     message.style.display = "flex";
+
+    discussion_id.value =
+      discussionsResume[i].getElementsByTagName("h3")[0].innerText;
+    form[0].style.display = "flex";
+    console.log(discussion_id.value);
   });
 }
 

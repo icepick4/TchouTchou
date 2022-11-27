@@ -35,7 +35,8 @@
             </div>
         <?php
     };?>
-    <form>
+    <form method="post" action="index.php?page=messages">
+        <input type="hidden" id="discussion_id" name="discussion_id" value="">
         <input type="text" id="message" name="message" placeholder="Votre message">
         <input type="submit" id="submit" value="Envoyer">
     </form>

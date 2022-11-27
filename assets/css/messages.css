@@ -25,9 +25,11 @@ p {
   width: 100%;
   background-color: var(--border-input);
   margin-top: 0;
-  /*padding: 0.2em;*/
-  border-top-right-radius: 12px;
+  padding: 0.2em;
+  border-top-right-radius: 2px;
+  z-index: -1;
 }
+
 #resume {
   width: 25%;
   border-right: 1px solid #fff;
@@ -51,10 +53,12 @@ p {
 
 #messages {
   width: 90%;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
+
 #messages div {
   display: none;
   flex-direction: column;
@@ -64,7 +68,7 @@ p {
 #messages div p {
   padding: 1em;
   margin: 0.5em;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 .sender {
   align-self: flex-start;
@@ -78,18 +82,28 @@ p {
 
 form {
   border: 1px solid var(--main-color);
-  margin: 0.5em;
-  padding: 0.5em;
+  margin: 1%;
+  padding: 0.5%;
   border-radius: 10px;
   align-self: flex-end;
-  width: 95.5%;
+  width: 97%;
+  display: none;
 }
 
 form input {
   border: none;
+  background-color: transparent;
 }
 
+form input:focus {
+  outline: none;
+  border: none;
+}
+form input:not([type="submit"]) {
+  flex-grow: 1;
+  color: white;
+}
 form input[type="submit"] {
   color: var(--main-color);
-  background-color: transparent;
+  cursor: pointer;
 }
