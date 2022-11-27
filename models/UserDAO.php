@@ -20,7 +20,7 @@ class UserDAO extends DAO
     {
         $sql = 'SELECT (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.START_STATION_ID) START_STATION_NAME, 
             (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.END_STATION_ID) END_STATION_NAME, 
-            TRAVEL_DATETIME,
+            START_TIME,
             T.TRAVEL_ID 
             FROM TICKET T, TRAVEL TR WHERE TR.TRAVEL_ID = T.TRAVEL_ID AND USER_ID = :id';
         $args = array(':id' => $id,);
@@ -30,7 +30,7 @@ class UserDAO extends DAO
     {
         $sql = 'SELECT (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.START_STATION_ID) START_STATION_NAME,
             (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.END_STATION_ID) END_STATION_NAME, 
-            TRAVEL_DATETIME, 
+            START_TIME, 
             extract (hour from START_TIME) START_TIME_HOUR, 
             extract (minute from START_TIME) START_TIME_MINUTE,
             extract (hour from END_TIME) END_TIME_HOUR,
@@ -46,6 +46,30 @@ class UserDAO extends DAO
     {
         $sql = 'SELECT * FROM USER_DATA';
         return $this->queryAll($sql);
+    }
+    public function updateFirstName($id, $first_name)
+    {
+        $sql = 'UPDATE USER_DATA SET USER_FIRSTNAME = :first_name WHERE USER_ID = :id';
+        $args = array(':id' => $id, ':first_name' => $first_name);
+        return $this->queryRow($sql, $args);
+    }
+    public function updateLastName($id, $last_name)
+    {
+        $sql = 'UPDATE USER_DATA SET USER_LASTNAME = :last_name WHERE USER_ID = :id';
+        $args = array(':id' => $id, ':last_name' => $last_name);
+        return $this->queryRow($sql, $args);
+    }
+    public function updatePhone($id, $phone)
+    {
+        $sql = 'UPDATE USER_DATA SET USER_PHONE = :phone WHERE USER_ID = :id';
+        $args = array(':id' => $id, ':phone' => $phone);
+        return $this->queryRow($sql, $args);
+    }
+    public function updateMail($id, $mail)
+    {
+        $sql = 'UPDATE USER_DATA SET USER_MAIL = :mail WHERE USER_ID = :id';
+        $args = array(':id' => $id, ':mail' => $mail);
+        return $this->queryRow($sql, $args);
     }
 
     public function insertUser($mail, $phone, $password, $lastName, $firstName, $userCat)
@@ -104,6 +128,6 @@ class UserDAO extends DAO
         return $this->getEmployeeType($id) == 4;
     }
 
-    
+
     // 0
 }

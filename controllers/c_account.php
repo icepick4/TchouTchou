@@ -6,6 +6,18 @@ if (!$_SESSION['logged']) {
     die();
 } else {
     $user = new UserDAO(true);
+    if (isset($_POST['first-name'])) {
+        $user->updateFirstName($_SESSION['user_id'], $_POST['first-name']);
+    }
+    if (isset($_POST['last-name'])) {
+        $user->updateLastName($_SESSION['user_id'], $_POST['last-name']);
+    }
+    if (isset($_POST['phone'])) {
+        $user->updatePhone($_SESSION['user_id'], $_POST['phone']);
+    }
+    if (isset($_POST['mail'])) {
+        $user->updateMail($_SESSION['user_id'], $_POST['mail']);
+    }
     $result = $user->getUserById($_SESSION['user_id']);
 }
 

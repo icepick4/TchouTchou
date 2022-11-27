@@ -22,7 +22,7 @@ if ($_SESSION['logged']) {
                 <p>To</p>
                 <p> <?php echo $tickets[$i]['END_STATION_NAME'] ?> </p>
                 <p> The <?php //get hour and date of the date
-                        $date = new DateTime($tickets[$i]['TRAVEL_DATETIME']);
+                        $date = new DateTime($tickets[$i]['START_TIME']);
                         echo $date->format('d/m/Y'); ?> </p>
                 <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">More...</a>
             </div>
