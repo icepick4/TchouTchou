@@ -9,10 +9,10 @@
 if ($_SESSION['logged']) {
 ?>
     <div id="title-ticket-list">
-        <h1>Here are your tickets</h1>
+        <h1><?= MY_TICKETS ?></h1>
     </div>
     <?php
-    //no style on this, getting data for the moment
+    echo count($tickets);
     for ($i = 0; $i < count($tickets); $i++) {
     ?>
         <div class="tickets">
@@ -22,11 +22,18 @@ if ($_SESSION['logged']) {
                 <p>To</p>
                 <p> <?php echo $tickets[$i]['END_STATION_NAME'] ?> </p>
                 <p> The <?php //get hour and date of the date
-                        $date = new DateTime($tickets[$i]['TRAVEL_DATETIME']);
-                        echo $date->format('d/m/Y'); ?> </p>
+                        $date = $tickets[$i]['DEPARTURE_TIME'];
+                        echo $date; ?> </p>
                 <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">More...</a>
             </div>
 
+        </div>
+    <?php
+    }
+    if (count($tickets) == 0) {
+    ?>
+        <div id="title-ticket-list">
+            <h2><?= NO_TICKET ?></h2>
         </div>
 <?php
     }
@@ -34,7 +41,7 @@ if ($_SESSION['logged']) {
 ?>
 <div class="link-ticket-list">
     <div class="links">
-        <a href="index.php?page=shopping">Get tickets</a>
+        <a href="index.php?page=shopping"><?= BUY_TICKET ?></a>
     </div>
 </div>
 

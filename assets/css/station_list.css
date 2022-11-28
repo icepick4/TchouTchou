@@ -1,0 +1,46 @@
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 50%;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+table tr {
+  border: 1px solid #ddd;
+  font-size: 20px;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+}
+
+table tr th {
+  color: var(--txt-white-color);
+}
+
+table tr:first-child {
+  font-size: 25px;
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: #000;
+}
+
+table tr:nth-child(even) {
+  background-color: var(--border-input);
+}
+
+table tr:hover {
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}

@@ -1,0 +1,113 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  width: 30%;
+}
+
+form div {
+  display: flex;
+  flex-direction: auto;
+  justify-content: center;
+}
+form input {
+  width: 70%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 0.15rem solid #696969;
+  border-radius: var(--radius);
+  font-size: 1.2em;
+  color: #696969;
+}
+
+form input[type="submit"] {
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5em;
+  border: none;
+  cursor: pointer;
+}
+
+form div label a {
+  color: var(--txt-white-color);
+}
+
+form div label {
+  width: 80%;
+}
+form div input {
+  width: 10%;
+}
+
+#boxPassword {
+  position: relative;
+  display: block;
+  width: 70%;
+}
+
+#boxPassword input {
+  width: 100%;
+}
+
+form i {
+  position: absolute;
+  right: 15px;
+  color: black;
+  top: 33%;
+}
+
+#title {
+  font-size: 5em;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  margin: 0 auto;
+  color: var(--main-color);
+}
+
+.links {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.is-valid {
+  border-color: green;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.info {
+  display: none;
+  color: red;
+  font-size: 0.7rem;
+  font-style: italic;
+}
+
+p.info {
+  font-size: 2rem;
+  color: red;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--main-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

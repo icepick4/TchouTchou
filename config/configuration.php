@@ -1,22 +1,13 @@
 <?php
-
+require_once('config/config_connection.php');
 const DEBUG = true; // production : false; dev : true
 
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-
-// Accès base de données
-const BD_HOST = 'tchoutchou.ovh';
-const BD_DBNAME = '';
-const BD_USER = 'Tchou';
-const BD_PWD = 'Tchoutchou69';
-const BD_PORT = '5521';
-const BD_SID = 'xe';
-
 // Langue du site
-const LANG = 'FR-fr';
+define('LANG', substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'], '-') - 2, 5));
 
 // Paramètres du site : nom de l'auteur ou des auteurs
 const AUTEUR = 'TchouTchou';
@@ -41,8 +32,12 @@ define('PATH_SCRIPTS', PATH_ASSETS . 'js/');
 define('PATH_LOGO', PATH_IMAGES . 'fav.png');
 define('PATH_MENU', PATH_VIEWS . 'menu.php');
 
+// essaie d'utiliser le fichier config global pour ajax
+if (!isset($skipSession)){
+    session_start();
+}
 
-session_start();
+// session_start();
 if (!isset($_SESSION['logged'])) {
     $_SESSION['logged'] = false;
 }

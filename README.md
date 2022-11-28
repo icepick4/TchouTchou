@@ -1,5 +1,5 @@
 # SAE-SNCF
-![MKT](https://img.shields.io/badge/license-copyleft-red.svg)
+![MKT](https://img.shields.io/badge/license-MIT_License-red.svg)
 ![MKT](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 ![MKT](https://img.shields.io/badge/languages-PHP_JS_HTML_CSS-orange.svg)
 ![MKT](https://img.shields.io/badge/platform-Web-1ightgrey.svg)
@@ -15,6 +15,8 @@ L'objet de ce projet est de réaliser un site de réservation de billets de trai
 # Périmètre
 Ce projet est réalisé par un groupe de 5 personnes d’un niveau équivalent en 2ème année du BUT informatique. Le projet n'utilisera pas de framework, ni de PWA. Le développement du projet se fait en dehors des heures de cours avec deux heures toutes les deux semaines de réunion avec notre tuteur. Le projet se déroule sur 4 mois et se termine par une soutenance de 40 minutes.
 # GUIDE
+
+Pour update le server il suift de aller sur <a href="http://82.65.238.70:5569/">lien</a>
 
 Pour facilement avoir accès à toutes les branches,
 après avoir cloner le repo :
@@ -60,17 +62,3 @@ pour l'arreter
 
 ``` docker start web```
 pour le demarrer
-
-
-
-# ORACLE
- voici les informations de connections vers notre serveur Oracle
-
- nom utilisateur `Tchou` <br>
- mdp `Tchoutchou69` <br><br>
- nom hôte `tchoutchou.ovh` <br>
- port `5521` <br>
- SID `xe` <br>
-
-
-

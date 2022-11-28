@@ -9,6 +9,7 @@
   --border-input: #343434;
   --radius: 8px;
   --margin: 4px;
+  --hover: 0.5s;
 }
 
 body {
@@ -28,6 +29,12 @@ body {
   align-items: center;
   flex-direction: column;
   text-align: center;
+}
+.alert-form {
+  border: 2px solid red;
+  background-color: #ff000069;
+  border-radius: 5px;
+  padding: 5px 30px;
 }
 
 .links a {
@@ -80,4 +87,22 @@ body {
   .links a {
     color: white;
   }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-color) none;
+}
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 40px;
+  border: 3px solid var(--main-color);
 }

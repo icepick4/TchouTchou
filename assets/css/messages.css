@@ -1,0 +1,108 @@
+h1 {
+  font-size: 5em;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0.5em;
+  margin: 0 auto;
+  color: var(--main-color);
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+#chat {
+  margin: 1em;
+  display: flex;
+  height: 64vh;
+  border: 3px solid var(--main-color);
+  border-radius: 12px;
+}
+
+#messages h2 {
+  width: 99%;
+  background-color: var(--border-input);
+  margin-top: 0;
+  padding: 0.5%;
+  border-top-right-radius: 2px;
+  z-index: -1;
+}
+
+#resume {
+  overflow-y: scroll;
+  width: 25%;
+  min-height: 100%;
+  border-right: 1px solid #fff;
+}
+#resume div {
+  padding: 1em;
+  background-color: var(--main-color);
+  opacity: 0.4;
+  border-radius: 10px;
+  margin: 0.5em;
+}
+
+#resume div:hover {
+  opacity: 1;
+}
+
+#resume div * {
+  opacity: 1;
+  color: #fff;
+}
+
+#messages {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 90%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#messages p {
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 12px;
+  z-index: -2;
+}
+.sender {
+  align-self: flex-start;
+  background-color: var(--border-input);
+}
+
+.receiver {
+  background-color: var(--main-color);
+  align-self: flex-end;
+}
+
+form {
+  border: 1px solid var(--main-color);
+  margin: 1%;
+  padding: 0.5%;
+  border-radius: 10px;
+  align-self: flex-end;
+  width: 97%;
+  display: flex;
+}
+
+form input {
+  border: none;
+  background-color: transparent;
+}
+
+form input:focus {
+  outline: none;
+  border: none;
+}
+form input:not([type="submit"]) {
+  flex-grow: 1;
+  color: white;
+}
+form input[type="submit"] {
+  color: var(--main-color);
+  cursor: pointer;
+}

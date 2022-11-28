@@ -5,20 +5,20 @@
 <footer>
 	<section>
 		<nav>
-			<h2>Notre Entrerpise</h2>
-			<a href="index.php?page=cgu"><?php echo TERMS_OF_USE ?></a>
-			<a href="index.php?page=privacy_policy"><?php echo PRIVACY_POLICY ?></a>
+			<h2><?= TITLE_COMPANY ?></h2>
+			<a href="index.php?page=cgu"><?= TERMS_OF_USE ?></a>
+			<a href="index.php?page=privacy_policy"><?= PRIVACY_POLICY ?></a>
 		</nav>
 		<nav>
-			<h2>Vous Informer</h2>
-			<a href="index.php?page=informations"><?php echo TITLE_INFORMATION ?></a>
+			<h2><?= TITLE_INFORM_YOU ?></h2>
+			<a href="index.php?page=informations"><?= TITLE_INFORMATION ?></a>
 		</nav>
 		<nav>
-			<h2>Accès Rapide</h2>
-			<a href="index.php?page=home"><?php echo TITLE_HOME ?></a>
-			<a href="index.php?page=login"><?php echo TITLE_LOGIN ?></a>
-			<a href="index.php?page=driver">DEBUG</a>
-			<a href="index.php?page=contact"><?php echo TITLE_CONTACT ?></a>
+			<h2><?= TITLE_QUICK_ACCESS ?></h2>
+			<a href="index.php?page=home"><?= TITLE_HOME ?></a>
+			<a href="index.php?page=login"><?= TITLE_LOGIN ?></a>
+			<a href="index.php?page=contact"><?= TITLE_CONTACT ?></a>
+			<a href="http://82.65.238.70:5569/" target="_blank"><?= TITLE_GITPULL ?></a>
 		</nav>
 	</section>
 	<p id="copyright">Tchoutchou Copyright ©2022</p>

@@ -30,11 +30,74 @@
     background-color: var(--main-color);
 }
 
+.infos img {
+    width: 32px;
+    height: 32px;
+}
+
+.infos img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.infos button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: translateY(0px);
+}
+
+.infos button:active {
+    transform: translateY(2px);
+}
+
 /*border between rows*/
-.infos table td:nth-child(odd) {
+.infos table td:first-child {
     border-bottom: 2px solid #e5e5e5;
     color: #fff;
 
+}
+
+
+
+form {
+    opacity: 0;
+}
+
+form input {
+    background-color: var(--second-color);
+    color: white;
+    border: 1px solid #e5e5e5;
+    outline: none;
+    font-size: 0.6em;
+    border-radius: var(--radius);
+}
+
+.info {
+    display: none;
+    color: red;
+    font-size: 0.7rem;
+    font-style: italic;
+}
+
+#delete-account {
+    text-decoration: none;
+    background: none;
+    border: none;
+    width: 100%;
+    font-size: 0.6em;
+    cursor: pointer;
+}
+
+p.info {
+    font-size: 2rem;
+    color: red;
 }
 
 .links {
