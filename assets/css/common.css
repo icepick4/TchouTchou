@@ -93,15 +93,12 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--main-color) none;
 }
-
-/* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 12px;
-  overflow: hidden;
 }
 
 *::-webkit-scrollbar-track {
-  background-color: none;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 *::-webkit-scrollbar-thumb {
