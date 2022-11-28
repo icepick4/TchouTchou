@@ -62,18 +62,3 @@ pour l'arreter
 
 ``` docker start web```
 pour le demarrer
-
-
-
-# ORACLE
- voici les informations de connections vers notre serveur Oracle
-
- nom utilisateur `Tchou` <br>
- mdp `Tchoutchou69` <br><br>
- nom hôte `tchoutchou.ovh` <br>
- port `5521` <br>
- SID `xe` <br>
-
-# CONNEXION SERVEUR DISTANT
-```ssh vo269ma@tchoutchou.ovh -p 226```
-

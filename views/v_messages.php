@@ -15,6 +15,19 @@
     </div>
     <div id="messages">
         <?php
+        
+        /*
+
+
+
+
+
+
+
+
+
+
+
         foreach ($discussions as $discussion) {?>
             <div class=<?= $discussion['DISCUSSION_ID'];?>>
             <h2><?= $discussion['USER_MAIL'] ?></h2>
@@ -34,13 +47,9 @@
             }?>
             </div>
         <?php
-    };?>
-    <form method="post" action="index.php?page=messages">
-        <input type="hidden" id="discussion_id" name="discussion_id" value="">
-        <input type="text" id="message" name="message" placeholder="Votre message">
-        <input type="submit" id="submit" value="Envoyer">
-    </form>
+    };*/?>
+       
     </div>
 </div>
-<div id="test"></div>
+
 <?php require_once(PATH_VIEWS.'footer.php'); 
