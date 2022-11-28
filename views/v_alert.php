@@ -2,7 +2,7 @@
 
 if(isset($alert))
 {
-	if($alert["typeAlert"] == "form")
+	if(isset($alert["typeAlert"]) && $alert["typeAlert"] == "form")
 	{
 ?>
 	<div class="alert alert-form">

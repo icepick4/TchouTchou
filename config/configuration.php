@@ -41,6 +41,10 @@ define('PATH_SCRIPTS', PATH_ASSETS . 'js/');
 define('PATH_LOGO', PATH_IMAGES . 'fav.png');
 define('PATH_MENU', PATH_VIEWS . 'menu.php');
 
+// essaie d'utiliser le fichier config global pour ajax
+// if (!isset($skipSession)){
+//     session_start();
+// }
 
 session_start();
 if (!isset($_SESSION['logged'])) {
