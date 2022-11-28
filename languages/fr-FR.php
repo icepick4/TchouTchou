@@ -47,6 +47,7 @@ define('ERROR_PHONE', 'Numéro de téléphone invalide');
 define('ERROR_PASSWORD_TOO_WEAK', 'Le mot de passe doit contenir au moins une lettre majuscule, une minuscule, un chiffre et être composé d\'au moins 8 caractères');
 define('ERROR_PASSWORD_DIFFERENT', 'Les mots de passe sont différents');
 define('ERROR_FORM', 'Veuillez corriger les erreurs avant d\'envoyer vos informations');
+define('ERROR_CHARACTER', 'Nombre de caractères insuffisants');
 define('DELETE_ACCOUNT', 'Supprimer mon compte');
 
 //contact

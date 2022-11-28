@@ -3,11 +3,19 @@
   justify-content: center;
 }
 
+#info {
+  display: none;
+}
+
 #page {
   display: flex;
   flex-direction: column;
   margin-bottom: 3%;
   width: max(800px, 60vw);
+}
+
+.is-invalid {
+  border-color: red;
 }
 
 h1 {
