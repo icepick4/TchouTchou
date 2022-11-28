@@ -1,19 +1,10 @@
 <?php
-
+require_once('config/config_connection.php');
 const DEBUG = true; // production : false; dev : true
 
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-
-
-// Accès base de données
-const BD_HOST = 'tchoutchou.ovh';
-const BD_DBNAME = '';
-const BD_USER = 'Tchou';
-const BD_PWD = 'Tchoutchou69';
-const BD_PORT = '5521';
-const BD_SID = 'xe';
 
 // Langue du site
 define('LANG', substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'], '-') - 2, 5));
