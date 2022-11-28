@@ -20,7 +20,7 @@ define('STATION_INFORMATION', 'Gares & Quais');
 define('TERMS_OF_USE', 'Condtions Générales');
 define('PRIVACY_POLICY', 'Politique de Confidentialité');
 define('STATION_LIST', 'Liste des Gares');
-define('TITLE_GITPULL','git pull');
+define('TITLE_GITPULL', 'git pull');
 
 
 //Home
@@ -46,6 +46,7 @@ define('ERROR_PHONE', 'Numéro de téléphone invalide');
 define('ERROR_PASSWORD_TOO_WEAK', 'Le mot de passe doit contenir au moins une lettre majuscule, une minuscule, un chiffre et être composé d\'au moins 8 caractères');
 define('ERROR_PASSWORD_DIFFERENT', 'Les mots de passe sont différents');
 define('ERROR_FORM', 'Veuillez corriger les erreurs avant d\'envoyer vos informations');
+define('DELETE_ACCOUNT', 'Supprimer mon compte');
 
 //contact
 define('NAME', 'Nom');
@@ -76,6 +77,5 @@ define('DESTINATION', 'Destination');
 define('DEPARTURE_TIME', 'Heure de départ');
 define('ARRIVAL_TIME', 'Heure d\'arrivée');
 define('NO_TRAIN', 'Aucun train prévu pour le moment');
-define('NO_ARRIVAL','Aucune arrivée prévue pour le moment');
+define('NO_ARRIVAL', 'Aucune arrivée prévue pour le moment');
 define('NO_DEPARTURE', 'Aucun départ prévu pour le moment');
-

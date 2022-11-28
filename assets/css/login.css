@@ -36,6 +36,10 @@ form i {
   top: 33%;
 }
 
+::-ms-reveal {
+  display: none;
+}
+
 #title {
   font-size: 5em;
   font-weight: 600;

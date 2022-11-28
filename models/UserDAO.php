@@ -51,25 +51,31 @@ class UserDAO extends DAO
     {
         $sql = 'UPDATE USER_DATA SET USER_FIRSTNAME = :first_name WHERE USER_ID = :id';
         $args = array(':id' => $id, ':first_name' => $first_name);
-        return $this->queryRow($sql, $args);
+        return $this->queryInsert($sql, $args);
     }
     public function updateLastName($id, $last_name)
     {
         $sql = 'UPDATE USER_DATA SET USER_LASTNAME = :last_name WHERE USER_ID = :id';
         $args = array(':id' => $id, ':last_name' => $last_name);
-        return $this->queryRow($sql, $args);
+        return $this->queryInsert($sql, $args);
     }
     public function updatePhone($id, $phone)
     {
         $sql = 'UPDATE USER_DATA SET USER_PHONE = :phone WHERE USER_ID = :id';
         $args = array(':id' => $id, ':phone' => $phone);
-        return $this->queryRow($sql, $args);
+        return $this->queryInsert($sql, $args);
     }
     public function updateMail($id, $mail)
     {
         $sql = 'UPDATE USER_DATA SET USER_MAIL = :mail WHERE USER_ID = :id';
         $args = array(':id' => $id, ':mail' => $mail);
-        return $this->queryRow($sql, $args);
+        return $this->queryInsert($sql, $args);
+    }
+    public function deleteUser($id)
+    {
+        $sql = 'DELETE FROM USER_DATA WHERE USER_ID = :id';
+        $args = array(':id' => $id);
+        return $this->queryInsert($sql, $args);
     }
 
     public function insertUser($mail, $phone, $password, $lastName, $firstName, $userCat)
