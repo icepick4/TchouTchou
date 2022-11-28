@@ -23,10 +23,10 @@ p {
 
 #messages h2 {
   position: fixed;
-  width: 100%;
+  width: 99%;
   background-color: var(--border-input);
   margin-top: 0;
-  padding: 0.2em;
+  padding: 0.5%;
   border-top-right-radius: 2px;
   z-index: -1;
 }
