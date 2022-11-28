@@ -12,7 +12,7 @@ if ($_SESSION['logged']) {
         <h1><?= MY_TICKETS ?></h1>
     </div>
     <?php
-    //no style on this, getting data for the moment
+    echo count($tickets);
     for ($i = 0; $i < count($tickets); $i++) {
     ?>
         <div class="tickets">
@@ -22,8 +22,8 @@ if ($_SESSION['logged']) {
                 <p>To</p>
                 <p> <?php echo $tickets[$i]['END_STATION_NAME'] ?> </p>
                 <p> The <?php //get hour and date of the date
-                        $date = new DateTime($tickets[$i]['START_TIME']);
-                        echo $date->format('d/m/Y'); ?> </p>
+                        $date = $tickets[$i]['DEPARTURE_TIME'];
+                        echo $date; ?> </p>
                 <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">More...</a>
             </div>
 

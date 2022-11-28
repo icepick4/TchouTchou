@@ -20,9 +20,9 @@ class UserDAO extends DAO
     {
         $sql = 'SELECT (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.START_STATION_ID) START_STATION_NAME, 
             (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.END_STATION_ID) END_STATION_NAME, 
-            START_TIME,
+            DEPARTURE_TIME,
             T.TRAVEL_ID 
-            FROM TICKET T, TRAVEL TR WHERE TR.TRAVEL_ID = T.TRAVEL_ID AND USER_ID = :id';
+            FROM TICKET T, TRAVEL TR, ARRIVAL_TO_STATION AOT WHERE TR.TRAVEL_ID = T.TRAVEL_ID AND T.USER_ID = :id and AOT.TRAVEL_ID = TR.TRAVEL_ID AND AOT.STATION_ID = T.END_STATION_ID';
         $args = array(':id' => $id,);
         return $this->queryAll($sql, $args);
     }
@@ -30,15 +30,12 @@ class UserDAO extends DAO
     {
         $sql = 'SELECT (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.START_STATION_ID) START_STATION_NAME,
             (SELECT STATION_NAME FROM STATION S1 WHERE S1.STATION_ID = T.END_STATION_ID) END_STATION_NAME, 
-            START_TIME, 
-            extract (hour from START_TIME) START_TIME_HOUR, 
-            extract (minute from START_TIME) START_TIME_MINUTE,
-            extract (hour from END_TIME) END_TIME_HOUR,
-            extract (minute from END_TIME) END_TIME_MINUTE,
-            END_TIME, 
+            ARRIVAL_TIME,
+            DEPARTURE_TIME,
+            MIN,
             T.TRAVEL_ID, 
             TR.TRAIN_ID 
-            FROM TICKET T, TRAVEL TR WHERE TR.TRAVEL_ID = T.TRAVEL_ID AND USER_ID = :user_id AND T.TRAVEL_ID = :id';
+            FROM TICKET T, TRAVEL TR, ARRIVAL_TO_STATION AOT WHERE TR.TRAVEL_ID = T.TRAVEL_ID AND T.USER_ID = :user_id AND T.TRAVEL_ID = :id and AOT.TRAVEL_ID = TR.TRAVEL_ID AND AOT.STATION_ID = T.START_STATION_ID';
         $args = array(':id' => $id, ':user_id' => $user_id);
         return $this->queryRow($sql, $args);
     }

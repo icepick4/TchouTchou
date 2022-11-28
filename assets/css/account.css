@@ -35,6 +35,11 @@
     height: 32px;
 }
 
+.infos img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
 .infos button {
     width: 100%;
     height: 100%;
@@ -59,8 +64,19 @@
 
 }
 
-.infos table td:last-child {
-    display: none;
+
+
+form {
+    opacity: 0;
+}
+
+form input {
+    background-color: var(--second-color);
+    color: white;
+    border: 1px solid #e5e5e5;
+    outline: none;
+    font-size: 0.6em;
+    border-radius: var(--radius);
 }
 
 .info {

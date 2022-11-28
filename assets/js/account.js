@@ -5,7 +5,6 @@ const editLastName = document.getElementById('edit-last-name');
 const editEmail = document.getElementById('edit-mail');
 const editPhone = document.getElementById('edit-phone');
 const phoneInput = document.getElementById('phone');
-const table = document.getElementById('table');
 const forms = document.getElementsByTagName('form');
 const deleteAccount = document.getElementById('delete-account');
 
@@ -32,41 +31,53 @@ forms[2].addEventListener('submit', function (e) {
 });
 
 editFirstName.addEventListener('click', () => {
-    const tr = table.getElementsByTagName('tr')[0];
-    const td = tr.children[tr.children.length - 1];
-    if (td.style.display == 'block') {
-        td.style.display = 'none';
+    const td = document.getElementsByTagName('form')[0];
+    console.log(td);
+    if (td.style.opacity == '1') {
+        td.style.opacity = '0';
     } else {
-        td.style.display = 'block';
+        for (let i = 0; i < forms.length; i++) {
+            forms[i].style.opacity = '0';
+        }
+        td.style.opacity = '1';
     }
 });
 
 editLastName.addEventListener('click', () => {
-    const tr = table.getElementsByTagName('tr')[1];
-    const td = tr.children[tr.children.length - 1];
-    if (td.style.display == 'block') {
-        td.style.display = 'none';
+    const td = document.getElementsByTagName('form')[1];
+    console.log(td);
+    if (td.style.opacity == '1') {
+        td.style.opacity = '0';
     } else {
-        td.style.display = 'block';
+        for (let i = 0; i < forms.length; i++) {
+            forms[i].style.opacity = '0';
+        }
+        td.style.opacity = '1';
     }
 });
 
 editPhone.addEventListener('click', () => {
-    const tr = table.getElementsByTagName('tr')[2];
-    const td = tr.children[tr.children.length - 1];
-    if (td.style.display == 'block') {
-        td.style.display = 'none';
+    const td = document.getElementsByTagName('form')[2];
+    console.log(td);
+    if (td.style.opacity == '1') {
+        td.style.opacity = '0';
     } else {
-        td.style.display = 'block';
+        for (let i = 0; i < forms.length; i++) {
+            forms[i].style.opacity = '0';
+        }
+        td.style.opacity = '1';
     }
 });
 
 editEmail.addEventListener('click', () => {
-    const tr = table.getElementsByTagName('tr')[3];
-    const td = tr.children[tr.children.length - 1];
-    if (td.style.display == 'block') {
-        td.style.display = 'none';
+    const td = document.getElementsByTagName('form')[3];
+    console.log(td);
+    if (td.style.opacity == '1') {
+        td.style.opacity = '0';
     } else {
-        td.style.display = 'block';
+        for (let i = 0; i < forms.length; i++) {
+            forms[i].style.opacity = '0';
+        }
+        td.style.opacity = '1';
     }
 });
