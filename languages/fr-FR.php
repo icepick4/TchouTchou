@@ -21,7 +21,8 @@ define('TERMS_OF_USE', 'Condtions Générales');
 define('PRIVACY_POLICY', 'Politique de Confidentialité');
 define('STATION_LIST', 'Liste des Gares');
 define('TITLE_GITPULL', 'git pull');
-
+define('CGU','les conditions générales d\'utilisation');
+define('PLEASE_ACCEPT', 'Veuillez accepter ');
 
 //Home
 define('WELCOME', 'Bonjour ');

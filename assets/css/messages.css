@@ -23,10 +23,10 @@ p {
 
 #messages h2 {
   position: fixed;
-  width: 100%;
+  width: 99%;
   background-color: var(--border-input);
   margin-top: 0;
-  padding: 0.2em;
+  padding: 0.5%;
   border-top-right-radius: 2px;
   z-index: -1;
 }
@@ -106,25 +106,4 @@ form input:not([type="submit"]) {
 form input[type="submit"] {
   color: var(--main-color);
   cursor: pointer;
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--main-color) none;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 12px;
-  overflow: hidden;
-}
-
-*::-webkit-scrollbar-track {
-  background-color: none;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: var(--main-color);
-  border-radius: 40px;
-  border: 3px solid var(--main-color);
 }

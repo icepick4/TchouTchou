@@ -1,5 +1,5 @@
 # SAE-SNCF
-![MKT](https://img.shields.io/badge/license-copyleft-red.svg)
+![MKT](https://img.shields.io/badge/license-MIT_License-red.svg)
 ![MKT](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 ![MKT](https://img.shields.io/badge/languages-PHP_JS_HTML_CSS-orange.svg)
 ![MKT](https://img.shields.io/badge/platform-Web-1ightgrey.svg)
