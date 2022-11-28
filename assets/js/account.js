@@ -7,6 +7,21 @@ const editPhone = document.getElementById('edit-phone');
 const phoneInput = document.getElementById('phone');
 const table = document.getElementById('table');
 const forms = document.getElementsByTagName('form');
+const deleteAccount = document.getElementById('delete-account');
+
+//get the flag in src of script
+const script = document.querySelector('script[src*="account.js"]');
+let flag = script.outerHTML
+    .split('flag=')[1]
+    .split('type')[0]
+    .replace(/['"]+/g, '')
+    .replace(/[=]+/g, '');
+deleteAccount.addEventListener('click', function prompt() {
+    let answer = confirm(flag);
+    if (answer) {
+        window.location = 'index.php?page=delete_account';
+    }
+});
 
 forms[2].addEventListener('submit', function (e) {
     console.log(validatePhone(phoneInput.value));

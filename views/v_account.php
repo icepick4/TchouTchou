@@ -7,7 +7,7 @@
 <?php require_once(PATH_VIEWS . 'alert.php'); ?>
 
 <!--  Début de la page -->
-<script src=<?= PATH_JS . 'account.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'account.js?flag=' . DELETE_ACCOUNT ?> type="module" defer></script>
 
 
 
@@ -22,6 +22,9 @@ if ($_SESSION['logged']) {
             <a class="link-profile" href="index.php?page=messages"><?= MY_MESSAGES ?></a>
             <a class="link-profile" href="index.php?page=shopping"><?= BUY_TICKET ?></a>
             <a class="link-profile" href="index.php?page=logout"><?= LOGOUT ?> </a>
+            <button id="delete-account">
+                <a class="link-profile"><?= DELETE_ACCOUNT ?></a>
+            </button>
         </div>
         <div class="infos">
             <table id="table">
