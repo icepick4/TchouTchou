@@ -58,4 +58,18 @@ class MessageDAO extends DAO
         return $this->queryAll($sql);
     }
 
+    public function getDiscussionById($id)
+    {
+        $sql = 'SELECT * FROM MESSAGE_SUPPORT WHERE DISCUSSION_ID = :id ORDER BY MESSAGE_TIME ASC';
+        $args = array(':id' => $id);
+        return $this->queryAll($sql,$args);
+    }
+
+    public function getDiscussionSubjectById($id)
+    {
+        $sql = 'SELECT DISCUSSION_SUBJECT FROM DISCUSSION_SUPPORT WHERE DISCUSSION_ID = :id';
+        $args = array(':id' => $id);
+        return $this->queryRow($sql,$args);
+    }
+
 }

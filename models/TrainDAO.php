@@ -26,7 +26,7 @@ class TrainDAO extends DAO
         AND LINE_STOP.STATION_ID = :id 
         AND ARRIVAL_TO_STATION.STATION_ID = :id
         AND DEPARTURE_TIME >= SYSDATE
-        AND DEPARTURE_TIME <= SYSDATE+2/24
+        AND DEPARTURE_TIME <= SYSDATE+5/24
         ORDER BY DEPARTURE_TIME ASC';
         $args = array(':id' => $id);
         return $this->queryAll($sql, $args);
@@ -43,7 +43,7 @@ class TrainDAO extends DAO
         AND LINE_STOP.STATION_ID = :id 
         AND ARRIVAL_TO_STATION.STATION_ID = :id
         AND DEPARTURE_TIME >= SYSDATE
-        AND DEPARTURE_TIME <= SYSDATE+2/24
+        AND DEPARTURE_TIME <= SYSDATE+5/24
         ORDER BY ARRIVAL_TIME ASC';
         $args = array(':id' => $id);
         return $this->queryAll($sql, $args);
