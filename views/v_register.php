@@ -15,7 +15,10 @@
         <input type="password" id="password" name="password" placeholder="<?= PASSWORD ?>" required>
         <label class="info"><?= ERROR_PASSWORD_TOO_WEAK ?></label>
         <input type="password" id="confirmPassword" name="confirmPassword" placeholder="<?= CONFIRMPASSWORD ?>" required>
-        <label class="info"><?= ERROR_PASSWORD_DIFFERENT ?></label>
+        <div>
+                <label class="info"><?= ERROR_PASSWORD_DIFFERENT ?></label>
+                <input type="checkbox" id="cgu" required><label for="cgu"><?= PLEASE_ACCEPT ?><a href="index.php?page=cgu"><?= CGU ?></a></label>
+        </div>
         <input type="submit" value=<?= TOREGISTER ?>></input>
 </form>
 <?php require_once(PATH_VIEWS.'footer.php'); 
