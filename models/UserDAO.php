@@ -83,8 +83,7 @@ class UserDAO extends DAO
     /**
      * Function to update the user's first name
      * @param number $id The user's id
-     * @param string $firstName
-     * @return array 
+     * @param string $firstName The new user's first name 
      * 
      */
     public function updateFirstName($id, $first_name)
@@ -96,66 +95,64 @@ class UserDAO extends DAO
 
     /**
      * Function to update the user's last name
-     * @param number $id
-     * @param string $last_name
-     * @return array
+     * @param number $id The user's id
+     * @param string $last_name The new user's last name
      *
      */
     public function updateLastName($id, $last_name)
     {
         $sql = 'UPDATE USER_DATA SET USER_LASTNAME = :last_name WHERE USER_ID = :id';
         $args = array(':id' => $id, ':last_name' => $last_name);
-        return $this->queryEdit($sql, $args);
+        $this->queryEdit($sql, $args);
     }
 
     /**
      * Function to update the user's phone number
-     * @param number $id
-     * @param string $phone_number
-     * @return array
+     * @param number $id The user's id
+     * @param string $phone_number The new user's phone number
+     * 
      */
     public function updatePhone($id, $phone)
     {
         $sql = 'UPDATE USER_DATA SET USER_PHONE = :phone WHERE USER_ID = :id';
         $args = array(':id' => $id, ':phone' => $phone);
-        return $this->queryEdit($sql, $args);
+        $this->queryEdit($sql, $args);
     }    
     /**
      * Function to update the user's mail address
      *
-     * @param  number $id
-     * @param  string $mail
-     * @return array
+     * @param  number $id The user's id
+     * @param  string $mail The new user's mail address
      *
      */
     public function updateMail($id, $mail)
     {
         $sql = 'UPDATE USER_DATA SET USER_MAIL = :mail WHERE USER_ID = :id';
         $args = array(':id' => $id, ':mail' => $mail);
-        return $this->queryEdit($sql, $args);
+        $this->queryEdit($sql, $args);
     }    
     /**
      * Function to delete a user from the database
      *
-     * @param  number $id
+     * @param  number $id The user's id
      *
      */
     public function deleteUser($id)
     {
         $sql = 'DELETE FROM USER_DATA WHERE USER_ID = :id';
         $args = array(':id' => $id);
-        return $this->queryEdit($sql, $args);
+        $this->queryEdit($sql, $args);
     }
     
     /**
      * Function to add a new user in the database
      *
-     * @param  string $mail
-     * @param  string $phone
-     * @param  string $password
-     * @param  string $lastName
-     * @param  string $firstName
-     * @param  number $userCat
+     * @param  string $mail The user's mail address
+     * @param  string $phone The user's phone number
+     * @param  string $password The user's password
+     * @param  string $lastName The user's last name
+     * @param  string $firstName The user's first name
+     * @param  number $userCat The user's category
      *
      */
     public function insertUser($mail, $phone, $password, $lastName, $firstName, $userCat)
@@ -168,9 +165,9 @@ class UserDAO extends DAO
     /**
      * Function to hash the password of a user
      *
-     * @param  number $id
-     * @param  string $password
-     * @return string
+     * @param  number $id The user's id
+     * @param  string $password The user's password
+     * @return string The hashed password
      *
      */
     public function hashPassword($password)
@@ -181,8 +178,8 @@ class UserDAO extends DAO
     /**
      * Function to get the category of a user
      *
-     * @param  number $id
-     * @return array
+     * @param  number $id The user's id
+     * @return array The user's category
      *
      */
     public function getUserType($id)
@@ -195,8 +192,8 @@ class UserDAO extends DAO
     /**
      * Function to check if the user is an employee
      *
-     * @param  number $id
-     * @return boolean
+     * @param  number $id The user's id
+     * @return boolean True if the user is an employee, false otherwise
      *
      */
     public function isEmployee($id)
@@ -207,8 +204,8 @@ class UserDAO extends DAO
     /**
      * Function to check if the user is a customer
      *
-     * @param  number $id
-     * @return boolean
+     * @param  number $id The user's id
+     * @return boolean True if the user is a customer, false otherwise
      *
      */
     public function isCustomer($id)
@@ -219,8 +216,8 @@ class UserDAO extends DAO
     /**
      * Function to get the employee type of an employee
      *
-     * @param  number $id
-     * @return array
+     * @param  number $id The user's id
+     * @return array The employee type
      *
      */
     public function getEmployeeType($id)
@@ -233,8 +230,8 @@ class UserDAO extends DAO
     /**
      * Function to check if the employee is a manager
      *
-     * @param  number $id
-     * @return boolean
+     * @param  number $id The user's id
+     * @return boolean True if the employee is a manager, false otherwise
      *
      */
     public function isAdministrator($id)
@@ -245,8 +242,8 @@ class UserDAO extends DAO
     /**
      * Function to check if the employee is a station
      *
-     * @param  number $id
-     * @return boolean
+     * @param  number $id The user's id
+     * @return boolean True if the employee is a station, false otherwise
      *
      */
     public function isStation($id)
@@ -257,8 +254,8 @@ class UserDAO extends DAO
     /**
      * Function to check if the employee is a driver
      *
-     * @param  number $id
-     * @return boolean
+     * @param  number $id The user's id
+     * @return boolean True if the employee is a driver, false otherwise
      *
      */
     public function isDriver($id)
@@ -269,8 +266,8 @@ class UserDAO extends DAO
     /**
      * Function to check if the employee is a service
      *
-     * @param  number $id
-     * @return boolean
+     * @param  number $id The user's id
+     * @return boolean True if the employee is a service, false otherwise
      *
      */
     public function isService($id)
