@@ -22,4 +22,7 @@
         </div>
         <input type="submit" value=<?= TOREGISTER ?>></input>
 </form>
+<div class="smallLink">
+        <a href="index.php?page=login"><?= LOGIN ?> ></a>
+    </div>
 <?php require_once(PATH_VIEWS.'footer.php'); 
