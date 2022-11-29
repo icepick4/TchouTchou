@@ -1,5 +1,4 @@
-import { validatePhone } from './functions.js';
-
+import { getFlags, validatePhone } from './functions.js';
 const editFirstName = document.getElementById('edit-first-name');
 const editLastName = document.getElementById('edit-last-name');
 const editEmail = document.getElementById('edit-mail');
@@ -10,13 +9,9 @@ const deleteAccount = document.getElementById('delete-account');
 
 //get the flag in src of script
 const script = document.querySelector('script[src*="account.js"]');
-let flag = script.outerHTML
-    .split('flag=')[1]
-    .split('type')[0]
-    .replace(/['"]+/g, '')
-    .replace(/[=]+/g, '');
+let flag = script.outerHTML;
 deleteAccount.addEventListener('click', function prompt() {
-    let answer = confirm(flag);
+    let answer = confirm(getFlags(flag)[0]);
     if (answer) {
         window.location = 'index.php?page=delete_account';
     }

@@ -85,6 +85,7 @@ define('NO_DEPARTURE', 'Aucun départ prévu pour le moment');
 
 
 //tickets
+
 define('TICKET_DETAIL', 'Détails de votre ticket');
 define('DURATION', 'Durée');
 define('TRAVEL', 'Voyage');
