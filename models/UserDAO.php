@@ -2,6 +2,10 @@
 
 require_once(PATH_MODELS . 'DAO.php');
 
+/**
+ * Class UserDAO
+ * 
+ */
 class UserDAO extends DAO
 {
     /**
