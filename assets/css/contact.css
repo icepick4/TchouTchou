@@ -3,11 +3,19 @@
   justify-content: center;
 }
 
+#info {
+  display: none;
+}
+
 #page {
   display: flex;
   flex-direction: column;
   margin-bottom: 3%;
   width: max(800px, 60vw);
+}
+
+.is-invalid {
+  border-color: red;
 }
 
 h1 {
@@ -58,15 +66,18 @@ textarea:focus {
 }
 
 /*Scrollbar*/
+/*
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
+  background-color: transparent;
 }
+
 ::-webkit-scrollbar-button:start:decrement,
 ::-webkit-scrollbar-button:end:increment {
   height: 10px;
-  background-color: transparent;
 }
+
 ::-webkit-scrollbar-track-piece {
   background-color: var(--bg-white-color);
   border-radius: 16px;
@@ -77,6 +88,7 @@ textarea:focus {
   border: 1px solid var(--main-color);
   border-radius: 16px;
 }
+*/
 
 /*Dark Mode*/
 @media (prefers-color-scheme: dark) {

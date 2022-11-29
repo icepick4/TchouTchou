@@ -1,6 +1,5 @@
 <?php
 
-
 abstract class DAO
 {
     // example of arg for methods
@@ -9,6 +8,9 @@ abstract class DAO
 
     private $conn;
 
+    /**
+    * DAO constructor.
+    */
     function __construct()
     {
         $connect = '(DESCRIPTION=(ADDRESS= (PROTOCOL=TCP)(HOST=' . BD_HOST . ')(PORT=' . BD_PORT . ' ))(CONNECT_DATA = (SID =' . BD_SID . ')))';
@@ -20,6 +22,12 @@ abstract class DAO
         };
     }
 
+    /**
+     * Function to execute a query
+     * @param $request the request to execute
+     * @param $args the arguments to bind to the request
+     * @return array the result of the request
+     */
     public function queryRow($request, $args = null)
     {
         $stid = oci_parse($this->conn, $request);
