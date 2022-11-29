@@ -9,13 +9,13 @@ if ($_SESSION['logged']) {
 
 ?>
     <div id="title-ticket-list">
-        <h1>Details of your ticket</h1>
+        <h1><?= TICKET_DETAIL ?></h1>
     </div>
     <div class="content">
         <div class="header-ticket">
             <h2 id="title-trip">Trip to <p class="colored"><?php echo $ticket['END_STATION_NAME'] ?></p>
             </h2>
-            <p> <?php echo $date ?> </p>
+            <p> <?php echo $ticket['START_TIME_DATE'] ?> </p>
         </div>
         <div class="stations">
             <div class="station">
@@ -42,21 +42,21 @@ if ($_SESSION['logged']) {
         </div>
         <div id="separator"></div>
         <div class="infos">
-            <p>Duration : <?php echo $ticket['MIN'] ?> minutes</p>
-            <p>Train : <?php echo $ticket['TRAIN_ID'] ?></p>
-            <p>Travel : <?php echo $ticket['TRAVEL_ID'] ?></p>
+            <p><?= DURATION ?> : <?php echo $ticket['DURATION'] ?> <?= MINUTES ?></p>
+            <p><?= TRAIN ?> : <?php echo $ticket['TRAIN_ID'] ?></p>
+            <p><?= TRAVEL ?> : <?php echo $ticket['TRAVEL_ID'] ?></p>
         </div>
     </div>
 
     <div class="links-content">
         <div class="link-ticket-list">
             <div class="links">
-                <a href="index.php?page=ticket_list">Back to your tickets</a>
+                <a href="index.php?page=ticket_list"><?= BACK_TICKETS ?></a>
             </div>
         </div>
         <div class="link-ticket-list">
             <div class="links">
-                <a href="index.php?page=shopping">Get tickets</a>
+                <a href="index.php?page=shopping"><?= BUY_TICKET ?></a>
             </div>
         </div>
     </div>
