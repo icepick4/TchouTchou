@@ -9,8 +9,8 @@ abstract class DAO
     private $conn;
 
     /**
-    * DAO constructor.
-    */
+     * DAO constructor.
+     */
     function __construct()
     {
         $connect = '(DESCRIPTION=(ADDRESS= (PROTOCOL=TCP)(HOST=' . BD_HOST . ')(PORT=' . BD_PORT . ' ))(CONNECT_DATA = (SID =' . BD_SID . ')))';
@@ -61,7 +61,7 @@ abstract class DAO
         return $result;
     }
 
-    public function queryInsert($request, $args = null)
+    public function queryEdit($request, $args = null)
     {
         $stid = oci_parse($this->conn, $request);
         if ($args == null) {
