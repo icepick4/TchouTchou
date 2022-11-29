@@ -19,7 +19,6 @@
     <nav>
       <a href="index.php?page=home" class="logo"><?= SVG_LOGO ?></a>
       <ul>
-        <li><a href="index.php?page=home"><?php echo TITLE_HOME ?></a></li>
         <li><a href="index.php?page=purchase"><?php echo TITLE_PURCHASE ?></a></li>
         <li><a href="index.php?page=informations"><?php echo TITLE_INFORMATION ?></a></li>
         <li><a href="index.php?page=station_list"><?php echo STATION_LIST ?></a></li>

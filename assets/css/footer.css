@@ -3,7 +3,7 @@ footer {
   flex-direction: column;
   align-items: center;
   font-size: 80%;
-  background-color: var(--main-color);
+  background-color: #333;
 }
 
 footer section {
@@ -19,19 +19,27 @@ footer section nav {
   align-items: center;
   flex-direction: column;
   flex-grow: 1;
-  color: var(--txt-white-color);
+
+  align-self: flex-start;
 }
 
-footer section nav h2,
+footer section nav h2 {
+  color: var(--main-color);
+}
+
 footer section nav a,
 footer p {
-  color: var(--txt-white-color);
+  color: white;
 }
 
 footer section nav a {
   font-size: 78%;
 }
 
+#license {
+  padding-top: 2%;
+}
 #copyright {
   user-select: none;
+  margin: 0.5em 0;
 }
