@@ -42,6 +42,23 @@ form div input {
   width: 10%;
 }
 
+#boxPassword {
+  position: relative;
+  display: block;
+  width: 70%;
+}
+
+#boxPassword input {
+  width: 100%;
+}
+
+form i {
+  position: absolute;
+  right: 15px;
+  color: black;
+  top: 33%;
+}
+
 #title {
   font-size: 5em;
   font-weight: 600;

@@ -22,7 +22,6 @@ p {
 }
 
 #messages h2 {
-  position: fixed;
   width: 99%;
   background-color: var(--border-input);
   margin-top: 0;
