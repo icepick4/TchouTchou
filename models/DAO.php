@@ -9,9 +9,8 @@ abstract class DAO
     private $conn;
 
     /**
-    * DAO constructor
-    * It creates a connection to the database
-    */
+     * DAO constructor.
+     */
     function __construct()
     {
         $connect = '(DESCRIPTION=(ADDRESS= (PROTOCOL=TCP)(HOST=' . BD_HOST . ')(PORT=' . BD_PORT . ' ))(CONNECT_DATA = (SID =' . BD_SID . ')))';
