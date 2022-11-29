@@ -13,42 +13,7 @@
         }
         ?>
     </div>
-    <div id="messages">
-        <?php
-        
-        /*
-
-
-
-
-
-
-
-
-
-
-
-        foreach ($discussions as $discussion) {?>
-            <div class=<?= $discussion['DISCUSSION_ID'];?>>
-            <h2><?= $discussion['USER_MAIL'] ?></h2>
-            <?php
-            foreach ($messages as $message) {
-                if ($message['DISCUSSION_ID'] == $discussion['DISCUSSION_ID']) {
-                    if ($message['SENDER'] == 1) {
-                        ?>
-                            <p class="receiver" ><?= $message['MESSAGE_CONTENT'] ?></p>
-                        <?php
-                    } else {
-                        ?>
-                            <p class="sender"><?= $message['MESSAGE_CONTENT'] ?></p>
-                        <?php
-                    }
-                }
-            }?>
-            </div>
-        <?php
-    };*/?>
-       
+    <div id="messages">       
     </div>
 </div>
 

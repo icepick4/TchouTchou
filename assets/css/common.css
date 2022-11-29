@@ -93,8 +93,9 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--main-color) none;
 }
+
 *::-webkit-scrollbar {
-  width: 12px;
+  width: 7px;
 }
 
 *::-webkit-scrollbar-track {
@@ -104,5 +105,5 @@ body {
 *::-webkit-scrollbar-thumb {
   background-color: var(--main-color);
   border-radius: 40px;
-  border: 3px solid var(--main-color);
+  border: 2px solid var(--main-color);
 }

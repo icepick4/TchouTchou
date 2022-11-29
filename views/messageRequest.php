@@ -18,9 +18,9 @@ $mailbox = new MessageDAO();
 
 $id_discussion = intval($_GET['number']);
 
-$result = $mailbox->getDiscussionSubjectById($id_discussion);
+$discussionData = $mailbox->getDiscussionSubjectById($id_discussion);
 
-?><h2><?php print_r($result['DISCUSSION_SUBJECT']); ?></h2><?php
+?><h2><?php print_r($discussionData['DISCUSSION_SUBJECT']); ?></h2><?php
 
 
 $result = $mailbox->getDiscussionById($id_discussion);
@@ -37,7 +37,7 @@ foreach ($result as $message)
         }
 ?>
 <form method="post" action="index.php?page=messages">
-        <input type="hidden" id="discussion_id" name="discussion_id" value="">
+        <input type="hidden" id="discussion_id" name="discussion_id" value=<?= $id_discussion ?>>
         <input type="text" id="message" name="message" placeholder="Votre message">
         <input type="submit" id="submit" value="Envoyer">
     </form>

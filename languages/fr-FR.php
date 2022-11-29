@@ -23,6 +23,7 @@ define('STATION_LIST', 'Liste des Gares');
 define('TITLE_GITPULL', 'git pull');
 define('CGU','les conditions générales d\'utilisation');
 define('PLEASE_ACCEPT', 'Veuillez accepter ');
+define('RETURN_BUTTON', 'Retour');
 
 //Home
 define('WELCOME', 'Bonjour ');

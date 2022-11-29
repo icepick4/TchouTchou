@@ -61,20 +61,45 @@ class UserDAO extends DAO
         $sql = 'UPDATE USER_DATA SET USER_PHONE = :phone WHERE USER_ID = :id';
         $args = array(':id' => $id, ':phone' => $phone);
         return $this->queryInsert($sql, $args);
-    }
+    }    
+    /**
+     * Function to update the mail address of a user
+     *
+     * @param  number $id
+     * @param  string $mail
+     * @return array
+     *
+     */
     public function updateMail($id, $mail)
     {
         $sql = 'UPDATE USER_DATA SET USER_MAIL = :mail WHERE USER_ID = :id';
         $args = array(':id' => $id, ':mail' => $mail);
         return $this->queryInsert($sql, $args);
-    }
+    }    
+    /**
+     * Function to delete a user from the database
+     *
+     * @param  number $id
+     *
+     */
     public function deleteUser($id)
     {
         $sql = 'DELETE FROM USER_DATA WHERE USER_ID = :id';
         $args = array(':id' => $id);
         return $this->queryInsert($sql, $args);
     }
-
+    
+    /**
+     * Function to add a new user in the database
+     *
+     * @param  string $mail
+     * @param  string $phone
+     * @param  string $password
+     * @param  string $lastName
+     * @param  string $firstName
+     * @param  number $userCat
+     *
+     */
     public function insertUser($mail, $phone, $password, $lastName, $firstName, $userCat)
     {
         $sql = "INSERT into USER_DATA(USER_MAIL,USER_PHONE,USER_PASSWORD,USER_LASTNAME,USER_FIRSTNAME,USER_CATEGORIE_ID) VALUES(:user_mail,:user_phone,:user_password,:lastname,:firstname,:cat)";

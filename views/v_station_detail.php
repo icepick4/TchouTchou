@@ -3,7 +3,7 @@
     require_once(PATH_VIEWS . 'header.php');
     require_once(PATH_MODELS . 'Function.php');
 ?>
-<button onclick="document.location.href='index.php?page=station_list'"> << Retour </button>
+<button onclick="document.location.href='index.php?page=station_list'"><?= RETURN_BUTTON ?></button>
 <h1><?= STATION_OF.$station_name['STATION_NAME'] ?></h1>
 <? 
     if (!$departTravels && !$arrivalTravels) {

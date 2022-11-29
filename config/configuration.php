@@ -22,6 +22,7 @@ define('PATH_VIEWS', './views/v_');
 define('PATH_CONST', './config/');
 define('PATH_TEXTES', './languages/');
 define('PATH_JS', './assets/js/');
+define('PATH_MAILER', './PHPMailer/');
 
 //sous dossiers
 define('PATH_CSS', PATH_ASSETS . 'css/');
