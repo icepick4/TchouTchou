@@ -85,6 +85,16 @@ class UserDAO extends DAO
     }
 
     /**
+     * Function to insert a new user
+     * @return array The users's mails
+     */
+    public function getAllUserMail()
+    {
+        $sql = 'SELECT USER_MAIL FROM USER_DATA';
+        return $this->queryAll($sql);
+    }
+
+    /**
      * Function to update the user's first name
      * @param number $id The user's id
      * @param string $firstName The new user's first name 

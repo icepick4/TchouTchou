@@ -75,6 +75,17 @@ form i {
   text-align: center;
 }
 
+.smallLink a {
+  color: rgb(180, 180, 180);
+  text-decoration: none;
+}
+.smallLink a:hover {
+  text-decoration: underline;
+}
+.smallLink {
+  margin-bottom: 10px;
+}
+
 .is-valid {
   border-color: green;
 }

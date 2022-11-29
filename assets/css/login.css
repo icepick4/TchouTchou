@@ -63,6 +63,9 @@ form i {
 .smallLink a:hover {
   text-decoration: underline;
 }
+.smallLink {
+  margin-bottom: 10px;
+}
 .is-valid {
   border-color: green;
 }

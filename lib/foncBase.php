@@ -18,6 +18,14 @@ function choixAlert($message)
             $alert['messageAlert'] = UNKNOWN_PASSWORD;
             $alert["typeAlert"] = "form";
             break;
+        case 'Mail_already_used':
+            $alert['messageAlert'] = MAIL_ALREADY_USED;
+            $alert["typeAlert"] = "form";
+            break;
+        case 'password_not_match':
+            $alert['messageAlert'] = ERROR_PASSWORD_DIFFERENT;
+            $alert["typeAlert"] = "form";
+            break;
         default:
             $alert['messageAlert'] = MESSAGE_ERREUR;
     }
