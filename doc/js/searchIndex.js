@@ -568,22 +568,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DAO\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "DAO\u0020constructor.",
+            "summary": "DAO\u0020constructor\nIt\u0020creates\u0020a\u0020connection\u0020to\u0020the\u0020database",
             "url": "classes/DAO.html#method___construct"
         },                {
             "fqsen": "\\DAO\u003A\u003AqueryRow\u0028\u0029",
             "name": "queryRow",
-            "summary": "Function\u0020to\u0020execute\u0020a\u0020query",
+            "summary": "Function\u0020to\u0020execute\u0020a\u0020query\u0020if\u0020it\u0020will\u0020return\u0020only\u0020one\u0020row",
             "url": "classes/DAO.html#method_queryRow"
         },                {
             "fqsen": "\\DAO\u003A\u003AqueryAll\u0028\u0029",
             "name": "queryAll",
-            "summary": "",
+            "summary": "Function\u0020to\u0020execute\u0020a\u0020query\u0020if\u0020it\u0020will\u0020return\u0020many\u0020rows",
             "url": "classes/DAO.html#method_queryAll"
         },                {
             "fqsen": "\\DAO\u003A\u003AqueryInsert\u0028\u0029",
             "name": "queryInsert",
-            "summary": "",
+            "summary": "Function\u0020to\u0020execute\u0020a\u0020query\u0020when\u0020it\u0020will\u0020not\u0020return\u0020any\u0020rows",
             "url": "classes/DAO.html#method_queryInsert"
         },                {
             "fqsen": "\\DAO\u003A\u003A\u0024conn",

@@ -23,9 +23,9 @@ abstract class DAO
     }
 
     /**
-     * Function to execute a query
-     * @param $request the request to execute
-     * @param $args the arguments to bind to the request
+     * Function to execute a query if it will return only one row
+     * @param String $request the request to execute
+     * @param Array $args the arguments to bind to the request
      * @return array the result of the request
      */
     public function queryRow($request, $args = null)
@@ -42,6 +42,12 @@ abstract class DAO
         return $result;
     }
 
+    /**
+     * Function to execute a query if it will return many rows
+     * @param String $request the request to execute
+     * @param Array $args the arguments to bind to the request
+     * @return Array the result of the request
+     */
     public function queryAll($request, $args = null)
     {
         $stid = oci_parse($this->conn, $request);
@@ -61,6 +67,11 @@ abstract class DAO
         return $result;
     }
 
+    /**
+     * Function to execute a query when it will not return any rows
+     * @param String $request the request to execute
+     * @param Array $args the arguments to bind to the request
+     */
     public function queryEdit($request, $args = null)
     {
         $stid = oci_parse($this->conn, $request);
