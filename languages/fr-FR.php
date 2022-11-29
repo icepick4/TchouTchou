@@ -21,7 +21,7 @@ define('TERMS_OF_USE', 'Condtions Générales');
 define('PRIVACY_POLICY', 'Politique de Confidentialité');
 define('STATION_LIST', 'Liste des Gares');
 define('TITLE_GITPULL', 'git pull');
-define('CGU','les conditions générales d\'utilisation');
+define('CGU', 'les conditions générales d\'utilisation');
 define('PLEASE_ACCEPT', 'Veuillez accepter ');
 define('RETURN_BUTTON', 'Retour');
 
@@ -82,3 +82,12 @@ define('ARRIVAL_TIME', 'Heure d\'arrivée');
 define('NO_TRAIN', 'Aucun train prévu pour le moment');
 define('NO_ARRIVAL', 'Aucune arrivée prévue pour le moment');
 define('NO_DEPARTURE', 'Aucun départ prévu pour le moment');
+
+
+//tickets
+define('TICKET_DETAIL', 'Détails de votre ticket');
+define('DURATION', 'Durée');
+define('TRAVEL', 'Voyage');
+define('TRAIN', 'Train');
+define('BACK_TICKETS', 'Retournez à vos tickets');
+define('MINUTES', 'minutes');
