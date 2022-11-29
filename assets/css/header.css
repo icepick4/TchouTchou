@@ -46,8 +46,8 @@ header {
 }
 
 header ul li a {
-  color: var(--main-color);
   position: relative;
+  color: var(--txt-white-color);
 }
 
 header nav > a {
@@ -62,7 +62,7 @@ header ul li a::after {
   content: "";
   display: block;
   width: 0;
-  height: 2px;
+  height: 5px;
   background-color: var(--main-color);
   transition: width 0.3s;
 }
@@ -108,5 +108,8 @@ header > :nth-child(2n) {
   }
   :focus {
     outline-color: var(--main-color);
+  }
+  header ul li a::after {
+    height: 3px;
   }
 }
