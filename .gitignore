@@ -1,4 +1,4 @@
 z_*
 config/config_connection.php
 **/PHPMailer
-**/.phpdoc
+.phpdoc
