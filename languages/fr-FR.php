@@ -50,6 +50,7 @@ define('ERROR_PASSWORD_DIFFERENT', 'Les mots de passe sont différents');
 define('ERROR_FORM', 'Veuillez corriger les erreurs avant d\'envoyer vos informations');
 define('ERROR_CHARACTER', 'Nombre de caractères insuffisants');
 define('DELETE_ACCOUNT', 'Supprimer mon compte');
+define('MAIL_ALREADY_USED', 'Cette adresse mail est déjà utilisée');
 
 //contact
 define('NAME', 'Nom');
