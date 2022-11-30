@@ -3,6 +3,7 @@
 ![MKT](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 ![MKT](https://img.shields.io/badge/languages-PHP_JS_HTML_CSS-orange.svg)
 ![MKT](https://img.shields.io/badge/platform-Web-1ightgrey.svg)
+![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&style=for-the-badge&up_color=blue&up_message=online&url=http%3A%2F%2Ftchoutchou.ovh)
 
 <img src="assets/images/fav.png"><br>
 Connue pour posséder le second plus grand chemin de fer en Europe, la France a pour moyen de transport prédominant sur son territoire le train. Disposant de 2 734 km de ligne à grande vitesse qui transporte chaque année se sont plus de 1 milliards de passagers qui transitent sur ce réseau. Pour rendre ce système fonctionnel il a donc fallu faire appel à des outils de gestion tant pour les achats des clients que pour les opérations techniques.
