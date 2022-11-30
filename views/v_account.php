@@ -7,7 +7,7 @@
 <?php require_once(PATH_VIEWS . 'alert.php'); ?>
 
 <!--  Début de la page -->
-<script src=<?= PATH_JS . 'account.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'account.js?flag=' . DELETE_ACCOUNT ?> type="module" defer></script>
 
 
 
