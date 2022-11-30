@@ -27,6 +27,11 @@ form input[type="submit"] {
 
 form div {
   position: relative;
+  width: 100%;
+}
+
+form label {
+  width: auto;
 }
 
 form i {
@@ -60,9 +65,11 @@ form i {
   color: rgb(180, 180, 180);
   text-decoration: none;
 }
+
 .smallLink a:hover {
   text-decoration: underline;
 }
+
 .is-valid {
   border-color: green;
 }
@@ -73,6 +80,13 @@ form i {
 
 #info {
   display: none;
+}
+
+.info {
+  display: none;
+  color: red;
+  font-size: 0.7rem;
+  font-style: italic;
 }
 
 #main {

@@ -13,7 +13,7 @@ if ($_SESSION['logged']) {
     </div>
     <div class="content">
         <div class="header-ticket">
-            <h2 id="title-trip">Trip to <p class="colored"><?php echo $ticket['END_STATION_NAME'] ?></p>
+            <h2 id="title-trip"><?= TRAVEL_TO ?><p class="colored"><?php echo $ticket['END_STATION_NAME'] ?></p>
             </h2>
             <p> <?php echo $ticket['START_TIME_DATE'] ?> </p>
         </div>

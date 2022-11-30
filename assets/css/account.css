@@ -19,7 +19,7 @@
 }
 
 .infos table {
-    width: 100%;
+    width: auto;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 2%;
@@ -28,6 +28,7 @@
     border-radius: 10px;
     font-size: 1.5em;
     background-color: var(--main-color);
+
 }
 
 .infos img {
@@ -64,23 +65,57 @@
 
 }
 
-
-
-form {
-    opacity: 0;
+table td {
+    text-align: center;
+    width: auto;
 }
 
+
 form input {
-    background-color: var(--second-color);
+    background-color: transparent;
     color: white;
-    border: 1px solid #e5e5e5;
     outline: none;
-    font-size: 0.6em;
-    border-radius: var(--radius);
+    border: none;
+    cursor: text;
+    font-size: 1em;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+form input[type=submit] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.display-input input:not(input[type=submit]) {
+    pointer-events: all;
+    color: #696969;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    background-color: #fff;
+}
+
+.display-input input[type=submit] {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
 }
 
 .info {
-    display: none;
+    opacity: 0;
     color: red;
     font-size: 0.7rem;
     font-style: italic;

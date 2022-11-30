@@ -12,8 +12,9 @@ form div {
   flex-direction: auto;
   justify-content: center;
 }
+
 form input {
-  width: 70%;
+  width: 100%;
   margin: 10px 0;
   padding: 10px;
   border: 0.15rem solid #696969;
@@ -29,18 +30,17 @@ form input[type="submit"] {
   font-size: 1.5em;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 
-form div label a {
-  color: var(--txt-white-color);
+form div input {
+  width: 100%;
 }
 
 form div label {
-  width: 80%;
+  width: 100%;
 }
-form div input {
-  width: 10%;
-}
+
 
 #boxPassword {
   position: relative;

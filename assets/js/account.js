@@ -1,12 +1,19 @@
-import { getFlags, validatePhone } from './functions.js';
+import {
+    getFlags,
+    validateEmail,
+    validateName,
+    validatePhone
+} from './functions.js';
 const editFirstName = document.getElementById('edit-first-name');
 const editLastName = document.getElementById('edit-last-name');
 const editEmail = document.getElementById('edit-mail');
 const editPhone = document.getElementById('edit-phone');
 const phoneInput = document.getElementById('phone');
+const emailInput = document.getElementById('mail');
+const lnameInput = document.getElementById('last-name');
+const fnameInput = document.getElementById('first-name');
 const forms = document.getElementsByTagName('form');
 const deleteAccount = document.getElementById('delete-account');
-
 //get the flag in src of script
 const script = document.querySelector('script[src*="account.js"]');
 let flag = script.outerHTML;
@@ -17,62 +24,77 @@ deleteAccount.addEventListener('click', function prompt() {
     }
 });
 
-forms[2].addEventListener('submit', function (e) {
-    console.log(validatePhone(phoneInput.value));
-    if (!validatePhone(phoneInput.value)) {
-        e.preventDefault();
-        forms[2].children[0].style.display = 'block';
+for (let i = 0; i < forms.length; i++) {
+    switch (i) {
+        case 0:
+            forms[i].addEventListener('submit', firstNameCheck);
+            break;
+        case 1:
+            forms[i].addEventListener('submit', lastNameCheck);
+            break;
+        case 2:
+            forms[i].addEventListener('submit', phoneCheck);
+            break;
+        case 3:
+            forms[i].addEventListener('submit', mailCheck);
+            break;
     }
-});
+}
+
+function mailCheck(evt) {
+    if (!validateEmail(emailInput.value)) {
+        evt.preventDefault();
+        evt.target.children[0].style.opacity = '1';
+    }
+}
+
+function phoneCheck(evt) {
+    if (!validatePhone(phoneInput.value)) {
+        evt.preventDefault();
+        evt.target.children[0].style.opacity = '1';
+    }
+}
+
+function firstNameCheck(evt) {
+    if (!validateName(fnameInput.value)) {
+        evt.preventDefault();
+        evt.target.children[0].style.opacity = '1';
+    }
+}
+
+function lastNameCheck(evt) {
+    if (!validateName(lnameInput.value)) {
+        evt.preventDefault();
+        evt.target.children[0].style.opacity = '1';
+    }
+}
 
 editFirstName.addEventListener('click', () => {
-    const td = document.getElementsByTagName('form')[0];
-    console.log(td);
-    if (td.style.opacity == '1') {
-        td.style.opacity = '0';
-    } else {
-        for (let i = 0; i < forms.length; i++) {
-            forms[i].style.opacity = '0';
-        }
-        td.style.opacity = '1';
-    }
+    //display the form is it is hidden otherwise hide it
+    removeAllDisplay(0);
+    forms[0].classList.toggle('display-input');
 });
 
 editLastName.addEventListener('click', () => {
-    const td = document.getElementsByTagName('form')[1];
-    console.log(td);
-    if (td.style.opacity == '1') {
-        td.style.opacity = '0';
-    } else {
-        for (let i = 0; i < forms.length; i++) {
-            forms[i].style.opacity = '0';
-        }
-        td.style.opacity = '1';
-    }
+    removeAllDisplay(1);
+    forms[1].classList.toggle('display-input');
 });
 
 editPhone.addEventListener('click', () => {
-    const td = document.getElementsByTagName('form')[2];
-    console.log(td);
-    if (td.style.opacity == '1') {
-        td.style.opacity = '0';
-    } else {
-        for (let i = 0; i < forms.length; i++) {
-            forms[i].style.opacity = '0';
-        }
-        td.style.opacity = '1';
-    }
+    removeAllDisplay(2);
+    forms[2].classList.toggle('display-input');
 });
 
 editEmail.addEventListener('click', () => {
-    const td = document.getElementsByTagName('form')[3];
-    console.log(td);
-    if (td.style.opacity == '1') {
-        td.style.opacity = '0';
-    } else {
-        for (let i = 0; i < forms.length; i++) {
-            forms[i].style.opacity = '0';
-        }
-        td.style.opacity = '1';
-    }
+    removeAllDisplay(3);
+    forms[3].classList.toggle('display-input');
 });
+
+function removeAllDisplay(form) {
+    for (let i = 0; i < forms.length; i++) {
+        if (i != form) {
+            forms[i].classList.remove('display-input');
+            forms[i].children[0].style.opacity = '0';
+        }
+    }
+}

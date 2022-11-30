@@ -24,7 +24,7 @@ define('TITLE_GITPULL', 'git pull');
 define('CGU', 'les conditions générales d\'utilisation');
 define('PLEASE_ACCEPT', 'Veuillez accepter ');
 define('RETURN_BUTTON', 'Retour');
-
+https: //forums.technicpack.net/uploads/profile/photo-115240.jpg
 //Home
 define('WELCOME', 'Bonjour ');
 define('MY_ACCOUNT', 'Mon Compte');
@@ -92,3 +92,4 @@ define('TRAVEL', 'Voyage');
 define('TRAIN', 'Train');
 define('BACK_TICKETS', 'Retournez à vos tickets');
 define('MINUTES', 'minutes');
+define('TRAVEL_TO', 'Voyage vers');
