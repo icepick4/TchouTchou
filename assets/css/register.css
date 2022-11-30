@@ -23,6 +23,8 @@ form input {
   color: #696969;
 }
 
+
+
 form input[type="submit"] {
   background-color: var(--main-color);
   color: #fff;
@@ -33,9 +35,6 @@ form input[type="submit"] {
   width: 100%;
 }
 
-form div input {
-  width: 100%;
-}
 
 form div label {
   width: 100%;
@@ -45,7 +44,7 @@ form div label {
 #boxPassword {
   position: relative;
   display: block;
-  width: 70%;
+  width: 100%;
 }
 
 #boxPassword input {
@@ -73,17 +72,6 @@ form i {
 .links {
   margin-top: 5%;
   text-align: center;
-}
-
-.smallLink a {
-  color: rgb(180, 180, 180);
-  text-decoration: none;
-}
-.smallLink a:hover {
-  text-decoration: underline;
-}
-.smallLink {
-  margin-bottom: 10px;
 }
 
 .is-valid {
