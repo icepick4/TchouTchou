@@ -1,5 +1,5 @@
 <?php require_once(PATH_VIEWS.'header.php');?>
-<script src=<?= PATH_JS . 'messages.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'messages.js?flag='.$_SESSION['user_id'] ?> type="module" defer></script>
 <h1>Messages</h1>
 <div id="chat">
     <div id="resume">

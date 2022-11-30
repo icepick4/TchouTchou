@@ -81,6 +81,7 @@ abstract class DAO
                 oci_bind_by_name($stid, $key, $args[$key]);
             }
         }
-        oci_execute($stid);
+        
+        echo oci_execute($stid);
     }
 }

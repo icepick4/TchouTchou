@@ -1,4 +1,9 @@
+import { getFlags } from "./functions.js";
+
 var message = document.getElementsByClassName("discussion_resume");
+
+const script = document.querySelector('script[src*="messages.js"]');
+let flag = script.outerHTML;
 
 //event listener for each discussion_resume
 for (let i = 0; i < message.length; i++) {
@@ -17,6 +22,10 @@ function loadMessage(e) {
       document.getElementById("messages").innerHTML = this.responseText;
     }
   };
-  xmlhttp.open("GET", "views/messageRequest.php?number=" + number, true);
+  xmlhttp.open(
+    "GET",
+    "views/messageRequest.php?number=" + number + "&id=" + getFlags(flag)[0],
+    true
+  );
   xmlhttp.send();
 }

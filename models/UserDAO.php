@@ -288,4 +288,9 @@ class UserDAO extends DAO
     {
         return $this->getEmployeeType($id) == 4;
     }
-}
+
+    public function isSupport($id)
+    {
+        return $this->getEmployeeType($id) == 5;
+    }
+}   

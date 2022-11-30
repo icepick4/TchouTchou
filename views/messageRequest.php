@@ -17,7 +17,7 @@ $user = new UserDAO();
 $mailbox = new MessageDAO();
 
 $id_discussion = intval($_GET['number']);
-
+$user_id = intval($_GET['id']);
 $discussionData = $mailbox->getDiscussionSubjectById($id_discussion);
 
 ?><h2><?php print_r($discussionData['DISCUSSION_SUBJECT']); ?></h2><?php
@@ -27,11 +27,11 @@ $result = $mailbox->getDiscussionById($id_discussion);
 
 foreach ($result as $message)
     {
-        if ($message['SENDER'] == 1)
+        if ($message['SENDER_ID'] == $user_id)
         {
-            ?><p class="receiver"><?php
-        }else{
             ?><p class="sender"><?php
+        }else{
+            ?><p class="receiver"><?php
         }
             print_r($message['MESSAGE_CONTENT'])?></p><?php
         }

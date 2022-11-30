@@ -20,20 +20,10 @@ class MessageDAO extends DAO
     }
     public function insertMessage($message, $discussion_id, $sender_id)
     {
-        $sql = 'INSERT INTO MESSAGE_SUPPORT (DISCUSSION_ID,MESSAGE_CONTENT,SENDER) VALUES (:discussion_id,:message,:sender)';
+        $sql = 'INSERT INTO MESSAGE_SUPPORT (DISCUSSION_ID,MESSAGE_CONTENT,SENDER_ID) VALUES (:discussion_id,:message,:sender)';
         $args = array(':discussion_id' => $discussion_id, ':message' => $message, ':sender' => $sender_id);
-
+        echo 
         $this->queryEdit($sql, $args);
-    }
-
-    public function insertMessageCustomer($message, $discussion_id)
-    {
-        $this->insertMessage($message, $discussion_id, 1);
-    }
-
-    public function insertMessageSupport($message, $discussion_id)
-    {
-        $this->insertMessage($message, $discussion_id, 2);
     }
 
     public function getAllDisussions()
