@@ -13,10 +13,25 @@ if (
     $fname = $_POST["fname"];
     $phone = $_POST["phone"];
     $email = $_POST["email"];
-    $password = $user->hashPassword($_POST["password"]);
 
-    $user->insertUser($email, $phone, $password, $name, $fname, 0);
-    header('Location: index.php?page=login');
-    exit();
+    $mails = $user->getAllUserMail();
+    $mail = array('USER_MAIL' => $email);
+
+    if(in_array($mail,$mails)){
+        $alert = choixAlert('Mail_already_used');
+    }else{
+        if($_POST["password"] == $_POST["confirmPassword"]){
+           
+            $password = $user->hashPassword($_POST["password"]);
+    
+            $user->insertUser($email, $phone, $password, $name, $fname, 0);
+            header('Location: index.php?page=login');
+            exit();
+        }else{
+            $alert = choixAlert('password_not_match');
+        }
+    }
+
+    
 }
 require_once(PATH_VIEWS . $page . '.php');

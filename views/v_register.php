@@ -2,7 +2,12 @@
 <script src=<?= PATH_JS . 'register.js' ?> type="module" defer></script>
 <script src=<?= PATH_JS . 'passwordShow.js' ?> type="module" defer></script>
 
+
+
 <h1 id="title"><?= REGISTER ?></h1>
+
+<?php require_once(PATH_VIEWS . 'alert.php'); ?>
+
 <form method="post" action="index.php?page=register">
         <label class="info"><?= ERROR_FORM ?></label>
         <input type="text" id="name" name="name" placeholder="<?= NAME ?>" required>
@@ -18,10 +23,13 @@
                         </svg></i></div>
         <label class="info"><?= ERROR_PASSWORD_TOO_WEAK ?></label>
         <input type="password" id="confirmPassword" name="confirmPassword" placeholder="<?= CONFIRMPASSWORD ?>" required>
+        <label class="info"><?= ERROR_PASSWORD_DIFFERENT ?></label>
         <div>
-                <label class="info"><?= ERROR_PASSWORD_DIFFERENT ?></label>
                 <input type="checkbox" id="cgu" required><label for="cgu"><?= PLEASE_ACCEPT ?><a href="index.php?page=cgu"><?= CGU ?></a></label>
         </div>
         <input type="submit" value=<?= TOREGISTER ?>></input>
 </form>
+<div class="smallLink">
+        <a href="index.php?page=login"><?= LOGIN ?> ></a>
+</div>
 <?php require_once(PATH_VIEWS . 'footer.php');
