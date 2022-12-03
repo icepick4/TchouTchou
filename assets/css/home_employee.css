@@ -1,19 +1,14 @@
 :root {
-	--margin2: 20px;
+	  --radius: 8px;
+  --margin: 4px;
+  --hover: 0.5s;
 }
 
-/*a modif*/
-div.tmp {
-	height: 50px;
-	border: solid black 2px;
-	background-color: darkgray;
+.main{
+	magin: var(--margin);
 }
 
-.main {
-	margin: var(--margin);
-}
-
-article {
+article{
 	background-color: var(--bg-black-color);
 	border-radius: var(--radius);
 	width: 80vw;
@@ -27,14 +22,14 @@ article {
 
 }
 
-article:nth-child(2n) {
+article:nth-child(2n){
 	margin-left: auto;
 	margin-right: var(--margin);
 }
 
 
 
-article>img {
+article > img{
 	width: 35vw;
 	height: auto;
 	/*max-width: 390px;*/
@@ -45,7 +40,7 @@ article>img {
 
 }
 
-article div.arti {
+article div.arti{
 	height: auto;
 	margin-top: auto;
 	margin-bottom: auto;
@@ -54,14 +49,13 @@ article div.arti {
 }
 
 
-.arti>a {
+.arti > a{
 	text-decoration: none;
 }
-
-.btn {
+.btn{
 	border: none;
 	border-radius: var(--radius);
-	color: white;
+	color:  white;
 	background-color: var(--main-color);
 	margin-left: auto;
 	margin-right: auto;
@@ -74,7 +68,7 @@ article div.arti {
 
 }
 
-.btn p {
+.btn p{
 	margin: 0px;
 	margin-left: var(--margin);
 	margin-top: auto;
@@ -82,26 +76,25 @@ article div.arti {
 
 }
 
-.btn img {
+.btn img{
 	width: 15px;
 	height: auto;
 
 }
 
-article div.arti .btn {
+article div.arti .btn{
 	width: 80%;
 }
 
 /* mobile */
 @media (max-width: 800px) {
-	article:nth-child(n) {
-		flex-wrap: wrap;
-		margin: auto;
-		margin-top: var(--margin2);
-		margin-bottom: var(--margin2);
-	}
-
-	.btn {
-		margin: var(--margin2);
-	}
+  article:nth-child(n){
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: var(--margin2);
+    margin-bottom: var(--margin2);
+  }
+  .btn{
+  	margin: var(--margin2);
+  }
 }
