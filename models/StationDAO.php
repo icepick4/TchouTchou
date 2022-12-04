@@ -6,11 +6,11 @@ class StationDAO extends DAO
 {
     public function get_hubs($station)
     {
-        $sql = 'SELECT DISTINCT p.TERMINAL_ID 
-			FROM TCHOU.PLATFORM p 
-			WHERE p.STATION_ID = 
-			(SELECT s.STATION_ID FROM TCHOU.STATION s WHERE s.STATION_NAME=:name) ; ';
-        $args = array(':name' => $station);
+        $sql = 'SELECT DISTINCT TERMINAL_ID 
+			FROM PLATFORM
+			WHERE STATION_ID = 
+			(SELECT STATION_ID FROM STATION WHERE STATION_NAME=:station)';
+        $args = array(':station' => $station);
         return $this->queryAll($sql, $args);
     }
 }
