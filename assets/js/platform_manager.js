@@ -8,7 +8,7 @@ in_station_name.addEventListener("change",function(event) {
 
 async function load_hub_op(name) {
 	console.log(name);
-	const rep = await fetch("controllers/c_platform_manager.php?hub="+name);
+	const rep = await fetch("index.php?page=platform_manager&hub="+name);
 	//console.log(await rep.text())
 	let data = await rep.json();
 	data = await JSON.parse(data);
