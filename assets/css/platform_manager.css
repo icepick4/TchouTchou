@@ -1,3 +1,10 @@
 :root{
 	text-transform: capitalize;
+	border-radius: 15px;
+}
+
+select{
+	background-color: var(--bg-black-color);
+	color: white;
+
 }
