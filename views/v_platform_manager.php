@@ -18,7 +18,7 @@ foreach ($stations as $station) {
 <?php }
 } ?>
 			</select>
-			<select id="hub_id"></select>
+			<select id="hub_id" class="loading"></select>
 			<select id="station_name"></select>
 		</div>
 	

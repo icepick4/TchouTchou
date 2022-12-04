@@ -8,3 +8,23 @@ select{
 	color: white;
 
 }
+
+.loading{
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-name: placeHolderLoading;
+	animation-timing-function: linear;
+	background: linear-gradient(to right, 
+		var(--bg-black-color) 8%, #dddddd 18%, var(--bg-black-color) 33%);
+
+}
+
+@keyframes placeHolderLoading {
+  0% {
+    background-position: 0px 0;
+  }
+  100% {
+    background-position: 9em 0;
+  }
+}
