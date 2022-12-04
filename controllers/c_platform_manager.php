@@ -1,8 +1,8 @@
 <?php
-if (isset($_GET["hub"])){
+if (isset($_GET["station_name"])){
 	require_once(PATH_MODELS . 'StationDAO.php');
 	$station = new StationDAO();
-	$stations = $station->get_hubs($_GET["hub"]);
+	$stations = $station->get_hubs($_GET["station_name"]);
 	echo json_encode('{"hub": '.'["1","2"]'.'}');
 }else{
 
