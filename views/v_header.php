@@ -31,7 +31,7 @@
     </nav>
   </header>
 
-  <div id="cart" class="modal active">
+  <div id="cart" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <div class="modal-header">
