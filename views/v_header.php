@@ -12,6 +12,7 @@
   <link href="<?php echo PATH_CSS . "header.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . "footer.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . $page . ".css" ?>" rel="stylesheet" />
+  <script src=<?= PATH_JS . 'cart.js' ?> type="module" defer></script>
 </head>
 
 <body>
@@ -26,7 +27,20 @@
     </nav>
     <nav>
       <a href="index.php?page=<?php echo $_SESSION['logged'] ? "account" : "login" ?>" class="logo"><?= SVG_ACCOUNT ?></a>
-      <a href="index.php?page=shopping" id="shop" class="logo"><?= SVG_SHOPPING ?></a>
+      <div id="shop" class="logo"><?= SVG_SHOPPING ?></div>
     </nav>
   </header>
+
+  <div id="cart" class="modal active">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-header">
+        <h2><?= CART ?></h2>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+
+
   <section id="main">

@@ -33,6 +33,9 @@ define('MY_MESSAGES', 'Mes Messages');
 define('BUY_TICKET', 'Acheter un billet');
 define('NO_TICKET', 'Vous n\'avez pas de billet pour le moment !');
 
+// CART
+define('CART', 'Panier');
+
 // LOGIN & REGISTER
 define('LOGIN', 'Connexion');
 define('LOGOUT', 'Déconnexion');
