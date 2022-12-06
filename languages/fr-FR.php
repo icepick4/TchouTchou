@@ -68,6 +68,9 @@ define('UNKWOWN_MAIL', 'Mail inconnu');
 define('UNKNOWN_PASSWORD', 'Mot de passe incorrect');
 define('ERREUR_QUERY', 'Problème d\'accès à la base de données. Contactez l\'administrateur');
 
+//STATION LIST
+define('SEARCH', 'Rechercher');
+
 //STATION DETAIL
 define('STATION', 'Gare');
 define('CITY', 'Ville');

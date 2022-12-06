@@ -1,9 +1,20 @@
 <?php
 
-require_once(PATH_VIEWS . 'header.php');
+require_once(PATH_VIEWS . 'header.php'); ?>
 
+<script src=<?= PATH_JS . 'station_list.js' ?> type="module" defer></script>
+
+<?php
 if ($stations != null) {
 ?>
+
+    <div class="container">
+        <input type="text" id="search" placeholder="<?= SEARCH ?>">
+
+        <i id="clear-search">X</i>
+    </div>
+
+
     <table>
         <tr>
             <th><?= STATION ?></th>
