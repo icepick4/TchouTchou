@@ -10,19 +10,18 @@ class MessageDAO extends DAO
         $discussion_id = $this->queryRow($sql);
         if (isset($user_id)) {
             $sql = 'INSERT INTO DISCUSSION_SUPPORT (DISCUSSION_ID,DISCUSSION_SUBJECT,USER_ID,DESTINATION_ID) VALUES (:id,:subject,:user_id,:destination_id)';
-            $args = array(':id' => $discussion_id['MAX'] + 1, ':subject' => $subject, ':user_id' => $_SESSION['user_id'], ':destination_id' => $destination_id);
+            $args = array(':id' => $discussion_id['MAX'] + 1, ':subject' => $subject, ':user_id' => $user_id, ':destination_id' => $destination_id);
         } else {
             $sql = 'INSERT INTO DISCUSSION_SUPPORT (DISCUSSION_ID,DISCUSSION_SUBJECT,USER_MAIL,USER_PHONE,USER_LASTNAME,USER_FIRSTNAME,DESTINATION_ID) VALUES (:id,:subject,:mail,:phone,:lastname,:firstname,:destination_id)';
             $args = array(':id' => $discussion_id['MAX'] + 1, ':subject' => $subject, ':mail' => $mail, ':phone' => $phone, ':lastname' => $lastName, ':firstname' => $firstname, ':destination_id' => $destination_id );
         }
-        echo $this->queryEdit($sql, $args);
+        $this->queryEdit($sql, $args);
         return $discussion_id['MAX'] + 1;
     }
     public function insertMessage($message, $discussion_id, $sender_id)
     {
         $sql = 'INSERT INTO MESSAGE_SUPPORT (DISCUSSION_ID,MESSAGE_CONTENT,SENDER_ID) VALUES (:discussion_id,:message,:sender)';
         $args = array(':discussion_id' => $discussion_id, ':message' => $message, ':sender' => $sender_id);
-        echo 
         $this->queryEdit($sql, $args);
     }
 
