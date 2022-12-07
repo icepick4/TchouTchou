@@ -100,3 +100,16 @@ define('TRAIN', 'Train');
 define('BACK_TICKETS', 'Retournez à vos tickets');
 define('MINUTES', 'minutes');
 define('TRAVEL_TO', 'Voyage vers');
+
+//home employee
+
+define('WELCOME','Bienvenue')
+define('WELCOME_TEXT','Sed fruatur sane hoc solacio atque hanc insignem ignominiam, quoniam uni praeter se inusta sit, putet esse leviorem, dum modo, cuius exemplo se consolatur, eius exitum expectet, praesertim cum in Albucio nec Pisonis libidines nec audacia Gabini fuerit ac tamen hac una plaga conciderit, ignominia senatus.')
+define('PLATFORM_MANAGER','Gestion des quais')
+define('PLATFORM_MANAGER_TEXT','Sed fruatur sane hoc solacio atque hanc insignem ignominiam, quoniam uni praeter se inusta sit.')
+define('WELCOME_GO','accéder')
+define('MAINTENANCE','Entretien')
+define('MAINTENANCE_TEXT','Sed fruatur sane hoc solacio atque hanc insignem ignominiam, quoniam uni praeter se inusta sit.')
+
+
+
