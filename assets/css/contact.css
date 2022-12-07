@@ -3,7 +3,11 @@
   justify-content: center;
 }
 
-#info {
+.error {
+  color: red;
+}
+
+.shown {
   display: none;
 }
 

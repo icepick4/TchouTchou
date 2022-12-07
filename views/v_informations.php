@@ -1,6 +1,4 @@
-<?php
-//  En tête de page
-?>
+<!--  Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
 <?php
@@ -47,4 +45,6 @@ $headers[] = 'Bcc: birthdaycheck@example.com';
 mail($to, $subject, $message, implode("\r\n", $headers));
 ?>
 
+
+<!--  Pied de page -->
 <?php require_once(PATH_VIEWS . 'footer.php');

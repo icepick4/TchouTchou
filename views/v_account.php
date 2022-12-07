@@ -1,16 +1,9 @@
-<?php
-//  En tête de page
-?>
+<!-- Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
-<!--  Zone message d'alerte -->
-<?php require_once(PATH_VIEWS . 'alert.php'); ?>
-
-<!--  Début de la page -->
 <script src=<?= PATH_JS . 'account.js?flag=' . DELETE_ACCOUNT ?> type="module" defer></script>
 
-
-
+<!--  Début de la page -->
 <?php
 
 if ($_SESSION['logged']) {

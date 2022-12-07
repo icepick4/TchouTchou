@@ -50,7 +50,8 @@ header ul li a {
   color: var(--txt-white-color);
 }
 
-header nav > a {
+header nav > a,
+header nav > div {
   padding: 0 2%;
   transition-duration: var(--hover);
 }
@@ -91,6 +92,69 @@ header > :nth-child(2n) {
 }
 #shop:hover svg circle {
   fill: var(--main-color);
+}
+
+/* cart */
+#cart {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  transform: translate(0%, -28.5%);
+  background-color: var(--bg-header-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 80%;
+  z-index: -1;
+  opacity: 0;
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  transition: opacity 0.3s;
+}
+#cart.active {
+  opacity: 1;
+  z-index: 1;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 60px;
+}
+.modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+.modal-header {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-header h2 {
+  font-size: 2em;
+  font-weight: 400;
+}
+.modal-body {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (prefers-color-scheme: dark) {

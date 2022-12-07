@@ -1,9 +1,11 @@
+<!--  Entête de la page -->
 <?php
-
 require_once(PATH_VIEWS . 'header.php');
 require_once(PATH_MODELS . 'Function.php');
 
 ?>
+
+<!--  Début de la page -->
 
 <button onclick="document.location.href='index.php?page=station_list'">
     << Retour </button>
@@ -72,4 +74,8 @@ require_once(PATH_MODELS . 'Function.php');
                         } else { ?><h2><?= NO_ARRIVAL ?></h2><?php }
                                                         } ?>
             </section>
+
+<!--  Fin de la page -->
+
+<!--  Pied de page -->
             <? require_once(PATH_VIEWS . 'footer.php');

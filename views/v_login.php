@@ -1,6 +1,4 @@
-<?php
-//  En tête de page
-?>
+<!--  Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
 <script src=<?= PATH_JS . 'login.js' ?> type="module" defer></script>
@@ -14,7 +12,7 @@
     <h1 id="title"><?= LOGIN ?></h1>
 
     <?php require_once(PATH_VIEWS . 'alert.php'); ?>
-    
+
     <form method="post" action="index.php?page=login">
         <label id="info" class="info"><?= ERROR_MAIL ?></label>
         <input type=" mail" name="mail" id="email" placeholder="<?= EMAIL ?>"></input>

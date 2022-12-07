@@ -31,10 +31,3 @@ function choixAlert($message)
     }
     return $alert;
 }
-
-function getTime($minutes)
-{
-    $hours = floor($minutes / 60);
-    $minutes = $minutes % 60;
-    return $hours . 'h' . $minutes;
-}

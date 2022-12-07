@@ -12,20 +12,18 @@
 <!-- Menu du site -->
 
 <nav class="">
-  <div class="">
-    <ul class="">
-				<li <?php echo ($page=='accueil' ? 'class=""':'')?>>
-					<a href="index.php">
-						<?= MENU_ACCUEIL ?>
-					</a>
-				</li>
-				<li <?php echo ($page=='test' ? 'class=""':'')?>>
-					<a href="index.php?page=test">
-						page inexistante
-					</a>
-				</li>
-    </ul>
-  </div>
+	<div class="">
+		<ul class="">
+			<li <?php echo ($page == 'accueil' ? 'class=""' : '') ?>>
+				<a href="index.php">
+					<?= MENU_ACCUEIL ?>
+				</a>
+			</li>
+			<li <?php echo ($page == 'test' ? 'class=""' : '') ?>>
+				<a href="index.php?page=test">
+					page inexistante
+				</a>
+			</li>
+		</ul>
+	</div>
 </nav>
-
-
