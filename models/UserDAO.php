@@ -131,7 +131,7 @@ class UserDAO extends DAO
         $sql = 'UPDATE USER_DATA SET USER_PHONE = :phone WHERE USER_ID = :id';
         $args = array(':id' => $id, ':phone' => $phone);
         $this->queryEdit($sql, $args);
-    }    
+    }
     /**
      * Function to update the user's mail address
      *
@@ -144,7 +144,7 @@ class UserDAO extends DAO
         $sql = 'UPDATE USER_DATA SET USER_MAIL = :mail WHERE USER_ID = :id';
         $args = array(':id' => $id, ':mail' => $mail);
         $this->queryEdit($sql, $args);
-    }    
+    }
     /**
      * Function to delete a user from the database
      *
@@ -157,7 +157,7 @@ class UserDAO extends DAO
         $args = array(':id' => $id);
         $this->queryEdit($sql, $args);
     }
-    
+
     /**
      * Function to add a new user in the database
      *
@@ -293,4 +293,4 @@ class UserDAO extends DAO
     {
         return $this->getEmployeeType($id) == 5;
     }
-}   
+}

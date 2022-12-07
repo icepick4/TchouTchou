@@ -14,7 +14,7 @@
     <h1 id="title"><?= LOGIN ?></h1>
 
     <?php require_once(PATH_VIEWS . 'alert.php'); ?>
-    
+
     <form method="post" action="index.php?page=login">
         <label id="info" class="info"><?= ERROR_MAIL ?></label>
         <input type=" mail" name="mail" id="email" placeholder="<?= EMAIL ?>"></input>
