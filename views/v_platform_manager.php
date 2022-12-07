@@ -1,8 +1,13 @@
+<!--  Entête de la page -->
 <?php
 require_once(PATH_VIEWS . 'header.php');
 ?>
 
 <script src=<?= PATH_JS . 'platform_manager.js' ?> type="module" defer></script>
+
+
+<!--  Début de la page -->
+
 
 <h2>gestionaire de quais</h2>
 <div class="control_pannel">
@@ -30,5 +35,7 @@ require_once(PATH_VIEWS . 'header.php');
 	</div>
 </div>
 
+<!--  Fin de la page -->
 
+<!--  Pied de page -->
 <?php require_once(PATH_VIEWS . 'footer.php'); ?>

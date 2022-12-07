@@ -1,8 +1,13 @@
+<!--  Entête de la page -->
 <?php
 
 require_once(PATH_VIEWS . 'header.php'); ?>
 
 <script src=<?= PATH_JS . 'station_list.js' ?> type="module" defer></script>
+
+
+<!--  Début de la page -->
+
 
 <?php
 if ($stations != null) {
@@ -44,6 +49,9 @@ if ($stations != null) {
         ?>
     </table>
 <?php
-}
+}?>
+<!--  Fin de la page -->
 
+<!--  Pied de page -->
+<?php
 require_once(PATH_VIEWS . 'footer.php');

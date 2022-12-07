@@ -1,4 +1,8 @@
+<!--  Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
+
+
+<!--  Début de la page -->
 
 
 <?php
@@ -41,5 +45,10 @@ if ($_SESSION['logged']) {
         <a href="index.php?page=shopping"><?= BUY_TICKET ?></a>
     </div>
 </div>
+
+
+<!--  Fin de la page -->
+
+<!--  Pied de page -->
 
 <?php require_once(PATH_VIEWS . 'footer.php'); ?>

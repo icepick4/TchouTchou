@@ -1,7 +1,10 @@
+<!--  Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 <script src=<?= PATH_JS . 'register.js' ?> type="module" defer></script>
 <script src=<?= PATH_JS . 'passwordShow.js' ?> type="module" defer></script>
 
+
+<!--  Début de la page -->
 
 
 <h1 id="title"><?= REGISTER ?></h1>
@@ -32,4 +35,9 @@
 <div class="smallLink">
         <a href="index.php?page=login"><?= LOGIN ?> ></a>
 </div>
+
+<!--  Fin de la page -->
+
+<!--  Pied de page -->
+
 <?php require_once(PATH_VIEWS . 'footer.php');
