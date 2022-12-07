@@ -1,6 +1,4 @@
-<?php
-//  En tête de page
-?>
+<!--  Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
 <script src=<?= PATH_JS . 'login.js' ?> type="module" defer></script>
