@@ -1,11 +1,7 @@
-<?php
-//  En tête de page
-?>
+<!-- Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
-<script src=<?= PATH_JS . 'contact.js' ?> type="module" defer></script>
 
-<!--  Zone message d'alerte -->
-<?php require_once(PATH_VIEWS . 'alert.php'); ?>
+<script src=<?= PATH_JS . 'contact.js' ?> type="module" defer></script>
 
 <!--  Début de la page -->
 

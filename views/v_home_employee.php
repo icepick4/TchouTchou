@@ -1,7 +1,8 @@
-<?php
+<!--  Entête de page -->
+<?php require_once(PATH_VIEWS . 'header.php'); ?>
 
-require_once(PATH_VIEWS . 'header.php');
-?>
+<!-- Début de la page -->
+
 <div class="main">
 	<article>
 		<img src="assets/images/work_il.svg">
@@ -36,4 +37,7 @@ require_once(PATH_VIEWS . 'header.php');
 	</article>
 </div>
 
+<!--  Fin de la page -->
+
+<!--  Pied de page -->
 <?php require_once(PATH_VIEWS . 'footer.php'); ?>

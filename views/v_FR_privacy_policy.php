@@ -1,10 +1,7 @@
-<?php
-//  En tête de page
-?>
+<!-- Entête de le page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
-<!--  Zone message d'alerte -->
-<?php require_once(PATH_VIEWS . 'alert.php'); ?>
+<!-- Début de la page -->
 <section class="PP">
     <h1>Politique de confidentialité</h1>
     <p>Le site web Tchoutchou est détenu par Tchoutchou, qui est un contrôleur de données de vos données personnelles.</p>
