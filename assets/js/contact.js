@@ -93,11 +93,15 @@ desc.addEventListener("change", function () {
 });
 
 function formVerify(evt) {
-  let verif =
-    validateEmail(email.value) &&
-    validatePhone(tel.value) &&
-    validateName(name.value) &&
-    validateName(fname.value);
+  if (email && tel && info && name && fname) {
+    var verif =
+      validateEmail(email.value) &&
+      validatePhone(tel.value) &&
+      validateName(name.value) &&
+      validateName(fname.value);
+  } else {
+    var verif = true;
+  }
   if (!verif) {
     evt.preventDefault();
     error[6].classList.remove("shown");

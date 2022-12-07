@@ -1,7 +1,9 @@
 <?php
 
 require_once(PATH_MODELS . 'MessageDAO.php');
-if (!isset($_SESSION['user_id'])) {
+
+if (isset($_SESSION['user_id'])) {
+    echo "test1"   ;
     if (isset($_POST['subject']) && isset($_POST['desc']))
     {
         $subject = $_POST['subject'];

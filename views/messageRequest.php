@@ -25,11 +25,11 @@
 
     foreach ($result as $message) {
         if ($message['SENDER_ID'] == $user_id) {
-    ?><p class="sender">
+    ?><p class="receiver">
             <?php
         } else {
             ?>
-            <p class="receiver">
+            <p class="sender">
             <?php
         }
         print_r($message['MESSAGE_CONTENT']) ?></p>
