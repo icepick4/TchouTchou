@@ -9,6 +9,7 @@ const name = document.getElementById("name");
 const fname = document.getElementById("fname");
 const subject = document.getElementById("subject");
 const desc = document.getElementById("desc");
+const error = document.querySelectorAll(".error");
 
 const form = document.getElementsByTagName("form")[0];
 form.addEventListener("submit", formVerify);
@@ -17,12 +18,12 @@ name.addEventListener("change", function () {
   if (validateName(name.value)) {
     name.classList.remove("is-invalid");
     name.classList.add("is-valid");
+    error[0].classList.add("shown");
     info.style.display = "none";
   } else {
     name.classList.remove("is-valid");
     name.classList.add("is-invalid");
-    info.innerHTML = "<?= ERROR_NAME ?>";
-    console.log("name error");
+    error[0].classList.remove("shown");
     info.style.display = "block";
   }
 });
@@ -31,11 +32,24 @@ fname.addEventListener("change", function () {
   if (validateName(fname.value)) {
     fname.classList.remove("is-invalid");
     fname.classList.add("is-valid");
+    error[1].classList.add("shown");
     info.style.display = "none";
   } else {
     fname.classList.remove("is-valid");
     fname.classList.add("is-invalid");
-    info.innerHTML = "<?= ERROR_FIRSTNAME ?>";
+    error[1].classList.remove("shown");
+    info.style.display = "block";
+  }
+});
+
+tel.addEventListener("change", function () {
+  if (validatePhone(tel.value)) {
+    tel.classList.remove("is-invalid");
+    error[2].classList.add("shown");
+    info.style.display = "none";
+  } else {
+    tel.classList.add("is-invalid");
+    error[2].classList.remove("shown");
     info.style.display = "block";
   }
 });
@@ -44,22 +58,12 @@ email.addEventListener("change", function () {
   if (validateEmail(email.value)) {
     email.classList.remove("is-invalid");
     email.classList.add("is-valid");
+    error[3].classList.add("shown");
     info.style.display = "none";
   } else {
     email.classList.remove("is-valid");
     email.classList.add("is-invalid");
-    info.innerHTML = "<?= ERROR_MAIL ?>";
-    info.style.display = "block";
-  }
-});
-
-tel.addEventListener("change", function () {
-  if (validatePhone(tel.value)) {
-    tel.classList.remove("is-invalid");
-    info.style.display = "none";
-  } else {
-    tel.classList.add("is-invalid");
-    info.innerHTML = "<?= ERROR_PHONE ?>";
+    error[3].classList.remove("shown");
     info.style.display = "block";
   }
 });
@@ -67,10 +71,11 @@ tel.addEventListener("change", function () {
 subject.addEventListener("change", function () {
   if (subject.value.length > 5) {
     subject.classList.remove("is-invalid");
+    error[4].classList.add("shown");
     info.style.display = "none";
   } else {
     subject.classList.add("is-invalid");
-    info.innerHTML = "<?= ERROR_CHARACTER ?>";
+    error[4].classList.remove("shown");
     info.style.display = "block";
   }
 });
@@ -78,10 +83,11 @@ subject.addEventListener("change", function () {
 desc.addEventListener("change", function () {
   if (desc.value.length > 10) {
     desc.classList.remove("is-invalid");
+    error[5].classList.add("shown");
     info.style.display = "none";
   } else {
     desc.classList.add("is-invalid");
-    info.innerHTML = "<?= ERROR_CHARACTER ?>";
+    error[5].classList.remove("shown");
     info.style.display = "block";
   }
 });
@@ -94,8 +100,10 @@ function formVerify(evt) {
     validateName(fname.value);
   if (!verif) {
     evt.preventDefault();
-    info.innerHTML = "<?= ERROR_FORM ?>";
+    error[6].classList.remove("shown");
     info.style.display = "block";
+  } else {
+    error[6].classList.add("shown");
   }
 }
 
