@@ -2,14 +2,13 @@
 
 require_once(PATH_MODELS . 'MessageDAO.php');
 
-if (isset($_SESSION['user_id'])) {
-    echo "test1"   ;
+if (isset($_SESSION['user_id'])) { ;
     if (isset($_POST['subject']) && isset($_POST['desc']))
     {
         $subject = $_POST['subject'];
         $desc = $_POST['desc'];
         $messageDAO = new MessageDAO();
-        $result = $messageDAO->insertDiscussion($subject,$_SESSION['user_id'],null,null,null,null);
+        $result = $messageDAO->insertDiscussion($subject,$_SESSION['user_id'],null,null,null,null,99);
         $messageDAO->insertMessage($desc,$result,$_SESSION['user_id']);
     }
 } 
@@ -24,7 +23,7 @@ else
         $subject = $_POST['subject'];
         $desc = $_POST['desc'];
         $messageDAO = new MessageDAO();
-        $result = $messageDAO->insertDiscussion($subject,null,$email,$tel,$name,$fname);
+        $result = $messageDAO->insertDiscussion($subject,null,$email,$tel,$name,$fname,99);
         $messageDAO->insertMessage($desc,$result,null);
     }
 }
