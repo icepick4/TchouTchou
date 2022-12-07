@@ -22,6 +22,10 @@
         <li><a href="index.php?page=purchase"><?php echo TITLE_PURCHASE ?></a></li>
         <li><a href="index.php?page=informations"><?php echo TITLE_INFORMATION ?></a></li>
         <li><a href="index.php?page=station_list"><?php echo STATION_LIST ?></a></li>
+        <?php
+          if (isset[$_SESSION['user_id']]) {
+            echo '<li><a href="index.php?page=messages">' . TITLE_MESSAGES . '</a></li>';
+          }
       </ul>
     </nav>
     <nav>
