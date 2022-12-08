@@ -9,7 +9,8 @@ class StationDAO extends DAO
         $sql = 'SELECT DISTINCT TERMINAL_ID 
 			FROM PLATFORM
 			WHERE STATION_ID = 
-			(SELECT STATION_ID FROM STATION WHERE LOWER(STATION_NAME)=LOWER(:station))';
+			(SELECT STATION_ID FROM STATION WHERE LOWER(
+                TRANSLATE(s.STATION_NAME,'é','e'))=LOWER(:station))';
         $args = array(':station' => $station);
         return $this->queryAll($sql, $args);
     }
