@@ -24,7 +24,6 @@ require_once(PATH_VIEWS . 'header.php');
 				} ?>
 			</select>
 			<select id="hub_id" class="loading"></select>
-			<select id="station_name"></select>
 		</div>
 
 	</fieldset>
