@@ -3,10 +3,32 @@
 	border-radius: 15px;
 }
 
+#title{
+	margin-left: 10px;
+}
+
+fieldset{
+	border-radius: 15px;
+}
+
 select{
 	background-color: var(--bg-black-color);
 	color: white;
+	border-radius: 15px;
+	width: fit-content;
 
+
+}
+
+.control_pannel{
+	width: 50vw;
+	margin: 5px;
+}
+
+.select_option{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 15px;
 }
 
 .loading{

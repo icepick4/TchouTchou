@@ -109,3 +109,8 @@ define('PLATFORM_MANAGER_TEXT', 'Sed fruatur sane hoc solacio atque hanc insigne
 define('WELCOME_GO', 'accéder');
 define('MAINTENANCE', 'Entretien');
 define('MAINTENANCE_TEXT', 'Sed fruatur sane hoc solacio atque hanc insignem ignominiam, quoniam uni praeter se inusta sit.');
+
+//platform_manager
+
+define('SELECT_STATION', 'Choisir la station');
+define('SELECT_HUB', 'Choisir le hub')

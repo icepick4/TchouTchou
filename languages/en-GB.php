@@ -75,3 +75,8 @@ define('ARRIVAL_TIME' , 'Arrival time');
 define('NO_TRAIN', 'No train passes through this station');
 define('NO_DEPARTURE', 'No departure');
 define('NO_ARRIVAL', 'No arrival');
+
+
+// tmp pour Loan
+define('SELECT_STATION', 'Choisir la station');
+define('SELECT_HUB', 'Choisir le hub');
