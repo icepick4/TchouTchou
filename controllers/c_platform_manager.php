@@ -5,10 +5,12 @@ require_once(PATH_MODELS . 'UserDAO.php');
 $user = new UserDAO();
 
 $result = $user->isStation();
-if (!isset($_SESSION['user_id']) || ( isset($_SESSION['user_id']) && !$user->isStation($_SESSION['user_id']) )){
+if (!isset($_SESSION['user_id']) ) {
 	header("Location: index.php");
 }
-
+if ( isset($_SESSION['user_id']) && !$user->isStation($_SESSION['user_id']) )){
+	header("Location: index.php");
+}
 
 
 if (isset($_GET["station_name"]) && isset($_GET["hub_id"])) {
