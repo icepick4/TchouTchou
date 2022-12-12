@@ -5,7 +5,7 @@ require_once(PATH_MODELS . 'UserDAO.php');
 $user = new UserDAO();
 
 $result = $user->isStation();
-if (! isset($_SESSION['user_id']) || $user->isStation($_SESSION['user_id']) == 2){
+if (!isset($_SESSION['user_id']) || ( isset($_SESSION['user_id']) && !$user->isStation($_SESSION['user_id']) )){
 	header("Location: index.php");
 }
 
