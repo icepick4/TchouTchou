@@ -11,6 +11,7 @@ define('TITLE_PURCHASE', 'Achats');
 define('TITLE_SEARCH', 'Rechercher');
 define('TITLE_TICKET', 'Vos billets');
 define('TITLE_LOGIN', 'Se connecter');
+define('TITLE_LOGOUT', 'Se déconnecter');
 define('TITLE_INFORMATION', 'Informations');
 define('TITLE_CONTACT', 'Nous Contacter');
 define('TITLE_COMPANY', 'Notre Entreprise');

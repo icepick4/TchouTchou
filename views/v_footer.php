@@ -17,7 +17,11 @@
 		<nav>
 			<h2><?= TITLE_QUICK_ACCESS ?></h2>
 			<a href="index.php?page=home"><?= TITLE_HOME ?></a>
-			<a href="index.php?page=login"><?= TITLE_LOGIN ?></a>
+			<?php if ($_SESSION['logged']) {
+            echo '<a href="index.php?page=logout">'. TITLE_LOGOUT .'</a>';
+          } else{
+			echo'<a href="index.php?page=login">'.TITLE_LOGIN.'</a>';
+		  }?>
 			<a href="index.php?page=contact"><?= TITLE_CONTACT ?></a>
 			<a href="http://82.65.238.70:5569/" target="_blank"><?= TITLE_GITPULL ?></a>
 		</nav>
