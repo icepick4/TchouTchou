@@ -8,7 +8,7 @@ $result = $user->isStation();
 if (!isset($_SESSION['user_id']) ) {
 	header("Location: index.php");
 }
-if ( isset($_SESSION['user_id']) && !$user->isStation($_SESSION['user_id']) )){
+if ( isset($_SESSION['user_id']) && !$user->isStation($_SESSION['user_id']) ){
 	header("Location: index.php");
 }
 
