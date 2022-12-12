@@ -113,4 +113,4 @@ define('MAINTENANCE_TEXT', 'Sed fruatur sane hoc solacio atque hanc insignem ign
 //platform_manager
 
 define('SELECT_STATION', 'Choisir la station');
-define('SELECT_HUB', 'Choisir le hub')
+define('SELECT_HUB', 'Choisir le hub');
