@@ -62,4 +62,11 @@ class TrainDAO extends DAO
         $args = array(':station_id' => $station_id);
         return $this->queryRow($sql, $args);
     }
+
+    public function get_tickets($departure_station_name, $arrival_station_name, $date)
+    {
+        $sql = 'SELECT CAST(START_TIME AS DATE) FROM TRAVEL WHERE CAST(START_TIME AS DATE) > :date';
+        $args = array(':date' => $date);
+        return $this->queryAll($sql, $args);
+    }
 }
