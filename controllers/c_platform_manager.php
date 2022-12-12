@@ -4,7 +4,7 @@
 require_once(PATH_MODELS . 'UserDAO.php');
 $user = new UserDAO();
 
-$result = $user->isStation($SESSION['user_id']);
+$result = $user->isStation($_SESSION['user_id']);
 if (!$result){
 	header("Location: index.php");
 }
