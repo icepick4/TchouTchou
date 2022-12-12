@@ -1,5 +1,8 @@
 <!--  Entête de page -->
-<?php require_once(PATH_VIEWS . 'header.php'); ?>
+<?php require_once(PATH_VIEWS . 'header.php');
+
+require_once(PATH_MODELS . 'UserDAO.php');
+$user = new userDAO(); ?>
 
 <!-- Début de la page -->
 
@@ -11,6 +14,7 @@
 			<p><?=WELCOME_TEXT?></p>
 		</div>
 	</article>
+	<?php if($user->isStation($_SESSION['user_id'])) { ?>
 	<article>
 		<img src="assets/images/station_il.svg">
 		<div class="arti">
@@ -24,6 +28,7 @@
 			</a>
 		</div>
 	</article>
+	<?php } if($user->isService($_SESSION['user_id'])) { ?>
 	<article>
 		<img src="assets/images/engineer_il.svg">
 		<div class="arti">
@@ -35,6 +40,7 @@
 			</div></a>
 		</div>
 	</article>
+	<?php } ?>
 </div>
 
 <!--  Fin de la page -->
