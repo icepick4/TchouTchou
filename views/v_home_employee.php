@@ -18,9 +18,9 @@ $user = new userDAO(); ?>
 	<article>
 		<img src="assets/images/station_il.svg">
 		<div class="arti">
-			<h2>PLATFORM_MANAGER</h2>
+			<h2><?=PLATFORM_MANAGER?></h2>
 			<p><?=PLATFORM_MANAGER_TEXT?></p>
-			<a href="">
+			<a href="index.php?page=platform_manager">
 				<div class="btn">
 					<p><?=WELCOME_GO?></p>
 					<img src="assets/images/arrow.svg">
