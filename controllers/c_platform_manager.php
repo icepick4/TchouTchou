@@ -1,5 +1,15 @@
 <?php
 
+//Check droit 
+require_once(PATH_MODELS . 'UserDAO.php');
+$user = new UserDAO();
+
+
+if (!isset($_SESSION['user_id']) || ( isset($_SESSION['user_id']) && !$user->isStation($_SESSION['user_id']) )) {
+	header("Location: index.php");
+}
+
+
 if (isset($_GET["station_name"]) && isset($_GET["hub_id"])) {
 	require_once(PATH_MODELS . 'StationDAO.php');
 	$station = new StationDAO();
