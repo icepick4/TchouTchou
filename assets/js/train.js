@@ -17,15 +17,15 @@ function initSeats() {
 initSeats();
 
 function seatClick(e) {
-  let test;
+  let seat;
   if (e.target.nodeName == "svg") {
-    test = e.target.parentNode;
+    seat = e.target.parentNode;
   } else if (e.target.nodeName == "P") {
-    test = e.target.parentNode;
+    seat = e.target.parentNode;
   } else {
-    test = e.target.parentNode.parentNode;
+    seat = e.target.parentNode.parentNode;
   }
-  toggleSeat(test.id);
+  toggleSeat(seat.id);
 }
 
 function toggleSeat(id) {

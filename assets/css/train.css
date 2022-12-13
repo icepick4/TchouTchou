@@ -67,15 +67,14 @@ svg.table {
   margin: 4px 5px;
 }
 .endRow {
-  background-color: var(--grayColor);
-  width: 300px;
-  margin-left: 250px;
+  align-items: center;
+  margin: 0 0 0 5px;
 }
 .wagon {
   display: flex;
   border: 6px solid white;
   border-radius: 50px;
   padding-left: 50px;
-  width: 1700px;
+  width: 1650px;
   overflow: hidden;
 }
