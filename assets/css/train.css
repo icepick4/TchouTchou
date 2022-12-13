@@ -8,6 +8,9 @@
   width: 69px;
   margin: 2px 6px;
 }
+.seat svg {
+  fill: var(--bg-black-color);
+}
 .seat:hover {
   cursor: pointer;
 }
@@ -31,6 +34,9 @@
 }
 .hallway {
   opacity: 0;
+  height: 70px;
+  width: 69px;
+  margin: 2px 6px;
 }
 .seatNumber {
   position: absolute;
