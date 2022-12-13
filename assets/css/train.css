@@ -56,25 +56,42 @@ svg.table {
   justify-content: space-between;
   margin: 4px 0;
 }
-.row.reverse .seat {
+.reverse .seat {
   transform: rotate(180deg);
 }
-.row.reverse .seat p {
+.reverse .seat p {
   transform: rotate(180deg) translate(50%, 50%);
 }
 .row.baggageRow,
 .row.tableRow {
   margin: 4px 5px;
 }
+.halfRow {
+  display: flex;
+}
 .endRow {
   align-items: center;
   margin: 0 0 0 5px;
+}
+.exitRow {
+  align-items: center;
+  width: 130px;
+}
+.exitRow svg:last-child {
+  transform: rotate(180deg);
+}
+.downStairsRow {
+  margin: 0 0 0 45px;
+}
+.upStairsRow {
+  margin: 0 0 0 5px;
+  background-color: var(--grayColor);
 }
 .wagon {
   display: flex;
   border: 6px solid white;
   border-radius: 50px;
   padding-left: 50px;
-  width: 1650px;
+  width: 1735px;
   overflow: hidden;
 }

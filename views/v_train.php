@@ -162,6 +162,7 @@
 <path d="M908.083 353.26C908.536 352.9 908.743 352.733 908.703 352.76C910.009 351.68 911.036 350.793 911.783 350.1C912.543 349.407 913.183 348.68 913.703 347.92C914.223 347.16 914.483 346.42 914.483 345.7C914.483 345.153 914.356 344.727 914.103 344.42C913.849 344.113 913.469 343.96 912.963 343.96C912.456 343.96 912.056 344.153 911.763 344.54C911.483 344.913 911.343 345.447 911.343 346.14H908.043C908.069 345.007 908.309 344.06 908.763 343.3C909.229 342.54 909.836 341.98 910.583 341.62C911.343 341.26 912.183 341.08 913.103 341.08C914.689 341.08 915.883 341.487 916.683 342.3C917.496 343.113 917.903 344.173 917.903 345.48C917.903 346.907 917.416 348.233 916.443 349.46C915.469 350.673 914.229 351.86 912.723 353.02H918.123V355.8H908.083V353.26ZM922.029 348.16C920.775 347.493 920.149 346.447 920.149 345.02C920.149 344.3 920.335 343.647 920.709 343.06C921.082 342.46 921.649 341.987 922.409 341.64C923.169 341.28 924.102 341.1 925.209 341.1C926.315 341.1 927.242 341.28 927.989 341.64C928.749 341.987 929.315 342.46 929.689 343.06C930.062 343.647 930.249 344.3 930.249 345.02C930.249 345.74 930.075 346.367 929.729 346.9C929.395 347.433 928.942 347.853 928.369 348.16C929.089 348.507 929.642 348.987 930.029 349.6C930.415 350.2 930.609 350.907 930.609 351.72C930.609 352.667 930.369 353.487 929.889 354.18C929.409 354.86 928.755 355.38 927.929 355.74C927.115 356.1 926.209 356.28 925.209 356.28C924.209 356.28 923.295 356.1 922.469 355.74C921.655 355.38 921.009 354.86 920.529 354.18C920.049 353.487 919.809 352.667 919.809 351.72C919.809 350.893 920.002 350.18 920.389 349.58C920.775 348.967 921.322 348.493 922.029 348.16ZM926.929 345.54C926.929 344.993 926.769 344.573 926.449 344.28C926.142 343.973 925.729 343.82 925.209 343.82C924.689 343.82 924.269 343.973 923.949 344.28C923.642 344.587 923.489 345.013 923.489 345.56C923.489 346.08 923.649 346.493 923.969 346.8C924.289 347.093 924.702 347.24 925.209 347.24C925.715 347.24 926.129 347.087 926.449 346.78C926.769 346.473 926.929 346.06 926.929 345.54ZM925.209 349.64C924.582 349.64 924.075 349.813 923.689 350.16C923.302 350.493 923.109 350.96 923.109 351.56C923.109 352.12 923.295 352.58 923.669 352.94C924.055 353.3 924.569 353.48 925.209 353.48C925.849 353.48 926.349 353.3 926.709 352.94C927.082 352.58 927.269 352.12 927.269 351.56C927.269 350.973 927.075 350.507 926.689 350.16C926.315 349.813 925.822 349.64 925.209 349.64Z" fill="white"/>
 </svg>
 
+<h2>wagon simple</h2>
 <div class="wagon 1">
     <div class="row seatRow">
         <div class="seat reserved" id="1">
@@ -433,7 +434,7 @@
             <p class="seatNumber"></p>
         </div>
     </div>
-    <div class="row seatRow reverse">
+    <div class="row seatRow">
         <div class="seat" id="">
             <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
@@ -466,6 +467,16 @@
             </svg>
             <p class="seatNumber"></p>
         </div>
+    </div>
+    <div class="row tableRow">
+        <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table">
+            <rect width="69" height="145" rx="12" fill="#595550"/>
+            <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+        </svg>
+        <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table"> 
+            <rect width="69" height="145" rx="12" fill="#595550"/>
+            <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+        </svg>
     </div>
     <div class="row seatRow reverse">
         <div class="seat" id="">
@@ -556,6 +567,736 @@
             <path d="M0 12C0 5.37258 5.37258 0 12 0H295V105C295 127.091 277.091 145 255 145H0V12Z" fill="#595550"/>
             <path d="M127.365 59.728L120.777 85H113.325L109.293 68.368L105.117 85H97.6654L91.2574 59.728H97.8454L101.481 78.124L105.981 59.728H112.749L117.069 78.124L120.741 59.728H127.365ZM129.409 72.328C129.409 69.832 129.949 67.612 131.029 65.668C132.109 63.7 133.609 62.176 135.529 61.096C137.473 59.992 139.669 59.44 142.117 59.44C145.117 59.44 147.685 60.232 149.821 61.816C151.957 63.4 153.385 65.56 154.105 68.296H147.337C146.833 67.24 146.113 66.436 145.177 65.884C144.265 65.332 143.221 65.056 142.045 65.056C140.149 65.056 138.613 65.716 137.437 67.036C136.261 68.356 135.673 70.12 135.673 72.328C135.673 74.536 136.261 76.3 137.437 77.62C138.613 78.94 140.149 79.6 142.045 79.6C143.221 79.6 144.265 79.324 145.177 78.772C146.113 78.22 146.833 77.416 147.337 76.36H154.105C153.385 79.096 151.957 81.256 149.821 82.84C147.685 84.4 145.117 85.18 142.117 85.18C139.669 85.18 137.473 84.64 135.529 83.56C133.609 82.456 132.109 80.932 131.029 78.988C129.949 77.044 129.409 74.824 129.409 72.328Z" fill="#231B13"/>
         </svg>
+    </div>
+</div>
+<h2>wagon duplex</h2>
+<div class="duplex">
+    <div class="wagon 3">
+        <div class="row seatRow">
+            <div class="seat" id="1">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">1</p>
+            </div>
+            <div class="seat" id="2">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">2</p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">   
+                </svg>
+            </div>
+            <div class="seat" id="3">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">3</p>
+            </div>
+            <div class="seat" id="4">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">4</p>
+            </div>
+        </div>
+        <div class="row tableRow">
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table">
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table"> 
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+        </div>
+        <div class="row seatRow reverse">
+            <div class="seat" id="5">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">5</p>
+            </div>
+            <div class="seat" id="6">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">6</p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="7">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">7</p>
+            </div>
+            <div class="seat" id="8">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">8</p>
+            </div>
+        </div>
+        <div class="row baggageRow">
+            <svg width="148" height="145" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="148" height="145" rx="12" fill="#595550"/>
+                <rect x="35" y="53" width="78" height="43" rx="4" fill="#231B13"/>
+                <path d="M64 53V47C64 45.3431 65.3431 44 67 44H81C82.6569 44 84 45.3431 84 47V53" stroke="#231B13" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+            <svg width="148" height="145" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="148" height="145" rx="12" fill="#595550"/>
+                <rect x="35" y="53" width="78" height="43" rx="4" fill="#231B13"/>
+                <path d="M64 53V47C64 45.3431 65.3431 44 67 44H81C82.6569 44 84 45.3431 84 47V53" stroke="#231B13" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="row seatRow">
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+        </div>
+        <div class="row tableRow">
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table">
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table"> 
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+        </div>
+        <div class="row seatRow reverse">
+            <div class="seat" id="5">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">5</p>
+            </div>
+            <div class="seat" id="6">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">6</p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="7">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">7</p>
+            </div>
+            <div class="seat" id="8">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">8</p>
+            </div>
+        </div>
+        <div class="row seatRow">
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+        </div>
+        <div class="row tableRow">
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table">
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table"> 
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+        </div>
+        <div class="row seatRow reverse">
+            <div class="seat" id="5">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">5</p>
+            </div>
+            <div class="seat" id="6">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">6</p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="7">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">7</p>
+            </div>
+            <div class="seat" id="8">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">8</p>
+            </div>
+        </div>
+        <div class="row seatRow">
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+        </div>
+        <div class="row tableRow">
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table">
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table"> 
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+        </div>
+        <div class="row seatRow reverse">
+            <div class="seat" id="5">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">5</p>
+            </div>
+            <div class="seat" id="6">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">6</p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="7">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">7</p>
+            </div>
+            <div class="seat" id="8">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">8</p>
+            </div>
+        </div>
+        <div class="row baggageRow custom">
+            <div class="halfRow">
+                <div class="reverse">
+                    <div class="seat" id="">
+                        <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                            <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                        </svg>
+                        <p class="seatNumber"></p>
+                    </div>
+                    <div class="seat" id="">
+                        <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                            <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                        </svg>
+                        <p class="seatNumber"></p>
+                    </div>
+                </div>
+                <svg width="148" height="145" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="148" height="145" rx="12" fill="#595550"/>
+                <rect x="35" y="53" width="78" height="43" rx="4" fill="#231B13"/>
+                <path d="M64 53V47C64 45.3431 65.3431 44 67 44H81C82.6569 44 84 45.3431 84 47V53" stroke="#231B13" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <svg width="228" height="142" viewBox="0 0 228 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="228" height="142" rx="12" fill="#595550"/>
+                <rect x="75" y="53" width="78" height="43" rx="4" fill="#231B13"/>
+                <path d="M104 53V47C104 45.3431 105.343 44 107 44H121C122.657 44 124 45.3431 124 47V53" stroke="#231B13" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="row downStairsRow">
+            <svg width="295" height="150" viewBox="0 0 295 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0H255C277.091 0 295 17.9086 295 40V150H12C5.37258 150 0 144.627 0 138V0Z" fill="#595550"/>
+                <path d="M62 119H80.0373V106.377H97.5109V92.4348H114.233V79.8116H132.082V68.5072H148.992V54.3768H166.654V41H183M70.5 81L91.5 79M70.5 81L116.71 41.5333M70.5 81H69L75 60" stroke="#231B13" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg width="295" height="145" viewBox="0 0 295 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12C0 5.37258 5.37258 0 12 0H295V105C295 127.091 277.091 145 255 145H0V12Z" fill="#595550"/>
+                <path d="M127.365 59.728L120.777 85H113.325L109.293 68.368L105.117 85H97.6654L91.2574 59.728H97.8454L101.481 78.124L105.981 59.728H112.749L117.069 78.124L120.741 59.728H127.365ZM129.409 72.328C129.409 69.832 129.949 67.612 131.029 65.668C132.109 63.7 133.609 62.176 135.529 61.096C137.473 59.992 139.669 59.44 142.117 59.44C145.117 59.44 147.685 60.232 149.821 61.816C151.957 63.4 153.385 65.56 154.105 68.296H147.337C146.833 67.24 146.113 66.436 145.177 65.884C144.265 65.332 143.221 65.056 142.045 65.056C140.149 65.056 138.613 65.716 137.437 67.036C136.261 68.356 135.673 70.12 135.673 72.328C135.673 74.536 136.261 76.3 137.437 77.62C138.613 78.94 140.149 79.6 142.045 79.6C143.221 79.6 144.265 79.324 145.177 78.772C146.113 78.22 146.833 77.416 147.337 76.36H154.105C153.385 79.096 151.957 81.256 149.821 82.84C147.685 84.4 145.117 85.18 142.117 85.18C139.669 85.18 137.473 84.64 135.529 83.56C133.609 82.456 132.109 80.932 131.029 78.988C129.949 77.044 129.409 74.824 129.409 72.328Z" fill="#231B13"/>
+            </svg>
+        </div>
+    </div>
+    <div class="wagon 2">
+        <div class="row seatRow">
+            <div class="seat" id="1">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">1</p>
+            </div>
+            <div class="seat" id="2">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">2</p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">   
+                </svg>
+            </div>
+            <div class="seat" id="3">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">3</p>
+            </div>
+            <div class="seat" id="4">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">4</p>
+            </div>
+        </div>
+        <div class="row tableRow">
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table">
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table"> 
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+        </div>
+        <div class="row seatRow reverse">
+            <div class="seat" id="5">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">5</p>
+            </div>
+            <div class="seat" id="6">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">6</p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="7">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">7</p>
+            </div>
+            <div class="seat" id="8">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber">8</p>
+            </div>
+        </div>
+        <div class="row baggageRow custom">
+            <svg width="228" height="142" viewBox="0 0 228 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="228" height="142" rx="12" fill="#595550"/>
+                <rect x="75" y="53" width="78" height="43" rx="4" fill="#231B13"/>
+                <path d="M104 53V47C104 45.3431 105.343 44 107 44H121C122.657 44 124 45.3431 124 47V53" stroke="#231B13" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+            <div class="halfRow">
+                <svg width="148" height="145" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="148" height="145" rx="12" fill="#595550"/>
+                    <rect x="35" y="53" width="78" height="43" rx="4" fill="#231B13"/>
+                    <path d="M64 53V47C64 45.3431 65.3431 44 67 44H81C82.6569 44 84 45.3431 84 47V53" stroke="#231B13" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <div>
+                    <div class="seat" id="">
+                        <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                            <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                        </svg>
+                        <p class="seatNumber"></p>
+                    </div>
+                    <div class="seat" id="">
+                        <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                            <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                        </svg>
+                        <p class="seatNumber"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row seatRow">
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+        </div>
+        <div class="row seatRow">
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+        </div>
+        <div class="row seatRow">
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+        </div>
+        <div class="row tableRow">
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table">
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table"> 
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+        </div>
+        <div class="row seatRow reverse">
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+        </div>
+        <div class="row seatRow">
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+        </div>
+        <div class="row tableRow">
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table">
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+            <svg width="69" height="145" viewBox="0 0 69 145" fill="none" xmlns="http://www.w3.org/2000/svg" class="table"> 
+                <rect width="69" height="145" rx="12" fill="#595550"/>
+                <path d="M34.5 0V72.25M34.5 145V144.5V72.5M34.5 72.25H69M34.5 72.25V72.5M34.5 72.5H0" stroke="#4A4A4A"/>
+            </svg>
+        </div>
+        <div class="row seatRow reverse">
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="hallway" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+            <div class="seat" id="">
+                <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 1.5H38H44C56.9787 1.5 67.5 12.0213 67.5 25V45C67.5 57.9787 56.9787 68.5 44 68.5H38H25C12.0213 68.5 1.5 57.9787 1.5 45V25C1.5 12.0213 12.0213 1.5 25 1.5Z" stroke="#EDE9E2" stroke-width="3"/>
+                    <path d="M25 3.75H28.9528C19.2211 7.0999 12.25 15.6992 12.25 25.8571V44.1429C12.25 54.3008 19.2211 62.9001 28.9528 66.25H25C11.5424 66.25 0.75 56.2905 0.75 44.1429V25.8571C0.75 13.7095 11.5424 3.75 25 3.75Z" fill="#EDE9E2" stroke="#EDE9E2" stroke-width="1.5"/>
+                </svg>
+                <p class="seatNumber"></p>
+            </div>
+        </div>
+        <div class="row baggageRow">
+            <svg width="148" height="145" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="148" height="145" rx="12" fill="#595550"/>
+                <rect x="35" y="53" width="78" height="43" rx="4" fill="#231B13"/>
+                <path d="M64 53V47C64 45.3431 65.3431 44 67 44H81C82.6569 44 84 45.3431 84 47V53" stroke="#231B13" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+            <svg width="148" height="145" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="148" height="145" rx="12" fill="#595550"/>
+                <rect x="35" y="53" width="78" height="43" rx="4" fill="#231B13"/>
+                <path d="M64 53V47C64 45.3431 65.3431 44 67 44H81C82.6569 44 84 45.3431 84 47V53" stroke="#231B13" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="row exitRow">
+            <svg width="27" height="57" viewBox="0 0 27 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.5 3L13.5 54M13.5 54C14.1462 53.3625 20.7692 46.8281 24 43.6406M13.5 54L3 43.6406" stroke="white" stroke-opacity="0.2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg width="27" height="57" viewBox="0 0 27 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.5 3L13.5 54M13.5 54C14.1462 53.3625 20.7692 46.8281 24 43.6406M13.5 54L3 43.6406" stroke="white" stroke-opacity="0.2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class="upStairsRow">
+            <svg width="295" height="383" viewBox="0 0 295 383" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0H255C277.091 0 295 17.9086 295 40V343C295 365.091 277.091 383 255 383H0V0Z" fill="#595550"/>
+                <path d="M127.365 297.728L120.777 323H113.325L109.293 306.368L105.117 323H97.6654L91.2574 297.728H97.8454L101.481 316.124L105.981 297.728H112.749L117.069 316.124L120.741 297.728H127.365ZM129.409 310.328C129.409 307.832 129.949 305.612 131.029 303.668C132.109 301.7 133.609 300.176 135.529 299.096C137.473 297.992 139.669 297.44 142.117 297.44C145.117 297.44 147.685 298.232 149.821 299.816C151.957 301.4 153.385 303.56 154.105 306.296H147.337C146.833 305.24 146.113 304.436 145.177 303.884C144.265 303.332 143.221 303.056 142.045 303.056C140.149 303.056 138.613 303.716 137.437 305.036C136.261 306.356 135.673 308.12 135.673 310.328C135.673 312.536 136.261 314.3 137.437 315.62C138.613 316.94 140.149 317.6 142.045 317.6C143.221 317.6 144.265 317.324 145.177 316.772C146.113 316.22 146.833 315.416 147.337 314.36H154.105C153.385 317.096 151.957 319.256 149.821 320.84C147.685 322.4 145.117 323.18 142.117 323.18C139.669 323.18 137.473 322.64 135.529 321.56C133.609 320.456 132.109 318.932 131.029 316.988C129.949 315.044 129.409 312.824 129.409 310.328Z" fill="#231B13"/>
+                <path d="M62 131H80.0373V118.377H97.5109V104.435H114.233V91.8116H132.082V80.5072H148.992V66.3768H166.654V53H183M75.7158 94.8261L116.71 53.5333L117.239 53M117.239 53V70.3333M117.239 53H98.0745" stroke="#231B13" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
     </div>
 </div>
 
