@@ -1,6 +1,37 @@
 .input-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+
+input {
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+  border-radius: 15px;
+  color: white;
+  padding: 0.5rem;
+}
+select {
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+  border-radius: 15px;
+  color: white;
+  padding: 0.5rem;
+  background-image: none;
+}
+
+select option {
+  background-color: var(--bg-black-color);
+  color: white;
+}
+
+input[type="date"] {
+  font-family: Poppins, sans-serif;
+  cursor: pointer;
+}
+
+input:focus,
+select:focus {
+  background-color: var(--main-color);
 }
