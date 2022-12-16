@@ -1,3 +1,4 @@
+<?php require_once(PATH_MODELS . 'UserDAO.php'); ?>
 <!DOCTYPE html>
 <html>
 
