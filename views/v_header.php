@@ -27,6 +27,11 @@
           if (isset($_SESSION['user_id'])) {
             echo '<li><a href="index.php?page=messages">' . TITLE_MESSAGES . '</a></li>';
           }?>
+        <?php
+        $user = new UserDAO();
+          if (isset($_SESSION['user_id']) && $user->isEmployee($_SESSION['user_id'])) {
+            echo '<li><a href="index.php?page=platform_manager">' . TITLE_PLATFORM_MANAGER . '</a></li>';
+          }?>
       </ul>
     </nav>
     <nav>

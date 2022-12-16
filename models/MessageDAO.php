@@ -51,4 +51,5 @@ class MessageDAO extends DAO
         $args = array(':id' => $id);
         return $this->queryRow($sql, $args);
     }
+    
 }

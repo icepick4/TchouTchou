@@ -18,6 +18,7 @@ define('TITLE_COMPANY', 'Notre Entreprise');
 define('TITLE_INFORM_YOU', 'Vous Informer');
 define('TITLE_QUICK_ACCESS', 'Accès Rapide');
 define('TITLE_MESSAGES', 'Messages');
+define('TITLE_PLATFORM_MANAGER', 'Gestion des Quais');
 define('STATION_INFORMATION', 'Gares & Quais');
 define('TERMS_OF_USE', 'Condtions Générales');
 define('PRIVACY_POLICY', 'Politique de Confidentialité');
