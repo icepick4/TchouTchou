@@ -90,7 +90,7 @@ div.list_quai{
 }
 div.list_quai .quai{
 	z-index: 1;
-	background-color: red;
+	background-color: orange;
 	margin: auto;
 	height: 5px;
 	width: 70%;
@@ -99,6 +99,10 @@ div.list_quai .quai{
 div.list_quai .quai.free{
 	background-color: rgb(0,255,0);
 
+}
+
+div.list_quai .quai.block{
+	background-color: red;
 }
 
 

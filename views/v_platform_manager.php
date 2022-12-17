@@ -58,7 +58,7 @@ require_once(PATH_VIEWS . 'header.php');
 		
 	</div>
 	<template id="platforms">
-		<div class="quai">
+		<div class="quai block">
 			<div class="quai_info">
 				<label id="letter">Letter</label>
 				<button class="btn_actif actif">Status</button>

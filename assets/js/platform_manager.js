@@ -163,6 +163,7 @@ async function load_platform(station_id,hub) {
 
         if (data['platforms'][i]['PLATFORM_STATUS'] == 1){
             tmp_option.querySelector(".btn_actif").classList.add("actif");
+            tmp_option.querySelector(".quai").classList.remove("block");
         }
 
         plat_list.appendChild(tmp_option);
@@ -217,8 +218,10 @@ async function update_platform() {
 
         if (data['platforms'][i]['PLATFORM_STATUS'] == 1){
             platform.querySelector(".btn_actif").classList.add("actif");
+            platform.classList.remove("block");
         }else{
             platform.querySelector(".btn_actif").classList.remove("actif");
+            platform.classList.add("block");
         }
 
     }
