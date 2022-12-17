@@ -1,0 +1,8 @@
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#paypal-button-container {
+  width: 25%;
+}
