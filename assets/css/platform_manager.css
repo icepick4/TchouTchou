@@ -113,14 +113,17 @@ div.list_quai .quai.free{
 }
 
 .quai div.quai_info .train_icon_box{
+	margin-top: auto;
+	margin-bottom: auto;
 	height: 30px;
 	min-width: 70px;
-
 	margin-left: 10px;
 	overflow: hidden;
 
 }
 .quai div.quai_info .logo_train{
+	margin-top: auto;
+	margin-bottom: auto;
 	opacity: 0;
 	height: 100%;
 	width: auto;
@@ -153,6 +156,8 @@ div.list_quai .quai.free{
 
 .quai button.btn_actif{
 	margin-left: 5px;
+	margin-top: auto;
+	margin-bottom: auto;
 	background-color: black;
 	border: 3px solid red;
 	color:  red;
