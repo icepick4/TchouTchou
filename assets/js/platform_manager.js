@@ -1,24 +1,27 @@
 const in_station_name = document.querySelector('select#station_name');
 const in_hub = document.querySelector('select#hub_id');
-const tmp_plat_list = document.querySelector('.tmp_list_platform')
-const temp_plat = document.querySelector('template.template');
+const plat_list = document.querySelector('.list_quai')
+//const temp_plat = document.querySelector('template.template');
 let req;
+const temp_plat = document.querySelector('template#platforms');
 
 // imported js
 
 const start_pod = document.querySelector("div.start");
 const end_pod = document.querySelector("div.finish");
 const temp_connection = document.querySelector("template#connection");
-const aiguillage = document.querySelector("div.aiguillage div.suport_rail")
+const aiguillage = document.querySelector(".suport_rail #connection-liste")
 const actif = document.querySelectorAll("button.btn_actif");
 const ref = document.querySelector("div#reference");
-let off_set_y = ref.getBoundingClientRect().y;
-const off_set = 10;
+
+const off_set = 15;
 
 
 
 function build_all_connection(){
+    console.log("start building connection")
     const quais = document.querySelectorAll(".quai");
+    aiguillage.innerHTML = "";
     quais.forEach(build_connection);
 }
 
@@ -45,6 +48,7 @@ function build_connection(cible) {
 function update_connection(el) {
     const from = el._start;
     const to = el._to;
+    const off_set_y = ref.getBoundingClientRect().y;
     let arrow = el.querySelector("line");
     arrow.x1.baseVal.value = from.getBoundingClientRect().x + from.getBoundingClientRect().width - off_set ;
     arrow.y1.baseVal.value = from.getBoundingClientRect().y + (from.getBoundingClientRect().height /2) - off_set_y;
@@ -59,7 +63,6 @@ function update_connection(el) {
 
 function update_line() {
     const to_remove = document.querySelectorAll("svg.rail");
-    off_set_y = ref.getBoundingClientRect().y;
     to_remove.forEach(rail => {
       //rail.remove(); 
       update_connection(rail);
@@ -76,22 +79,28 @@ function switch_actif(el) {
 }
 
 
-build_all_connection()
 
-addEventListener('resize', (event) => {update_line()});//;build_all_connection();});
+
+addEventListener('resize', (event) => {update_line()});
 
 // end 
 
 
 in_station_name.addEventListener('change', function (event) {
-	in_hub.innerHTML = '';
-	in_hub.classList.add("loading")
-    load_hub_op(in_station_name.value)
-    .then(function(ev) {
-    load_platform(in_station_name.value, in_hub.value)
-})
-
+	load()
 });
+
+async function load() {
+    in_hub.innerHTML = '';
+    in_hub.classList.add("loading")
+    load_hub_op(in_station_name.value)
+    .then(finish => {
+        return load_platform(in_station_name.value, in_hub.value);
+    })
+    .then(finish => {
+        build_all_connection();
+    });
+}
 
 async function load_hub_op(id) {
     const rep = await fetch(
@@ -108,6 +117,7 @@ async function load_hub_op(id) {
         in_hub.appendChild(tmp_option);
     }
     in_hub.classList.remove("loading")
+    return true;
 }
 
 async function load_platform(station_id,hub) {
@@ -119,21 +129,35 @@ async function load_platform(station_id,hub) {
 
     let data = await rep.json();
 
-    tmp_plat_list.innerHTML ="";
+    plat_list.innerHTML ="";
+    console.log(data['platforms'].length)
+    start_pod.style.top = data['platforms'].length * 50 + "px"
+    end_pod.style.top = data['platforms'].length * 50 + "px"
+
     for (var i = 0; i < data['platforms'].length; i++) {
         let tmp_option = temp_plat.content.cloneNode(true);
-        tmp_option.querySelector("p").innerHTML = 
-        data['platforms'][i]['PLATFORM_LETTER'] +" status= "
-        +data['platforms'][i]['PLATFORM_STATUS'] +" user= "
-        +data['platforms'][i]['PLATFORM_USER'] +" utilisation= "
-        +data['platforms'][i]['PLATFORM_UTILISATION'];
-        tmp_plat_list.appendChild(tmp_option);
+        tmp_option.querySelector("#letter").innerHTML = data['platforms'][i]['PLATFORM_LETTER'];
+        tmp_option.querySelector(".train_number").innerHTML = data['platforms'][i]['PLATFORM_USER'];
+
+        if (data['platforms'][i]['PLATFORM_UTILISATION'] == 0){
+            tmp_option.querySelector(".quai").classList.add("free");
+            tmp_option.querySelector(".logo_train").classList.add("no_train");
+        }else{  
+            tmp_option.querySelector(".logo_train").classList.remove("no_train");
+            tmp_option.querySelector(".logo_train").classList.add("visible_train");
+        }
+
+        if (data['platforms'][i]['PLATFORM_STATUS'] == 1){
+            tmp_option.querySelector(".btn_actif").classList.add("actif");
+        }
+
+        plat_list.appendChild(tmp_option);
     }
+
+    console.log("plat adding finish")
+    return true
+
     
 }
 
-load_hub_op(in_station_name.value)
-.then(function(ev) {
-    load_platform(in_station_name.value, in_hub.value)
-})
-
+load()
