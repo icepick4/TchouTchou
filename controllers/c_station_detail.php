@@ -1,8 +1,8 @@
 <?php
 
-require_once(PATH_MODELS . 'TrainDAO.php');
+require_once(PATH_MODELS . 'StationDAO.php');
 
-$train = new TrainDAO();
+$train = new StationDAO();
 
 $station_name = $train->get_station_name($_GET['id']);
 $departTravels = $train->get_station_departure($_GET['id']);

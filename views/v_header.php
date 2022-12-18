@@ -30,9 +30,13 @@
           }?>
         <?php
         $user = new UserDAO();
-          if (isset($_SESSION['user_id']) && $user->isEmployee($_SESSION['user_id'])) {
+          if (isset($_SESSION['user_id']) && $user->isStation($_SESSION['user_id'])) {
             echo '<li><a href="index.php?page=platform_manager">' . TITLE_PLATFORM_MANAGER . '</a></li>';
+          }
+          if (isset($_SESSION['user_id']) && $user->isService($_SESSION['user_id'])) {
+            echo '<li><a href="index.php?page=maintenance">' . TITLE_MAINTENANCE . '</a></li>';
           }?>
+          
       </ul>
     </nav>
     <nav>

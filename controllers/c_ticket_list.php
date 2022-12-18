@@ -1,6 +1,6 @@
 <?php
 require_once(PATH_MODELS . 'UserDAO.php');
-require_once(PATH_MODELS . 'TrainDAO.php');
+require_once(PATH_MODELS . 'StationDAO.php');
 
 
 if (!$_SESSION['logged']) {

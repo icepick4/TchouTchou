@@ -24,9 +24,20 @@ define('TERMS_OF_USE', 'Condtions Générales');
 define('PRIVACY_POLICY', 'Politique de Confidentialité');
 define('STATION_LIST', 'Liste des Gares');
 define('TITLE_GITPULL', 'git pull');
+define('TITLE_MAINTENANCE', 'Maintenance');
 define('CGU', 'les conditions générales d\'utilisation');
 define('PLEASE_ACCEPT', 'Veuillez accepter ');
 define('RETURN_BUTTON', 'Retour');
+define('TRAIN_ID', 'Identifiant');
+define('TRAIN_TYPE','Type');
+define('TRAIN_CAPACITY', 'Capacité');
+define('TRAIN_SPEED', 'Vitesse');
+define('TRAIN_LENGTH', 'Longueur');
+define('TRAIN_STATUS', 'Statut');
+define('TRAIN_FREE', 'Libre');
+define('TRAIN_USE', 'En cours d\'utilisation');
+define('TRAIN_MAINTENANCE', 'En maintenance');
+
 //Home
 define('MY_ACCOUNT', 'Mon Compte');
 define('MY_TICKETS', 'Mes Billets');
