@@ -1,27 +1,66 @@
 <!--  Entête de page -->
-<?php require_once(PATH_VIEWS . 'header.php'); ?>
+<?php 
+	require_once(PATH_VIEWS . 'header.php'); 
+	require_once(PATH_MODELS . 'UserDAO.php');
+
+	$user = new UserDAO();
+
+?>
 
 
 <!-- Début de la page -->
 
-<?php
-if (!$_SESSION['logged']) {
-?>
+<?php if ($user->isEmployee($_SESSION['user_id'])) {?>
 	<article>
-		<img src="assets/images/travel.svg">
+		<img src="assets/images/work_il.svg">
 		<div class="arti">
 			<h2><?=WELCOME?></h2>
 			<p><?=WELCOME_TEXT?></p>
 		</div>
 	</article>
+	<?php if($user->isStation($_SESSION['user_id'])) { ?>
+		<article>
+			<img src="assets/images/station_il.svg">
+			<div class="arti">
+				<h2><?=PLATFORM_MANAGER?></h2>
+				<p><?=PLATFORM_MANAGER_TEXT?></p>
+				<a href="index.php?page=platform_manager">
+					<div class="btn">
+						<p><?=WELCOME_GO?></p>
+						<img src="assets/images/arrow.svg">
+					</div>
+				</a>
+			</div>
+		</article>
+	<?php } if($user->isService($_SESSION['user_id'])) { ?>
+		<article>
+			<img src="assets/images/engineer_il.svg">
+			<div class="arti">
+				<h2><?=MAINTENANCE?></h2>
+				<p><?=MAINTENANCE_TEXT?></p>
+				<div class="btn">
+					<p><?=WELCOME_GO?></p>
+					<img src="assets/images/arrow.svg">
+				</div></a>
+			</div>
+		</article>
+<?php }
+} else { ?>
+	<article>
+		<img src="assets/images/travel.svg">
+		<div class="arti">
+			<h2><?= WELCOME ?></h2>
+			<p><?= WELCOME_TEXT ?></p>
+		</div>
+	</article>
 	<article>
 		<img src="assets/images/destination.svg">
 		<div class="arti">
-			<h2><?=TITLE_SEARCH?></h2>
-			<p><?=PLATFORM_MANAGER_TEXT?></p>
+			<h2><?= TITLE_SEARCH ?></h2>
+			<p><?= PLATFORM_MANAGER_TEXT ?></p>
 			<a href="index.php?page=purchase">
 				<div class="btn">
-					<p><?=WELCOME_GO?></p>
+					<p><?= WELCOME_GO ?></p>
 					<img src="assets/images/arrow.svg">
 				</div>
 			</a>
@@ -40,22 +79,7 @@ if (!$_SESSION['logged']) {
 		</div>
 	</article>
 
-<?php
-    } else { ?>
-    <div class="content">
-        <h1 id="title"><?= WELCOME ?><?php echo $_SESSION['first_name'] ?> !</h1>
-        <div class="links">
-            <a href="index.php?page=account"><?= MY_ACCOUNT ?></a>
-            <a href="index.php?page=ticket_list"><?= MY_TICKETS ?></a>
-            <a href="index.php?page=messages"><?= MY_MESSAGES ?></a>
-            <a href="index.php?page=shopping"><?= BUY_TICKET ?></a>
-            <a href="index.php?page=logout"><?= LOGOUT ?></a>
-        </div>
-    </div>
-<?php
-}
-?>
-
+<?php } ?>
 <!--  Fin de la page -->
 
 <!--  Pied de page -->

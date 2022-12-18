@@ -115,6 +115,11 @@ article div.arti .btn {
   width: 80%;
 }
 
+article img {
+  height: 25em;
+  width: auto;
+}
+
 /* mobile */
 @media (max-width: 800px) {
   article:nth-child(n) {

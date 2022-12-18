@@ -8,7 +8,7 @@ require_once(PATH_MODELS . 'Function.php');
 <!--  Début de la page -->
 
 <button onclick="document.location.href='index.php?page=station_list'">
-    << Retour </button>
+    <?= RETURN_BUTTON ?></button>
         <h1><?= STATION_OF . $station_name['STATION_NAME'] ?></h1>
         <?php
         if (!$departTravels && !$arrivalTravels) {

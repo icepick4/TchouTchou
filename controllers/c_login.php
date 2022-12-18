@@ -12,12 +12,7 @@ if (isset($_POST["mail"]) && isset($_POST["password"])) {
             $_SESSION['logged'] = true;
             $_SESSION['user_id'] = $result['USER_ID'];
             $_SESSION['first_name'] = $result['USER_FIRSTNAME'];
-            if ($user->isEmployee($result['USER_ID'])) {
-                header("Location: index.php?page=home_employee");
-            }
-            else {
-                header("Location: index.php?page=home");
-            }
+            header("Location: index.php?page=home");
             die();
         } else {
             $alert = choixAlert('unknown_password');
