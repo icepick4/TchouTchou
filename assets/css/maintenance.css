@@ -34,11 +34,6 @@ table tr:nth-child(even) {
   background-color: var(--border-input);
 }
 
-table tr:hover {
-  background-color: var(--main-color);
-  cursor: pointer;
-}
-
 table td {
   border: 1px solid #ddd;
   padding: 8px;
@@ -81,4 +76,35 @@ table td {
   color: var(--main-color);
   font-size: 20px;
   font-style: normal;
+}
+
+select {
+  width: 75%;
+  border: var(--main-color);
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 0.5rem;
+  border-end-start-radius: 15px;
+  border-start-start-radius: 15px;
+}
+
+form {
+  display: flex;
+}
+
+input {
+  background-color: var(--main-color);
+  color: #fff;
+  border-end-end-radius: 15px;
+  border-start-end-radius: 15px;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+input:hover {
+  background-color: #fff;
+  transition-duration: 0.2s;
+  color: var(--main-color);
 }

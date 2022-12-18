@@ -38,6 +38,7 @@
 			<div class="arti">
 				<h2><?=MAINTENANCE?></h2>
 				<p><?=MAINTENANCE_TEXT?></p>
+				<a href="index.php?page=maintenance">
 				<div class="btn">
 					<p><?=WELCOME_GO?></p>
 					<img src="assets/images/arrow.svg">

@@ -23,7 +23,8 @@ if ($trains != null) {
             <th><?= TRAIN_CAPACITY ?></th>
             <th><?= TRAIN_SPEED ?></th>
             <th><?= TRAIN_LENGTH ?></th>
-            <th><?= TRAIN_STATUS ?></th>
+            <th COLSPAN=2><?= TRAIN_STATUS ?></th>
+
         </tr>
         <?php
         foreach ($trains as $train) {
@@ -44,16 +45,17 @@ if ($trains != null) {
                 <td>
                     <h3><?php echo $train['TRAIN_LENGTH'].' m' ?></h3>
                 </td>
-                <td>
-                    
-                    <?php if ($train['TRAIN_STATUS_ID'] == 0) { ?>
-                        <h3><?= TRAIN_FREE ?></h3>
-                    <?php } elseif ($train['TRAIN_STATUS_ID'] == 1) { ?>
-                        <h3><?= TRAIN_USE ?></h3>
-                    <?php } else { ?>
-                        <h3><?= TRAIN_MAINTENANCE ?></h3>
-                    <?php } ?>
+                <td COLSPAN=2>
+                    <form>
+                        <select name="status" id="status" class="status" data-train-id="<?= $train['TRAIN_ID'] ?>">
+                            <option value="0" <?php if ($train['TRAIN_STATUS_ID'] == 0) echo 'selected' ?>><?= TRAIN_FREE ?></option>
+                            <option value="1" <?php if ($train['TRAIN_STATUS_ID'] == 1) echo 'selected' ?>><?= TRAIN_USE ?></option>
+                            <option value="2" <?php if ($train['TRAIN_STATUS_ID'] == 2) echo 'selected' ?>><?= TRAIN_MAINTENANCE ?></option>
+                        </select>
+                        <input class='links' type="submit" value=<?= SUBMIT ?>></input>
+                    </form>
                 </td>
+
             </tr>
         <?php
         }
