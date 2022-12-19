@@ -21,12 +21,12 @@
                 </div>
             <?php
             }
-        }
         ?>
     </div>
     <div id="messages">
         <p class="noMessage"><? echo CHOOSE_MESSAGE ?></p>
     </div>
+    <?php } ?>
 </div>
 
 <!--  Fin de la page -->
