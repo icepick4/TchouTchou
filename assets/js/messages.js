@@ -2,6 +2,7 @@ import { getFlags } from "./functions.js";
 
 var message = document.getElementsByClassName("discussion_resume");
 var currentMessage = -1;
+var discussion = document.querySelector("#messages");
 
 const script = document.querySelector('script[src*="messages.js"]');
 let flag = script.outerHTML;
@@ -18,6 +19,7 @@ function getMessageIdOnclick(e) {
     var number = e.target.children[0].innerText;
   }
   currentMessage = number;
+  localStorage.setItem("currentMessage", number);
   loadMessage(number);
 }
 
@@ -34,6 +36,10 @@ function loadMessage(id) {
     true
   );
   xmlhttp.send();
+  //wait 1s to scroll to the bottom of the discussion
+  setTimeout(function () {
+    discussion.scrollTop = discussion.scrollHeight;
+  }, 200);
 }
 
 //call loadMessage() every 30 seconds to refresh the message
@@ -42,3 +48,10 @@ setInterval(function () {
     loadMessage(currentMessage);
   }
 }, 30000);
+
+// on load, load the last message
+window.onload = function () {
+  if (localStorage.getItem("currentMessage") != null) {
+    loadMessage(localStorage.getItem("currentMessage"));
+  }
+};
