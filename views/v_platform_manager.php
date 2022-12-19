@@ -34,61 +34,50 @@ require_once(PATH_VIEWS . 'header.php');
 <div class="ihm_quais">
 	<fieldset>
 		<legend>platforms</legend>
-		<div class="tmp_list_platform"></div>
-		<template class='template'><p></p></template>
+
 		<div class="aiguillage">
-	
+
+
 	<div class="suport_rail">
 		<div id="reference"></div>
 		<div class="start"></div>
-
 		<div class="finish"></div>
+		<div id="connection-liste"></div>
 		<template id="connection">
-	<svg class="rail">
-		  <line x1="50" y1="100" x2="200" y2="10" class="arrow" />
-		</svg>
-	</template>
+			<svg class="rail">
+			  <line x1="50" y1="100" x2="200" y2="10" class="arrow" />
+			</svg>
+		</template>
 	</div>
 	<div class="list_quai">
-	<div class="quai free">
-		<div class="quai_info">
-			<label>A</label>
-			<button class="btn_actif actif">Actif</button>
-			<div class="train_icon_box">
-			<img class="logo_train visible_train" src="assets/images/logo_orange.svg"></div>
-			<label class="train_number">8385</label></div></div>
-	<div class="quai">
-		<div class="quai_info">
-			<label>B</label>
-			<button class="btn_actif ">Actif</button>
-		<div class="train_icon_box">
-			<img class="logo_train visible_train" src="assets/images/logo_orange.svg"></div>
-			<label class="train_number">23385</label></div></div>
-	<div class="quai">
-		<div class="quai_info">
-			<label>C</label>
-			<button class="btn_actif ">Actif</button>
-		<div class="train_icon_box">
-			<img class="logo_train  no_train" src="assets/images/logo_orange.svg"></div>
-		</div></div>
-	<div class="quai">
-		<div class="quai_info">
-			<label>D</label>
-			<button class="btn_actif actif">Actif</button>
-			<div class="train_icon_box">
-			<img class="logo_train visible_train" src="assets/images/logo_orange.svg"></div>
-		<label class="train_number">5385</label></div></div>
-	</div>
+	<!-- quai free -->
+	
+	
 
 	
 		
 	</div>
+	<template id="platforms">
 
-	<iframe src="random/dev/tableau_aiguillage/index.html"></iframe>
+		<div class="quai block">
 
+			<div class="quai_info">
+				<label id="letter">Letter</label>
+				<button class="btn_actif actif">Status</button>
+				<div class="train_icon_box">
+
+					<img class="logo_train  no_train " src="assets/images/logo_simple_train.svg">
+
+				</div>
+			<label class="train_number">TRAIN_NUMBER</label>
+			</div>
+		</div>
+		
+	</template>	
+		</div>
 	</fieldset>
+	
 </div>
-
 
 <!--  Fin de la page -->
 
