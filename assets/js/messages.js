@@ -38,6 +38,12 @@ function loadMessage(id) {
   xmlhttp.send();
   //wait 1s to scroll to the bottom of the discussion
   setTimeout(function () {
+    let discussionId = document.querySelector("#discussionId").innerText;
+    let discussionAllowed =
+      document.querySelector("#discussionAllowed").innerText;
+    if (!discussionAllowed.includes(discussionId)) {
+      discussion.innerHTML = "<p>Vous n'avez pas accès a ces messages</p>";
+    }
     discussion.scrollTop = discussion.scrollHeight;
   }, 200);
 }

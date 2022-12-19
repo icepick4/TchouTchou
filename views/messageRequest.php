@@ -48,3 +48,4 @@
             <input type="text" id="message" name="message" placeholder="Votre message">
             <input type="submit" id="submit" value="Envoyer">
         </form>
+        <p id="discussionId" style="display:none"><? echo $id_discussion ?></p>

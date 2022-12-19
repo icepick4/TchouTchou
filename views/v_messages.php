@@ -7,26 +7,24 @@
 
 
 <h1>Messages</h1>
-<?php if (empty($discussions)){
-            echo "<p class='noMessage'>".NO_MESSAGES."</p>";
-        }else{ ?>
 <div id="chat">
     <div id="resume">
         <?php
-        
-            foreach ($discussions as $discussion) { ?>
-                <div class="discussion_resume">
-                    <h3><?= $discussion['DISCUSSION_ID']; ?></h3>
-                    <p><?= substr($discussion['DISCUSSION_SUBJECT'], 0, 30) . '...' ?></p>
-                </div>
-            <?php
-            }
+        foreach ($discussions as $discussion) { ?>
+            <div class="discussion_resume">
+                <h3><?= $discussion['DISCUSSION_ID']; ?></h3>
+                <p><?= substr($discussion['DISCUSSION_SUBJECT'], 0, 30) . '...' ?></p>
+            </div>
+        <?php
+        }
         ?>
     </div>
     <div id="messages">
-        <p class="noMessage"><? echo CHOOSE_MESSAGE ?></p>
     </div>
-    <?php } ?>
+    <p  id="discussionAllowed" style="display:none">
+        <?php foreach ($discussions as $discussion) {
+             echo $discussion["DISCUSSION_ID"]. " "; }?>
+    </p>
 </div>
 
 <!--  Fin de la page -->
