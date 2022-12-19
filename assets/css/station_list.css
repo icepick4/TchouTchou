@@ -74,9 +74,7 @@ table td {
 #clear-search {
   position: absolute;
   right: 25%;
-  top: 5px;
-  margin-top: 5px;
-  margin-right: 5px;
+  top: 20%;
   cursor: pointer;
   color: var(--main-color);
   font-size: 20px;

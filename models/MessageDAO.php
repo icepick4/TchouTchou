@@ -51,5 +51,12 @@ class MessageDAO extends DAO
         $args = array(':id' => $id);
         return $this->queryRow($sql, $args);
     }
+
+    public function getDiscussionDestinationById($id)
+    {
+        $sql = 'SELECT USER_ID FROM DISCUSSION_SUPPORT WHERE DISCUSSION_ID = :id';
+        $args = array(':id' => $id);
+        return $this->queryRow($sql, $args);
+    }
     
 }

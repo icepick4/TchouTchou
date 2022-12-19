@@ -17,9 +17,16 @@
     $user_id = intval($_GET['id']);
     $discussionData = $mailbox->getDiscussionSubjectById($id_discussion);
 
-    ?><h2><?php print_r($discussionData['DISCUSSION_SUBJECT']); ?></h2>
-    <?php
+    
+    
 
+    if($user->isSupport($user_id)){
+        $destination_id = $mailbox->getDiscussionDestinationById($id_discussion);
+        $receiver = $user->getUserById($destination_id['USER_ID']);
+    }
+
+    ?><h2><?php echo($discussionData['DISCUSSION_SUBJECT']); ?> - <?php if(isset($receiver)){echo $receiver['USER_FIRSTNAME'] . " " . $receiver['USER_LASTNAME'] ;} else{ echo "Support";} ?></h2>
+    <?php
 
     $result = $mailbox->getDiscussionById($id_discussion);
 
