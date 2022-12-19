@@ -37,7 +37,7 @@ define('TRAIN_STATUS', 'Statut');
 define('TRAIN_FREE', 'Libre');
 define('TRAIN_USE', 'En cours d\'utilisation');
 define('TRAIN_MAINTENANCE', 'En maintenance');
-
+define('BTN_ADD', 'Ajouter');
 //Home
 define('MY_ACCOUNT', 'Mon Compte');
 define('MY_TICKETS', 'Mes Billets');

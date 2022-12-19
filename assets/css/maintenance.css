@@ -108,3 +108,15 @@ input:hover {
   transition-duration: 0.2s;
   color: var(--main-color);
 }
+
+button {
+  padding: 10px 3rem;
+  margin-bottom: 2%;
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 2em;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
