@@ -1,114 +1,153 @@
 h1 {
-  font-size: 5em;
-  font-weight: 600;
-  text-decoration: none;
-  display: block;
-  padding: 10px 0.5em;
-  margin: 0 auto;
-  color: var(--main-color);
+	font-size: 5em;
+	font-weight: 600;
+	text-decoration: none;
+	display: block;
+	padding: 10px 0.5em;
+	margin: 0 auto;
+	color: var(--main-color);
 }
 
 h3,
 p {
-  margin: 0;
+	margin: 0;
 }
 
 #chat {
-  margin: 1em;
-  display: flex;
-  height: 64vh;
-  border: 3px solid var(--main-color);
-  border-radius: 12px;
+	margin: 1em;
+	display: flex;
+	height: 64vh;
+	border: 3px solid var(--main-color);
+	border-radius: 12px;
 }
 
 #messages h2 {
-  width: 99%;
-  background-color: var(--border-input);
-  margin-top: 0;
-  padding: 0.5%;
-  border-top-right-radius: 2px;
-  z-index: -1;
+	width: 99%;
+	background-color: var(--border-input);
+	margin-top: 0;
+	padding: 0.5%;
+	border-top-right-radius: 2px;
+	z-index: -1;
 }
 
 #resume {
-  overflow-y: scroll;
-  width: 25%;
-  min-height: 100%;
-  border-right: 1px solid #fff;
+	overflow-y: scroll;
+	width: 25%;
+	min-height: 100%;
+	border-right: 1px solid #fff;
 }
 #resume div {
-  padding: 1em;
-  background-color: var(--main-color);
-  opacity: 0.4;
-  border-radius: 10px;
-  margin: 0.5em;
+	padding: 1em;
+	background-color: var(--main-color);
+	opacity: 0.4;
+	border-radius: 10px;
+	margin: 0.5em;
 }
 
 #resume div:hover {
-  opacity: 1;
+	opacity: 1;
 }
 
 #resume div * {
-  opacity: 1;
-  color: #fff;
+	opacity: 1;
+	color: #fff;
 }
 
 #messages {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  width: 90%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  scroll-behavior: smooth;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 90%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	scroll-behavior: smooth;
 }
 
 #messages p {
-  padding: 1em;
-  margin: 0.5em;
-  border-radius: 12px;
-  z-index: -2;
+	padding: 1em;
+	margin: 0.5em;
+	border-radius: 12px;
+	z-index: -2;
 }
 .sender {
-  align-self: flex-start;
-  background-color: var(--border-input);
+	align-self: flex-start;
+	background-color: var(--border-input);
 }
 
 .receiver {
-  background-color: var(--main-color);
-  align-self: flex-end;
+	background-color: var(--main-color);
+	align-self: flex-end;
 }
 
 form {
-  border: 1px solid var(--main-color);
-  margin: 1%;
-  padding: 0.5%;
-  border-radius: 10px;
-  align-self: flex-end;
-  width: 97%;
-  display: flex;
+	border: 1px solid var(--main-color);
+	margin: 1%;
+	padding: 0.5%;
+	border-radius: 10px;
+	align-self: flex-end;
+	width: 97%;
+	display: flex;
 }
 
 form input {
-  border: none;
-  background-color: transparent;
+	border: none;
+	background-color: transparent;
 }
 
 form input:focus {
-  outline: none;
-  border: none;
+	outline: none;
+	border: none;
 }
-form input:not([type="submit"]) {
-  flex-grow: 1;
-  color: white;
+form input:not([type='submit']) {
+	flex-grow: 1;
+	color: white;
 }
-form input[type="submit"] {
-  color: var(--main-color);
-  cursor: pointer;
+form input[type='submit'] {
+	color: var(--main-color);
+	cursor: pointer;
 }
 
 p.noMessage {
-  text-align: center;
-  font-size: 1.5em;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.nomessage {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 20vh;
+}
+
+.nomessage a {
+	text-decoration: none;
+	align-self: center;
+	width: 40vw;
+}
+
+.btn {
+	border: none;
+	border-radius: var(--radius);
+	color: white;
+	background-color: var(--main-color);
+	margin-left: auto;
+	margin-right: auto;
+	padding: var(--margin);
+	text-transform: capitalize;
+	padding-left: var(--margin);
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn p {
+	margin: 0px;
+	margin-left: var(--margin);
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.btn img {
+	width: 15px;
+	height: auto;
 }

@@ -29,7 +29,7 @@ define('CGU', 'les conditions générales d\'utilisation');
 define('PLEASE_ACCEPT', 'Veuillez accepter ');
 define('RETURN_BUTTON', 'Retour');
 define('TRAIN_ID', 'Identifiant');
-define('TRAIN_TYPE','Type');
+define('TRAIN_TYPE', 'Type');
 define('TRAIN_CAPACITY', 'Capacité');
 define('TRAIN_SPEED', 'Vitesse');
 define('TRAIN_LENGTH', 'Longueur');
@@ -131,4 +131,5 @@ define('SELECT_HUB', 'Choisir le hub');
 
 //messages
 define('NO_MESSAGES', 'Vous n\'avez jamais chercher a contacter notre support jusqu\'a maintenant !');
+define('NO_MESSAGE_BTN', 'Accéder au formulaire de contact');
 define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de votre écran pour charger les messages');
