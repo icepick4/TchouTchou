@@ -34,8 +34,7 @@ require_once(PATH_VIEWS . 'header.php');
 <div class="ihm_quais">
 	<fieldset>
 		<legend>platforms</legend>
-		<div class="tmp_list_platform"></div>
-		<template class='template'><p></p></template>
+
 		<div class="aiguillage">
 
 
@@ -59,12 +58,20 @@ require_once(PATH_VIEWS . 'header.php');
 		
 	</div>
 	<template id="platforms">
+<<<<<<< HEAD
 		<div class="quai">
+=======
+		<div class="quai block">
+>>>>>>> platform_manager
 			<div class="quai_info">
 				<label id="letter">Letter</label>
 				<button class="btn_actif actif">Status</button>
 				<div class="train_icon_box">
+<<<<<<< HEAD
 					<img class="logo_train  no_train " src="assets/images/logo_orange.svg">
+=======
+					<img class="logo_train  no_train " src="assets/images/logo_simple_train.svg">
+>>>>>>> platform_manager
 				</div>
 			<label class="train_number">TRAIN_NUMBER</label>
 			</div>

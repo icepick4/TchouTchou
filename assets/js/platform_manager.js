@@ -13,9 +13,17 @@ const temp_connection = document.querySelector("template#connection");
 const aiguillage = document.querySelector(".suport_rail #connection-liste")
 const actif = document.querySelectorAll("button.btn_actif");
 const ref = document.querySelector("div#reference");
-
 const off_set = 15;
 
+in_station_name.addEventListener('change', function (event) {
+    load()
+});
+
+in_hub.addEventListener('change', function (event) {
+    change_hub()
+});
+
+addEventListener('resize', (event) => {update_line()});
 
 
 function build_all_connection(){
@@ -81,14 +89,32 @@ function switch_actif(el) {
 
 
 
-addEventListener('resize', (event) => {update_line()});
 
 // end 
 
 
-in_station_name.addEventListener('change', function (event) {
-	load()
-});
+
+
+
+async function load() {
+    in_hub.innerHTML = '';
+    in_hub.classList.add("loading")
+    load_hub_op(in_station_name.value)
+    .then(finish => {
+        return load_platform(in_station_name.value, in_hub.value);
+    })
+    .then(finish => {
+        build_all_connection();
+    });
+}
+
+async function change_hub() {
+    load_platform(in_station_name.value, in_hub.value)
+    .then(finish => {
+        build_all_connection();
+    });
+}
+
 
 async function load() {
     in_hub.innerHTML = '';
@@ -120,6 +146,7 @@ async function load_hub_op(id) {
     return true;
 }
 
+// in_station_name.value, in_hub.value
 async function load_platform(station_id,hub) {
 
     const rep = await fetch(
@@ -149,6 +176,8 @@ async function load_platform(station_id,hub) {
 
         if (data['platforms'][i]['PLATFORM_STATUS'] == 1){
             tmp_option.querySelector(".btn_actif").classList.add("actif");
+
+            tmp_option.querySelector(".quai").classList.remove("block");
         }
 
         plat_list.appendChild(tmp_option);
@@ -160,4 +189,65 @@ async function load_platform(station_id,hub) {
     
 }
 
+
+
+// in_station_name.value, in_hub.value
+async function update_platform() {
+    console.log("update")
+    let station_id = in_station_name.value;
+    let hub = in_hub.value;
+
+    while (in_hub.value == ""){
+        await new Promise(r => setTimeout(r, 500));      
+    }
+    hub = in_hub.value;
+
+
+    const rep = await fetch(
+        'index.php?page=platform_manager&station_name=' + station_id
+        +'&hub_id='+hub
+    );
+
+    let data = await rep.json();
+    let platforms = document.querySelectorAll(".quai");
+
+    
+    while (platforms.length != data['platforms'].length){
+        console.log("bug not same size",platforms.length , data['platforms'].length)
+        await new Promise(r => setTimeout(r, 500));      
+        
+    }
+
+    for (var i = 0; i < data['platforms'].length; i++) {
+        let platform = platforms[i];
+        platform.querySelector(".train_number").innerHTML = data['platforms'][i]['PLATFORM_USER'];
+        if (data['platforms'][i]['PLATFORM_UTILISATION'] == 0){
+            platform.classList.add("free");
+            platform.querySelector(".logo_train").classList.add("no_train");
+            //platform.querySelector(".logo_train").classList.remove("visible_train");
+        }else{  
+            platform.classList.remove("free");
+            platform.querySelector(".logo_train").classList.remove("no_train");
+            platform.querySelector(".logo_train").classList.add("visible_train");
+        }
+
+        if (data['platforms'][i]['PLATFORM_STATUS'] == 1){
+            platform.querySelector(".btn_actif").classList.add("actif");
+            platform.classList.remove("block");
+        }else{
+            platform.querySelector(".btn_actif").classList.remove("actif");
+            platform.classList.add("block");
+        }
+
+    }
+
+    setTimeout(update_platform,500);
+    return true
+
+    
+}
+
+
 load()
+
+update_platform()
