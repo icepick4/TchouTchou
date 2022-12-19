@@ -113,15 +113,24 @@ define('BACK_TICKETS', 'Retournez à vos tickets');
 define('MINUTES', 'minutes');
 define('TRAVEL_TO', 'Voyage vers');
 
+//home client
+define('WELCOME_PT1', 'Bienvenue sur ');
+define('WELCOME_PT2', ', votre site de réservation de tickets de train en ligne !');
+define('WELCOME_TEXT', "Nous sommes heureux de vous accueillir sur notre plateforme et de vous offrir la possibilité de réserver en quelques clics des tickets de train pour votre prochain voyage. Que vous souhaitiez vous déplacer en France ou en Europe, nous avons ce qu'il vous faut.");
+define('WELCOME_TEXT2', "Nous espérons que votre voyage en train sera agréable et que vous apprécierez notre service de réservation en ligne. Bon voyage avec Tchoutchou !");
+define('SEARCH_TEXT', 'Notre site est simple et facile à utiliser, vous pourrez trouver et réserver votre ticket de train en quelques minutes. Nous proposons également de nombreuses options pour personnaliser votre voyage, comme la possibilité de choisir votre siège.');
+define('STATION_TEXT', "Nous sommes heureux de vous annoncer que vous pouvez désormais accéder à la liste complète des gares de notre réseau. Vous pouvez ainsi voir l'ensemble des gares desservies par nos trains, ainsi que leurs coordonnées et les horaires de départ et d'arrivée des trains.");
+
+
 //home employee
 
-define('WELCOME', 'Bienvenue');
-define('WELCOME_TEXT', 'Sed fruatur sane hoc solacio atque hanc insignem ignominiam, quoniam uni praeter se inusta sit, putet esse leviorem, dum modo, cuius exemplo se consolatur, eius exitum expectet, praesertim cum in Albucio nec Pisonis libidines nec audacia Gabini fuerit ac tamen hac una plaga conciderit, ignominia senatus.');
+define('WELCOME', 'Bienvenue ');
+define('WELCOME_TEXT_EMP', "Vous êtes actuellement connecté en tant qu'employé, vous pouvez accéder à votre espace de travail en cliquant sur les boutons ci-dessous.");
 define('PLATFORM_MANAGER', 'Gestion des quais');
-define('PLATFORM_MANAGER_TEXT', 'Sed fruatur sane hoc solacio atque hanc insignem ignominiam, quoniam uni praeter se inusta sit.');
+define('PLATFORM_MANAGER_TEXT', 'Accéder au service des gestionnaires de quais');
 define('WELCOME_GO', 'accéder');
 define('MAINTENANCE', 'Entretien');
-define('MAINTENANCE_TEXT', 'Sed fruatur sane hoc solacio atque hanc insignem ignominiam, quoniam uni praeter se inusta sit.');
+define('MAINTENANCE_TEXT', 'Accéder au service de maintenance');
 
 //platform_manager
 
