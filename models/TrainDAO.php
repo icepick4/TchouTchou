@@ -17,4 +17,9 @@ class TrainDAO extends DAO
         $args = array(':status' => $status, ':train_id' => $train_id);
         return $this->queryEdit($sql, $args);
     }
+
+    public function get_trains_on($date, $from, $to)
+    {
+        //todo
+    }
 }

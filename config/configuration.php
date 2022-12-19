@@ -11,7 +11,7 @@ define('LANG', substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], strpos($_SERVER['HTTP_AC
 
 // Paramètres du site : nom de l'auteur ou des auteurs
 const AUTEUR = 'TchouTchou';
-
+const verif = 214428544845492;
 //dossiers racines du site
 define('PATH_CONTROLLERS', './controllers/c_');
 define('PATH_ENTITY', './entities/');
@@ -34,7 +34,7 @@ define('PATH_LOGO', PATH_IMAGES . 'fav.png');
 define('PATH_MENU', PATH_VIEWS . 'menu.php');
 
 // essaie d'utiliser le fichier config global pour ajax
-if (!isset($skipSession)){
+if (!isset($skipSession)) {
     session_start();
 }
 
