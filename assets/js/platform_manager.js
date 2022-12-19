@@ -96,17 +96,6 @@ function switch_actif(el) {
 
 
 
-async function load() {
-    in_hub.innerHTML = '';
-    in_hub.classList.add("loading")
-    load_hub_op(in_station_name.value)
-    .then(finish => {
-        return load_platform(in_station_name.value, in_hub.value);
-    })
-    .then(finish => {
-        build_all_connection();
-    });
-}
 
 async function change_hub() {
     load_platform(in_station_name.value, in_hub.value)
