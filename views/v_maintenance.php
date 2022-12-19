@@ -8,7 +8,7 @@
 <?php
 if ($trains != null) {
 ?>
-
+    
     <div class="container">
         <input type="text" id="search" placeholder="<?= SEARCH ?>">
 
@@ -62,9 +62,10 @@ if ($trains != null) {
         }
         ?>
     </table>
+    
 <?php
 }?>
-
+<button onclick="document.location.href='index.php?page=train_adding'"><?= BTN_ADD ?></button>
 
 
 
