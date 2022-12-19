@@ -47,7 +47,7 @@ if ($trains != null) {
                 </td>
                 <td COLSPAN=2>
                     <form method="post" action="index.php?page=maintenance">
-                        <select name="status" id="status" class="status" data-train-id="<?= $train['TRAIN_ID'] ?>">
+                        <select name="status" id="status" class="status">
                             <option value="0" <?php if ($train['TRAIN_STATUS_ID'] == 0) echo 'selected' ?>><?= TRAIN_FREE ?></option>
                             <option value="1" <?php if ($train['TRAIN_STATUS_ID'] == 1) echo 'selected' ?>><?= TRAIN_USE ?></option>
                             <option value="2" <?php if ($train['TRAIN_STATUS_ID'] == 2) echo 'selected' ?>><?= TRAIN_MAINTENANCE ?></option>

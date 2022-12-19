@@ -9,6 +9,7 @@ require_once(PATH_MODELS . 'Function.php');
 
 <button onclick="document.location.href='index.php?page=station_list'">
     <?= RETURN_BUTTON ?></button>
+    <?php if(isset($station_name['STATION_NAME'])) {?>
         <h1><?= STATION_OF . $station_name['STATION_NAME'] ?></h1>
         <?php
         if (!$departTravels && !$arrivalTravels) {
@@ -72,7 +73,10 @@ require_once(PATH_MODELS . 'Function.php');
                             ?>
                     </table><?php
                         } else { ?><h2><?= NO_ARRIVAL ?></h2><?php }
-                                                        } ?>
+                                                        }
+        }else{
+            echo "<h1>" . STATION_NOT_EXIST . "</h1>";
+        } ?>
             </section>
 
 <!--  Fin de la page -->
