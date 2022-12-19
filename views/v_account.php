@@ -1,7 +1,7 @@
 <!-- Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
-<script src=<?= PATH_JS . 'account.js?flag=' . DELETE_ACCOUNT ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'account.js?flag=' . DELETE_ACCOUNT . '---' . verif ?> type="module" defer></script>
 
 <!--  Début de la page -->
 <?php

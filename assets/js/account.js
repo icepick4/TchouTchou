@@ -20,7 +20,8 @@ let flag = script.outerHTML;
 deleteAccount.addEventListener('click', function prompt() {
     let answer = confirm(getFlags(flag)[0]);
     if (answer) {
-        window.location = 'index.php?page=delete_account';
+        window.location =
+            'index.php?page=delete_account&verif=' + getFlags(flag)[1];
     }
 });
 
