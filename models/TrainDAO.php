@@ -10,4 +10,11 @@ class TrainDAO extends DAO
         $args = array();
         return $this->queryAll($sql, $args);
     }
+
+    public function update_train_status($status, $train_id)
+    {
+        $sql = 'UPDATE TRAIN SET TRAIN_STATUS_ID = :status WHERE TRAIN_ID = :train_id';
+        $args = array(':status' => $status, ':train_id' => $train_id);
+        return $this->queryEdit($sql, $args);
+    }
 }
