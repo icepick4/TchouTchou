@@ -1,6 +1,7 @@
 import { getFlags } from "./functions.js";
 
 var message = document.getElementsByClassName("discussion_resume");
+var currentMessage = -1;
 
 const script = document.querySelector('script[src*="messages.js"]');
 let flag = script.outerHTML;
@@ -16,6 +17,7 @@ function getMessageIdOnclick(e) {
   } else {
     var number = e.target.children[0].innerText;
   }
+  currentMessage = number;
   loadMessage(number);
 }
 
@@ -33,3 +35,10 @@ function loadMessage(id) {
   );
   xmlhttp.send();
 }
+
+//call loadMessage() every 30 seconds to refresh the message
+setInterval(function () {
+  if (currentMessage != -1) {
+    loadMessage(currentMessage);
+  }
+}, 30000);
