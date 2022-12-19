@@ -139,6 +139,6 @@ define('SELECT_HUB', 'Choisir le hub');
 
 
 //messages
-define('NO_MESSAGES', 'Vous n\'avez jamais chercher a contacter notre support jusqu\'a maintenant !');
+define('NO_MESSAGES', 'Vous n\'avez jamais chercher à contacter notre support jusqu\'à maintenant !');
 define('NO_MESSAGE_BTN', 'Accéder au formulaire de contact');
 define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de votre écran pour charger les messages');
