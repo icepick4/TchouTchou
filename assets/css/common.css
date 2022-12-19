@@ -22,8 +22,11 @@ body {
 
 #main {
   flex-grow: 1;
+  display: flex;
+  width: 100%;
   align-items: center;
   flex-direction: column;
+  align-self: center;
   text-align: center;
 }
 

@@ -15,11 +15,32 @@ class TrainDAO extends DAO
     {
         $sql = 'UPDATE TRAIN SET TRAIN_STATUS_ID = :status WHERE TRAIN_ID = :train_id';
         $args = array(':status' => $status, ':train_id' => $train_id);
-        return $this->queryEdit($sql, $args);
+        $this->queryEdit($sql, $args);
     }
 
     public function get_trains_on($date, $from, $to)
     {
         //todo
+    }
+
+    public function get_all_trains_type()
+    {
+        $sql = 'SELECT * FROM TRAIN_TYPE';
+        $args = array();
+        return $this->queryAll($sql, $args);
+    }
+
+    public function get_all_trains_status()
+    {
+        $sql = 'SELECT * FROM TRAIN_STATUS';
+        $args = array();
+        return $this->queryAll($sql, $args);
+    }
+
+    public function add_train($train_type)
+    {
+        $sql = 'INSERT INTO TRAIN (TRAIN_ID,TRAIN_TYPE_ID, TRAIN_STATUS_ID) VALUES ((SELECT MAX(TRAIN_ID) FROM TRAIN) +1,:train_type, 0)';
+        $args = array(':train_type' => $train_type);
+        $this->queryEdit($sql, $args);
     }
 }

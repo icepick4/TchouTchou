@@ -81,9 +81,9 @@ abstract class DAO
         } else {
             foreach ($args as $key => $val) {
                 oci_bind_by_name($stid, $key, $args[$key]);
+                
             }
         }
-        
         oci_execute($stid);
     }
 }

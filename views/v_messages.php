@@ -46,11 +46,12 @@
     </div>
     <p  id="discussionAllowed" style="display:none">
         <?php foreach ($discussions as $discussion) {
-             echo $discussion["DISCUSSION_ID"]. " "; }?>
+        echo $discussion["DISCUSSION_ID"] . " ";
+    } ?>
     </p>
 </div>
 
 <!--  Fin de la page -->
 
 <!--  Pied de page -->
-<?php require_once(PATH_VIEWS . 'footer.php');
+<?php }require_once(PATH_VIEWS . 'footer.php');

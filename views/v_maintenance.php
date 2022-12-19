@@ -65,9 +65,18 @@ if ($trains != null) {
     
 <?php
 }?>
-<button onclick="document.location.href='index.php?page=train_adding'"><?= BTN_ADD ?></button>
+<form method="post" action="index.php?page=maintenance">
+<fieldset>
+    <legend>Ajout d'un train</legend>
+    <label for="train_type">Type de train</label>
+    <select name="train_type" id="train_type" class="train_type">
+    <?php foreach ($train_types as $train_type) { ?>
+                            <option value=<?=$train_type['TRAIN_TYPE_ID']?>><?=  $train_type['TRAIN_TYPE_LABEL'] ?></option>
+                        <?php } ?>
+                        </select>
+                        <input class='links' type="submit" value=<?= BTN_ADD ?>></input>
 
-
+    </form>
 
 
 
