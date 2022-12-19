@@ -127,3 +127,8 @@ define('MAINTENANCE_TEXT', 'Sed fruatur sane hoc solacio atque hanc insignem ign
 
 define('SELECT_STATION', 'Choisir la station');
 define('SELECT_HUB', 'Choisir le hub');
+
+
+//messages
+define('NO_MESSAGES', 'Vous n\'avez jamais chercher a contacter notre support jusqu\'a maintenant !');
+define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de votre écran pour charger les messages');

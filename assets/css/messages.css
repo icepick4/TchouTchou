@@ -106,3 +106,8 @@ form input[type="submit"] {
   color: var(--main-color);
   cursor: pointer;
 }
+
+p.noMessage {
+  text-align: center;
+  font-size: 1.5em;
+}
