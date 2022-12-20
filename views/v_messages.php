@@ -50,9 +50,14 @@
     } ?>
     </p>
 </div>
-<?php } else { ?>
+<?php } else if(!$isSupport){ ?>
 <div id="chat">
     <div id="resume">
+    <div class="container">
+        <input type="text" id="search" autocomplete="off" placeholder="<?= SEARCH ?>">
+
+        <i id="clear-search">X</i>
+    </div>
         <?php
 
     foreach ($employees as $employee) {
@@ -71,7 +76,12 @@
             
         </div>
         <?php
-    }}
+    }} 
+    echo '<p id="users" style="display:none">';
+    foreach($employees as $employee){	
+        echo $employee["USER_FIRSTNAME"]."//";
+    }
+    echo '</p>';
         ?>
     </div>
     <div id="messages">
@@ -81,7 +91,9 @@
     </div>
 </div>
 
-<?php } ?>
+<?php }else{
+    //affichage des messages pour le support TODO
+} ?>
 
 
 

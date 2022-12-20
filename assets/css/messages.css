@@ -153,3 +153,69 @@ p.noMessage {
   width: 15px;
   height: auto;
 }
+
+#resume div.container {
+  position: relative;
+  margin: 20px 0 20px;
+  padding: 0;
+  background-color: unset;
+  opacity: 1;
+}
+
+#search {
+  width: 50%;
+  height: 30px;
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0 auto;
+  display: block;
+  background-color: var(--bg-black-color);
+  color: var(--txt-white-color);
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+}
+
+#search:focus {
+  outline: none;
+}
+
+#clear-search {
+  position: absolute;
+  right: 25%;
+  top: 20%;
+  cursor: pointer;
+  color: var(--main-color);
+  font-size: 20px;
+  font-style: normal;
+}
+
+#resume .autocomplete-items {
+  position: absolute;
+  border: 1px solid var(--main-color);
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 96%;
+  left: 0;
+  right: 0;
+}
+#resume .autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--border-input);
+  border-bottom: 1px solid var(--main-color);
+  margin: 0;
+  border-radius: 0;
+}
+#resume .autocomplete-items div:hover {
+  background-color: var(--bg-black-second-color);
+}
+
+#resume #searchautocomplete-list {
+  width: 45%;
+  margin: 0 auto;
+  background-color: unset;
+  padding: 0;
+  border-radius: 0;
+}

@@ -30,7 +30,7 @@
 
     
     
-    $test=$user->isSupport($user_id);
+    
     if($user->isEmployee($user_id)){
         $discussion = $mailbox->getDiscussionHeaderById($id_discussion);
         if($discussion['USER_ID'] == $user_id){
