@@ -78,3 +78,28 @@ table td {
   font-size: 20px;
   font-style: normal;
 }
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid var(--main-color);
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 96%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--border-input);
+  border-bottom: 1px solid var(--main-color);
+}
+.autocomplete-items div:hover {
+  background-color: var(--bg-black-second-color);
+}
+
+#searchautocomplete-list {
+  width: 45%;
+  margin: 0 auto;
+}
