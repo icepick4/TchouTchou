@@ -49,7 +49,6 @@ function stopLoadinAnim(step=2) {
 
 
 function build_all_connection(){
-    console.log("start building connection")
     const quais = document.querySelectorAll(".quai");
     aiguillage.innerHTML = "";
     quais.forEach(build_connection);
@@ -100,23 +99,22 @@ function update_line() {
 
 }
 
-function switch_actif(el) {
-    console.log("clicked",this.letter )
-    if(el.target.classList.contains("actif")){
+async function switch_actif(el) {
+ 
+    let newStatus = 0;
+    if(this.actif == true){
         el.target.classList.remove("actif");
+        newStatus = 0;
     }else{
         el.target.classList.add("actif");
+        newStatus = 1;
     }
+    const rep = await fetch(
+        'index.php?page=platform_manager&station_name=' + in_station_name.value
+        +'&hub_id='+in_hub.value+'&plat_letter='+this.letter+'&plat_status='+newStatus
+    );
+    let data = await rep.text();
 }
-
-
-
-
-
-// end 
-
-
-
 
 
 
@@ -175,7 +173,7 @@ async function load_platform(station_id,hub) {
     let data = await rep.json();
 
     plat_list.innerHTML ="";
-    console.log(data['platforms'].length)
+
     start_pod.style.top = data['platforms'].length * 50 + "px"
     end_pod.style.top = data['platforms'].length * 50 + "px"
 
@@ -194,16 +192,18 @@ async function load_platform(station_id,hub) {
 
         if (data['platforms'][i]['PLATFORM_STATUS'] == 1){
             tmp_option.querySelector(".btn_actif").classList.add("actif");
-            tmp_option.querySelector(".btn_actif").addEventListener("click", switch_actif)
-            tmp_option.querySelector(".btn_actif").letter = data['platforms'][i]['PLATFORM_LETTER'];
-
+            tmp_option.querySelector(".btn_actif").actif = true;
             tmp_option.querySelector(".quai").classList.remove("block");
+        }else{
+            tmp_option.querySelector(".btn_actif").actif = false;
         }
+        tmp_option.querySelector(".btn_actif").addEventListener("click", switch_actif)
+        tmp_option.querySelector(".btn_actif").letter = data['platforms'][i]['PLATFORM_LETTER'];
+
 
         plat_list.appendChild(tmp_option);
     }
 
-    console.log("plat adding finish")
     return true
 
     
@@ -213,7 +213,7 @@ async function load_platform(station_id,hub) {
 
 // in_station_name.value, in_hub.value
 async function update_platform() {
-    console.log("update")
+    //console.log("update")
     let station_id = in_station_name.value;
     let hub = in_hub.value;
 
@@ -253,11 +253,17 @@ async function update_platform() {
 
         if (data['platforms'][i]['PLATFORM_STATUS'] == 1){
             platform.querySelector(".btn_actif").classList.add("actif");
+            platform.querySelector(".btn_actif").actif = true;
             platform.classList.remove("block");
+
         }else{
             platform.querySelector(".btn_actif").classList.remove("actif");
+            platform.querySelector(".btn_actif").actif = false;
             platform.classList.add("block");
         }
+        //platform.querySelector(".btn_actif").addEventListener("click", switch_actif)
+        //platform.querySelector(".btn_actif").letter = data['platforms'][i]['PLATFORM_LETTER'];
+
 
     }
 
