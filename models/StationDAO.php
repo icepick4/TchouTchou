@@ -3,7 +3,8 @@
 require_once(PATH_MODELS . 'DAO.php');
 
 class StationDAO extends DAO
-{
+{   
+    /* get lists of hubs from station id */
     public function get_hubs($station_id)
     {
         $sql = 'SELECT DISTINCT TERMINAL_ID 
@@ -14,8 +15,9 @@ class StationDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
-
-    public function get_platforms($station_id, $hub_id){
+    /* get list of platforms from station id and hub id*/
+    public function get_platforms($station_id, $hub_id)
+    {
         $sql = 'SELECT *FROM TCHOU.PLATFORM p 
         WHERE p.STATION_ID = :station_id AND p.TERMINAL_ID = :hub_id';
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id);
@@ -85,5 +87,24 @@ class StationDAO extends DAO
         $sql = 'SELECT CAST(START_TIME AS DATE) FROM TRAVEL WHERE CAST(START_TIME AS DATE) > :date';
         $args = array(':date' => $date);
         return $this->queryAll($sql, $args);
+    }
+
+
+    public function set_platform_status($station_id, $hub_id, $platoform_letter, $new_status ){
+        $sql = 'UPDATE PLATFORM SET PLATFORM_STATUS = :new_status WHERE STATION_ID = :station_id
+        AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platoform_letter';
+        $args = array(':station_id' => $station_id, ':hub_id' => $hub_id, 
+            ':platoform_letter' => $platoform_letter, ':new_status' => $new_status);
+        $this->queryEdit($sql, $args);
+    }
+
+    public function set_platform_status_open($station_id, $hub_id, $platoform_letter){
+        $new_status = 1;
+        $this->set_platform_status($station_id, $hub_id, $platoform_letter, $new_status);
+    }
+
+    public function set_platform_status_close($station_id, $hub_id, $platoform_letter){
+        $new_status = 0;
+        $this->set_platform_status($station_id, $hub_id, $platoform_letter, $new_status);
     }
 }

@@ -1,6 +1,5 @@
 table {
   border-collapse: collapse;
-  table-layout: fixed;
   width: 50%;
   border: 1px solid #ddd;
   font-size: 12px;
@@ -24,7 +23,7 @@ table tr th {
   color: var(--txt-white-color);
 }
 
-table tr:first-child {
+table thead th {
   font-size: 25px;
   font-weight: bold;
   background-color: var(--main-color);
@@ -32,11 +31,7 @@ table tr:first-child {
 }
 
 table tr td:first-child {
-  max-width: 25%;
-}
-
-table tr td:last-child {
-  min-width: 75%;
+  width: 25%;
 }
 
 table tr td:nth-child(2n) {

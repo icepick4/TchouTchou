@@ -71,7 +71,6 @@ cross.addEventListener("click", function () {
 
 function recherche() {
   let inputValue = input.value.toLowerCase();
-  console.log(inputValue);
   let x = document.getElementsByTagName("tr");
   for (let i = 1; i < x.length; i++) {
     if (!x[i].innerHTML.toLowerCase().includes(inputValue)) {

@@ -57,9 +57,9 @@ abstract class DAO
                 oci_bind_by_name($stid, $key, $args[$key]);
             }
         }
-        
+
         oci_execute($stid);
-        
+
         $i = 0;
         $result = array();
         while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
@@ -81,10 +81,8 @@ abstract class DAO
         } else {
             foreach ($args as $key => $val) {
                 oci_bind_by_name($stid, $key, $args[$key]);
-                
             }
         }
         oci_execute($stid);
     }
-
 }

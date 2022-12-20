@@ -1,6 +1,7 @@
 const in_station_name = document.querySelector('select#station_name');
 const in_hub = document.querySelector('select#hub_id');
 const plat_list = document.querySelector('.list_quai')
+const conec_list = document.querySelector('.suport_rail')
 //const temp_plat = document.querySelector('template.template');
 let req;
 const temp_plat = document.querySelector('template#platforms');
@@ -25,9 +26,29 @@ in_hub.addEventListener('change', function (event) {
 
 addEventListener('resize', (event) => {update_line()});
 
+function startLoadingAnim(step=1) {
+    if (step ==1 ){
+        in_hub.classList.add("loading");
+        plat_list.classList.add("loading");
+        conec_list.classList.add("loading");
+    }else{
+        plat_list.classList.add("loading");
+        conec_list.classList.add("loading");
+    }
+}
+
+function stopLoadinAnim(step=2) {
+    if (step == 1){
+        in_hub.classList.remove("loading");
+    }else{
+        in_hub.classList.remove("loading");
+        plat_list.classList.remove("loading");
+        conec_list.classList.remove("loading");
+    }
+}
+
 
 function build_all_connection(){
-    console.log("start building connection")
     const quais = document.querySelectorAll(".quai");
     aiguillage.innerHTML = "";
     quais.forEach(build_connection);
@@ -78,22 +99,22 @@ function update_line() {
 
 }
 
-function switch_actif(el) {
-    if(el.target.classList.contains("actif")){
+async function switch_actif(el) {
+ 
+    let newStatus = 0;
+    if(this.actif == true){
         el.target.classList.remove("actif");
+        newStatus = 0;
     }else{
         el.target.classList.add("actif");
+        newStatus = 1;
     }
+    const rep = await fetch(
+        'index.php?page=platform_manager&station_name=' + in_station_name.value
+        +'&hub_id='+in_hub.value+'&plat_letter='+this.letter+'&plat_status='+newStatus
+    );
+    let data = await rep.text();
 }
-
-
-
-
-
-// end 
-
-
-
 
 
 
@@ -107,14 +128,18 @@ async function change_hub() {
 
 async function load() {
     in_hub.innerHTML = '';
-    in_hub.classList.add("loading")
+    startLoadingAnim(1)
     load_hub_op(in_station_name.value)
     .then(finish => {
+        stopLoadinAnim(1);
         return load_platform(in_station_name.value, in_hub.value);
     })
     .then(finish => {
-        build_all_connection();
-    });
+        build_all_connection();  
+    })
+    .then(finish => {
+        stopLoadinAnim(2);
+    })
 }
 
 async function load_hub_op(id) {
@@ -132,6 +157,8 @@ async function load_hub_op(id) {
         in_hub.appendChild(tmp_option);
     }
     in_hub.classList.remove("loading")
+    plat_list.classList.remove("loading");
+    conec_list.classList.remove("loading");
     return true;
 }
 
@@ -146,7 +173,7 @@ async function load_platform(station_id,hub) {
     let data = await rep.json();
 
     plat_list.innerHTML ="";
-    console.log(data['platforms'].length)
+
     start_pod.style.top = data['platforms'].length * 50 + "px"
     end_pod.style.top = data['platforms'].length * 50 + "px"
 
@@ -165,14 +192,18 @@ async function load_platform(station_id,hub) {
 
         if (data['platforms'][i]['PLATFORM_STATUS'] == 1){
             tmp_option.querySelector(".btn_actif").classList.add("actif");
-
+            tmp_option.querySelector(".btn_actif").actif = true;
             tmp_option.querySelector(".quai").classList.remove("block");
+        }else{
+            tmp_option.querySelector(".btn_actif").actif = false;
         }
+        tmp_option.querySelector(".btn_actif").addEventListener("click", switch_actif)
+        tmp_option.querySelector(".btn_actif").letter = data['platforms'][i]['PLATFORM_LETTER'];
+
 
         plat_list.appendChild(tmp_option);
     }
 
-    console.log("plat adding finish")
     return true
 
     
@@ -182,7 +213,7 @@ async function load_platform(station_id,hub) {
 
 // in_station_name.value, in_hub.value
 async function update_platform() {
-    console.log("update")
+    //console.log("update")
     let station_id = in_station_name.value;
     let hub = in_hub.value;
 
@@ -222,11 +253,17 @@ async function update_platform() {
 
         if (data['platforms'][i]['PLATFORM_STATUS'] == 1){
             platform.querySelector(".btn_actif").classList.add("actif");
+            platform.querySelector(".btn_actif").actif = true;
             platform.classList.remove("block");
+
         }else{
             platform.querySelector(".btn_actif").classList.remove("actif");
+            platform.querySelector(".btn_actif").actif = false;
             platform.classList.add("block");
         }
+        //platform.querySelector(".btn_actif").addEventListener("click", switch_actif)
+        //platform.querySelector(".btn_actif").letter = data['platforms'][i]['PLATFORM_LETTER'];
+
 
     }
 

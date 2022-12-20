@@ -1,14 +1,22 @@
 :root{
-	text-transform: capitalize;
+
 	border-radius: 15px;
+	--loading-grey: grey;
+}
+
+#main{
+	display: block;
+	text-align: unset;
 }
 
 #title{
 	margin-left: 10px;
+	text-transform: capitalize;
 }
 
 fieldset{
 	border-radius: 15px;
+	text-transform: capitalize;
 }
 
 select{
@@ -16,8 +24,10 @@ select{
 	color: white;
 	border-radius: 15px;
 	width: fit-content;
+}
 
-
+p{
+	margin: 0;
 }
 
 .control_pannel{
@@ -31,7 +41,7 @@ select{
 	grid-gap: 15px;
 }
 
-.loading{
+select.loading{
 	animation-duration: 3s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: infinite;
@@ -67,11 +77,14 @@ div.aiguillage{
 	position: relative;
 	width: 100%;
 	height: 80vh;
-	*/
 	background-color: rgb(0,0,10);
+	*/
+	
 	overflow:auto;
 	color:  #E1DB4A;
 }
+
+
 
 div.suport_rail{
 	position: relative;
@@ -85,9 +98,14 @@ div.list_quai{
 	margin-left:8% ;
 	margin-right:8% ;
 	grid-auto-rows: minmax(100px, auto);
-
-
 }
+
+div.list_quai.loading{
+	color: var(--loading-grey);
+}
+
+
+
 div.list_quai .quai{
 	z-index: 1;
 	background-color: orange;
@@ -96,13 +114,29 @@ div.list_quai .quai{
 	width: 70%;
 }
 
+
+
 div.list_quai .quai.free{
 	background-color: rgb(0,255,0);
 
 }
 
+
+
 div.list_quai .quai.block{
 	background-color: red;
+}
+
+div.list_quai.loading .quai{
+	background-color: var(--loading-grey);
+}
+
+div.list_quai.loading .quai.free{
+	background-color: var(--loading-grey);
+}
+
+div.list_quai.loading .quai.block{
+	background-color: var(--loading-grey);
 }
 
 
@@ -162,14 +196,14 @@ div.list_quai .quai.block{
 	margin-left: 5px;
 	margin-top: auto;
 	margin-bottom: auto;
-	background-color: black;
+	background-color: rgba(0,0,0,0);
 	border: 3px solid red;
 	color:  red;
-	height: 30px;
-	font-size: 20px;
+	font-size: 16px;
 	text-transform: uppercase;
 	border-radius: 5px;
 	text-decoration: line-through;
+
 
 }
 
@@ -189,6 +223,12 @@ div.list_quai .quai.block{
 .quai button.btn_actif.actif:active{
 	background-color: rgb(0,255,0);
 	color: black;
+}
+
+
+div.list_quai.loading .quai button.btn_actif{
+	color: var(--loading-grey);
+	border: 3px solid var(--loading-grey);
 }
 
 div#reference{
@@ -217,8 +257,10 @@ div.finish{
 
   stroke:rgb(0,255,0);
   stroke-width:5; 
+}
 
-
+.suport_rail.loading #connection-liste svg .arrow{
+	stroke: var(--loading-grey);
 }
 
 svg.rail{
@@ -227,141 +269,6 @@ svg.rail{
 	height:100%;
 	width:100%;
 
-}
-
-div.menu_gestion_quai{
-	height: 20vh;
-	display: flex;
-	flex-direction: row;
-}
-div.menu_gestion_quai div.left{
-	margin-left: auto;
-	width: 30%;
-	height: 100%;
-}
-div.menu_gestion_quai div.left form{
-	display: inline-flex;
-	width: 100%;
-	height: 100%;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-
-}
-
-div.menu_gestion_quai div.left div.gare_status_switch{
-	position: relative;
-	margin-top: auto;
-	/*margin-bottom: auto;*/
-	margin-bottom: 10px;
-
-}
-
-div.menu_gestion_quai input[type="radio"]{
-	position: absolute;
-	padding: 5px;
-	width: 100%;
-	height: 150%;
-	margin: 0;
-	opacity: 0;
-	top: -8px;
-}
-
-div.menu_gestion_quai  label.radio{
-	font-size: 24px;
-	text-transform: uppercase;
-	border: 5px solid rgb(50,50,50);
-	padding: 2px;
-	font-weight: bold;
-	color: rgb(50, 50, 50);
-	user-select: none;
-
-}
-
-div.menu_gestion_quai input[type="radio"]:checked+label.radio{
-	border: 5px solid green;
-	color: green;
-}
-
-div.menu_gestion_quai input[type="radio"]:checked+label.radio#manu{
-	border: 5px solid yellow;
-	color: yellow;
-}
-
-div.menu_gestion_quai div.up_comming_train{
-	background-color: rgb(0, 0, 10);
-	border-radius: 10px;
-	height: 100%;
-	width: 40%;
-	overflow: auto;
-}
-
-
-div.menu_gestion_quai div.up_comming_train div.UCT_line{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	background-color: rgb(0, 0, 10);
-	/*border-bottom: 2px solid yellow;*/
-	border-radius: 5px;
-	margin: 3px;
-	/*margin-left: 5px;
-	margin-right: 5px;*/
-	font-weight: bold;
-	color: #E1DB4A;
-	animation: 1s cubic-bezier(0, 0, 0.25, 0.99) 0s  in_coming_train;
-
-}
-
-div.menu_gestion_quai div.up_comming_train div.UCT_line:nth-child(1){
-	border-bottom: 2px solid yellow;
-	border-radius: 0px;
-	margin: 4px;
-
-}
-
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(20, 20, 60,0.8);
-  border-radius: 15px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-
-
-
-
-div.menu_gestion_quai div.up_comming_train div.UCT_line.UCT_line_title{
-	animation: none;
-}
-
-
-div.menu_gestion_quai div.up_comming_train div.UCT_line label{
-	margin: 5px;
-
-
-}
-
-div.menu_gestion_quai div.up_comming_train div.UCT_line select{
-	margin: 5px;
-	background-color: rgb(0, 0, 10);
-	color: #E1DB4A;
-	border-radius: 5px;
-	border:  none;
-	font-weight: bold;
-
-}
-div.menu_gestion_quai div.up_comming_train div.UCT_line option{
-	font-weight: bold;
 }
 
 

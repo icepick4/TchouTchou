@@ -32,6 +32,23 @@
     </form>
 </div>
 
+<div class="tickets">
+    <?php
+    for ($i = 0; $i < count($trains); $i++) {
+    ?>
+        <div class="ticket-container">
+            <p <?= $from ?>>
+            <p <?= $to ?>>
+            <p><?= $trains[$i]['START_TIME'] ?></p>
+            <p><?= $trains[$i]['PRICE'] ?></p>
+            <a href="index.php?page=payment&travel=<?= $trains[$i]['TRAVEL_ID'] ?>&from=<?= $from_id ?>&to=<?= $to_id ?>">Acheter</a>
+        </div>
+    <?php
+    }
+    ?>
+</div>
+
+
 <!--  Fin de la page -->
 
 <!--  Pied de page -->
