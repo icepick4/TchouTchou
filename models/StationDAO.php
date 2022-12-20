@@ -15,7 +15,8 @@ class StationDAO extends DAO
     }
 
 
-    public function get_platforms($station_id, $hub_id){
+    public function get_platforms($station_id, $hub_id)
+    {
         $sql = 'SELECT *FROM TCHOU.PLATFORM p 
         WHERE p.STATION_ID = :station_id AND p.TERMINAL_ID = :hub_id';
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id);

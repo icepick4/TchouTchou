@@ -122,6 +122,7 @@ define('TRAIN', 'Train');
 define('BACK_TICKETS', 'Retournez à vos tickets');
 define('MINUTES', 'minutes');
 define('TRAVEL_TO', 'Voyage vers');
+define('BUY', 'Acheter');
 
 //home client
 define('WELCOME_PT1', 'Bienvenue sur ');

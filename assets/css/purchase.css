@@ -12,6 +12,7 @@ input {
   color: white;
   padding: 0.5rem;
 }
+
 select {
   background-color: transparent;
   border: 1px solid var(--main-color);
@@ -34,4 +35,12 @@ input[type="date"] {
 input:focus,
 select:focus {
   background-color: var(--main-color);
+}
+
+.tickets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
