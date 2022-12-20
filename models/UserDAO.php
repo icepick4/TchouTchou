@@ -293,4 +293,11 @@ class UserDAO extends DAO
     {
         return $this->getEmployeeType($id) == 5;
     }
+
+    public function getDriverID($id)
+    {
+        $sql = 'SELECT DRIVER_ID FROM DRIVER WHERE USER_ID = :id';
+        $args = array(':id' => $id);
+        return $this->queryRow($sql, $args)['DRIVER_ID'];
+    }
 }

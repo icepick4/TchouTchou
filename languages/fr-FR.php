@@ -38,6 +38,16 @@ define('TRAIN_FREE', 'Libre');
 define('TRAIN_USE', 'En cours d\'utilisation');
 define('TRAIN_MAINTENANCE', 'En maintenance');
 define('BTN_ADD', 'Ajouter');
+define('TITLE_PLANNING', 'Planning');
+
+define('MONDAY', 'Lundi');
+define('TUESDAY', 'Mardi');
+define('WEDNESDAY', 'Mercredi');
+define('THURSDAY', 'Jeudi');
+define('FRIDAY', 'Vendredi');
+define('SATURDAY', 'Samedi');
+define('SUNDAY', 'Dimanche');
+
 //Home
 define('MY_ACCOUNT', 'Mon Compte');
 define('MY_TICKETS', 'Mes Billets');

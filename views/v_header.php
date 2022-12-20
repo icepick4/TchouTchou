@@ -35,8 +35,10 @@
           }
           if (isset($_SESSION['user_id']) && $user->isService($_SESSION['user_id'])) {
             echo '<li><a href="index.php?page=maintenance">' . TITLE_MAINTENANCE . '</a></li>';
+          }
+          if (isset($_SESSION['user_id']) && $user->isDriver($_SESSION['user_id'])) {
+            echo '<li><a href="index.php?page=planning_driver">' . TITLE_PLANNING . '</a></li>';
           }?>
-          
       </ul>
     </nav>
     <nav>
