@@ -4,7 +4,7 @@
 require_once(PATH_VIEWS . 'header.php'); ?>
 
 <script src=<?= PATH_JS . 'station_list.js' ?> type="module" defer></script>
-
+<script src=<?= PATH_JS . 'search.js' ?> type="module" defer></script>
 
 <!--  Début de la page -->
 
@@ -48,6 +48,11 @@ if ($stations != null) {
         }
         ?>
     </table>
+    <p id="stationsArray" style="display:none"><?php 
+    foreach ($stations as $station) {
+        echo $station['STATION_NAME'] . '//';
+    }
+    ?></p>
 <?php
 }?>
 <!--  Fin de la page -->
