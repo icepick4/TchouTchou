@@ -56,7 +56,7 @@ require_once(PATH_VIEWS . 'header.php');
 
 			<div class="quai_info">
 				<label id="letter">Letter</label>
-				<button class="btn_actif actif">Status</button>
+				<button class="btn_actif actif"><p>Status</p></button>
 				<div class="train_icon_box">
 
 					<img class="logo_train  no_train " src="assets/images/logo_simple_train.svg">

@@ -101,6 +101,7 @@ function update_line() {
 }
 
 function switch_actif(el) {
+    console.log("clicked",this.letter )
     if(el.target.classList.contains("actif")){
         el.target.classList.remove("actif");
     }else{
@@ -193,6 +194,8 @@ async function load_platform(station_id,hub) {
 
         if (data['platforms'][i]['PLATFORM_STATUS'] == 1){
             tmp_option.querySelector(".btn_actif").classList.add("actif");
+            tmp_option.querySelector(".btn_actif").addEventListener("click", switch_actif)
+            tmp_option.querySelector(".btn_actif").letter = data['platforms'][i]['PLATFORM_LETTER'];
 
             tmp_option.querySelector(".quai").classList.remove("block");
         }
