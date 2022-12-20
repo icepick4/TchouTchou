@@ -14,7 +14,7 @@ if ($stations != null) {
 ?>
 
     <div class="container">
-        <input type="text" id="search" placeholder="<?= SEARCH ?>">
+        <input type="text" id="search" autocomplete="off" placeholder="<?= SEARCH ?>">
 
         <i id="clear-search">X</i>
     </div>

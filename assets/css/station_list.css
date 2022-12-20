@@ -48,7 +48,7 @@ table td {
 .container {
   position: relative;
   width: 50%;
-  margin: 0 auto;
+  margin: 40px 0 10px;
 }
 
 #search {
@@ -58,8 +58,6 @@ table td {
   border-radius: 10px;
   padding: 8px;
   margin: 0 auto;
-  margin-top: 2%;
-  margin-bottom: 2%;
   display: block;
   background-color: var(--bg-black-color);
   color: var(--txt-white-color);
@@ -79,4 +77,29 @@ table td {
   color: var(--main-color);
   font-size: 20px;
   font-style: normal;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid var(--main-color);
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 96%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--border-input);
+  border-bottom: 1px solid var(--main-color);
+}
+.autocomplete-items div:hover {
+  background-color: var(--bg-black-second-color);
+}
+
+#searchautocomplete-list {
+  width: 45%;
+  margin: 0 auto;
 }
