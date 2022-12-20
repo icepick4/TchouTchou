@@ -7,6 +7,7 @@ table {
   margin: 0 auto;
   margin-top: 2%;
   margin-bottom: 2%;
+  background-color: var(--border-input);
 }
 
 table tr {
@@ -30,11 +31,23 @@ table tr:first-child {
   color: #000;
 }
 
+table tr td:first-child {
+  max-width: 25%;
+}
+
+table tr td:last-child {
+  min-width: 75%;
+}
+
+table tr td:nth-child(2n) {
+  background-color: var(--main-color);
+  cursor: pointer;
+}
 table tr:nth-child(even) {
   background-color: var(--border-input);
 }
 
-table tr:hover {
+table tr td:last-child:hover {
   background-color: var(--main-color);
   cursor: pointer;
 }

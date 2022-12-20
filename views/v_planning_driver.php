@@ -7,23 +7,30 @@
 
 <table>
     <tr>
-        <th><?= MONDAY ?></th>
-        <th><?= TUESDAY ?></th>
-        <th><?= WEDNESDAY ?></th>
-        <th><?= THURSDAY ?></th>
-        <th><?= FRIDAY ?></th>
-        <th><?= SATURDAY ?></th>
-        <th><?= SUNDAY ?></th>
+        <th colspan="2"><?= $date['SYSDATE'] ?></th>
     </tr>
-    <?php for ($i=0; $i<24; $i++) { ?>
+    <?php $i = 0;
+        while ($i<24) {
+        $result = $planning->getDriverTravelForTheDayByHour($driver, $i);
+        ?>
         <tr>
-            <?php for ($j=0; $j<7; $j++) { ?>
-                <td>
-                    
-                </td>
-            <?php } ?>
-        </tr>
-    <?php } ?>
+            <td><?= $i ?>h</td>
+            
+                <?php
+        if ($result != null) {
+            foreach ($result as $travel) {
+                ?>
+                        <td rowspan=<?= $travel['DURATION'] ?>>
+                        <?php
+                echo TRAVEL.' n° '.$travel['TRAVEL_ID'];
+            }
+        }
+                ?>
+            </td>
+        <tr>
+        <?php
+        $i++;};
+        ?>
 </table>
 
 
