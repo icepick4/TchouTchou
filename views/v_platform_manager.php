@@ -49,14 +49,7 @@ require_once(PATH_VIEWS . 'header.php');
 			</svg>
 		</template>
 	</div>
-	<div class="list_quai">
-	<!-- quai free -->
-	
-	
-
-	
-		
-	</div>
+	<div class="list_quai"></div>
 	<template id="platforms">
 
 		<div class="quai block">
@@ -72,7 +65,6 @@ require_once(PATH_VIEWS . 'header.php');
 			<label class="train_number">TRAIN_NUMBER</label>
 			</div>
 		</div>
-		
 	</template>	
 		</div>
 	</fieldset>

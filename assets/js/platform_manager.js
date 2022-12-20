@@ -1,6 +1,7 @@
 const in_station_name = document.querySelector('select#station_name');
 const in_hub = document.querySelector('select#hub_id');
 const plat_list = document.querySelector('.list_quai')
+const conec_list = document.querySelector('.suport_rail')
 //const temp_plat = document.querySelector('template.template');
 let req;
 const temp_plat = document.querySelector('template#platforms');
@@ -24,6 +25,27 @@ in_hub.addEventListener('change', function (event) {
 });
 
 addEventListener('resize', (event) => {update_line()});
+
+function startLoadingAnim(step=1) {
+    if (step ==1 ){
+        in_hub.classList.add("loading");
+        plat_list.classList.add("loading");
+        conec_list.classList.add("loading");
+    }else{
+        plat_list.classList.add("loading");
+        conec_list.classList.add("loading");
+    }
+}
+
+function stopLoadinAnim(step=2) {
+    if (step == 1){
+        in_hub.classList.remove("loading");
+    }else{
+        in_hub.classList.remove("loading");
+        plat_list.classList.remove("loading");
+        conec_list.classList.remove("loading");
+    }
+}
 
 
 function build_all_connection(){
@@ -107,14 +129,18 @@ async function change_hub() {
 
 async function load() {
     in_hub.innerHTML = '';
-    in_hub.classList.add("loading")
+    startLoadingAnim(1)
     load_hub_op(in_station_name.value)
     .then(finish => {
+        stopLoadinAnim(1);
         return load_platform(in_station_name.value, in_hub.value);
     })
     .then(finish => {
-        build_all_connection();
-    });
+        build_all_connection();  
+    })
+    .then(finish => {
+        stopLoadinAnim(2);
+    })
 }
 
 async function load_hub_op(id) {
@@ -132,6 +158,8 @@ async function load_hub_op(id) {
         in_hub.appendChild(tmp_option);
     }
     in_hub.classList.remove("loading")
+    plat_list.classList.remove("loading");
+    conec_list.classList.remove("loading");
     return true;
 }
 
