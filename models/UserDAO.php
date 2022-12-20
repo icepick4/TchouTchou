@@ -85,6 +85,17 @@ class UserDAO extends DAO
     }
 
     /**
+     * Function to get all the users
+     * @return array The users's data
+     *
+     */
+    public function getAllEmployees()
+    {
+        $sql = 'SELECT * FROM USER_DATA WHERE USER_CATEGORIE_ID = 1';
+        return $this->queryAll($sql);
+    }
+
+    /**
      * Function to insert a new user
      * @return array The users's mails
      */

@@ -7,7 +7,7 @@
 
 
 <h1>Messages</h1>
-<?php if (empty($discussions)) { ?>
+<?php if (empty($discussions) && !$isEmployee) { ?>
 <div class="nomessage">
     <p class='noMessage'>
         <?= NO_MESSAGES ?>
@@ -21,7 +21,7 @@
         </div>
     </a>
 </div>
-<?php } else { ?>
+<?php } else if (!$isEmployee){  ?>
 <div id="chat">
     <div id="resume">
         <?php
@@ -50,8 +50,42 @@
     } ?>
     </p>
 </div>
+<?php } else { ?>
+<div id="chat">
+    <div id="resume">
+        <?php
+
+    foreach ($employees as $employee) {
+        if($employee["USER_ID"]!=$_SESSION["user_id"]){ ?>
+        <div class="discussion_resume">
+        <p style="display:none"><?php  
+        $discussion_id = $mailbox->getDiscussionBetweenUsers($_SESSION["user_id"],$employee["USER_ID"]); 
+        if($discussion_id == null){
+            echo "-".$employee["USER_ID"];
+        }else{
+            echo $discussion_id["DISCUSSION_ID"];
+        } ?></p>
+            <h3>
+                <?= $employee['USER_FIRSTNAME'] ?>
+            </h3>
+            
+        </div>
+        <?php
+    }}
+        ?>
+    </div>
+    <div id="messages">
+        <p class="noMessage">
+            <? echo CHOOSE_MESSAGE ?>
+        </p>
+    </div>
+</div>
+
+<?php } ?>
+
+
 
 <!--  Fin de la page -->
 
 <!--  Pied de page -->
-<?php }require_once(PATH_VIEWS . 'footer.php');
+<?php require_once(PATH_VIEWS . 'footer.php');

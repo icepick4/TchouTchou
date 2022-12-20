@@ -8,8 +8,13 @@ if (!$_SESSION['logged']) {
 } else {
     $user = new UserDAO();
     $mailbox = new MessageDAO();
-    //removed condition with isEmployee
     $discussions = $mailbox->getUserDisussions($_SESSION['user_id']);
+    $isEmployee = false;
+    if($user->isEmployee($_SESSION['user_id'])){
+        $isEmployee = true;
+        $employees = $user->getAllEmployees();
+        
+    }
     if (isset($_POST['message'])) {
         if (isset($_SESSION['user_id'])) {
             $mailbox->insertMessage($_POST['message'], $_POST['discussion_id'], $_SESSION['user_id']);
@@ -17,4 +22,5 @@ if (!$_SESSION['logged']) {
         }
     }
 }
+
 require_once(PATH_VIEWS . $page . '.php');

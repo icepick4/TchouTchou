@@ -13,17 +13,30 @@ for (let i = 0; i < message.length; i++) {
 }
 
 function getMessageIdOnclick(e) {
+  var number, test;
   if (e.target.nodeName == "H3" || e.target.nodeName == "P") {
-    var number = e.target.parentNode.children[0].innerText;
+    number = e.target.parentNode.children[0].innerText;
+    test = 0;
   } else {
-    var number = e.target.children[0].innerText;
+    number = e.target.children[0].innerText;
+    test = 1;
   }
-  currentMessage = number;
-  localStorage.setItem("currentMessage", number);
   loadMessage(number);
+  setTimeout(function () {
+    let discussion_id = document.querySelector("#discussion_id").value;
+    if (test == 0) {
+      e.target.parentNode.children[0].innerText = discussion_id;
+    } else {
+      e.target.children[0].innerText = discussion_id;
+    }
+    localStorage.setItem("currentMessage", number);
+    currentMessage = number;
+  }, 500);
 }
 
 function loadMessage(id) {
+  currentMessage = id;
+  console.log(id);
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -38,12 +51,6 @@ function loadMessage(id) {
   xmlhttp.send();
   //wait 1s to scroll to the bottom of the discussion
   setTimeout(function () {
-    let discussionId = document.querySelector("#discussionId").innerText;
-    let discussionAllowed =
-      document.querySelector("#discussionAllowed").innerText;
-    if (!discussionAllowed.includes(discussionId)) {
-      discussion.innerHTML = "<p>Vous n'avez pas accès a ces messages</p>";
-    }
     discussion.scrollTop = discussion.scrollHeight;
   }, 200);
 }

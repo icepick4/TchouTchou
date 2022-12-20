@@ -32,6 +32,13 @@ class MessageDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
+    public function getDiscussionBetweenUsers($user_id, $destination_id)
+    {
+        $sql = 'SELECT * FROM DISCUSSION_SUPPORT WHERE (USER_ID = :user_id AND DESTINATION_ID = :destination_id) OR (USER_ID = :destination_id AND DESTINATION_ID = :user_id)';
+        $args = array(':user_id' => $user_id, ':destination_id' => $destination_id);
+        return $this->queryRow($sql, $args);
+    }
+
     public function getAllMessages()
     {
         $sql = 'SELECT * FROM MESSAGE_SUPPORT ORDER BY MESSAGE_TIME ASC';
@@ -52,11 +59,11 @@ class MessageDAO extends DAO
         return $this->queryRow($sql, $args);
     }
 
-    public function getDiscussionDestinationById($id)
+    public function getDiscussionHeaderById($id)
     {
-        $sql = 'SELECT USER_ID FROM DISCUSSION_SUPPORT WHERE DISCUSSION_ID = :id';
+        $sql = 'SELECT * FROM DISCUSSION_SUPPORT WHERE DISCUSSION_ID = :id';
         $args = array(':id' => $id);
         return $this->queryRow($sql, $args);
     }
-    
+
 }
