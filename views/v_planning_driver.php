@@ -6,18 +6,22 @@
 <h1>Planning</h1>
 
 <table>
-    <tr>
-        <th colspan="2"><?= $date['SYSDATE'] ?></th>
-    </tr>
-    <?php $i = 0;
-        while ($i<24) {
-        $result = $planning->getDriverTravelForTheDayByHour($driver, $i);
-        ?>
+    <thead>
+        <tr>
+            <th colspan="2"><?= $date['SYSDATE'] ?></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php 
+    $i = 0;
+    while ($i<24) {
+    $result = $planning->getDriverTravelForTheDayByHour($driver, $i);
+    ?>
         <tr>
             <td><?= $i ?>h</td>
-            
                 <?php
         if ($result != null) {
+            
             foreach ($result as $travel) {
                 ?>
                         <td rowspan=<?= $travel['DURATION'] ?>>
@@ -27,10 +31,11 @@
         }
                 ?>
             </td>
-        <tr>
+        </tr>
         <?php
         $i++;};
         ?>
+    </tbody>
 </table>
 
 
