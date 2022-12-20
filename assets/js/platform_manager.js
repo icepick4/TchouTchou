@@ -14,7 +14,7 @@ const temp_connection = document.querySelector("template#connection");
 const aiguillage = document.querySelector(".suport_rail #connection-liste")
 const actif = document.querySelectorAll("button.btn_actif");
 const ref = document.querySelector("div#reference");
-const off_set = 15;
+const off_set = 17;
 
 in_station_name.addEventListener('change', function (event) {
     load()
