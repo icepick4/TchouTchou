@@ -20,5 +20,8 @@ if (isset($_POST['date']) and isset($_POST['from']) and isset($_POST['to']) and 
         }
     }
     $trains = $train->get_lines_on($date, $from_id, $to_id);
+    for ($i = 0; $i < count($trains); $i++) {
+        $trains[$i]['EMPTY_SEATS'] = $train->getEmptySeats($trains[$i]['TRAVEL_ID'], $trains[$i]['LINE_ID'], $trains[$i]['STATION_ID']);
+    }
 }
 require_once(PATH_VIEWS . $page . '.php');
