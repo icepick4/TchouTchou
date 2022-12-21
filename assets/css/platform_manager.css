@@ -31,8 +31,17 @@ p{
 }
 
 .control_pannel{
-	width: 50vw;
+	width: auto;
 	margin: 5px;
+	display: flex;
+}
+
+.control_pannel fieldset{
+	width: 50%;
+}
+
+.approching-train{
+	display: flex;
 }
 
 .select_option{
