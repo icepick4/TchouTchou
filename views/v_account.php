@@ -13,7 +13,7 @@ if ($_SESSION['logged']) {
         <div class="links">
             <a class="link-profile" href="index.php?page=ticket_list"><?= MY_TICKETS ?></a>
             <a class="link-profile" href="index.php?page=messages"><?= MY_MESSAGES ?></a>
-            <a class="link-profile" href="index.php?page=shopping"><?= BUY_TICKET ?></a>
+            <a class="link-profile" href="index.php?page=purchase"><?= BUY_TICKET ?></a>
             <a class="link-profile" href="index.php?page=logout"><?= LOGOUT ?> </a>
             <button id="delete-account">
                 <a class="link-profile"><?= DELETE_ACCOUNT ?></a>

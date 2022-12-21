@@ -31,7 +31,7 @@
         <input type="submit" value="Rechercher les billets" />
     </form>
 </div>
-
+<img src="<?php echo PATH_IMAGES . "searchmap.svg" ?>">
 <div class="tickets">
     <?php
     for ($i = 0; $i < count($trains); $i++) {
