@@ -23,8 +23,8 @@ class TrainDAO extends DAO
      */
     public function getLinesOn($date_travel, $station_from, $station_to)
     {
-        $sql = 'SELECT t.PRICE, t.START_TIME, t.TRAVEL_ID, l.LINE_ID, l.START_STATION_ID FROM LINE l, TRAVEL t WHERE l.START_STATION_ID = :station_from AND l.END_STATION_ID = :station_to AND l.LINE_ID IN (SELECT LINE_ID FROM TRAVEL WHERE START_TIME > :date_travel AND :date_travel < START_TIME + 1)';
-        $args = array(':date_travel' => $date_travel, ':station_from' => $station_from, ':station_to' => $station_to);
+        $sql = 'SELECT t.PRICE, t.START_TIME, t.TRAVEL_ID, l.LINE_ID, l.START_STATION_ID FROM LINE l, TRAVEL t WHERE l.START_STATION_ID = :station_from AND l.END_STATION_ID = :station_to AND l.LINE_ID IN (SELECT LINE_ID FROM TRAVEL WHERE START_TIME > TO_DATE(:date_travel,'."'".'yyyy/mm/dd'."'".') AND TO_DATE(:date_travel,'."'".'yyyy/mm/dd'."'".') < START_TIME + 1)';
+        $args = array(':date_travel' => str_replace('-','/',$date_travel), ':station_from' => $station_from, ':station_to' => $station_to);
         return $this->queryAll($sql, $args);
     }
 

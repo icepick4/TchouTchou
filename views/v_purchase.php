@@ -36,12 +36,13 @@
     <?php
     for ($i = 0; $i < count($trains); $i++) {
     ?>
+    
         <div class="ticket-container">
             <p> from : <?= $from ?>>
             <p> to : <?= $to ?>>
             <p>start time :<?= $trains[$i]['START_TIME'] ?></p>
             <p>price : <?= $trains[$i]['PRICE'] ?></p>
-            <p>empty seats : <?= $trains[$i]['EMPTY_SEATS'] ?></p>
+            <p>empty seats : <?= $trains[$i]['EMPTY_SEATS']['EMPTYSEATS'] ?></p>
             <p>line id : <?= $trains[$i]['LINE_ID'] ?></p>
             <a href="index.php?page=payment&travel=<?= $trains[$i]['TRAVEL_ID'] ?>&from=<?= $from_id ?>&to=<?= $to_id ?>">Acheter</a>
         </div>
