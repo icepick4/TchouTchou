@@ -68,7 +68,7 @@ class TrainDAO extends DAO
 
     public function getEmptySeats($travel_id, $line_id, $start_station_id, $end_station_id)
     {
-        $sql = 'SELECT EMPTYSEATS FROM EMPTYSEATATSTOP WHERE TRAVEL_ID = :travel_id AND LINE_ID = :line_id AND START_STATION_ID = :start_station_id AND END_STATION_ID = :end_station_id';
+        $sql = 'SELECT EMPTYSEATS FROM EMPTYSEATATSTOP WHERE TRAVEL_ID = :travel_id AND LINE_ID = :line_id AND START_STATION_ID = :start_station_id AND NEXT_STATION_ID = :end_station_id';
         $args = array(':travel_id' => $travel_id, ':line_id' => $line_id, ':start_station_id' => $start_station_id, ':end_station_id' => $end_station_id);
         return $this->queryRow($sql, $args);
     }
