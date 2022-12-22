@@ -72,4 +72,15 @@ class TrainDAO extends DAO
         $args = array(':travel_id' => $travel_id, ':line_id' => $line_id, ':start_station_id' => $start_station_id, ':end_station_id' => $end_station_id);
         return $this->queryRow($sql, $args);
     }
+
+    public function getBusySeats($travel_id,$start_station_id)
+    {
+        $sql = 'SELECT PLACE_ID FROM TICKET ti
+                INNER JOIN TRAVEL tr ON ti.TRAVEL_ID = tr.TRAVEL_ID
+                WHERE ti.TRAVEL_ID = :travel_id
+                AND (SELECT ORDER_STOP FROM LINE_STOP ls WHERE ls.LINE_ID = tr.LINE_ID AND STATION_ID = :start_station_id) < (SELECT ORDER_STOP FROM LINE_STOP ls WHERE ls.LINE_ID = tr.LINE_ID AND STATION_ID = ti.END_STATION_ID);
+        ';
+        $args = array(':travel_id' => $travel_id, ':start_station_id' => $start_station_id);
+        return $this->queryAll($sql, $args);
+    }
 }
