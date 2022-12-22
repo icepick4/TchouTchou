@@ -5,4 +5,10 @@ function strTo24Time($time)
     return $time;
 }
 
+function minToHourMin($min)
+{
+    $hour = floor($min / 60);
+    $min = $min % 60;
+    return $hour . "h" . $min;
+}
 ?>

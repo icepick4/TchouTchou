@@ -1,5 +1,8 @@
 <!--  Entête de la page -->
-<?php require_once(PATH_VIEWS . 'header.php'); ?>
+<?php 
+require_once(PATH_VIEWS . 'header.php'); 
+
+?>
 
 
 <!--  Début de la page -->
@@ -31,25 +34,52 @@
         <input type="submit" value="Rechercher les billets" />
     </form>
 </div>
-<img src="<?php echo PATH_IMAGES . "searchmap.svg" ?>">
+<?php
+    if (!isset($_POST['date']) and !isset($_POST['from']) and !isset($_POST['to']) and empty($_POST['date'])) {
+?>
+    <img src="<?php echo PATH_IMAGES . "searchmap.svg" ?>">
+<?php
+}
+;
+?>
 <div class="tickets">
     <?php
     for ($i = 0; $i < count($trains); $i++) {
     ?>
     
         <div class="ticket-container">
-            <p> from : <?= $from ?>>
-            <p> to : <?= $to ?>>
-            <p>start time :<?= $trains[$i]['START_TIME'] ?></p>
-            <p>price : <?= $trains[$i]['PRICE'] ?></p>
-            <p>empty seats : <?= $trains[$i]['EMPTY_SEATS']['EMPTYSEATS'] ?></p>
-            <p>line id : <?= $trains[$i]['LINE_ID'] ?></p>
-            <a href="index.php?page=payment&travel=<?= $trains[$i]['TRAVEL_ID'] ?>&from=<?= $from_id ?>&to=<?= $to_id ?>">Acheter</a>
+            <div>
+                <div>
+                    <div>
+                        <p><?= $trains[$i]['START_TIME'] ?></p>
+                        <p><?= $from ?></p>
+                    </div>
+                    <div>
+                        <p><?= $trains[$i]['DURATION'] ?></p>
+                    </div>
+                    <div>
+                        <p><?= $trains[$i]['END_TIME'] ?></p>
+                        <p><?= $to ?></p>
+                    </div>
+                </div>
+                <div>
+                <img src="<?php echo PATH_IMAGES . "seat.svg" ?>">
+<p><?= $trains[$i]['EMPTY_SEATS']['EMPTYSEATS'] ?></p>
+                </div>
+            </div>
+            <div>
+            <p><?= $trains[$i]['PRICE'].' €' ?></p>
+            </div>
+            <div>
+                <a href="index.php?page=payment&travel=<?= $trains[$i]['TRAVEL_ID'] ?>&from=<?= $from_id ?>&to=<?= $to_id ?>">Acheter</a>
+            </div>
         </div>
     <?php
     }
     ?>
 </div>
+
+
 
 
 <!--  Fin de la page -->

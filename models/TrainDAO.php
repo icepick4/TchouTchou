@@ -23,7 +23,23 @@ class TrainDAO extends DAO
      */
     public function getLinesOn($date_travel, $station_from, $station_to)
     {
-        $sql = 'SELECT t.PRICE, t.START_TIME, t.TRAVEL_ID, l.LINE_ID, l.START_STATION_ID FROM LINE l, TRAVEL t WHERE l.START_STATION_ID = :station_from AND l.END_STATION_ID = :station_to AND l.LINE_ID IN (SELECT LINE_ID FROM TRAVEL WHERE START_TIME > TO_DATE(:date_travel,'."'".'yyyy/mm/dd'."'".') AND TO_DATE(:date_travel,'."'".'yyyy/mm/dd'."'".') < START_TIME + 1)';
+        $sql = 'SELECT t.PRICE,
+        TO_CHAR(t.START_TIME, \'HH24:MI\') AS START_TIME,
+        TO_CHAR(tet.END_TIME, \'HH24:MI\') AS END_TIME,
+        TIME_MIN AS DURATION, 
+        t.TRAVEL_ID, 
+        l.LINE_ID, 
+        l.START_STATION_ID 
+        FROM LINE l
+        INNER JOIN TRAVEL t ON l.LINE_ID = t.LINE_ID
+        INNER JOIN TRAVEL_WITH_ET tet ON t.TRAVEL_ID = tet.TRAVEL_ID
+        WHERE l.START_STATION_ID = :station_from 
+        AND l.END_STATION_ID = :station_to 
+        AND l.LINE_ID IN (
+            SELECT LINE_ID 
+            FROM TRAVEL 
+            WHERE START_TIME > TO_DATE(:date_travel,'."'".'yyyy/mm/dd'."'".') 
+            AND TO_DATE(:date_travel,'."'".'yyyy/mm/dd'."'".') < START_TIME + 1)';
         $args = array(':date_travel' => str_replace('-','/',$date_travel), ':station_from' => $station_from, ':station_to' => $station_to);
         return $this->queryAll($sql, $args);
     }
