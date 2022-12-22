@@ -23,7 +23,7 @@ if (isset($_POST['date']) and isset($_POST['from']) and isset($_POST['to']) and 
     $trains = $train->getLinesOn($date, $from_id, $to_id);
     for ($i = 0; $i < count($trains); $i++) {
         $trains[$i]['DURATION'] = minToHourMin($trains[$i]['DURATION']);
-        $trains[$i]['EMPTY_SEATS'] = $train->getEmptySeats($trains[$i]['TRAVEL_ID'], $trains[$i]['LINE_ID'], $trains[$i]['START_STATION_ID']);
+        $trains[$i]['EMPTY_SEATS'] = $train->getEmptySeats($trains[$i]['TRAVEL_ID'], $trains[$i]['LINE_ID'], $trains[$i]['START_STATION_ID'], $trains[$i]['END_STATION_ID']);
     }
 } 
 require_once(PATH_VIEWS . $page . '.php');

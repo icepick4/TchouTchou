@@ -29,7 +29,8 @@ class TrainDAO extends DAO
         TIME_MIN AS DURATION, 
         t.TRAVEL_ID, 
         l.LINE_ID, 
-        l.START_STATION_ID 
+        l.START_STATION_ID,
+        l.END_STATION_ID 
         FROM LINE l
         INNER JOIN TRAVEL t ON l.LINE_ID = t.LINE_ID
         INNER JOIN TRAVEL_WITH_ET tet ON t.TRAVEL_ID = tet.TRAVEL_ID
@@ -65,10 +66,10 @@ class TrainDAO extends DAO
         $this->queryEdit($sql, $args);
     }
 
-    public function getEmptySeats($travel_id, $line_id, $station_id)
+    public function getEmptySeats($travel_id, $line_id, $start_station_id, $end_station_id)
     {
-        $sql = 'SELECT EMPTYSEATS FROM EMPTYSEATATSTOP WHERE TRAVEL_ID = :travel_id AND LINE_ID = :line_id AND STATION_ID = :station_id';
-        $args = array(':travel_id' => $travel_id, ':line_id' => $line_id, ':station_id' => $station_id);
+        $sql = 'SELECT EMPTYSEATS FROM EMPTYSEATATSTOP WHERE TRAVEL_ID = :travel_id AND LINE_ID = :line_id AND START_STATION_ID = :start_station_id AND END_STATION_ID = :end_station_id';
+        $args = array(':travel_id' => $travel_id, ':line_id' => $line_id, ':start_station_id' => $start_station_id, ':end_station_id' => $end_station_id);
         return $this->queryRow($sql, $args);
     }
 }
