@@ -38,8 +38,8 @@ class TrainDAO extends DAO
         AND l.LINE_ID IN (
             SELECT LINE_ID 
             FROM TRAVEL 
-            WHERE START_TIME > TO_DATE(:date_travel,'."'".'yyyy/mm/dd'."'".') 
-            AND TO_DATE(:date_travel,'."'".'yyyy/mm/dd'."'".') < START_TIME + 1)';
+            WHERE TO_CHAR(t.START_TIME,\'DD/MM/YY\') = TO_CHAR(TO_DATE(:date_travel,\'YYYY/MM/DD\'),\'DD/MM/YY\')
+            AND t.START_TIME > TRUNC(SYSDATE+1/24))';
         $args = array(':date_travel' => str_replace('-','/',$date_travel), ':station_from' => $station_from, ':station_to' => $station_to);
         return $this->queryAll($sql, $args);
     }
