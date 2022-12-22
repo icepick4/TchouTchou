@@ -91,9 +91,20 @@
     </div>
 </div>
 
-<?php }else{
-    //affichage des messages pour le support TODO
-} ?>
+<?php }else{?>
+    <div id="chat">
+        <div id="resume">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <button id="storage">Archive</button>
+        </div>
+        <div id="messages">
+        
+        </div>
+    
+<?php } ?>
 
 
 
