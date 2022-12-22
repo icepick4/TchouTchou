@@ -47,7 +47,7 @@ define('THURSDAY', 'Jeudi');
 define('FRIDAY', 'Vendredi');
 define('SATURDAY', 'Samedi');
 define('SUNDAY', 'Dimanche');
-
+define('MESSAGE', 'Mes Messages');
 //Home
 define('MY_ACCOUNT', 'Mon Compte');
 define('MY_TICKETS', 'Mes Billets');
@@ -131,7 +131,7 @@ define('WELCOME_TEXT', "Nous sommes heureux de vous accueillir sur notre platefo
 define('WELCOME_TEXT2', "Nous espérons que votre voyage en train sera agréable et que vous apprécierez notre service de réservation en ligne. Bon voyage avec Tchoutchou !");
 define('SEARCH_TEXT', 'Notre site est simple et facile à utiliser, vous pourrez trouver et réserver votre ticket de train en quelques minutes. Nous proposons également de nombreuses options pour personnaliser votre voyage, comme la possibilité de choisir votre siège.');
 define('STATION_TEXT', "Nous sommes heureux de vous annoncer que vous pouvez désormais accéder à la liste complète des gares de notre réseau. Vous pouvez ainsi voir l'ensemble des gares desservies par nos trains, ainsi que leurs coordonnées et les horaires de départ et d'arrivée des trains.");
-
+define('MESSAGE_TEXT', "Vous pouvez également nous contacter directement depuis notre site, pour nous faire part de vos remarques ou de vos suggestions. Nous sommes à votre écoute et nous vous répondrons dans les plus brefs délais.");
 
 //home employee
 

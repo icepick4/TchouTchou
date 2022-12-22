@@ -48,6 +48,7 @@ p {
   opacity: 0.4;
   border-radius: 10px;
   margin: 0.5em;
+  width: 88%;
 }
 
 #resume div:hover {
