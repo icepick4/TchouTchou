@@ -42,6 +42,9 @@
     }
 
     ?><h2><?php echo($discussionData['DISCUSSION_SUBJECT']); ?> - <?php if(isset($receiver)){echo $receiver['USER_FIRSTNAME'] ;} else{ echo  "Support";} ?></h2>
+    <?php if(!$user->isEmployee($user_id) || !$user->isEmployee($receiver['USER_ID'])){ ?>
+    <img src="/assets/images/storage.svg" id="storageImage">
+    <?php } ?>
     <?php
 
     $result = $mailbox->getDiscussionById($id_discussion);
@@ -65,3 +68,4 @@
             <input type="submit" id="submit" value="Envoyer">
         </form>
         <p id="discussionId" style="display:none"><? echo $id_discussion ?></p>
+        

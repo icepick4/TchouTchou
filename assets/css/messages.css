@@ -29,6 +29,8 @@ p {
   padding: 0.5%;
   border-top-right-radius: 2px;
   z-index: -1;
+  position: sticky;
+  top: 0;
 }
 
 #resume {
@@ -334,4 +336,20 @@ input:checked ~ #extern {
 }
 #resume #resumeClient {
   width: 100%;
+}
+
+#storageImage {
+  z-index: 100;
+  width: 50px;
+  position: sticky;
+  top: 5px;
+  right: 10px;
+  margin-top: -80px;
+  align-self: flex-end;
+  margin-bottom: 30px;
+}
+
+#storageImage:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
