@@ -52,11 +52,6 @@ p {
   opacity: 1;
 }
 
-#resume div * {
-  opacity: 1;
-  color: #fff;
-}
-
 #messages {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -159,10 +154,11 @@ p.noMessage {
 
 #resume div.container {
   position: relative;
-  margin: 20px 0 20px;
+  margin: 0px 0 20px;
   padding: 0;
   background-color: unset;
   opacity: 1;
+  width: 100%;
 }
 
 #search {
@@ -210,6 +206,7 @@ p.noMessage {
   border-bottom: 1px solid var(--main-color);
   margin: 0;
   border-radius: 0;
+  opacity: 1;
 }
 #resume .autocomplete-items div:hover {
   background-color: var(--bg-black-second-color);
@@ -221,22 +218,28 @@ p.noMessage {
   background-color: unset;
   padding: 0;
   border-radius: 0;
+  opacity: 1;
 }
 
 #storage {
-  width: 250px;
+  width: 130px;
   height: 34px;
   border-radius: 15px;
   background-color: var(--main-color);
   color: white;
   font-weight: bold;
   margin: 2% 0;
-} /* The switch - the box around the slider */
+}
+#storage.active {
+  background-color: var(--second-color);
+}
+
+/* The switch - the box around the slider */
 .switch {
   margin-top: 2%;
   position: relative;
   display: inline-block;
-  width: 250px;
+  width: 130px;
   height: 34px;
 }
 
@@ -283,7 +286,7 @@ input:focus + .slider {
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
-  transform: translateX(217px);
+  transform: translateX(95px);
 }
 
 /* Rounded sliders */
@@ -293,4 +296,42 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.switch #extern,
+.switch #intern {
+  position: absolute;
+  color: black;
+  top: 4px;
+  left: 36px;
+}
+
+#extern {
+  opacity: 0;
+}
+
+input:checked ~ #intern {
+  opacity: 0;
+}
+input:checked ~ #extern {
+  opacity: 1;
+}
+
+#resume #headerResume {
+  background-color: unset;
+  opacity: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+#resume #resumeClient,
+#resume #resumeSupport {
+  background-color: unset;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+}
+#resume #resumeClient {
+  width: 100%;
 }

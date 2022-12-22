@@ -153,3 +153,6 @@ define('SELECT_HUB', 'Choisir le hub');
 define('NO_MESSAGES', 'Vous n\'avez jamais chercher à contacter notre support jusqu\'à maintenant !');
 define('NO_MESSAGE_BTN', 'Accéder au formulaire de contact');
 define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de votre écran pour charger les messages');
+define('INTERN','Interne');
+define('EXTERN','Externe');
+define('STORAGE','Archive');

@@ -136,3 +136,64 @@ if (input != null) {
 
   searchWithAutocomplete(input, users);
 }
+
+let chat = document.getElementById("chat");
+let resume = document.getElementById("resume");
+let resumeClient = document.getElementById("resumeClient");
+let resumeSupport = document.getElementById("resumeSupport");
+
+let chatSwitch = document.querySelector(".switch");
+let inputSwitch = document.querySelector(".switch input");
+
+let storageButton = document.getElementById("storage");
+storageButton.addEventListener("click", toggleStorage);
+let storage = false;
+
+resumeClient.remove();
+storageButton.style.display = "none";
+
+chatSwitch.addEventListener("click", function () {
+  if (inputSwitch.checked) {
+    resumeSupport.remove();
+    resume.append(resumeClient);
+    storageButton.style.display = "block";
+    storageButton.click();
+    storageButton.click();
+  } else {
+    resumeClient.remove();
+    resume.append(resumeSupport);
+    storageButton.style.display = "none";
+  }
+});
+
+function toggleStorage() {
+  if (storage) {
+    storage = false;
+    storageButton.classList.remove("active");
+    addStorage();
+  } else {
+    storage = true;
+    storageButton.classList.add("active");
+    removeStorage();
+  }
+}
+
+function removeStorage() {
+  for (let i = 0; i < message.length; i++) {
+    if (message[i].classList.contains("0")) {
+      message[i].style.display = "block";
+    } else {
+      message[i].style.display = "none";
+    }
+  }
+}
+
+function addStorage() {
+  for (let i = 0; i < message.length; i++) {
+    if (message[i].classList.contains("0")) {
+      message[i].style.display = "none";
+    } else {
+      message[i].style.display = "block";
+    }
+  }
+}
