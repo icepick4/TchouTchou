@@ -24,13 +24,13 @@
             
             foreach ($result as $travel) {
                 ?>
-                        <a href=""><td rowspan=<?= $travel['DURATION'] ?>>
+                        <td rowspan=<?= $travel['DURATION'] ?>>
                         <?php
                 echo TRAVEL.' n° '.$travel['TRAVEL_ID'];
             }
         }
                 ?>
-            </td></a>
+            </td>
         </tr>
         <?php
         $i++;};

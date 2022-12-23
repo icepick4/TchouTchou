@@ -1,8 +1,10 @@
 .input-container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-top: 2%;
+  width: 100%;
 }
 
 input {
@@ -13,6 +15,12 @@ input {
   padding: 0.5rem;
 }
 
+#form {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 select {
   background-color: transparent;
   border: 1px solid var(--main-color);
@@ -133,4 +141,34 @@ select:focus {
   color: white;
   font-weight: bold;
   background-color: var(--main-color);
+}
+
+input[type="number"] {
+  text-align: center;
+  border-radius: 0%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+form div {
+  display: flex;
+}
+form div button {
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: white;
+  border: 1px solid var(--main-color);
+}
+
+form div button:first-child {
+  border-radius: 15px 0 0 15px;
+}
+
+form div button:last-child {
+  border-radius: 0 15px 15px 0;
 }

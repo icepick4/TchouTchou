@@ -31,6 +31,11 @@ require_once(PATH_VIEWS . 'header.php');
             ?>
         </select>
         <input type="date" name="date" />
+        <div>
+            <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepDown();">-</button>
+            <input type="number" name="nbr" placeholder="1" min="1" max="10" value="1"/>
+            <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepUp();">+</button>
+        </div>
         <input type="submit" value="Rechercher les billets" />
     </form>
 </div>
@@ -68,7 +73,7 @@ require_once(PATH_VIEWS . 'header.php');
                 </div>
             </div>
             <div>
-            <p><?= $trains[$i]['PRICE'].' €' ?></p>
+            <p><?= intval($trains[$i]['PRICE'])*intval($_POST['nbr']).' €' ?></p>
             </div>
             <div>
                 <a href="index.php?page=payment&travel=<?= $trains[$i]['TRAVEL_ID'] ?>&from=<?= $from_id ?>&to=<?= $to_id ?>">Acheter</a>
