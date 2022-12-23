@@ -85,6 +85,7 @@ article div.arti {
   margin-bottom: auto;
   margin-left: var(--margin2);
   margin-right: var(--margin2);
+  width: 50%;
 }
 
 .arti > a {
@@ -117,7 +118,7 @@ article div.arti {
 }
 
 article div.arti .btn {
-  width: 80%;
+  width: 20%;
 }
 
 article img {

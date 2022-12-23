@@ -12,15 +12,28 @@ for (let i = 0; i < message.length; i++) {
   message[i].addEventListener("click", getMessageIdOnclick);
 }
 
+function resetMessage() {
+  for (let i = 0; i < message.length; i++) {
+    const discussion_resume = message[i];
+    if (discussion_resume.classList.contains("active")) {
+      discussion_resume.classList.remove("active");
+    }
+  }
+}
+
 function getMessageIdOnclick(e) {
+  resetMessage();
   var number, test;
   if (e.target.nodeName == "H3" || e.target.nodeName == "P") {
     number = e.target.parentNode.children[0].innerText;
     test = 0;
+    e.target.parentNode.classList.add("active");
   } else {
     number = e.target.children[0].innerText;
     test = 1;
+    e.target.classList.add("active");
   }
+
   loadMessage(number);
   setTimeout(function () {
     let discussion_id = document.querySelector("#discussion_id").value;
@@ -146,7 +159,10 @@ let chatSwitch = document.querySelector(".switch");
 let inputSwitch = document.querySelector(".switch input");
 
 let storageButton = document.getElementById("storage");
-storageButton.addEventListener("click", toggleStorage);
+if (storageButton != null) {
+  storageButton.addEventListener("click", toggleStorage);
+}
+
 let storage = false;
 
 resumeClient.remove();

@@ -42,7 +42,7 @@ p {
   flex-direction: column;
   align-items: center;
 }
-#resume div {
+#resume div.discussion_resume {
   padding: 1em;
   background-color: var(--main-color);
   opacity: 0.4;
@@ -156,7 +156,7 @@ p.noMessage {
 
 #resume div.container {
   position: relative;
-  margin: 0px 0 20px;
+  margin: 20px 0 20px;
   padding: 0;
   background-color: unset;
   opacity: 1;
@@ -352,4 +352,12 @@ input:checked ~ #extern {
 #storageImage:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.discussion_resume {
+  width: 88%;
+}
+#resume .discussion_resume.active {
+  background-color: var(--second-color);
+  opacity: 1;
 }

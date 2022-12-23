@@ -16,6 +16,9 @@
 
 .cgu {
   margin: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cgu h1 {
@@ -23,4 +26,5 @@
   width: fit-content;
   padding: 1vh;
   border-radius: 1em;
+  text-align: center;
 }

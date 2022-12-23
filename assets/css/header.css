@@ -80,7 +80,7 @@ header > :nth-child(2n) {
   width: 4em;
   margin: 0;
   stroke: var(--txt-white-color);
-  transition-duration: 0.7s;
+  transition-duration: 0.4s;
 }
 #shop svg circle {
   fill: var(--txt-white-color);
@@ -88,7 +88,6 @@ header > :nth-child(2n) {
 
 .logo:hover * {
   stroke: var(--main-color);
-  transition-duration: 0.7s;
 }
 #shop:hover svg circle {
   fill: var(--main-color);
