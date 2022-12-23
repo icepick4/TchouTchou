@@ -41,10 +41,11 @@
             
     }
 
-    ?><h2><?php echo($discussionData['DISCUSSION_SUBJECT']); ?> - <?php if(isset($receiver)){echo $receiver['USER_FIRSTNAME'] ;} else{ echo  "Support";} ?></h2>
+    ?><div id="headermsg"><h2><?php echo($discussionData['DISCUSSION_SUBJECT']); ?> - <?php if(isset($receiver)){echo $receiver['USER_FIRSTNAME'] ;} else{ echo  "Support";} ?></h2>
     <?php if(!$user->isEmployee($user_id) || !$user->isEmployee($receiver['USER_ID'])){
         if($user->isEmployee($user_id)){ ?>
     <img src="/assets/images/storage.svg" id="storageImage">
+    </div>
     <?php }} ?>
     <?php
 

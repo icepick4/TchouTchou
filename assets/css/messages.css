@@ -22,17 +22,6 @@ p {
   border-radius: 12px;
 }
 
-#messages h2 {
-  width: 99%;
-  background-color: var(--border-input);
-  margin-top: 0;
-  padding: 0.5%;
-  border-top-right-radius: 2px;
-  z-index: -1;
-  position: sticky;
-  top: 0;
-}
-
 #resume {
   overflow-y: scroll;
   width: 25%;
@@ -346,22 +335,6 @@ input:checked ~ #extern {
   width: 100%;
 }
 
-#storageImage {
-  z-index: 100;
-  width: 50px;
-  position: sticky;
-  top: 5px;
-  right: 10px;
-  margin-top: -80px;
-  align-self: flex-end;
-  margin-bottom: 30px;
-}
-
-#storageImage:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
 .discussion_resume {
   width: 88%;
 }
@@ -371,4 +344,36 @@ input:checked ~ #extern {
 
 #resumeSupport {
   width: 100%;
+}
+
+#headermsg {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--border-input);
+  margin-top: 0;
+  padding: 0.5%;
+  border-top-right-radius: 2px;
+  z-index: 100;
+}
+
+#messages h2 {
+  width: 100%;
+  text-align: center;
+}
+
+#storageImage {
+  padding-right: 2%;
+  display: flex;
+  width: 50px;
+  height: 100%;
+  align-self: flex-end;
+}
+
+#storageImage:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
