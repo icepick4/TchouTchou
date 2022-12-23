@@ -143,3 +143,20 @@ p.info {
   margin-top: 6%;
   width: 100%;
 }
+
+.content div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content div p {
+  margin: auto;
+}
+
+.content div img {
+  padding-right: 5%;
+  width: 3rem;
+  fill: white;
+  stroke: white;
+}

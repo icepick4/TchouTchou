@@ -8,7 +8,7 @@
 <table>
     <thead>
         <tr>
-            <th colspan="2"><?= $date['SYSDATE'] ?></th>
+            <th colspan="200"><?= $date['SYSDATE'] ?></th>
         </tr>
     </thead>
     <tbody>
@@ -24,13 +24,13 @@
             
             foreach ($result as $travel) {
                 ?>
-                        <td rowspan=<?= $travel['DURATION'] ?>>
+                        <a href=""><td rowspan=<?= $travel['DURATION'] ?>>
                         <?php
                 echo TRAVEL.' n° '.$travel['TRAVEL_ID'];
             }
         }
                 ?>
-            </td>
+            </td></a>
         </tr>
         <?php
         $i++;};

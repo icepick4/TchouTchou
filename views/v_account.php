@@ -11,12 +11,11 @@ if ($_SESSION['logged']) {
     <h1 id="title"><?= WELCOME ?><?php echo $result['USER_FIRSTNAME'] ?></h1>
     <div class="content">
         <div class="links">
-            <a class="link-profile" href="index.php?page=ticket_list"><?= MY_TICKETS ?></a>
-            <a class="link-profile" href="index.php?page=messages"><?= MY_MESSAGES ?></a>
-            <a class="link-profile" href="index.php?page=purchase"><?= BUY_TICKET ?></a>
-            <a class="link-profile" href="index.php?page=logout"><?= LOGOUT ?> </a>
+            <a class="link-profile" href="index.php?page=ticket_list"><div><img src="assets/images/tickets.svg" ><p><?= MY_TICKETS ?></p></div></a>
+            <a class="link-profile" href="index.php?page=messages"><div><img src="assets/images/message_ico.svg" ><p><?= MY_MESSAGES ?></p></div></a>
+            <a class="link-profile" href="index.php?page=logout"><div><img src="assets/images/disconnect.svg" ><p><?= LOGOUT ?></p></div></a>
             <button id="delete-account">
-                <a class="link-profile"><?= DELETE_ACCOUNT ?></a>
+                <a class="link-profile"><div><img src="assets/images/settings.svg" ><p><?= DELETE_ACCOUNT ?></p></div></a>
             </button>
         </div>
         <div class="infos">
