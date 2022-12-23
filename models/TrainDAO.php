@@ -40,7 +40,7 @@ class TrainDAO extends DAO
             SELECT LINE_ID 
             FROM TRAVEL 
             WHERE TO_CHAR(t.START_TIME,\'DD/MM/YY\') = TO_CHAR(TO_DATE(:date_travel,\'YYYY/MM/DD\'),\'DD/MM/YY\')
-            AND t.START_TIME > TRUNC(SYSDATE+1/24))';
+            AND t.START_TIME > TRUNC(SYSDATE+1/24)) ORDER BY t.START_TIME ASC';
         $args = array(':date_travel' => str_replace('-','/',$date_travel), ':station_from' => $station_from, ':station_to' => $station_to);
         return $this->queryAll($sql, $args);
     }

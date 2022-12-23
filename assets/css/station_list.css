@@ -72,7 +72,7 @@ table td {
 #clear-search {
   position: absolute;
   right: 25%;
-  top: 20%;
+  top: 27%;
   cursor: pointer;
   color: var(--main-color);
   font-size: 20px;

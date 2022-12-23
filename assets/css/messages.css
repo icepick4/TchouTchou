@@ -165,7 +165,7 @@ p.noMessage {
 }
 
 #search {
-  width: 50%;
+  width: 70%;
   height: 30px;
   border: 2px solid var(--main-color);
   border-radius: 10px;
@@ -184,8 +184,8 @@ p.noMessage {
 
 #clear-search {
   position: absolute;
-  right: 25%;
-  top: 20%;
+  right: 17%;
+  top: 27%;
   cursor: pointer;
   color: var(--main-color);
   font-size: 20px;
@@ -304,11 +304,18 @@ input:checked + .slider:before {
 .switch #extern,
 .switch #intern {
   position: absolute;
-  color: black;
-  top: 4px;
+
+  font-weight: bold;
+  top: 8px;
   left: 36px;
 }
+.switch #intern {
+  color: var(--main-color);
+}
 
+.switch #extern {
+  color: white;
+}
 #extern {
   opacity: 0;
 }
@@ -359,6 +366,9 @@ input:checked ~ #extern {
   width: 88%;
 }
 #resume .discussion_resume.active {
-  background-color: var(--second-color);
   opacity: 1;
+}
+
+#resumeSupport {
+  width: 100%;
 }

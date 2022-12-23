@@ -9,6 +9,9 @@ function minToHourMin($min)
 {
     $hour = floor($min / 60);
     $min = $min % 60;
+    if ($min < 10) {
+        $min = "0" . $min;
+    }
     return $hour . "h" . $min;
 }
 ?>

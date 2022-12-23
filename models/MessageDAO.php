@@ -27,7 +27,7 @@ class MessageDAO extends DAO
 
     public function getUserDisussions($user_id)
     {
-        $sql = 'SELECT * FROM DISCUSSION WHERE USER_ID = :user_id OR DESTINATION_ID = :user_id ORDER BY CREATION_TIME DESC';
+        $sql = 'SELECT * FROM DISCUSSION WHERE (USER_ID = :user_id OR DESTINATION_ID = :user_id) AND (DESTINATION_ID IN (SELECT USER_ID FROM EMPLOYEES_DATA WHERE EMPLOYEES_DATA.EMPLOYEE_ACCESS = 5)  AND USER_ID NOT IN (SELECT USER_ID FROM EMPLOYEES_DATA)) ORDER BY CREATION_TIME DESC';
         $args = array(':user_id' => $user_id);
         return $this->queryAll($sql, $args);
     }
