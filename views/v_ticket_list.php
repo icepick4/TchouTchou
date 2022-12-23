@@ -41,7 +41,7 @@ if ($_SESSION['logged']) {
 ?>
 <div class="link-ticket-list">
     <div class="links">
-        <a href="index.php?page=shopping"><?= BUY_TICKET ?></a>
+        <a href="index.php?page=purchase"><?= BUY_TICKET ?></a>
     </div>
 </div>
 <!--  Fin de la page -->
