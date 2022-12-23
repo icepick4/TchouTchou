@@ -2,11 +2,11 @@
 require_once(PATH_MODELS . 'UserDAO.php');
 require_once(PATH_MODELS . 'MessageDAO.php');
 
+$user = new UserDAO();
 if (!$_SESSION['logged']) {
     header("Location: index.php?page=login");
     die();
-} else {
-    $user = new UserDAO();
+}else{
     $mailbox = new MessageDAO();
     $discussions = $mailbox->getUserDisussions($_SESSION['user_id']);
     $isEmployee = false;
