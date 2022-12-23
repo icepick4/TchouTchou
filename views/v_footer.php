@@ -24,7 +24,7 @@
 		  }?>
 		  <?php 
 		  $user = new UserDAO();
-		  if(!$user->isEmployee($_SESSION['user_id'])){ ?>
+		if(!$user->isEmployee($_SESSION['user_id'])){ ?>
 			<a href="index.php?page=contact"><?= TITLE_CONTACT ?></a>
 		  <?php } ?>
 			<a href="http://82.65.238.70:5569/" target="_blank"><?= TITLE_GITPULL ?></a>
