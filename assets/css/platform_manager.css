@@ -42,6 +42,7 @@ p{
 
 .approching-train{
 	display: flex;
+	
 }
 
 .select_option{
@@ -157,10 +158,12 @@ div.list_quai.loading .quai.block{
 
 .quai div.quai_info{
 	position: relative;
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	/*flex-direction: row;*/
+	grid-template-columns: 1fr 2fr 2fr 3fr;
 	top:  -40px;
 	height: 40px;
+	width: 50%;
 
 
 }
@@ -198,11 +201,13 @@ div.list_quai.loading .quai.block{
 	margin-left: 10px;
 	font-weight: bold;
 	font-size: 30px;
+	place-self: center;
 	
 
 }
 
 .quai label.train_number{
+	place-self: flex-start;
 
 	font-weight: 500;
 }
@@ -218,7 +223,8 @@ div.list_quai.loading .quai.block{
 	text-transform: uppercase;
 	border-radius: 5px;
 	text-decoration: line-through;
-
+	width: 8rem;
+	place-self: center;
 
 }
 
