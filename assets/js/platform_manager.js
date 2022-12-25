@@ -228,6 +228,7 @@ async function load_platform(station_id, hub) {
       tmp_option.querySelector(".quai").classList.remove("block");
       tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML = "ouvert";
     } else {
+      tmp_option.querySelector(".btn_actif").classList.remove("actif");
       tmp_option.querySelector(".btn_actif").actif = false;
       tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML = "fermé";
     }
