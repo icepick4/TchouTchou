@@ -116,8 +116,28 @@ $user = new UserDAO();
 		</a>
 	</div>
 </article>
+<?php }}
+	if ((isset($_SESSION['user_id']) || $user->isEmployee($_SESSION['user_id']))){?>
+<article>
+	<img src="assets/images/message.svg">
+	<div class="arti">
+		<h2>
+			<?= MESSAGE ?>
+		</h2>
+		<p>
+			<?= MESSAGE_TEXT ?>
+		</p>
+		<a href="index.php?page=messages">
+			<div class="btn">
+				<p>
+					<?= WELCOME_GO ?>
+				</p>
+				<img src="assets/images/arrow.svg">
+			</div>
+		</a>
+	</div>
+</article>
 <?php }
-}
 ?>
 <!--  Fin de la page -->
 

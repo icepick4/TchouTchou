@@ -85,6 +85,17 @@ class UserDAO extends DAO
     }
 
     /**
+     * Function to get all the users
+     * @return array The users's data
+     *
+     */
+    public function getAllEmployees()
+    {
+        $sql = 'SELECT * FROM USER_DATA WHERE USER_CATEGORIE_ID = 1';
+        return $this->queryAll($sql);
+    }
+
+    /**
      * Function to insert a new user
      * @return array The users's mails
      */
@@ -301,7 +312,7 @@ class UserDAO extends DAO
         return $this->queryRow($sql, $args)['DRIVER_ID'];
     }
 
-    public function create_ticket($user_id, $travel_id, $start_station_id, $end_station_id, $place_id, $first_name, $last_name)
+    public function addTicket($user_id, $travel_id, $start_station_id, $end_station_id, $place_id, $first_name, $last_name)
     {
         $sql = "INSERT INTO TICKET(USER_ID, TRAVEL_ID, START_STATION_ID, END_STATION_ID, PLACE_ID, FIRSTNAME, LASTNAME) VALUES(:user_id, :travel_id, :start_station_id, :end_station_id, :place_id, :first_name, :last_name)";
         $args = array(':user_id' => $user_id, ':travel_id' => $travel_id, ':start_station_id' => $start_station_id, ':end_station_id' => $end_station_id, ':place_id' => $place_id, ':first_name' => $first_name, ':last_name' => $last_name);

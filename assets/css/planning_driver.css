@@ -27,24 +27,19 @@ table thead th {
   font-size: 25px;
   font-weight: bold;
   background-color: var(--main-color);
-  color: #000;
+  color: white;
 }
 
 table tr td:first-child {
   width: 25%;
 }
 
-table tr td:nth-child(2n) {
+table tr td:not(:first-child) {
   background-color: var(--main-color);
   cursor: pointer;
 }
 table tr:nth-child(even) {
   background-color: var(--border-input);
-}
-
-table tr td:last-child:hover {
-  background-color: var(--main-color);
-  cursor: pointer;
 }
 
 table td {

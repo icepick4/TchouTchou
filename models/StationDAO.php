@@ -29,7 +29,7 @@ class StationDAO extends DAO
         $sql = 'SELECT CITY_NAME, 
                         (SELECT REGION_NAME FROM REGION R WHERE R.REGION_ID = Ci.REGION_ID AND R.COUNTRY_ID = Ci.COUNTRY_ID) REGION_NAME,
                         (SELECT COUNTRY_NAME FROM COUNTRY Co WHERE Co.COUNTRY_ID = Ci.COUNTRY_ID) COUNTRY_NAME,
-        STATION_NAME, STATION_ID FROM STATION S, CITY Ci WHERE S.CITY_ID = Ci.CITY_ID';
+        STATION_NAME, STATION_ID FROM STATION S, CITY Ci WHERE S.CITY_ID = Ci.CITY_ID ORDER BY STATION_NAME ASC';
         $args = array();
         return $this->queryAll($sql, $args);
     }

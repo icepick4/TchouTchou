@@ -22,36 +22,26 @@ p {
   border-radius: 12px;
 }
 
-#messages h2 {
-  width: 99%;
-  background-color: var(--border-input);
-  margin-top: 0;
-  padding: 0.5%;
-  border-top-right-radius: 2px;
-  z-index: -1;
-}
-
 #resume {
   overflow-y: scroll;
   width: 25%;
   min-height: 100%;
   border-right: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#resume div {
+#resume div.discussion_resume {
   padding: 1em;
   background-color: var(--main-color);
   opacity: 0.4;
   border-radius: 10px;
   margin: 0.5em;
+  width: 88%;
 }
 
 #resume div:hover {
   opacity: 1;
-}
-
-#resume div * {
-  opacity: 1;
-  color: #fff;
 }
 
 #messages {
@@ -152,4 +142,238 @@ p.noMessage {
 .btn img {
   width: 15px;
   height: auto;
+}
+
+#resume div.container {
+  position: relative;
+  margin: 20px 0 20px;
+  padding: 0;
+  background-color: unset;
+  opacity: 1;
+  width: 100%;
+}
+
+#search {
+  width: 70%;
+  height: 30px;
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0 auto;
+  display: block;
+  background-color: var(--bg-black-color);
+  color: var(--txt-white-color);
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+}
+
+#search:focus {
+  outline: none;
+}
+
+#clear-search {
+  position: absolute;
+  right: 17%;
+  top: 27%;
+  cursor: pointer;
+  color: var(--main-color);
+  font-size: 20px;
+  font-style: normal;
+}
+
+#resume .autocomplete-items {
+  position: absolute;
+  border: 1px solid var(--main-color);
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 96%;
+  left: 0;
+  right: 0;
+}
+#resume .autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--border-input);
+  border-bottom: 1px solid var(--main-color);
+  margin: 0;
+  border-radius: 0;
+  opacity: 1;
+}
+#resume .autocomplete-items div:hover {
+  background-color: var(--bg-black-second-color);
+}
+
+#resume #searchautocomplete-list {
+  width: 45%;
+  margin: 0 auto;
+  background-color: unset;
+  padding: 0;
+  border-radius: 0;
+  opacity: 1;
+}
+
+#storage {
+  width: 130px;
+  height: 34px;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  margin: 2% 0;
+}
+#storage.active {
+  background-color: var(--second-color);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  margin-top: 2%;
+  position: relative;
+  display: inline-block;
+  width: 130px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--main-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--main-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(95px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch #extern,
+.switch #intern {
+  position: absolute;
+
+  font-weight: bold;
+  top: 8px;
+  left: 36px;
+}
+.switch #intern {
+  color: var(--main-color);
+}
+
+.switch #extern {
+  color: white;
+}
+#extern {
+  opacity: 0;
+}
+
+input:checked ~ #intern {
+  opacity: 0;
+}
+input:checked ~ #extern {
+  opacity: 1;
+}
+
+#resume #headerResume {
+  background-color: unset;
+  opacity: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+#resume #resumeClient,
+#resume #resumeSupport {
+  background-color: unset;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+}
+#resume #resumeClient {
+  width: 100%;
+}
+
+.discussion_resume {
+  width: 88%;
+}
+#resume .discussion_resume.active {
+  opacity: 1;
+}
+
+#resumeSupport {
+  width: 100%;
+}
+
+#headermsg {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--border-input);
+  margin-top: 0;
+  padding: 0.5%;
+  border-top-right-radius: 2px;
+  z-index: 100;
+}
+
+#messages h2 {
+  width: 100%;
+  text-align: center;
+}
+
+#storageImage {
+  padding-right: 2%;
+  display: flex;
+  width: 50px;
+  height: 100%;
+  align-self: flex-end;
+}
+
+#storageImage:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }

@@ -23,8 +23,6 @@ form input {
   color: #696969;
 }
 
-
-
 form input[type="submit"] {
   background-color: var(--main-color);
   color: #fff;
@@ -35,11 +33,9 @@ form input[type="submit"] {
   width: 100%;
 }
 
-
 form div label {
   width: 100%;
 }
-
 
 #boxPassword {
   position: relative;
@@ -109,4 +105,25 @@ form textarea:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.smallLink a,
+label a {
+  color: rgb(180, 180, 180);
+  text-decoration: none;
+}
+
+.smallLink a:hover,
+label a:hover {
+  text-decoration: underline;
+}
+
+.smallLink {
+  margin-bottom: 10px;
+}
+
+#cgu {
+  width: unset;
+  margin: 0;
+  margin-right: 5px;
 }

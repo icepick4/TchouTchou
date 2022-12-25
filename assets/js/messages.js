@@ -12,18 +12,43 @@ for (let i = 0; i < message.length; i++) {
   message[i].addEventListener("click", getMessageIdOnclick);
 }
 
-function getMessageIdOnclick(e) {
-  if (e.target.nodeName == "H3" || e.target.nodeName == "P") {
-    var number = e.target.parentNode.children[0].innerText;
-  } else {
-    var number = e.target.children[0].innerText;
+function resetMessage() {
+  for (let i = 0; i < message.length; i++) {
+    const discussion_resume = message[i];
+    if (discussion_resume.classList.contains("active")) {
+      discussion_resume.classList.remove("active");
+    }
   }
-  currentMessage = number;
-  localStorage.setItem("currentMessage", number);
+}
+
+function getMessageIdOnclick(e) {
+  resetMessage();
+  var number, test;
+  if (e.target.nodeName == "H3" || e.target.nodeName == "P") {
+    number = e.target.parentNode.children[0].innerText;
+    test = 0;
+    e.target.parentNode.classList.add("active");
+  } else {
+    number = e.target.children[0].innerText;
+    test = 1;
+    e.target.classList.add("active");
+  }
+
   loadMessage(number);
+  setTimeout(function () {
+    let discussion_id = document.querySelector("#discussion_id").value;
+    if (test == 0) {
+      e.target.parentNode.children[0].innerText = discussion_id;
+    } else {
+      e.target.children[0].innerText = discussion_id;
+    }
+    localStorage.setItem("currentMessage", number);
+    currentMessage = number;
+  }, 500);
 }
 
 function loadMessage(id) {
+  currentMessage = id;
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -38,12 +63,6 @@ function loadMessage(id) {
   xmlhttp.send();
   //wait 1s to scroll to the bottom of the discussion
   setTimeout(function () {
-    let discussionId = document.querySelector("#discussionId").innerText;
-    let discussionAllowed =
-      document.querySelector("#discussionAllowed").innerText;
-    if (!discussionAllowed.includes(discussionId)) {
-      discussion.innerHTML = "<p>Vous n'avez pas accès a ces messages</p>";
-    }
     discussion.scrollTop = discussion.scrollHeight;
   }, 200);
 }
@@ -61,3 +80,136 @@ window.onload = function () {
     loadMessage(localStorage.getItem("currentMessage"));
   }
 };
+
+let input = document.getElementById("search");
+if (input != null) {
+  var users = document.querySelector("#users").innerText.split("//");
+
+  input.addEventListener("keyup", recherche);
+
+  function recherche() {
+    let inputValue = input.value.toLowerCase();
+    let x = document.getElementsByClassName("discussion_resume");
+    for (let i = 0; i < x.length; i++) {
+      if (!x[i].innerHTML.toLowerCase().includes(inputValue)) {
+        x[i].style.display = "none";
+      } else {
+        x[i].style.display = "block";
+      }
+    }
+  }
+
+  function searchWithAutocomplete(input, arr) {
+    input.addEventListener("keyup", function (event) {
+      var a, b, i;
+      var val = event.target.value;
+      closeAllLists();
+      if (!val) {
+        return false;
+      }
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      this.parentNode.appendChild(a);
+      for (i = 0; i < arr.length; i++) {
+        if (arr[i].toUpperCase().includes(val.toUpperCase())) {
+          b = document.createElement("DIV");
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          b.addEventListener("click", function (e) {
+            input.value = this.getElementsByTagName("input")[0].value;
+            closeAllLists();
+            recherche();
+          });
+          a.appendChild(b);
+        }
+      }
+    });
+
+    function closeAllLists(elmnt) {
+      var x = document.getElementsByClassName("autocomplete-items");
+      for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != input) {
+          x[i].parentNode.removeChild(x[i]);
+        }
+      }
+    }
+
+    document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+    });
+
+    let cross = document.getElementById("clear-search");
+    cross.addEventListener("click", function () {
+      input.value = "";
+      recherche();
+    });
+  }
+
+  searchWithAutocomplete(input, users);
+}
+
+let chat = document.getElementById("chat");
+let resume = document.getElementById("resume");
+let resumeClient = document.getElementById("resumeClient");
+let resumeSupport = document.getElementById("resumeSupport");
+
+let chatSwitch = document.querySelector(".switch");
+let inputSwitch = document.querySelector(".switch input");
+
+let storageButton = document.getElementById("storage");
+if (storageButton != null) {
+  storageButton.addEventListener("click", toggleStorage);
+}
+
+let storage = false;
+
+resumeClient.remove();
+storageButton.style.display = "none";
+
+chatSwitch.addEventListener("click", function () {
+  if (inputSwitch.checked) {
+    resumeSupport.remove();
+    resume.append(resumeClient);
+    storageButton.style.display = "block";
+    storageButton.click();
+    storageButton.click();
+  } else {
+    resumeClient.remove();
+    resume.append(resumeSupport);
+    storageButton.style.display = "none";
+  }
+});
+
+function toggleStorage() {
+  if (storage) {
+    storage = false;
+    storageButton.classList.remove("active");
+    addStorage();
+  } else {
+    storage = true;
+    storageButton.classList.add("active");
+    removeStorage();
+  }
+}
+
+function removeStorage() {
+  for (let i = 0; i < message.length; i++) {
+    if (message[i].classList.contains("0")) {
+      message[i].style.display = "block";
+    } else {
+      message[i].style.display = "none";
+    }
+  }
+}
+
+function addStorage() {
+  for (let i = 0; i < message.length; i++) {
+    if (message[i].classList.contains("0")) {
+      message[i].style.display = "none";
+    } else {
+      message[i].style.display = "block";
+    }
+  }
+}

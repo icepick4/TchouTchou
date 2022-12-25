@@ -16,8 +16,6 @@
 }
 
 #main {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
@@ -57,6 +55,9 @@ article {
   margin-left: var(--margin);
   margin-top: 30px;
   margin-bottom: 30px;
+  background-color: #4f3510;
+  border-radius: 15px;
+  padding: 1% 1% 0% 1%;
 }
 
 article:nth-child(2n) {
@@ -87,6 +88,7 @@ article div.arti {
   margin-bottom: auto;
   margin-left: var(--margin2);
   margin-right: var(--margin2);
+  width: 50%;
 }
 
 .arti > a {
@@ -119,7 +121,7 @@ article div.arti {
 }
 
 article div.arti .btn {
-  width: 80%;
+  width: 20%;
 }
 
 article img {

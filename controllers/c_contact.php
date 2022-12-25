@@ -2,6 +2,11 @@
 
 require_once(PATH_MODELS . 'MessageDAO.php');
 require_once(PATH_MODELS . 'UserDAO.php');
+$user = new UserDAO();
+if($user->isEmployee($_SESSION['user_id'])){
+    header("Location: index.php?page=home");
+    die();
+}
 if (isset($_SESSION['user_id'])) { ;
     if (isset($_POST['subject']) && isset($_POST['desc']))
     {
@@ -11,9 +16,7 @@ if (isset($_SESSION['user_id'])) { ;
         $result = $messageDAO->insertDiscussion($subject,$_SESSION['user_id'],null,null,null,null,99);
         $messageDAO->insertMessage($desc,$result,$_SESSION['user_id']);
     }
-} 
-else 
-{
+}else{
     if (isset($_POST['name']) && isset($_POST['fname']) && isset($_POST['tel']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['desc']))
     {
         $userDAO = new UserDAO();

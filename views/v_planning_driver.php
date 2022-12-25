@@ -8,7 +8,7 @@
 <table>
     <thead>
         <tr>
-            <th colspan="2"><?= $date['SYSDATE'] ?></th>
+            <th colspan="200"><?= $date['SYSDATE'] ?></th>
         </tr>
     </thead>
     <tbody>
