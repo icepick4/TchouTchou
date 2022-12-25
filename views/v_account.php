@@ -31,7 +31,7 @@ if ($_SESSION['logged']) {
                     </td>
                     <td>
                         <button>
-                            <img src="assets/images/edit.png" alt="edit" id="edit-first-name">
+                            <?= SVG_EDIT_PARAM_FIRST_NAME.SVG_EDIT ?>           
                         </button>
                     </td>
                 </tr>
@@ -47,7 +47,7 @@ if ($_SESSION['logged']) {
                         </form>
                     </td>
                     <td><button>
-                            <img src="assets/images/edit.png" alt="edit" id="edit-last-name">
+                            <?= SVG_EDIT_PARAM_LAST_NAME.SVG_EDIT ?>
                         </button>
                     </td>
                 </tr>
@@ -63,7 +63,7 @@ if ($_SESSION['logged']) {
                         </form>
                     </td>
                     <td><button>
-                            <img src="assets/images/edit.png" alt="edit" id="edit-phone">
+                            <?= SVG_EDIT_PARAM_PHONE.SVG_EDIT ?>
                         </button>
                     </td>
                 </tr>
@@ -79,7 +79,7 @@ if ($_SESSION['logged']) {
                         </form>
                     </td>
                     <td><button>
-                            <img src="assets/images/edit.png" alt="edit" id="edit-mail">
+                            <?= SVG_EDIT_PARAM_MAIL.SVG_EDIT ?>
                         </button>
                     </td>
                 </tr>

@@ -28,12 +28,14 @@
   background-color: var(--main-color);
 }
 
-.infos img {
+.infos svg {
+  fill: white;
+  stroke: white;
   width: 32px;
   height: 32px;
 }
 
-.infos img:hover {
+.infos svg:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
