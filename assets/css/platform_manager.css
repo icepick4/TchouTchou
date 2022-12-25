@@ -247,6 +247,20 @@ div.list_quai.loading .quai.block{
 }
 
 
+.quai button.btn_actif.warned {
+	border: 3px solid yellow;
+	color:  yellow;
+	text-decoration: none;
+
+}
+/*
+.quai button.btn_actif.warned {
+	border: 3px solid yellow;
+	color:  yellow;
+	text-decoration: none;
+
+}*/
+
 div.list_quai.loading .quai button.btn_actif{
 	color: var(--loading-grey);
 	border: 3px solid var(--loading-grey);
