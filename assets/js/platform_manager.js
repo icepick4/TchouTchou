@@ -103,11 +103,26 @@ function update_line() {
   });
 }
 
+async function checkWarned(el) {
+  console.log("warned updated")
+  if (el.warned == true){
+    el.classList.remove("warned");
+    el.warned = false;
+    if (el.actif == true) {
+      el.querySelector("p").innerHTML = "ouvert";
+    }else{
+      el.querySelector("p").innerHTML = "fermé";
+    }
+  }
+}
+
+
 async function switch_actif(el) {
   if (this.warned == false){
     this.querySelector("p").innerHTML = "comfirer";
     this.warned = true;
     this.classList.add("warned")
+    setTimeout(checkWarned.bind(null,this), 2000);
     return ;
   }
   let newStatus = 0;
