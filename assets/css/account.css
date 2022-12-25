@@ -120,7 +120,7 @@ form {
   background: none;
   border: none;
   width: 100%;
-  font-size: 0.6em;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -154,7 +154,7 @@ p.info {
   margin: auto;
 }
 
-.content div img {
+.content div svg {
   padding-right: 5%;
   width: 3rem;
   fill: white;
