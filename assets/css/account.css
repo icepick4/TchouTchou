@@ -146,19 +146,28 @@ p.info {
   width: 100%;
 }
 
-.content div {
+.links div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.content div p {
+.links div p {
   margin: auto;
 }
 
-.content div svg {
+.links div svg {
   padding-right: 5%;
   width: 3rem;
-  fill: white;
-  stroke: white;
+  fill: black;
+  stroke: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  .content div svg {
+    padding-right: 5%;
+    width: 3rem;
+    fill: white;
+    stroke: white;
+  }
 }
