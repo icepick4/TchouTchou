@@ -16,12 +16,14 @@
     for ($i = 0; $i < count($tickets); $i++) {
     ?>
         <div class="tickets">
+        <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">
             <div class="ticket">
                 <p><?= $tickets[$i]['DEPARTURE_DATE']?> ● Voyage à <span><?= $tickets[$i]['START_STATION_NAME']?></span></p>
                 <p><?= $tickets[$i]['DEPARTURE_TIME']?> - <?=$tickets[$i]['START_STATION_NAME']?></p>
                 <p><?= $tickets[$i]['END_TIME']?> - <?=$tickets[$i]['END_STATION_NAME']?></p>
-                <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">More...</a>
+                <div><p>x<?= $tickets[$i]['NBR']?></p><?= SVG_ACCOUNT?></div>
             </div>
+        </a>
 
         </div>
     <?php
