@@ -7,9 +7,15 @@ require_once(PATH_MODELS . 'Function.php');
 <script src=<?= PATH_JS . 'station_detail.js' ?> type="module" defer></script>
 
 <!--  Début de la page -->
-
-<button onclick="document.location.href='index.php?page=station_list'">
-    <?= RETURN_BUTTON ?></button>
+    <div class="container">
+        <button onclick="document.location.href='index.php?page=station_list'"><?= RETURN_BUTTON ?></button>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+            <p id="departuresText"><?= DEPARTURES?></p>
+            <p id="arrivalsText"><?= ARRIVALS?></p>
+        </label>
+    </div>
     <?php if(isset($station_name['STATION_NAME'])) {?>
         <h1><?= STATION_OF . $station_name['STATION_NAME'] ?></h1>
         <?php
@@ -19,12 +25,6 @@ require_once(PATH_MODELS . 'Function.php');
             <?php
         } else {
             ?>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                    <p id="departuresText"><?= DEPARTURES?></p>
-                    <p id="arrivalsText"><?= ARRIVALS?></p>
-                </label>
                 <section id="departures">
             <?php
             if ($departTravels) { ?>
@@ -37,7 +37,7 @@ require_once(PATH_MODELS . 'Function.php');
                             <td><?= SVG_LOGO ?></td>
                             <td>
                                 <p><? if($travel['LATE_TIME'] == null){ echo ON_TIME;}else{ echo DELAY_OF . $travel['LATE_TIME'] . MIN; }  ?></p>
-                                <p><?= $travel['TRAIN_ID'] ?></p>
+                                <p>n°<?= $travel['TRAIN_ID'] ?></p>
                             </td>
                             <td>
                                 <h3><?= strTo24Time($travel['DEPARTURE_TIME']) ?></h3>
@@ -88,7 +88,9 @@ require_once(PATH_MODELS . 'Function.php');
         }else{
             echo "<h1>" . STATION_NOT_EXIST . "</h1>";
         } ?>
+        
             </section>
+            <button id="fullScreenButton"><?= FULL_SCREEN ?></button>
 
 <!--  Fin de la page -->
 

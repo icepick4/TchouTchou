@@ -1,15 +1,3 @@
-button {
-  margin-top: 2em;
-  padding: 10px;
-  background-color: var(--main-color);
-  color: #fff;
-  font-weight: 700;
-  font-size: 2em;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-}
-
 #main h1 {
   padding-left: 1em;
   font-size: 4em;
@@ -50,6 +38,7 @@ td:nth-child(3) {
   color: var(--main-color);
 }
 td:nth-child(4) {
+  font-size: 2rem;
 }
 td:nth-child(5) {
   font-size: 2rem;
@@ -150,6 +139,30 @@ input:checked ~ #departuresText {
 }
 input:checked ~ #arrivalsText {
   opacity: 1;
+}
+
+button {
+  padding: 10px;
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 2em;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  margin-top: 2em;
+  width: 60%;
+  justify-content: space-around;
+}
+#fullScreenButton {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.5em 1em;
+  font-size: 1em;
 }
 
 @media (prefers-color-scheme: light) {
