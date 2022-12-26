@@ -141,11 +141,22 @@ article img {
 @media (max-width: 800px) {
   article:nth-child(n) {
     flex-wrap: wrap;
-    margin: auto;
-    margin-top: var(--margin2);
-    margin-bottom: var(--margin2);
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+    width: 94%;
   }
-  .btn {
-    margin: var(--margin2);
+  article div.arti .btn {
+    margin: var(--margin);
+    width: min-content;
+  }
+  .btn img {
+    margin-left: 10px;
+  }
+  article div.arti {
+    width: 100%;
+  }
+  article img {
+    height: 15em;
+    margin: auto;
   }
 }
