@@ -43,3 +43,9 @@ footer section nav a {
   user-select: none;
   margin: 0.5em 0;
 }
+
+@media only screen and (max-width: 800px) {
+  footer {
+    text-align: center;
+  }
+}

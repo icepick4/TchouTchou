@@ -97,7 +97,9 @@ body {
     background-color: var(--bg-black-color);
     color: var(--bg-white-color);
   }
-
+  html {
+    overflow-x: hidden;
+  }
   .links a {
     color: white;
   }
