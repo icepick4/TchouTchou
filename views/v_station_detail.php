@@ -4,6 +4,7 @@ require_once(PATH_VIEWS . 'header.php');
 require_once(PATH_MODELS . 'Function.php');
 
 ?>
+<script src=<?= PATH_JS . 'station_detail.js' ?> type="module" defer></script>
 
 <!--  Début de la page -->
 
@@ -17,63 +18,73 @@ require_once(PATH_MODELS . 'Function.php');
             <h2><?= NO_TRAIN ?></h2>
             <?php
         } else {
+            ?>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                    <p id="departuresText"><?= DEPARTURES?></p>
+                    <p id="arrivalsText"><?= ARRIVALS?></p>
+                </label>
+                <section id="departures">
+            <?php
             if ($departTravels) { ?>
-                <h2> <?= DEPARTURES ?> </h2>
+            
                 <table>
-                    <tr>
-                        <th><?= TRAIN_NUMBER ?></th>
-                        <th><?= DEPARTURE_TIME ?></th>
-                        <th><?= DESTINATION ?></th>
+                    <tbody>
                         <?php
-
-                        foreach ($departTravels as $travel) {
-                        ?>
-                    <tr>
-                        <td>
-                            <h3><?= $travel['TRAIN_ID'] ?></h3>
-                        </td>
-                        <td>
-                            <h3><?= strTo24Time($travel['DEPARTURE_TIME']) ?></h3>
-                        </td>
-                        <td>
-                            <h3><?= $travel['DESTINATION'] ?></h3>
-                        </td>
-                    <tr>
-                    <?php
-                        }
-                    ?>
-                </table>
-            <? } else { ?>
-                <h2><?= NO_DEPARTURE ?>
-                <?php };
-            if ($arrivalTravels) { ?>
-                    <h2> <?= ARRIVALS ?> </h2>
-                    <table>
+                        foreach ($departTravels as $travel) {?>
                         <tr>
-                            <th><?= TRAIN_NUMBER ?></th>
-                            <th><?= ARRIVAL_TIME ?></th>
-                            <th><?= DESTINATION ?></th>
+                            <td><?= SVG_LOGO ?></td>
+                            <td>
+                                <p><? if($travel['LATE_TIME'] == null){ echo ON_TIME;}else{ echo DELAY_OF . $travel['LATE_TIME'] . MIN; }  ?></p>
+                                <p><?= $travel['TRAIN_ID'] ?></p>
+                            </td>
+                            <td>
+                                <h3><?= strTo24Time($travel['DEPARTURE_TIME']) ?></h3>
+                            </td>
+                            <td>
+                                <h3><?= $travel['DESTINATION'] ?></h3>
+                            </td>
+                            <td><p>A</p></td>
                         </tr>
                         <?php
-                        foreach ($arrivalTravels as $travel) {
-                        ?>
-                            <tr>
-                                <td>
-                                    <h3><?= $travel['TRAIN_ID'] ?></h3>
-                                </td>
-                                <td>
-                                    <h3><?= strTo24Time($travel['ARRIVAL_TIME']) ?></h3>
-                                </td>
-                                <td>
-                                    <h3><?= $travel['DESTINATION'] ?></h3>
-                                </td>
-                            <tr>
-                            <?php
                         }
-                            ?>
-                    </table><?php
+                        ?>
+                    </tbody>
+                </table>
+            <? } else { ?>
+                <h2><?= NO_DEPARTURE ?></h2>
+                <?php };
+            ?></section>
+            <section id="arrivals">
+                <?php
+            if ($arrivalTravels) { ?>
+                    <table>
+                    <tbody>
+                        <?php
+                        foreach ($arrivalTravels as $travel) {?>
+                        <tr>
+                            <td><?= SVG_LOGO ?></td>
+                            <td>
+                                <p><? if($travel['LATE_TIME'] == null){ echo ON_TIME;}else{ echo DELAY_OF . $travel['LATE_TIME'] . MIN; }  ?></p>
+                                <p><?= $travel['TRAIN_ID'] ?></p>
+                            </td>
+                            <td>
+                                <h3><?= strTo24Time($travel['ARRIVAL_TIME']) ?></h3>
+                            </td>
+                            <td>
+                                <h3><?= $travel['DESTINATION'] ?></h3>
+                            </td>
+                            <td><p>A</p></td>
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+                <?php
                         } else { ?><h2><?= NO_ARRIVAL ?></h2><?php }
-                                                        }
+            }?></section><?php
         }else{
             echo "<h1>" . STATION_NOT_EXIST . "</h1>";
         } ?>

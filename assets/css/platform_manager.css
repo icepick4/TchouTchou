@@ -1,65 +1,66 @@
-:root{
-
-	border-radius: 15px;
-	--loading-grey: grey;
+:root {
+  border-radius: 15px;
+  --loading-grey: grey;
 }
 
-#main{
-	display: block;
-	text-align: unset;
+#main {
+  display: block;
+  text-align: unset;
 }
 
-#title{
-	margin-left: 10px;
-	text-transform: capitalize;
+#title {
+  margin-left: 10px;
+  text-transform: capitalize;
 }
 
-fieldset{
-	border-radius: 15px;
-	text-transform: capitalize;
+fieldset {
+  border-radius: 15px;
+  text-transform: capitalize;
 }
 
-select{
-	background-color: var(--bg-black-color);
-	color: white;
-	border-radius: 15px;
-	width: fit-content;
+select {
+  background-color: var(--bg-black-color);
+  color: white;
+  border-radius: 15px;
+  width: fit-content;
 }
 
-p{
-	margin: 0;
+p {
+  margin: 0;
 }
 
-.control_pannel{
-	width: auto;
-	margin: 5px;
-	display: flex;
+.control_pannel {
+  width: auto;
+  margin: 5px;
+  display: flex;
 }
 
-.control_pannel fieldset{
-	width: 50%;
+.control_pannel fieldset {
+  width: 50%;
 }
 
-.approching-train{
-	display: flex;
-	
+.approching-train {
+  display: flex;
 }
 
-.select_option{
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 15px;
+.select_option {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
 }
 
-select.loading{
-	animation-duration: 3s;
-	animation-fill-mode: forwards;
-	animation-iteration-count: infinite;
-	animation-name: placeHolderLoading;
-	animation-timing-function: linear;
-	background: linear-gradient(to right, 
-		var(--bg-black-color) 8%, #dddddd 18%, var(--bg-black-color) 33%);
-
+select.loading {
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderLoading;
+  animation-timing-function: linear;
+  background: linear-gradient(
+    to right,
+    var(--bg-black-color) 8%,
+    #dddddd 18%,
+    var(--bg-black-color) 33%
+  );
 }
 
 @keyframes placeHolderLoading {
@@ -71,187 +72,161 @@ select.loading{
   }
 }
 
-
-
-
-
-
 /* css for good platform */
-.hidden{
-	opacity: 0;
-	z-index: -1;
+.hidden {
+  opacity: 0;
+  z-index: -1;
 }
 
-div.aiguillage{
-	/*
+div.aiguillage {
+  /*
 	position: relative;
 	width: 100%;
 	height: 80vh;
 	background-color: rgb(0,0,10);
 	*/
-	
-	overflow:auto;
-	color:  #E1DB4A;
+
+  overflow: auto;
+  color: #e1db4a;
 }
 
-
-
-div.suport_rail{
-	position: relative;
-	width: 100%;
-	height: 100%;
+div.suport_rail {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
-div.list_quai{
-	display: grid;
-	height: 100%;
-	width: 84%;
-	margin-left:8% ;
-	margin-right:8% ;
-	grid-auto-rows: minmax(100px, auto);
+div.list_quai {
+  display: grid;
+  height: 100%;
+  width: 84%;
+  margin-left: 8%;
+  margin-right: 8%;
+  grid-auto-rows: minmax(100px, auto);
 }
 
-div.list_quai.loading{
-	color: var(--loading-grey);
+div.list_quai.loading {
+  color: var(--loading-grey);
 }
 
-
-
-div.list_quai .quai{
-	z-index: 1;
-	background-color: orange;
-	box-shadow: 1px 0px 0px orange, -2px 0px 0px orange;
-	margin: auto;
-	height: 5px;
-	width: 70%;
+div.list_quai .quai {
+  z-index: 1;
+  background-color: orange;
+  box-shadow: 1px 0px 0px orange, -2px 0px 0px orange;
+  margin: auto;
+  height: 5px;
+  width: 70%;
 }
 
-
-
-div.list_quai .quai.free{
-	background-color: rgb(0,255,0);
-	box-shadow: 1px 0px 0px rgb(0,255,0), -2px 0px 0px rgb(0,255,0);
-	/* box shadow to remove enmpty angle*/
+div.list_quai .quai.free {
+  background-color: rgb(0, 255, 0);
+  box-shadow: 1px 0px 0px rgb(0, 255, 0), -2px 0px 0px rgb(0, 255, 0);
+  /* box shadow to remove enmpty angle*/
 }
 
-
-
-div.list_quai .quai.block{
-	background-color: red;
-	box-shadow: 1px 0px 0px red, -2px 0px 0px red;
+div.list_quai .quai.block {
+  background-color: red;
+  box-shadow: 1px 0px 0px red, -2px 0px 0px red;
 }
 
-div.list_quai.loading .quai{
-	background-color: ;
-	box-shadow: 1px 0px 0px var(--loading-grey), -2px 0px 0px var(--loading-grey);
+div.list_quai.loading .quai {
+  background-color: red;
+  box-shadow: 1px 0px 0px var(--loading-grey), -2px 0px 0px var(--loading-grey);
 }
 
-div.list_quai.loading .quai.free{
-	background-color: var(--loading-grey);
-	box-shadow: 1px 0px 0px var(--loading-grey), -2px 0px 0px var(--loading-grey);
+div.list_quai.loading .quai.free {
+  background-color: var(--loading-grey);
+  box-shadow: 1px 0px 0px var(--loading-grey), -2px 0px 0px var(--loading-grey);
 }
 
-div.list_quai.loading .quai.block{
-	background-color: var(--loading-grey);
-	box-shadow: 1px 0px 0px var(--loading-grey), -2px 0px 0px var(--loading-grey);
+div.list_quai.loading .quai.block {
+  background-color: var(--loading-grey);
+  box-shadow: 1px 0px 0px var(--loading-grey), -2px 0px 0px var(--loading-grey);
 }
 
-
-.quai div.quai_info{
-	position: relative;
-	display: grid;
-	/*flex-direction: row;*/
-	grid-template-columns: 1fr 2fr 2fr 3fr;
-	top:  -40px;
-	height: 40px;
-	width: 50%;
-
-
+.quai div.quai_info {
+  position: relative;
+  display: grid;
+  /*flex-direction: row;*/
+  grid-template-columns: 1fr 2fr 2fr 3fr;
+  top: -40px;
+  height: 40px;
+  width: 50%;
 }
 
-.quai div.quai_info .train_icon_box{
-	margin-top: auto;
-	margin-bottom: auto;
-	height: 30px;
-	min-width: 70px;
-	margin-left: 10px;
-	overflow: hidden;
-
+.quai div.quai_info .train_icon_box {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 30px;
+  min-width: 70px;
+  margin-left: 10px;
+  overflow: hidden;
 }
-.quai div.quai_info .logo_train{
-	margin-top: auto;
-	margin-bottom: auto;
-	opacity: 0;
-	height: 100%;
-	width: auto;
-	
+.quai div.quai_info .logo_train {
+  margin-top: auto;
+  margin-bottom: auto;
+  opacity: 0;
+  height: 100%;
+  width: auto;
 }
 
 .quai div.quai_info .logo_train.visible_train.no_train {
-	animation: 1s cubic-bezier(0.65, -0.03, 0.67, 0.79) 0s  train_in_quai_out;
-	transform: translateX(-100%);
-
+  animation: 1s cubic-bezier(0.65, -0.03, 0.67, 0.79) 0s train_in_quai_out;
+  transform: translateX(-100%);
 }
 
 .quai div.quai_info .logo_train.visible_train {
-	animation: 1s cubic-bezier(0, 0, 0.25, 0.99) 0s  train_in_quai;
-	opacity: 1;
-	transform: translateX(0%);
+  animation: 1s cubic-bezier(0, 0, 0.25, 0.99) 0s train_in_quai;
+  opacity: 1;
+  transform: translateX(0%);
 }
-.quai label{
-	margin-left: 10px;
-	font-weight: bold;
-	font-size: 30px;
-	place-self: center;
-	
-
+.quai label {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  place-self: center;
 }
 
-.quai label.train_number{
-	place-self: flex-start;
+.quai label.train_number {
+  place-self: flex-start;
 
-	font-weight: 500;
+  font-weight: 500;
 }
 
-.quai button.btn_actif{
-	margin-left: 5px;
-	margin-top: auto;
-	margin-bottom: auto;
-	background-color: rgba(0,0,0,0);
-	border: 3px solid red;
-	color:  red;
-	font-size: 16px;
-	text-transform: uppercase;
-	border-radius: 5px;
-	text-decoration: line-through;
-	width: 8rem;
-	place-self: center;
-
+.quai button.btn_actif {
+  margin-left: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: rgba(0, 0, 0, 0);
+  border: 3px solid red;
+  color: red;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-decoration: line-through;
+  width: 8rem;
+  place-self: center;
 }
 
-.quai button.btn_actif:active{
-	background-color: red;
-	color: black;
-
+.quai button.btn_actif:active {
+  background-color: red;
+  color: black;
 }
 
-.quai button.btn_actif.actif{
-	border: 3px solid rgb(0,255,0);
-	color:  rgb(0,255,0);
-	text-decoration: none;
-
+.quai button.btn_actif.actif {
+  border: 3px solid rgb(0, 255, 0);
+  color: rgb(0, 255, 0);
+  text-decoration: none;
 }
 
-.quai button.btn_actif.actif:active{
-	background-color: rgb(0,255,0);
-	color: black;
+.quai button.btn_actif.actif:active {
+  background-color: rgb(0, 255, 0);
+  color: black;
 }
-
 
 .quai button.btn_actif.warned {
-	border: 3px solid yellow;
-	color:  yellow;
-	text-decoration: none;
-
+  border: 3px solid yellow;
+  color: yellow;
+  text-decoration: none;
 }
 /*
 .quai button.btn_actif.warned {
@@ -261,87 +236,84 @@ div.list_quai.loading .quai.block{
 
 }*/
 
-div.list_quai.loading .quai button.btn_actif{
-	color: var(--loading-grey);
-	border: 3px solid var(--loading-grey);
+div.list_quai.loading .quai button.btn_actif {
+  color: var(--loading-grey);
+  border: 3px solid var(--loading-grey);
 }
 
-div#reference{
-	position: absolute;
-	left: 0px;
-	top: 0px;
-
+div#reference {
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
-div.start{
-	background-color: rgb(0,255,0);
-	position: absolute;
-	left: 0px;
-	top: 20vh;
-	height: 5px;
-}
-
-div.finish{
-	background-color: rgb(0,255,0);
-	position: absolute;
-	right: 0px;
-	top: 20vh;
-	height: 5px;
+div.start {
+  background-color: rgb(0, 255, 0);
+  position: absolute;
+  left: 0px;
+  top: 20vh;
+  height: 5px;
 }
 
-.arrow{
-
-  stroke:rgb(0,255,0);
-  stroke-width:5; 
+div.finish {
+  background-color: rgb(0, 255, 0);
+  position: absolute;
+  right: 0px;
+  top: 20vh;
+  height: 5px;
 }
 
-.suport_rail.loading #connection-liste svg .arrow{
-	stroke: var(--loading-grey);
+.arrow {
+  stroke: rgb(0, 255, 0);
+  stroke-width: 5;
 }
 
-svg.rail{
-	position: absolute;
-	top: 0px;
-	height:100%;
-	width:100%;
-
+.suport_rail.loading #connection-liste svg .arrow {
+  stroke: var(--loading-grey);
 }
 
-
-
-
-
-
-
-
-@keyframes train_in_quai { 
-	from { 
-		transform: translateX(-100%); 
-		opacity: 0;
-	} 
-	to { 
-		transform: translateX(0%); 
-		opacity: 1;
-	}  
+svg.rail {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
 }
 
-@keyframes train_in_quai_out { 
-	from { 
-		transform: translateX(0%); 
-		opacity: 1;
-	} 
-	to { 
-		transform: translateX(100%); 
-		opacity: 0;
-	}  
+@keyframes train_in_quai {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 
-@keyframes in_coming_train { 
-	0% { 
-		transform: translateX(-100%); 
-		opacity: 0;
-	} 
-	100% { 
-		transform: translateX(0%); 
-		opacity: 1;
-	}  
+@keyframes train_in_quai_out {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes in_coming_train {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .control_pannel {
+    display: flex;
+    flex-direction: column;
+  }
 }

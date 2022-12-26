@@ -112,6 +112,9 @@ define('NO_TRAIN', 'Aucun train prévu pour le moment');
 define('NO_ARRIVAL', 'Aucune arrivée prévue pour le moment');
 define('NO_DEPARTURE', 'Aucun départ prévu pour le moment');
 define('STATION_NOT_EXIST', 'Cette gare n\'existe pas');
+define('ON_TIME', 'À l\'heure');
+define('DELAY_OF','Retard de');
+define('MIN','min');
 
 //tickets
 
