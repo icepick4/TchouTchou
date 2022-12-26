@@ -66,4 +66,10 @@ class MessageDAO extends DAO
         return $this->queryRow($sql, $args);
     }
 
+    public function storeDiscussion($id, $status){
+        $sql = 'UPDATE DISCUSSION SET STATUS = :status WHERE DISCUSSION_ID = :id';
+        $args = array(':id' => $id, ':status' => $status);
+        $this->queryEdit($sql, $args);
+    }
+
 }

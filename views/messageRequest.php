@@ -2,6 +2,7 @@
 <html>
 
 <body>
+    
     <?php
     chdir("../");
     //pour utiliser le fichier de config de base
@@ -45,7 +46,10 @@
     <?php if(!$user->isEmployee($user_id) || !$user->isEmployee($receiver['USER_ID'])){
         if($user->isEmployee($user_id)){ 
             $extern = true;?>
-    <img src="/assets/images/storage.svg" id="storageImage">
+    <a onclick='console.log(<?= $id_discussion ?>);
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "views/addMessageToStorage.php?id=<?= $id_discussion ?>", true);
+    xhttp.send();setTimeout(function(){window.location.replace("index.php?page=messages&extern=true")},200);'><img src="/assets/images/storage.svg" id="storageImage"  ></a>
     
     <?php }} ?>
     </div>
