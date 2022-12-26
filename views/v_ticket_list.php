@@ -21,7 +21,7 @@
                 <p><?= $tickets[$i]['DEPARTURE_DATE']?> ● Voyage à <span><?= $tickets[$i]['START_STATION_NAME']?></span></p>
                 <p><?= $tickets[$i]['DEPARTURE_TIME']?> - <?=$tickets[$i]['START_STATION_NAME']?></p>
                 <p><?= $tickets[$i]['END_TIME']?> - <?=$tickets[$i]['END_STATION_NAME']?></p>
-                <div><p>x<?= $tickets[$i]['NBR']?></p><?= SVG_ACCOUNT?></div>
+                <div><?= SVG_ACCOUNT?><p>x<?= $tickets[$i]['NBR']?></p></div>
             </div>
         </a>
 

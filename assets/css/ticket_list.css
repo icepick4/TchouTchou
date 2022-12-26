@@ -28,6 +28,8 @@
 }
 .ticket div {
   display: flex;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 .ticket div svg {
   width: 30px;
@@ -41,6 +43,7 @@
 }
 .ticket div p {
   font-size: 1em;
+  margin: 0;
 }
 .ticket p {
   font-size: 1em;
@@ -66,4 +69,13 @@
   display: flex;
   justify-content: center;
   margin-top: 3%;
+}
+
+@media only screen and (max-width: 800px) {
+  .tickets {
+    width: 96%;
+  }
+  #title-ticket-list h1 {
+    margin: 0;
+  }
 }
