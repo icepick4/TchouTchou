@@ -365,14 +365,15 @@ input:checked ~ #extern {
 }
 
 #storageImage {
-  padding-right: 2%;
   display: flex;
   width: 50px;
   height: 100%;
-  align-self: flex-end;
 }
-
-#storageImage:hover {
+#headermsg a {
+  margin-right: 20px;
+  transition: transform 0.2s;
+}
+#headermsg a:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
