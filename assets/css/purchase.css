@@ -144,8 +144,16 @@ select:focus {
 }
 
 input[type="number"] {
+  -moz-appearance: textfield;
   text-align: center;
   border-radius: 0%;
+}
+
+/* Opéra*/
+input::-o-inner-spin-button,
+input::-o-outer-spin-button {
+  -o-appearance: none;
+  margin: 0;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
