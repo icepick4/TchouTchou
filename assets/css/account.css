@@ -171,3 +171,16 @@ p.info {
     stroke: white;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .content {
+    flex-direction: column;
+  }
+  .infos table {
+    font-size: 1em;
+  }
+  .infos {
+    display: block;
+    width: 96%;
+  }
+}
