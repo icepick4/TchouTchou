@@ -293,9 +293,8 @@ input:checked + .slider:before {
 .switch #extern,
 .switch #intern {
   position: absolute;
-
   font-weight: bold;
-  top: 8px;
+  top: 4px;
   left: 36px;
 }
 .switch #intern {

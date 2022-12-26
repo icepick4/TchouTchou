@@ -213,3 +213,7 @@ function addStorage() {
     }
   }
 }
+
+if (document.location.href.includes("extern")) {
+  chatSwitch.click();
+}
