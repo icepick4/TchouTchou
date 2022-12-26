@@ -44,6 +44,7 @@ require_once(PATH_MODELS . 'Function.php');
                             </td>
                             <td>
                                 <h3><?= $travel['DESTINATION'] ?></h3>
+                                <p><? if($travel['LATE_TIME'] == null){ echo ON_TIME;}else{ echo DELAY_OF . $travel['LATE_TIME'] . MIN; }  ?></p>
                             </td>
                             <td><p>A</p></td>
                         </tr>
@@ -74,6 +75,7 @@ require_once(PATH_MODELS . 'Function.php');
                             </td>
                             <td>
                                 <h3><?= $travel['DESTINATION'] ?></h3>
+                                <p><? if($travel['LATE_TIME'] == null){ echo ON_TIME;}else{ echo DELAY_OF . $travel['LATE_TIME'] . MIN; }  ?></p>
                             </td>
                             <td><p>A</p></td>
                         </tr>

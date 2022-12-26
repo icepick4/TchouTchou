@@ -40,6 +40,9 @@ td:nth-child(3) {
 td:nth-child(4) {
   font-size: 2rem;
 }
+td:nth-child(4) p {
+  display: none;
+}
 td:nth-child(5) {
   font-size: 2rem;
 }
@@ -169,4 +172,28 @@ button {
 }
 
 @media only screen and (max-width: 800px) {
+  #main h1 {
+    font-size: 2em;
+    padding: 0;
+  }
+
+  .container {
+    width: 100%;
+  }
+  button {
+    font-size: 1.2em;
+  }
+  table {
+    width: 100vw;
+  }
+  td:nth-child(4) {
+    font-size: 1rem;
+  }
+  td:nth-child(4) p {
+    display: block;
+  }
+  td:nth-child(1),
+  td:nth-child(2) {
+    display: none;
+  }
 }
