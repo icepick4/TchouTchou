@@ -1,7 +1,6 @@
-<?php require_once(PATH_MODELS . 'UserDAO.php'); ?>
 <!DOCTYPE html>
-<html>
-
+<?php require_once(PATH_MODELS . 'UserDAO.php'); ?>
+<html lang=<?='"'.substr(LANG,0,2).'"' ?>>
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
