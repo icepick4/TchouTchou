@@ -32,7 +32,8 @@ require_once(PATH_MODELS . 'Function.php');
                 <table>
                     <tbody>
                         <?php
-                        foreach ($departTravels as $travel) {?>
+                        foreach ($departTravels as $travel){
+                            ?>
                         <tr>
                             <td><?= SVG_LOGO ?></td>
                             <td>
@@ -46,7 +47,9 @@ require_once(PATH_MODELS . 'Function.php');
                                 <h3><?= $travel['DESTINATION'] ?></h3>
                                 <p><? if($travel['LATE_TIME'] == null){ echo ON_TIME;}else{ echo DELAY_OF . $travel['LATE_TIME'] . MIN; }  ?></p>
                             </td>
-                            <td><p>A</p></td>
+                            <td><? $platform = $train->get_platform_used_for_travel($travel['TRAVEL_ID'],$_GET['id']);
+                            if($platform['PLATFORM_LETTER'] != null)
+                            echo "<p>". $platform['PLATFORM_LETTER'] ."</p>"; ?></td>
                         </tr>
                         <?php
                         }
@@ -63,12 +66,12 @@ require_once(PATH_MODELS . 'Function.php');
                     <table>
                     <tbody>
                         <?php
-                        foreach ($arrivalTravels as $travel) {?>
+                        foreach ($arrivalTravels as $travel){?>
                         <tr>
                             <td><?= SVG_LOGO ?></td>
                             <td>
                                 <p><? if($travel['LATE_TIME'] == null){ echo ON_TIME;}else{ echo DELAY_OF . $travel['LATE_TIME'] . MIN; }  ?></p>
-                                <p><?= $travel['TRAIN_ID'] ?></p>
+                                <p>n°<?= $travel['TRAIN_ID'] ?></p>
                             </td>
                             <td>
                                 <h3><?= strTo24Time($travel['ARRIVAL_TIME']) ?></h3>
@@ -77,7 +80,9 @@ require_once(PATH_MODELS . 'Function.php');
                                 <h3><?= $travel['DESTINATION'] ?></h3>
                                 <p><? if($travel['LATE_TIME'] == null){ echo ON_TIME;}else{ echo DELAY_OF . $travel['LATE_TIME'] . MIN; }  ?></p>
                             </td>
-                            <td><p>A</p></td>
+                            <td><? $platform = $train->get_platform_used_for_travel($travel['TRAVEL_ID'],$_GET['id']);
+                            if($platform['PLATFORM_LETTER'] != null)
+                            echo "<p>". $platform['PLATFORM_LETTER'] ."</p>"; ?></td>
                         </tr>
                         <?php
                         }
