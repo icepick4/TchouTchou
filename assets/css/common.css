@@ -105,7 +105,7 @@ body {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--main-color) none;
+  scrollbar-color: var(--main-color);
 }
 
 *::-webkit-scrollbar {
