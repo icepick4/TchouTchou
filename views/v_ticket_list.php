@@ -16,7 +16,7 @@
     for ($i = 0; $i < count($tickets); $i++) {
     ?>
         <div class="tickets">
-        <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">
+        <a href="index.php?page=ticket_single&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">
             <div class="ticket">
                 <p><?= $tickets[$i]['DEPARTURE_DATE']?> ● Voyage à <span><?= $tickets[$i]['START_STATION_NAME']?></span></p>
                 <p><?= $tickets[$i]['DEPARTURE_TIME']?> - <?=$tickets[$i]['START_STATION_NAME']?></p>

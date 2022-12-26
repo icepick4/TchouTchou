@@ -39,7 +39,11 @@ define('TRAIN_USE', 'En cours d\'utilisation');
 define('TRAIN_MAINTENANCE', 'En maintenance');
 define('BTN_ADD', 'Ajouter');
 define('TITLE_PLANNING', 'Planning');
+define('YOUR_TRAVEL', 'Votre voyage');
+define('MESSAGE', 'Mes Messages');
+define('TICKETS_DETAIL', 'Détails de vos billets');
 
+// DAYS & MONTHS
 define('MONDAY', 'Lundi');
 define('TUESDAY', 'Mardi');
 define('WEDNESDAY', 'Mercredi');
@@ -47,7 +51,19 @@ define('THURSDAY', 'Jeudi');
 define('FRIDAY', 'Vendredi');
 define('SATURDAY', 'Samedi');
 define('SUNDAY', 'Dimanche');
-define('MESSAGE', 'Mes Messages');
+define('JANUARY', 'Janvier');
+define('FEBRUARY', 'Février');
+define('MARCH', 'Mars');
+define('APRIL', 'Avril');
+define('MAY', 'Mai');
+define('JUNE', 'Juin');
+define('JULY', 'Juillet');
+define('AUGUST', 'Août');
+define('SEPTEMBER', 'Septembre');
+define('OCTOBER', 'Octobre');
+define('NOVEMBER', 'Novembre');
+define('DECEMBER', 'Décembre');
+
 //Home
 define('MY_ACCOUNT', 'Mon Compte');
 define('MY_TICKETS', 'Mes Billets');
@@ -125,7 +141,7 @@ define('TRAVEL', 'Voyage');
 define('TRAIN', 'Train');
 define('BACK_TICKETS', 'Retournez à vos tickets');
 define('MINUTES', 'minutes');
-define('TRAVEL_TO', 'Voyage vers');
+define('TRAVEL_TO', 'Voyage vers ');
 define('BUY', 'Acheter');
 
 //home client
