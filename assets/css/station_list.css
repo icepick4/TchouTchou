@@ -26,9 +26,11 @@ table th {
   background-color: var(--main-color);
   color: var(--txt-white-color);
 }
-
+table td {
+  transition: transform 0.5s;
+}
 table tr:nth-child(even) {
-  background-color: var(--light-main-color);
+  background-color: var(transform);
   color: white;
 }
 
@@ -37,9 +39,7 @@ table tr:nth-child(odd):not(:first-child) {
 }
 
 table tr:hover {
-  background-color: var(--main-color);
   cursor: pointer;
-  border: 1px solid white;
 }
 table tr:hover td {
   color: var(--txt-white-color);
@@ -135,6 +135,10 @@ table td {
   }
   table tr:nth-child(odd):not(:first-child) {
     color: white;
+  }
+
+  table tr:hover td {
+    transform: scale(1.1);
   }
 }
 

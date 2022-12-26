@@ -178,9 +178,10 @@ p.info {
   }
   .infos table {
     font-size: 1em;
+    border-spacing: 5px 5px;
   }
   .infos {
     display: block;
-    width: 96%;
+    width: 94%;
   }
 }

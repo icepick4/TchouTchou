@@ -7,7 +7,7 @@
 
 <?php
 
-if ($_SESSION['logged']) {
+
 ?>
     <div id="title-ticket-list">
         <h1><?= MY_TICKETS ?></h1>
@@ -33,7 +33,7 @@ if ($_SESSION['logged']) {
         </div>
 <?php
     }
-}
+
 ?>
 <div class="link-ticket-list">
     <div class="links">

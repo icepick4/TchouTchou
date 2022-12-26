@@ -376,3 +376,30 @@ input:checked ~ #extern {
   cursor: pointer;
   transform: scale(1.1);
 }
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 3em;
+  }
+  #headermsg h2 {
+    font-size: 1em;
+    margin: 2px 0;
+  }
+  #chat {
+    flex-direction: column;
+    height: unset;
+  }
+  #resume {
+    width: 100%;
+    max-height: 80vh;
+    overflow-x: hidden;
+    border-bottom: 2px solid var(--bg-white-color);
+  }
+  #messages {
+    width: 100%;
+    max-height: 80vh;
+  }
+  #messages p {
+    padding: 6px;
+  }
+}
