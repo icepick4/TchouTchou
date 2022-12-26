@@ -20,7 +20,7 @@ table th {
   border: 1px solid var(--main-color);
 }
 
-table tr:first-child {
+table th {
   font-size: 25px;
   font-weight: bold;
   background-color: var(--main-color);
@@ -135,5 +135,23 @@ table td {
   }
   table tr:nth-child(odd):not(:first-child) {
     color: white;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  table {
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+  }
+  table tr {
+    font-size: 10px;
+  }
+  table th {
+    font-size: 12px;
+  }
+  table h3 {
+    margin: 0;
   }
 }
