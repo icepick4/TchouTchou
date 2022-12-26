@@ -17,13 +17,9 @@
     ?>
         <div class="tickets">
             <div class="ticket">
-                <p>From</p>
-                <p> <?php echo $tickets[$i]['START_STATION_NAME'] ?> </p>
-                <p>To</p>
-                <p> <?php echo $tickets[$i]['END_STATION_NAME'] ?> </p>
-                <p> The <?php //get hour and date of the date
-                        $date = $tickets[$i]['DEPARTURE_TIME'];
-                        echo $date; ?> </p>
+                <p><?= $tickets[$i]['DEPARTURE_DATE']?> ● Voyage à <span><?= $tickets[$i]['START_STATION_NAME']?></span></p>
+                <p><?= $tickets[$i]['DEPARTURE_TIME']?> - <?=$tickets[$i]['START_STATION_NAME']?></p>
+                <p><?= $tickets[$i]['END_TIME']?> - <?=$tickets[$i]['END_STATION_NAME']?></p>
                 <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">More...</a>
             </div>
 
