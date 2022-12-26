@@ -1,0 +1,31 @@
+#map {
+  width: 100%;
+}
+#fullScreenButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  margin: 10px;
+  transition: transform 0.2s;
+}
+#fullScreenButton img {
+  width: 100%;
+}
+#fullScreenButton:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#mapContainer {
+  position: relative;
+  width: 50%;
+}
+h2 {
+  font-size: 3em;
+  font-weight: 700;
+  color: var(--main-color);
+}
+#faq p:first-child {
+  font-weight: bold;
+  color: var(--light-main-color);
+}
