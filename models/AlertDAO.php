@@ -14,8 +14,13 @@ class AlertDAO extends DAO{
         return $this->queryAll($sql);
     }
 
-    public function getAllCurrentAlert(){
+    public function getAllCurrentAlerts(){
         $sql = 'SELECT * FROM ALERT A INNER JOIN ALERT_TYPE A_T ON A.ALERT_TYPE_ID=A_T.ALERT_TYPE_ID WHERE ALERT_STATUS=1 ORDER BY ALERT_DATE DESC';
+        return $this->queryAll($sql);
+    }
+
+    public function getAllCurrentAlertsType(){
+        $sql = 'SELECT DISTINCT ALERT_TYPE_LABEl FROM ALERT A INNER JOIN ALERT_TYPE A_T ON A.ALERT_TYPE_ID=A_T.ALERT_TYPE_ID WHERE ALERT_STATUS=1';
         return $this->queryAll($sql);
     }
 

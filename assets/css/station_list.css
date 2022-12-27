@@ -30,7 +30,7 @@ table td {
   transition: transform 0.5s;
 }
 table tr:nth-child(even) {
-  background-color: var(transform);
+  background-color: var(--bg-black-second-color);
   color: white;
 }
 

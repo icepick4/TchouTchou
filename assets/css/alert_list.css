@@ -1,0 +1,56 @@
+#selectContainer {
+  display: flex;
+  margin: 40px 0 0;
+  min-width: 50%;
+  justify-content: space-around;
+}
+select,
+button {
+  border: 2px solid var(--main-color);
+  background-color: var(--border-input);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0 auto;
+  display: block;
+  font-size: 20px;
+  color: var(--txt-white-color);
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  border: 1px solid var(--main-color);
+  font-size: 12px;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+table tr {
+  font-size: 20px;
+}
+
+table th {
+  font-size: 25px;
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: var(--txt-white-color);
+}
+table td {
+  transition: transform 0.5s;
+}
+table tr:nth-child(even) {
+  background-color: var(--bg-black-second-color);
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--bg-black-color);
+}
+
+table tr:hover {
+  cursor: pointer;
+  color: var(--txt-white-color);
+}
+table td {
+  padding: 8px;
+  text-align: center;
+}
