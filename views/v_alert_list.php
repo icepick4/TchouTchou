@@ -31,15 +31,14 @@
     </thead>
     <tbody>
 
-<?php 
-
+<?php
 foreach ($alertList as $alert) {
     ?>
         <tr class="alerts">
             <td><?= $alert['ALERT_TYPE_LABEL'] ?></td>
             <td><?= $alert['TRAVEL_ID'] ?></td>
             <td><?= $alert['ALERT_MESSAGE'] ?></td>
-            <td><?= $alert['ALERT_DATE'] ?></td>
+            <td><?= $alert['DATETIME_TRAVEL'] ?></td>
         </tr>
     
     <?php
