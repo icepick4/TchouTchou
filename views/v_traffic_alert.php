@@ -1,7 +1,11 @@
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
 <script src=<?= PATH_JS . 'traffic_alert.js' ?> type="module" defer></script>
+
+<?php require_once(PATH_VIEWS . 'alert.php'); ?>
+
 <form method="post" action="index.php?page=traffic_alert">
+    <p id="info"><?= SELECT_ALERT_TYPE ?></p>
     <div id="alertContainer">
         <a><img data-id="1" class="alertImage" src=" <?= PATH_IMAGES . 'alert_bomb.svg' ?>" alt="alert_bomb"></a>
         <a><img data-id="2" class="alertImage" src=" <?= PATH_IMAGES . 'alert_gun.svg' ?>" alt="alert_gun"></a>
@@ -17,11 +21,12 @@
         <a><img data-id="12" class="alertImage" src=" <?= PATH_IMAGES . 'alert_other.svg' ?>" alt="alert_other"></a>
     </div>
     <div id="locationContainer">
-        <input id="infoPosition" name="infoposition" placeholder="<?= LOCATION ?>">
+        <input id="infoPosition" name="infoposition" placeholder="<?= LOCATION ?>" readonly>
         <a id="positionButton"><img src=" <?= PATH_IMAGES . 'ping.svg' ?>"></a>
     </div>
     <textarea id="message" name="message" placeholder="<?= DESCRIPTION ?>" required></textarea>
     <input type="hidden" id="alertType" name="alertType" required>
+    <input type="submit" value="<?= SEND_ALERT ?>" >
 </form>
 
 <?php require_once(PATH_VIEWS . 'footer.php');

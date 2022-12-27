@@ -1,7 +1,9 @@
 function userPosition(position) {
-  var infopos = "Position déterminée :\n";
-  infopos += "Latitude : " + position.coords.latitude + "\n";
-  infopos += "Longitude: " + position.coords.longitude + "\n";
+  var infopos = "";
+  //Lattitude
+  infopos +=  position.coords.latitude + "//";
+  //Longitude
+  infopos += position.coords.longitude ;
   document.getElementById("infoPosition").value = infopos;
 }
 function getUserPosition() {
@@ -12,10 +14,13 @@ function getUserPosition() {
 positionButton.addEventListener("click", getUserPosition);
 
 let alertEvent = document.querySelectorAll("#alertContainer a");
+const form = document.querySelector("form");
+form.addEventListener("submit", formVerify);
+let info = document.querySelector("#info");
 
 alertEvent.forEach((element) => {
   element.addEventListener("click", function () {
-    if (element.children[0].classList.contains("active")) {
+    if (element.classList.contains("active")) {
       document.querySelector("#alertType").value = "";
       enableAlert();
     } else {
@@ -23,7 +28,7 @@ alertEvent.forEach((element) => {
       document.querySelector("#alertType").value = alertId;
       disableAlert(alertId);
     }
-    element.children[0].classList.toggle("active");
+    element.classList.toggle("active");
   });
 });
 
@@ -39,4 +44,13 @@ function disableAlert(id) {
       element.classList.add("disabled");
     }
   });
+}
+
+function formVerify(evt) {
+  let verif = document.querySelector("#alertType").value;
+  if (verif == "") {
+    evt.preventDefault();
+    info.style.display = "block";
+    window.scrollTo(0, 0);
+  }
 }

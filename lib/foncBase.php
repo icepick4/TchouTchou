@@ -26,6 +26,11 @@ function choixAlert($message)
             $alert['messageAlert'] = ERROR_PASSWORD_DIFFERENT;
             $alert["typeAlert"] = "form";
             break;
+        case 'alert_created':
+            $alert['messageAlert'] = ALERT_CREATED;
+            $alert["typeAlert"] = "form";
+            $alert["classAlert"] = "success";
+            break;
         default:
             $alert['messageAlert'] = MESSAGE_ERREUR;
     }
