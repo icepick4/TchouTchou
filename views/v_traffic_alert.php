@@ -14,7 +14,7 @@
         <a><img data-id="9" class="alertImage" src=" <?= PATH_IMAGES . 'alert_maintenance.svg' ?>" alt="alert_maintenance"></a>
         <a><img data-id="10" class="alertImage" src=" <?= PATH_IMAGES . 'alert_temperature.svg' ?>" alt="alert_temperature"></a>
         <a><img data-id="11" class="alertImage" src=" <?= PATH_IMAGES . 'alert_fire.svg' ?>" alt="alert_fire"></a>
-        <a><img data-id="12" class="alertImage" src=" <?= PATH_IMAGES . 'alert_fire.svg' ?>" alt="alert_other"></a>
+        <a><img data-id="12" class="alertImage" src=" <?= PATH_IMAGES . 'alert_other.svg' ?>" alt="alert_other"></a>
     </div>
     <div id="locationContainer">
         <input id="infoPosition" name="infoposition" placeholder="<?= LOCATION ?>">
