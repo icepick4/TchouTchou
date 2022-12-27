@@ -12,12 +12,12 @@
     <?php }else{ ?>
 
     <div id="selectContainer">
-        <select id="selectType">
+        <div class="selectArrow"><select id="selectType">
             <option value="all"><?= ALL_ALERTS ?></option>
             <?php foreach ($alertTypeList as $alertType) { ?>
                 <option value="<?= $alertType['ALERT_TYPE_LABEL'] ?>"><?= $alertType['ALERT_TYPE_LABEL'] ?></option>
             <?php } ?>
-        </select>
+        </select></div>
         <button id="resetFilter"><?= RESET_FILTER ?></button>
     </div>
 <table>
