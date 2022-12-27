@@ -177,3 +177,8 @@ define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de vot
 define('INTERN','Interne');
 define('EXTERN','Externe');
 define('STORAGE','Archive');
+
+
+//alertes
+define('LOCATION', 'Localisation');
+define('DESCRIPTION', 'Description');
