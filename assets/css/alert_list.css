@@ -12,6 +12,7 @@ select {
 
 .selectArrow {
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .selectArrow:after {
   content: "˅";
@@ -29,6 +30,12 @@ button {
   display: block;
   font-size: 20px;
   color: var(--txt-white-color);
+  transition: all 0.3s ease-in-out;
+}
+.selectArrow:hover,
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 table {
@@ -42,6 +49,7 @@ table {
 }
 table tr {
   font-size: 20px;
+  width: 100%;
 }
 
 table th {
@@ -63,9 +71,15 @@ table tr:nth-child(odd) {
 
 table tr:hover {
   cursor: pointer;
-  color: var(--txt-white-color);
+}
+table tr:hover td {
+  transform: scale(1.1);
 }
 table td {
   padding: 8px;
   text-align: center;
+  transition: all 0.5s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
 }

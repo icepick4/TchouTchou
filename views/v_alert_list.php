@@ -34,7 +34,7 @@
 <?php
 foreach ($alertList as $alert) {
     ?>
-        <tr class="alerts">
+        <tr class="alerts" onclick="document.location.href='index.php?page=alert_single'" >
             <td><?= $alert['ALERT_TYPE_LABEL'] ?></td>
             <td><?= $alert['TRAVEL_ID'] ?></td>
             <td><?= $alert['ALERT_MESSAGE'] ?></td>
