@@ -26,7 +26,7 @@
                 <img class="alertLogo" src="<?= PATH_IMAGES . $logo ?>" alt="logo de l'alerte">
             </div>
             <p><?= $alertList['ALERT_MESSAGE'] ?></p>
-            
+            <button id="finishButton"><?= ALERT_FINISHED ?></button>
         </div>
         
     <iframe
