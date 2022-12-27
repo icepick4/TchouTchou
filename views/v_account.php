@@ -13,7 +13,7 @@ if ($_SESSION['logged']) {
         <div class="links">
             <a class="link-profile" href="index.php?page=ticket_list"><div><?= SVG_TICKET ?><p><?= MY_TICKETS ?></p></div></a>
             <a class="link-profile" href="index.php?page=messages"><div><?= SVG_MESSAGE ?><p><?= MY_MESSAGES ?></p></div></a>
-            <a class="link-profile" href="index.php?page=logout"><div><?= SVG_DISCONNECT ?><p><?= LOGOUT ?></p></div></a>
+            <a class="link-profile" href="index.php?page=logout" onclick="localStorage.clear();"><div><?= SVG_DISCONNECT ?><p><?= LOGOUT ?></p></div></a>
             <a class="link-profile"id="delete-account"><div><?= SVG_DELETE ?><p><?= DELETE_ACCOUNT ?></p></div></a>
         </div>
         <div class="infos">
