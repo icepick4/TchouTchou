@@ -6,7 +6,7 @@ form {
   margin: 10px;
   max-width: 462px;
 }
-#info {
+.info {
   display: none;
   color: red;
 }

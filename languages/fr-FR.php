@@ -185,3 +185,4 @@ define('DESCRIPTION', 'Description');
 define('SEND_ALERT', 'Envoyer une alerte');
 define('SELECT_ALERT_TYPE','Vous devez choisir un type d\'alerte');
 define('ALERT_CREATED','L\'alerte a bien été créée');
+define('AUTHORIZE_LOCATION','Vous devez autoriser la géolocalisation pour envoyer une alerte');

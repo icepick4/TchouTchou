@@ -1,9 +1,9 @@
 function userPosition(position) {
   var infopos = "";
   //Lattitude
-  infopos +=  position.coords.latitude + "//";
+  infopos += position.coords.latitude + "//";
   //Longitude
-  infopos += position.coords.longitude ;
+  infopos += position.coords.longitude;
   document.getElementById("infoPosition").value = infopos;
 }
 function getUserPosition() {
@@ -16,7 +16,9 @@ positionButton.addEventListener("click", getUserPosition);
 let alertEvent = document.querySelectorAll("#alertContainer a");
 const form = document.querySelector("form");
 form.addEventListener("submit", formVerify);
+
 let info = document.querySelector("#info");
+let info2 = document.querySelector("#info2");
 
 alertEvent.forEach((element) => {
   element.addEventListener("click", function () {
@@ -52,5 +54,11 @@ function formVerify(evt) {
     evt.preventDefault();
     info.style.display = "block";
     window.scrollTo(0, 0);
+  }
+  if (document.getElementById("infoPosition").value == "") {
+    evt.preventDefault();
+    window.scrollTo(0, 0);
+    info2.style.display = "block";
+    positionButton.click();
   }
 }
