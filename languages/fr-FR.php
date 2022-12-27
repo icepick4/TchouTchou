@@ -193,3 +193,5 @@ define('ALERT_DATE','Date de l\'alerte');
 define('NO_ALERTS','Aucune alertes pour le moment');
 define('ALL_ALERTS','Toutes les alertes');
 define('RESET_FILTER','Réinitialiser tout les filtres');
+define('ALERTS_HEADER','Alerte conernant le voyage n° ');
+define('ALERT_DOES_NOT_EXIST','Cette alerte n\'existe pas');

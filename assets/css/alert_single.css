@@ -1,0 +1,50 @@
+h1 {
+  font-size: 4em;
+}
+
+#mapContainer {
+  height: 400px;
+  width: 100%;
+}
+#map {
+  height: 100%;
+}
+
+#alert_box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid var(--main-color);
+  border-radius: 15px;
+  width: 45%;
+}
+#alert_box p {
+  padding: 15px;
+  font-size: 1.25em;
+  margin: 0;
+}
+#alert_header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#alert_header p:first-child {
+  font-style: italic;
+  opacity: 0.6;
+  font-size: 1em;
+  margin: 0;
+  padding: 15px 0 0 15px;
+}
+#alert_header p:last-child {
+  font-weight: bold;
+  margin: 0;
+}
+.alertLogo {
+  width: 70px;
+  height: 70px;
+  border-radius: 14px;
+}
+
+iframe {
+  margin: 50px 0;
+}
