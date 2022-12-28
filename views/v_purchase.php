@@ -4,34 +4,21 @@ require_once(PATH_VIEWS . 'header.php');
 
 ?>
 
+<script src=<?= PATH_JS . 'purchase.js' ?> type="module" defer></script>
 
 <!--  Début de la page -->
 <div class="input-container">
     <form method="post" action="index.php?page=purchase" id="form">
-        <select name="from">
-            <?php
-            foreach ($stations as $station) {
-            ?>
-                <option values=<?= $station['STATION_NAME'] ?>>
-                    <?= $station['STATION_NAME'] ?>
-                </option>
-            <?php
-            }
-            ?>
-        </select>
-        <select name="to">
-            <?php
-            foreach ($stations as $station) {
-            ?>
-                <option values=<?= $station['STATION_NAME'] ?>>
-                    <?= $station['STATION_NAME'] ?>
-                </option>
-            <?php
-            }
-            ?>
-        </select>
+    <div class="container">
+        <input type="text" id="search1" autocomplete="off" placeholder="<?= SEARCH ?>" name="from" class="search">
+        <i class="clear-search">X</i>
+    </div>
+    <div class="container">
+        <input type="text" id="search2" autocomplete="off" placeholder="<?= SEARCH ?>" name="to" class="search">
+        <i class="clear-search">X</i>
+    </div>
         <input type="date" name="date" />
-        <div>
+        <div id="SeatCounterContainer">
             <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepDown();">-</button>
             <input type="number" name="nbr" placeholder="1" min="1" max="10" value="1"/>
             <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepUp();">+</button>
@@ -85,7 +72,11 @@ require_once(PATH_VIEWS . 'header.php');
 </div>
 
 
-
+<p id="stationsArray" style="display:none"><?php 
+    foreach ($stations as $station) {
+        echo $station['STATION_NAME'] . '//';
+    }
+    ?></p>
 
 <!--  Fin de la page -->
 

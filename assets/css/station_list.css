@@ -76,7 +76,8 @@ table td {
 #clear-search {
   position: absolute;
   right: 25%;
-  top: 27%;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
   color: var(--main-color);
   font-size: 20px;
@@ -107,6 +108,9 @@ table td {
 #searchautocomplete-list {
   width: 45%;
   margin: 0 auto;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--main-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -115,7 +119,7 @@ table td {
     color: var(--main-color);
   }
   .autocomplete-items div {
-    color: black;
+    color: var(--txt-white-color);
     background-color: var(--border-input);
     border-bottom: 1px solid var(--main-color);
   }
