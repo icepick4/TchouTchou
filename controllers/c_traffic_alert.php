@@ -13,6 +13,7 @@ if(isset($_POST['alertType']) && isset($_POST['message']) && isset($_POST['infop
     $alerts = new AlertDAO();
 
     $driver = $user->getDriverID($_SESSION['user_id']);
+    //remplacer 22 par l'heure actuelle
     $travel = $planning->getDriverTravelForTheDayByHour($driver, 22);
 
     $alerts= $alerts->createAlert($travel[0]['TRAVEL_ID'], $_POST['alertType'], $_POST['message'], $_POST['infoposition']);

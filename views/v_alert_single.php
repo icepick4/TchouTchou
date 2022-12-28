@@ -17,7 +17,7 @@
 
     <h1><?= ALERT_DOES_NOT_EXIST ?></h1>
 
-    <?php }else{?>
+    <?php }else{ ?>
         
         <h1><?= ALERTS_HEADER . $alertList['TRAVEL_ID']?></h1>
         <div id="alert_box">
@@ -26,7 +26,7 @@
                 <img class="alertLogo" src="<?= PATH_IMAGES . $logo ?>" alt="logo de l'alerte">
             </div>
             <p><?= $alertList['ALERT_MESSAGE'] ?></p>
-            <button id="finishButton"><?= ALERT_FINISHED ?></button>
+            <button id="finishButton" class="<? if($alertList['ALERT_STATUS']!=1) echo "disabled"; ?>"><? if($alertList['ALERT_STATUS']==1){ echo ALERT_NOT_FINISHED; }else{ echo ALERT_FINISHED; } ?></button>
         </div>
         
     <iframe

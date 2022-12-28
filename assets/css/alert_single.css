@@ -59,7 +59,10 @@ h1 {
 #finishButton:hover {
   transform: scale(1.1);
 }
-
+#finishButton.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
 iframe {
   margin: 50px 0;
 }

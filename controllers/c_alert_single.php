@@ -4,7 +4,7 @@ require_once(PATH_MODELS.'AlertDAO.php');
 
 $alerts = new AlertDAO();
 
-$alertList = $alerts->getAllCurrentAlerts();
+$alertList = $alerts->getAllAlerts();
 $alertList = $alertList[0];
 
 $coord = $alertList['ALERT_LOCATION'];

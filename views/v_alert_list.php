@@ -13,11 +13,19 @@
 
     <div id="selectContainer">
         <div class="selectArrow"><select id="selectType">
-            <option value="all"><?= ALL_ALERTS ?></option>
+            <option value="all"><?= ALL_TYPES_ALERTS ?></option>
             <?php foreach ($alertTypeList as $alertType) { ?>
                 <option value="<?= $alertType['ALERT_TYPE_LABEL'] ?>"><?= $alertType['ALERT_TYPE_LABEL'] ?></option>
             <?php } ?>
         </select></div>
+        <? if (isset($_GET['showAll'])) { ?>
+        <div class="selectArrow"><select id="selectStatus">
+            <option value="all"><?= ALL_STATUS_TRAVELS ?></option>
+            <option value="<?= FINISHED_ALERTS ?>"><?= FINISHED_ALERTS ?></option>
+            <option value="<?= CURRENT_ALERTS ?>"><?= CURRENT_ALERTS ?></option>
+            </select></div>
+            <? } ?>
+        
         <button id="resetFilter"><?= RESET_FILTER ?></button>
     </div>
 <table>
@@ -27,6 +35,9 @@
             <th><?= TRAVEL_ID ?></th>
             <th><?= ALERT_MESSAGE ?></th>
             <th><?= ALERT_DATE ?></th>
+            <? if (isset($_GET['showAll'])) { ?>
+                <th><?= ALERT_STATUS ?></th>
+            <? } ?>
         </tr>
     </thead>
     <tbody>
@@ -39,6 +50,9 @@ foreach ($alertList as $alert) {
             <td><?= $alert['TRAVEL_ID'] ?></td>
             <td><?= $alert['ALERT_MESSAGE'] ?></td>
             <td><?= $alert['DATETIME_TRAVEL'] ?></td>
+            <? if (isset($_GET['showAll'])) { ?>
+                <td><? if($alert['ALERT_STATUS']==0){ echo FINISHED_ALERTS;} else { echo CURRENT_ALERTS;} ?></td>
+            <? } ?>
         </tr>
     
     <?php
@@ -47,6 +61,9 @@ foreach ($alertList as $alert) {
 ?>
     </tbody>
 </table>
+<?php if(!isset($_GET['showAll'])){ ?>
+<a id="buttonAllAlert" href="index.php?page=alert_list&showAll=true" ><?= SHOW_ALL_ALERTS ?></a>
+<?php } ?>
 
 <?php } ?>
 
