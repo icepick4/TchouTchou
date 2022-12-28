@@ -202,7 +202,6 @@ form div button:last-child {
   padding: 8px;
   display: block;
   background-color: transparent;
-  color: var(--main-color);
   font-family: Poppins, sans-serif;
   font-size: 15px;
   border: 0;
