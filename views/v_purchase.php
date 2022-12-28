@@ -23,7 +23,7 @@ require_once(PATH_VIEWS . 'header.php');
             <input type="number" name="nbr" placeholder="1" min="1" max="10" <?php if(isset($_POST['nbr'])){ echo 'value="' . $_POST['nbr']. '"';}else{echo 'value="1"'; } ?>/>
             <button class="buttonNumber" type="button" onclick="this.parentNode.querySelector('[type=number]').stepUp();">+</button>
         </div>
-        <input type="submit" value="Rechercher les billets" />
+        <input type="submit" value="<?= SEARCH_TRAVEL ?>" />
     </form>
 </div>
 <?php
@@ -35,6 +35,7 @@ require_once(PATH_VIEWS . 'header.php');
 ;
 ?>
 <div class="tickets">
+    <?php if(isset($_POST['date'])  and$trains == null) echo "<h1>".NO_TRAVEL_FOUND."</h1>";?>
     <?php
     for ($i = 0; $i < count($trains); $i++) {
     ?>
