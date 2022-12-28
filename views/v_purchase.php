@@ -40,7 +40,7 @@ require_once(PATH_VIEWS . 'header.php');
     for ($i = 0; $i < count($trains); $i++) {
     ?>
     
-        <div class="ticket-container">
+        <div class="ticket-container <?php if($trains[$i]['EMPTY_SEATS']['EMPTYSEATS'] < $_POST['nbr'])echo "disabled" ?>">
             <div>
                 <div>
                     <div>

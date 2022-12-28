@@ -69,6 +69,10 @@ select:focus {
   border: 2.5px solid var(--main-color);
   border-radius: 15px;
 }
+.ticket-container.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
 
 .ticket-container > div:first-child {
   flex-grow: 2;
@@ -148,6 +152,8 @@ input[type="number"] {
   text-align: center;
   border-radius: 0%;
   pointer-events: none;
+  width: 30px;
+  font-weight: bold;
 }
 .buttonNumber:hover {
   cursor: pointer;
