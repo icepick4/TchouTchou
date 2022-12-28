@@ -9,19 +9,19 @@ require_once(PATH_VIEWS . 'header.php');
 <!--  Début de la page -->
 <div class="input-container">
     <form method="post" action="index.php?page=purchase" id="form">
-    <div class="container">
-        <input type="text" id="search1" autocomplete="off" placeholder="<?= SEARCH ?>" name="from" class="search">
-        <i class="clear-search">X</i>
-    </div>
-    <div class="container">
-        <input type="text" id="search2" autocomplete="off" placeholder="<?= SEARCH ?>" name="to" class="search">
-        <i class="clear-search">X</i>
-    </div>
-        <input type="date" name="date" />
+        <div class="container">
+            <input type="text" id="search1" autocomplete="off" placeholder="<?= SEARCH ?>" name="from" class="search" <?php if(isset($_POST['from'])){ echo 'value="' . $_POST['from']. '"';} ?>>
+            <i class="clear-search">X</i>
+        </div>
+        <div class="container">
+            <input type="text" id="search2" autocomplete="off" placeholder="<?= SEARCH ?>" name="to" class="search" <?php if(isset($_POST['to'])){ echo 'value="' . $_POST['to']. '"';} ?>>
+            <i class="clear-search">X</i>
+        </div>
+        <input type="date" name="date" <? if(isset($_POST['date']))echo 'value="'. $_POST['date'].'"'; ?>/>
         <div id="SeatCounterContainer">
-            <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepDown();">-</button>
-            <input type="number" name="nbr" placeholder="1" min="1" max="10" value="1"/>
-            <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepUp();">+</button>
+            <button class="buttonNumber" type="button" onclick="this.parentNode.querySelector('[type=number]').stepDown();">-</button>
+            <input type="number" name="nbr" placeholder="1" min="1" max="10" <?php if(isset($_POST['nbr'])){ echo 'value="' . $_POST['nbr']. '"';}else{echo 'value="1"'; } ?>/>
+            <button class="buttonNumber" type="button" onclick="this.parentNode.querySelector('[type=number]').stepUp();">+</button>
         </div>
         <input type="submit" value="Rechercher les billets" />
     </form>
