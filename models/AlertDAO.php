@@ -5,7 +5,7 @@ require_once(PATH_MODELS . 'DAO.php');
 class AlertDAO extends DAO{
 
     public function getAllAlerts(){
-        $sql = 'SELECT TRAVEL_ID, A.ALERT_TYPE_ID, TO_CHAR(ALERT_DATE,\'DD/MM/YYYY HH24:MI\') AS "DATETIME_TRAVEL", ALERT_MESSAGE, ALERT_LOCATION, ALERT_TYPE_LABEL, ALERT_STATUS FROM ALERT A INNER JOIN ALERT_TYPE A_T ON A.ALERT_TYPE_ID=A_T.ALERT_TYPE_ID ORDER BY ALERT_DATE DESC';
+        $sql = 'SELECT TRAVEL_ID, A.ALERT_TYPE_ID, TO_CHAR(ALERT_DATE,\'DD/MM/YYYY HH24:MI\') AS "DATETIME_TRAVEL", ALERT_MESSAGE, ALERT_LOCATION, ALERT_TYPE_LABEL, ALERT_STATUS, A.ALERT_TYPE_ID FROM ALERT A INNER JOIN ALERT_TYPE A_T ON A.ALERT_TYPE_ID=A_T.ALERT_TYPE_ID ORDER BY ALERT_DATE DESC';
         return $this->queryAll($sql);
     }
 
@@ -45,5 +45,11 @@ class AlertDAO extends DAO{
         $sql = 'UPDATE ALERT SET ALERT_STATUS=0 WHERE TRAVEL_ID=:travel_id AND ALERT_TYPE_ID=:alert_type_id AND ALERT_DATE=:alert_date';
         $args = array(':travel_id' => $travel_id, ':alert_type_id' => $alert_type_id, ':alert_date' => $alert_date);
         $this->queryEdit($sql, $args);
+    }
+
+    public function getAlertByDetail($travel_id, $alert_type_id, $alert_hh, $alert_mi){
+        $sql='SELECT TRAVEL_ID, A.ALERT_TYPE_ID, TO_CHAR(ALERT_DATE,\'DD/MM/YYYY HH24:MI\') AS "DATETIME_TRAVEL", ALERT_MESSAGE, ALERT_LOCATION, ALERT_TYPE_LABEL, ALERT_STATUS FROM ALERT A INNER JOIN ALERT_TYPE A_T ON A.ALERT_TYPE_ID = A_T.ALERT_TYPE_ID WHERE A.TRAVEL_ID = :travel_id AND A.ALERT_TYPE_ID = :alert_id AND TO_CHAR(A.ALERT_DATE,\'HH24\') = :hh AND TO_CHAR(A.ALERT_DATE,\'MI\') = :mi';
+        $args = array(':travel_id' => $travel_id, ':alert_id' => $alert_type_id, ':hh' => $alert_hh, ':mi' => $alert_mi);
+        return $this->queryRow($sql, $args);
     }
 }

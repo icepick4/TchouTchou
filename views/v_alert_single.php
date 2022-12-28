@@ -13,20 +13,20 @@
 
 
 
-<?php if ($alertList == null) {  ?>
+<?php if ($alert == null) {  ?>
 
     <h1><?= ALERT_DOES_NOT_EXIST ?></h1>
 
     <?php }else{ ?>
         
-        <h1><?= ALERTS_HEADER . $alertList['TRAVEL_ID']?></h1>
+        <h1><?= ALERTS_HEADER . $alert['TRAVEL_ID']?></h1>
         <div id="alert_box">
             <div id="alert_header">
-                <p><?= $alertList['DATETIME_TRAVEL'] ?></p>
+                <p><?= $alert['DATETIME_TRAVEL'] ?></p>
                 <img class="alertLogo" src="<?= PATH_IMAGES . $logo ?>" alt="logo de l'alerte">
             </div>
-            <p><?= $alertList['ALERT_MESSAGE'] ?></p>
-            <button id="finishButton" class="<? if($alertList['ALERT_STATUS']!=1) echo "disabled"; ?>"><? if($alertList['ALERT_STATUS']==1){ echo ALERT_NOT_FINISHED; }else{ echo ALERT_FINISHED; } ?></button>
+            <p><?= $alert['ALERT_MESSAGE'] ?></p>
+            <button id="finishButton" class="<? if($alert['ALERT_STATUS']!=1) echo "disabled"; ?>"><? if($alert['ALERT_STATUS']==1){ echo ALERT_NOT_FINISHED; }else{ echo ALERT_FINISHED; } ?></button>
         </div>
         
     <iframe
@@ -37,7 +37,7 @@
         allowfullscreen
         referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOE0WOjNXmymZ-seKlbzVcSvW-Xaz-sYo
-            &q=<?= $coord[0] ."+".$coord[1] ?>">
+        &q=<?= $coord[0] ."+".$coord[1] ?>">
     </iframe>
 
 

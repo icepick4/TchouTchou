@@ -44,8 +44,10 @@
 
 <?php
 foreach ($alertList as $alert) {
+    echo $alert['TRAVEL_ID'].$alert['ALERT_TYPE_LABEL'].substr($alert['DATETIME_TRAVEL'],-5,2).substr($alert['DATETIME_TRAVEL'],-2,2);
     ?>
-        <tr class="alerts" onclick="document.location.href='index.php?page=alert_single'" >
+    
+        <tr class="alerts" onclick="document.location.href='index.php?page=alert_single&id=<?php echo $alert['TRAVEL_ID'].$alert['ALERT_TYPE_ID'].substr($alert['DATETIME_TRAVEL'],-5,2).substr($alert['DATETIME_TRAVEL'],-2,2)?>'" >
             <td><?= $alert['ALERT_TYPE_LABEL'] ?></td>
             <td><?= $alert['TRAVEL_ID'] ?></td>
             <td><?= $alert['ALERT_MESSAGE'] ?></td>
