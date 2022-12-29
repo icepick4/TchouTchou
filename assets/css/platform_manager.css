@@ -29,6 +29,10 @@ p {
   margin: 0;
 }
 
+.lang{
+  display: none;
+}
+
 .control_pannel {
   width: auto;
   margin: 5px;

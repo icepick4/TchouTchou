@@ -9,10 +9,10 @@ require_once(PATH_VIEWS . 'header.php');
 <!--  Début de la page -->
 
 
-<h2 id="title">gestionaire de quais</h2>
+<h2 id="title"><?=PLATFORM_MANAGER_TITLE?></h2>
 <div class="control_pannel">
 	<fieldset>
-		<legend>paneaux de configuration</legend>
+		<legend><?=CONFIG_PANNEL?></legend>
 		<div class="select_option">
 			<h3><?=SELECT_STATION?></h3>
 			<h3><?=SELECT_HUB?></h3>
@@ -32,7 +32,7 @@ require_once(PATH_VIEWS . 'header.php');
 	</fieldset>
 
 	<fieldset>
-		<legend>train en approche</legend>
+		<legend><?=APPROACHING_TRAIN?></legend>
 		<div id="approching-list">
 			<div class="approching-train">
 				<p>Train nb</p>
@@ -45,7 +45,7 @@ require_once(PATH_VIEWS . 'header.php');
 </div>
 <div class="ihm_quais">
 	<fieldset>
-		<legend>platforms</legend>
+		<legend><?=PLATFORMS?></legend>
 
 		<div class="aiguillage">
 
@@ -67,14 +67,14 @@ require_once(PATH_VIEWS . 'header.php');
 		<div class="quai block">
 
 			<div class="quai_info">
-				<label id="letter">Letter</label>
-				<button class="btn_actif"><p>fermé</p></button>
+				<label id="letter"><?=LETTER?></label>
+				<button class="btn_actif"><p><?=CLOSE?></p></button>
 				<div class="train_icon_box">
 
 					<img class="logo_train  no_train " src="assets/images/logo_simple_train.svg">
 
 				</div>
-			<label class="train_number">TRAIN_NUMBER</label>
+			<label class="train_number"><?=TRAIN_NUMBER?></label>
 			</div>
 		</div>
 	</template>	
@@ -84,6 +84,11 @@ require_once(PATH_VIEWS . 'header.php');
 </div>
 
 <!--  Fin de la page -->
+
+<div class="lang">
+	<p id="CLOSE"><?=CLOSE?></p>
+	<p id="OPEN"><?=OPEN?></p>
+</div>
 
 <!--  Pied de page -->
 <?php require_once(PATH_VIEWS . 'footer.php'); ?>

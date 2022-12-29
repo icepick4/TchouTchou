@@ -168,7 +168,13 @@ define('MAINTENANCE_TEXT', 'Accéder au service de maintenance');
 
 define('SELECT_STATION', 'Choisir la station');
 define('SELECT_HUB', 'Choisir le hub');
-
+define('CONFIG_PANNEL', 'Panneau de Configuration');
+define('PLATFORM_MANAGER_TITLE','Gestionaire de Quais');
+define('APPROACHING_TRAIN','Train en Approche');
+define('PLATFORMS','Quais');
+define('LETTER', 'Lettre');
+define('CLOSE', 'Fermé');
+define('OPEN', 'Ouvert');
 
 //messages
 define('NO_MESSAGES', 'Vous n\'avez jamais chercher à contacter notre support jusqu\'à maintenant !');
