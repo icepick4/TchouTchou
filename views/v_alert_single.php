@@ -1,6 +1,6 @@
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
-<script src=<?= PATH_JS . 'single_alert.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'alert_single.js' ?> type="module" defer></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
