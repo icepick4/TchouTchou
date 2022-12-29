@@ -43,3 +43,5 @@ if (!isset($_SESSION['logged'])) {
     $_SESSION['logged'] = false;
     $_SESSION['user_id'] = null;
 }
+
+

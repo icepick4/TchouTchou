@@ -1,0 +1,101 @@
+#selectContainer {
+  display: flex;
+  margin: 40px 0 0;
+  min-width: 50%;
+  justify-content: space-around;
+}
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  min-width: 200px;
+}
+
+.selectArrow {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.selectArrow:after {
+  content: "˅";
+  font-size: 2rem;
+  top: -2px;
+  right: 10px;
+  position: absolute;
+}
+select,
+button {
+  border: 2px solid var(--main-color);
+  background-color: var(--border-input);
+  border-radius: 10px;
+  padding: 8px;
+  display: block;
+  font-size: 20px;
+  color: var(--txt-white-color);
+  transition: all 0.3s ease-in-out;
+}
+.selectArrow:hover,
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  border: 1px solid var(--main-color);
+  font-size: 12px;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+table tr {
+  font-size: 20px;
+  width: 100%;
+}
+
+table th {
+  font-size: 25px;
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: var(--txt-white-color);
+}
+table td {
+  transition: transform 0.5s;
+}
+table tr:nth-child(even) {
+  background-color: var(--bg-black-second-color);
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--bg-black-color);
+}
+
+table tr:hover {
+  cursor: pointer;
+}
+table tr:hover td {
+  transform: scale(1.1);
+}
+table td {
+  padding: 8px;
+  text-align: center;
+  transition: all 0.5s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
+#buttonAllAlert {
+  text-decoration: none;
+  align-self: center;
+  border: none;
+  border-radius: var(--radius);
+  color: white;
+  background-color: var(--main-color);
+  padding: 5px 20px;
+  font-size: 1.5em;
+  margin: 30px 0 5px;
+  transition: all 0.3s ease-in-out;
+}
+#buttonAllAlert:hover {
+  transform: scale(1.1);
+}

@@ -25,6 +25,7 @@ define('PRIVACY_POLICY', 'Politique de Confidentialité');
 define('STATION_LIST', 'Liste des Gares');
 define('TITLE_GITPULL', 'git pull');
 define('TITLE_MAINTENANCE', 'Maintenance');
+define('TITLE_ALERT', 'Alertes');
 define('CGU', 'les conditions générales d\'utilisation');
 define('PLEASE_ACCEPT', 'Veuillez accepter ');
 define('RETURN_BUTTON', 'Retour');
@@ -39,7 +40,11 @@ define('TRAIN_USE', 'En cours d\'utilisation');
 define('TRAIN_MAINTENANCE', 'En maintenance');
 define('BTN_ADD', 'Ajouter');
 define('TITLE_PLANNING', 'Planning');
+define('YOUR_TRAVEL', 'Votre voyage');
+define('MESSAGE', 'Mes Messages');
+define('TICKETS_DETAIL', 'Détails de vos billets');
 
+// DAYS & MONTHS
 define('MONDAY', 'Lundi');
 define('TUESDAY', 'Mardi');
 define('WEDNESDAY', 'Mercredi');
@@ -47,7 +52,19 @@ define('THURSDAY', 'Jeudi');
 define('FRIDAY', 'Vendredi');
 define('SATURDAY', 'Samedi');
 define('SUNDAY', 'Dimanche');
-define('MESSAGE', 'Mes Messages');
+define('JANUARY', 'Janvier');
+define('FEBRUARY', 'Février');
+define('MARCH', 'Mars');
+define('APRIL', 'Avril');
+define('MAY', 'Mai');
+define('JUNE', 'Juin');
+define('JULY', 'Juillet');
+define('AUGUST', 'Août');
+define('SEPTEMBER', 'Septembre');
+define('OCTOBER', 'Octobre');
+define('NOVEMBER', 'Novembre');
+define('DECEMBER', 'Décembre');
+
 //Home
 define('MY_ACCOUNT', 'Mon Compte');
 define('MY_TICKETS', 'Mes Billets');
@@ -112,6 +129,10 @@ define('NO_TRAIN', 'Aucun train prévu pour le moment');
 define('NO_ARRIVAL', 'Aucune arrivée prévue pour le moment');
 define('NO_DEPARTURE', 'Aucun départ prévu pour le moment');
 define('STATION_NOT_EXIST', 'Cette gare n\'existe pas');
+define('ON_TIME', 'À l\'heure');
+define('DELAY_OF','Retard de');
+define('MIN','min');
+define('FULL_SCREEN','Plein écran');
 
 //tickets
 
@@ -121,7 +142,7 @@ define('TRAVEL', 'Voyage');
 define('TRAIN', 'Train');
 define('BACK_TICKETS', 'Retournez à vos tickets');
 define('MINUTES', 'minutes');
-define('TRAVEL_TO', 'Voyage vers');
+define('TRAVEL_TO', 'Voyage vers ');
 define('BUY', 'Acheter');
 
 //home client
@@ -132,7 +153,7 @@ define('WELCOME_TEXT2', "Nous espérons que votre voyage en train sera agréable
 define('SEARCH_TEXT', 'Notre site est simple et facile à utiliser, vous pourrez trouver et réserver votre ticket de train en quelques minutes. Nous proposons également de nombreuses options pour personnaliser votre voyage, comme la possibilité de choisir votre siège.');
 define('STATION_TEXT', "Nous sommes heureux de vous annoncer que vous pouvez désormais accéder à la liste complète des gares de notre réseau. Vous pouvez ainsi voir l'ensemble des gares desservies par nos trains, ainsi que leurs coordonnées et les horaires de départ et d'arrivée des trains.");
 define('MESSAGE_TEXT', "Vous pouvez également nous contacter directement depuis notre site, pour nous faire part de vos remarques ou de vos suggestions. Nous sommes à votre écoute et nous vous répondrons dans les plus brefs délais.");
-
+define('PLANNING_TEXT', "Vous pouvez également consulter le planning de Vos trajet, pour savoir quand ils partent et quand ils arrivent. Vous pouvez ainsi préparer votre voyage en avance et vous assurer que vous serez à l'heure pour votre train.");
 //home employee
 
 define('WELCOME', 'Bienvenue ');
@@ -156,3 +177,32 @@ define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de vot
 define('INTERN','Interne');
 define('EXTERN','Externe');
 define('STORAGE','Archive');
+
+
+//alertes
+define('LOCATION', 'Localisation');
+define('DESCRIPTION', 'Description');
+define('SEND_ALERT', 'Envoyer une alerte');
+define('SELECT_ALERT_TYPE','Vous devez choisir un type d\'alerte');
+define('ALERT_CREATED','L\'alerte a bien été créée');
+define('AUTHORIZE_LOCATION','Vous devez autoriser la géolocalisation pour envoyer une alerte');
+define('ALERT_TYPE','Type');
+define('TRAVEL_ID','ID du voyage');
+define('ALERT_MESSAGE','Message');
+define('ALERT_DATE','Date de l\'alerte');
+define('NO_ALERTS','Aucune alertes pour le moment');
+define('ALL_TYPES_ALERTS','tous les types');
+define('ALL_STATUS_TRAVELS','Tous les statuts');
+define('ALERT_STATUS','Statut');
+define('FINISHED_ALERTS','Terminées');
+define('CURRENT_ALERTS','En cours');
+define('RESET_FILTER','Réinitialiser tout les filtres');
+define('ALERTS_HEADER','Alerte conernant le voyage n° ');
+define('ALERT_DOES_NOT_EXIST','Cette alerte n\'existe pas');
+define('ALERT_NOT_FINISHED','Marquer comme terminée');
+define('ALERT_FINISHED','L\'alerte est déjà terminée');
+define('SHOW_ALL_ALERTS','Afficher aussi les alertes terminées');
+
+//purchase
+define('NO_TRAVEL_FOUND','Aucun voyage ne correspond à votre recherche');
+define('SEARCH_TRAVEL','Rechercher un voyage');

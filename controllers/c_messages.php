@@ -21,7 +21,11 @@ if (!$_SESSION['logged']) {
     if (isset($_POST['message'])) {
         if (isset($_SESSION['user_id'])) {
             $mailbox->insertMessage($_POST['message'], $_POST['discussion_id'], $_SESSION['user_id']);
+            if(isset($_GET['extern'])){
+                header("Location: index.php?page=messages&extern=true");
+            }else{
             header("Location: index.php?page=messages");
+        }
         }
     }
 }

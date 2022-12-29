@@ -1,0 +1,91 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  max-width: 462px;
+}
+.info {
+  display: none;
+  color: red;
+}
+.alertImage {
+  border-radius: 15px;
+  margin: 10px;
+  border: 3px solid transparent;
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+#alertContainer a:hover .alertImage,
+a.active .alertImage {
+  border: 3px solid white;
+  opacity: 1;
+}
+#alertContainer a:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+a.active {
+  transform: scale(1.1);
+}
+#alertContainer a {
+  transition: all 0.3s ease-in-out;
+}
+#alertContainer a.disabled {
+  pointer-events: none;
+}
+#alertContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+#locationContainer {
+  position: relative;
+  width: 100%;
+}
+#positionButton {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-40%);
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+}
+#positionButton:hover {
+  cursor: pointer;
+  transform: scale(1.1) translateY(-40%);
+}
+#message {
+  resize: none;
+  width: 94%;
+  height: 100px;
+}
+#infoPosition {
+  width: 93%;
+}
+#infoPosition,
+#message {
+  margin: 10px 0;
+  background-color: var(--bg-black-color);
+  border: 3px solid var(--main-color);
+  border-radius: 15px;
+  color: white;
+  padding: 3%;
+  font-size: 1.2em;
+}
+
+input[type="submit"] {
+  margin: 10px 0;
+  background-color: var(--main-color);
+  border: 3px solid var(--main-color);
+  border-radius: 15px;
+  color: white;
+  padding: 3%;
+  font-size: 1.2em;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}

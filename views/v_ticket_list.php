@@ -7,7 +7,7 @@
 
 <?php
 
-if ($_SESSION['logged']) {
+
 ?>
     <div id="title-ticket-list">
         <h1><?= MY_TICKETS ?></h1>
@@ -16,16 +16,14 @@ if ($_SESSION['logged']) {
     for ($i = 0; $i < count($tickets); $i++) {
     ?>
         <div class="tickets">
+        <a href="index.php?page=ticket_single&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">
             <div class="ticket">
-                <p>From</p>
-                <p> <?php echo $tickets[$i]['START_STATION_NAME'] ?> </p>
-                <p>To</p>
-                <p> <?php echo $tickets[$i]['END_STATION_NAME'] ?> </p>
-                <p> The <?php //get hour and date of the date
-                        $date = $tickets[$i]['DEPARTURE_TIME'];
-                        echo $date; ?> </p>
-                <a href="index.php?page=single_ticket&ticket=<?php echo $tickets[$i]['TRAVEL_ID'] ?>">More...</a>
+                <p><?= $tickets[$i]['DEPARTURE_DATE']?> ● Voyage à <span><?= $tickets[$i]['START_STATION_NAME']?></span></p>
+                <p><?= $tickets[$i]['DEPARTURE_TIME']?> - <?=$tickets[$i]['START_STATION_NAME']?></p>
+                <p><?= $tickets[$i]['END_TIME']?> - <?=$tickets[$i]['END_STATION_NAME']?></p>
+                <div><?= SVG_ACCOUNT?><p>x<?= $tickets[$i]['NBR']?></p></div>
             </div>
+        </a>
 
         </div>
     <?php
@@ -37,7 +35,7 @@ if ($_SESSION['logged']) {
         </div>
 <?php
     }
-}
+
 ?>
 <div class="link-ticket-list">
     <div class="links">

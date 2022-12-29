@@ -2,6 +2,7 @@
 <html>
 
 <body>
+    
     <?php
     chdir("../");
     //pour utiliser le fichier de config de base
@@ -43,10 +44,15 @@
 
     ?><div id="headermsg"><h2><?php echo($discussionData['DISCUSSION_SUBJECT']); ?> - <?php if(isset($receiver)){echo $receiver['USER_FIRSTNAME'] ;} else{ echo  "Support";} ?></h2>
     <?php if(!$user->isEmployee($user_id) || !$user->isEmployee($receiver['USER_ID'])){
-        if($user->isEmployee($user_id)){ ?>
-    <img src="/assets/images/storage.svg" id="storageImage">
-    </div>
+        if($user->isEmployee($user_id)){ 
+            $extern = true;?>
+    <a onclick='console.log(<?= $id_discussion ?>);
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "views/addMessageToStorage.php?id=<?= $id_discussion ?>", true);
+    xhttp.send();setTimeout(function(){window.location.replace("index.php?page=messages&extern=true")},200);'><img src="/assets/images/storage.svg" id="storageImage"  ></a>
+    
     <?php }} ?>
+    </div>
     <?php
 
     $result = $mailbox->getDiscussionById($id_discussion);
@@ -64,7 +70,7 @@
         <?php
     }
         ?>
-        <form method="post" action="index.php?page=messages">
+        <form method="post" action="index.php?page=messages<? if(isset($extern)){echo "&extern=true";} ?>">
             <input type="hidden" id="discussion_id" name="discussion_id" value=<?= $id_discussion ?>>
             <input type="text" id="message" name="message" placeholder="Votre message">
             <input type="submit" id="submit" value="Envoyer">

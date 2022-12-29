@@ -127,3 +127,12 @@ label a:hover {
   margin: 0;
   margin-right: 5px;
 }
+
+@media only screen and (max-width: 800px) {
+  .title {
+    font-size: 3em;
+  }
+  form {
+    width: 90%;
+  }
+}

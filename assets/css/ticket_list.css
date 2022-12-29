@@ -1,41 +1,81 @@
 .tickets {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 70%;
 }
 
+.tickets a {
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.tickets a:hover {
+  transition: 0.2s;
+  transform: scale(1.1);
+}
 .ticket {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    margin: 1%;
-    background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 2.5px solid var(--main-color);
+  border-radius: 15px;
+  margin: 1%;
+  background-color: transparent;
+  width: 100%;
 }
-
+.ticket div {
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.ticket div svg {
+  width: 30px;
+}
+.ticket p:first-child {
+  font-size: 1.5em;
+}
+.ticket p span {
+  font-weight: bold;
+  color: var(--main-color);
+}
+.ticket div p {
+  font-size: 1em;
+  margin: 0;
+}
 .ticket p {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: white;
-    margin: 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  margin: 20px;
 }
 
 .ticket a {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
 
 #title-ticket-list {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .link-ticket-list {
-    display: flex;
-    justify-content: center;
-    margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+@media only screen and (max-width: 800px) {
+  .tickets {
+    width: 96%;
+  }
+  #title-ticket-list h1 {
+    margin: 0;
+  }
 }

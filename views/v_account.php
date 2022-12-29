@@ -11,12 +11,10 @@ if ($_SESSION['logged']) {
     <h1 id="title"><?= WELCOME ?><?php echo $result['USER_FIRSTNAME'] ?></h1>
     <div class="content">
         <div class="links">
-            <a class="link-profile" href="index.php?page=ticket_list"><div><img src="assets/images/tickets.svg" ><p><?= MY_TICKETS ?></p></div></a>
-            <a class="link-profile" href="index.php?page=messages"><div><img src="assets/images/message_ico.svg" ><p><?= MY_MESSAGES ?></p></div></a>
-            <a class="link-profile" href="index.php?page=logout"><div><img src="assets/images/disconnect.svg" ><p><?= LOGOUT ?></p></div></a>
-            <button id="delete-account">
-                <a class="link-profile"><div><img src="assets/images/settings.svg" ><p><?= DELETE_ACCOUNT ?></p></div></a>
-            </button>
+            <a class="link-profile" href="index.php?page=ticket_list"><div><?= SVG_TICKET ?><p><?= MY_TICKETS ?></p></div></a>
+            <a class="link-profile" href="index.php?page=messages"><div><?= SVG_MESSAGE ?><p><?= MY_MESSAGES ?></p></div></a>
+            <a class="link-profile" href="index.php?page=logout" onclick="localStorage.clear();"><div><?= SVG_DISCONNECT ?><p><?= LOGOUT ?></p></div></a>
+            <a class="link-profile"id="delete-account"><div><?= SVG_DELETE ?><p><?= DELETE_ACCOUNT ?></p></div></a>
         </div>
         <div class="infos">
             <table id="table">
@@ -33,7 +31,7 @@ if ($_SESSION['logged']) {
                     </td>
                     <td>
                         <button>
-                            <img src="assets/images/edit.png" alt="edit" id="edit-first-name">
+                            <?= SVG_EDIT_PARAM_FIRST_NAME.SVG_EDIT ?>           
                         </button>
                     </td>
                 </tr>
@@ -49,7 +47,7 @@ if ($_SESSION['logged']) {
                         </form>
                     </td>
                     <td><button>
-                            <img src="assets/images/edit.png" alt="edit" id="edit-last-name">
+                            <?= SVG_EDIT_PARAM_LAST_NAME.SVG_EDIT ?>
                         </button>
                     </td>
                 </tr>
@@ -65,7 +63,7 @@ if ($_SESSION['logged']) {
                         </form>
                     </td>
                     <td><button>
-                            <img src="assets/images/edit.png" alt="edit" id="edit-phone">
+                            <?= SVG_EDIT_PARAM_PHONE.SVG_EDIT ?>
                         </button>
                     </td>
                 </tr>
@@ -81,7 +79,7 @@ if ($_SESSION['logged']) {
                         </form>
                     </td>
                     <td><button>
-                            <img src="assets/images/edit.png" alt="edit" id="edit-mail">
+                            <?= SVG_EDIT_PARAM_MAIL.SVG_EDIT ?>
                         </button>
                     </td>
                 </tr>

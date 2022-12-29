@@ -293,9 +293,8 @@ input:checked + .slider:before {
 .switch #extern,
 .switch #intern {
   position: absolute;
-
   font-weight: bold;
-  top: 8px;
+  top: 4px;
   left: 36px;
 }
 .switch #intern {
@@ -366,14 +365,42 @@ input:checked ~ #extern {
 }
 
 #storageImage {
-  padding-right: 2%;
   display: flex;
   width: 50px;
   height: 100%;
-  align-self: flex-end;
 }
-
-#storageImage:hover {
+#headermsg a {
+  margin-right: 20px;
+  transition: transform 0.2s;
+}
+#headermsg a:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 3em;
+  }
+  #headermsg h2 {
+    font-size: 1em;
+    margin: 2px 0;
+  }
+  #chat {
+    flex-direction: column;
+    height: unset;
+  }
+  #resume {
+    width: 100%;
+    max-height: 80vh;
+    overflow-x: hidden;
+    border-bottom: 2px solid var(--bg-white-color);
+  }
+  #messages {
+    width: 100%;
+    max-height: 80vh;
+  }
+  #messages p {
+    padding: 6px;
+  }
 }

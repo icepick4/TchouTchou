@@ -1,7 +1,6 @@
-<?php require_once(PATH_MODELS . 'UserDAO.php'); ?>
 <!DOCTYPE html>
-<html>
-
+<?php require_once(PATH_MODELS . 'UserDAO.php'); ?>
+<html lang=<?='"'.substr(LANG,0,2).'"' ?>>
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -38,6 +37,9 @@
           }
           if (isset($_SESSION['user_id']) && $user->isDriver($_SESSION['user_id'])) {
             echo '<li><a href="index.php?page=planning_driver">' . TITLE_PLANNING . '</a></li>';
+          }
+          if (isset($_SESSION['user_id']) && $user->isDriver($_SESSION['user_id'])) {
+            echo '<li><a href="index.php?page=traffic_alert">' . TITLE_ALERT . '</a></li>';
           }?>
       </ul>
     </nav>

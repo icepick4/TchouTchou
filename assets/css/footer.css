@@ -4,6 +4,7 @@ footer {
   align-items: center;
   font-size: 90%;
   background-color: #333;
+  margin-top: 10px;
 }
 
 footer section {
@@ -42,4 +43,10 @@ footer section nav a {
 #copyright {
   user-select: none;
   margin: 0.5em 0;
+}
+
+@media only screen and (max-width: 800px) {
+  footer {
+    text-align: center;
+  }
 }

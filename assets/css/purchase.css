@@ -8,7 +8,7 @@
 }
 
 input {
-  background-color: transparent;
+  background-color: var(--main-color);
   border: 1px solid var(--main-color);
   border-radius: 15px;
   color: white;
@@ -22,7 +22,7 @@ input {
   justify-content: space-evenly;
 }
 select {
-  background-color: transparent;
+  background-color: var(--main-color);
   border: 1px solid var(--main-color);
   border-radius: 15px;
   color: white;
@@ -31,7 +31,7 @@ select {
 }
 
 select option {
-  background-color: var(--bg-black-color);
+  background-color: var(--main-color);
   color: white;
 }
 
@@ -68,6 +68,10 @@ select:focus {
   width: 100%;
   border: 2.5px solid var(--main-color);
   border-radius: 15px;
+}
+.ticket-container.disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .ticket-container > div:first-child {
@@ -144,8 +148,26 @@ select:focus {
 }
 
 input[type="number"] {
+  -moz-appearance: textfield;
   text-align: center;
   border-radius: 0%;
+  pointer-events: none;
+  width: 30px;
+  font-weight: bold;
+}
+.buttonNumber:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.buttonNumber {
+  transition: 0.3s;
+}
+
+/* Opéra*/
+input::-o-inner-spin-button,
+input::-o-outer-spin-button {
+  -o-appearance: none;
+  margin: 0;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -155,7 +177,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-form div {
+#SeatCounterContainer {
   display: flex;
 }
 form div button {
@@ -171,4 +193,83 @@ form div button:first-child {
 
 form div button:last-child {
   border-radius: 0 15px 15px 0;
+}
+
+/* Search bar */
+.container {
+  position: relative;
+  width: 200px;
+  border: 1px solid var(--main-color);
+  border-radius: 15px;
+}
+.search {
+  height: 20px;
+  width: 85%;
+  padding: 8px;
+  display: block;
+  background-color: transparent;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  border: 0;
+}
+
+.search:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+.clear-search {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--main-color);
+  font-size: 20px;
+  font-style: normal;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid var(--main-color);
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 96%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--main-color);
+  border-bottom: 1px solid white;
+  color: var(--txt-white-color);
+}
+.autocomplete-items div:hover {
+  background-color: var(--bg-black-second-color);
+}
+
+#autocomplete-list {
+  width: 80%;
+  margin: 1px auto;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--main-color);
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  select option {
+    background-color: var(--bg-black-color);
+  }
+
+  input {
+    background-color: var(--bg-black-color);
+  }
+
+  select,
+  input {
+    background-color: transparent;
+  }
 }

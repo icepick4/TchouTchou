@@ -24,6 +24,14 @@ class StationDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
+    
+    public function get_platform_used_for_travel($travel_id,$station)
+    {
+        $sql = 'SELECT PLATFORM_LETTER FROM PLATFORM P INNER JOIN TRAVEL TR ON P.PLATFORM_USER = TR.TRAIN_ID WHERE TR.TRAVEL_ID = :travel_id AND P.STATION_ID = :station';
+        $args = array(':travel_id' => $travel_id, ':station' => $station);
+        return $this->queryRow($sql, $args);
+    }
+    
     public function get_stations()
     {
         $sql = 'SELECT CITY_NAME, 
@@ -36,7 +44,7 @@ class StationDAO extends DAO
 
     public function get_station_departure($id)
     {
-        $sql = 'SELECT TRAVEL.LINE_ID, TRAVEL.TRAIN_ID, TRAVEL.LATE_TIME, DEPARTURE_TIME, STATION_NAME AS DESTINATION FROM TRAVEL 
+        $sql = 'SELECT TRAVEL.TRAVEL_ID, TRAVEL.LINE_ID, TRAVEL.TRAIN_ID, TRAVEL.LATE_TIME, DEPARTURE_TIME, STATION_NAME AS DESTINATION FROM TRAVEL 
         INNER JOIN LINE_STOP ON TRAVEL.LINE_ID = LINE_STOP.LINE_ID 
         INNER JOIN LINE ON TRAVEL.LINE_ID = LINE.LINE_ID
         INNER JOIN STATION ON LINE.END_STATION_ID = STATION.STATION_ID
@@ -53,7 +61,7 @@ class StationDAO extends DAO
 
     public function get_station_arrivals($id)
     {
-        $sql = 'SELECT TRAVEL.LINE_ID, TRAVEL.TRAIN_ID, TRAVEL.LATE_TIME, ARRIVAL_TIME, STATION_NAME AS DESTINATION FROM TRAVEL 
+        $sql = 'SELECT TRAVEL.TRAVEL_ID, TRAVEL.LINE_ID, TRAVEL.TRAIN_ID, TRAVEL.LATE_TIME, ARRIVAL_TIME, STATION_NAME AS DESTINATION FROM TRAVEL 
         INNER JOIN LINE_STOP ON TRAVEL.LINE_ID = LINE_STOP.LINE_ID 
         INNER JOIN LINE ON TRAVEL.LINE_ID = LINE.LINE_ID
         INNER JOIN STATION ON LINE.END_STATION_ID = STATION.STATION_ID

@@ -96,6 +96,27 @@ $user = new UserDAO();
 	</div>
 </article>
 <?php }
+if ($user->isDriver($_SESSION['user_id'])) { ?>
+	<article>
+		<img src="assets/images/calendar.svg">
+		<div class="arti">
+			<h2>
+				<?= TITLE_PLANNING ?>
+			</h2>
+			<p>
+				<?= PLANNING_TEXT ?>
+			</p>
+			<a href="index.php?page=planning_driver">
+				<div class="btn">
+					<p>
+						<?= WELCOME_GO ?>
+					</p>
+					<img src="assets/images/arrow.svg">
+				</div>
+			</a>
+		</div>
+	</article>
+	<?php }
 	if ($user->isService($_SESSION['user_id'])) { ?>
 <article>
 	<img src="assets/images/engineer_il.svg">

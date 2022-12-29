@@ -176,3 +176,18 @@ header > :nth-child(2n) {
     height: 3px;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  header {
+    flex-direction: column;
+  }
+  header nav {
+    width: 100%;
+  }
+  header nav:first-child {
+    flex-direction: column;
+  }
+  header ul {
+    width: 100%;
+  }
+}

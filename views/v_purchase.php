@@ -4,39 +4,26 @@ require_once(PATH_VIEWS . 'header.php');
 
 ?>
 
+<script src=<?= PATH_JS . 'purchase.js' ?> type="module" defer></script>
 
 <!--  Début de la page -->
 <div class="input-container">
     <form method="post" action="index.php?page=purchase" id="form">
-        <select name="from">
-            <?php
-            foreach ($stations as $station) {
-            ?>
-                <option values=<?= $station['STATION_NAME'] ?>>
-                    <?= $station['STATION_NAME'] ?>
-                </option>
-            <?php
-            }
-            ?>
-        </select>
-        <select name="to">
-            <?php
-            foreach ($stations as $station) {
-            ?>
-                <option values=<?= $station['STATION_NAME'] ?>>
-                    <?= $station['STATION_NAME'] ?>
-                </option>
-            <?php
-            }
-            ?>
-        </select>
-        <input type="date" name="date" />
-        <div>
-            <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepDown();">-</button>
-            <input type="number" name="nbr" placeholder="1" min="1" max="10" value="1"/>
-            <button type="button" onclick="this.parentNode.querySelector('[type=number]').stepUp();">+</button>
+        <div class="container">
+            <input type="text" id="search1" autocomplete="off" placeholder="<?= SEARCH ?>" name="from" class="search" <?php if(isset($_POST['from'])){ echo 'value="' . $_POST['from']. '"';} ?>>
+            <i class="clear-search">X</i>
         </div>
-        <input type="submit" value="Rechercher les billets" />
+        <div class="container">
+            <input type="text" id="search2" autocomplete="off" placeholder="<?= SEARCH ?>" name="to" class="search" <?php if(isset($_POST['to'])){ echo 'value="' . $_POST['to']. '"';} ?>>
+            <i class="clear-search">X</i>
+        </div>
+        <input type="date" name="date" <? if(isset($_POST['date']))echo 'value="'. $_POST['date'].'"'; ?>/>
+        <div id="SeatCounterContainer">
+            <button class="buttonNumber" type="button" onclick="this.parentNode.querySelector('[type=number]').stepDown();">-</button>
+            <input type="number" name="nbr" placeholder="1" min="1" max="10" <?php if(isset($_POST['nbr'])){ echo 'value="' . $_POST['nbr']. '"';}else{echo 'value="1"'; } ?>/>
+            <button class="buttonNumber" type="button" onclick="this.parentNode.querySelector('[type=number]').stepUp();">+</button>
+        </div>
+        <input type="submit" value="<?= SEARCH_TRAVEL ?>" />
     </form>
 </div>
 <?php
@@ -48,11 +35,12 @@ require_once(PATH_VIEWS . 'header.php');
 ;
 ?>
 <div class="tickets">
+    <?php if(isset($_POST['date'])  and$trains == null) echo "<h1>".NO_TRAVEL_FOUND."</h1>";?>
     <?php
     for ($i = 0; $i < count($trains); $i++) {
     ?>
     
-        <div class="ticket-container">
+        <div class="ticket-container <?php if($trains[$i]['EMPTY_SEATS']['EMPTYSEATS'] < $_POST['nbr'])echo "disabled" ?>">
             <div>
                 <div>
                     <div>
@@ -76,7 +64,7 @@ require_once(PATH_VIEWS . 'header.php');
             <p><?= intval($trains[$i]['PRICE'])*intval($_POST['nbr']).' €' ?></p>
             </div>
             <div>
-                <a href="index.php?page=payment&travel=<?= $trains[$i]['TRAVEL_ID'] ?>&from=<?= $from_id ?>&to=<?= $to_id ?>">Acheter</a>
+                <a href="index.php?page=payment&travel=<?= $trains[$i]['TRAVEL_ID'] ?>&from=<?= $from_id ?>&to=<?= $to_id ?>"><?= BUY ?></a>
             </div>
         </div>
     <?php
@@ -85,7 +73,11 @@ require_once(PATH_VIEWS . 'header.php');
 </div>
 
 
-
+<p id="stationsArray" style="display:none"><?php 
+    foreach ($stations as $station) {
+        echo $station['STATION_NAME'] . '//';
+    }
+    ?></p>
 
 <!--  Fin de la page -->
 

@@ -1,4 +1,5 @@
 :root {
+  --light-main-color: #ffc34d;
   --main-color: #ff9b05;
   --second-color: #ff6b08;
   --txt-white-color: #ffffff;
@@ -49,6 +50,10 @@ body {
   border-radius: 5px;
   padding: 5px 30px;
 }
+.alert-form.success {
+  background-color: #00ff0069;
+  border: 2px solid rgb(0, 199, 0);
+}
 
 .links a {
   /* margin-left: 3%; */
@@ -96,7 +101,9 @@ body {
     background-color: var(--bg-black-color);
     color: var(--bg-white-color);
   }
-
+  html {
+    overflow-x: hidden;
+  }
   .links a {
     color: white;
   }
@@ -104,7 +111,7 @@ body {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--main-color) none;
+  scrollbar-color: var(--main-color);
 }
 
 *::-webkit-scrollbar {

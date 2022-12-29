@@ -109,3 +109,9 @@ form textarea:focus {
 * {
   box-sizing: border-box;
 }
+
+@media only screen and (max-width: 800px) {
+  .title {
+    font-size: 3em;
+  }
+}
