@@ -6,7 +6,13 @@ let last_update = "";
 let req;
 const temp_plat = document.querySelector("template#platforms");
 
-// imported js
+// lang
+
+const LANG_OPEN = document.querySelector(".lang").querySelector("#OPEN").innerHTML;
+const LANG_CLOSE = document.querySelector(".lang").querySelector("#CLOSE").innerHTML;
+const LANG_CONFIRM = document.querySelector(".lang").querySelector("#CONFIRM").innerHTML;
+
+// platform connection 
 
 const start_pod = document.querySelector("div.start");
 const end_pod = document.querySelector("div.finish");
@@ -119,7 +125,7 @@ async function checkWarned(el) {
 
 async function switch_actif(el) {
   if (this.warned == false){
-    this.querySelector("p").innerHTML = "comfirer";
+    this.querySelector("p").innerHTML = LANG_CONFIRM;
     this.warned = true;
     this.classList.add("warned")
     setTimeout(checkWarned.bind(null,this), 2000);
@@ -129,12 +135,12 @@ async function switch_actif(el) {
   if (this.actif == true) {
     this.classList.remove("actif");
     this.classList.remove("warned");
-    this.querySelector("p").innerHTML = "fermé";
+    this.querySelector("p").innerHTML = LANG_CLOSE;
     newStatus = 0;
   } else {
     this.classList.remove("warned");
     this.classList.add("actif");
-    this.querySelector("p").innerHTML = "ouvert";
+    this.querySelector("p").innerHTML = LANG_OPEN;
     newStatus = 1;
   }
   const rep = await fetch(
@@ -226,11 +232,11 @@ async function load_platform(station_id, hub) {
       tmp_option.querySelector(".btn_actif").classList.add("actif");
       tmp_option.querySelector(".btn_actif").actif = true;
       tmp_option.querySelector(".quai").classList.remove("block");
-      tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML = "ouvert";
+      tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML = LANG_OPEN;
     } else {
       tmp_option.querySelector(".btn_actif").classList.remove("actif");
       tmp_option.querySelector(".btn_actif").actif = false;
-      tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML = "fermé";
+      tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML = LANG_CLOSE;
     }
     tmp_option
       .querySelector(".btn_actif")
@@ -292,12 +298,12 @@ async function update_platform() {
       if (data["platforms"][i]["PLATFORM_STATUS"] == 1) {
         platform.querySelector(".btn_actif").classList.add("actif");
         platform.querySelector(".btn_actif").actif = true;
-        platform.querySelector(".btn_actif").querySelector("p").innerHTML = "ouvert";
+        platform.querySelector(".btn_actif").querySelector("p").innerHTML = LANG_OPEN;
         platform.classList.remove("block");
       } else {
         platform.querySelector(".btn_actif").classList.remove("actif");
         platform.querySelector(".btn_actif").actif = false;
-        platform.querySelector(".btn_actif").querySelector("p").innerHTML = "fermé";
+        platform.querySelector(".btn_actif").querySelector("p").innerHTML = LANG_CLOSE;
         platform.classList.add("block");
       }
     }

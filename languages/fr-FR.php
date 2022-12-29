@@ -164,7 +164,7 @@ define('WELCOME_GO', 'accéder');
 define('MAINTENANCE', 'Entretien');
 define('MAINTENANCE_TEXT', 'Accéder au service de maintenance');
 
-//platform_manager
+//PALTFORM MANAGER
 
 define('SELECT_STATION', 'Choisir la station');
 define('SELECT_HUB', 'Choisir le hub');
@@ -175,6 +175,7 @@ define('PLATFORMS','Quais');
 define('LETTER', 'Lettre');
 define('CLOSE', 'Fermé');
 define('OPEN', 'Ouvert');
+define('CONFIRM','Confirmer');
 
 //messages
 define('NO_MESSAGES', 'Vous n\'avez jamais chercher à contacter notre support jusqu\'à maintenant !');

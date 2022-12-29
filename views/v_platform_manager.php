@@ -88,6 +88,7 @@ require_once(PATH_VIEWS . 'header.php');
 <div class="lang">
 	<p id="CLOSE"><?=CLOSE?></p>
 	<p id="OPEN"><?=OPEN?></p>
+	<p id="CONFIRM"><?=CONFIRM?></p>
 </div>
 
 <!--  Pied de page -->
