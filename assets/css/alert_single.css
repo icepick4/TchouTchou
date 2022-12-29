@@ -58,6 +58,7 @@ h1 {
 }
 #finishButton:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 #finishButton.disabled {
   pointer-events: none;

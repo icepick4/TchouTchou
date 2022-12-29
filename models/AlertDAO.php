@@ -41,9 +41,9 @@ class AlertDAO extends DAO{
         $this->queryEdit($sql, $args);
     }
 
-    public function updateAlertStatus($travel_id, $alert_type_id, $alert_date, $status){	
-        $sql = 'UPDATE ALERT SET ALERT_STATUS=0 WHERE TRAVEL_ID=:travel_id AND ALERT_TYPE_ID=:alert_type_id AND ALERT_DATE=:alert_date';
-        $args = array(':travel_id' => $travel_id, ':alert_type_id' => $alert_type_id, ':alert_date' => $alert_date);
+    public function updateAlertStatus($travel_id, $alert_type_id, $alert_hh, $alert_mi, $status){	
+        $sql = 'UPDATE ALERT SET ALERT_STATUS=0 WHERE TRAVEL_ID=:travel_id AND ALERT_TYPE_ID=:alert_type_id AND TO_CHAR(ALERT_DATE,\'HH24\') = :hh AND TO_CHAR(ALERT_DATE,\'MI\') = :mi';
+        $args = array(':travel_id' => $travel_id, ':alert_type_id' => $alert_type_id, ':hh' => $alert_hh, ':mi' => $alert_mi);
         $this->queryEdit($sql, $args);
     }
 
