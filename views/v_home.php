@@ -137,6 +137,25 @@ if ($user->isDriver($_SESSION['user_id'])) { ?>
 		</a>
 	</div>
 </article>
+<article>
+	<img src="assets/images/attention.svg">
+	<div class="arti">
+		<h2>
+			<?= ALERT_LIST ?>
+		</h2>
+		<p>
+			<?= ALERT_LIST_TEXT ?>
+		</p>
+		<a href="index.php?page=alert_list">
+			<div class="btn">
+				<p>
+					<?= WELCOME_GO ?>
+				</p>
+				<img src="assets/images/arrow.svg">
+			</div>
+		</a>
+	</div>
+</article>
 <?php }}
 	if ((isset($_SESSION['user_id']) || $user->isEmployee($_SESSION['user_id']))){?>
 <article>

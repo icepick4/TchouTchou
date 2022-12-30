@@ -154,6 +154,8 @@ define('SEARCH_TEXT', 'Notre site est simple et facile à utiliser, vous pourrez
 define('STATION_TEXT', "Nous sommes heureux de vous annoncer que vous pouvez désormais accéder à la liste complète des gares de notre réseau. Vous pouvez ainsi voir l'ensemble des gares desservies par nos trains, ainsi que leurs coordonnées et les horaires de départ et d'arrivée des trains.");
 define('MESSAGE_TEXT', "Vous pouvez également nous contacter directement depuis notre site, pour nous faire part de vos remarques ou de vos suggestions. Nous sommes à votre écoute et nous vous répondrons dans les plus brefs délais.");
 define('PLANNING_TEXT', "Vous pouvez également consulter le planning de Vos trajet, pour savoir quand ils partent et quand ils arrivent. Vous pouvez ainsi préparer votre voyage en avance et vous assurer que vous serez à l'heure pour votre train.");
+define('ALERT_LIST', 'Listes des alertes');
+define('ALERT_LIST_TEXT','Vous pouvez consulter la liste des alertes, pour savoir leur provenance, leur localisation et leur impact.');
 //home employee
 
 define('WELCOME', 'Bienvenue ');
