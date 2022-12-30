@@ -122,12 +122,12 @@ input:checked + .slider:before {
 .switch #departuresText {
   position: absolute;
   font-weight: bold;
-  top: 0;
-  left: 48px;
+  top: 12%;
+  left: 60px;
   margin: 0;
 }
 .switch #departuresText {
-  color: var(--bg-black-color);
+  color: var(--main-color);
 }
 
 .switch #arrivalsText {
