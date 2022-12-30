@@ -1,11 +1,13 @@
-let input = document.getElementById("search");
+/*
+const input = document.getElementById("search");
 
-var stations = document.querySelector("#stationsArray").innerText.split("//");
+
 
 input.addEventListener("keyup", recherche);
+*/
 
-function recherche() {
-  let inputValue = input.value.toLowerCase();
+function recherche(el) {
+  let inputValue = el.value.toLowerCase();
   let x = document.getElementsByTagName("tr");
   for (let i = 1; i < x.length; i++) {
     if (!x[i].innerHTML.toLowerCase().includes(inputValue)) {
@@ -16,7 +18,8 @@ function recherche() {
   }
 }
 
-function searchWithAutocomplete(input, arr) {
+export function searchWithAutocomplete(input, arr) {
+  input.addEventListener("keyup", function (event) {recherche(event.target)});
   input.addEventListener("keyup", function (event) {
     var a, b, i;
     var val = event.target.value;
@@ -37,7 +40,7 @@ function searchWithAutocomplete(input, arr) {
         b.addEventListener("click", function (e) {
           input.value = this.getElementsByTagName("input")[0].value;
           closeAllLists();
-          recherche();
+          recherche(input);
         });
         a.appendChild(b);
       }
@@ -60,8 +63,7 @@ function searchWithAutocomplete(input, arr) {
   let cross = document.getElementById("clear-search");
   cross.addEventListener("click", function () {
     input.value = "";
-    recherche();
+    recherche(input);
   });
 }
 
-searchWithAutocomplete(input, stations);

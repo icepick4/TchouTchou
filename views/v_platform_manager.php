@@ -5,6 +5,9 @@ require_once(PATH_VIEWS . 'header.php');
 
 <script src=<?= PATH_JS . 'platform_manager.js' ?> type="module" defer></script>
 
+<script src=<?= PATH_JS . 'search.js' ?> type="module" defer></script>
+<link rel="stylesheet" type="text/css" href=<?= PATH_CSS . 'search.css' ?>>
+
 
 <!--  Début de la page -->
 
@@ -16,6 +19,11 @@ require_once(PATH_VIEWS . 'header.php');
 		<div class="select_option">
 			<h3><?=SELECT_STATION?></h3>
 			<h3><?=SELECT_HUB?></h3>
+			<div class="container">
+		        <input type="text" id="search" autocomplete="off" placeholder="<?= SEARCH ?>">
+
+		        <i id="clear-search">X</i>
+		    </div>
 			<select id="station_name">
 				<?php
 				if ($stations != null) {
