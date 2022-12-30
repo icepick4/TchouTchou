@@ -8,11 +8,17 @@ const temp_plat = document.querySelector("template#platforms");
 
 // lang
 
-const LANG_OPEN = document.querySelector(".lang").querySelector("#OPEN").innerHTML;
-const LANG_CLOSE = document.querySelector(".lang").querySelector("#CLOSE").innerHTML;
-const LANG_CONFIRM = document.querySelector(".lang").querySelector("#CONFIRM").innerHTML;
+const LANG_OPEN = document
+  .querySelector(".lang")
+  .querySelector("#OPEN").innerHTML;
+const LANG_CLOSE = document
+  .querySelector(".lang")
+  .querySelector("#CLOSE").innerHTML;
+const LANG_CONFIRM = document
+  .querySelector(".lang")
+  .querySelector("#CONFIRM").innerHTML;
 
-// platform connection 
+// platform connection
 
 const start_pod = document.querySelector("div.start");
 const end_pod = document.querySelector("div.finish");
@@ -33,6 +39,10 @@ in_hub.addEventListener("change", function (event) {
 addEventListener("resize", (event) => {
   update_line();
 });
+
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 
 function startLoadingAnim(step = 1) {
   if (step == 1) {
@@ -110,26 +120,25 @@ function update_line() {
 }
 
 async function checkWarned(el) {
-  console.log("warned updated")
-  if (el.warned == true){
+  console.log("warned updated");
+  if (el.warned == true) {
     el.classList.remove("warned");
     el.warned = false;
     if (el.actif == true) {
       el.querySelector("p").innerHTML = "ouvert";
-    }else{
+    } else {
       el.querySelector("p").innerHTML = "fermé";
     }
   }
 }
 
-
 async function switch_actif(el) {
-  if (this.warned == false){
+  if (this.warned == false) {
     this.querySelector("p").innerHTML = LANG_CONFIRM;
     this.warned = true;
-    this.classList.add("warned")
-    setTimeout(checkWarned.bind(null,this), 2000);
-    return ;
+    this.classList.add("warned");
+    setTimeout(checkWarned.bind(null, this), 2000);
+    return;
   }
   let newStatus = 0;
   if (this.actif == true) {
@@ -154,7 +163,7 @@ async function switch_actif(el) {
       newStatus
   );
   let data = await rep.text();
-  this.warned = false
+  this.warned = false;
 }
 
 async function change_hub() {
@@ -232,11 +241,13 @@ async function load_platform(station_id, hub) {
       tmp_option.querySelector(".btn_actif").classList.add("actif");
       tmp_option.querySelector(".btn_actif").actif = true;
       tmp_option.querySelector(".quai").classList.remove("block");
-      tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML = LANG_OPEN;
+      tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML =
+        LANG_OPEN;
     } else {
       tmp_option.querySelector(".btn_actif").classList.remove("actif");
       tmp_option.querySelector(".btn_actif").actif = false;
-      tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML = LANG_CLOSE;
+      tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML =
+        LANG_CLOSE;
     }
     tmp_option
       .querySelector(".btn_actif")
@@ -298,12 +309,14 @@ async function update_platform() {
       if (data["platforms"][i]["PLATFORM_STATUS"] == 1) {
         platform.querySelector(".btn_actif").classList.add("actif");
         platform.querySelector(".btn_actif").actif = true;
-        platform.querySelector(".btn_actif").querySelector("p").innerHTML = LANG_OPEN;
+        platform.querySelector(".btn_actif").querySelector("p").innerHTML =
+          LANG_OPEN;
         platform.classList.remove("block");
       } else {
         platform.querySelector(".btn_actif").classList.remove("actif");
         platform.querySelector(".btn_actif").actif = false;
-        platform.querySelector(".btn_actif").querySelector("p").innerHTML = LANG_CLOSE;
+        platform.querySelector(".btn_actif").querySelector("p").innerHTML =
+          LANG_CLOSE;
         platform.classList.add("block");
       }
     }
@@ -311,10 +324,27 @@ async function update_platform() {
     last_update = JSON.stringify(data["platforms"]);
   }
 
-  setTimeout(update_platform, 500);
   return true;
+}
+
+async function autoUpdate() {
+  while (true) {
+    try {
+      await update_platform();
+    } catch (e){
+      console.log(e)
+    }
+    
+    const p = await sleep(500);
+    
+    
+   
+  }
+
 }
 
 load();
 
 update_platform();
+
+autoUpdate();
