@@ -1,7 +1,7 @@
 <!--  Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
-<script src=<?= PATH_JS ?>train.js type="module" defer></script>
+<script src=<?= PATH_JS ?>buy_place.js type="module" defer></script>
 
 <!--  Début de la page -->
 <h1><?= SELECT_SEATS ?></h1>
