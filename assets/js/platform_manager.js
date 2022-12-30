@@ -1,7 +1,3 @@
-import {
-  searchWithAutocomplete
-} from "./search.js";
-
 const in_station_name = document.querySelector("select#station_name");
 const in_hub = document.querySelector("select#hub_id");
 const plat_list = document.querySelector(".list_quai");
@@ -31,8 +27,6 @@ const aiguillage = document.querySelector(".suport_rail #connection-liste");
 const actif = document.querySelectorAll("button.btn_actif");
 const ref = document.querySelector("div#reference");
 const off_set = 17;
-
-const input = document.getElementById("search");
 
 
 
@@ -347,7 +341,7 @@ async function autoUpdate() {
   }
 }
 
-searchWithAutocomplete(input, []);
+
 
 
 load();
