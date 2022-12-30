@@ -40,9 +40,7 @@ addEventListener("resize", (event) => {
   update_line();
 });
 
-
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function startLoadingAnim(step = 1) {
   if (step == 1) {
@@ -331,16 +329,12 @@ async function autoUpdate() {
   while (true) {
     try {
       await update_platform();
-    } catch (e){
-      console.log(e)
+    } catch (e) {
+      console.log(e);
     }
-    
-    const p = await sleep(500);
-    
-    
-   
-  }
 
+    const p = await sleep(500);
+  }
 }
 
 load();
