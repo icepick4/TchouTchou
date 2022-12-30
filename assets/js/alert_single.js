@@ -8,6 +8,13 @@ buttonToDesactive.addEventListener("click", function () {
     true
   );
   xhttp.send();
-  xhttp.onload = function () {};
-  xhttp.onerror = function () {};
+  xhttp.onload = function () {
+    if (this.status == 200) {
+      window.location.href = "?page=alert_list";
+    }
+  };
+  xhttp.onerror = function () {
+    window.location.href =
+      "?page=alert_single&id=" + url.slice(url.indexOf("=") + 1);
+  };
 });
