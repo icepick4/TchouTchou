@@ -43,6 +43,7 @@ define('TITLE_PLANNING', 'Planning');
 define('YOUR_TRAVEL', 'Votre voyage');
 define('MESSAGE', 'Mes Messages');
 define('TICKETS_DETAIL', 'Détails de vos billets');
+define('SELECT_SEATS', 'Sélectionnez vos sièges');
 
 // DAYS & MONTHS
 define('MONDAY', 'Lundi');
@@ -72,6 +73,16 @@ define('MY_MESSAGES', 'Mes Messages');
 define('BUY_TICKET', 'Acheter un billet');
 define('NO_TICKET', 'Vous n\'avez pas de billet pour le moment !');
 
+define('HOW_TO_BUY', 'Comment acheter un billet ?');
+define('HOW_TO_BUY_TEXT', 'Pour acheter un billet, il vous suffit de vous rendre sur la page d\'achat de billet, de sélectionner votre trajet et de valider votre achat. Vous recevrez ensuite un mail de confirmation avec le détail de votre billet.');
+define('HOW_TO_SEE_TICKET', 'Comment voir mes billets ?');
+define('HOW_TO_SEE_TICKET_TEXT', 'Pour voir vos billets, il vous suffit de vous rendre sur la page "Mes billets" après vous être connecté avec votre adresse mail et votre mot de passe. Vous pourrez alors voir vos billets et les télécharger.');
+define('HOW_TO_CANCEL_TICKET', 'Comment annuler un billet ?');
+define('HOW_TO_CANCEL_TICKET_TEXT', 'Pour annuler un billet, il vous suffit de vous rendre sur la page "Mes billets" après vous être connecté avec votre adresse mail et votre mot de passe. Vous pourrez alors annuler votre billet.');
+define('HOW_TO_SEE_MESSAGES', 'Comment voir mes messages ?');
+define('HOW_TO_SEE_MESSAGES_TEXT', 'Pour voir vos messages, il vous suffit de vous rendre sur la page "Mes messages" après vous être connecté avec votre adresse mail et votre mot de passe. Vous pourrez alors voir vos messages.');
+define('HOW_TO_SEND_MESSAGES', 'Comment envoyer une demande d\'assistance ?');
+define('HOW_TO_SEND_MESSAGES_TEXT', 'Pour envoyer une demande d\'assistance, il vous suffit de vous rendre dans la section "Nous contacter" et d\'envoyer une demande d\assitance en expliquant le motif de votre demande. Un membre de notre équipe vous répondra dans les plus brefs délais.');
 // CART
 define('CART', 'Panier');
 

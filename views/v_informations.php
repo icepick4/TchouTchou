@@ -7,12 +7,24 @@
 <section id="faq">
     <h2>FAQ</h2>
     <article>
-        <p>Qu'est-ce que le site ?</p>
-        <p>Le site est un site de partage de lieux de pêche. Il permet de partager des lieux de pêche avec les autres utilisateurs du site. Il permet aussi de trouver des lieux de pêche à proximité de chez soi.</p>
+        <h3><?= HOW_TO_BUY ?></h3>
+        <p><?= HOW_TO_BUY_TEXT ?></p>
     </article>
     <article>
-        <p>Qui sommes nous ?</p>
-        <p>Nous sommes un groupe de 4 étudiants en BTS SIO option SLAM. Nous avons réalisé ce site dans le cadre de notre formation.</p>
+        <h3><?= HOW_TO_SEE_TICKET ?></h3>
+        <p><?= HOW_TO_SEE_TICKET_TEXT ?></p>
+    </article>
+    <article>
+        <h3><?= HOW_TO_CANCEL_TICKET ?></h3>
+        <p><?= HOW_TO_CANCEL_TICKET_TEXT ?></p>
+    </article>
+    <article>
+        <h3><?= HOW_TO_SEE_MESSAGES ?></h3>
+        <p><?= HOW_TO_SEE_MESSAGES_TEXT ?></p>
+    </article>
+    <article>
+        <h3><?= HOW_TO_SEND_MESSAGES ?></h3>
+        <p><?= HOW_TO_SEND_MESSAGES_TEXT ?></p>
     </article>
 </section>
 
