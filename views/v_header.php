@@ -34,11 +34,10 @@
           }
           if (isset($_SESSION['user_id']) && $user->isService($_SESSION['user_id'])) {
             echo '<li><a href="index.php?page=maintenance">' . TITLE_MAINTENANCE . '</a></li>';
+            echo '<li><a href="index.php?page=alert_list">' . ALERT_LIST . '</a></li>';
           }
           if (isset($_SESSION['user_id']) && $user->isDriver($_SESSION['user_id'])) {
             echo '<li><a href="index.php?page=planning_driver">' . TITLE_PLANNING . '</a></li>';
-          }
-          if (isset($_SESSION['user_id']) && $user->isDriver($_SESSION['user_id'])) {
             echo '<li><a href="index.php?page=alert_trigger">' . TITLE_ALERT . '</a></li>';
           }?>
       </ul>
