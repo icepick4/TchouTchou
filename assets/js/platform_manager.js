@@ -230,7 +230,10 @@ async function load_platform(station_id, hub) {
     tmp_option.querySelector("#letter").innerHTML =
       data["platforms"][i]["PLATFORM_LETTER"];
 
-    setPlatformValues(tmp_option.querySelector("div.quai"), data["platforms"][i] );
+    setPlatformValues(
+      tmp_option.querySelector("div.quai"),
+      data["platforms"][i]
+    );
 
     tmp_option.querySelector(".btn_actif").warned = false;
     tmp_option
@@ -278,7 +281,7 @@ async function update_platform() {
     console.log("update");
     for (var i = 0; i < data["platforms"].length; i++) {
       let platform = platforms[i];
-      setPlatformValues(platform, data["platforms"][i] );
+      setPlatformValues(platform, data["platforms"][i]);
     }
     last_update = JSON.stringify(data["platforms"]);
   }
@@ -287,31 +290,29 @@ async function update_platform() {
 }
 
 function setPlatformValues(platform, value) {
-  platform.querySelector(".train_number").innerHTML =
-        value["PLATFORM_USER"];
-      if (value["PLATFORM_UTILISATION"] == 0) {
-        platform.classList.add("free");
-        platform.querySelector(".logo_train").classList.add("no_train");
-      } else {
-        platform.classList.remove("free");
-        platform.querySelector(".logo_train").classList.remove("no_train");
-        platform.querySelector(".logo_train").classList.add("visible_train");
-      }
+  platform.querySelector(".train_number").innerHTML = value["PLATFORM_USER"];
+  if (value["PLATFORM_UTILISATION"] == 0) {
+    platform.classList.add("free");
+    platform.querySelector(".logo_train").classList.add("no_train");
+  } else {
+    platform.classList.remove("free");
+    platform.querySelector(".logo_train").classList.remove("no_train");
+    platform.querySelector(".logo_train").classList.add("visible_train");
+  }
 
-      if (value["PLATFORM_STATUS"] == 1) {
-        platform.querySelector(".btn_actif").classList.add("actif");
-        platform.querySelector(".btn_actif").actif = true;
-        platform.classList.remove("block");
-        platform.querySelector(".btn_actif").querySelector("p").innerHTML =
-          LANG_OPEN;
-        
-      } else {
-        platform.querySelector(".btn_actif").classList.remove("actif");
-        platform.querySelector(".btn_actif").actif = false;
-        platform.querySelector(".btn_actif").querySelector("p").innerHTML =
-          LANG_CLOSE;
-        platform.classList.add("block");
-      }
+  if (value["PLATFORM_STATUS"] == 1) {
+    platform.querySelector(".btn_actif").classList.add("actif");
+    platform.querySelector(".btn_actif").actif = true;
+    platform.classList.remove("block");
+    platform.querySelector(".btn_actif").querySelector("p").innerHTML =
+      LANG_OPEN;
+  } else {
+    platform.querySelector(".btn_actif").classList.remove("actif");
+    platform.querySelector(".btn_actif").actif = false;
+    platform.querySelector(".btn_actif").querySelector("p").innerHTML =
+      LANG_CLOSE;
+    platform.classList.add("block");
+  }
 }
 
 async function autoUpdate() {
