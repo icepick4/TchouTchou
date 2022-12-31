@@ -95,3 +95,12 @@ svg.table {
   width: 1735px;
   overflow: hidden;
 }
+
+p.none {
+  display: none;
+}
+
+#continueButton.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

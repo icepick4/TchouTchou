@@ -64,9 +64,10 @@ require_once(PATH_VIEWS . 'header.php');
             <p><?= intval($trains[$i]['PRICE'])*intval($_POST['nbr']).' €' ?></p>
             </div>
             <div>
-                <a href="index.php?page=buy_place&travel=<?= $trains[$i]['TRAVEL_ID'] ?>&from=<?= $from_id ?>&to=<?= $to_id?>&nbr=<?= $_POST['nbr']?>"><?= BUY ?></a>
+                <a href="index.php?page=buy_place&travel=<?= $trains[$i]['TRAVEL_ID'] ?>&line=<?= $trains[$i]['LINE_ID'] ?>&from=<?= $from_id ?>&to=<?= $to_id?>&nbr=<?= $_POST['nbr']?>"><?= BUY ?></a>
             </div>
         </div>
+        
     <?php
     }
     ?>

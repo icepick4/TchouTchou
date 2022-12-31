@@ -228,3 +228,9 @@ define('SHOW_ALL_ALERTS','Afficher aussi les alertes terminées');
 //purchase
 define('NO_TRAVEL_FOUND','Aucun voyage ne correspond à votre recherche');
 define('SEARCH_TRAVEL','Rechercher un voyage');
+define('PREVIOUS','Précédent');
+define('NEXT','Suivant');
+define("NO_SELECTED_SEAT","Aucun siège n'a été sélectionné");
+define('SELECTED_SEAT','Vous avez sélectionné le(s) siège(s) suivant(s) : ');
+define('VALIDATE','Valider mon placement');
+define('SEAT_NEEDED','Vous devez choisir le nombre de sièges que vous avez réserver pour pouvoir valider votre placement');
