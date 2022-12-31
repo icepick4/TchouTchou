@@ -2,6 +2,8 @@ const in_station_name = document.querySelector("select#station_name");
 const in_hub = document.querySelector("select#hub_id");
 const plat_list = document.querySelector(".list_quai");
 const conec_list = document.querySelector(".suport_rail");
+const incoming_list = document.querySelector("div#approching_list")
+const incoming_temp = document.querySelector("template#approching_train")
 let last_update = "";
 let req;
 const temp_plat = document.querySelector("template#platforms");
@@ -157,7 +159,7 @@ async function switch_actif(el) {
     newStatus = 1;
   }
   const rep = await fetch(
-    "index.php?page=platform_manager&station_name=" +
+    "index.php?page=platform_manager&station_id=" +
       in_station_name.value +
       "&hub_id=" +
       in_hub.value +
@@ -178,6 +180,7 @@ async function change_hub() {
 
 async function load() {
   in_hub.innerHTML = "";
+  showIncoming();
   startLoadingAnim(1);
   load_hub_op(in_station_name.value)
     .then((finish) => {
@@ -193,7 +196,7 @@ async function load() {
 }
 
 async function load_hub_op(id) {
-  const rep = await fetch("index.php?page=platform_manager&station_name=" + id);
+  const rep = await fetch("index.php?page=platform_manager&station_id=" + id);
 
   let data = await rep.json();
 
@@ -212,7 +215,7 @@ async function load_hub_op(id) {
 // in_station_name.value, in_hub.value
 async function load_platform(station_id, hub) {
   const rep = await fetch(
-    "index.php?page=platform_manager&station_name=" +
+    "index.php?page=platform_manager&station_id=" +
       station_id +
       "&hub_id=" +
       hub
@@ -259,7 +262,7 @@ async function update_platform() {
   hub = in_hub.value;
 
   const rep = await fetch(
-    "index.php?page=platform_manager&station_name=" +
+    "index.php?page=platform_manager&station_id=" +
       station_id +
       "&hub_id=" +
       hub
@@ -315,10 +318,39 @@ function setPlatformValues(platform, value) {
   }
 }
 
+async function getIncoming(station_id) {
+  const rep = await fetch(
+    "index.php?page=platform_manager&station_id=" +
+      station_id +
+      "&incoming="
+  );
+  console.log(
+    "index.php?page=platform_manager&station_id=" +
+      station_id +
+      "&incoming=")
+  let data = await rep.json();
+  return data
+  
+}
+
+async function showIncoming(){
+  const data = await getIncoming(in_station_name.value)
+  console.log(in_station_name.value,data)
+  incoming_list.innerHTML = ""
+  for (var i = 0; i < data["incoming"].length; i++) {
+    console.log(data["incoming"][i]);
+    let incoming = (incoming_temp.content.cloneNode(true)).querySelector("div.approching_train");
+    incoming.querySelector("p").innerHTML=data["incoming"][i];
+    incoming_list.appendChild(incoming);
+  }
+
+}
+
 async function autoUpdate() {
   while (true) {
     try {
       await update_platform();
+
     } catch (e) {
       console.log(e);
     }
@@ -332,3 +364,4 @@ load();
 update_platform();
 
 autoUpdate();
+
