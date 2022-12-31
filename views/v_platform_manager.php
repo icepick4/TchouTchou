@@ -39,7 +39,7 @@ require_once(PATH_VIEWS . 'header.php');
 			
 		</div>
 		<template id="approching_train">
-			<div style="display: none" class="approching_train">
+			<div class="approching_train">
 				<p>Train nb</p>
 				<select>
 					<option>None</option>

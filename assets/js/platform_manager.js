@@ -2,7 +2,8 @@ const in_station_name = document.querySelector("select#station_name");
 const in_hub = document.querySelector("select#hub_id");
 const plat_list = document.querySelector(".list_quai");
 const conec_list = document.querySelector(".suport_rail");
-const incoming_list = document.querySelector("div#approching-list")
+const incoming_list = document.querySelector("div#approching_list")
+const incoming_temp = document.querySelector("template#approching_train")
 let last_update = "";
 let req;
 const temp_plat = document.querySelector("template#platforms");
@@ -179,6 +180,7 @@ async function change_hub() {
 
 async function load() {
   in_hub.innerHTML = "";
+  showIncoming();
   startLoadingAnim(1);
   load_hub_op(in_station_name.value)
     .then((finish) => {
@@ -332,6 +334,15 @@ async function getIncoming(station_id) {
 }
 
 async function showIncoming(){
+  const data = await getIncoming(in_station_name.value)
+  console.log(data)
+  incoming_list.innerHTML = ""
+  for (var i = 0; i < data["incoming"].length; i++) {
+    console.log(data["incoming"][i]);
+    let incoming = (incoming_temp.content.cloneNode(true)).querySelector("div.approching_train");
+    incoming.querySelector("p").innerHTML=data["incoming"][i];
+    incoming_list.appendChild(incoming);
+  }
 
 }
 
@@ -353,6 +364,4 @@ load();
 update_platform();
 
 autoUpdate();
-
-await getIncoming(14);
 
