@@ -315,6 +315,17 @@ function setPlatformValues(platform, value) {
   }
 }
 
+function getIncoming(station_id) {
+  const rep = await fetch(
+    "index.php?page=platform_manager&station_id=" +
+      station_id +
+      "&incoming="
+  );
+
+  let data = await rep.json();
+  
+}
+
 async function autoUpdate() {
   while (true) {
     try {
