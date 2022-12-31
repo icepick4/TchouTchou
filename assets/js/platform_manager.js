@@ -229,30 +229,10 @@ async function load_platform(station_id, hub) {
     let tmp_option = temp_plat.content.cloneNode(true);
     tmp_option.querySelector("#letter").innerHTML =
       data["platforms"][i]["PLATFORM_LETTER"];
-    tmp_option.querySelector(".train_number").innerHTML =
-      data["platforms"][i]["PLATFORM_USER"];
 
-    if (data["platforms"][i]["PLATFORM_UTILISATION"] == 0) {
-      tmp_option.querySelector(".quai").classList.add("free");
-      tmp_option.querySelector(".logo_train").classList.add("no_train");
-    } else {
-      tmp_option.querySelector(".logo_train").classList.remove("no_train");
-      tmp_option.querySelector(".logo_train").classList.add("visible_train");
-    }
+    setPlatformValues(tmp_option.querySelector("div.quai"), data["platforms"][i] );
 
     tmp_option.querySelector(".btn_actif").warned = false;
-    if (data["platforms"][i]["PLATFORM_STATUS"] == 1) {
-      tmp_option.querySelector(".btn_actif").classList.add("actif");
-      tmp_option.querySelector(".btn_actif").actif = true;
-      tmp_option.querySelector(".quai").classList.remove("block");
-      tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML =
-        LANG_OPEN;
-    } else {
-      tmp_option.querySelector(".btn_actif").classList.remove("actif");
-      tmp_option.querySelector(".btn_actif").actif = false;
-      tmp_option.querySelector(".btn_actif").querySelector("p").innerHTML =
-        LANG_CLOSE;
-    }
     tmp_option
       .querySelector(".btn_actif")
       .addEventListener("click", switch_actif);
@@ -300,7 +280,6 @@ async function update_platform() {
       let platform = platforms[i];
       setPlatformValues(platform, data["platforms"][i] );
     }
-
     last_update = JSON.stringify(data["platforms"]);
   }
 
@@ -322,9 +301,10 @@ function setPlatformValues(platform, value) {
       if (value["PLATFORM_STATUS"] == 1) {
         platform.querySelector(".btn_actif").classList.add("actif");
         platform.querySelector(".btn_actif").actif = true;
+        platform.classList.remove("block");
         platform.querySelector(".btn_actif").querySelector("p").innerHTML =
           LANG_OPEN;
-        platform.classList.remove("block");
+        
       } else {
         platform.querySelector(".btn_actif").classList.remove("actif");
         platform.querySelector(".btn_actif").actif = false;
