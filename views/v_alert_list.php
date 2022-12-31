@@ -62,11 +62,12 @@ foreach ($alertList as $alert) {
 ?>
     </tbody>
 </table>
+
+
+<?php } ?>
+
 <?php if(!isset($_GET['showAll'])){ ?>
 <a id="buttonAllAlert" href="index.php?page=alert_list&showAll=true" ><?= SHOW_ALL_ALERTS ?></a>
 <?php } ?>
-
-<?php } ?>
-
 
 <?php require_once(PATH_VIEWS . 'footer.php');
