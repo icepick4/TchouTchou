@@ -18,7 +18,7 @@
 </div>
 <div>
     <p id="continueText"><?= SEAT_NEEDED ?></p>
-    <a href="index.php?page=buy_detail&travel=<?= $travel_id ?>&line=<?= $line ?>&from=<?= $from ?>&to=<?= $to ?>&nbr=<?= $nbr ?>&seat="  id="continueButton" class="disabled"><?= VALIDATE ?></a>
+    <a href="index.php?page=buy_details&travel=<?= $travel_id ?>&line=<?= $line ?>&from=<?= $from ?>&to=<?= $to ?>&nbr=<?= $nbr ?>&seat="  id="continueButton" class="disabled"><?= VALIDATE ?></a>
 </div>
 
 
