@@ -40,6 +40,9 @@ else if (isset($_GET["station_name"]) && isset($_GET["hub_id"])) {
 	echo json_encode($station_infos);
 
 }
+else if(isset($_GET["station_name"]) && isset($_GET["incoming"]) ){
+
+}
 else if (isset($_GET["station_name"])) {
 	require_once(PATH_MODELS . 'StationDAO.php');
 	$station = new StationDAO();
