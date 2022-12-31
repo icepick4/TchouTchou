@@ -3,11 +3,11 @@
 require_once(PATH_MODELS . 'TrainDAO.php');
 $train = new TrainDAO();
 
-$travel_id = intval($_GET['travel']);
-$line = intval($_GET['line']);
-$from = intval($_GET['from']);
-$to = intval($_GET['to']);
-$nbr = intval($_GET['nbr']);
+$travel_id = intval($_POST['travel']);
+$line = intval($_POST['line']);
+$from = intval($_POST['from']);
+$to = intval($_POST['to']);
+$nbr = intval($_POST['nbr']);
 
 
 $places = $train->getBusySeats($travel_id,$from);

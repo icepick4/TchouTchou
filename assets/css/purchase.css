@@ -137,7 +137,7 @@ select:focus {
   align-items: center;
   height: 100%;
 }
-.ticket-container > div:last-child > a {
+.ticket-container > div:last-child > form input {
   padding: 5% 20%;
   border: 2.5px solid var(--main-color);
   border-radius: 15px;
