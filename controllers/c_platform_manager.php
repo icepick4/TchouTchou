@@ -41,6 +41,14 @@ else if (isset($_GET["station_name"]) && isset($_GET["hub_id"])) {
 
 }
 else if(isset($_GET["station_name"]) && isset($_GET["incoming"]) ){
+	require_once(PATH_MODELS . 'StationDAO.php');
+	$station = new StationDAO();
+	$stations = $station->get_station_arrivals_days($_GET["station_name"], 1/24/2);
+	$station_infos = array();
+	for ($i = 0; $i < count($stations); $i++) {
+		$station_infos["incoming"][$i] = $stations[$i];
+	}
+	echo json_encode($station_infos);
 
 }
 else if (isset($_GET["station_name"])) {
