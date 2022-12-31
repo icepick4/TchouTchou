@@ -321,16 +321,24 @@ async function getIncoming(station_id) {
       station_id +
       "&incoming="
   );
-
+  console.log(
+    "index.php?page=platform_manager&station_id=" +
+      station_id +
+      "&incoming=")
   let data = await rep.json();
-  console.log("incoming",data)
+  console.log("incoming",data["incoming"])
   
+}
+
+async function showIncoming(){
+
 }
 
 async function autoUpdate() {
   while (true) {
     try {
       await update_platform();
+
     } catch (e) {
       console.log(e);
     }
@@ -344,3 +352,6 @@ load();
 update_platform();
 
 autoUpdate();
+
+await getIncoming(14);
+
