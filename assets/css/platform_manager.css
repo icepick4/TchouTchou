@@ -233,7 +233,7 @@ div.list_quai.loading .quai.block {
   text-decoration: none;
 }
 
-.quai button.btn_actif.warned:active{
+.quai button.btn_actif.warned:active {
   background-color: yellow;
   color: black;
 }
