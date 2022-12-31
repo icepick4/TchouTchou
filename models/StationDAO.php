@@ -78,7 +78,7 @@ class StationDAO extends DAO
 
     public function get_station_arrivals($id)
     {
-        return get_station_arrivals_days($id,5/24);
+        return $this->get_station_arrivals_days($id,5/24);
     }
 
     public function get_city_name($city_id)
