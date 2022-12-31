@@ -18,7 +18,15 @@
 </div>
 <div>
     <p id="continueText"><?= SEAT_NEEDED ?></p>
-    <a href="index.php?page=buy_details&travel=<?= $travel_id ?>&line=<?= $line ?>&from=<?= $from ?>&to=<?= $to ?>&nbr=<?= $nbr ?>&seat="  id="continueButton" class="disabled"><?= VALIDATE ?></a>
+    <form action="index.php?page=buy_details" method="post">
+        <input type="hidden" name="travel" value="<?= $travel_id ?>">
+        <input type="hidden" name="line" value="<?= $line ?>">
+        <input type="hidden" name="from" value="<?= $from ?>">
+        <input type="hidden" name="to" value="<?= $to ?>">
+        <input type="hidden" name="nbr" id="nbr" value="<?= $nbr ?>">
+        <input type="hidden" name="seat" id="seat">
+        <input type="submit" value="<?= VALIDATE ?>" id="continueButton" class="disabled">
+    </form>
 </div>
 
 

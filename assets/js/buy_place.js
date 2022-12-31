@@ -95,7 +95,7 @@ function initWagon() {
     if (selectedSeats.length == nbrSeats) {
       continueButton.classList.remove("disabled");
       continueText.style.display = "none";
-      continueButton.href = continueButton.href + selectedSeatsId.join("//");
+      document.querySelector("#nbr").value = selectedSeatsId.join("//");
     }
   }
 

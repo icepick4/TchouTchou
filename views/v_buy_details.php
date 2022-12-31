@@ -6,7 +6,7 @@
     {
         $seats = explode('//', $_POST['seat']);
         for($i=0 ; $i < $_POST['nbr'] ; $i++ )
-        {?>
+        { ?>
             <fieldset>
 		        <legend>Place n°<?=$seats[$i]?></legend>
                 <label for="name">Nom</label>
@@ -14,7 +14,7 @@
                 <label for="firstname">Prénom</label>
                 <input type="text" name="firstname" id="firstname" required>
             <fieldset>
-        <?php}
+        <?php }
     } else {
         for($i=0 ; $i < $_POST['nbr'] ; $i++ )
         {?>
@@ -25,7 +25,7 @@
                 <label for="firstname">Prénom</label>
                 <input type="text" name="firstname" id="firstname" required>
             <fieldset>
-        <?php}
+        <?php }
     }
 ?>
     <input type="submit" value="Valider">
