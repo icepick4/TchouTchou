@@ -157,7 +157,7 @@ async function switch_actif(el) {
     newStatus = 1;
   }
   const rep = await fetch(
-    "index.php?page=platform_manager&station_name=" +
+    "index.php?page=platform_manager&station_id=" +
       in_station_name.value +
       "&hub_id=" +
       in_hub.value +
@@ -193,7 +193,7 @@ async function load() {
 }
 
 async function load_hub_op(id) {
-  const rep = await fetch("index.php?page=platform_manager&station_name=" + id);
+  const rep = await fetch("index.php?page=platform_manager&station_id=" + id);
 
   let data = await rep.json();
 
@@ -212,7 +212,7 @@ async function load_hub_op(id) {
 // in_station_name.value, in_hub.value
 async function load_platform(station_id, hub) {
   const rep = await fetch(
-    "index.php?page=platform_manager&station_name=" +
+    "index.php?page=platform_manager&station_id=" +
       station_id +
       "&hub_id=" +
       hub
@@ -259,7 +259,7 @@ async function update_platform() {
   hub = in_hub.value;
 
   const rep = await fetch(
-    "index.php?page=platform_manager&station_name=" +
+    "index.php?page=platform_manager&station_id=" +
       station_id +
       "&hub_id=" +
       hub
