@@ -298,19 +298,28 @@ async function update_platform() {
     console.log("update");
     for (var i = 0; i < data["platforms"].length; i++) {
       let platform = platforms[i];
-      platform.querySelector(".train_number").innerHTML =
-        data["platforms"][i]["PLATFORM_USER"];
-      if (data["platforms"][i]["PLATFORM_UTILISATION"] == 0) {
+      setPlatformValues(platform, data["platforms"][i] );
+    }
+
+    last_update = JSON.stringify(data["platforms"]);
+  }
+
+  return true;
+}
+
+function setPlatformValues(platform, value) {
+  platform.querySelector(".train_number").innerHTML =
+        value["PLATFORM_USER"];
+      if (value["PLATFORM_UTILISATION"] == 0) {
         platform.classList.add("free");
         platform.querySelector(".logo_train").classList.add("no_train");
-        //platform.querySelector(".logo_train").classList.remove("visible_train");
       } else {
         platform.classList.remove("free");
         platform.querySelector(".logo_train").classList.remove("no_train");
         platform.querySelector(".logo_train").classList.add("visible_train");
       }
 
-      if (data["platforms"][i]["PLATFORM_STATUS"] == 1) {
+      if (value["PLATFORM_STATUS"] == 1) {
         platform.querySelector(".btn_actif").classList.add("actif");
         platform.querySelector(".btn_actif").actif = true;
         platform.querySelector(".btn_actif").querySelector("p").innerHTML =
@@ -323,12 +332,6 @@ async function update_platform() {
           LANG_CLOSE;
         platform.classList.add("block");
       }
-    }
-
-    last_update = JSON.stringify(data["platforms"]);
-  }
-
-  return true;
 }
 
 async function autoUpdate() {
