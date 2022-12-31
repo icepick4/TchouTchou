@@ -315,7 +315,7 @@ function setPlatformValues(platform, value) {
   }
 }
 
-function getIncoming(station_id) {
+async function getIncoming(station_id) {
   const rep = await fetch(
     "index.php?page=platform_manager&station_id=" +
       station_id +
@@ -323,6 +323,7 @@ function getIncoming(station_id) {
   );
 
   let data = await rep.json();
+  console.log("incoming",data)
   
 }
 
