@@ -36,6 +36,7 @@ body {
   flex-direction: column;
   align-self: center;
   text-align: center;
+  padding-bottom: 2%;
 }
 
 .alert {
