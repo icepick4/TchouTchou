@@ -1,6 +1,6 @@
 <!--  Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
-
+<script src=<?= PATH_JS . 'ticket_single.js' ?> type="module" defer></script>
 
 <!--  Début de la page -->
 <?php
@@ -82,7 +82,10 @@ if ($_SESSION['logged']) {
         <?php } ?>
     
     </div>
-    
+    <div id="button-set-ticket">
+    <button id="modify-button"><?= MODIFY ?></button>
+    <button id="cancel-button"><?= DELETE ?></button>
+    </div>
     <div class="links-content">
         <div class="link-ticket-list">
             <div class="links">

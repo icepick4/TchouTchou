@@ -366,4 +366,11 @@ class UserDAO extends DAO
         $args = array(':user_id' => $user_id, ':travel_id' => $travel_id, ':start_station_id' => $start_station_id, ':end_station_id' => $end_station_id, ':place_id' => $place_id, ':first_name' => $first_name, ':last_name' => $last_name);
         $this->queryEdit($sql, $args);
     }
+
+    public function deleteTicket($user_id,$travel_id)
+    {
+        $sql = "DELETE FROM TICKET WHERE TRAVEL_ID = :travel_id AND USER_ID = :user_id";
+        $args = array(':user_id' => $user_id, ':travel_id' => $travel_id);
+        $this->queryEdit($sql, $args);
+    }
 }

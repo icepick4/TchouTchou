@@ -122,3 +122,31 @@ p {
 .colored {
   color: var(--main-color);
 }
+
+#button-set-ticket {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 45%;
+}
+
+#button-set-ticket button {
+  width: 40%;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#button-set-ticket button:hover {
+  cursor: pointer;
+}
+#button-set-ticket button:first-child {
+  background-color: var(--main-color);
+  color: white;
+}
+
+#button-set-ticket button:last-child {
+  background-color: grey;
+  color: white;
+}

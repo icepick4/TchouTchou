@@ -44,6 +44,8 @@ define('YOUR_TRAVEL', 'Votre voyage');
 define('MESSAGE', 'Mes Messages');
 define('TICKETS_DETAIL', 'Détails de vos billets');
 define('SELECT_SEATS', 'Sélectionnez vos sièges');
+define('MODIFY', 'Modifier');
+define('DELETE', 'Supprimer');
 
 // DAYS & MONTHS
 define('MONDAY', 'Lundi');
