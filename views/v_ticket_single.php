@@ -1,6 +1,7 @@
 <!--  Entête de la page -->
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
-<script src=<?= PATH_JS . 'ticket_single.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'ticket_single.js?flag=' . $_SESSION['user_id'] ?> type="module" defer></script>
+
 
 <!--  Début de la page -->
 <?php
