@@ -28,10 +28,6 @@ const actif = document.querySelectorAll("button.btn_actif");
 const ref = document.querySelector("div#reference");
 const off_set = 17;
 
-
-
-
-
 in_station_name.addEventListener("change", function (event) {
   load();
 });
@@ -135,7 +131,10 @@ async function checkWarned(el) {
 }
 
 async function switch_actif(el) {
-  if (this.actif == true && !this.parentNode.parentNode.classList.contains("free")){
+  if (
+    this.actif == true &&
+    !this.parentNode.parentNode.classList.contains("free")
+  ) {
     return;
   }
   if (this.warned == false) {
@@ -343,9 +342,6 @@ async function autoUpdate() {
     const p = await sleep(500);
   }
 }
-
-
-
 
 load();
 
