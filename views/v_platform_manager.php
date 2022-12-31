@@ -35,14 +35,17 @@ require_once(PATH_VIEWS . 'header.php');
 
 	<fieldset>
 		<legend><?=APPROACHING_TRAIN?></legend>
-		<div id="approching-list">
-			<div class="approching-train">
+		<div id="approching_list">
+			
+		</div>
+		<template id="approching_train">
+			<div style="display: none" class="approching_train">
 				<p>Train nb</p>
 				<select>
 					<option>None</option>
 				</select>
 			</div>
-		</div>
+		</template>
 	</fieldset>
 </div>
 <div class="ihm_quais">
