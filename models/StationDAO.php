@@ -18,7 +18,7 @@ class StationDAO extends DAO
     /* get list of platforms from station id and hub id*/
     public function get_platforms($station_id, $hub_id)
     {
-        $sql = 'SELECT *FROM TCHOU.PLATFORM p 
+        $sql = 'SELECT * FROM TCHOU.PLATFORM p 
         WHERE p.STATION_ID = :station_id AND p.TERMINAL_ID = :hub_id';
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id);
         return $this->queryAll($sql, $args);
@@ -97,10 +97,11 @@ class StationDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
-
+    /* can not close if occuped*/
     public function set_platform_status($station_id, $hub_id, $platoform_letter, $new_status ){
         $sql = 'UPDATE PLATFORM SET PLATFORM_STATUS = :new_status WHERE STATION_ID = :station_id
-        AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platoform_letter';
+        AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platoform_letter
+        AND (:new_status = 1 or PLATFORM_UTILISATION = 0)';
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id, 
             ':platoform_letter' => $platoform_letter, ':new_status' => $new_status);
         $this->queryEdit($sql, $args);

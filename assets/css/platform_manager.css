@@ -232,6 +232,11 @@ div.list_quai.loading .quai.block {
   color: yellow;
   text-decoration: none;
 }
+
+.quai button.btn_actif.warned:active {
+  background-color: yellow;
+  color: black;
+}
 /*
 .quai button.btn_actif.warned {
   border: 3px solid yellow;
