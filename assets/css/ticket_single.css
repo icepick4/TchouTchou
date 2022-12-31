@@ -140,6 +140,8 @@ p {
 }
 #button-set-ticket button:hover {
   cursor: pointer;
+  scale: 1.1;
+  transition-duration: 0.5s;
 }
 #button-set-ticket button:first-child {
   background-color: var(--main-color);
