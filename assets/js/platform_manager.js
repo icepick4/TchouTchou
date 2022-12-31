@@ -135,6 +135,9 @@ async function checkWarned(el) {
 }
 
 async function switch_actif(el) {
+  if (this.actif == true && !this.parentNode.parentNode.classList.contains("free")){
+    return;
+  }
   if (this.warned == false) {
     this.querySelector("p").innerHTML = LANG_CONFIRM;
     this.warned = true;
