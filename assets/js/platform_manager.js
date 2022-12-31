@@ -335,7 +335,7 @@ async function getIncoming(station_id) {
 
 async function showIncoming(){
   const data = await getIncoming(in_station_name.value)
-  console.log(data)
+  console.log(in_station_name.value,data)
   incoming_list.innerHTML = ""
   for (var i = 0; i < data["incoming"].length; i++) {
     console.log(data["incoming"][i]);
