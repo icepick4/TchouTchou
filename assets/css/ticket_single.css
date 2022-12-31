@@ -137,6 +137,7 @@ p {
   border: none;
   font-size: 1.5em;
   font-weight: bold;
+  transition-duration: 0.5s;
 }
 #button-set-ticket button:hover {
   cursor: pointer;
