@@ -71,6 +71,7 @@ require_once(PATH_VIEWS . 'header.php');
                 <input type="hidden" name="line" value="<?= $trains[$i]['LINE_ID'] ?>">
                 <input type="hidden" name="from" value="<?= $from_id ?>">
                 <input type="hidden" name="to" value="<?= $to_id ?>">
+                <input type="hidden" name="price" value="<?= intval($trains[$i]['PRICE'])*intval($_POST['nbr']) ?>">
                 <input type="hidden" name="nbr" id="nbr" value="<?= $_POST['nbr'] ?>">
                 <input type="submit" value="<?= BUY ?>" >
             </form>
