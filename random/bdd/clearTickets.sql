@@ -4,6 +4,6 @@ as
 
 begin
 
-delete from  TICKET where TRAVEL_ID = v_travel_id;
+	delete from  TICKET where TRAVEL_ID = v_travel_id;
 
 end;
