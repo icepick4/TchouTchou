@@ -58,6 +58,7 @@ article {
   background-color: #4f3510;
   border-radius: 15px;
   padding: 1% 1% 1% 1%;
+  filter: drop-shadow(10px 10px 8px rgb(0,0,0,.3));
   
 }
 
