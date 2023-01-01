@@ -23,24 +23,24 @@ OPEN c_next_stop; -- open cursor
 FETCH c_next_stop INTO v_next_stop ;
 v_last_STATION := v_next_stop.station_id;
 
-    v_last_stop_time := v_next_stop.DURATION_TIME;
+v_last_stop_time := v_next_stop.DURATION_TIME;
 
-    train_status := 0; -- default train status is stop
+train_status := 0; -- default train status is stop
 
-    -- get the starting station into v_last_STATION
+-- get the starting station into v_last_STATION
 
-    select nvl(LATE_TIME,0) into v_total_time FROM TRAVEL WHERE TRAVEL_ID = travel_id_;
-    --v_total_time :=0; -- set total time to 0 
+select nvl(LATE_TIME,0) into v_total_time FROM TRAVEL WHERE TRAVEL_ID = travel_id_;
+--v_total_time :=0; -- set total time to 0 
 
-    -- get start time into v_start_time
-    SELECT  START_TIME  into  v_start_time FROM TRAVEL t where travel_id_ = t.travel_id ;
+-- get start time into v_start_time
+SELECT  START_TIME  into  v_start_time FROM TRAVEL t where travel_id_ = t.travel_id ;
 
-    getETA(v_start_time,0,v_next_stop.DURATION_TIME,v_total_time,ETA, train_status);
-    CheckCode(travel_id_,ETA, v_last_STATION,v_last_STATION,train_status,train_status,v_late);
+getETA(v_start_time,0,v_next_stop.DURATION_TIME,v_total_time,ETA, train_status);
+CheckCode(travel_id_,ETA, v_last_STATION,v_last_STATION,train_status,train_status,v_late);
 
-    next_station_id := v_last_STATION;
+next_station_id := v_last_STATION;
 
-    IF train_status= 0 THEN -- if turn arount time for depart si good
+IF train_status= 0 THEN -- if turn arount time for depart si good
 
     -------------- LOOP
 
