@@ -31,10 +31,12 @@ const ref = document.querySelector("div#reference");
 const off_set = 17;
 
 in_station_name.addEventListener("change", function (event) {
+  sessionStorage.setItem("station", in_station_name.value)
   load();
 });
 
 in_hub.addEventListener("change", function (event) {
+  sessionStorage.setItem("hub", in_hub.value)
   change_hub();
 });
 
@@ -209,6 +211,12 @@ async function load_hub_op(id) {
   in_hub.classList.remove("loading");
   plat_list.classList.remove("loading");
   conec_list.classList.remove("loading");
+
+  // load last value
+  setIfDefined(sessionStorage.getItem("hub"), in_hub)
+
+
+
   return true;
 }
 
@@ -346,6 +354,12 @@ async function showIncoming(){
 
 }
 
+function setIfDefined(value, input) {
+  if (!value == ""){
+    input.value = value;
+  }
+}
+
 async function autoUpdate() {
   while (true) {
     try {
@@ -358,6 +372,12 @@ async function autoUpdate() {
     const p = await sleep(500);
   }
 }
+
+
+setIfDefined(sessionStorage.getItem("station"), in_station_name)
+
+
+
 
 load();
 
