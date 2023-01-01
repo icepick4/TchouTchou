@@ -48,7 +48,7 @@
 article {
   background-color: var(--bg-black-color);
   border-radius: var(--radius);
-  width: 80vw;
+  width: 60vw;
   /*max-width: 900px;*/
   /*height: 300px;*/
   display: flex;
@@ -131,6 +131,7 @@ article div.arti .btn {
 article img {
   height: 25em;
   width: auto;
+  margin: 5px;
 }
 
 .arti p {
