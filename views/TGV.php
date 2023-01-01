@@ -14,7 +14,6 @@
     
 
 <div id="train_simple">
-    <h2>wagon simple</h2>
     <div class="wagon <?= $wagon ?>">
     <div class="row seatRow">
         <div class="seat " id="1">
