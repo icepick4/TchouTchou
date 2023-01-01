@@ -58,8 +58,7 @@ article {
   background-color: #4f3510;
   border-radius: 15px;
   padding: 1% 1% 1% 1%;
-  filter: drop-shadow(10px 10px 8px rgb(0,0,0,.3));
-  
+  filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3));
 }
 
 article:nth-child(2n) {
@@ -146,14 +145,14 @@ article img {
 
 /* mobile */
 @media (max-width: 800px) {
-  #main{
+  #main {
     gap: 30px;
   }
-  article{
+  article {
     padding: 2% 2% 2% 2%;
     flex-wrap: wrap;
     width: 80vw;
-    
+
     margin: 0px;
   }
   article:nth-child(1) {
