@@ -1,4 +1,4 @@
-create or replace PROCEDURE whereIs(
+create or replace PROCEDURE       whereIs(
 travel_id_ IN TRAVEL.TRAVEL_ID%type,
 next_station_id OUT STATION.STATION_ID%type,
 ETA OUT INTERVAL DAY TO second,
@@ -47,26 +47,30 @@ v_last_STATION := v_next_stop.station_id;
     LOOP
     FETCH c_next_stop INTO v_next_stop ;
 
-    IF c_next_stop%NOTFOUND THEN -- if no result 
+        IF c_next_stop%NOTFOUND THEN -- if no result 
 
-    exit;
-    END IF;
+            exit;
+        END IF;
 
 
     -- get next sation id
     next_station_id := v_next_stop.station_id;
 
+    
+    --dbms_output.put_line( v_last_STATION ||';' || next_station_id); 
+
     -- get time to this station
-    dbms_output.put_line( v_last_STATION ||';' || next_station_id); 
-
-
     getDTS(v_last_STATION,next_station_id,v_delta_time);
 
     getETA(v_start_time,v_delta_time,v_next_stop.DURATION_TIME,v_total_time,ETA, train_status);
     CheckCode(travel_id_,ETA, v_last_STATION,next_station_id,train_status,train_status,v_late);
     -- calculate diffrence bewteen the it shoud take and curent time
+    
+    
 
     IF  train_status = 1 OR train_status = 2 OR train_status = 3 OR train_status = 4 OR train_status = 5 then -- travel not finish or a quai
+        checkDeparture(travel_id_,v_last_STATION,train_status);
+        dbms_output.put_line('[WHEREIS][UPDATE] next station='||next_station_id||' status='||train_status);
         exit;
     END IF;
 
@@ -81,16 +85,19 @@ v_last_STATION := v_next_stop.station_id;
     END iF;
 
     IF train_status = 0 THEN
-        dbms_output.put_line( 'update start time to 24h for travel id '||travel_id_); 
-        UPDATE TRAVEL SET START_TIME=START_TIME+ interval '24' hour  where TRAVEL_ID = travel_id_;
+        dbms_output.put_line( '[WHEREIS][LINE FINISH] update start time to 30 for travel id '||travel_id_); 
+        UPDATE TRAVEL SET START_TIME=START_TIME+ interval '30' day  where TRAVEL_ID = travel_id_;
         Update PLATFORM SET PLATFORM_USER= NULL, PLATFORM_UTILISATION=0 WHERE PLATFORM_USER =train_id_;
+        train_status := 3;
+        checkDeparture(travel_id_,v_last_STATION,train_status);
+        clearTickets(travel_id_);
 
         commit;
 
     END IF;
     if v_late > 0 then
 
-         update TRAVEL  SET LATE_TIME = nvl(LATE_TIME,0) + v_late WHERE TRAVEL_ID =5;
+         update TRAVEL  SET LATE_TIME = nvl(LATE_TIME,0) + v_late WHERE TRAVEL_ID = travel_id_;
           commit;
      end if;
 
