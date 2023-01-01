@@ -145,6 +145,7 @@ select:focus {
   color: white;
   font-weight: bold;
   background-color: var(--main-color);
+  cursor: pointer;
 }
 
 input[type="number"] {
