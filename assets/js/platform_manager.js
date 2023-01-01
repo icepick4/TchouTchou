@@ -328,19 +328,16 @@ async function getIncoming(station_id) {
   const rep = await fetch(
     "index.php?page=platform_manager&station_id=" + station_id + "&incoming="
   );
-  console.log(
-    "index.php?page=platform_manager&station_id=" + station_id + "&incoming="
-  );
   let data = await rep.json();
   return data;
 }
 
 async function showIncoming() {
   const data = await getIncoming(in_station_name.value);
-  console.log(in_station_name.value, data);
+
   incoming_list.innerHTML = "";
   for (var i = 0; i < data["incoming"].length; i++) {
-    console.log(data["incoming"][i]);
+
     let incoming = incoming_temp.content
       .cloneNode(true)
       .querySelector("div.approching_train");
@@ -360,7 +357,7 @@ async function autoUpdate() {
     try {
       await update_platform();
     } catch (e) {
-      console.log(e);
+      console.log("auto update",e);
     }
 
     const p = await sleep(500);
