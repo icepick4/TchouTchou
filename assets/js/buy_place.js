@@ -91,21 +91,30 @@ function initWagon() {
         buffer.substring(0, buffer.indexOf(":") + 1) +
         " " +
         selectedSeatsId.sort().join(", ");
-    }
-    if (selectedSeats.length == nbrSeats) {
-      continueButton.classList.remove("disabled");
-      continueText.style.display = "none";
-      document.querySelector("#seat").value = selectedSeatsId.join("//");
+      for (let i = 1; i <= nbrSeats; i++) {
+        let seat = document.getElementById("seat_" + i);
+        console.log(seat);
+        if (selectedSeatsId[i - 1] == undefined) {
+          seat.innerText = ".";
+        } else {
+          seat.innerText = selectedSeatsId[i - 1];
+        }
+      }
     }
   }
+  if (selectedSeats.length == nbrSeats) {
+    continueButton.classList.remove("disabled");
+    continueText.style.display = "none";
+    document.querySelector("#seat").value = selectedSeatsId.join("//");
+  }
+}
 
-  //check if the number of selected seats is greater than the number of seats to buy and remove the first selected seat
-  function checkSeatMaxNumber() {
-    if (selectedSeats.length > nbrSeats) {
-      selectedSeats[0].classList.remove("selected");
-      selectedSeats.shift();
-      selectedSeatsId.shift();
-    }
+//check if the number of selected seats is greater than the number of seats to buy and remove the first selected seat
+function checkSeatMaxNumber() {
+  if (selectedSeats.length > nbrSeats) {
+    selectedSeats[0].classList.remove("selected");
+    selectedSeats.shift();
+    selectedSeatsId.shift();
   }
 }
 

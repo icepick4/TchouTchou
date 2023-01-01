@@ -8,7 +8,7 @@ $line = intval($_POST['line']);
 $from = intval($_POST['from']);
 $to = intval($_POST['to']);
 $nbr = intval($_POST['nbr']);
-
+$price = intval($_POST['price']);
 
 $places = $train->getBusySeats($travel_id,$from);
 

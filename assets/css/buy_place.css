@@ -132,3 +132,40 @@ p.none {
   scale: 1.1;
   transition-duration: 0.5s;
 }
+
+fieldset {
+  background-color: var(--bg-black-second-color);
+  border: none;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  margin: 1% 0;
+}
+
+fieldset > label {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-align: left;
+  width: 100%;
+}
+
+fieldset div {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+}
+
+fieldset div label {
+  color: white;
+}
+
+fieldset input {
+  border-radius: 5px;
+  border: none;
+}
