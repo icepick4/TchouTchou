@@ -121,4 +121,11 @@ class StationDAO extends DAO
         $new_status = 0;
         $this->set_platform_status($station_id, $hub_id, $platoform_letter, $new_status);
     }
+
+    public function getStationName($station_id)
+    {
+        $sql = 'SELECT STATION_NAME FROM STATION WHERE STATION_ID = :station_id';
+        $args = array(':station_id' => $station_id);
+        return $this->queryRow($sql, $args);
+    }
 }
