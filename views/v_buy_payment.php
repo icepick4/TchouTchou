@@ -34,46 +34,9 @@
     <h1>Détails de votre voyage vers <span><?= $to_station_name ?></h1>
     <div id="travel_details">
         <p><?php 
-            if (date('l',strtotime($ticket[0]['DEPARTURE_DATE'])) == "Monday") {
-                echo MONDAY;
-            } else if (date('l',strtotime($ticket[0]['DEPARTURE_DATE'])) == "Tuesday") {
-                echo TUESDAY;
-            } else if (date('l',strtotime($ticket[0]['DEPARTURE_DATE'])) == "Wednesday") {
-                echo WEDNESDAY;
-            } else if (date('l',strtotime($ticket[0]['DEPARTURE_DATE'])) == "Thursday") {
-                echo THURSDAY;
-            } else if (date('l',strtotime($ticket[0]['DEPARTURE_DATE'])) == "Friday") {
-                echo FRIDAY;
-            } else if (date('l',strtotime($ticket[0]['DEPARTURE_DATE'])) == "Saturday") {
-                echo SATURDAY;
-            } else {
-                echo SUNDAY;
-            }
-            if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "January") {
-                echo JANUARY;
-            } else if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "February") {
-                echo FEBRUARY;
-            } else if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "March") {
-                echo MARCH;
-            } else if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "April") {
-                echo APRIL;
-            } else if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "May") {
-                echo MAY;
-            } else if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "June") {
-                echo JUNE;
-            } else if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "July") {
-                echo JULY;
-            } else if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "August") {
-                echo AUGUST;
-            } else if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "September") {
-                echo SEPTEMBER;
-            } else if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "October") {
-                echo OCTOBER;
-            } else if (date('F',strtotime($ticket[0]['DEPARTURE_DATE'])) == "November") {
-                echo NOVEMBER;
-            } else {
-                echo DECEMBER;
-            }
+            echo getDay($ticket[0]['DEPARTURE_DATE']);
+            echo " ";
+            echo getMonth($ticket[0]['DEPARTURE_DATE'])
      ?></p>
         <p><span class="colored"><?= $from_station_time_departure ?></span> ● <?= $from_station_name?></p>
         <p>Voyage n°<span class="colored"><?= $_POST['travel']?></span></p>

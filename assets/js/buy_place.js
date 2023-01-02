@@ -114,6 +114,8 @@ let nbrSeats = parseInt(document.querySelector("#nbrSeats").innerText);
 let selectedSeats = [];
 let selectedSeatsId = [];
 let inputs = document.querySelectorAll("fieldset input");
+var nextButton;
+var previousButton;
 
 //add event for each input on click
 inputs.forEach((input) => {
@@ -145,9 +147,9 @@ function loadWagon(id) {
     }
   };
   if (typeTrain.innerText == "TGV") {
-    xmlhttp.open("GET", "views/TGV.php?id=" + id, true);
+    xmlhttp.open("GET", "ajax/TGV.php?id=" + id, true);
   } else if (typeTrain.innerText == "TGVDuplex") {
-    xmlhttp.open("GET", "views/TGVDuplex.php?id=" + id, true);
+    xmlhttp.open("GET", "ajax/TGVDuplex.php?id=" + id, true);
   } else {
     console.log("error");
   }
@@ -170,17 +172,17 @@ function changeWagon(id) {
 }
 
 if (document.querySelector("#content") != null) {
-  seatChoice = false;
-  document.onload = changeWagon(currentWagon);
-
-  let nextButton = document.querySelector("#next");
+  nextButton = document.querySelector("#next");
   nextButton.addEventListener("click", function () {
     currentWagon++;
     changeWagon(currentWagon);
   });
-  let previousButton = document.querySelector("#previous");
+  previousButton = document.querySelector("#previous");
   previousButton.addEventListener("click", function () {
     currentWagon--;
     changeWagon(currentWagon);
   });
+
+  seatChoice = false;
+  document.onload = changeWagon(currentWagon);
 }
