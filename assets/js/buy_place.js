@@ -47,7 +47,6 @@ function initWagon() {
 
   function procedClick(id) {
     toggleSeat(id);
-    toggleText();
   }
 
   //toggle a class on the seat with the correct id
@@ -65,6 +64,7 @@ function initWagon() {
           seats[i].classList.toggle("selected");
           let index = selectedSeats.indexOf(seats[i]);
           selectedSeats.splice(index, 1);
+          index = selectedSeatsId.indexOf(seats[i].id);
           selectedSeatsId.splice(index, 1);
         }
         checkSeatMaxNumber();
@@ -75,56 +75,68 @@ function initWagon() {
 
   //toggle the text for the selected seats and the continue button
   function toggleText() {
-    let textContainer = document.querySelector("#textContainer");
+    seatChoice = false;
     let continueButton = document.querySelector("#continueButton");
     let continueText = document.querySelector("#continueText");
     continueText.style.display = "block";
     continueButton.classList.add("disabled");
-    if (selectedSeats.length == 0) {
-      textContainer.children[0].classList.remove("none");
-      textContainer.children[1].classList.add("none");
-    } else {
-      textContainer.children[0].classList.add("none");
-      textContainer.children[1].classList.remove("none");
-      let buffer = textContainer.children[1].innerText;
-      textContainer.children[1].innerText =
-        buffer.substring(0, buffer.indexOf(":") + 1) +
-        " " +
-        selectedSeatsId.sort().join(", ");
-      for (let i = 1; i <= nbrSeats; i++) {
-        let seat = document.getElementById("seat_" + i);
-        console.log(seat);
-        if (selectedSeatsId[i - 1] == undefined) {
-          seat.innerText = ".";
-        } else {
-          seat.innerText = selectedSeatsId[i - 1];
-        }
+    let selectedSeatsIdSorted = selectedSeatsId.sort((a, b) => a - b);
+    for (let i = 1; i <= nbrSeats; i++) {
+      let seat = document.getElementById("seat_" + i);
+      if (selectedSeatsIdSorted[i - 1] == undefined) {
+        seat.innerText = "";
+      } else {
+        seat.innerText = selectedSeatsIdSorted[i - 1];
       }
     }
+    if (selectedSeats.length == nbrSeats) {
+      seatChoice = true;
+      continueText.style.display = "none";
+      document.querySelector("#seat").value = selectedSeatsId.join("//");
+    }
   }
-  if (selectedSeats.length == nbrSeats) {
-    continueButton.classList.remove("disabled");
-    continueText.style.display = "none";
-    document.querySelector("#seat").value = selectedSeatsId.join("//");
-  }
-}
 
-//check if the number of selected seats is greater than the number of seats to buy and remove the first selected seat
-function checkSeatMaxNumber() {
-  if (selectedSeats.length > nbrSeats) {
-    selectedSeats[0].classList.remove("selected");
-    selectedSeats.shift();
-    selectedSeatsId.shift();
+  //check if the number of selected seats is greater than the number of seats to buy and remove the first selected seat
+  function checkSeatMaxNumber() {
+    if (selectedSeats.length > nbrSeats) {
+      selectedSeats[0].classList.remove("selected");
+      selectedSeats.shift();
+      selectedSeatsId.shift();
+    }
+    toggleText();
   }
 }
 
 let currentWagon = 1;
+let seatChoice = false;
 let seatArray = document.querySelector("#seatArray").innerText.split("//");
 let nbrSeats = parseInt(document.querySelector("#nbrSeats").innerText);
 let selectedSeats = [];
 let selectedSeatsId = [];
+let inputs = document.querySelectorAll("input");
+
+//add event for each input on click
+inputs.forEach((input) => {
+  input.addEventListener("keyup", checkform);
+});
+
+//check if the form is valid
+function checkform() {
+  let valid = true;
+  inputs.forEach((input) => {
+    if (input.value == "") {
+      valid = false;
+    }
+  });
+  if (valid && seatChoice) {
+    document.querySelector("#continueButton").classList.remove("disabled");
+  } else {
+    document.querySelector("#continueButton").classList.add("disabled");
+  }
+}
 
 function loadWagon(id) {
+  let typeTrain = document.querySelector("#typeTrain");
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -132,7 +144,13 @@ function loadWagon(id) {
       initWagon();
     }
   };
-  xmlhttp.open("GET", "views/TGV.php?id=" + id, true);
+  if (typeTrain.innerText == "TGV") {
+    xmlhttp.open("GET", "views/TGV.php?id=" + id, true);
+  } else if (typeTrain.innerText == "TGVDuplex") {
+    xmlhttp.open("GET", "views/TGVDuplex.php?id=" + id, true);
+  } else {
+    console.log("error");
+  }
   xmlhttp.send();
 }
 
@@ -150,16 +168,18 @@ previousButton.addEventListener("click", function () {
 function changeWagon(id) {
   currentWagon = id;
   if (currentWagon == 1) {
-    previousButton.style.display = "none";
+    previousButton.classList.add("disabled");
   } else {
-    previousButton.style.display = "block";
+    previousButton.classList.remove("disabled");
   }
   if (currentWagon == 8) {
-    nextButton.style.display = "none";
+    nextButton.classList.add("disabled");
   } else {
-    nextButton.style.display = "block";
+    nextButton.classList.remove("disabled");
   }
   loadWagon(currentWagon);
 }
 
-document.onload = changeWagon(currentWagon);
+if (document.querySelector("#content") != null) {
+  document.onload = changeWagon(currentWagon);
+}

@@ -234,3 +234,5 @@ define("NO_SELECTED_SEAT","Aucun siège n'a été sélectionné");
 define('SELECTED_SEAT','Vous avez sélectionné le(s) siège(s) suivant(s) : ');
 define('VALIDATE','Valider mon placement');
 define('SEAT_NEEDED','Vous devez choisir le nombre de sièges que vous avez réserver pour pouvoir valider votre placement');
+define('NO_SEAT_NUMBER','Place libre n°');
+define('SEAT_NUMBER','Place n°');

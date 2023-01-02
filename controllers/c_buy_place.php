@@ -14,9 +14,15 @@ $places = $train->getBusySeats($travel_id,$from);
 
 $trainType = $train->getTrainType($travel_id);
 
+
 if($trainType['TRAIN_TYPE_ID'] < 4){
-    header("Location: index.php?page=buy_details&travel=$travel_id&line=$line&from=$from&to=$to&nbr=$nbr");
-    die();
+    $trainType = "TER";
+}else if($trainType['TRAIN_TYPE_ID'] == 4){
+    $trainType = "TGVDuplex";
+}else if($trainType['TRAIN_TYPE_ID'] == 5){
+    $trainType = "TGV";
+}else{
+    $trainType = "problème";
 }
 
 

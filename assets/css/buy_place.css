@@ -100,6 +100,7 @@ p.none {
   display: none;
 }
 
+button.disabled,
 #continueButton.disabled {
   pointer-events: none;
   opacity: 0.5;
@@ -107,6 +108,7 @@ p.none {
 
 #buttonContainer {
   margin-top: 2%;
+  margin-bottom: 20px;
   width: 20%;
   display: flex;
   flex-direction: row;
@@ -133,6 +135,16 @@ p.none {
   transition-duration: 0.5s;
 }
 
+#continueButton {
+  margin-top: 20px;
+}
+
+#seatChoiceSection {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
 fieldset {
   background-color: var(--bg-black-second-color);
   border: none;
@@ -141,7 +153,7 @@ fieldset {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 35%;
+  min-width: 500px;
   margin: 1% 0;
 }
 
@@ -149,7 +161,7 @@ fieldset > label {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 1rem 0;
+  margin: 20px 0 10px;
   text-align: left;
   width: 100%;
 }
@@ -157,8 +169,9 @@ fieldset > label {
 fieldset div {
   display: flex;
   flex-direction: row;
-  width: 90%;
   justify-content: space-between;
+  width: 90%;
+  margin: 0 0 20px;
 }
 
 fieldset div label {
