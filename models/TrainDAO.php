@@ -30,10 +30,13 @@ class TrainDAO extends DAO
         t.TRAVEL_ID, 
         l.LINE_ID, 
         l.START_STATION_ID,
-        l.END_STATION_ID 
+        l.END_STATION_ID,
+        trt.TRAIN_TYPE_LABEL 
         FROM LINE l
         INNER JOIN TRAVEL t ON l.LINE_ID = t.LINE_ID
         INNER JOIN TRAVEL_WITH_ET tet ON t.TRAVEL_ID = tet.TRAVEL_ID
+        INNER JOIN TRAIN tr ON t.TRAIN_ID = tr.TRAIN_ID
+        INNER JOIN TRAIN_TYPE trt ON tr.TRAIN_TYPE_ID = trt.TRAIN_TYPE_ID
         WHERE :station_from IN (SELECT STATION_ID FROM LINE_STOP l2 WHERE l2.LINE_ID = l.LINE_ID)
         AND :station_to IN (SELECT STATION_ID FROM LINE_STOP l2 WHERE l2.LINE_ID = l.LINE_ID AND ORDER_STOP > (SELECT ORDER_STOP FROM LINE_STOP WHERE l2.LINE_ID = LINE_ID AND STATION_ID = :station_from))
         AND l.LINE_ID IN (
@@ -73,12 +76,19 @@ class TrainDAO extends DAO
         return $this->queryRow($sql, $args);
     }
 
+    public function getTrainType($travel_id)
+    {
+        $sql = 'SELECT TRAIN_TYPE_ID FROM TRAIN inner join TRAVEL on TRAIN.TRAIN_ID=TRAVEL.TRAIN_ID where TRAVEL_ID = :travel_id';
+        $args = array(':travel_id' => $travel_id);
+        return $this->queryRow($sql, $args);
+    }
+
     public function getBusySeats($travel_id,$start_station_id)
     {
         $sql = 'SELECT PLACE_ID FROM TICKET ti
                 INNER JOIN TRAVEL tr ON ti.TRAVEL_ID = tr.TRAVEL_ID
                 WHERE ti.TRAVEL_ID = :travel_id
-                AND (SELECT ORDER_STOP FROM LINE_STOP ls WHERE ls.LINE_ID = tr.LINE_ID AND STATION_ID = :start_station_id) < (SELECT ORDER_STOP FROM LINE_STOP ls WHERE ls.LINE_ID = tr.LINE_ID AND STATION_ID = ti.END_STATION_ID);
+                AND (SELECT ORDER_STOP FROM LINE_STOP ls WHERE ls.LINE_ID = tr.LINE_ID AND STATION_ID = :start_station_id) < (SELECT ORDER_STOP FROM LINE_STOP ls WHERE ls.LINE_ID = tr.LINE_ID AND STATION_ID = ti.END_STATION_ID)
         ';
         $args = array(':travel_id' => $travel_id, ':start_station_id' => $start_station_id);
         return $this->queryAll($sql, $args);

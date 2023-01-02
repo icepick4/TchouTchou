@@ -4,7 +4,7 @@ buttonToDesactive.addEventListener("click", function () {
   var xhttp = new XMLHttpRequest();
   xhttp.open(
     "GET",
-    "views/endAlert.php?id=" + url.slice(url.indexOf("=") + 1),
+    "ajax/endAlert.php?id=" + url.slice(url.indexOf("=") + 1),
     true
   );
   xhttp.send();

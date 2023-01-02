@@ -14,4 +14,5 @@ function minToHourMin($min)
     }
     return $hour . "h" . $min;
 }
+
 ?>

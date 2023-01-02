@@ -37,14 +37,29 @@ p {
   width: auto;
   margin: 5px;
   display: flex;
+  height: 14vh;
 }
 
 .control_pannel fieldset {
   width: 50%;
 }
 
-.approching-train {
-  display: flex;
+.control_pannel fieldset#incoming {
+  overflow-y: scroll;
+}
+
+.control_pannel fieldset#incoming div#approching_list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+.approching_train {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.approching_train .item{
+  justify-self: center;
 }
 
 .select_option {

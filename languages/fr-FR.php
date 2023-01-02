@@ -74,6 +74,7 @@ define('MY_TICKETS', 'Mes Billets');
 define('MY_MESSAGES', 'Mes Messages');
 define('BUY_TICKET', 'Acheter un billet');
 define('NO_TICKET', 'Vous n\'avez pas de billet pour le moment !');
+define('NO_TICKET_RELATED','Aucun billet ne correspond !');
 
 define('HOW_TO_BUY', 'Comment acheter un billet ?');
 define('HOW_TO_BUY_TEXT', 'Pour acheter un billet, il vous suffit de vous rendre sur la page d\'achat de billet, de sélectionner votre trajet et de valider votre achat. Vous recevrez ensuite un mail de confirmation avec le détail de votre billet.');
@@ -228,3 +229,11 @@ define('SHOW_ALL_ALERTS','Afficher aussi les alertes terminées');
 //purchase
 define('NO_TRAVEL_FOUND','Aucun voyage ne correspond à votre recherche');
 define('SEARCH_TRAVEL','Rechercher un voyage');
+define('PREVIOUS','Précédent');
+define('NEXT','Suivant');
+define("NO_SELECTED_SEAT","Aucun siège n'a été sélectionné");
+define('SELECTED_SEAT','Vous avez sélectionné le(s) siège(s) suivant(s) : ');
+define('VALIDATE','Valider mon placement');
+define('SEAT_NEEDED','Vous devez choisir le nombre de sièges que vous avez réserver pour pouvoir valider votre placement');
+define('NO_SEAT_NUMBER','Place libre n°');
+define('SEAT_NUMBER','Place n°');

@@ -64,9 +64,18 @@ require_once(PATH_VIEWS . 'header.php');
             <p><?= intval($trains[$i]['PRICE'])*intval($_POST['nbr']).' €' ?></p>
             </div>
             <div>
-                <a href="index.php?page=buy_place&travel=<?= $trains[$i]['TRAVEL_ID'] ?>&from=<?= $from_id ?>&to=<?= $to_id?>&nbr=<?= $_POST['nbr']?>"><?= BUY ?></a>
+            <form action="index.php?page=buy_place" method="post">
+                <input type="hidden" name="travel" value="<?= $trains[$i]['TRAVEL_ID'] ?>">
+                <input type="hidden" name="line" value="<?= $trains[$i]['LINE_ID'] ?>">
+                <input type="hidden" name="from" value="<?= $from_id ?>">
+                <input type="hidden" name="to" value="<?= $to_id ?>">
+                <input type="hidden" name="price" value="<?= intval($trains[$i]['PRICE'])*intval($_POST['nbr']) ?>">
+                <input type="hidden" name="nbr" id="nbr" value="<?= $_POST['nbr'] ?>">
+                <input type="submit" value="<?= BUY ?>" >
+            </form>
             </div>
         </div>
+        
     <?php
     }
     ?>

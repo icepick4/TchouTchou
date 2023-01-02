@@ -59,7 +59,7 @@ class StationDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
-    public function get_station_arrivals($id)
+    public function get_station_arrivals_days($id,$days)
     {
         $sql = 'SELECT TRAVEL.TRAVEL_ID, TRAVEL.LINE_ID, TRAVEL.TRAIN_ID, TRAVEL.LATE_TIME, ARRIVAL_TIME, STATION_NAME AS DESTINATION FROM TRAVEL 
         INNER JOIN LINE_STOP ON TRAVEL.LINE_ID = LINE_STOP.LINE_ID 
@@ -69,11 +69,16 @@ class StationDAO extends DAO
         WHERE LINE_STOP.STATION_ID != LINE.START_STATION_ID 
         AND LINE_STOP.STATION_ID = :id 
         AND ARRIVAL_TO_STATION.STATION_ID = :id
-        AND DEPARTURE_TIME >= SYSDATE
-        AND DEPARTURE_TIME <= SYSDATE+5/24
+        AND ARRIVAL_TIME >= SYSDATE
+        AND ARRIVAL_TIME <= SYSDATE+ :days
         ORDER BY ARRIVAL_TIME ASC';
-        $args = array(':id' => $id);
+        $args = array(':id' => $id, ':days' => $days);
         return $this->queryAll($sql, $args);
+    }
+
+    public function get_station_arrivals($id)
+    {
+        return $this->get_station_arrivals_days($id,5/24);
     }
 
     public function get_city_name($city_id)
@@ -115,5 +120,12 @@ class StationDAO extends DAO
     public function set_platform_status_close($station_id, $hub_id, $platoform_letter){
         $new_status = 0;
         $this->set_platform_status($station_id, $hub_id, $platoform_letter, $new_status);
+    }
+
+    public function getStationName($station_id)
+    {
+        $sql = 'SELECT STATION_NAME FROM STATION WHERE STATION_ID = :station_id';
+        $args = array(':station_id' => $station_id);
+        return $this->queryRow($sql, $args);
     }
 }

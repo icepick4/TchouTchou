@@ -8,41 +8,63 @@
 }
 
 input {
-  background-color: var(--main-color);
-  border: 1px solid var(--main-color);
-  border-radius: 15px;
-  color: white;
-  padding: 0.5rem;
+  height: 30px;
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  padding: 3px 10px;
+  display: block;
+  background-color: transparent;
+  color: var(--main-color);
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
 }
-
+input[type="submit"] {
+  height: 40px;
+  background-color: var(--bg-black-second-color);
+  transition: 0.3s;
+  color: var(--txt-white-color);
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 #form {
   width: 55%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-select {
-  background-color: var(--main-color);
-  border: 1px solid var(--main-color);
-  border-radius: 15px;
-  color: white;
-  padding: 0.5rem;
-  background-image: none;
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  pointer-events: none;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0;
+  width: 30px;
 }
 
-select option {
+form div button {
+  font-weight: bold;
   background-color: var(--main-color);
   color: white;
+  font-weight: bold;
+  border: 0;
 }
 
-input[type="date"] {
-  font-family: Poppins, sans-serif;
+form div button:first-child {
+  border-radius: 15px 0 0 15px;
+}
+
+form div button:last-child {
+  border-radius: 0 15px 15px 0;
+}
+.buttonNumber:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }
-
-input:focus,
-select:focus {
-  background-color: var(--main-color);
+.buttonNumber {
+  transition: 0.3s;
 }
 
 .tickets {
@@ -137,7 +159,7 @@ select:focus {
   align-items: center;
   height: 100%;
 }
-.ticket-container > div:last-child > a {
+.ticket-container > div:last-child > form input {
   padding: 5% 20%;
   border: 2.5px solid var(--main-color);
   border-radius: 15px;
@@ -145,22 +167,7 @@ select:focus {
   color: white;
   font-weight: bold;
   background-color: var(--main-color);
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-  text-align: center;
-  border-radius: 0%;
-  pointer-events: none;
-  width: 30px;
-  font-weight: bold;
-}
-.buttonNumber:hover {
   cursor: pointer;
-  transform: scale(1.1);
-}
-.buttonNumber {
-  transition: 0.3s;
 }
 
 /* Opéra*/
@@ -180,27 +187,17 @@ input::-webkit-inner-spin-button {
 #SeatCounterContainer {
   display: flex;
 }
-form div button {
-  font-weight: bold;
-  background-color: var(--main-color);
-  color: white;
-  border: 1px solid var(--main-color);
-}
-
-form div button:first-child {
-  border-radius: 15px 0 0 15px;
-}
-
-form div button:last-child {
-  border-radius: 0 15px 15px 0;
-}
 
 /* Search bar */
+.search::placeholder {
+  color: var(--main-color);
+  opacity: 1;
+}
 .container {
   position: relative;
   width: 200px;
-  border: 1px solid var(--main-color);
-  border-radius: 15px;
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
 }
 .search {
   height: 20px;
@@ -220,7 +217,7 @@ form div button:last-child {
 
 .clear-search {
   position: absolute;
-  right: 2%;
+  right: 4%;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
@@ -242,12 +239,14 @@ form div button:last-child {
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
-  background-color: var(--main-color);
-  border-bottom: 1px solid white;
+  background-color: var(--bg-black-second-color);
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
   color: var(--txt-white-color);
+  transition: 0.3s;
 }
 .autocomplete-items div:hover {
-  background-color: var(--bg-black-second-color);
+  transform: scale(1.1);
 }
 
 #autocomplete-list {
@@ -255,6 +254,7 @@ form div button:last-child {
   margin: 1px auto;
   max-height: 400px;
   overflow-y: auto;
+  overflow-x: hidden;
   border: 1px solid var(--main-color);
   display: block;
 }
