@@ -6,7 +6,7 @@
 <!--  Début de la page -->
 <?php
 
-if ($_SESSION['logged']) {
+if ($ticket != null) {
 
 ?>
     <h1 id="title-trip"><?= TRAVEL_TO ?><span class="colored"><?php echo $ticket[0]['END_STATION_NAME'] ?></span></h1>
@@ -100,6 +100,8 @@ if ($_SESSION['logged']) {
         </div>
     </div>
 <?php
+}else{
+    echo '<h1 id="title-trip">'.NO_TICKET_RELATED.'</h1>';
 }
 
 ?>
