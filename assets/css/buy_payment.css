@@ -1,8 +1,69 @@
-#main {
+#travel-payment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 3% 0;
+}
+
+#travel-details {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: var(--bg-black-second-color);
+  border-radius: 15px;
+  padding: 2%;
+}
+
+#travel-details > p > span {
+  color: var(--main-color);
 }
 #paypal-button-container {
-  width: 25%;
+  width: 20%;
+  background-color: var(--bg-black-second-color);
+  color: white;
+  padding: 4% 1.5%;
+  border-radius: 15px;
+}
+
+#paypal-button-container p:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#travel_details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+#travel_details p {
+  padding: 5%;
+  font-size: 1.25em;
+}
+#travel_details p:first-child {
+  padding: 1% 5% 0 5%;
+  font-style: italic;
+  opacity: 0.6;
+  font-size: 0.9em;
+}
+#travel_details p:nth-child(2) {
+  padding-bottom: 2%;
+  padding-top: 3%;
+}
+#travel_details p:last-child {
+  padding-top: 2%;
+}
+#travel_details p:nth-child(3) {
+  padding-left: 10%;
+  margin-left: 8%;
+  border-left: 4px solid white;
+  font-weight: bold;
+}
+
+#travel_details,
+#paypal-button-container{
+  filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3));
 }
