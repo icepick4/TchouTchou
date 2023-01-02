@@ -10,4 +10,4 @@
     require_once('./config/configuration.php');
     require_once(PATH_MODELS . 'UserDAO.php');
     $user = new UserDAO();
-    $user->deleteTicket($_SESSION['id'],$_GET['ticket']);
+    $user->deleteTicket($_GET['id'],$_GET['ticket']);
