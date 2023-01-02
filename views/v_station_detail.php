@@ -9,12 +9,14 @@ require_once(PATH_MODELS . 'Function.php');
 <!--  Début de la page -->
     <div class="container">
         <button onclick="document.location.href='index.php?page=station_list'"><?= RETURN_BUTTON ?></button>
+        <?php if(isset($station_name['STATION_NAME'])) { ?>
         <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
             <p id="departuresText"><?= DEPARTURES?></p>
             <p id="arrivalsText"><?= ARRIVALS?></p>
         </label>
+        <?php } ?>
     </div>
     <?php if(isset($station_name['STATION_NAME'])) {?>
         <h1><?= STATION_OF . $station_name['STATION_NAME'] ?></h1>
