@@ -147,9 +147,9 @@ function loadWagon(id) {
     }
   };
   if (typeTrain.innerText == "TGV") {
-    xmlhttp.open("GET", "views/TGV.php?id=" + id, true);
+    xmlhttp.open("GET", "ajax/TGV.php?id=" + id, true);
   } else if (typeTrain.innerText == "TGVDuplex") {
-    xmlhttp.open("GET", "views/TGVDuplex.php?id=" + id, true);
+    xmlhttp.open("GET", "ajax/TGVDuplex.php?id=" + id, true);
   } else {
     console.log("error");
   }

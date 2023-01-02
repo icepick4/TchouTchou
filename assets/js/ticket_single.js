@@ -10,7 +10,7 @@ cancelButton.addEventListener("click", function () {
   var xhttp = new XMLHttpRequest();
   xhttp.open(
     "GET",
-    "views/deleteTicket.php?ticket=" +
+    "ajax/deleteTicket.php?ticket=" +
       url.slice(url.indexOf("&ticket=") + 8) +
       "&id=" +
       getFlags(flag)[0],
