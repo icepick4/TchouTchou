@@ -108,12 +108,12 @@ function initWagon() {
 }
 
 let currentWagon = 1;
-let seatChoice = false;
+let seatChoice = true;
 let seatArray = document.querySelector("#seatArray").innerText.split("//");
 let nbrSeats = parseInt(document.querySelector("#nbrSeats").innerText);
 let selectedSeats = [];
 let selectedSeatsId = [];
-let inputs = document.querySelectorAll("input");
+let inputs = document.querySelectorAll("fieldset input");
 
 //add event for each input on click
 inputs.forEach((input) => {
@@ -154,17 +154,6 @@ function loadWagon(id) {
   xmlhttp.send();
 }
 
-let nextButton = document.querySelector("#next");
-nextButton.addEventListener("click", function () {
-  currentWagon++;
-  changeWagon(currentWagon);
-});
-let previousButton = document.querySelector("#previous");
-previousButton.addEventListener("click", function () {
-  currentWagon--;
-  changeWagon(currentWagon);
-});
-
 function changeWagon(id) {
   currentWagon = id;
   if (currentWagon == 1) {
@@ -181,5 +170,17 @@ function changeWagon(id) {
 }
 
 if (document.querySelector("#content") != null) {
+  seatChoice = false;
   document.onload = changeWagon(currentWagon);
+
+  let nextButton = document.querySelector("#next");
+  nextButton.addEventListener("click", function () {
+    currentWagon++;
+    changeWagon(currentWagon);
+  });
+  let previousButton = document.querySelector("#previous");
+  previousButton.addEventListener("click", function () {
+    currentWagon--;
+    changeWagon(currentWagon);
+  });
 }

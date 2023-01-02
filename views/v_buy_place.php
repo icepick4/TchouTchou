@@ -20,7 +20,7 @@
 <?php } ?>
 <article id="seatInfoSection">
     
-    <form action="index.php?page=buy_details" method="post">
+    <form action="index.php?page=buy_payment" method="post">
         <input type="hidden" name="travel" value="<?= $travel_id ?>">
         <input type="hidden" name="line" value="<?= $line ?>">
         <input type="hidden" name="from" value="<?= $from ?>">
