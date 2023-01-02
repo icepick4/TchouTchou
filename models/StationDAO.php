@@ -122,10 +122,17 @@ class StationDAO extends DAO
         $this->set_platform_status($station_id, $hub_id, $platoform_letter, $new_status);
     }
 
-    public function getStationName($station_id)
+    public function get_station_departure_for_travel($travel_id, $station_id)
     {
-        $sql = 'SELECT STATION_NAME FROM STATION WHERE STATION_ID = :station_id';
-        $args = array(':station_id' => $station_id);
+        $sql = 'SELECT TO_CHAR(DEPARTURE_TIME,\'HH24:MI\') AS DEPARTURE_TIME FROM ARRIVAL_TO_STATION WHERE TRAVEL_ID = :travel_id AND STATION_ID = :station_id';
+        $args = array(':travel_id' => $travel_id, ':station_id' => $station_id);
+        return $this->queryRow($sql, $args);
+    }
+
+    public function get_station_arrival_for_travel($travel_id, $station_id)
+    {
+        $sql = 'SELECT TO_CHAR(ARRIVAL_TIME,\'HH24:MI\') AS ARRIVAL_TIME FROM ARRIVAL_TO_STATION WHERE TRAVEL_ID = :travel_id AND STATION_ID = :station_id';
+        $args = array(':travel_id' => $travel_id, ':station_id' => $station_id);
         return $this->queryRow($sql, $args);
     }
 }

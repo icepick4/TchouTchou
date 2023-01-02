@@ -64,6 +64,10 @@
 }
 
 #travel_details,
-#paypal-button-container{
+#paypal-button-container {
   filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3));
+}
+
+h1 span {
+  color: var(--main-color);
 }

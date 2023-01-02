@@ -1,4 +1,5 @@
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
+<?php print_r($_POST); ?>
 <script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR"></script>
 
 <script>
@@ -8,7 +9,7 @@
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: '77.44' // Can also reference a variable or function
+            value: <?= $_POST['price'] ?> // Can also reference a variable or function
           }
         }]
       });
@@ -30,7 +31,7 @@
 </script>
 <div id="travel-payment">
   <div id="travel-details">
-    <h1>Détails de votre voyage à <span><?= $station_name ?></h1>
+    <h1>Détails de votre voyage vers <span><?= $to_station_name ?></h1>
     <div id="travel_details">
         <p><?php 
             if (date('l',strtotime($ticket[0]['DEPARTURE_DATE'])) == "Monday") {
@@ -74,9 +75,9 @@
                 echo DECEMBER;
             }
      ?></p>
-        <p><span class="colored"><?php echo $ticket[0]['DEPARTURE_TIME']?></span> ● <?= $from?></p>
-        <p>Voyage n°<span class="colored"><?php echo $ticket[0]['TRAVEL_ID']?></span></p>
-        <p><span class="colored"><?php echo $ticket[0]['END_TIME']?></span> ● <?= $to?></p>
+        <p><span class="colored"><?= $from_station_time_departure ?></span> ● <?= $from_station_name?></p>
+        <p>Voyage n°<span class="colored"><?= $_POST['travel']?></span></p>
+        <p><span class="colored"><?= $to_station_time_arrival ?></span> ● <?= $to_station_name?></p>
     </div>
   </div>
   <div id="paypal-button-container">
