@@ -2,6 +2,8 @@
 
 <form>
 <?php 
+echo $_POST['nbr'];
+print_r($_POST);
     if (isset($_POST['seat']))
     {
         $seats = explode('//', $_POST['seat']);
@@ -13,7 +15,7 @@
                 <input type="text" name="name" id="name" required>
                 <label for="firstname">Prénom</label>
                 <input type="text" name="firstname" id="firstname" required>
-            <fieldset>
+            </fieldset>
         <?php }
     } else {
         for($i=0 ; $i < $_POST['nbr'] ; $i++ )
@@ -24,7 +26,7 @@
                 <input type="text" name="name" id="name" required>
                 <label for="firstname">Prénom</label>
                 <input type="text" name="firstname" id="firstname" required>
-            <fieldset>
+            </fieldset>
         <?php }
     }
 ?>
