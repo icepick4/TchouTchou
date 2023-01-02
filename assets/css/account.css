@@ -25,8 +25,9 @@
 	border-spacing: 30px 30px;
 	border-radius: 10px;
 	font-size: 1.5em;
-	background-color: #4f3510;
-	box-shadow: 5px 5px 5px 0px #3b280d;
+	background-color: transparent;
+	border: white 3px solid;
+	/* box-shadow: 5px 5px 5px 0px #3b280d; */
 }
 
 .infos svg {
