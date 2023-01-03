@@ -17,9 +17,15 @@
     onApprove: (data, actions) => {
       return actions.order.capture().then(function(orderData) {
         // Successful capture! For dev/demo purposes:
-        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
         const transaction = orderData.purchase_units[0].payments.captures[0];
-        alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+        var xhttp = new XMLHttpRequest();
+        xhttp.open(
+          "GET",
+          "ajax/addTicket.php?travel=" + $_POST['travel'] + "&from=" + $_POST['from'] + "&to=" + $_POST['to'] + "&first_name=" + $_SESSION['first_name'] + "&last_name=" + $_SESSION['last_name'] + "&seat" + $_POST['seat'] + "&nbr" + $_POST['nbr'] + "&user_id" + $_SESSION['user_id'] + "&price"
+            ,
+          true
+        );
+        xhttp.send();
         // When ready to go live, remove the alert and show a success message within this page. For example:
         // const element = document.getElementById('paypal-button-container');
         // element.innerHTML = '<h3>Thank you for your payment!</h3>';

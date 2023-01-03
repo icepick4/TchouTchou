@@ -21,13 +21,12 @@
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 2%;
-	/*space between columns*/
 	border-spacing: 30px 30px;
 	border-radius: 10px;
 	font-size: 1.5em;
 	background-color: transparent;
-	border: white 3px solid;
-	/* box-shadow: 5px 5px 5px 0px #3b280d; */
+	border: black 3px solid;
+	box-shadow: 10px 10px 8px 0px rgb(0, 0, 0, 0.3);
 }
 
 .infos svg {
@@ -71,7 +70,7 @@ table td {
 
 form input {
 	background-color: transparent;
-	/* color: white; */
+	color: white;
 	outline: none;
 	border: none;
 	cursor: text;
@@ -170,6 +169,15 @@ p.info {
 		width: 3rem;
 		fill: white;
 		stroke: white;
+	}
+
+	form input {
+		color: white;
+	}
+
+	.infos table {
+		border: white 3px solid;
+		box-shadow: 10px 10px 8px 0px rgb(0, 0, 0, 0.3);
 	}
 }
 
