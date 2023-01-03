@@ -8,7 +8,7 @@
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: <?= $_POST['price'] ?> // Can also reference a variable or function
+            value: <?= $price ?> // Can also reference a variable or function
           }
         }]
       });
@@ -17,13 +17,21 @@
     onApprove: (data, actions) => {
       return actions.order.capture().then(function(orderData) {
         // Successful capture! For dev/demo purposes:
-        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
         const transaction = orderData.purchase_units[0].payments.captures[0];
-        alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+        let link = 'ajax/addTicket.php?nbr=<?= $nbr . "&seat=" . $seat . "&travel=" . $travel . "&line=" . $line . "&from=" . $from . "&to=" . $to . "&user_id=" . $_SESSION['user_id'] . "&firstname=" . $firstname . "&name=" . $name ?> ';
+        var xhttp = new XMLHttpRequest();
+        xhttp.open(
+          "GET",
+          link ,
+          true
+        );
+        xhttp.send();
         // When ready to go live, remove the alert and show a success message within this page. For example:
         // const element = document.getElementById('paypal-button-container');
         // element.innerHTML = '<h3>Thank you for your payment!</h3>';
         // Or go to another URL:  actions.redirect('thank_you.html');
+
+        actions.redirect('index.php?page=ticket_list');
       });
     }
   }).render('#paypal-button-container');

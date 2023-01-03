@@ -46,8 +46,7 @@ if ($ticket != null) {
     
     </div>
     <div id="button-set-ticket">
-    <button id="modify-button"><?= MODIFY ?></button>
-    <button id="cancel-button"><?= DELETE ?></button>
+    <button id="delete-button"><?= DELETE ?></button>
     </div>
     <div class="links-content">
         <div class="link-ticket-list">
@@ -57,7 +56,7 @@ if ($ticket != null) {
         </div>
         <div class="link-ticket-list">
             <div class="links">
-                <a href="index.php?page=shopping"><?= BUY_TICKET ?></a>
+                <a href="index.php?page=purchase"><?= BUY_TICKET ?></a>
             </div>
         </div>
     </div>

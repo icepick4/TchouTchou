@@ -4,7 +4,7 @@
 	text-decoration: none;
 	display: block;
 	padding: 10px 0;
-	border-bottom: 1px solid #e5e5e5;
+	border-bottom: 2px solid #e5e5e5;
 	text-align: center;
 	margin: 0 auto;
 	margin-top: 20px;
@@ -21,13 +21,12 @@
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 2%;
-	/*space between columns*/
 	border-spacing: 30px 30px;
 	border-radius: 10px;
 	font-size: 1.5em;
 	background-color: transparent;
-	border: white 3px solid;
-	/* box-shadow: 5px 5px 5px 0px #3b280d; */
+	border: black 3px solid;
+	box-shadow: 10px 10px 8px 0px rgb(0, 0, 0, 0.3);
 }
 
 .infos svg {
@@ -46,7 +45,7 @@
 	width: 100%;
 	height: 100%;
 	border: none;
-	background-color: #724c17;
+	background-color: #000000;
 	color: white;
 	font-size: 1.5em;
 	font-weight: 600;
@@ -61,8 +60,7 @@
 
 /*border between rows*/
 .infos table td:first-child {
-	border-bottom: 2px solid #e5e5e5;
-	color: #fff;
+	border-bottom: 2px solid #5c5858;
 }
 
 table td {
@@ -99,8 +97,8 @@ form {
 
 .display-input input:not(input[type='submit']) {
 	pointer-events: all;
-	color: #696969;
-	border: 1px solid #e5e5e5;
+	color: #000;
+	border: 1px solid #d8d2d2;
 	border-radius: 10px;
 	background-color: var(--main-color);
 	background-color: #fff;
@@ -123,7 +121,6 @@ form {
 	text-decoration: none;
 	background: none;
 	border: none;
-	width: 100%;
 	font-size: 1.5rem;
 	cursor: pointer;
 }
@@ -172,18 +169,73 @@ p.info {
 		fill: white;
 		stroke: white;
 	}
+
+	form input {
+		color: white;
+	}
+
+	.infos table {
+		border: white 3px solid;
+		box-shadow: 10px 10px 8px 0px rgb(0, 0, 0, 0.3);
+	}
 }
 
-@media only screen and (max-width: 800px) {
+@media (prefers-color-scheme: light) {
+	.infos {
+		border-color: #000;
+	}
+
+	form input {
+		color: #000;
+	}
+
+	.infos table {
+		background-color: #cecaca;
+	}
+
+	.display-input input:not(input[type='submit']) {
+		pointer-events: all;
+		color: #000;
+		border: 1px solid #3f3d3d;
+		border-radius: 10px;
+	}
+}
+
+@media only screen and (max-width: 900px) {
 	.content {
 		flex-direction: column;
 	}
+
 	.infos table {
 		font-size: 1em;
 		border-spacing: 5px 5px;
 	}
+
 	.infos {
-		display: block;
 		width: 94%;
+	}
+
+	.links p {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 1250px) {
+	.links p {
+		display: none;
+	}
+
+	.links a {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 0px) and (max-width: 900px) {
+	.links p {
+		display: block;
+	}
+
+	.links a {
+		width: 50%;
 	}
 }
