@@ -8,6 +8,7 @@ $from_station_name = $station->get_station_name($_POST['from'])['STATION_NAME'];
 $from_station_time_departure = $station->get_station_departure_for_travel($_POST['travel'],$_POST['from'])['DEPARTURE_TIME'];
 $to_station_name = $station->get_station_name($_POST['to'])['STATION_NAME'];
 $to_station_time_arrival = $station->get_station_arrival_for_travel($_POST['travel'],$_POST['to'])['ARRIVAL_TIME'];
+$from_station_date_departure = $station->get_station_departure_date_for_travel($_POST['travel'],$_POST['from'])['DEPARTURE_DATE'];
 if (isset($_GET['payment'])) {
     $travel_id = $_GET['travel'];
     $from_id = $_GET['from'];
