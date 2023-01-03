@@ -21,11 +21,12 @@ fieldset {
 select {
   background-color: var(--bg-black-color);
   color: white;
-  border-radius: 15px;
+  border-radius: 20px;
   width: fit-content;
 }
 
-p {
+
+p, h3 {
   margin: 0;
 }
 
@@ -66,6 +67,7 @@ p {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 15px;
+  height: 100%;
 }
 
 select.loading {
