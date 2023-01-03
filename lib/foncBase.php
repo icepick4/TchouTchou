@@ -81,3 +81,80 @@ function choixImage($id){
     }
     return $result;
 }
+
+function getDay($input){
+    $day = date('l', strtotime($input));
+    switch($day){
+        case 'Monday':
+            $result = MONDAY;
+            break;
+        case 'Tuesday':
+            $result = TUESDAY;
+            break;
+        case 'Wednesday':
+            $result = WEDNESDAY;
+            break;
+        case 'Thursday':
+            $result = THURSDAY;
+            break;
+        case 'Friday':
+            $result = FRIDAY;
+            break;
+        case 'Saturday':
+            $result = SATURDAY;
+            break;
+        case 'Sunday':
+            $result = SUNDAY;
+            break;
+        default:
+            $result = 'error';
+            break;
+    }
+    return $result;
+}
+
+function getMonth($input){
+    $month = date('F', strtotime($input));
+    switch($month){
+        case 'January':
+            $result = JANUARY;
+            break;
+        case 'February':
+            $result = FEBRUARY;
+            break;
+        case 'March':
+            $result = MARCH;
+            break;
+        case 'April':
+            $result = APRIL;
+            break;
+        case 'May':
+            $result = MAY;
+            break;
+        case 'June':
+            $result = JUNE;
+            break;
+        case 'July':
+            $result = JULY;
+            break;
+        case 'August':
+            $result = AUGUST;
+            break;
+        case 'September':
+            $result = SEPTEMBER;
+            break;
+        case 'October':
+            $result = OCTOBER;
+            break;
+        case 'November':
+            $result = NOVEMBER;
+            break;
+        case 'December':
+            $result = DECEMBER;
+            break;
+        default:
+            $result = 'error';
+            break;
+    }
+    return $result;
+}

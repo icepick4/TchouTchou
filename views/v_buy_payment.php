@@ -1,7 +1,6 @@
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
-<script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
-<!-- Set up a container element for the button -->
-<div id="paypal-button-container"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR"></script>
+
 <script>
   paypal.Buttons({
     // Sets up the transaction when a payment button is clicked
@@ -9,7 +8,7 @@
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: '77.44' // Can also reference a variable or function
+            value: <?= $_POST['price'] ?> // Can also reference a variable or function
           }
         }]
       });
@@ -29,4 +28,22 @@
     }
   }).render('#paypal-button-container');
 </script>
+<div id="travel-payment">
+  <div id="travel-details">
+    <h1>Détails de votre voyage vers <span><?= $to_station_name ?></h1>
+    <div id="travel_details">
+        <p><?php 
+            echo getDay($from_station_date_departure);
+            echo ' '.date('d',strtotime($from_station_date_departure)).' ';
+        echo getMonth($from_station_date_departure);
+     ?></p>
+        <p><span class="colored"><?= $from_station_time_departure ?></span> ● <?= $from_station_name?></p>
+        <p>Voyage n°<span class="colored"><?= $_POST['travel']?></span></p>
+        <p><span class="colored"><?= $to_station_time_arrival ?></span> ● <?= $to_station_name?></p>
+    </div>
+  </div>
+  <div id="paypal-button-container">
+    <p><?= $_POST['price'] ?> €</p>
+  </div>
+</div>
 <?php require_once(PATH_VIEWS . 'footer.php');
