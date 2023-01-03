@@ -62,7 +62,6 @@
 /*border between rows*/
 .infos table td:first-child {
 	border-bottom: 2px solid #e5e5e5;
-	color: #fff;
 }
 
 table td {
@@ -72,7 +71,7 @@ table td {
 
 form input {
 	background-color: transparent;
-	color: white;
+	/* color: white; */
 	outline: none;
 	border: none;
 	cursor: text;
@@ -174,14 +173,22 @@ p.info {
 	}
 }
 
+@media (prefers-color-scheme: light) {
+	.infos {
+		border-color: #000;
+	}
+}
+
 @media only screen and (max-width: 800px) {
 	.content {
 		flex-direction: column;
 	}
+
 	.infos table {
 		font-size: 1em;
 		border-spacing: 5px 5px;
 	}
+
 	.infos {
 		display: block;
 		width: 94%;

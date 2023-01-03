@@ -31,6 +31,7 @@ p {
   flex-direction: column;
   align-items: center;
 }
+
 #resume div.discussion_resume {
   padding: 1em;
   background-color: var(--main-color);
@@ -38,6 +39,10 @@ p {
   border-radius: 10px;
   margin: 0.5em;
   width: 88%;
+}
+
+.discussion_resume:hover {
+  cursor: pointer;
 }
 
 #resume div:hover {
@@ -62,6 +67,7 @@ p {
   border-radius: 12px;
   z-index: -2;
 }
+
 .sender {
   align-self: flex-start;
   background-color: var(--border-input);
@@ -91,10 +97,12 @@ form input:focus {
   outline: none;
   border: none;
 }
+
 form input:not([type="submit"]) {
   flex-grow: 1;
   color: white;
 }
+
 form input[type="submit"] {
   color: var(--main-color);
   cursor: pointer;
@@ -191,6 +199,7 @@ p.noMessage {
   left: 0;
   right: 0;
 }
+
 #resume .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
@@ -200,6 +209,7 @@ p.noMessage {
   border-radius: 0;
   opacity: 1;
 }
+
 #resume .autocomplete-items div:hover {
   background-color: var(--bg-black-second-color);
 }
@@ -217,13 +227,15 @@ p.noMessage {
   width: 130px;
   height: 34px;
   border-radius: 15px;
-  background-color: var(--main-color);
+  background-color: rgba(66, 57, 57, 0.3);
   color: white;
   font-weight: bold;
   margin: 2% 0;
+  border: none;
 }
+
 #storage.active {
-  background-color: var(--second-color);
+  background-color: var(--main-color);
 }
 
 /* The switch - the box around the slider */
@@ -267,15 +279,15 @@ p.noMessage {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: var(--main-color);
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px var(--main-color);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(95px);
@@ -297,6 +309,7 @@ input:checked + .slider:before {
   top: 4px;
   left: 36px;
 }
+
 .switch #intern {
   color: var(--main-color);
 }
@@ -304,14 +317,16 @@ input:checked + .slider:before {
 .switch #extern {
   color: white;
 }
+
 #extern {
   opacity: 0;
 }
 
-input:checked ~ #intern {
+input:checked~#intern {
   opacity: 0;
 }
-input:checked ~ #extern {
+
+input:checked~#extern {
   opacity: 1;
 }
 
@@ -330,6 +345,7 @@ input:checked ~ #extern {
   padding: 0;
   opacity: 1;
 }
+
 #resume #resumeClient {
   width: 100%;
 }
@@ -337,6 +353,7 @@ input:checked ~ #extern {
 .discussion_resume {
   width: 88%;
 }
+
 #resume .discussion_resume.active {
   opacity: 1;
 }
@@ -369,10 +386,12 @@ input:checked ~ #extern {
   width: 50px;
   height: 100%;
 }
+
 #headermsg a {
   margin-right: 20px;
   transition: transform 0.2s;
 }
+
 #headermsg a:hover {
   cursor: pointer;
   transform: scale(1.1);
@@ -382,25 +401,49 @@ input:checked ~ #extern {
   h1 {
     font-size: 3em;
   }
+
   #headermsg h2 {
     font-size: 1em;
     margin: 2px 0;
   }
+
   #chat {
     flex-direction: column;
     height: unset;
   }
+
   #resume {
     width: 100%;
     max-height: 80vh;
     overflow-x: hidden;
     border-bottom: 2px solid var(--bg-white-color);
   }
+
   #messages {
     width: 100%;
     max-height: 80vh;
   }
+
   #messages p {
     padding: 6px;
+  }
+}
+
+#storage:hover {
+  cursor: pointer;
+}
+
+
+@media (prefers-color-scheme: light) {
+  #headermsg {
+    background-color: rgba(66, 57, 57, 0.3);
+  }
+
+  .sender {
+    background-color: rgba(66, 57, 57, 0.3);
+  }
+
+  #search {
+    background-color: rgba(66, 57, 57, 0.3);
   }
 }
