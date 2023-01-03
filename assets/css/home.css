@@ -143,10 +143,6 @@ article img {
   text-align: justify;
 }
 
-.arti span {
-  color: var(--main-color);
-}
-
 /* mobile */
 @media (max-width: 800px) {
   #main {

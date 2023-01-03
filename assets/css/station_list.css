@@ -1,7 +1,7 @@
 table {
   border-collapse: collapse;
   table-layout: fixed;
-  width: 50%;
+  width: 75%;
   border: 1px solid var(--main-color);
   font-size: 12px;
   margin: 0 auto;
@@ -17,7 +17,8 @@ table,
 table tr,
 table td,
 table th {
-  border: 1px solid var(--main-color);
+  border: 1px solid #000;
+  padding: 2rem;
 }
 
 table th {
@@ -25,25 +26,31 @@ table th {
   font-weight: bold;
   background-color: var(--main-color);
   color: var(--txt-white-color);
+  cursor: auto;
 }
+
+
 table td {
   transition: transform 0.5s;
 }
+
 table tr:nth-child(even) {
-  background-color: var(--bg-black-second-color);
+  background-color: rgb(97, 88, 88);
   color: white;
 }
 
-table tr:nth-child(odd):not(:first-child) {
-  color: var(--light-main-color);
+table tr:nth-child(odd) {
+  color: #000;
 }
 
 table tr:hover {
   cursor: pointer;
 }
+
 table tr:hover td {
   color: var(--main-color);
 }
+
 table td {
   padding: 8px;
   text-align: center;
@@ -94,6 +101,7 @@ table td {
   left: 0;
   right: 0;
 }
+
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
@@ -101,6 +109,7 @@ table td {
   border-bottom: 1px solid white;
   color: var(--txt-white-color);
 }
+
 .autocomplete-items div:hover {
   background-color: var(--bg-black-second-color);
 }
@@ -118,11 +127,13 @@ table td {
     background-color: var(--bg-black-color);
     color: var(--main-color);
   }
+
   .autocomplete-items div {
     color: var(--txt-white-color);
     background-color: var(--border-input);
     border-bottom: 1px solid var(--main-color);
   }
+
   table,
   table tr,
   table td,
@@ -133,10 +144,12 @@ table td {
   table tr:first-child {
     color: white;
   }
+
   table tr:nth-child(even) {
     background-color: var(--border-input);
     color: white;
   }
+
   table tr:nth-child(odd):not(:first-child) {
     color: white;
   }
@@ -146,19 +159,23 @@ table td {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1100px) {
   table {
     width: 100%;
   }
+
   .container {
     width: 100%;
   }
+
   table tr {
     font-size: 10px;
   }
+
   table th {
     font-size: 12px;
   }
+
   table h3 {
     margin: 0;
   }
