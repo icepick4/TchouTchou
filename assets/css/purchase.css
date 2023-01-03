@@ -20,7 +20,7 @@ input {
 }
 input[type="submit"] {
   height: 40px;
-  background-color: var(--bg-black-second-color);
+  background-color: var(--main-color);
   transition: 0.3s;
   color: var(--txt-white-color);
 }

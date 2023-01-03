@@ -104,6 +104,7 @@ function initWagon() {
       selectedSeatsId.shift();
     }
     toggleText();
+    checkform();
   }
 }
 
