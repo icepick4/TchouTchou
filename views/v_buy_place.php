@@ -41,10 +41,10 @@
                 <label><?= SEAT_NUMBER ?><span id=<?='seat_'.($i+1)?> ></span></label>
                 <?php } ?>
                 <div>
-                    <label for="name_<?= $i+1 ?>"><?= NAME ?></label>
-                    <input type="text" name="name_<?= $i+1 ?>" id="name_<?= $i+1 ?>" required>
                     <label for="firstname_<?= $i+1 ?>"><?= FIRST_NAME ?> </label>
                     <input type="text" name="firstname_<?= $i+1 ?>" id="firstname_<?= $i+1 ?>" required>
+                    <label for="name_<?= $i+1 ?>"><?= NAME ?></label>
+                    <input type="text" name="name_<?= $i+1 ?>" id="name_<?= $i+1 ?>" required>
                 </div>
             </fieldset>
         <?php }
