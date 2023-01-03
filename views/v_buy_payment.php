@@ -1,5 +1,4 @@
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
-<?php print_r($_POST); ?>
 <script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR"></script>
 
 <script>
@@ -34,9 +33,9 @@
     <h1>Détails de votre voyage vers <span><?= $to_station_name ?></h1>
     <div id="travel_details">
         <p><?php 
-            echo getDay($ticket[0]['DEPARTURE_DATE']);
-            echo " ";
-            echo getMonth($ticket[0]['DEPARTURE_DATE'])
+            echo getDay($from_station_date_departure);
+            echo ' '.date('d',strtotime($from_station_date_departure)).' ';
+        echo getMonth($from_station_date_departure);
      ?></p>
         <p><span class="colored"><?= $from_station_time_departure ?></span> ● <?= $from_station_name?></p>
         <p>Voyage n°<span class="colored"><?= $_POST['travel']?></span></p>
