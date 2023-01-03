@@ -221,7 +221,6 @@ div.list_quai.loading .quai.block {
   font-size: 16px;
   text-transform: uppercase;
   border-radius: 5px;
-  text-decoration: line-through;
   width: 8rem;
   place-self: center;
 }
