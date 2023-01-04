@@ -51,7 +51,7 @@ form i {
   position: absolute;
   right: 15px;
   color: black;
-  top: 33%;
+  top: 31%;
 }
 
 #title {
@@ -132,6 +132,7 @@ label a:hover {
   .title {
     font-size: 3em;
   }
+
   form {
     width: 90%;
   }
