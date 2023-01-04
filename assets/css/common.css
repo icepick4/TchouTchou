@@ -74,9 +74,9 @@ body {
   content: "";
   background-color: var(--main-color);
   position: absolute;
-  left: 0;
+  left: -10%;
   bottom: 0;
-  width: 100%;
+  width: 110%;
   height: 5px;
   z-index: -1;
   transition: all 0.3s ease-in-out;

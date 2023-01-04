@@ -26,7 +26,7 @@
         <?= SVG_LOGO ?>
       </a>
       <ul>
-        <li><a href="index.php?page=purchase"><?php echo TITLE_PURCHASE ?></a></li>
+        <li><a href="index.php?page=buy"><?php echo TITLE_PURCHASE ?></a></li>
         <li><a href="index.php?page=informations">
             <?php echo TITLE_INFORMATION ?>
           </a></li>

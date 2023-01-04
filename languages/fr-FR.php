@@ -237,3 +237,5 @@ define('VALIDATE','Valider mon placement');
 define('SEAT_NEEDED','Vous devez choisir le nombre de sièges que vous avez réserver pour pouvoir valider votre placement');
 define('NO_SEAT_NUMBER','Place libre n°');
 define('SEAT_NUMBER','Place n°');
+define('END_STATION','Arrivée');
+define('START_STATION','Départ');
