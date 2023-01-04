@@ -26,12 +26,17 @@
           true
         );
         xhttp.send();
+        xhttp.onload = function () {
+        if (this.status == 200) {
+          window.location.href = '?page=ticket_list';
+        }
+        };
         // When ready to go live, remove the alert and show a success message within this page. For example:
         // const element = document.getElementById('paypal-button-container');
         // element.innerHTML = '<h3>Thank you for your payment!</h3>';
         // Or go to another URL:  actions.redirect('thank_you.html');
 
-        actions.redirect('index.php?page=ticket_list');
+        
       });
     }
   }).render('#paypal-button-container');
