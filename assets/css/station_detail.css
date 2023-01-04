@@ -134,7 +134,7 @@ input:checked+.slider:before {
 .switch #departuresText {
   position: absolute;
   font-weight: bold;
-  top: 12%;
+  top: 8%;
   left: 50px;
   margin: 0;
 }
