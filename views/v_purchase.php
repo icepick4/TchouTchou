@@ -10,11 +10,11 @@ require_once(PATH_VIEWS . 'header.php');
 <div class="input-container">
     <form method="post" action="index.php?page=purchase" id="form">
         <div class="container">
-            <input type="text" id="search1" autocomplete="off" placeholder="<?= SEARCH ?>" name="from" class="search" <?php if(isset($_POST['from'])){ echo 'value="' . $_POST['from']. '"';} ?>>
+            <input type="text" id="search1" autocomplete="off" placeholder="<?= START_STATION ?>" name="from" class="search" <?php if(isset($_POST['from'])){ echo 'value="' . $_POST['from']. '"';} ?>>
             <i class="clear-search">X</i>
         </div>
         <div class="container">
-            <input type="text" id="search2" autocomplete="off" placeholder="<?= SEARCH ?>" name="to" class="search" <?php if(isset($_POST['to'])){ echo 'value="' . $_POST['to']. '"';} ?>>
+            <input type="text" id="search2" autocomplete="off" placeholder="<?= END_STATION ?>" name="to" class="search" <?php if(isset($_POST['to'])){ echo 'value="' . $_POST['to']. '"';} ?>>
             <i class="clear-search">X</i>
         </div>
         <input type="date" name="date" <? if(isset($_POST['date']))echo 'value="'. $_POST['date'].'"'; ?>/>
