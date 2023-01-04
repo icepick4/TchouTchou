@@ -19,6 +19,10 @@ input {
   font-size: 15px;
 }
 
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
 input[type="submit"] {
   height: 40px;
   background-color: var(--main-color);
