@@ -10,8 +10,7 @@ deleteButton.addEventListener('click', function () {
 		'Supprimer les tickets',
 		'Êtes vous sûr de supprimer vos tickets ?',
 		'Confirmer',
-		'Annuler',
-		deleteTickets
+		'Annuler'
 	);
 	confirm.buttons[0].addEventListener('click', deleteTickets());
 });
