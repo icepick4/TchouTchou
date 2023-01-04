@@ -52,8 +52,8 @@ class StationDAO extends DAO
         WHERE LINE_STOP.STATION_ID != LINE.END_STATION_ID 
         AND LINE_STOP.STATION_ID = :id 
         AND ARRIVAL_TO_STATION.STATION_ID = :id
-        AND DEPARTURE_TIME >= SYSDATE
-        AND DEPARTURE_TIME <= SYSDATE+5/24
+        AND DEPARTURE_TIME >= CURRENT_TIMESTAMP
+        AND DEPARTURE_TIME <= CURRENT_TIMESTAMP+5/24
         ORDER BY DEPARTURE_TIME ASC';
         $args = array(':id' => $id);
         return $this->queryAll($sql, $args);
@@ -69,8 +69,8 @@ class StationDAO extends DAO
         WHERE LINE_STOP.STATION_ID != LINE.START_STATION_ID 
         AND LINE_STOP.STATION_ID = :id 
         AND ARRIVAL_TO_STATION.STATION_ID = :id
-        AND ARRIVAL_TIME >= SYSDATE
-        AND ARRIVAL_TIME <= SYSDATE+ :days
+        AND ARRIVAL_TIME >= CURRENT_TIMESTAMP
+        AND ARRIVAL_TIME <= CURRENT_TIMESTAMP+ :days
         ORDER BY ARRIVAL_TIME ASC';
         $args = array(':id' => $id, ':days' => $days);
         return $this->queryAll($sql, $args);

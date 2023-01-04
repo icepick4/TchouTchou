@@ -1,7 +1,7 @@
 <?php
 
 define('LOGO', 'Logo de la compagnie'); // Affiché si image non trouvée
-define('MENU_ACCUEIL', 'Accueil');
+//define('MENU_ACCUEIL', 'Accueil');
 define('TITRE_PAGE_ACCUEIL', 'Page D\'accueil');
 
 //HEADER & FOOTER
@@ -9,15 +9,15 @@ define('TITLE', 'Tchoutchou');
 define('TITLE_HOME', 'Accueil');
 define('TITLE_PURCHASE', 'Achats');
 define('TITLE_SEARCH', 'Rechercher');
-define('TITLE_TICKET', 'Vos billets');
-define('TITLE_LOGIN', 'Se connecter');
-define('TITLE_LOGOUT', 'Se déconnecter');
+//define('TITLE_TICKET', 'Vos billets');
+//define('TITLE_LOGIN', 'Se connecter');
+//define('TITLE_LOGOUT', 'Se déconnecter');
 define('TITLE_INFORMATION', 'Informations');
 define('TITLE_CONTACT', 'Nous Contacter');
 define('TITLE_COMPANY', 'Notre Entreprise');
 define('TITLE_INFORM_YOU', 'Vous Informer');
 define('TITLE_QUICK_ACCESS', 'Accès Rapide');
-define('TITLE_MESSAGES', 'Messages');
+//define('TITLE_MESSAGES', 'Messages');
 define('TITLE_PLATFORM_MANAGER', 'Gestion des Quais');
 define('STATION_INFORMATION', 'Gares & Quais');
 define('TERMS_OF_USE', 'Condtions Générales');
@@ -74,7 +74,7 @@ define('MY_TICKETS', 'Mes Billets');
 define('MY_MESSAGES', 'Mes Messages');
 define('BUY_TICKET', 'Acheter un billet');
 define('NO_TICKET', 'Vous n\'avez pas de billet pour le moment !');
-define('NO_TICKET_RELATED','Aucun billet ne correspond !');
+define('NO_TICKET_RELATED', 'Aucun billet ne correspond !');
 
 define('HOW_TO_BUY', 'Comment acheter un billet ?');
 define('HOW_TO_BUY_TEXT', 'Pour acheter un billet, il vous suffit de vous rendre sur la page d\'achat de billet, de sélectionner votre trajet et de valider votre achat. Vous recevrez ensuite un mail de confirmation avec le détail de votre billet.');
@@ -144,9 +144,9 @@ define('NO_ARRIVAL', 'Aucune arrivée prévue pour le moment');
 define('NO_DEPARTURE', 'Aucun départ prévu pour le moment');
 define('STATION_NOT_EXIST', 'Cette gare n\'existe pas');
 define('ON_TIME', 'À l\'heure');
-define('DELAY_OF','Retard de');
-define('MIN','min');
-define('FULL_SCREEN','Plein écran');
+define('DELAY_OF', 'Retard de');
+define('MIN', 'min');
+define('FULL_SCREEN', 'Plein écran');
 
 //tickets
 
@@ -169,7 +169,7 @@ define('STATION_TEXT', "Nous sommes heureux de vous annoncer que vous pouvez dé
 define('MESSAGE_TEXT', "Vous pouvez également nous contacter directement depuis notre site, pour nous faire part de vos remarques ou de vos suggestions. Nous sommes à votre écoute et nous vous répondrons dans les plus brefs délais.");
 define('PLANNING_TEXT', "Vous pouvez également consulter le planning de Vos trajet, pour savoir quand ils partent et quand ils arrivent. Vous pouvez ainsi préparer votre voyage en avance et vous assurer que vous serez à l'heure pour votre train.");
 define('ALERT_LIST', 'Listes des alertes');
-define('ALERT_LIST_TEXT','Vous pouvez consulter la liste des alertes, pour savoir leur provenance, leur localisation et leur impact.');
+define('ALERT_LIST_TEXT', 'Vous pouvez consulter la liste des alertes, pour savoir leur provenance, leur localisation et leur impact.');
 //home employee
 
 define('WELCOME', 'Bienvenue ');
@@ -185,57 +185,63 @@ define('MAINTENANCE_TEXT', 'Accéder au service de maintenance');
 define('SELECT_STATION', 'Choisir la station');
 define('SELECT_HUB', 'Choisir le hub');
 define('CONFIG_PANNEL', 'Panneau de Configuration');
-define('PLATFORM_MANAGER_TITLE','Gestionaire de Quais');
-define('APPROACHING_TRAIN','Train en Approche');
-define('PLATFORMS','Quais');
+define('PLATFORM_MANAGER_TITLE', 'Gestionaire de Quais');
+define('APPROACHING_TRAIN', 'Train en Approche');
+define('PLATFORMS', 'Quais');
 define('LETTER', 'Lettre');
 define('CLOSE', 'Fermé');
 define('OPEN', 'Ouvert');
-define('CONFIRM','Confirmer');
+define('CONFIRM', 'Confirmer');
 
 //messages
 define('NO_MESSAGES', 'Vous n\'avez jamais chercher à contacter notre support jusqu\'à maintenant !');
 define('NO_MESSAGE_BTN', 'Accéder au formulaire de contact');
 define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de votre écran pour charger les messages');
-define('INTERN','Interne');
-define('EXTERN','Externe');
-define('STORAGE','Archive');
+define('INTERN', 'Interne');
+define('EXTERN', 'Externe');
+define('STORAGE', 'Archive');
 
 
 //alertes
 define('LOCATION', 'Localisation');
 define('DESCRIPTION', 'Description');
 define('SEND_ALERT', 'Envoyer une alerte');
-define('SELECT_ALERT_TYPE','Vous devez choisir un type d\'alerte');
-define('ALERT_CREATED','L\'alerte a bien été créée');
-define('AUTHORIZE_LOCATION','Vous devez autoriser la géolocalisation pour envoyer une alerte');
-define('ALERT_TYPE','Type');
-define('TRAVEL_ID','ID du voyage');
-define('ALERT_MESSAGE','Message');
-define('ALERT_DATE','Date de l\'alerte');
-define('NO_ALERTS','Aucune alertes pour le moment');
-define('ALL_TYPES_ALERTS','tous les types');
-define('ALL_STATUS_TRAVELS','Tous les statuts');
-define('ALERT_STATUS','Statut');
-define('FINISHED_ALERTS','Terminées');
-define('CURRENT_ALERTS','En cours');
-define('RESET_FILTER','Réinitialiser tout les filtres');
-define('ALERTS_HEADER','Alerte conernant le voyage n° ');
-define('ALERT_DOES_NOT_EXIST','Cette alerte n\'existe pas');
-define('ALERT_NOT_FINISHED','Marquer comme terminée');
-define('ALERT_FINISHED','L\'alerte est déjà terminée');
-define('SHOW_ALL_ALERTS','Afficher aussi les alertes terminées');
+define('SELECT_ALERT_TYPE', 'Vous devez choisir un type d\'alerte');
+define('ALERT_CREATED', 'L\'alerte a bien été créée');
+define('AUTHORIZE_LOCATION', 'Vous devez autoriser la géolocalisation pour envoyer une alerte');
+define('ALERT_TYPE', 'Type');
+define('TRAVEL_ID', 'ID du voyage');
+define('ALERT_MESSAGE', 'Message');
+define('ALERT_DATE', 'Date de l\'alerte');
+define('NO_ALERTS', 'Aucune alertes pour le moment');
+define('ALL_TYPES_ALERTS', 'tous les types');
+define('ALL_STATUS_TRAVELS', 'Tous les statuts');
+define('ALERT_STATUS', 'Statut');
+define('FINISHED_ALERTS', 'Terminées');
+define('CURRENT_ALERTS', 'En cours');
+define('RESET_FILTER', 'Réinitialiser tout les filtres');
+define('ALERTS_HEADER', 'Alerte conernant le voyage n° ');
+define('ALERT_DOES_NOT_EXIST', 'Cette alerte n\'existe pas');
+define('ALERT_NOT_FINISHED', 'Marquer comme terminée');
+define('ALERT_FINISHED', 'L\'alerte est déjà terminée');
+define('SHOW_ALL_ALERTS', 'Afficher aussi les alertes terminées');
 
 //purchase
-define('NO_TRAVEL_FOUND','Aucun voyage ne correspond à votre recherche');
-define('SEARCH_TRAVEL','Rechercher un voyage');
-define('PREVIOUS','Précédent');
-define('NEXT','Suivant');
-define("NO_SELECTED_SEAT","Aucun siège n'a été sélectionné");
-define('SELECTED_SEAT','Vous avez sélectionné le(s) siège(s) suivant(s) : ');
-define('VALIDATE','Valider mon placement');
-define('SEAT_NEEDED','Vous devez choisir le nombre de sièges que vous avez réserver pour pouvoir valider votre placement');
-define('NO_SEAT_NUMBER','Place libre n°');
-define('SEAT_NUMBER','Place n°');
-define('END_STATION','Arrivée');
-define('START_STATION','Départ');
+define('NO_TRAVEL_FOUND', 'Aucun voyage ne correspond à votre recherche');
+define('SEARCH_TRAVEL', 'Rechercher un voyage');
+define('PREVIOUS', 'Précédent');
+define('NEXT', 'Suivant');
+define("NO_SELECTED_SEAT", "Aucun siège n'a été sélectionné");
+define('SELECTED_SEAT', 'Vous avez sélectionné le(s) siège(s) suivant(s) : ');
+define('VALIDATE', 'Valider mon placement');
+define('SEAT_NEEDED', 'Vous devez choisir le nombre de sièges que vous avez réserver pour pouvoir valider votre placement');
+define('NO_SEAT_NUMBER', 'Place libre n°');
+define('SEAT_NUMBER', 'Place n°');
+define('END_STATION', 'Arrivée');
+define('START_STATION', 'Départ');
+
+//tri
+define('SORT_STATION', 'Trier par Gare');
+define('SORT_CITY', 'Trier par Ville');
+define('SORT_REGION', 'Trier par Département');
+define('SORT_COUNTRY', 'Trier par Pays');
