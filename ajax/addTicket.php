@@ -2,7 +2,7 @@
 <html>
 
 <body>
-    
+
     <?php
     chdir("../");
     //pour utiliser le fichier de config de base
@@ -26,13 +26,10 @@
 
     $user = new UserDAO();
 
-    for ($i=0; $i < $nbr; $i++) { 
-        if($seat[0] == null){
+    for ($i = 0; $i < $nbr; $i++) {
+        if ($seat[0] == null) {
             $user->addTicket($user_id, $travel_id, $from_id, $to_id, null, $firstname[$i], $name[$i]);
-        }else{
+        } else {
             $user->addTicket($user_id, $travel_id, $from_id, $to_id, $seat[$i], $firstname[$i], $name[$i]);
         }
     }
-
-
-
