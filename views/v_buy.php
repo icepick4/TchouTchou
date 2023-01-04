@@ -8,7 +8,7 @@ require_once(PATH_VIEWS . 'header.php');
 
 <!--  Début de la page -->
 <div class="input-container">
-    <form method="post" action="index.php?page=purchase" id="form">
+    <form method="post" action="index.php?page=buy" id="form">
         <div class="container">
             <input type="text" id="search1" autocomplete="off" placeholder="<?= START_STATION ?>" name="from" class="search" <?php if(isset($_POST['from'])){ echo 'value="' . $_POST['from']. '"';} ?>>
             <i class="clear-search">X</i>
