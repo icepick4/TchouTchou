@@ -55,7 +55,6 @@ function initWagon() {
 
   //toggle a class on the seat with the correct id
   function toggleSeat(id) {
-    //error here
     for (let i = 0; i < seats.length; i++) {
       if (seats[i].id == id) {
         if (seats[i].classList.contains("reserved")) {
@@ -84,6 +83,11 @@ function initWagon() {
   //toggle the text for the selected seats and the continue button
   function toggleText() {
     if (selectedSeats.length > nbrSeats) {
+      if (document.getElementById(selectedSeats[0].id) != null) {
+        document
+          .getElementById(selectedSeats[0].id)
+          .classList.remove("selected");
+      }
       selectedSeats[0].classList.remove("selected");
       selectedSeats.shift();
     }
