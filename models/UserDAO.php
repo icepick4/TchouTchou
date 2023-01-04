@@ -131,7 +131,12 @@ class UserDAO extends DAO
         $sql = 'SELECT * FROM USER_DATA';
         return $this->queryAll($sql);
     }
-
+    
+    public function getAllClient()
+    {
+        $sql = 'SELECT * FROM USER_DATA WHERE USER_CATEGORIE_ID = 0';
+        return $this->queryAll($sql);
+    }
     /**
      * Function to get all the users
      * @return array The users's data
