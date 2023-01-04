@@ -1,15 +1,8 @@
 import {
-<<<<<<< HEAD
 	validateEmail,
 	validateName,
 	validatePassword,
 	validatePhone,
-=======
-    validateEmail,
-    validateName,
-    validatePassword,
-    validatePhone
->>>>>>> 6af8421e5cf0e608326e467f7c44a7db53d48aa2
 } from './functions.js';
 
 const name = document.getElementsByTagName('input')[0];
