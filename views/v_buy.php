@@ -4,7 +4,7 @@ require_once(PATH_VIEWS . 'header.php');
 
 ?>
 
-<script src=<?= PATH_JS . 'purchase.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'buy.js' ?> type="module" defer></script>
 
 <!--  Début de la page -->
 <div class="input-container">
