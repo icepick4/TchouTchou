@@ -25,7 +25,7 @@
   border-radius: 10px;
   font-size: 1.5em;
   background-color: transparent;
-  border: black 3px solid;
+  border: var(--main-color) 3px solid;
   box-shadow: 10px 10px 8px 0px rgb(0, 0, 0, 0.3);
 }
 
@@ -45,7 +45,7 @@
   width: 100%;
   height: 100%;
   border: none;
-  background-color: #000000;
+  background-color: transparent;
   color: white;
   font-size: 1.5em;
   font-weight: 600;
@@ -175,7 +175,6 @@ p.info {
   }
 
   .infos table {
-    border: white 3px solid;
     box-shadow: 10px 10px 8px 0px rgb(0, 0, 0, 0.3);
   }
 }
