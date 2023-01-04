@@ -4,17 +4,17 @@ require_once(PATH_VIEWS . 'header.php');
 
 ?>
 
-<script src=<?= PATH_JS . 'purchase.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'buy.js' ?> type="module" defer></script>
 
 <!--  Début de la page -->
 <div class="input-container">
-    <form method="post" action="index.php?page=purchase" id="form">
+    <form method="post" action="index.php?page=buy" id="form">
         <div class="container">
-            <input type="text" id="search1" autocomplete="off" placeholder="<?= SEARCH ?>" name="from" class="search" <?php if(isset($_POST['from'])){ echo 'value="' . $_POST['from']. '"';} ?>>
+            <input type="text" id="search1" autocomplete="off" placeholder="<?= START_STATION ?>" name="from" class="search" <?php if(isset($_POST['from'])){ echo 'value="' . $_POST['from']. '"';} ?>>
             <i class="clear-search">X</i>
         </div>
         <div class="container">
-            <input type="text" id="search2" autocomplete="off" placeholder="<?= SEARCH ?>" name="to" class="search" <?php if(isset($_POST['to'])){ echo 'value="' . $_POST['to']. '"';} ?>>
+            <input type="text" id="search2" autocomplete="off" placeholder="<?= END_STATION ?>" name="to" class="search" <?php if(isset($_POST['to'])){ echo 'value="' . $_POST['to']. '"';} ?>>
             <i class="clear-search">X</i>
         </div>
         <input type="date" name="date" <? if(isset($_POST['date']))echo 'value="'. $_POST['date'].'"'; ?>/>
@@ -56,12 +56,13 @@ require_once(PATH_VIEWS . 'header.php');
                     </div>
                 </div>
                 <div>
-                <img src="<?php echo PATH_IMAGES . "seat.svg" ?>">
-<p><?= $trains[$i]['EMPTY_SEATS']['EMPTYSEATS'] ?></p>
+                    <img src="<?php echo PATH_IMAGES . "seat.svg" ?>">
+                    <p><?= $trains[$i]['EMPTY_SEATS']['EMPTYSEATS'] ?></p>
                 </div>
             </div>
             <div>
-            <p><?= intval($trains[$i]['PRICE'])*intval($_POST['nbr']).' €' ?></p>
+                <p><?= $trains[$i]['TRAIN_TYPE_LABEL']?></p>
+                <p><?= intval($trains[$i]['PRICE'])*intval($_POST['nbr']).' €' ?></p>
             </div>
             <div>
             <form action="index.php?page=buy_place" method="post">

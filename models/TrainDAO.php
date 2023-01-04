@@ -27,11 +27,11 @@ class TrainDAO extends DAO
         TO_CHAR(t.START_TIME, \'HH24:MI\') AS START_TIME,
         TO_CHAR(tet.END_TIME, \'HH24:MI\') AS END_TIME,
         TIME_MIN AS DURATION, 
-        t.TRAVEL_ID, 
+        t.TRAVEL_ID,
         l.LINE_ID, 
         l.START_STATION_ID,
         l.END_STATION_ID,
-        trt.TRAIN_TYPE_LABEL 
+        trt.TRAIN_TYPE_ID
         FROM LINE l
         INNER JOIN TRAVEL t ON l.LINE_ID = t.LINE_ID
         INNER JOIN TRAVEL_WITH_ET tet ON t.TRAVEL_ID = tet.TRAVEL_ID
@@ -43,7 +43,7 @@ class TrainDAO extends DAO
             SELECT LINE_ID 
             FROM TRAVEL 
             WHERE TO_CHAR(t.START_TIME,\'DD/MM/YY\') = TO_CHAR(TO_DATE(:date_travel,\'YYYY/MM/DD\'),\'DD/MM/YY\')
-            AND t.START_TIME > TRUNC(SYSDATE+1/24)) ORDER BY t.START_TIME ASC';
+            AND TO_CHAR(t.START_TIME,\'HH24:MI\') > TO_CHAR(SYSDATE+1/24,\'HH24:MI\')) ORDER BY t.START_TIME ASC';
         $args = array(':date_travel' => str_replace('-','/',$date_travel), ':station_from' => $station_from, ':station_to' => $station_to);
         return $this->queryAll($sql, $args);
     }

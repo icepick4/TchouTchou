@@ -74,9 +74,9 @@ body {
   content: "";
   background-color: var(--main-color);
   position: absolute;
-  left: 0;
+  left: -10%;
   bottom: 0;
-  width: 100%;
+  width: 110%;
   height: 5px;
   z-index: -1;
   transition: all 0.3s ease-in-out;
@@ -127,4 +127,14 @@ body {
   background-color: var(--main-color);
   border-radius: 40px;
   border: 2px solid var(--main-color);
+}
+
+::-moz-selection {
+  background-color: var(--main-color);
+  color: white;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: white;
 }

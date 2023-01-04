@@ -10,42 +10,54 @@
   text-align: center;
   font-size: 3em;
 }
+
 table {
   border-collapse: collapse;
   min-width: 60vw;
-  margin: 2% auto;
+  width: 100%;
 }
+
 table tr:nth-child(odd) {
   background-color: var(--border-input);
 }
+
 table tr:nth-child(even) {
   background-color: var(--bg-header-color);
 }
+
 table * {
   margin: 0;
 }
+
 table svg {
   width: 60px;
 }
+
 td:first-child {
   width: 15%;
 }
+
 td:nth-child(2) {
   width: 15%;
 }
+
 td:nth-child(3) {
   font-size: 2rem;
   color: var(--main-color);
 }
+
 td:nth-child(4) {
   font-size: 2rem;
 }
+
 td:nth-child(4) p {
   display: none;
 }
+
 td:nth-child(5) {
   font-size: 2rem;
 }
+
 td:nth-child(5) p {
   border: 2px solid var(--main-color);
   border-radius: 14px;
@@ -58,8 +70,8 @@ td:nth-child(5) p {
 .switch {
   position: relative;
   display: inline-block;
-  width: 220px;
-  height: 44px;
+  width: 13.8rem;
+  height: 2.8rem;
   font-size: 1.8em;
 }
 
@@ -95,15 +107,15 @@ td:nth-child(5) p {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: var(--main-color);
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px var(--main-color);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(175px);
@@ -122,25 +134,28 @@ input:checked + .slider:before {
 .switch #departuresText {
   position: absolute;
   font-weight: bold;
-  top: 12%;
-  left: 60px;
+  top: 8%;
+  left: 25%;
   margin: 0;
 }
+
 .switch #departuresText {
-  color: var(--main-color);
+  color: #000;
 }
 
 .switch #arrivalsText {
   color: white;
 }
+
 #arrivalsText {
   opacity: 0;
 }
 
-input:checked ~ #departuresText {
+input:checked~#departuresText {
   opacity: 0;
 }
-input:checked ~ #arrivalsText {
+
+input:checked~#arrivalsText {
   opacity: 1;
 }
 
@@ -155,12 +170,17 @@ button {
   cursor: pointer;
 }
 
+label p {
+  user-select: none;
+}
+
 .container {
   display: flex;
   margin-top: 2em;
   width: 60%;
   justify-content: space-around;
 }
+
 #fullScreenButton {
   width: fit-content;
   margin: 0 auto;
@@ -169,6 +189,14 @@ button {
 }
 
 @media (prefers-color-scheme: light) {
+
+  #departures p {
+    color: #fff;
+  }
+
+  #departures h3 {
+    color: #fff;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -180,18 +208,23 @@ button {
   .container {
     width: 100%;
   }
+
   button {
     font-size: 1.2em;
   }
+
   table {
     width: 100vw;
   }
+
   td:nth-child(4) {
     font-size: 1rem;
   }
+
   td:nth-child(4) p {
     display: block;
   }
+
   td:nth-child(1),
   td:nth-child(2) {
     display: none;

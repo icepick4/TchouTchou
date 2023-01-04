@@ -1,7 +1,7 @@
 <?php
 
 define('LOGO', 'Logo de la compagnie'); // Affiché si image non trouvée
-define('MENU_ACCUEIL', 'Accueil');
+//define('MENU_ACCUEIL', 'Accueil');
 define('TITRE_PAGE_ACCUEIL', 'Page D\'accueil');
 
 //HEADER & FOOTER
@@ -9,15 +9,15 @@ define('TITLE', 'Tchoutchou');
 define('TITLE_HOME', 'Accueil');
 define('TITLE_PURCHASE', 'Achats');
 define('TITLE_SEARCH', 'Rechercher');
-define('TITLE_TICKET', 'Vos billets');
-define('TITLE_LOGIN', 'Se connecter');
-define('TITLE_LOGOUT', 'Se déconnecter');
+//define('TITLE_TICKET', 'Vos billets');
+//define('TITLE_LOGIN', 'Se connecter');
+//define('TITLE_LOGOUT', 'Se déconnecter');
 define('TITLE_INFORMATION', 'Informations');
 define('TITLE_CONTACT', 'Nous Contacter');
 define('TITLE_COMPANY', 'Notre Entreprise');
 define('TITLE_INFORM_YOU', 'Vous Informer');
 define('TITLE_QUICK_ACCESS', 'Accès Rapide');
-define('TITLE_MESSAGES', 'Messages');
+//define('TITLE_MESSAGES', 'Messages');
 define('TITLE_PLATFORM_MANAGER', 'Gestion des Quais');
 define('STATION_INFORMATION', 'Gares & Quais');
 define('TERMS_OF_USE', 'Condtions Générales');
@@ -237,3 +237,5 @@ define('VALIDATE','Valider mon placement');
 define('SEAT_NEEDED','Vous devez choisir le nombre de sièges que vous avez réserver pour pouvoir valider votre placement');
 define('NO_SEAT_NUMBER','Place libre n°');
 define('SEAT_NUMBER','Place n°');
+define('END_STATION','Arrivée');
+define('START_STATION','Départ');

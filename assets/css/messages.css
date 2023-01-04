@@ -16,7 +16,7 @@ p {
 #chat {
   margin: 1em;
   display: flex;
-  min-width: 99%;
+  min-width: 98%;
   height: 64vh;
   border: 3px solid var(--main-color);
   border-radius: 12px;
@@ -24,6 +24,7 @@ p {
 
 #resume {
   overflow-y: scroll;
+  overflow-x: hidden;
   width: 25%;
   min-height: 100%;
   border-right: 1px solid #fff;
@@ -38,7 +39,7 @@ p {
   opacity: 0.4;
   border-radius: 10px;
   margin: 0.5em;
-  width: 88%;
+  width: 75%;
 }
 
 .discussion_resume:hover {
@@ -50,10 +51,9 @@ p {
 }
 
 #messages {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   overflow-x: hidden;
-
-  width: 90%;
+  width: 100%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -371,8 +371,7 @@ input:checked~#extern {
   width: 100%;
   background-color: var(--border-input);
   margin-top: 0;
-  padding: 0.5%;
-  border-top-right-radius: 2px;
+  border-top-right-radius: 8px;
   z-index: 100;
 }
 
@@ -432,7 +431,6 @@ input:checked~#extern {
 #storage:hover {
   cursor: pointer;
 }
-
 
 @media (prefers-color-scheme: light) {
   #headermsg {

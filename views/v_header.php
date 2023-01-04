@@ -26,14 +26,14 @@
         <?= SVG_LOGO ?>
       </a>
       <ul>
-        <li><a href="index.php?page=purchase"><?php echo TITLE_PURCHASE ?></a></li>
+        <li><a href="index.php?page=buy"><?php echo TITLE_PURCHASE ?></a></li>
         <li><a href="index.php?page=informations">
             <?php echo TITLE_INFORMATION ?>
           </a></li>
         <li><a href="index.php?page=station_list"><?php echo STATION_LIST ?></a></li>
         <?php
         if (isset($_SESSION['user_id'])) {
-          echo '<li><a href="index.php?page=messages">' . TITLE_MESSAGES . '</a></li>';
+          echo '<li><a href="index.php?page=messages">' . MY_MESSAGES . '</a></li>';
         } ?>
         <?php
         $user = new UserDAO();

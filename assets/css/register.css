@@ -129,6 +129,7 @@ label a:hover {
 }
 
 @media only screen and (max-width: 800px) {
+<<<<<<< HEAD
 	.title {
 		font-size: 3em;
 	}
@@ -136,3 +137,13 @@ label a:hover {
 		width: 90%;
 	}
 }
+=======
+  .title {
+    font-size: 3em;
+  }
+
+  form {
+    width: 90%;
+  }
+}
+>>>>>>> 6af8421e5cf0e608326e467f7c44a7db53d48aa2
