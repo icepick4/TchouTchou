@@ -24,6 +24,10 @@ function initWagon() {
     let seatNumber;
     let maxSeat;
     let currentSeat = 1;
+    let selectedSeatsId = [];
+    for (let i = 0; i < selectedSeats.length; i++) {
+      selectedSeatsId.push(selectedSeats[i].id);
+    }
     for (let i = 0; i < wagon.length; i++) {
       if (wagon[i].parentElement.classList.contains("duplex")) {
         maxSeat = 34;
@@ -51,6 +55,7 @@ function initWagon() {
 
   //toggle a class on the seat with the correct id
   function toggleSeat(id) {
+    //error here
     for (let i = 0; i < seats.length; i++) {
       if (seats[i].id == id) {
         if (seats[i].classList.contains("reserved")) {
@@ -59,15 +64,18 @@ function initWagon() {
         if (!seats[i].classList.contains("selected")) {
           seats[i].classList.toggle("selected");
           selectedSeats.push(seats[i]);
-          selectedSeatsId.push(seats[i].id);
         } else {
           seats[i].classList.toggle("selected");
-          let index = selectedSeats.indexOf(seats[i]);
+          let index;
+          for (let j = 0; j < selectedSeats.length; j++) {
+            if (selectedSeats[j].id == id) {
+              index = j;
+            }
+          }
           selectedSeats.splice(index, 1);
-          index = selectedSeatsId.indexOf(seats[i].id);
-          selectedSeatsId.splice(index, 1);
         }
-        checkSeatMaxNumber();
+
+        toggleText();
         return;
       }
     }
@@ -75,11 +83,20 @@ function initWagon() {
 
   //toggle the text for the selected seats and the continue button
   function toggleText() {
+    if (selectedSeats.length > nbrSeats) {
+      selectedSeats[0].classList.remove("selected");
+      selectedSeats.shift();
+    }
     seatChoice = false;
     let continueButton = document.querySelector("#continueButton");
     let continueText = document.querySelector("#continueText");
     continueText.style.display = "block";
     continueButton.classList.add("disabled");
+    let selectedSeatsId = [];
+
+    for (let i = 0; i < selectedSeats.length; i++) {
+      selectedSeatsId.push(selectedSeats[i].id);
+    }
     let selectedSeatsIdSorted = selectedSeatsId.sort((a, b) => a - b);
     for (let i = 1; i <= nbrSeats; i++) {
       let seat = document.getElementById("seat_" + i);
@@ -92,18 +109,8 @@ function initWagon() {
     if (selectedSeats.length == nbrSeats) {
       seatChoice = true;
       continueText.style.display = "none";
-      document.querySelector("#seat").value = selectedSeatsId.join("//");
+      document.querySelector("#seat").value = selectedSeatsIdSorted.join("//");
     }
-  }
-
-  //check if the number of selected seats is greater than the number of seats to buy and remove the first selected seat
-  function checkSeatMaxNumber() {
-    if (selectedSeats.length > nbrSeats) {
-      selectedSeats[0].classList.remove("selected");
-      selectedSeats.shift();
-      selectedSeatsId.shift();
-    }
-    toggleText();
     checkform();
   }
 }
@@ -113,7 +120,6 @@ let seatChoice = true;
 let seatArray = document.querySelector("#seatArray").innerText.split("//");
 let nbrSeats = parseInt(document.querySelector("#nbrSeats").innerText);
 let selectedSeats = [];
-let selectedSeatsId = [];
 let inputs = document.querySelectorAll("fieldset input");
 var nextButton;
 var previousButton;
