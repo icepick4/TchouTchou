@@ -22,17 +22,17 @@ if ($stations != null) {
     <table>
         <thead>
             <tr>
-                <th><?= STATION ?></th>
-                <th><?= CITY ?></th>
-                <th><?= REGION ?></th>
-                <th><?= COUNTRY ?></th>
+                <th title="<?= SORT_STATION ?>"><?= STATION ?></th>
+                <th title="<?= SORT_CITY ?>"><?= CITY ?></th>
+                <th title="<?= SORT_REGION ?>"><?= REGION ?></th>
+                <th title="<?= SORT_COUNTRY ?>"><?= COUNTRY ?></th>
             </tr>
         </thead>
         <tbody>
             <?php
             foreach ($stations as $station) {
             ?>
-                <tr onclick="document.location.href='index.php?page=station_detail&id=<?= $station['STATION_ID'] ?>'">
+                <tr onclick=" document.location.href='index.php?page=station_detail&id=<?= $station['STATION_ID'] ?>'">
                     <td>
                         <h3><?php echo $station['STATION_NAME'] ?></h3>
                     </td>
@@ -51,13 +51,13 @@ if ($stations != null) {
             ?>
         </tbody>
     </table>
-    <p id="stationsArray" style="display:none"><?php 
-    foreach ($stations as $station) {
-        echo $station['STATION_NAME'] . '//';
-    }
-    ?></p>
+    <p id="stationsArray" style="display:none"><?php
+                                                foreach ($stations as $station) {
+                                                    echo $station['STATION_NAME'] . '//';
+                                                }
+                                                ?></p>
 <?php
-}?>
+} ?>
 <!--  Fin de la page -->
 
 <!--  Pied de page -->
