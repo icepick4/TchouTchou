@@ -128,3 +128,13 @@ body {
   border-radius: 40px;
   border: 2px solid var(--main-color);
 }
+
+::-moz-selection {
+  background-color: var(--main-color);
+  color: white;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: white;
+}

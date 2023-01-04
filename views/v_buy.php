@@ -56,12 +56,13 @@ require_once(PATH_VIEWS . 'header.php');
                     </div>
                 </div>
                 <div>
-                <img src="<?php echo PATH_IMAGES . "seat.svg" ?>">
-<p><?= $trains[$i]['EMPTY_SEATS']['EMPTYSEATS'] ?></p>
+                    <img src="<?php echo PATH_IMAGES . "seat.svg" ?>">
+                    <p><?= $trains[$i]['EMPTY_SEATS']['EMPTYSEATS'] ?></p>
                 </div>
             </div>
             <div>
-            <p><?= intval($trains[$i]['PRICE'])*intval($_POST['nbr']).' €' ?></p>
+                <p><?= $trains[$i]['TRAIN_TYPE_LABEL']?></p>
+                <p><?= intval($trains[$i]['PRICE'])*intval($_POST['nbr']).' €' ?></p>
             </div>
             <div>
             <form action="index.php?page=buy_place" method="post">
