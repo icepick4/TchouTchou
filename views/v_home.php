@@ -34,7 +34,7 @@ $user = new UserDAO();
 		<p>
 			<?= SEARCH_TEXT ?>
 		</p>
-		<a href="index.php?page=purchase">
+		<a href="index.php?page=buy">
 			<div class="btn">
 				<p>
 					<?= WELCOME_GO ?>

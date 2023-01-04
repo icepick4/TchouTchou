@@ -7,37 +7,52 @@
   height: 70px;
   width: 69px;
   margin: 2px 6px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
+
 .seat svg {
   fill: var(--bg-black-color);
 }
+
 .seat:hover {
   cursor: pointer;
 }
+
 .seat:hover svg {
   fill: var(--main-color);
 }
+
 .seat.reserved:hover svg {
   cursor: not-allowed;
   fill: none;
 }
+
 .seat.selected svg {
   fill: var(--main-color);
 }
+
 .seat.reserved svg path,
 .seat.reserved p {
   stroke: var(--grayColor);
   color: var(--grayColor);
 }
+
 .seat.reserved svg path:last-child {
   fill: var(--grayColor);
 }
+
 .hallway {
   opacity: 0;
   height: 70px;
   width: 69px;
   margin: 2px 6px;
 }
+
 .seatNumber {
   position: absolute;
   top: 50%;
@@ -47,46 +62,58 @@
   font-weight: bold;
   font-size: 1.2em;
 }
+
 svg.table {
   margin: 0 4px;
 }
+
 .row {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 4px 0;
 }
+
 .reverse .seat {
   transform: rotate(180deg);
 }
+
 .reverse .seat p {
   transform: rotate(180deg) translate(50%, 50%);
 }
+
 .row.baggageRow,
 .row.tableRow {
   margin: 4px 5px;
 }
+
 .halfRow {
   display: flex;
 }
+
 .endRow {
   align-items: center;
   margin: 0 0 0 5px;
 }
+
 .exitRow {
   align-items: center;
   width: 130px;
 }
+
 .exitRow svg:last-child {
   transform: rotate(180deg);
 }
+
 .downStairsRow {
   margin: 0 0 0 45px;
 }
+
 .upStairsRow {
   margin: 0 0 0 5px;
   background-color: var(--grayColor);
 }
+
 .wagon {
   display: flex;
   border: 6px solid white;
@@ -154,31 +181,55 @@ fieldset {
   justify-content: center;
   align-items: center;
   min-width: 500px;
-  margin: 1% 0;
+  padding: 20px;
+
 }
 
-fieldset > label {
+fieldset>label {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 20px 0 10px;
+  /* margin: 20px 0 10px; */
   text-align: left;
   width: 100%;
 }
 
-fieldset div {
+fieldset #name {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 90%;
-  margin: 0 0 20px;
+  justify-content: center;
+  width: 50%;
+  gap: 1rem;
 }
 
-fieldset div label {
+fieldset #first-name,
+#last-name {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+fieldset #name label {
   color: white;
 }
 
 fieldset input {
   border-radius: 5px;
   border: none;
+}
+
+@media screen and (max-width:600px) {
+  fieldset #name {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  fieldset {
+    min-width: 100%;
+  }
+
+  fieldset #first-name,
+  #last-name {
+    flex-direction: column;
+  }
 }
