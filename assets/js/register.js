@@ -1,15 +1,8 @@
 import {
-<<<<<<< HEAD
-	validateEmail,
-	validateName,
-	validatePassword,
-	validatePhone,
-=======
     validateEmail,
     validateName,
     validatePassword,
     validatePhone
->>>>>>> 6af8421e5cf0e608326e467f7c44a7db53d48aa2
 } from './functions.js';
 
 const name = document.getElementsByTagName('input')[0];
@@ -22,19 +15,6 @@ const form = document.getElementsByTagName('form')[0];
 form.addEventListener('submit', formVerify);
 
 function formVerify(evt) {
-<<<<<<< HEAD
-	if (
-		!validateName(name.value) ||
-		!validateName(fname.value) ||
-		!validatePhone(phone.value) ||
-		!validateEmail(email.value) ||
-		!validatePassword(password.value) ||
-		password.value != passwordVerify.value
-	) {
-		evt.preventDefault();
-		evt.target.children[0].style.display = 'block';
-	}
-=======
     if (
         !validateName(name.value) ||
         !validateName(fname.value) ||
@@ -46,7 +26,6 @@ function formVerify(evt) {
         evt.preventDefault();
         evt.target.children[0].style.display = 'block';
     }
->>>>>>> 6af8421e5cf0e608326e467f7c44a7db53d48aa2
 }
 
 name.addEventListener('change', verify);
@@ -57,27 +36,6 @@ password.addEventListener('change', verify);
 passwordVerify.addEventListener('change', verify);
 
 function verify(evt) {
-<<<<<<< HEAD
-	let source = evt.target;
-	if (callFunction(source)) {
-		source.classList.remove('is-invalid');
-		source.classList.add('is-valid');
-		source.nextElementSibling.style.display = 'none';
-	} else {
-		source.classList.remove('is-valid');
-		source.classList.add('is-invalid');
-		source.nextElementSibling.style.display = 'block';
-	}
-}
-
-function callFunction(source) {
-	if (source.id == 'name') return validateName(source.value);
-	if (source.id == 'fname') return validateName(source.value);
-	if (source.id == 'phone') return validatePhone(source.value);
-	if (source.id == 'email') return validateEmail(source.value);
-	if (source.id == 'password') return validatePassword(source.value);
-	if (source.id == 'confirmPassword') return source.value == password.value;
-=======
     let source = evt.target;
     if (callFunction(source)) {
         source.classList.remove('is-invalid');
@@ -97,5 +55,4 @@ function callFunction(source) {
     if (source.id == 'email') return validateEmail(source.value);
     if (source.id == 'password') return validatePassword(source.value);
     if (source.id == 'confirmPassword') return source.value == password.value;
->>>>>>> 6af8421e5cf0e608326e467f7c44a7db53d48aa2
 }
