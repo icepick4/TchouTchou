@@ -70,8 +70,8 @@ td:nth-child(5) p {
 .switch {
   position: relative;
   display: inline-block;
-  width: 220px;
-  height: 44px;
+  width: 13.8rem;
+  height: 2.8rem;
   font-size: 1.8em;
 }
 
@@ -135,7 +135,7 @@ input:checked+.slider:before {
   position: absolute;
   font-weight: bold;
   top: 8%;
-  left: 50px;
+  left: 25%;
   margin: 0;
 }
 
@@ -168,6 +168,10 @@ button {
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
+}
+
+label p {
+  user-select: none;
 }
 
 .container {
