@@ -21,10 +21,12 @@
         <label class="info"><?= ERROR_PHONE ?></label>
         <input type="email" id="email" name="email" placeholder="<?= EMAIL ?>" required>
         <label class="info"><?= ERROR_MAIL ?></label>
-        <div id="boxPassword"><input type="password" name="password" id="password" placeholder="<?= PASSWORD ?>" required></input><i class="show-password"><svg fill=var(--border-input) xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <div id="boxPassword"><input type="password" name="password" id="password" placeholder="<?= PASSWORD ?>" required></input>
+                <label class="info"><?= ERROR_PASSWORD_TOO_WEAK ?></label><i class="show-password"><svg fill=var(--border-input) xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path d="M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.449s-4.252 8.449-11.985 8.449c-7.18 0-12.015-8.449-12.015-8.449s4.446-7.551 12.015-7.551c7.694 0 11.985 7.551 11.985 7.551zm-7 .449c0-2.757-2.243-5-5-5s-5 2.243-5 5 2.243 5 5 5 5-2.243 5-5z" />
-                        </svg></i></div>
-        <label class="info"><?= ERROR_PASSWORD_TOO_WEAK ?></label>
+                        </svg></i>
+        </div>
+
         <input type="password" id="confirmPassword" name="confirmPassword" placeholder="<?= CONFIRMPASSWORD ?>" required>
         <label class="info"><?= ERROR_PASSWORD_DIFFERENT ?></label>
         <div>

@@ -7,12 +7,18 @@
   height: 70px;
   width: 69px;
   margin: 2px 6px;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .seat svg {
@@ -153,6 +159,7 @@ button.disabled,
   font-size: 1.2em;
   font-weight: bold;
   transition-duration: 0.5s;
+  margin: 0 auto;
 }
 
 #buttonContainer button:hover,
@@ -172,6 +179,11 @@ button.disabled,
   align-items: center;
 }
 
+#seatInfoSection {
+  width: 75%;
+  margin-top: 20px;
+}
+
 fieldset {
   background-color: var(--bg-black-second-color);
   border: none;
@@ -180,16 +192,15 @@ fieldset {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 500px;
   padding: 20px;
-
+  margin: 0 auto;
+  width: 50%;
 }
 
 fieldset>label {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-  /* margin: 20px 0 10px; */
   text-align: left;
   width: 100%;
 }
@@ -218,15 +229,12 @@ fieldset input {
   border: none;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
   fieldset #name {
     flex-direction: column;
     width: 100%;
   }
 
-  fieldset {
-    min-width: 100%;
-  }
 
   fieldset #first-name,
   #last-name {
