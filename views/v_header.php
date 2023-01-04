@@ -33,7 +33,7 @@
         <li><a href="index.php?page=station_list"><?php echo STATION_LIST ?></a></li>
         <?php
         if (isset($_SESSION['user_id'])) {
-          echo '<li><a href="index.php?page=messages">' . TITLE_MESSAGES . '</a></li>';
+          echo '<li><a href="index.php?page=messages">' . MY_MESSAGES . '</a></li>';
         } ?>
         <?php
         $user = new UserDAO();
