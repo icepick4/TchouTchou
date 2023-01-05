@@ -329,8 +329,14 @@ async function getIncoming(station_id) {
   const rep = await fetch(
     "index.php?page=platform_manager&station_id=" + station_id + "&incoming="
   );
-  let data = await rep.json();
-  return data;
+  let data = await rep.text();
+  //let data = await rep.json();
+  console.log("incoming",station_id,data)
+  
+
+  //return data;
+  //tmp
+  return {"incoming":[]};
 }
 
 async function showIncoming() {
@@ -357,6 +363,7 @@ async function autoUpdate() {
   while (true) {
     try {
       await update_platform();
+      await showIncoming();
     } catch (e) {
       console.log("auto update",e);
     }
