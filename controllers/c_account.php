@@ -5,7 +5,7 @@ if (!$_SESSION['logged']) {
     header("Location: index.php?page=login");
     die();
 } else {
-    $user = new UserDAO(true);
+    $user = new UserDAO();
     if (isset($_POST['first-name'])) {
         $user->updateFirstName($_SESSION['user_id'], $_POST['first-name']);
     }

@@ -10,7 +10,7 @@ if (!$_SESSION['logged']) {
     header("Location: index.php?page=ticket_list");
     die();
 } else{
-    $tickets = new TicketDAO(true);
+    $tickets = new TicketDAO();
     $ticket = $tickets->getTicketById($_GET['ticket'], $_SESSION['user_id']);
 }
 

@@ -14,7 +14,7 @@ if ($_SESSION['logged'] && $staff->isDriver($_SESSION['user_id'])) {
         //remplacer 22 par l'heure actuelle
         $travel = $planning->getDriverTravelForTheDayByHour($driver, 22);
     
-        $alerts= $alerts->createAlert($travel[0]['TRAVEL_ID'], $_POST['alertType'], $_POST['message'], $_POST['infoposition']);
+        $alerts->createAlert($travel[0]['TRAVEL_ID'], $_POST['alertType'], $_POST['message'], $_POST['infoposition']);
         $alert = choixAlert('alert_created');
     }
 } else {
