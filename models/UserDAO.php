@@ -358,6 +358,11 @@ class UserDAO extends DAO
         return $this->getEmployeeType($id) == 5;
     }
 
+    public function isHumanResources($id)
+    {
+        return $this->getEmployeeType($id) == 6;
+    }
+
     public function getDriverID($id)
     {
         $sql = 'SELECT DRIVER_ID FROM DRIVER WHERE USER_ID = :id';
