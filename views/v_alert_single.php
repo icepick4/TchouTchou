@@ -26,7 +26,7 @@
                 <img class="alertLogo" src="<?= PATH_IMAGES . $logo ?>" alt="logo de l'alerte">
             </div>
             <p><?= $alert['ALERT_MESSAGE'] ?></p>
-            <button id="finishButton" class="<? if($alert['ALERT_STATUS']!=1) echo "disabled"; ?>"><? if($alert['ALERT_STATUS']==1){ echo ALERT_NOT_FINISHED; }else{ echo ALERT_FINISHED; } ?></button>
+            <button id="finishButton" class="<? if($alert['ALERT_STATUS']!=1 || $user->isStation($_SESSION['user_id'])) echo "disabled"; ?> " ><? if($alert['ALERT_STATUS']==1){ echo ALERT_NOT_FINISHED; }else{ echo ALERT_FINISHED; } ?></button>
         </div>
         
     <iframe

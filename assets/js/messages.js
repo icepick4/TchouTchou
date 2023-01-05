@@ -6,6 +6,7 @@ var discussion = document.querySelector("#messages");
 
 const script = document.querySelector('script[src*="messages.js"]');
 let flag = script.outerHTML;
+let refresh = true;
 
 //event listener for each discussion_resume
 for (let i = 0; i < message.length; i++) {
@@ -64,12 +65,21 @@ function loadMessage(id) {
   //wait 1s to scroll to the bottom of the discussion
   setTimeout(function () {
     discussion.scrollTop = discussion.scrollHeight;
+    let input = document.querySelector("#message");
+    input.focus();
+    input.addEventListener("keyup", function (event) {
+      if (input.value != "") {
+        refresh = false;
+      } else {
+        refresh = true;
+      }
+    });
   }, 200);
 }
 
 //call loadMessage() every 30 seconds to refresh the message
 setInterval(function () {
-  if (currentMessage != -1) {
+  if (currentMessage != -1 && refresh == true) {
     loadMessage(currentMessage);
   }
 }, 30000);

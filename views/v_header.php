@@ -47,6 +47,8 @@
         }
         if (isset($_SESSION['user_id']) && $user->isService($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=maintenance">' . TITLE_MAINTENANCE . '</a></li>';
+        }
+        if(isset($_SESSION['user_id']) && $user->isService($_SESSION['user_id']) || $user->isStation($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=alert_list">' . ALERT_LIST . '</a></li>';
         }
         if (isset($_SESSION['user_id']) && $user->isDriver($_SESSION['user_id'])) {
@@ -59,24 +61,8 @@
       <a href="index.php?page=<?php echo $_SESSION['logged'] ? "account" : "login" ?>" class="logo">
         <?= SVG_ACCOUNT ?>
       </a>
-      <div id="shop" class="logo">
-        <?= SVG_SHOPPING ?>
-      </div>
     </nav>
   </header>
-
-  <div id="cart" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="modal-header">
-        <h2>
-          <?= CART ?>
-        </h2>
-      </div>
-      <div class="modal-body">
-      </div>
-    </div>
-  </div>
 
 
   <section id="main">
