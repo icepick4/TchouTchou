@@ -6,7 +6,7 @@ $staff = new StaffDAO();
 
 $trains = $train->getTrains();
 $train_types = $train->getAllTrainsType();
-if ($_SESSION['logged'] && $staff->isService($_SESSION['user_id'])) {
+if ($_SESSION['logged'] && ($staff->isService($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id']))) {
     if (isset($_POST['status'])) {
 
         $status = $_POST['status'];
