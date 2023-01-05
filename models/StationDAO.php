@@ -23,14 +23,6 @@ class StationDAO extends DAO
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id);
         return $this->queryAll($sql, $args);
     }
-
-    
-    public function get_platform_used_for_travel($travel_id,$station)
-    {
-        $sql = 'SELECT PLATFORM_LETTER FROM PLATFORM P INNER JOIN TRAVEL TR ON P.PLATFORM_USER = TR.TRAIN_ID WHERE TR.TRAVEL_ID = :travel_id AND P.STATION_ID = :station';
-        $args = array(':travel_id' => $travel_id, ':station' => $station);
-        return $this->queryRow($sql, $args);
-    }
     
     public function get_stations()
     {
@@ -79,13 +71,6 @@ class StationDAO extends DAO
     public function get_station_arrivals($id)
     {
         return $this->get_station_arrivals_days($id,5/24);
-    }
-
-    public function get_city_name($city_id)
-    {
-        $sql = 'SELECT CITY_NAME FROM CITY WHERE CITY_ID = :city_id';
-        $args = array(':city_id' => $city_id);
-        return $this->queryRow($sql, $args);
     }
 
     public function get_station_name($station_id)
