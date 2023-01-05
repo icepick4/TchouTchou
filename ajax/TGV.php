@@ -93,7 +93,7 @@
             <p class="seatNumber">8</p>
         </div>
     </div>
-    <div class="row baggageRow">
+    <div class="row baggageRow medium">
         <svg width="148" height="145" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="148" height="145" rx="12" fill="#595550"/>
             <rect x="35" y="53" width="78" height="43" rx="4" fill="#231B13"/>
@@ -397,7 +397,7 @@
             <p class="seatNumber"></p>
         </div>
     </div>
-    <div class="row baggageRow">
+    <div class="row baggageRow large">
         <svg width="198" height="140" viewBox="0 0 198 140" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="198" height="140" rx="12" fill="#595550"/>
             <rect x="60" y="53" width="78" height="43" rx="4" fill="#231B13"/>

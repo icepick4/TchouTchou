@@ -18,9 +18,9 @@
 			<h2><?= TITLE_QUICK_ACCESS ?></h2>
 			<a href="index.php?page=home"><?= TITLE_HOME ?></a>
 			<?php if ($_SESSION['logged']) {
-            echo '<a href="index.php?page=logout" onclick="localStorage.clear();">'. TITLE_LOGOUT .'</a>';
+            echo '<a href="index.php?page=logout" onclick="localStorage.clear();">'. LOGOUT .'</a>';
           } else{
-			echo'<a href="index.php?page=login">'.TITLE_LOGIN.'</a>';
+			echo'<a href="index.php?page=login">'.MY_ACCOUNT.'</a>';
 		  }?>
 		  <?php 
 		  $user = new UserDAO();

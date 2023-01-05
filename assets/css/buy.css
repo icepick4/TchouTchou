@@ -18,21 +18,30 @@ input {
   font-family: Poppins, sans-serif;
   font-size: 15px;
 }
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
 input[type="submit"] {
   height: 40px;
   background-color: var(--main-color);
   transition: 0.3s;
   color: var(--txt-white-color);
 }
+
 input[type="submit"]:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
+
 #form {
+  min-width: 1000px;
   width: 55%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  gap: 1rem;
 }
 
 input[type="number"] {
@@ -59,10 +68,12 @@ form div button:first-child {
 form div button:last-child {
   border-radius: 0 15px 15px 0;
 }
+
 .buttonNumber:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
+
 .buttonNumber {
   transition: 0.3s;
 }
@@ -91,6 +102,7 @@ form div button:last-child {
   border: 2.5px solid var(--main-color);
   border-radius: 15px;
 }
+
 .ticket-container.disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -109,7 +121,9 @@ form div button:last-child {
   justify-content: center;
   align-items: center;
   width: 100%;
+  gap: 2rem;
 }
+
 .ticket-container > div:first-child > div:last-child {
   display: flex;
   justify-content: center;
@@ -117,19 +131,23 @@ form div button:last-child {
   width: 100%;
   font-weight: bold;
 }
+
 .ticket-container > div:first-child > div:last-child img,
 .ticket-container > div:first-child > div:last-child p {
   align-self: center;
 }
+
 .ticket-container > div:first-child > div:last-child img {
   width: 2.25rem;
   height: 2.25rem;
   padding: 0;
 }
+
 .ticket-container > div:first-child > div:first-child div:first-child,
 .ticket-container > div:first-child > div:first-child div:last-child {
   flex-grow: 1;
 }
+
 .ticket-container
   > div:first-child
   > div:first-child
@@ -158,7 +176,13 @@ form div button:last-child {
   justify-content: center;
   align-items: center;
   height: 100%;
+  padding: 1rem;
 }
+
+.ticket-container > div:nth-child(2) > p:first-child {
+  color: var(--main-color);
+}
+
 .ticket-container > div:last-child > form input {
   padding: 5% 20%;
   border: 2.5px solid var(--main-color);
@@ -176,6 +200,7 @@ input::-o-outer-spin-button {
   -o-appearance: none;
   margin: 0;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -193,12 +218,14 @@ input::-webkit-inner-spin-button {
   color: var(--main-color);
   opacity: 1;
 }
+
 .container {
   position: relative;
   width: 200px;
   border: 2px solid var(--main-color);
   border-radius: 10px;
 }
+
 .search {
   height: 20px;
   width: 85%;
@@ -236,6 +263,7 @@ input::-webkit-inner-spin-button {
   left: 0;
   right: 0;
 }
+
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
@@ -245,6 +273,7 @@ input::-webkit-inner-spin-button {
   color: var(--txt-white-color);
   transition: 0.3s;
 }
+
 .autocomplete-items div:hover {
   transform: scale(1.1);
 }
@@ -259,6 +288,18 @@ input::-webkit-inner-spin-button {
   display: block;
 }
 
+@media (max-width: 1100px) {
+  #form {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1000px) {
+  .ticket-container {
+    flex-direction: column;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   select option {
     background-color: var(--bg-black-color);
@@ -271,5 +312,15 @@ input::-webkit-inner-spin-button {
   select,
   input {
     background-color: transparent;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  img {
+    filter: invert(1);
+  }
+
+  .ticket-container > div:first-child > div:first-child div:nth-child(2) {
+    border-top: 3px solid rgb(0, 0, 0);
   }
 }

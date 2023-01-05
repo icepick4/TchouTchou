@@ -95,7 +95,7 @@
                     <p class="seatNumber">8</p>
                 </div>
             </div>
-            <div class="row baggageRow">
+            <div class="row baggageRow medium">
                 <svg width="148" height="145" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="148" height="145" rx="12" fill="#595550"/>
                     <rect x="35" y="53" width="78" height="43" rx="4" fill="#231B13"/>
@@ -341,7 +341,7 @@
                     <p class="seatNumber">8</p>
                 </div>
             </div>
-            <div class="row baggageRow custom">
+            <div class="row baggageRow custom large">
                 <div class="halfRow">
                     <div class="reverse">
                         <div class="seat" id="">
@@ -461,7 +461,7 @@
                 <p class="seatNumber">8</p>
             </div>
         </div>
-        <div class="row baggageRow custom">
+        <div class="row baggageRow custom large">
             <svg width="228" height="142" viewBox="0 0 228 142" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="228" height="142" rx="12" fill="#595550"/>
                 <rect x="75" y="53" width="78" height="43" rx="4" fill="#231B13"/>
@@ -715,7 +715,7 @@
                 <p class="seatNumber"></p>
             </div>
         </div>
-        <div class="row baggageRow">
+        <div class="row baggageRow medium">
             <svg width="148" height="145" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="148" height="145" rx="12" fill="#595550"/>
                 <rect x="35" y="53" width="78" height="43" rx="4" fill="#231B13"/>

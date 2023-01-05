@@ -122,6 +122,16 @@ table td {
   border: 1px solid var(--main-color);
 }
 
+table th {
+  cursor: pointer;
+}
+
+.visible {
+  height: 3em;
+  width: 10em;
+  background: yellow;
+}
+
 @media (prefers-color-scheme: dark) {
   #search {
     background-color: var(--bg-black-color);
@@ -173,7 +183,7 @@ table td {
   }
 
   table th {
-    font-size: 12px;
+    font-size: 20px;
   }
 
   table h3 {

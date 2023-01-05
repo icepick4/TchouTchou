@@ -90,6 +90,7 @@ body {
 .links a:hover {
   color: #fff;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .alert strong {
@@ -127,4 +128,14 @@ body {
   background-color: var(--main-color);
   border-radius: 40px;
   border: 2px solid var(--main-color);
+}
+
+::-moz-selection {
+  background-color: var(--main-color);
+  color: white;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: white;
 }

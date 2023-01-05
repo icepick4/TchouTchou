@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php require_once(PATH_MODELS . 'UserDAO.php'); ?>
-<html lang=<?='"' . substr(LANG, 0, 2) . '"' ?>>
+<html lang=<?= '"' . substr(LANG, 0, 2) . '"' ?>>
 
 <head>
   <meta charset="UTF-8" />
@@ -22,18 +22,23 @@
 <body>
   <header>
     <nav>
-      <a href="index.php?page=home" class="logo">
+      <a href="index.php?page=home" class="logo" id="logo-home">
         <?= SVG_LOGO ?>
       </a>
       <ul>
-        <li><a href="index.php?page=purchase"><?php echo TITLE_PURCHASE ?></a></li>
+        <li>
+          <a href="index.php?page=home" class="home-text">
+            <?= TITLE_HOME ?>
+          </a>
+        </li>
+        <li><a href="index.php?page=buy"><?php echo TITLE_PURCHASE ?></a></li>
         <li><a href="index.php?page=informations">
             <?php echo TITLE_INFORMATION ?>
           </a></li>
         <li><a href="index.php?page=station_list"><?php echo STATION_LIST ?></a></li>
         <?php
         if (isset($_SESSION['user_id'])) {
-          echo '<li><a href="index.php?page=messages">' . TITLE_MESSAGES . '</a></li>';
+          echo '<li><a href="index.php?page=messages">' . MY_MESSAGES . '</a></li>';
         } ?>
         <?php
         $user = new UserDAO();
