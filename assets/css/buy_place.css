@@ -159,6 +159,10 @@ svg {
   width: 16.54%;
 }
 
+.endRow svg:last-child {
+  height: 38%;
+}
+
 .wagon {
   display: flex;
   border: 6px solid white;
