@@ -1,0 +1,142 @@
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 60%;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+table tr {
+  border: 1px solid #ddd;
+  font-size: 20px;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+}
+
+table tr th {
+  color: var(--txt-white-color);
+}
+
+table tr:first-child {
+  font-size: 25px;
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: #000;
+}
+
+table tr:nth-child(even) {
+  background-color: var(--border-input);
+}
+
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+  margin: 40px 0 20px;
+}
+
+#search {
+  width: 50%;
+  height: 30px;
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0 auto;
+  display: block;
+  background-color: var(--bg-black-color);
+  color: var(--txt-white-color);
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+}
+
+#search:focus {
+  outline: none;
+}
+
+#clear-search {
+  position: absolute;
+  right: 25%;
+  top: 20%;
+  cursor: pointer;
+  color: var(--main-color);
+  font-size: 20px;
+  font-style: normal;
+}
+
+select {
+  width: 75%;
+  border: var(--main-color);
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 0.5rem;
+}
+
+form {
+  display: flex;
+}
+
+input {
+  background-color: var(--main-color);
+  color: #fff;
+
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+table select {
+  border-end-start-radius: 15px;
+  border-start-start-radius: 15px;
+}
+table input {
+  border-end-end-radius: 15px;
+  border-start-end-radius: 15px;
+}
+input:hover {
+  background-color: #fff;
+  transition-duration: 0.2s;
+  color: var(--main-color);
+}
+
+form fieldset input[type="submit"] {
+  padding: 10px 3rem;
+  margin-bottom: 2%;
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 2em;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+#main > form {
+  width: 50%;
+}
+form fieldset {
+  border: 3px solid var(--main-color);
+  border-radius: 15px;
+  width: 100%;
+}
+form fieldset select {
+  border-radius: 15px;
+
+  margin: 1rem;
+}
+
+form fieldset legend {
+  font-weight: bold;
+  font-size: 150%;
+}

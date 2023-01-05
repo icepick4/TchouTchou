@@ -247,3 +247,13 @@ define('SORT_STATION', 'Trier par Gare');
 define('SORT_CITY', 'Trier par Ville');
 define('SORT_REGION', 'Trier par Département');
 define('SORT_COUNTRY', 'Trier par Pays');
+
+//staff
+define('DEPARTMENT', 'Service');
+define('ADD_STAFF', 'Ajouter un employé');
+define('IDENTITY', 'Identité');
+define('TYPE', 'Type');
+define('ADMINISTRATOR', 'Administrateur');
+define('DRIVER', 'Conducteur');
+define('SERVICE', 'Service');
+define('SUPPORT', 'Support');
