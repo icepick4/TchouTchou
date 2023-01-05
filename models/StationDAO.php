@@ -63,9 +63,9 @@ class StationDAO extends DAO
         AND LINE_STOP.STATION_ID = :id 
         AND ARRIVAL_TO_STATION.STATION_ID = :id
         AND ARRIVAL_TIME >= SYSDATE
-        AND ARRIVAL_TIME <= SYSDATE + interval \'30\' minute
+        AND ARRIVAL_TIME <= SYSDATE + :days
         ORDER BY ARRIVAL_TIME ASC';
-        $args = array(':id' => $id );//, ':days' => $days);
+        $args = array(':id' => $id , ':days' => $days);
         return $this->queryAll($sql, $args);
     }
 
@@ -120,4 +120,18 @@ class StationDAO extends DAO
         $args = array(':travel_id' => $travel_id, ':station_id' => $station_id);
         return $this->queryRow($sql, $args);
     }
+
+    public function get_station_arrivals_with_platform($id,$days)
+    {
+        $sql = 'SELECT TRAVEL_ID, LINE_ID, TRAIN_ID, LATE_TIME, ARRIVAL_TIME,  DESTINATION, PLATFORM from INCOMING_TRAIN_WITH_PLATFORM
+            where 
+            STATION_ID = :id
+            AND ARRIVAL_TIME >= SYSDATE
+            AND ARRIVAL_TIME <= SYSDATE + :days';
+        $args = array(':id' => $id , ':days' => $days);
+        return $this->queryAll($sql, $args);
+    }
+
+
+
 }
