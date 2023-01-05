@@ -87,7 +87,10 @@ svg {
 .reverse .seat p {
   transform: rotate(180deg) translate(50%, 50%);
 }
-
+.baggageRow svg,
+.tableRow svg {
+  height: 40%;
+}
 .row.baggageRow,
 .row.tableRow {
   margin: 4px 5px;
@@ -107,12 +110,12 @@ svg {
   width: 41%;
 }
 .custom .seat {
-  height: 47%;
+  height: 50%;
 }
 
 .halfRow {
   display: flex;
-  height: 45%;
+  height: 40%;
 }
 .halfRow svg {
   height: 100%;
@@ -137,10 +140,17 @@ svg {
 .downStairsRow {
   margin: 0 0 0 2.5%;
 }
+.downStairsRow svg {
+  height: 38%;
+}
 
 .upStairsRow {
   margin: 0 0 0 5px;
   background-color: var(--grayColor);
+}
+
+.upStairsRow svg {
+  height: 100%;
 }
 
 .upStairsRow,
