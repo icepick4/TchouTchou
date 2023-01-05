@@ -22,7 +22,7 @@ if (
     } else {
         if ($_POST["password"] == $_POST["confirmPassword"]) {
 
-            $password = $user->hashPassword($_POST["password"]);
+            $password = hashPassword($_POST["password"]);
 
             $user->insertUser($email, $phone, $password, $name, $fname, 0);
             header('Location: index.php?page=login');

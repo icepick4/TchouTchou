@@ -35,93 +35,6 @@ class UserDAO extends DAO
     }
 
     /**
-     * Function to get all user's tickets
-     * @param number $id The user's id
-     * @return array The user's tickets
-     * 
-     */
-    public function getTicketsById($id)
-    {
-        $sql = 'SELECT 
-        DISTINCT TK.TRAVEL_ID, 
-        (SELECT COUNT(*) 
-            FROM TICKET T 
-            WHERE T.USER_ID = TK.USER_ID 
-            AND T.TRAVEL_ID = TK.TRAVEL_ID 
-            AND T.START_STATION_ID = TK.START_STATION_ID 
-            AND T.END_STATION_ID = TK.END_STATION_ID) 
-        AS "NBR", 
-        TK.USER_ID, 
-        (SELECT STATION_NAME 
-            FROM STATION 
-            WHERE STATIOn_ID = START_STATION_ID) 
-        AS "START_STATION_NAME", 
-        (SELECT STATION_NAME 
-            FROM STATION 
-            WHERE STATIOn_ID = END_STATION_ID) 
-        AS "END_STATION_NAME",
-        TO_CHAR(TR.START_TIME,\'DD/MM/YYYY\') AS "DEPARTURE_DATE", 
-        TO_CHAR((SELECT DEPARTURE_TIME 
-                FROM ARRIVAL_TO_STATION ATS 
-                WHERE STATION_ID = TK.START_STATION_ID 
-                AND TRAVEl_ID =TK.TRAVEL_ID),\'HH24:MI\')
-                AS "DEPARTURE_TIME", 
-        TO_CHAR((SELECT ARRIVAL_TIME 
-                FROM ARRIVAL_TO_STATION ATS 
-                WHERE STATION_ID = TK.END_STATION_ID 
-                AND TRAVEl_ID =TK.TRAVEL_ID),\'HH24:MI\') 
-                AS "END_TIME" 
-        FROM TICKET TK 
-        INNER JOIN TRAVEL TR 
-        ON TK.TRAVEL_ID = TR.TRAVEL_ID 
-        WHERE TK.USER_ID = :id ORDER BY DEPARTURE_TIME';
-        $args = array(':id' => $id,);
-        return $this->queryAll($sql, $args);
-    }
-
-    /**
-     * Function to get a ticket by id and user id
-     * @param number $id The ticket's id
-     * @param number $userId The user's id
-     * @return array The ticket's data
-     *
-     */
-    public function getTicketById($travel_id, $user_id)
-    {
-        $sql = 'SELECT 
-        TK.TRAVEL_ID,  
-        TK.USER_ID, 
-        (SELECT STATION_NAME 
-            FROM STATION 
-            WHERE STATIOn_ID = START_STATION_ID) 
-        AS "START_STATION_NAME", 
-        (SELECT STATION_NAME 
-            FROM STATION 
-            WHERE STATIOn_ID = END_STATION_ID) 
-        AS "END_STATION_NAME",
-        TO_CHAR(TR.START_TIME,\'MM/DD/YYYY\') AS "DEPARTURE_DATE", 
-        TO_CHAR((SELECT DEPARTURE_TIME 
-                FROM ARRIVAL_TO_STATION ATS 
-                WHERE STATION_ID = TK.START_STATION_ID 
-                AND TRAVEl_ID =TK.TRAVEL_ID),\'HH24:MI\')
-                AS "DEPARTURE_TIME", 
-        TO_CHAR((SELECT ARRIVAL_TIME 
-                FROM ARRIVAL_TO_STATION ATS 
-                WHERE STATION_ID = TK.END_STATION_ID 
-                AND TRAVEl_ID =TK.TRAVEL_ID),\'HH24:MI\') 
-                AS "END_TIME",
-                PLACE_ID,
-                FIRSTNAME,
-                LASTNAME
-        FROM TICKET TK 
-        INNER JOIN TRAVEL TR 
-        ON TK.TRAVEL_ID = TR.TRAVEL_ID 
-        WHERE TK.USER_ID = :user_id AND TK.TRAVEL_ID = :travel_id';
-        $args = array(':travel_id' => $travel_id, ':user_id' => $user_id);
-        return $this->queryAll($sql, $args);
-    }
-
-    /**
      * Function to get all the users
      * @return array The users's data
      *
@@ -137,16 +50,6 @@ class UserDAO extends DAO
         $sql = 'SELECT * FROM USER_DATA WHERE USER_CATEGORIE_ID = 0';
         return $this->queryAll($sql);
     }
-    /**
-     * Function to get all the users
-     * @return array The users's data
-     *
-     */
-    public function getAllEmployees()
-    {
-        $sql = 'SELECT * FROM USER_DATA WHERE USER_CATEGORIE_ID = 1';
-        return $this->queryAll($sql);
-    }
 
     /**
      * Function to insert a new user
@@ -158,6 +61,10 @@ class UserDAO extends DAO
         return $this->queryAll($sql);
     }
 
+    public function isCustomer($id)
+    {
+        return $this->getUserType($id) == 0;
+    }
     /**
      * Function to update the user's first name
      * @param number $id The user's id
@@ -241,19 +148,6 @@ class UserDAO extends DAO
     }
 
     /**
-     * Function to hash the password of a user
-     *
-     * @param  number $id The user's id
-     * @param  string $password The user's password
-     * @return string The hashed password
-     *
-     */
-    public function hashPassword($password)
-    {
-        return password_hash($password, PASSWORD_DEFAULT);
-    }
-
-    /**
      * Function to get the category of a user
      *
      * @param  number $id The user's id
@@ -267,103 +161,4 @@ class UserDAO extends DAO
         return $this->queryRow($sql, $args)['USER_CATEGORIE_ID'];
     }
 
-    /**
-     * Function to check if the user is an employee
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the user is an employee, false otherwise
-     *
-     */
-    public function isEmployee($id)
-    {
-        return $this->getUserType($id) == 1;
-    }
-
-    /**
-     * Function to check if the user is a customer
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the user is a customer, false otherwise
-     *
-     */
-    public function isCustomer($id)
-    {
-        return $this->getUserType($id) == 0;
-    }
-
-    /**
-     * Function to get the employee type of an employee
-     *
-     * @param  number $id The user's id
-     * @return array The employee type
-     *
-     */
-    public function getEmployeeType($id)
-    {
-        $sql = 'SELECT EMPLOYEE_ACCESS FROM EMPLOYEES_DATA WHERE USER_ID = :id';
-        $args = array(':id' => $id);
-        return $this->queryRow($sql, $args)['EMPLOYEE_ACCESS'];
-    }
-
-    /**
-     * Function to check if the employee is a manager
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the employee is a manager, false otherwise
-     *
-     */
-    public function isAdministrator($id)
-    {
-        return $this->getEmployeeType($id) == 1;
-    }
-
-    /**
-     * Function to check if the employee is a station
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the employee is a station, false otherwise
-     *
-     */
-    public function isStation($id)
-    {
-        return $this->getEmployeeType($id) == 2;
-    }
-
-    /**
-     * Function to check if the employee is a driver
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the employee is a driver, false otherwise
-     *
-     */
-    public function isDriver($id)
-    {
-        return $this->getEmployeeType($id) == 3;
-    }
-
-    /**
-     * Function to check if the employee is a service
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the employee is a service, false otherwise
-     *
-     */
-    public function isService($id)
-    {
-        return $this->getEmployeeType($id) == 4;
-    }
-
-    public function isSupport($id)
-    {
-        return $this->getEmployeeType($id) == 5;
-    }
-
-    public function getDriverID($id)
-    {
-        $sql = 'SELECT DRIVER_ID FROM DRIVER WHERE USER_ID = :id';
-        $args = array(':id' => $id);
-        return $this->queryRow($sql, $args)['DRIVER_ID'];
-    }
-
-    
 }

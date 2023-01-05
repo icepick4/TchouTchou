@@ -1,7 +1,6 @@
 <!--  Entête de la page -->
 <?php
 require_once(PATH_VIEWS . 'header.php');
-require_once(PATH_MODELS . 'Function.php');
 
 ?>
 <script src=<?= PATH_JS . 'station_detail.js' ?> type="module" defer></script>

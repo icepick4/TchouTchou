@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php require_once(PATH_MODELS . 'UserDAO.php'); ?>
+<?php require_once(PATH_MODELS . 'StaffDAO.php'); ?>
 <html lang=<?= '"' . substr(LANG, 0, 2) . '"' ?>>
 
 <head>
@@ -25,32 +26,32 @@
         <?= SVG_LOGO ?>
       </a>
       <ul>
-        <li>
-          <a href="index.php?page=home" class="home-text">
-            <?= TITLE_HOME ?>
-          </a>
-        </li>
         <li><a href="index.php?page=buy"><?php echo TITLE_PURCHASE ?></a></li>
-        <li><a href="index.php?page=informations">
-            <?php echo TITLE_INFORMATION ?>
-          </a></li>
+        <?php
+        $user = new UserDAO();
+        $staff = new StaffDAO();
+        if (!$staff->isEmployee($_SESSION['user_id'])) {
+          echo '<li><a href="index.php?page=informations">'. TITLE_INFORMATION .'</a></li>';
+        }?>
         <li><a href="index.php?page=station_list"><?php echo STATION_LIST ?></a></li>
         <?php
         if (isset($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=messages">' . MY_MESSAGES . '</a></li>';
         } ?>
         <?php
-        $user = new UserDAO();
-        if (isset($_SESSION['user_id']) && $user->isStation($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_id']) && ($staff->isStation($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id']))) {
           echo '<li><a href="index.php?page=platform_manager">' . TITLE_PLATFORM_MANAGER . '</a></li>';
         }
-        if (isset($_SESSION['user_id']) && $user->isService($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_id']) && ($staff->isService($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id']))) {
           echo '<li><a href="index.php?page=maintenance">' . TITLE_MAINTENANCE . '</a></li>';
         }
-        if(isset($_SESSION['user_id']) && $user->isService($_SESSION['user_id']) || $user->isStation($_SESSION['user_id'])) {
+        if(isset($_SESSION['user_id']) && $staff->isService($_SESSION['user_id']) || $staff->isStation($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=alert_list">' . ALERT_LIST . '</a></li>';
         }
-        if (isset($_SESSION['user_id']) && $user->isDriver($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_id']) && ($staff->isHumanResource($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id']))) {
+          echo '<li><a href="index.php?page=staff">' . TITLE_STAFF . '</a></li>';
+        }
+        if (isset($_SESSION['user_id']) && $staff->isDriver($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=planning_driver">' . TITLE_PLANNING . '</a></li>';
           echo '<li><a href="index.php?page=alert_trigger">' . TITLE_ALERT . '</a></li>';
         } ?>

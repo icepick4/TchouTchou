@@ -9,5 +9,5 @@
     $skipSession = true;
     require_once('./config/configuration.php');
     require_once(PATH_MODELS . 'TicketDAO.php');
-    $ticket = new TicketDao();
+    $ticket = new TicketDAO();
     $ticket->deleteTicket($_GET['id'],$_GET['ticket']);

@@ -2,15 +2,16 @@
 <?php
 require_once(PATH_VIEWS . 'header.php');
 require_once(PATH_MODELS . 'UserDAO.php');
+require_once(PATH_MODELS . 'StaffDAO.php');
 
 $user = new UserDAO();
-
+$staff = new StaffDAO();
 ?>
 
 
 <!-- Début de la page -->
 
-<?php if (!isset($_SESSION['user_id']) || !$user->isEmployee($_SESSION['user_id'])) { ?>
+<?php if (!isset($_SESSION['user_id']) || !$staff->isEmployee($_SESSION['user_id'])) { ?>
 <article>
 	<img src="assets/images/travel.svg">
 	<div class="arti">
@@ -75,7 +76,7 @@ $user = new UserDAO();
 		</p>
 	</div>
 </article>
-<?php if ($user->isStation($_SESSION['user_id'])) { ?>
+<?php if ($staff->isStation($_SESSION['user_id'])) { ?>
 <article>
 	<img src="assets/images/station_il.svg">
 	<div class="arti">
@@ -96,7 +97,7 @@ $user = new UserDAO();
 	</div>
 </article>
 <?php }
-if ($user->isDriver($_SESSION['user_id'])) { ?>
+if ($staff->isDriver($_SESSION['user_id'])) { ?>
 	<article>
 		<img src="assets/images/calendar.svg">
 		<div class="arti">
@@ -117,7 +118,7 @@ if ($user->isDriver($_SESSION['user_id'])) { ?>
 		</div>
 	</article>
 	<?php }
-	if ($user->isService($_SESSION['user_id'])) { ?>
+	if ($staff->isService($_SESSION['user_id'])) { ?>
 <article>
 	<img src="assets/images/engineer_il.svg">
 	<div class="arti">
@@ -157,7 +158,7 @@ if ($user->isDriver($_SESSION['user_id'])) { ?>
 	</div>
 </article>
 <?php }}
-	if ((isset($_SESSION['user_id']) || $user->isEmployee($_SESSION['user_id']))){?>
+	if ((isset($_SESSION['user_id']) || $staff->isEmployee($_SESSION['user_id']))){?>
 <article>
 	<img src="assets/images/message.svg">
 	<div class="arti">

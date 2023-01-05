@@ -10,9 +10,11 @@
     require_once('./config/configuration.php');
     require_once(PATH_TEXTES . LANG . '.php');
     require_once(PATH_MODELS . 'UserDAO.php');
+    require_once(PATH_MODELS . 'StaffDAO.php');
     require_once(PATH_MODELS . 'MessageDAO.php');
 
     $user = new UserDAO();
+    $staff = new StaffDAO();
     $mailbox = new MessageDAO();
 
     $id_discussion = intval($_GET['number']);
@@ -32,7 +34,7 @@
 
 
 
-    if ($user->isEmployee($user_id)) {
+    if ($staff->isEmployee($user_id)) {
         $discussion = $mailbox->getDiscussionHeaderById($id_discussion);
         if ($discussion['USER_ID'] == $user_id) {
             $receiver = $user->getUserById($discussion['DESTINATION_ID']);
@@ -47,8 +49,8 @@
                                                                         } else {
                                                                             echo  "Support";
                                                                         } ?></h2>
-        <?php if (!$user->isEmployee($user_id) || !$user->isEmployee($receiver['USER_ID'])) {
-            if ($user->isEmployee($user_id)) {
+        <?php if (!$staff->isEmployee($user_id) || !$staff->isEmployee($receiver['USER_ID'])) {
+            if ($staff->isEmployee($user_id)) {
                 $extern = true; ?>
                 <a onclick='console.log(<?= $id_discussion ?>);
     var xhttp = new XMLHttpRequest();

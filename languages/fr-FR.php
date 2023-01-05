@@ -24,6 +24,7 @@ define('TERMS_OF_USE', 'Condtions Générales');
 define('PRIVACY_POLICY', 'Politique de Confidentialité');
 define('STATION_LIST', 'Liste des Gares');
 define('TITLE_GITPULL', 'git pull');
+define('TITLE_STAFF','Gestion du Personnel');
 define('TITLE_MAINTENANCE', 'Maintenance');
 define('TITLE_ALERT', 'Alertes');
 define('CGU', 'les conditions générales d\'utilisation');
