@@ -81,13 +81,6 @@ class StationDAO extends DAO
         return $this->queryRow($sql, $args);
     }
 
-    public function get_tickets($departure_station_name, $arrival_station_name, $date)
-    {
-        $sql = 'SELECT CAST(START_TIME AS DATE) FROM TRAVEL WHERE CAST(START_TIME AS DATE) > :date';
-        $args = array(':date' => $date);
-        return $this->queryAll($sql, $args);
-    }
-
     /* can not close if occuped*/
     public function set_platform_status($station_id, $hub_id, $platoform_letter, $new_status ){
         $sql = 'UPDATE PLATFORM SET PLATFORM_STATUS = :new_status WHERE STATION_ID = :station_id

@@ -15,4 +15,16 @@ function minToHourMin($min)
     return $hour . "h" . $min;
 }
 
+    /**
+     * Function to hash the password of a user
+     *
+     * @param  number $id The user's id
+     * @param  string $password The user's password
+     * @return string The hashed password
+     *
+     */
+function hashPassword($password)
+    {
+        return password_hash($password, PASSWORD_DEFAULT);
+    }
 ?>
