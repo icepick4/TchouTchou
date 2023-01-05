@@ -8,7 +8,7 @@
     //pour utiliser le fichier de config de base
     $skipSession = true;
     require_once('./config/configuration.php');
-    require_once(PATH_MODELS . 'UserDAO.php');
+    require_once(PATH_MODELS . 'TicketDAO.php');
 
     $nbr = intval($_GET['nbr']);
     $travel_id = $_GET['travel'];
@@ -24,12 +24,12 @@
     $firstname = explode("//", $firstname);
 
 
-    $user = new UserDAO();
+    $ticket = new TicketDAO();
 
     for ($i = 0; $i < $nbr; $i++) {
         if ($seat[0] == null) {
-            $user->addTicket($user_id, $travel_id, $from_id, $to_id, null, $firstname[$i], $name[$i]);
+            $ticket->addTicket($user_id, $travel_id, $from_id, $to_id, null, $firstname[$i], $name[$i]);
         } else {
-            $user->addTicket($user_id, $travel_id, $from_id, $to_id, $seat[$i], $firstname[$i], $name[$i]);
+            $ticket->addTicket($user_id, $travel_id, $from_id, $to_id, $seat[$i], $firstname[$i], $name[$i]);
         }
     }
