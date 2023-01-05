@@ -61,6 +61,10 @@ class UserDAO extends DAO
         return $this->queryAll($sql);
     }
 
+    public function isCustomer($id)
+    {
+        return $this->getUserType($id) == 0;
+    }
     /**
      * Function to update the user's first name
      * @param number $id The user's id
