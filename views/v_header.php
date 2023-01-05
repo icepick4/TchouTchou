@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require_once(PATH_MODELS . 'UserDAO.php'); ?>
 <?php require_once(PATH_MODELS . 'StaffDAO.php'); ?>
 <html lang=<?= '"' . substr(LANG, 0, 2) . '"' ?>>
 
@@ -26,13 +27,9 @@
         <?= SVG_LOGO ?>
       </a>
       <ul>
-        <li>
-          <a href="index.php?page=home" class="home-text">
-            <?= TITLE_HOME ?>
-          </a>
-        </li>
         <li><a href="index.php?page=buy"><?php echo TITLE_PURCHASE ?></a></li>
         <?php
+        $user = new UserDAO();
         $staff = new StaffDAO();
         if (!$staff->isEmployee($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=informations">'. TITLE_INFORMATION .'</a></li>';
@@ -49,7 +46,7 @@
         if (isset($_SESSION['user_id']) && ($staff->isService($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id']))) {
           echo '<li><a href="index.php?page=maintenance">' . TITLE_MAINTENANCE . '</a></li>';
         }
-        if(isset($_SESSION['user_id']) && $staff->isService($_SESSION['user_id']) || $staff->isStation($_SESSION['user_id'])) {
+        if(isset($_SESSION['user_id']) && $staff->isService($_SESSION['user_id']) || $staff->isStation($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=alert_list">' . ALERT_LIST . '</a></li>';
         }
         if (isset($_SESSION['user_id']) && ($staff->isHumanResource($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id']))) {
