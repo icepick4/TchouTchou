@@ -5,8 +5,8 @@
 .seat {
   position: relative;
   height: 70px;
-  width: 69px;
-  margin: 2px 6px;
+  width: 99%;
+  margin: 0% 0;
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;
@@ -19,6 +19,9 @@
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+svg {
+  width: 100%;
 }
 
 .seat svg {
@@ -54,9 +57,6 @@
 
 .hallway {
   opacity: 0;
-  height: 70px;
-  width: 69px;
-  margin: 2px 6px;
 }
 
 .seatNumber {
@@ -69,15 +69,13 @@
   font-size: 1.2em;
 }
 
-svg.table {
-  margin: 0 4px;
-}
-
 .row {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 4px 0;
+  margin: auto 0;
+  width: 4.55%;
+  height: 98%;
 }
 
 .reverse .seat {
@@ -93,6 +91,20 @@ svg.table {
   margin: 4px 5px;
 }
 
+.baggageRow.medium {
+  width: 8.3%;
+}
+.baggageRow.large {
+  width: 12.8%;
+}
+
+.custom.large {
+  width: 15%;
+}
+.custom.large .halfRow > div {
+  width: 41%;
+}
+
 .halfRow {
   display: flex;
 }
@@ -100,11 +112,13 @@ svg.table {
 .endRow {
   align-items: center;
   margin: 0 0 0 5px;
+  width: 16.53%;
+  height: 101%;
 }
 
 .exitRow {
   align-items: center;
-  width: 130px;
+  width: 7.28%;
 }
 
 .exitRow svg:last-child {
@@ -112,7 +126,7 @@ svg.table {
 }
 
 .downStairsRow {
-  margin: 0 0 0 45px;
+  margin: 0 0 0 2.5%;
 }
 
 .upStairsRow {
@@ -120,12 +134,19 @@ svg.table {
   background-color: var(--grayColor);
 }
 
+.upStairsRow,
+.downStairsRow {
+  height: 101%;
+  width: 16.54%;
+}
+
 .wagon {
   display: flex;
   border: 6px solid white;
   border-radius: 50px;
-  padding-left: 50px;
-  width: 1735px;
+  padding-left: 2.8%;
+  width: 93vw;
+  height: 40vh;
   overflow: hidden;
 }
 
@@ -197,7 +218,7 @@ fieldset {
   width: 50%;
 }
 
-fieldset>label {
+fieldset > label {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
@@ -229,12 +250,11 @@ fieldset input {
   border: none;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   fieldset #name {
     flex-direction: column;
     width: 100%;
   }
-
 
   fieldset #first-name,
   #last-name {
