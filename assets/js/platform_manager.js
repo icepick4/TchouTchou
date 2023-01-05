@@ -5,6 +5,7 @@ const conec_list = document.querySelector(".suport_rail");
 const incoming_list = document.querySelector("div#approching_list");
 const incoming_temp = document.querySelector("template#approching_train");
 let last_update = "";
+let last_update_incoming_train = "";
 let req;
 const temp_plat = document.querySelector("template#platforms");
 
@@ -329,27 +330,37 @@ async function getIncoming(station_id) {
   const rep = await fetch(
     "index.php?page=platform_manager&station_id=" + station_id + "&incoming="
   );
-  let data = await rep.text();
-  //let data = await rep.json();
-  console.log("incoming",station_id,data)
-  
+  let data = await rep.json();
+  //console.log("incoming",station_id,data)
+  return data;
 
-  //return data;
-  //tmp
-  return {"incoming":[]};
 }
 
-async function showIncoming() {
+async function showIncoming(force=false) {
   const data = await getIncoming(in_station_name.value);
 
-  incoming_list.innerHTML = "";
-  for (var i = 0; i < data["incoming"].length; i++) {
 
-    let incoming = incoming_temp.content
-      .cloneNode(true)
-      .querySelector("div.approching_train");
-    incoming.querySelector("p").innerHTML = data["incoming"][i];
-    incoming_list.appendChild(incoming);
+  if (force == true || last_update_incoming_train != JSON.stringify(data["incoming"])){
+    console.log("update incoming")
+    last_update_incoming_train = JSON.stringify(data["incoming"]);
+    incoming_list.innerHTML = "";
+    for (var i = 0; i < data["incoming"].length; i++) {
+
+      let incoming = incoming_temp.content
+        .cloneNode(true)
+        .querySelector("div.approching_train");
+      incoming.querySelector("p").innerHTML = data["incoming"][i]["TRAIN_ID"];
+
+      if (data["incoming"][i]["PLATFORM"] != ""){
+        console.log("add option")
+          let tmp_option = document.createElement("option");
+          tmp_option.setAttribute('selected', true);
+          tmp_option.innerHTML = data["incoming"][i]["PLATFORM"];
+          incoming.querySelector("select").appendChild(tmp_option);
+      }
+      
+      incoming_list.appendChild(incoming);
+    }
   }
 }
 
