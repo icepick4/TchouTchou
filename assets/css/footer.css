@@ -26,6 +26,7 @@ footer section nav {
 
 footer section nav h2 {
   color: var(--main-color);
+  font-size: 150%;
 }
 
 footer section nav a,
@@ -40,6 +41,7 @@ footer section nav a {
 #license {
   padding-top: 2%;
 }
+
 #copyright {
   user-select: none;
   margin: 0.5em 0;
