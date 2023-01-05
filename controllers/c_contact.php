@@ -2,13 +2,13 @@
 
 require_once(PATH_MODELS . 'MessageDAO.php');
 require_once(PATH_MODELS . 'UserDAO.php');
-
+require_once(PATH_MODELS . 'StaffDAO.php');
 function redirectMessage()
 {
     header("Location: index.php?page=messages");
 }
-$user = new UserDAO();
-if ($user->isEmployee($_SESSION['user_id'])) {
+$staff = new StaffDAO();
+if ($staff->isEmployee($_SESSION['user_id'])) {
     header("Location: index.php?page=home");
     die();
 }

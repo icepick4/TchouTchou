@@ -137,16 +137,6 @@ class UserDAO extends DAO
         $sql = 'SELECT * FROM USER_DATA WHERE USER_CATEGORIE_ID = 0';
         return $this->queryAll($sql);
     }
-    /**
-     * Function to get all the users
-     * @return array The users's data
-     *
-     */
-    public function getAllEmployees()
-    {
-        $sql = 'SELECT * FROM USER_DATA WHERE USER_CATEGORIE_ID = 1';
-        return $this->queryAll($sql);
-    }
 
     /**
      * Function to insert a new user
@@ -267,108 +257,6 @@ class UserDAO extends DAO
         return $this->queryRow($sql, $args)['USER_CATEGORIE_ID'];
     }
 
-    /**
-     * Function to check if the user is an employee
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the user is an employee, false otherwise
-     *
-     */
-    public function isEmployee($id)
-    {
-        return $this->getUserType($id) == 1;
-    }
-
-    /**
-     * Function to check if the user is a customer
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the user is a customer, false otherwise
-     *
-     */
-    public function isCustomer($id)
-    {
-        return $this->getUserType($id) == 0;
-    }
-
-    /**
-     * Function to get the employee type of an employee
-     *
-     * @param  number $id The user's id
-     * @return array The employee type
-     *
-     */
-    public function getEmployeeType($id)
-    {
-        $sql = 'SELECT EMPLOYEE_ACCESS FROM EMPLOYEES_DATA WHERE USER_ID = :id';
-        $args = array(':id' => $id);
-        return $this->queryRow($sql, $args)['EMPLOYEE_ACCESS'];
-    }
-
-    /**
-     * Function to check if the employee is a manager
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the employee is a manager, false otherwise
-     *
-     */
-    public function isAdministrator($id)
-    {
-        return $this->getEmployeeType($id) == 1;
-    }
-
-    /**
-     * Function to check if the employee is a station
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the employee is a station, false otherwise
-     *
-     */
-    public function isStation($id)
-    {
-        return $this->getEmployeeType($id) == 2;
-    }
-
-    /**
-     * Function to check if the employee is a driver
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the employee is a driver, false otherwise
-     *
-     */
-    public function isDriver($id)
-    {
-        return $this->getEmployeeType($id) == 3;
-    }
-
-    /**
-     * Function to check if the employee is a service
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the employee is a service, false otherwise
-     *
-     */
-    public function isService($id)
-    {
-        return $this->getEmployeeType($id) == 4;
-    }
-
-    public function isSupport($id)
-    {
-        return $this->getEmployeeType($id) == 5;
-    }
-
-    public function isHumanResources($id)
-    {
-        return $this->getEmployeeType($id) == 6;
-    }
-
-    public function getDriverID($id)
-    {
-        $sql = 'SELECT DRIVER_ID FROM DRIVER WHERE USER_ID = :id';
-        $args = array(':id' => $id);
-        return $this->queryRow($sql, $args)['DRIVER_ID'];
-    }
 
     public function addTicket($user_id, $travel_id, $start_station_id, $end_station_id, $place_id, $first_name, $last_name)
     {

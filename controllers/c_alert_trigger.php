@@ -2,17 +2,15 @@
 
 require_once(PATH_MODELS.'AlertDAO.php');
 require_once(PATH_MODELS.'PlanningDAO.php');
-require_once(PATH_MODELS.'UserDAO.php');
-require_once(PATH_MODELS.'UserDAO.php');
-$user = new UserDAO();
-if ($_SESSION['logged'] && $user->isDriver($_SESSION['user_id'])) {
+require_once(PATH_MODELS.'StaffDAO.php');
+$staff = new StaffDAO();
+if ($_SESSION['logged'] && $staff->isDriver($_SESSION['user_id'])) {
     if(isset($_POST['alertType']) && isset($_POST['message']) && isset($_POST['infoposition'])){
    
         $planning = new PlanningDAO();
-        $user = new UserDAO();
         $alerts = new AlertDAO();
     
-        $driver = $user->getDriverID($_SESSION['user_id']);
+        $driver = $staff->getDriverID($_SESSION['user_id']);
         //remplacer 22 par l'heure actuelle
         $travel = $planning->getDriverTravelForTheDayByHour($driver, 22);
     

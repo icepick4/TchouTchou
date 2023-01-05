@@ -7,7 +7,7 @@ $user = new UserDAO();
 $user_list_not_employees = $user->getAllClient();
 $staff_list = $staff->getAllStaff();
 $staff_type = $staff->getAllStaffType();
-if ($_SESSION['logged'] && $user->isAdministrator($_SESSION['user_id'])) {
+if ($_SESSION['logged'] && $staff->isAdministrator($_SESSION['user_id'])) {
 
 } else {
     header("Location: index.php?page=home");
