@@ -2,7 +2,7 @@
 require_once(PATH_MODELS.'AlertDAO.php');
 require_once(PATH_MODELS.'UserDAO.php');
 $user = new UserDAO();
-if ($_SESSION['logged'] && $user->isService($_SESSION['user_id'])) {
+if ($_SESSION['logged'] && $user->isService($_SESSION['user_id']) || $user->isStation($_SESSION['user_id'])) {
     
 
     $alerts = new AlertDAO();
