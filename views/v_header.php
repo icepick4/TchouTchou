@@ -16,7 +16,6 @@
   <link href="<?php echo PATH_CSS . "footer.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . "modal.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . $page . ".css" ?>" rel="stylesheet" />
-  <script src=<?= PATH_JS . 'cart.js' ?> type="module" defer></script>
 </head>
 
 <body>
