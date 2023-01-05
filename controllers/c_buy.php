@@ -2,7 +2,6 @@
 
 require_once(PATH_MODELS . 'StationDAO.php');
 require_once(PATH_MODELS . 'TrainDAO.php');
-require_once(PATH_MODELS . 'Function.php');
 require_once(PATH_MODELS . 'TravelDAO.php');
 
 $station = new StationDAO();

@@ -1,6 +1,5 @@
 <?php
 require_once(PATH_MODELS . 'UserDAO.php');
-require_once(PATH_MODELS . 'Function.php');
 if (
     isset($_POST["name"]) &&
     isset($_POST["fname"]) &&
