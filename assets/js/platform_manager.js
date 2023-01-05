@@ -283,6 +283,7 @@ async function update_platform() {
       platforms.length,
       data["platforms"].length
     );
+    load();
     await new Promise((r) => setTimeout(r, 500));
   }
 
