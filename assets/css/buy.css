@@ -36,6 +36,7 @@ input[type="submit"]:hover {
 }
 
 #form {
+  min-width: 1000px;
   width: 55%;
   display: flex;
   align-items: center;

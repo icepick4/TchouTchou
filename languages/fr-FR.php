@@ -200,6 +200,8 @@ define('NO_MESSAGE_BTN', 'Accéder au formulaire de contact');
 define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de votre écran pour charger les messages');
 define('INTERN', 'Interne');
 define('EXTERN', 'Externe');
+define('YOUR_MESSAGE', "Votre message");
+define('SEND', 'Envoyer');
 define('STORAGE', 'Archive');
 
 
