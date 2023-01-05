@@ -59,24 +59,8 @@
       <a href="index.php?page=<?php echo $_SESSION['logged'] ? "account" : "login" ?>" class="logo">
         <?= SVG_ACCOUNT ?>
       </a>
-      <div id="shop" class="logo">
-        <?= SVG_SHOPPING ?>
-      </div>
     </nav>
   </header>
-
-  <div id="cart" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="modal-header">
-        <h2>
-          <?= CART ?>
-        </h2>
-      </div>
-      <div class="modal-body">
-      </div>
-    </div>
-  </div>
 
 
   <section id="main">
