@@ -49,6 +49,7 @@ table tr:hover {
 
 table tr:hover td {
   color: var(--main-color);
+  transition: 0.2s;
 }
 
 table td {

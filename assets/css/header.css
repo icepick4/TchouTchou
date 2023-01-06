@@ -215,23 +215,16 @@ header> :nth-child(2n) {
   }
 }
 
-@media only screen and (max-width: 800px) {
-  header {
-    flex-direction: column;
-  }
 
+@media only screen and (max-width: 800px) {
   header nav {
     width: 100%;
   }
 
-
-
   header ul {
     width: 100%;
   }
-}
 
-@media only screen and (hover: none) and (pointer: coarse) {
   header ul {
     flex-direction: column;
     gap: 1rem;
@@ -248,6 +241,15 @@ header> :nth-child(2n) {
   #header-button {
     display: block;
     filter: invert(1);
+  }
+
+  header ul li a:hover::after {
+    width: 0%;
+  }
+
+  header ul li a:hover {
+    color: var(--main-color);
+    transition: color 0.1s;
   }
 
   header {
