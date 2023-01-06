@@ -131,4 +131,11 @@ class StaffDAO extends DAO
         $args = array(':id' => $id);
         return $this->queryRow($sql, $args)['USER_CATEGORIE_ID'];
     }
+
+    public function addEmployee($id,$staff_id)
+    {
+        $sql = 'INSERT INTO EMPLOYEES_DATA VALUES (:id,:staff_id)';
+        $args = array(':id' => $id,':staff_id' => $staff_id);
+        $this->queryEdit($sql, $args);
+    }
 }

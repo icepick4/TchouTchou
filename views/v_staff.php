@@ -62,18 +62,22 @@ if ($staff_list != null) {
 <form method="post" action="index.php?page=staff">
 <fieldset>
     <legend><?= ADD_STAFF?></legend>
-    <label for="user_identity"><?= IDENTITY ?></label>
-    <select name="user_identity" id="user_identity" class="user_identity">
-    <?php foreach ($user_list_not_employees as $user) { ?>
-                            <option value=<?=$user['USER_ID']?>><?=  $user['USER_FIRSTNAME'].' '.$user['USER_LASTNAME'] ?></option>
-                        <?php } ?>
-    </select>
+    <div>
+        <label for="user_identity"><?= IDENTITY ?></label>
+        <select name="user_identity" id="user_identity" class="user_identity">
+        <?php foreach ($user_list_not_employees as $user) { ?>
+                                <option value=<?=$user['USER_ID']?>><?=  $user['USER_FIRSTNAME'].' '.$user['USER_LASTNAME'] ?></option>
+                            <?php } ?>
+        </select>
+    </div>
+    <div>
     <label for="staff_type"><?= TYPE ?></label>
-    <select name="staff_type" id="staff_type" class="staff_type">
-    <?php foreach ($staff_type as $staff_type) { ?>
-                            <option value=<?=$staff_type['EMPLOYEE_CATEGORIE_ID']?>><?=  $staff_type['EMPLOYEE_CATEGORIE_LABEL'] ?></option>
-                        <?php } ?>
-    </select>
+        <select name="staff_type" id="staff_type" class="staff_type">
+        <?php foreach ($staff_type as $staff_type) { ?>
+                                <option value=<?=$staff_type['EMPLOYEE_CATEGORIE_ID']?>><?=  $staff_type['EMPLOYEE_CATEGORIE_LABEL'] ?></option>
+                            <?php } ?>
+        </select>
+    </div>
     <input class='links' type="submit" value=<?= BTN_ADD ?>></input>
 
     </form>

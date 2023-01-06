@@ -86,6 +86,16 @@ form {
   display: flex;
 }
 
+#main > form {
+  flex-direction: column;
+}
+#main > form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
 input {
   background-color: var(--main-color);
   color: #fff;
