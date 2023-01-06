@@ -49,4 +49,11 @@ class TravelDAO extends DAO
         $args = array(':travel_id' => $travel_id, ':start_station_id' => $start_station_id);
         return $this->queryAll($sql, $args);
     }
+
+    public function getTravelById($travel_id)
+    {
+        $sql = 'SELECT * from TRAVEL t INNER JOIN LINE l on t.LINE_ID=l.LINE_ID  WHERE TRAVEL_ID = :travel_id';
+        $args = array(':travel_id' => $travel_id);
+        return $this->queryRow($sql, $args);
+    }
 }
