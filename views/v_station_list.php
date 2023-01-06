@@ -22,10 +22,18 @@ if ($stations != null) {
     <table>
         <thead>
             <tr>
-                <th title="<?= SORT_STATION ?>"><?= STATION ?></th>
-                <th title="<?= SORT_CITY ?>"><?= CITY ?></th>
-                <th title="<?= SORT_REGION ?>"><?= REGION ?></th>
-                <th title="<?= SORT_COUNTRY ?>"><?= COUNTRY ?></th>
+                <th title="<?= SORT_STATION ?>"><?= STATION ?>
+                    <img src="<?= PATH_IMAGES . 'double_arrow.png' ?>" alt="sort" class="sort">
+                </th>
+                <th title="<?= SORT_CITY ?>"><?= CITY ?>
+                    <img src="<?= PATH_IMAGES . 'double_arrow.png' ?>" alt="sort" class="sort">
+                </th>
+                <th title="<?= SORT_REGION ?>"><?= REGION ?>
+                    <img src="<?= PATH_IMAGES . 'double_arrow.png' ?>" alt="sort" class="sort">
+                </th>
+                <th title="<?= SORT_COUNTRY ?>"><?= COUNTRY ?>
+                    <img src="<?= PATH_IMAGES . 'double_arrow.png' ?>" alt="sort" class="sort">
+                </th>
             </tr>
         </thead>
         <tbody>

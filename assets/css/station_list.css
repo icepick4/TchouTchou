@@ -1,7 +1,7 @@
 table {
   border-collapse: collapse;
   table-layout: fixed;
-  width: 75%;
+  width: 80%;
   border: 1px solid var(--main-color);
   font-size: 12px;
   margin: 0 auto;
@@ -29,6 +29,12 @@ table th {
   cursor: auto;
 }
 
+img {
+  width: 25px;
+  height: 25px;
+  transform: rotate(90deg) translateX(15%);
+}
+
 
 table td {
   transition: transform 0.5s;
@@ -49,6 +55,7 @@ table tr:hover {
 
 table tr:hover td {
   color: var(--main-color);
+  transition: 0.2s;
 }
 
 table td {

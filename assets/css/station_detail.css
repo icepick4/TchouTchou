@@ -198,6 +198,14 @@ label p {
   #departures h3 {
     color: #fff;
   }
+
+  #arrivals p {
+    color: #fff;
+  }
+
+  #arrivals h3 {
+    color: #fff;
+  }
 }
 
 @media only screen and (max-width: 800px) {
