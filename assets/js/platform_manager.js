@@ -380,8 +380,10 @@ async function setAvailablePlatform(){
   const data = await getAvailablePlatform(in_station_name.value, in_hub.value);
   const availablePlatform = data["available_platform"];
 
-  if (last_update_available_platform != JSON.stringify(availablePlatform)){
-    last_update_available_platform = JSON.stringify(availablePlatform);
+  if (last_update_available_platform != JSON.stringify(availablePlatform)+
+    incoming_list_select.length){
+    last_update_available_platform = JSON.stringify(availablePlatform) +
+  incoming_list_select.length;
     for (var i = 0; i < incoming_list_select.length; i++) {
       console.log(availablePlatform)
       availablePlatform.forEach(letter =>{
