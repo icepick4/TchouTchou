@@ -18,21 +18,28 @@
   <link href="<?php echo PATH_CSS . "modal.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . $page . ".css" ?>" rel="stylesheet" />
 </head>
+<script src=<?= PATH_JS . 'header.js' ?> type="module" defer></script>
 
 <body>
   <header>
     <nav>
-      <a href="index.php?page=home" class="logo" id="logo-home">
-        <?= SVG_LOGO ?>
-      </a>
+      <div class="logos">
+        <a href="index.php?page=home" class="logo" id="logo-home">
+          <?= SVG_LOGO ?>
+        </a>
+        <button id="header-button">
+          <img src="<?php echo PATH_IMAGES . "arrow.png" ?>" alt="arrow-header" />
+        </button>
+      </div>
       <ul>
         <li><a href="index.php?page=buy"><?php echo TITLE_PURCHASE ?></a></li>
+        <li id="account-text"><a href="index.php?page=account"><?php echo MY_ACCOUNT ?></a></li>
         <?php
         $user = new UserDAO();
         $staff = new StaffDAO();
         if (!$staff->isEmployee($_SESSION['user_id'])) {
-          echo '<li><a href="index.php?page=informations">'. TITLE_INFORMATION .'</a></li>';
-        }?>
+          echo '<li><a href="index.php?page=informations">' . TITLE_INFORMATION . '</a></li>';
+        } ?>
         <li><a href="index.php?page=station_list"><?php echo STATION_LIST ?></a></li>
         <?php
         if (isset($_SESSION['user_id'])) {
@@ -45,7 +52,7 @@
         if (isset($_SESSION['user_id']) && ($staff->isService($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id']))) {
           echo '<li><a href="index.php?page=maintenance">' . TITLE_MAINTENANCE . '</a></li>';
         }
-        if(isset($_SESSION['user_id']) && $staff->isService($_SESSION['user_id']) || $staff->isStation($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_id']) && $staff->isService($_SESSION['user_id']) || $staff->isStation($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=alert_list">' . ALERT_LIST . '</a></li>';
         }
         if (isset($_SESSION['user_id']) && ($staff->isHumanResource($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id']))) {
@@ -58,7 +65,7 @@
       </ul>
     </nav>
     <nav>
-      <a href="index.php?page=<?php echo $_SESSION['logged'] ? "account" : "login" ?>" class="logo">
+      <a href="index.php?page=<?php echo $_SESSION['logged'] ? "account" : "login" ?>" class="logo" id="account-logo">
         <?= SVG_ACCOUNT ?>
       </a>
     </nav>
