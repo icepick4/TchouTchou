@@ -6,6 +6,7 @@ const incoming_list = document.querySelector("div#approching_list");
 const incoming_temp = document.querySelector("template#approching_train");
 let last_update = "";
 let last_update_incoming_train = "";
+let last_update_available_platform = "";
 let req;
 const temp_plat = document.querySelector("template#platforms");
 
@@ -364,6 +365,43 @@ async function showIncoming(force=false) {
   }
 }
 
+async function getAvailablePlatform(station_id,hub_id) {
+  const rep = await fetch(
+    "index.php?page=platform_manager&station_id=" + station_id
+    +"&station_id=" + station_id + "&incoming="
+  );
+  let data = await rep.json();
+  //console.log("incoming",station_id,data)
+  return data;
+
+}
+
+async function setAvailablePlatform(){
+  const incoming_list_select = incoming_list.querySelectorAll("select")
+
+  const data = await getAvailablePlatform(in_station_name.value, in_hub.value);
+  const availablePlatform = data["available_platform"];
+
+  if (last_update_available_platform != JSON.stringify(availablePlatform)){
+    last_update_available_platform = JSON.stringify(availablePlatform);
+    for (var i = 0; i < incoming_list_select.length; i++) {
+      availablePlatform.forEach(letter =>{
+        let tmp_option = document.createElement("option");
+        tmp_option.innerHTML = letter;
+        tmp_option.value = letter;
+        incoming_list_select[i].appendChild(tmp_option)
+
+      });
+      
+    }
+  }
+}
+
+async function updateIncomingTrain() {
+  await showIncoming();
+  await setAvailablePlatform();
+}
+
 function setIfDefined(value, input) {
   if (!value == "") {
     input.value = value;
@@ -374,7 +412,8 @@ async function autoUpdate() {
   while (true) {
     try {
       await update_platform();
-      await showIncoming();
+      await updateIncomingTrain();
+      
     } catch (e) {
       console.log("auto update",e);
     }
