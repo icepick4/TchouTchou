@@ -140,6 +140,19 @@ class StationDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
+    public function get_available_platform($id,$hub){
+        $sql = 'SELECT PLATFORM_LETTER  FROM TCHOU.PLATFORM p 
+        WHERE 
+        STATION_ID = :id 
+        AND TERMINAL_ID = :hub
+        AND PLATFORM_UTILISATION = 0 
+        AND PLATFORM_STATUS = 1 
+        AND PLATFORM_USER IS NULL';
+        
+        $args = array(':id' => $id , ':hub' => $hub);
+        return $this->queryAll($sql, $args);
+    }
+
 
 
 }

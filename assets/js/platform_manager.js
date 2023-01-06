@@ -350,8 +350,8 @@ async function showIncoming(force=false) {
         .cloneNode(true)
         .querySelector("div.approching_train");
       incoming.querySelector("p").innerHTML = data["incoming"][i]["TRAIN_ID"];
-
-      if (data["incoming"][i]["PLATFORM"] != ""){
+      console.log("pla letter :"+data["incoming"][i]["PLATFORM"]+";")
+      if (data["incoming"][i]["PLATFORM"] != null){
         console.log("add option")
           let tmp_option = document.createElement("option");
           tmp_option.setAttribute('selected', true);
