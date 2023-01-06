@@ -84,8 +84,8 @@
 }
 
 /* Modal parts */
-.modal--header {
-	padding: 2px 16px;
+.modal--header h2 {
+	padding: 20px 10px;
 }
 
 .modal--body {
@@ -183,6 +183,10 @@
 
 	.confirm--modal .modal--header {
 		background-color: var(--main-color);
+	}
+
+	.confirm--modal .modal--header .close--modal:hover {
+		color: rgb(77, 6, 21);
 	}
 
 	.confirm--modal .modal--footer-button:nth-child(1) {
