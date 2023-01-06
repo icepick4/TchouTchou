@@ -368,11 +368,9 @@ async function showIncoming(force=false) {
 async function getAvailablePlatform(station_id,hub_id) {
   const rep = await fetch(
     "index.php?page=platform_manager&station_id=" + station_id
-    +"&station_id=" + station_id + "&incoming="
+    +"&hub_id=" + hub_id + "&incoming="
   );
-  let data = await rep.json();
-  //console.log("incoming",station_id,data)
-  return data;
+  return await rep.json();
 
 }
 
@@ -385,6 +383,7 @@ async function setAvailablePlatform(){
   if (last_update_available_platform != JSON.stringify(availablePlatform)){
     last_update_available_platform = JSON.stringify(availablePlatform);
     for (var i = 0; i < incoming_list_select.length; i++) {
+      console.log(availablePlatform)
       availablePlatform.forEach(letter =>{
         let tmp_option = document.createElement("option");
         tmp_option.innerHTML = letter;
