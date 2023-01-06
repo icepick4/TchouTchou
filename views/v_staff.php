@@ -1,5 +1,5 @@
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
-<script src=<?= PATH_JS . 'maintenance.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'staff.js?flag=' . $_SESSION['user_id'] ?> type="module" defer></script>
 
 
 <!--  Début de la page -->
@@ -22,6 +22,7 @@ if ($staff_list != null) {
             <th><?= NAME ?></th>
             <th COLSPAN=2><?= EMAIL ?></th>
             <th COLSPAN=2><?= DEPARTMENT ?></th>
+            <th></th>
 
         </tr>
         <?php
@@ -38,19 +39,21 @@ if ($staff_list != null) {
                     <h3><?= $staff['USER_MAIL'] ?></h3>
                 </td>
                 <td COLSPAN=2>
-                    <form method="post" action="index.php?page=maintenance">
-                        <select name="status" id="status" class="status">
+                    <form method="post" action="index.php?page=staff">
+                        <select name="staff_type_update" id="staff_type_update" class="status">
                             <option value="1" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 1) echo 'selected' ?>><?= ADMINISTRATOR ?></option>
                             <option value="2" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 2) echo 'selected' ?>><?= STATION ?></option>
                             <option value="3" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 3) echo 'selected' ?>><?= DRIVER ?></option>
                             <option value="4" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 4) echo 'selected' ?>><?= SERVICE ?></option>
                             <option value="55" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 5) echo 'selected' ?>><?= SUPPORT ?></option>
                         </select>
-                        <input type="text" id="train_id" name="train_id" value="<?= $staff['USER_ID'] ?> " style="display:none;" ></input>
-                        <input class='links' type="submit" value=<?= SUBMIT ?>></input>
+                        <input type="text" id="user_identity_update" name="user_identity_update" value="<?= $staff['USER_ID'] ?> " style="display:none;" ></input>
+                        <input class='links' type="submit" value=<?= VALIDATE ?>></input>
                     </form>
                 </td>
-
+                <td>
+                    <button value=<?= $staff['USER_ID']?> class="fired-button">✖</button>
+                </td>
             </tr>
         <?php
         }
@@ -64,7 +67,7 @@ if ($staff_list != null) {
     <legend><?= ADD_STAFF?></legend>
     <div>
         <label for="user_identity"><?= IDENTITY ?></label>
-        <select name="user_identity" id="user_identity" class="user_identity">
+        <select name="user_identity_create" id="user_identity_create" class="user_identity">
         <?php foreach ($user_list_not_employees as $user) { ?>
                                 <option value=<?=$user['USER_ID']?>><?=  $user['USER_FIRSTNAME'].' '.$user['USER_LASTNAME'] ?></option>
                             <?php } ?>
@@ -72,7 +75,7 @@ if ($staff_list != null) {
     </div>
     <div>
     <label for="staff_type"><?= TYPE ?></label>
-        <select name="staff_type" id="staff_type" class="staff_type">
+        <select name="staff_type_create" id="staff_type_create" class="staff_type">
         <?php foreach ($staff_type as $staff_type) { ?>
                                 <option value=<?=$staff_type['EMPLOYEE_CATEGORIE_ID']?>><?=  $staff_type['EMPLOYEE_CATEGORIE_LABEL'] ?></option>
                             <?php } ?>

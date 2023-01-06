@@ -47,6 +47,12 @@ class StaffDAO extends DAO
         return $this->queryRow($sql, $args)['EMPLOYEE_ACCESS'];
     }
 
+    public function setEmployeeType($id, $type)
+    {
+        $sql = 'UPDATE EMPLOYEES_DATA SET EMPLOYEE_ACCESS = :type WHERE USER_ID = :id';
+        $args = array(':id' => $id, ':type' => $type);
+        $this->queryEdit($sql, $args);
+    }
     /**
      * Function to check if the employee is a manager
      *
@@ -136,6 +142,13 @@ class StaffDAO extends DAO
     {
         $sql = 'INSERT INTO EMPLOYEES_DATA VALUES (:id,:staff_id)';
         $args = array(':id' => $id,':staff_id' => $staff_id);
+        $this->queryEdit($sql, $args);
+    }
+
+    public function firedEmployee($id)
+    {
+        $sql = 'DELETE FROM EMPLOYEES_DATA WHERE USER_ID = :id';
+        $args = array(':id' => $id);
         $this->queryEdit($sql, $args);
     }
 }

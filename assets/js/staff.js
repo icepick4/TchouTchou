@@ -1,3 +1,22 @@
+import { getFlags } from "./functions.js";
+const script = document.querySelector('script[src*="staff.js"]');
+let flag = script.outerHTML;
+let firedButtonList = document.getElementsByClassName("fired-button");
+firedButtonList = Array.from(firedButtonList);
+firedButtonList.forEach((element) => {
+  element.addEventListener("click", function () {
+    let id = element.getAttribute("value");
+    var xhttp = new XMLHttpRequest();
+    console.log("ajax/firedEmployee.php?" + "id=" + id);
+    xhttp.open(
+      "GET",
+      "ajax/firedEmployee.php?" + "id=" + id + "&user_id=" + getFlags(flag)[0],
+      true
+    );
+    xhttp.send();
+    location.reload();
+  });
+});
 let input = document.getElementById("search");
 input.addEventListener("keyup", recherche);
 

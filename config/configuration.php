@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 // Langue du site
+echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 define('LANG', substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'], '-') - 2, 5));
 
 // Paramètres du site : nom de l'auteur ou des auteurs

@@ -116,6 +116,13 @@ class UserDAO extends DAO
         $args = array(':id' => $id, ':mail' => $mail);
         $this->queryEdit($sql, $args);
     }
+
+    public function setUserType($id, $type)
+    {
+        $sql = 'UPDATE USER_DATA SET USER_CATEGORIE_ID = :type WHERE USER_ID = :id';
+        $args = array(':id' => $id, ':type' => $type);
+        $this->queryEdit($sql, $args);
+    }
     /**
      * Function to delete a user from the database
      *
