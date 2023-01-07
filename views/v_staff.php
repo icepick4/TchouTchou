@@ -21,7 +21,7 @@ if ($staff_list != null) {
             <th><?= FIRST_NAME ?></th>
             <th><?= NAME ?></th>
             <th COLSPAN=2><?= EMAIL ?></th>
-            <th COLSPAN=2><?= DEPARTMENT ?></th>
+            <th COLSPAN=1><?= DEPARTMENT ?></th>
             <th></th>
 
         </tr>
@@ -38,18 +38,17 @@ if ($staff_list != null) {
                 <td COLSPAN=2>
                     <h3><?= $staff['USER_MAIL'] ?></h3>
                 </td>
-                <td COLSPAN=2>
+                <td COLSPAN=1>
                     <form method="post" action="index.php?page=staff">
                         <select name="staff_type_update" id="staff_type_update" class="status">
-                            <option></option>
                             <option value="1" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 1) echo 'selected' ?>><?= ADMINISTRATOR ?></option>
                             <option value="2" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 2) echo 'selected' ?>><?= STATION ?></option>
                             <option value="3" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 3) echo 'selected' ?>><?= DRIVER ?></option>
                             <option value="4" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 4) echo 'selected' ?>><?= SERVICE ?></option>
                             <option value="55" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 5) echo 'selected' ?>><?= SUPPORT ?></option>
                         </select>
-                        <input type="text" id="user_identity_update" name="user_identity_update" value="<?= $staff['USER_ID'] ?> " style="display:none;"></input>
-                        <input class='links' type="submit" value=<?= VALIDATE ?>></input>
+                        <input type="hidden" id="user_identity_update" name="user_identity_update" value="<?= $staff['USER_ID'] ?>"></input>
+                        <input class='links' type="submit" value="OK"></input>
                     </form>
                 </td>
                 <td>
