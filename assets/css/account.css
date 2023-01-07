@@ -188,6 +188,10 @@ p.info {
     border-color: #000;
   }
 
+  table svg {
+    filter: invert(100%);
+  }
+
   form input {
     color: #000;
   }

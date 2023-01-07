@@ -194,6 +194,13 @@ tr td:last-child {
   border: none;
 }
 
+@media (prefers-color-scheme: light) {
+  table tr:nth-child(even) td:not(:last-child) {
+    background-color: rgb(110, 107, 107);
+    color: #fff;
+  }
+}
+
 @media screen and (max-width: 1500px) {
   table {
     width: 100%;

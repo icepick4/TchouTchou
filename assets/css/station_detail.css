@@ -148,6 +148,24 @@ input:checked+.slider:before {
   color: white;
 }
 
+#arrivals {
+  animation: table-anim 0.4s ease-in-out;
+}
+
+#departures {
+  animation: table-anim 0.4s ease-in-out;
+}
+
+@keyframes table-anim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 #arrivalsText {
   opacity: 0;
 }
@@ -198,7 +216,6 @@ label p {
 }
 
 @media (prefers-color-scheme: light) {
-
   #departures p {
     color: #fff;
   }

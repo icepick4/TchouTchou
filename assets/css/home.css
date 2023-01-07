@@ -199,4 +199,8 @@ article img {
 	article {
 		background-color: rgba(66, 57, 57, 0.3);
 	}
+
+	.arti h2 span {
+		color: var(--second-color);
+	}
 }

@@ -25,19 +25,23 @@ span {
   padding: 5%;
   font-size: 1.25em;
 }
+
 #travel_details p:first-child {
   padding: 1% 5% 0 5%;
   font-style: italic;
   opacity: 0.6;
   font-size: 0.9em;
 }
+
 #travel_details p:nth-child(2) {
   padding-bottom: 2%;
   padding-top: 3%;
 }
+
 #travel_details p:last-child {
   padding-top: 2%;
 }
+
 #travel_details p:nth-child(3) {
   padding-left: 10%;
   margin-left: 8%;
@@ -49,6 +53,7 @@ span {
 #travel_details {
   width: 45%;
 }
+
 #travel-tickets {
   display: flex;
   flex-direction: column;
@@ -62,7 +67,7 @@ span {
   font-weight: bold;
 }
 
-.ticket > p:first-child {
+.ticket>p:first-child {
   background-color: var(--main-color);
   border-radius: 14px 14px 0 0;
   padding: 0.45%;
@@ -71,15 +76,17 @@ span {
   font-weight: bold;
 }
 
-.ticket > div {
+.ticket>div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding: 3%;
 }
-.ticket > div > p {
+
+.ticket>div>p {
   flex-grow: 1;
 }
+
 .ticket div div {
   flex-grow: 2;
   display: flex;
@@ -139,11 +146,13 @@ p {
   font-weight: bold;
   transition-duration: 0.5s;
 }
+
 #button-set-ticket button:hover {
   cursor: pointer;
   scale: 1.1;
   transition-duration: 0.5s;
 }
+
 #button-set-ticket button:first-child {
   background-color: var(--main-color);
   color: white;
@@ -152,4 +161,10 @@ p {
 #button-set-ticket button:last-child {
   background-color: grey;
   color: white;
+}
+
+@media (prefers-color-scheme: light) {
+  .ticket div div svg {
+    filter: invert(100%);
+  }
 }
