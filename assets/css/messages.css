@@ -68,6 +68,12 @@ p {
   z-index: -2;
 }
 
+.error {
+  color: red;
+  font-size: 1.5em;
+  text-align: center;
+}
+
 .sender {
   align-self: flex-start;
   background-color: var(--border-input);

@@ -202,8 +202,10 @@ define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de vot
 define('INTERN', 'Interne');
 define('EXTERN', 'Externe');
 define('YOUR_MESSAGE', "Votre message");
+define('MESSAGES', 'Messages');
 define('SEND', 'Envoyer');
 define('STORAGE', 'Archive');
+define('MESSAGE_TOO_LONG', 'Votre message est trop long (il ne doit pas excéder 1000 caractères)');
 
 
 //alertes

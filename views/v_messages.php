@@ -6,7 +6,16 @@
 <!--  Début de la page -->
 
 
-<h1>Messages</h1>
+<h1><?= MESSAGES ?></h1>
+<?php if (isset($_GET["messageTooLong"])) {
+    if ($_GET["messageTooLong"] == 1) {
+?>
+        <p class='error'><?= MESSAGE_TOO_LONG ?></p>
+<?php
+    }
+}
+?>
+
 <?php if (empty($discussions) && !$isEmployee) { ?>
     <div class="nomessage">
         <p class='noMessage'>
