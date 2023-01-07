@@ -22,7 +22,6 @@ $seats = explode("//", $_POST['seat']);
 
 require_once(PATH_MODELS . 'UserDAO.php');
 require_once(PATH_MODELS . 'StationDAO.php');
-print_r($_POST);
 
 $station = new StationDAO();
 $from_station_name = $station->get_station_name($_POST['from'])['STATION_NAME'];
