@@ -3,12 +3,18 @@
 
 <script>
   paypal.Buttons({
+    style: {
+                color: "blue",
+                shape: "rect",
+                layout: "vertical"
+              },
     // Sets up the transaction when a payment button is clicked
     createOrder: (data, actions) => {
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: <?= $price ?> // Can also reference a variable or function
+            value: <?= $price ?>,
+            currency_code: "EUR" // Can also reference a variable or function
           }
         }]
       });
@@ -42,7 +48,6 @@
   }).render('#paypal-button-container');
 </script>
 <script src=<?= PATH_JS . 'buy_payment.js' ?> type="module" defer></script>
-
 <div id="travel-payment">
   <div id="travel-details">
     <h1>Détails de votre voyage vers <span><?= $to_station_name ?></h1>
@@ -56,6 +61,16 @@
       <p>Voyage n°<span class="colored"><?= $_POST['travel'] ?></span></p>
       <p><span class="colored"><?= $to_station_time_arrival ?></span> ● <?= $to_station_name ?></p>
     </div>
+    <?php for ($i=1;$i<=$nbr;$i++){
+      $name = 'name_'.$i;
+      $firstname = 'firstname_'.$i;
+      ?>
+      <div>
+        <h2><?= 'Voyageur n° '.$i?></h2>
+          <p><?= $_POST[$firstname];?></p>
+          <p><?= $_POST[$name] ?></p>
+      </div><?php
+    } ?>
   </div>
   <div id="paypal-button-container">
     <p><?= $_POST['price'] ?> €</p>
