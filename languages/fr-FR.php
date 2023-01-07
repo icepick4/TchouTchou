@@ -24,7 +24,7 @@ define('TERMS_OF_USE', 'Condtions Générales');
 define('PRIVACY_POLICY', 'Politique de Confidentialité');
 define('STATION_LIST', 'Liste des Gares');
 define('TITLE_GITPULL', 'git pull');
-define('TITLE_STAFF','Gestion du Personnel');
+define('TITLE_STAFF', 'Gestion du Personnel');
 define('TITLE_MAINTENANCE', 'Maintenance');
 define('TITLE_ALERT', 'Alertes');
 define('CGU', 'les conditions générales d\'utilisation');
@@ -242,6 +242,9 @@ define('NO_SEAT_NUMBER', 'Place libre n°');
 define('SEAT_NUMBER', 'Place n°');
 define('END_STATION', 'Arrivée');
 define('START_STATION', 'Départ');
+define('ERROR_STATIONS', 'Les gares de départ et d\'arrivée ne peuvent pas être identiques');
+define('ERROR_DATE', 'La date de départ ne peut pas être antérieure à la date d\'aujourd\'hui');
+define('EMPTY_INPUT_BUY', 'Vous devez remplir tous les champs');
 
 //tri
 define('SORT_STATION', 'Trier par Gare');
