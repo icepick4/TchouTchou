@@ -226,7 +226,7 @@ p.noMessage {
   width: 130px;
   height: 34px;
   border-radius: 15px;
-  background-color: rgba(66, 57, 57, 0.3);
+  background-color: rgb(89, 84, 84);
   color: white;
   font-weight: bold;
   margin: 2% 0;
@@ -278,15 +278,15 @@ p.noMessage {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: var(--main-color);
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px var(--main-color);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(95px);
@@ -321,12 +321,22 @@ input:checked + .slider:before {
   opacity: 0;
 }
 
-input:checked ~ #intern {
+input:checked~#intern {
   opacity: 0;
 }
 
-input:checked ~ #extern {
+input:checked~#extern {
   opacity: 1;
+}
+
+form input[type="submit"] {
+  padding: 7.5px;
+  border-radius: 10px;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--main-color);
+  color: #000;
 }
 
 #resume #headerResume {
@@ -433,14 +443,20 @@ input:checked ~ #extern {
 
 @media (prefers-color-scheme: light) {
   #headermsg {
-    background-color: rgba(66, 57, 57, 0.3);
+    background-color: rgb(97, 93, 93);
   }
 
   .sender {
-    background-color: rgba(66, 57, 57, 0.3);
+    background-color: rgb(97, 93, 93);
   }
 
   #search {
-    background-color: rgba(66, 57, 57, 0.3);
+    background-color: rgb(97, 93, 93);
   }
+
+  form input:not([type="submit"]) {
+    color: #000;
+  }
+
+
 }

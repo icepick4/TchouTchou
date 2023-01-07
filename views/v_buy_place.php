@@ -30,28 +30,29 @@
         <input type="hidden" name="seat" id="seat">
 
         <p id="nbrSeats" style="display:none"><?= $nbr ?> </p>
-
-        <?php
-        for ($i = 0; $i < $_POST['nbr']; $i++) { ?>
-            <fieldset>
-                <?php if ($trainType == "TER") { ?>
-                    <label><?= NO_SEAT_NUMBER . $i ?></label>
-                <?php } else { ?>
-                    <label><?= SEAT_NUMBER ?><span id=<?= 'seat_' . ($i + 1) ?>></span></label>
-                <?php } ?>
-                <div id="name">
-                    <div id="first-name">
-                        <label for=" firstname_<?= $i + 1 ?>"><?= FIRST_NAME ?> </label>
-                        <input type="text" name="firstname_<?= $i + 1 ?>" id="firstname_<?= $i + 1 ?>" required>
+        <div id="seats">
+            <?php
+            for ($i = 0; $i < $_POST['nbr']; $i++) { ?>
+                <fieldset>
+                    <?php if ($trainType == "TER") { ?>
+                        <label><?= NO_SEAT_NUMBER . $i ?></label>
+                    <?php } else { ?>
+                        <label><?= SEAT_NUMBER ?><span id=<?= 'seat_' . ($i + 1) ?>></span></label>
+                    <?php } ?>
+                    <div id="name">
+                        <div id="first-name">
+                            <label for=" firstname_<?= $i + 1 ?>"><?= FIRST_NAME ?> </label>
+                            <input type="text" name="firstname_<?= $i + 1 ?>" id="firstname_<?= $i + 1 ?>" required>
+                        </div>
+                        <div id="last-name">
+                            <label for="name_<?= $i + 1 ?>"><?= NAME ?></label>
+                            <input type="text" name="name_<?= $i + 1 ?>" id="name_<?= $i + 1 ?>" required>
+                        </div>
                     </div>
-                    <div id="last-name">
-                        <label for="name_<?= $i + 1 ?>"><?= NAME ?></label>
-                        <input type="text" name="name_<?= $i + 1 ?>" id="name_<?= $i + 1 ?>" required>
-                    </div>
-                </div>
-            </fieldset>
-        <?php }
-        ?>
+                </fieldset>
+            <?php }
+            ?>
+        </div>
         <input type="submit" value="<?= VALIDATE ?>" id="continueButton" class="disabled">
     </form>
 

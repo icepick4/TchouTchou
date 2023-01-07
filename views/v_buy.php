@@ -43,7 +43,7 @@ require_once(PATH_VIEWS . 'header.php');
 <?php
 if (!isset($_POST['date']) and !isset($_POST['from']) and !isset($_POST['to']) and empty($_POST['date'])) {
 ?>
-    <img src="<?php echo PATH_IMAGES . "searchmap.svg" ?>">
+    <img src="<?php echo PATH_IMAGES . "searchmap.svg" ?>" id="main-img">
 <?php
 };
 ?>

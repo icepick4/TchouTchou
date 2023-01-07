@@ -288,6 +288,7 @@ input::-webkit-inner-spin-button {
   display: block;
 }
 
+
 @media (max-width: 1100px) {
   #form {
     flex-direction: column;
@@ -316,8 +317,12 @@ input::-webkit-inner-spin-button {
 }
 
 @media (prefers-color-scheme: light) {
-  img {
+  img:not(#main-img) {
     filter: invert(1);
+  }
+
+  input[type="date"] {
+    color-scheme: dark;
   }
 
   .ticket-container>div:first-child>div:first-child div:nth-child(2) {
