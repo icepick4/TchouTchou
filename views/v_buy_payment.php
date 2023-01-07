@@ -67,8 +67,12 @@
       ?>
       <div>
         <h2><?= 'Voyageur n° '.$i?></h2>
-          <p><?= $_POST[$firstname];?></p>
-          <p><?= $_POST[$name] ?></p>
+        <p><?= $_POST[$firstname];?></p>
+        <p><?= $_POST[$name] ?></p>
+        <div>
+            <?= SVG_SEAT ?>
+            <p><?= $seats[$i-1]?></p>
+        </div>
       </div><?php
     } ?>
   </div>

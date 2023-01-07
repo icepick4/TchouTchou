@@ -120,7 +120,7 @@ svg {
   width: 15%;
 }
 
-.custom.large .halfRow>div {
+.custom.large .halfRow > div {
   width: 41%;
 }
 
@@ -255,9 +255,10 @@ fieldset {
   padding: 20px;
   margin: 0 auto;
   width: 50%;
+  filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3));
 }
 
-fieldset>label {
+fieldset > label {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;

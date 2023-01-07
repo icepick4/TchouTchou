@@ -56,6 +56,14 @@
   font-size: 1rem;
 }
 
+#travel-details > div:not(#travel_details) div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 10%;
+  justify-content: space-evenly;
+}
+
 #travel_details p {
   padding-left: 5%;
 
