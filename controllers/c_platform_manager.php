@@ -1,5 +1,6 @@
 <?php
 
+
 //Check droit 
 require_once(PATH_MODELS . 'StaffDAO.php');
 $staff = new StaffDAO();
@@ -86,3 +87,5 @@ if (isset($_SESSION['user_id']) && ($staff->isStation($_SESSION['user_id']) || $
 	header("Location: index.php?page=home");
 	die();
 }
+
+

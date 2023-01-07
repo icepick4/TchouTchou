@@ -157,6 +157,7 @@ class StationDAO extends DAO
         $user_id){
         $sql = 'UPDATE PLATFORM SET PLATFORM_USER = NULL WHERE STATION_ID = :station_id
         AND TERMINAL_ID = :hub_id 
+        AND PLATFORM_USER = :user_id
         AND  PLATFORM_UTILISATION = 0';
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id, 
              ':user_id' => $user_id);
@@ -165,14 +166,17 @@ class StationDAO extends DAO
 
     public function set_platform_user($station_id,$hub_id,
         $platoform_letter,$user_id){
-        $sql = 'UPDATE PLATFORM SET PLATFORM_USER = :user_id WHERE STATION_ID = :station_id
+        $sql = 'UPDATE PLATFORM p SET PLATFORM_USER = :user_id  
+        WHERE STATION_ID = :station_id
         AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platoform_letter
         AND  PLATFORM_UTILISATION = 0 AND  PLATFORM_STATUS = 1
         AND PLATFORM_USER IS NULL
-        AND PLATFORM_USER NOT IN (SELECT DISTINCT PLATFORM_USER 
-            FROM PLATFORM WHERE 
-        STATION_ID = :station_id
-        AND TERMINAL_ID = :hub_id)';
+        AND :user_id NOT IN 
+        (SELECT DISTINCT PLATFORM_USER 
+            FROM tchou.PLATFORM WHERE 
+        STATION_ID = p.STATION_ID 
+        AND TERMINAL_ID = p.TERMINAL_ID
+        AND PLATFORM_USER IS NOT NULL)';
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id, 
             ':platoform_letter' => $platoform_letter, ':user_id' => $user_id);
         $this->queryEdit($sql, $args);
