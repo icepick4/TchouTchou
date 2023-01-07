@@ -39,6 +39,7 @@ define('TRAIN_STATUS', 'Statut');
 define('TRAIN_FREE', 'Libre');
 define('TRAIN_USE', 'En cours d\'utilisation');
 define('TRAIN_MAINTENANCE', 'En maintenance');
+define('ADD_TRAIN', 'Ajouter un train');
 define('BTN_ADD', 'Ajouter');
 define('TITLE_PLANNING', 'Planning');
 define('YOUR_TRAVEL', 'Votre voyage');

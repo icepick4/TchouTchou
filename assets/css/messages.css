@@ -58,6 +58,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-wrap: break-word;
 }
 
 #messages p {
@@ -305,7 +306,7 @@ input:checked+.slider:before {
 .switch #intern {
   position: absolute;
   font-weight: bold;
-  top: 4px;
+  top: 8px;
   left: 36px;
 }
 
@@ -345,6 +346,10 @@ form input[type="submit"]:hover {
   display: flex;
   justify-content: space-between;
   width: 80%;
+}
+
+.switch #intern {
+  color: #000;
 }
 
 #resume #resumeClient,
