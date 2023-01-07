@@ -33,6 +33,11 @@ table img {
   width: 25px;
   height: 25px;
   transform: rotate(90deg) translateX(15%);
+  transition: transform 0.5s;
+}
+
+table th:hover img {
+  transform: rotate(450deg) translateX(15%);
 }
 
 
@@ -41,7 +46,7 @@ table td {
 }
 
 table tr:nth-child(even) {
-  background-color: rgb(97, 88, 88);
+  background-color: rgb(172, 167, 167);
   color: white;
 }
 

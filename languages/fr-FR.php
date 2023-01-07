@@ -2,7 +2,7 @@
 
 define('LOGO', 'Logo de la compagnie'); // Affiché si image non trouvée
 //define('MENU_ACCUEIL', 'Accueil');
-define('TITRE_PAGE_ACCUEIL', 'Page D\'accueil');
+define('TITRE_PAGE_ACCUEIL', 'Page d\'accueil');
 
 //HEADER & FOOTER
 define('TITLE', 'Tchoutchou');
@@ -169,7 +169,7 @@ define('WELCOME_TEXT2', "Nous espérons que votre voyage en train sera agréable
 define('SEARCH_TEXT', 'Notre site est simple et facile à utiliser, vous pourrez trouver et réserver votre ticket de train en quelques minutes. Nous proposons également de nombreuses options pour personnaliser votre voyage, comme la possibilité de choisir votre siège.');
 define('STATION_TEXT', "Nous sommes heureux de vous annoncer que vous pouvez désormais accéder à la liste complète des gares de notre réseau. Vous pouvez ainsi voir l'ensemble des gares desservies par nos trains, ainsi que leurs coordonnées et les horaires de départ et d'arrivée des trains.");
 define('MESSAGE_TEXT', "Vous pouvez également nous contacter directement depuis notre site, pour nous faire part de vos remarques ou de vos suggestions. Nous sommes à votre écoute et nous vous répondrons dans les plus brefs délais.");
-define('PLANNING_TEXT', "Vous pouvez également consulter le planning de Vos trajet, pour savoir quand ils partent et quand ils arrivent. Vous pouvez ainsi préparer votre voyage en avance et vous assurer que vous serez à l'heure pour votre train.");
+define('PLANNING_TEXT', "Vous pouvez également consulter le planning de vos trajet, pour savoir quand ils partent et quand ils arrivent. Vous pouvez ainsi préparer votre voyage en avance et vous assurer que vous serez à l'heure pour votre train.");
 define('ALERT_LIST', 'Listes des alertes');
 define('ALERT_LIST_TEXT', 'Vous pouvez consulter la liste des alertes, pour savoir leur provenance, leur localisation et leur impact.');
 //home employee
@@ -196,7 +196,7 @@ define('OPEN', 'Ouvert');
 define('CONFIRM', 'Confirmer');
 
 //messages
-define('NO_MESSAGES', 'Vous n\'avez jamais chercher à contacter notre support jusqu\'à maintenant !');
+define('NO_MESSAGES', 'Vous n\'avez jamais cherché à contacter notre support jusqu\'à maintenant !');
 define('NO_MESSAGE_BTN', 'Accéder au formulaire de contact');
 define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de votre écran pour charger les messages');
 define('INTERN', 'Interne');
@@ -240,7 +240,7 @@ define('NEXT', 'Suivant');
 define("NO_SELECTED_SEAT", "Aucun siège n'a été sélectionné");
 define('SELECTED_SEAT', 'Vous avez sélectionné le(s) siège(s) suivant(s) : ');
 define('VALIDATE', 'Valider mon placement');
-define('SEAT_NEEDED', 'Vous devez choisir le nombre de sièges que vous avez réserver pour pouvoir valider votre placement');
+define('SEAT_NEEDED', 'Vous devez choisir le nombre de sièges que vous avez réservé pour pouvoir valider votre placement');
 define('NO_SEAT_NUMBER', 'Place libre n°');
 define('SEAT_NUMBER', 'Place n°');
 define('END_STATION', 'Arrivée');

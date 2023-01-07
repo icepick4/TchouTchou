@@ -182,6 +182,14 @@ label p {
   justify-content: space-around;
 }
 
+.container button {
+  transition: all 0.3s;
+}
+
+.container button:hover {
+  transform: scale(1.1);
+}
+
 #fullScreenButton {
   width: fit-content;
   margin: 0 auto;

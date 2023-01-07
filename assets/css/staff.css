@@ -139,6 +139,10 @@ form fieldset input[type="submit"] {
   cursor: pointer;
 }
 
+form fieldset input[type="submit"]:hover {
+  transform: scale(1.1);
+}
+
 #main>form {
   width: 25%;
 }
