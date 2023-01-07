@@ -6,8 +6,8 @@ let date = document.getElementById('date');
 let errorStations = document.getElementById('error-stations');
 let errorDate = document.getElementById('error-date');
 let errorEmpty = document.getElementById('error-empty-input');
+let errorWrongStations = document.getElementById('error-wrong-stations');
 var stations = document.querySelector('#stationsArray').innerText.split('//');
-
 function searchWithAutocomplete(input, arr) {
     input.addEventListener('keyup', function (event) {
         var a, b, i;
@@ -59,20 +59,24 @@ function searchWithAutocomplete(input, arr) {
 
 function verify(evt) {
     hideError();
-    if (search1.value === search2.value) {
-        evt.preventDefault();
-        errorStations.style.display = 'block';
-    } else if (search1.value === '' || search2.value === '') {
+    if (search1.value === '' || search2.value === '') {
         evt.preventDefault();
         errorEmpty.style.display = 'block';
+    } else if (search1.value === search2.value) {
+        evt.preventDefault();
+        errorStations.style.display = 'block';
+    } else if (
+        !stations.includes(search1.value) ||
+        !stations.includes(search2.value)
+    ) {
+        evt.preventDefault();
+        errorWrongStations.style.display = 'block';
     } else if (date.value === '') {
         evt.preventDefault();
         errorEmpty.style.display = 'block';
     } else if (date.value < new Date().toISOString().split('T')[0]) {
         evt.preventDefault();
         errorDate.style.display = 'block';
-    } else {
-        form.submit();
     }
 }
 

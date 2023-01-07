@@ -245,6 +245,7 @@ define('START_STATION', 'Départ');
 define('ERROR_STATIONS', 'Les gares de départ et d\'arrivée ne peuvent pas être identiques');
 define('ERROR_DATE', 'La date de départ ne peut pas être antérieure à la date d\'aujourd\'hui');
 define('EMPTY_INPUT_BUY', 'Vous devez remplir tous les champs');
+define('WRONG_STATIONS', 'Veuillez choisir des gares existantes');
 
 //tri
 define('SORT_STATION', 'Trier par Gare');

@@ -6,6 +6,7 @@ require_once(PATH_VIEWS . 'header.php');
 
 <script src=<?= PATH_JS . 'buy.js' ?> type="module" defer></script>
 
+
 <!--  Début de la page -->
 <div class="input-container">
 
@@ -38,6 +39,7 @@ require_once(PATH_VIEWS . 'header.php');
 <label class="info" id="error-stations"><?= ERROR_STATIONS ?></label>
 <label class="info" id="error-date"><?= ERROR_DATE ?></label>
 <label class="info" id="error-empty-input"><?= EMPTY_INPUT_BUY ?></label>
+<label class="info" id="error-wrong-stations"><?= WRONG_STATIONS ?></label>
 <?php
 if (!isset($_POST['date']) and !isset($_POST['from']) and !isset($_POST['to']) and empty($_POST['date'])) {
 ?>
