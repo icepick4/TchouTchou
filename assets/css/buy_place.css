@@ -1,5 +1,6 @@
 :root {
   --grayColor: #595550;
+  --lightOrangeColor: #feb84e;
 }
 
 .seat {
@@ -299,5 +300,53 @@ fieldset input {
   fieldset #first-name,
   #last-name {
     flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .seat svg {
+    fill: none;
+  }
+
+  .seat p {
+    color: var(--main-color);
+  }
+
+  .seat:hover p {
+    color: white;
+  }
+  .wagon {
+    border-color: var(--main-color);
+  }
+  .seat.selected p {
+    color: white;
+  }
+  .baggageRow svg rect:first-child {
+    fill: var(--lightOrangeColor);
+  }
+  .tableRow svg rect {
+    fill: var(--lightOrangeColor);
+  }
+  .tableRow svg path {
+    stroke: var(--main-color);
+  }
+  .endRow svg path:first-child {
+    fill: var(--lightOrangeColor);
+  }
+  .endRow svg:first-child path {
+    stroke: var(--main-color);
+  }
+  .downStairsRow svg path:first-child {
+    fill: var(--lightOrangeColor);
+  }
+  .exitRow svg path {
+    stroke: var(--main-color);
+  }
+  .upStairsRow svg path:first-child {
+    fill: var(--lightOrangeColor);
+  }
+  .upStairsRow svg {
+    fill: var(--lightOrangeColor);
+    stroke: var(--lightOrangeColor);
   }
 }
