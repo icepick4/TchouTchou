@@ -8,7 +8,7 @@
 <?php
 if ($trains != null) {
 ?>
-    
+
     <div class="container">
         <input type="text" id="search" placeholder="<?= SEARCH ?>">
 
@@ -43,7 +43,7 @@ if ($trains != null) {
                     <h3><?php echo $train['TRAIN_SPEED'] ?></h3>
                 </td>
                 <td>
-                    <h3><?php echo $train['TRAIN_LENGTH'].' m' ?></h3>
+                    <h3><?php echo $train['TRAIN_LENGTH'] . ' m' ?></h3>
                 </td>
                 <td COLSPAN=2>
                     <form method="post" action="index.php?page=maintenance">
@@ -52,7 +52,7 @@ if ($trains != null) {
                             <option value="1" <?php if ($train['TRAIN_STATUS_ID'] == 1) echo 'selected' ?>><?= TRAIN_USE ?></option>
                             <option value="2" <?php if ($train['TRAIN_STATUS_ID'] == 2) echo 'selected' ?>><?= TRAIN_MAINTENANCE ?></option>
                         </select>
-                        <input type="text" id="train_id" name="train_id" value="<?= $train['TRAIN_ID'] ?> " style="display:none;" ></input>
+                        <input type="text" id="train_id" name="train_id" value="<?= $train['TRAIN_ID'] ?> " style="display:none;"></input>
                         <input class='links' type="submit" value=<?= SUBMIT ?>></input>
                     </form>
                 </td>
@@ -62,21 +62,21 @@ if ($trains != null) {
         }
         ?>
     </table>
-    
-<?php
-}?>
-<form method="post" action="index.php?page=maintenance">
-<fieldset>
-    <legend>Ajout d'un train</legend>
-    <label for="train_type">Type de train</label>
-    <select name="train_type" id="train_type" class="train_type">
-    <?php foreach ($train_types as $train_type) { ?>
-                            <option value=<?=$train_type['TRAIN_TYPE_ID']?>><?=  $train_type['TRAIN_TYPE_LABEL'] ?></option>
-                        <?php } ?>
-                        </select>
-                        <input class='links' type="submit" value=<?= BTN_ADD ?>></input>
 
-    </form>
+<?php
+} ?>
+<form method="post" action="index.php?page=maintenance">
+    <fieldset>
+        <legend><?= ADD_TRAIN ?></legend>
+        <label for="train_type"><?= TRAIN_TYPE ?></label>
+        <select name="train_type" id="train_type" class="train_type">
+            <?php foreach ($train_types as $train_type) { ?>
+                <option value=<?= $train_type['TRAIN_TYPE_ID'] ?>><?= $train_type['TRAIN_TYPE_LABEL'] ?></option>
+            <?php } ?>
+        </select>
+        <input class='links' type="submit" value=<?= BTN_ADD ?>></input>
+
+</form>
 
 
 

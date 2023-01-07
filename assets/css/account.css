@@ -137,7 +137,7 @@ p.info {
 .links {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 

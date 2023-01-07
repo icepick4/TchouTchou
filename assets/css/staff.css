@@ -139,14 +139,17 @@ form fieldset input[type="submit"] {
   cursor: pointer;
 }
 
+form fieldset input[type="submit"]:hover {
+  transform: scale(1.1);
+}
+
 #main>form {
-  width: 50%;
+  width: 25%;
 }
 
 form fieldset {
   border: 3px solid var(--main-color);
   border-radius: 15px;
-  width: 100%;
 }
 
 form fieldset select {
@@ -159,6 +162,7 @@ form fieldset legend {
   font-weight: bold;
   font-size: 150%;
 }
+
 
 .fired-button {
   background-color: var(--main-color);
@@ -195,10 +199,6 @@ tr td:last-child {
     width: 100%;
   }
 
-  #main>form {
-    width: 80%;
-  }
-
   #search {
     width: 100%;
   }
@@ -211,6 +211,10 @@ tr td:last-child {
 @media screen and (max-width: 1250px) {
   table td {
     font-size: 18px;
+  }
+
+  #main>form {
+    width: 75%;
   }
 }
 
@@ -226,7 +230,7 @@ tr td:last-child {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   table th {
     font-size: 16px;
   }
@@ -235,12 +239,57 @@ tr td:last-child {
     font-size: 12px;
   }
 
-  select {
-    width: 18%;
+  table td {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  table th {
+    font-size: 14px;
   }
 
-  form {
-    width: 100%;
-    margin: 0;
+  table td {
+    font-size: 10px;
   }
+
+  table td {
+    padding: 3px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  table th {
+    font-size: 12px;
+  }
+
+  table td {
+    font-size: 8px;
+  }
+
+  table td {
+    padding: 0;
+  }
+
+  table select {
+    border-end-start-radius: 0;
+    border-start-start-radius: 0;
+    border: none;
+  }
+
+  table input {
+    border-end-end-radius: 0;
+    border-start-end-radius: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  table th {
+    font-size: 12px;
+  }
+
+  table td {
+    font-size: 7px;
+  }
+
 }
