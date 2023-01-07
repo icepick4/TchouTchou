@@ -103,6 +103,10 @@ article div.arti {
 	text-decoration: none;
 }
 
+.arti h2 span {
+	color: var(--main-color);
+}
+
 .btn {
 	border: none;
 	border-radius: var(--radius);

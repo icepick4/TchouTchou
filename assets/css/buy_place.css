@@ -71,6 +71,15 @@ svg {
   height: 20%;
 }
 
+.error {
+  display: none;
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
 .seatNumber {
   position: absolute;
   top: 50%;
