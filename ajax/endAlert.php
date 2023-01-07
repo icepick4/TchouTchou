@@ -2,7 +2,7 @@
 <html>
 
 <body>
-    
+
     <?php
     chdir("../");
     //pour utiliser le fichier de config de base
@@ -16,4 +16,3 @@
     $id_alert = $_GET['id'];
 
     $alert->updateAlertStatus(substr($_GET['id'], 0, sizeof($_GET['id']) - 6), substr($_GET['id'], -6, 2), substr($_GET['id'], -4, 2), substr($_GET['id'], -2, 2), 0);
-

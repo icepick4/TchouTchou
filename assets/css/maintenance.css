@@ -63,6 +63,7 @@ table td {
 
 #search:focus {
   outline: none;
+  cursor: text;
 }
 
 #clear-search {
@@ -85,6 +86,14 @@ select {
 
 form {
   display: flex;
+}
+
+form .links {
+  transition: all 0.2s ease-in-out;
+}
+
+form .links:hover {
+  transform: scale(1.08);
 }
 
 input {
@@ -144,6 +153,18 @@ form fieldset select {
 form fieldset legend {
   font-weight: bold;
   font-size: 150%;
+}
+
+@media (prefers-color-scheme: light) {
+  table tr:nth-child(even) {
+    background-color: rgb(110, 107, 107);
+    color: #fff;
+  }
+
+  #search {
+    background-color: #fff;
+    color: #000;
+  }
 }
 
 @media (max-width: 1768px) {

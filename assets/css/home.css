@@ -106,6 +106,10 @@ article div.arti {
   text-decoration: none;
 }
 
+.arti h2 span {
+  color: var(--main-color);
+}
+
 .btn {
   border: none;
   border-radius: var(--radius);
@@ -197,5 +201,9 @@ article img {
 @media (prefers-color-scheme: light) {
   article {
     background-color: rgba(66, 57, 57, 0.3);
+  }
+
+  .arti h2 span {
+    color: var(--second-color);
   }
 }

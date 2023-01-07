@@ -37,7 +37,17 @@ table img {
 }
 
 table th:hover img {
-  transform: rotate(450deg) translateX(15%);
+  animation: arrow-animation 0.3s infinite alternate;
+}
+
+@keyframes arrow-animation {
+  0% {
+    transform: rotate(90deg) translateX(-5%);
+  }
+
+  100% {
+    transform: rotate(90deg) translateX(25%);
+  }
 }
 
 
@@ -46,7 +56,7 @@ table td {
 }
 
 table tr:nth-child(even) {
-  background-color: rgb(172, 167, 167);
+  background-color: rgb(110, 107, 107);
   color: white;
 }
 
