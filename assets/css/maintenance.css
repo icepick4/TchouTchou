@@ -21,6 +21,7 @@ table th {
 
 table tr th {
   color: var(--txt-white-color);
+  padding: 10px;
 }
 
 table tr:first-child {
@@ -100,10 +101,12 @@ table select {
   border-end-start-radius: 15px;
   border-start-start-radius: 15px;
 }
+
 table input {
   border-end-end-radius: 15px;
   border-start-end-radius: 15px;
 }
+
 input:hover {
   background-color: #fff;
   transition-duration: 0.2s;
@@ -122,14 +125,16 @@ form fieldset input[type="submit"] {
   cursor: pointer;
 }
 
-#main > form {
+#main>form {
   width: 50%;
 }
+
 form fieldset {
   border: 3px solid var(--main-color);
   border-radius: 15px;
   width: 100%;
 }
+
 form fieldset select {
   border-radius: 15px;
 
@@ -139,4 +144,64 @@ form fieldset select {
 form fieldset legend {
   font-weight: bold;
   font-size: 150%;
+}
+
+@media (max-width: 1768px) {
+  #main>form {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  #search {
+    width: 90%;
+  }
+
+  #clear-search {
+    right: 5%;
+  }
+}
+
+@media (max-width: 1000px) {
+  table tr th {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  table tr td {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 580px) {
+  table tr th {
+    font-size: 12px;
+  }
+
+  table tr td {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  table tr th {
+    font-size: 10px;
+  }
+
+  table tr td {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  table tr th {
+    font-size: 8px;
+  }
+
+  table tr td {
+    font-size: 8px;
+  }
 }

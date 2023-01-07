@@ -99,7 +99,7 @@ article div.arti {
 	align-items: center;
 }
 
-.arti > a {
+.arti>a {
 	text-decoration: none;
 }
 
@@ -115,6 +115,11 @@ article div.arti {
 	padding-left: var(--margin);
 	display: flex;
 	justify-content: space-between;
+	transition: var(--hover);
+}
+
+.btn:hover {
+	transform: scale(1.1);
 }
 
 .btn p {

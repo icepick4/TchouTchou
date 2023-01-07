@@ -1,9 +1,11 @@
 #selectContainer {
   display: flex;
-  margin: 40px 0 0;
+  margin: 40px 0 40px 0;
   min-width: 50%;
+  gap: 2rem;
   justify-content: space-around;
 }
+
 select {
   -webkit-appearance: none;
   appearance: none;
@@ -14,6 +16,7 @@ select {
   position: relative;
   transition: all 0.3s ease-in-out;
 }
+
 .selectArrow:after {
   content: "˅";
   font-size: 2rem;
@@ -21,6 +24,7 @@ select {
   right: 10px;
   position: absolute;
 }
+
 select,
 button {
   border: 2px solid var(--main-color);
@@ -32,6 +36,7 @@ button {
   color: var(--txt-white-color);
   transition: all 0.3s ease-in-out;
 }
+
 .selectArrow:hover,
 button:hover {
   cursor: pointer;
@@ -47,9 +52,11 @@ table {
   margin-top: 2%;
   margin-bottom: 2%;
 }
+
 table tr {
   font-size: 20px;
   width: 100%;
+  border: 1px solid var(--main-color);
 }
 
 table th {
@@ -58,9 +65,12 @@ table th {
   background-color: var(--main-color);
   color: var(--txt-white-color);
 }
+
 table td {
   transition: transform 0.5s;
+  border: 1px solid var(--main-color);
 }
+
 table tr:nth-child(even) {
   background-color: var(--bg-black-second-color);
 }
@@ -72,9 +82,11 @@ table tr:nth-child(odd) {
 table tr:hover {
   cursor: pointer;
 }
+
 table tr:hover td {
   transform: scale(1.1);
 }
+
 table td {
   padding: 8px;
   text-align: center;
@@ -96,6 +108,46 @@ table td {
   margin: 30px 0 5px;
   transition: all 0.3s ease-in-out;
 }
+
 #buttonAllAlert:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+
+  #selectContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .selectArrow::after {
+    top: 10px;
+  }
+
+  select {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  table th {
+    font-size: 15px;
+  }
+
+  table td {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  table th {
+    font-size: 12px;
+  }
+
+  table td {
+    font-size: 10px;
+  }
 }

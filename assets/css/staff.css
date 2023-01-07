@@ -1,7 +1,7 @@
 table {
   border-collapse: collapse;
   table-layout: fixed;
-  width: 60%;
+  width: 70%;
   font-size: 12px;
   margin: 0 auto;
   margin-top: 2%;
@@ -19,6 +19,7 @@ table td {
 
 table tr th {
   color: var(--txt-white-color);
+  padding: 10px;
 }
 
 table tr:first-child {
@@ -31,6 +32,7 @@ table tr th {
   background-color: var(--main-color);
   border: 1px solid #ddd;
 }
+
 table tr:nth-child(even) td:not(:last-child) {
   background-color: var(--border-input);
 }
@@ -87,16 +89,18 @@ form {
   display: flex;
 }
 
-#main > form {
+#main>form {
   flex-direction: column;
 }
-#main > form div {
+
+#main>form div {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   text-align: center;
   align-items: center;
 }
+
 input {
   background-color: var(--main-color);
   color: #fff;
@@ -111,10 +115,12 @@ table select {
   border-end-start-radius: 15px;
   border-start-start-radius: 15px;
 }
+
 table input {
   border-end-end-radius: 15px;
   border-start-end-radius: 15px;
 }
+
 input:hover {
   background-color: #fff;
   transition-duration: 0.2s;
@@ -133,14 +139,16 @@ form fieldset input[type="submit"] {
   cursor: pointer;
 }
 
-#main > form {
+#main>form {
   width: 50%;
 }
+
 form fieldset {
   border: 3px solid var(--main-color);
   border-radius: 15px;
   width: 100%;
 }
+
 form fieldset select {
   border-radius: 15px;
 
@@ -171,11 +179,68 @@ tr th:last-child {
   background-color: transparent;
   border: none;
 }
+
 tr th:last-child,
 tr td:last-child {
   width: 7%;
 }
+
 tr td:last-child {
   background-color: transparent;
   border: none;
+}
+
+@media screen and (max-width: 1500px) {
+  table {
+    width: 100%;
+  }
+
+  #main>form {
+    width: 80%;
+  }
+
+  #search {
+    width: 100%;
+  }
+
+  #clear-search {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  table td {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  table td {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  table td {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  table th {
+    font-size: 16px;
+  }
+
+  table td {
+    font-size: 12px;
+  }
+
+  select {
+    width: 18%;
+  }
+
+  form {
+    width: 100%;
+    margin: 0;
+  }
 }

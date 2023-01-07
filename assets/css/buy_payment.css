@@ -22,7 +22,7 @@
 }
 
 #paypal-button-container {
-  width: 35%;
+  width: 20%;
   background-color: var(--bg-black-second-color);
   color: white;
   padding: 4% 1.5%;
