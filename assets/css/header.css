@@ -223,11 +223,9 @@ header> :nth-child(2n) {
 
   header ul {
     width: 100%;
-  }
-
-  header ul {
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   #account-text {

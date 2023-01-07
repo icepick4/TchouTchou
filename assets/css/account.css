@@ -68,6 +68,10 @@ table td {
   width: auto;
 }
 
+form input:not([type="submit"]) {
+  width: 100%
+}
+
 form input {
   background-color: transparent;
   color: white;
@@ -211,11 +215,26 @@ p.info {
   }
 
   .infos {
-    width: 94%;
+    width: 100%;
   }
 
   .links p {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .infos table {
+    border: none;
+    box-shadow: none;
+  }
+
+  .infos table tr td:first-child {
+    display: none;
+  }
+
+  .links {
+    font-size: 10px;
   }
 }
 
@@ -236,5 +255,11 @@ p.info {
 
   .links a {
     width: 50%;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .infos svg:hover {
+    transform: scale(1);
   }
 }
