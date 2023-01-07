@@ -88,7 +88,7 @@
 #card-fields-container {
   color: white;
 }
-#travel_details,
+#travel-details,
 #paypal-button-container {
   filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3));
   /* width: 25%; */
