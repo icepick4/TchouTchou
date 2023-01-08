@@ -17,6 +17,7 @@ require_once(PATH_VIEWS . 'header.php');
                                                                                                                                 } ?>>
             <i class="clear-search">X</i>
         </div>
+        <a id="boxArrow"><img src="<?= PATH_IMAGES . "exchangeArrow.svg" ?>" id="exchangArrow"></a>
         <div class="container">
             <input type="text" id="search2" autocomplete="off" placeholder="<?= END_STATION ?>" name="to" class="search" <?php if (isset($_POST['to'])) {
                                                                                                                                 echo 'value="' . $_POST['to'] . '"';
