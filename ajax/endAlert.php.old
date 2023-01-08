@@ -3,6 +3,7 @@
 
 <body>
 
+    // si y a une erreur mesci d'aller voir Loan directement
     <?php
     chdir("../");
     //pour utiliser le fichier de config de base
