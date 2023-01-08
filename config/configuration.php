@@ -8,8 +8,7 @@ ini_set('display_errors', 'On');
 
 // Langue du site
 // echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-define('LANG', substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'], '-') - 2, 5));
-
+define('LANG', substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 2));
 // Paramètres du site : nom de l'auteur ou des auteurs
 const AUTEUR = 'TchouTchou';
 const verif = 214428544845492;
@@ -24,6 +23,9 @@ define('PATH_CONST', './config/');
 define('PATH_TEXTES', './languages/');
 define('PATH_JS', './assets/js/');
 define('PATH_MAILER', './PHPMailer/');
+define('PATH_API','./api/a_');
+//future
+//define('PATH_API','./api/a_');
 
 //sous dossiers
 define('PATH_CSS', PATH_ASSETS . 'css/');
@@ -44,5 +46,3 @@ if (!isset($_SESSION['logged'])) {
     $_SESSION['logged'] = false;
     $_SESSION['user_id'] = null;
 }
-
-

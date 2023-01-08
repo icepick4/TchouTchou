@@ -29,3 +29,9 @@
 .PP h3 {
   color: var(--second-color);
 }
+
+.PP p,
+.PP li {
+  text-align: justify;
+  width: 100%;
+}

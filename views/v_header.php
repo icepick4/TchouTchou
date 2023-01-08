@@ -18,7 +18,7 @@
   <link href="<?php echo PATH_CSS . "modal.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . $page . ".css" ?>" rel="stylesheet" />
 </head>
-<script src=<?= PATH_JS . 'header.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'header.js?flag=' . $_SESSION['user_id'] ?> type="module" defer></script>
 
 <body>
   <header>
@@ -32,15 +32,15 @@
         </button>
       </div>
       <ul>
-        <li><a href="index.php?page=buy"><?php echo TITLE_PURCHASE ?></a></li>
-        <li id="account-text"><a href="index.php?page=account"><?php echo MY_ACCOUNT ?></a></li>
+        <li><a href="index.php?page=buy"><?= TITLE_PURCHASE ?></a></li>
+        <li id="account-text"><a href="index.php?page=account"><? MY_ACCOUNT ?></a></li>
         <?php
         $user = new UserDAO();
         $staff = new StaffDAO();
         if (!$staff->isEmployee($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=informations">' . TITLE_INFORMATION . '</a></li>';
         } ?>
-        <li><a href="index.php?page=station_list"><?php echo STATION_LIST ?></a></li>
+        <li><a href="index.php?page=station_list"><?= TITLE_STATION_LIST ?></a></li>
         <?php
         if (isset($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=messages">' . MY_MESSAGES . '</a></li>';

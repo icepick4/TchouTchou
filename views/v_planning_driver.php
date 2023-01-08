@@ -40,7 +40,13 @@
     </tbody>
 </table>
 
-<div id="modal"></div>
+<div class="close" id="overlay"></div>
+<div id="infoModal">
+    <span id="infoModalClose" class="close">&times;</span>
+    <div id="infoModalContent">
+
+    </div>
+</div>
 
 
 <!--  Pied de page -->

@@ -44,10 +44,24 @@ class TrainDAO extends DAO
         $this->queryEdit($sql, $args);
     }
 
+    public function deleteTrain($train_id)
+    {
+        $sql = 'DELETE FROM TRAIN WHERE TRAIN_ID = :train_id';
+        $args = array(':train_id' => $train_id);
+        $this->queryEdit($sql, $args);
+    }
+
     public function getTrainType($travel_id)
     {
         $sql = 'SELECT TRAIN_TYPE_ID FROM TRAIN inner join TRAVEL on TRAIN.TRAIN_ID=TRAVEL.TRAIN_ID where TRAVEL_ID = :travel_id';
         $args = array(':travel_id' => $travel_id);
         return $this->queryRow($sql, $args);
     }
+
+    public function getNbrTravelPlanned($train_id)
+    {
+        $sql = 'SELECT COUNT(TRAVEL_ID) AS NBR FROM TRAVEL WHERE TRAIN_ID = :train_id';
+        $args = array(':train_id' => $train_id);
+        return $this->queryRow($sql, $args);
+    } 
 }

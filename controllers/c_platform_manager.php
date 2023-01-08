@@ -8,6 +8,7 @@ $staff = new StaffDAO();
 
 if (isset($_SESSION['user_id']) && ($staff->isStation($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id']))) {
 
+	// open and close plat
 	if (isset($_GET["station_id"]) && isset($_GET["hub_id"]) && isset($_GET["plat_letter"]) 
 		&& isset($_GET["plat_status"])) {
 		require_once(PATH_MODELS . 'StationDAO.php');
@@ -27,7 +28,7 @@ if (isset($_SESSION['user_id']) && ($staff->isStation($_SESSION['user_id']) || $
 
 
 
-	}
+	}// get available platfrom
 	else if(isset($_GET["station_id"]) && isset($_GET["hub_id"]) &&  isset($_GET["incoming"]) ){
 		require_once(PATH_MODELS . 'StationDAO.php');
 		$station = new StationDAO();
@@ -39,7 +40,7 @@ if (isset($_SESSION['user_id']) && ($staff->isStation($_SESSION['user_id']) || $
 		}
 		echo json_encode($station_infos);
 
-	}
+	}//get platform list for a station and hub
 	else if (isset($_GET["station_id"]) && isset($_GET["hub_id"])) {
 		require_once(PATH_MODELS . 'StationDAO.php');
 		$station = new StationDAO();
@@ -50,7 +51,7 @@ if (isset($_SESSION['user_id']) && ($staff->isStation($_SESSION['user_id']) || $
 		}
 		echo json_encode($station_infos);
 
-	}
+	}// get incoming train with platform
 	else if(isset($_GET["station_id"]) && isset($_GET["incoming"]) ){
 		require_once(PATH_MODELS . 'StationDAO.php');
 		$station = new StationDAO();
@@ -62,7 +63,7 @@ if (isset($_SESSION['user_id']) && ($staff->isStation($_SESSION['user_id']) || $
 		}
 		echo json_encode($station_infos);
 
-	}
+	}// get list of hub for a station
 	else if (isset($_GET["station_id"])) {
 		require_once(PATH_MODELS . 'StationDAO.php');
 		$station = new StationDAO();
@@ -73,7 +74,7 @@ if (isset($_SESSION['user_id']) && ($staff->isStation($_SESSION['user_id']) || $
 		}
 		echo json_encode($station_infos);
 	} else {
-
+		//load web page
 		require_once(PATH_MODELS . 'StationDAO.php');
 
 		$train = new StationDAO();
@@ -82,6 +83,9 @@ if (isset($_SESSION['user_id']) && ($staff->isStation($_SESSION['user_id']) || $
 
 		require_once(PATH_VIEWS . $page . '.php');
 	}
+
+
+
 
 } else {
 	header("Location: index.php?page=home");
