@@ -1,4 +1,5 @@
 <!-- fin de page -->
+<script src=<?= PATH_JS . 'footer.js?flag=' . $_SESSION['user_id'] ?> type="module" defer></script>
 
 </section>
 <!-- Pied de page -->
