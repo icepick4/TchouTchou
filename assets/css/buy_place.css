@@ -422,6 +422,5 @@ input:checked ~ span #elevatedFloor {
   }
   .upStairsRow svg {
     fill: var(--lightOrangeColor);
-    stroke: var(--lightOrangeColor);
   }
 }
