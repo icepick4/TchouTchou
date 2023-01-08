@@ -56,4 +56,11 @@ class TravelDAO extends DAO
         $args = array(':travel_id' => $travel_id);
         return $this->queryRow($sql, $args);
     }
+
+    public function getTravelPrice($travel_id)
+    {
+        $sql = 'SELECT PRICE FROM TRAVEL_PRICE WHERE TRAVEL_ID = :travel_id';
+        $args = array(':travel_id' => $travel_id);
+        return $this->queryRow($sql, $args);
+    }
 }
