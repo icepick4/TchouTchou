@@ -9,7 +9,7 @@ firedButtonList.forEach((element) => {
     var xhttp = new XMLHttpRequest();
     xhttp.open(
       "GET",
-      "ajax/firedEmployee.php?" + "id=" + id + "&user_id=" + getFlags(flag)[0],
+      "index.php?fired_employee&" + "id=" + id + "&user_id=" + getFlags(flag)[0],
       true
     );
     xhttp.send();

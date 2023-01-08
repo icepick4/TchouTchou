@@ -17,7 +17,7 @@ function openModal(id) {
       overlay.classList.add("active");
     }
   };
-  xmlhttp.open("GET", "ajax/planning_info.php?id=" + id, true);
+  xmlhttp.open("GET", "index.php?api=planning_info&id=" + id, true);
   xmlhttp.send();
 }
 
