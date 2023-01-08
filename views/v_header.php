@@ -18,7 +18,7 @@
   <link href="<?php echo PATH_CSS . "modal.css" ?>" rel="stylesheet" />
   <link href="<?php echo PATH_CSS . $page . ".css" ?>" rel="stylesheet" />
 </head>
-<script src=<?= PATH_JS . 'header.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'header.js?flag=' . $_SESSION['user_id'] ?> type="module" defer></script>
 
 <body>
   <header>

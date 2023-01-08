@@ -1,4 +1,5 @@
 <!-- fin de page -->
+<script src=<?= PATH_JS . 'footer.js?flag=' . $_SESSION['user_id'] ?> type="module" defer></script>
 
 </section>
 <!-- Pied de page -->
@@ -30,7 +31,7 @@
 				<?= TITLE_HOME ?>
 			</a>
 			<?php if ($_SESSION['logged']) {
-				echo '<button id="deconnexion"><a>' . LOGOUT . '</a></button>';
+				echo '<a href="#" id="deconnexion">' . LOGOUT . '</a>';
 			} else {
 				echo '<a href="index.php?page=login">' . MY_ACCOUNT . '</a>';
 			} ?>

@@ -251,6 +251,8 @@ define('EMPTY_INPUT_BUY', 'Vous devez remplir tous les champs');
 define('WRONG_STATIONS', 'Veuillez choisir des gares existantes');
 define('ERROR_NAMES', 'Vous ne pouvez pas avoir les mêmes nom et prénom');
 define('ERROR_NAMES_EMPTY', 'Vous devez remplir tous les champs de nom et prénom');
+define('GROUND_LEVEL',"Rez-de-chaussée");
+define('FIRST_LEVEL',"Premier étage");
 
 //tri
 define('SORT_STATION', 'Trier par Gare');

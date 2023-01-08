@@ -85,6 +85,7 @@ if (!isset($_POST['date']) and !isset($_POST['from']) and !isset($_POST['to']) a
                     <input type="hidden" name="to" value="<?= $to_id ?>">
                     <input type="hidden" name="price" value="<?= intval($trains[$i]['PRICE']) * intval($_POST['nbr']) ?>">
                     <input type="hidden" name="nbr" id="nbr" value="<?= $_POST['nbr'] ?>">
+                    <input type="hidden" name="date" id="date" value="<?= $_POST['date']; ?>" />
                     <input type="submit" value="<?= BUY ?>">
                 </form>
             </div>
