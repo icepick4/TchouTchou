@@ -90,23 +90,23 @@ class StationDAO extends DAO
 
 
     /* can not close if occuped*/
-    public function set_platform_status($station_id, $hub_id, $platoform_letter, $new_status ){
+    public function set_platform_status($station_id, $hub_id, $platform_letter, $new_status ){
         $sql = 'UPDATE PLATFORM SET PLATFORM_STATUS = :new_status WHERE STATION_ID = :station_id
-        AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platoform_letter
+        AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platform_letter
         AND (:new_status = 1 or PLATFORM_UTILISATION = 0)';
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id, 
-            ':platoform_letter' => $platoform_letter, ':new_status' => $new_status);
+            ':platform_letter' => $platform_letter, ':new_status' => $new_status);
         $this->queryEdit($sql, $args);
     }
 
-    public function set_platform_status_open($station_id, $hub_id, $platoform_letter){
+    public function set_platform_status_open($station_id, $hub_id, $platform_letter){
         $new_status = 1;
-        $this->set_platform_status($station_id, $hub_id, $platoform_letter, $new_status);
+        $this->set_platform_status($station_id, $hub_id, $platform_letter, $new_status);
     }
 
-    public function set_platform_status_close($station_id, $hub_id, $platoform_letter){
+    public function set_platform_status_close($station_id, $hub_id, $platform_letter){
         $new_status = 0;
-        $this->set_platform_status($station_id, $hub_id, $platoform_letter, $new_status);
+        $this->set_platform_status($station_id, $hub_id, $platform_letter, $new_status);
     }
 
     public function get_station_departure_date_for_travel($travel_id, $station_id)
@@ -165,10 +165,10 @@ class StationDAO extends DAO
     }
 
     public function set_platform_user($station_id,$hub_id,
-        $platoform_letter,$user_id){
+        $platform_letter,$user_id){
         $sql = 'UPDATE PLATFORM p SET PLATFORM_USER = :user_id  
         WHERE STATION_ID = :station_id
-        AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platoform_letter
+        AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platform_letter
         AND  PLATFORM_UTILISATION = 0 AND  PLATFORM_STATUS = 1
         AND PLATFORM_USER IS NULL
         AND :user_id NOT IN 
@@ -178,7 +178,7 @@ class StationDAO extends DAO
         AND TERMINAL_ID = p.TERMINAL_ID
         AND PLATFORM_USER IS NOT NULL)';
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id, 
-            ':platoform_letter' => $platoform_letter, ':user_id' => $user_id);
+            ':platform_letter' => $platform_letter, ':user_id' => $user_id);
         $this->queryEdit($sql, $args);
     }
 
