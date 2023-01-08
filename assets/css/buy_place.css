@@ -356,6 +356,5 @@ fieldset input {
   }
   .upStairsRow svg {
     fill: var(--lightOrangeColor);
-    stroke: var(--lightOrangeColor);
   }
 }
