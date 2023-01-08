@@ -93,6 +93,11 @@ body {
   }
 }
 
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .links a {
   /* margin-left: 3%; */
   font-size: 2em;
