@@ -174,7 +174,7 @@ function loadWagon(id) {
     }
   };
   if (typeTrain.innerText == "TGV") {
-    xmlhttp.open("GET", "ajax/TGV.php?id=" + id, true);
+    xmlhttp.open("GET", "index.php?api=TGV&id=" + id, true);
   } else if (typeTrain.innerText == "TGVDuplex") {
     xmlhttp.open("GET", "ajax/TGVDuplex.php?id=" + id, true);
   } else {
