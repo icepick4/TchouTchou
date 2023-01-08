@@ -262,6 +262,7 @@ define('ADMINISTRATOR', 'Administrador');
 define('DRIVER', 'Conductor');
 define('SERVICE', 'Servicio');
 define('SUPPORT', 'Soporte');
+define('RH', 'Recursos humanos');
 
 // ALT DE IMÁGENES
 define('ALT_WOMEN_WITH_LUGGAGE', 'Mujer con equipaje');

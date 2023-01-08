@@ -45,7 +45,8 @@ if ($staff_list != null) {
                             <option value="2" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 2) echo 'selected' ?>><?= STATION ?></option>
                             <option value="3" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 3) echo 'selected' ?>><?= DRIVER ?></option>
                             <option value="4" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 4) echo 'selected' ?>><?= SERVICE ?></option>
-                            <option value="55" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 5) echo 'selected' ?>><?= SUPPORT ?></option>
+                            <option value="5" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 5) echo 'selected' ?>><?= SUPPORT ?></option>
+                            <option value="6" <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 6) echo 'selected' ?>><?= RH ?></option>
                         </select>
                         <input type="hidden" id="user_identity_update" name="user_identity_update" value="<?= $staff['USER_ID'] ?>"></input>
                         <input class='links' type="submit" value="OK"></input>

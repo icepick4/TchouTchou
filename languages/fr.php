@@ -261,7 +261,7 @@ define('ADMINISTRATOR', 'Administrateur');
 define('DRIVER', 'Conducteur');
 define('SERVICE', 'Service');
 define('SUPPORT', 'Support');
-
+define('RH', 'Ressources Humaines');
 //ALT
 define('ALT_WOMEN_WITH_LUGGAGE', 'Femme avec bagages');
 define('ALT_PHONE_SEARCH', 'Recherche par téléphone');
