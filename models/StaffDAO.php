@@ -151,4 +151,11 @@ class StaffDAO extends DAO
         $args = array(':id' => $id);
         $this->queryEdit($sql, $args);
     }
+
+    public function getNbrDriverTravelPlanned($user_id)
+    {
+        $sql = 'SELECT COUNT(*) AS NBR FROM TRAVEL INNER JOIN DRIVER ON TRAVEL.DRIVER_ID = DRIVER.DRIVER_ID WHERE USER_ID = :USER_ID ';
+        $args = array(':USER_ID' => $user_id);
+        return $this->queryRow($sql, $args)['NBR'];
+    }
 }

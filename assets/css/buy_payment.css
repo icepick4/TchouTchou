@@ -5,25 +5,29 @@
   align-items: center;
   width: 90%;
   margin: 3% 0;
+  gap: 2rem;
 }
 
 #travel-details {
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-black-second-color);
+  background-color: #8b6127;
   border-radius: 15px;
   padding: 2%;
+  width: 35%;
+  gap: 12px;
 }
 
 #travel-details > p > span {
   color: var(--main-color);
 }
+
 #paypal-button-container {
   width: 20%;
-  background-color: var(--bg-black-second-color);
+  background-color: #8b6127;
   color: white;
   padding: 4% 1.5%;
-  border-radius: 15px;
+  border-radius: 1rem;
 }
 
 #paypal-button-container p:first-child {
@@ -39,23 +43,49 @@
   border-radius: 15px;
 }
 
+#travel-details > div:not(#travel_details) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+#travel-details > div:not(#travel_details) p {
+  font-size: 1rem;
+}
+
+#travel-details > div:not(#travel_details) div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 10%;
+  justify-content: space-evenly;
+}
+
 #travel_details p {
-  padding: 5%;
+  padding-left: 5%;
+
   font-size: 1.25em;
 }
+
 #travel_details p:first-child {
   padding: 1% 5% 0 5%;
   font-style: italic;
   opacity: 0.6;
   font-size: 0.9em;
 }
+
 #travel_details p:nth-child(2) {
   padding-bottom: 2%;
   padding-top: 3%;
 }
+
 #travel_details p:last-child {
   padding-top: 2%;
 }
+
 #travel_details p:nth-child(3) {
   padding-left: 10%;
   margin-left: 8%;
@@ -63,11 +93,40 @@
   font-weight: bold;
 }
 
-#travel_details,
+#card-fields-container {
+  color: white;
+}
+#travel-details,
 #paypal-button-container {
   filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3));
+  /* width: 25%; */
 }
 
 h1 span {
   color: var(--main-color);
+}
+
+@media (prefers-color-scheme: light) {
+  p {
+    color: #fff;
+  }
+
+  h1 {
+    color: #fff;
+  }
+}
+
+@media (max-width: 1100px) {
+  #travel-payment {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #travel-details {
+    width: 90%;
+  }
+
+  #paypal-button-container {
+    width: 90%;
+  }
 }

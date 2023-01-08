@@ -1,5 +1,6 @@
 :root {
   --grayColor: #595550;
+  --lightOrangeColor: #feb84e;
 }
 
 .seat {
@@ -20,6 +21,7 @@
   user-select: none;
   /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
+
 svg {
   width: 100%;
 }
@@ -56,9 +58,27 @@ svg {
   fill: var(--grayColor);
 }
 
+#seats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  gap: 1.5rem;
+}
+
 .hallway {
   opacity: 0;
   height: 20%;
+}
+
+.error {
+  display: none;
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .seatNumber {
@@ -87,10 +107,12 @@ svg {
 .reverse .seat p {
   transform: rotate(180deg) translate(50%, 50%);
 }
+
 .baggageRow svg,
 .tableRow svg {
   height: 40%;
 }
+
 .row.baggageRow,
 .row.tableRow {
   margin: 4px 5px;
@@ -99,6 +121,7 @@ svg {
 .baggageRow.medium {
   width: 8.3%;
 }
+
 .baggageRow.large {
   width: 12.8%;
 }
@@ -106,9 +129,11 @@ svg {
 .custom.large {
   width: 15%;
 }
+
 .custom.large .halfRow > div {
   width: 41%;
 }
+
 .custom .seat {
   height: 50%;
 }
@@ -117,6 +142,7 @@ svg {
   display: flex;
   height: 40%;
 }
+
 .halfRow svg {
   height: 100%;
 }
@@ -140,6 +166,7 @@ svg {
 .downStairsRow {
   margin: 0 0 0 2.5%;
 }
+
 .downStairsRow svg {
   height: 38%;
 }
@@ -238,6 +265,7 @@ fieldset {
   padding: 20px;
   margin: 0 auto;
   width: 50%;
+  filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3));
 }
 
 fieldset > label {
@@ -272,6 +300,72 @@ fieldset input {
   border: none;
 }
 
+/* The switch - the box around the slider */
+.switch {
+  margin-top: 2%;
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-black-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  display: flex;
+  border: 2px solid var(--main-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--main-color);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+input:checked ~ span #groundFloor {
+  background-color: unset;
+}
+
+input:checked ~ span #elevatedFloor {
+  background-color: var(--main-color);
+}
+
+#elevatedFloor {
+  background-color: unset;
+  border-radius: 0 34px 34px 0;
+}
+
+#groundFloor {
+  background-color: var(--main-color);
+  border-radius: 34px 0 0 34px;
+}
+
+.slider p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  width: 50%;
+}
+
 @media screen and (max-width: 800px) {
   fieldset #name {
     flex-direction: column;
@@ -281,5 +375,52 @@ fieldset input {
   fieldset #first-name,
   #last-name {
     flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .seat svg {
+    fill: none;
+  }
+
+  .seat p {
+    color: var(--main-color);
+  }
+
+  .seat:hover p {
+    color: white;
+  }
+  .wagon {
+    border-color: var(--main-color);
+  }
+  .seat.selected p {
+    color: white;
+  }
+  .baggageRow svg rect:first-child {
+    fill: var(--lightOrangeColor);
+  }
+  .tableRow svg rect {
+    fill: var(--lightOrangeColor);
+  }
+  .tableRow svg path {
+    stroke: var(--main-color);
+  }
+  .endRow svg path:first-child {
+    fill: var(--lightOrangeColor);
+  }
+  .endRow svg:first-child path {
+    stroke: var(--main-color);
+  }
+  .downStairsRow svg path:first-child {
+    fill: var(--lightOrangeColor);
+  }
+  .exitRow svg path {
+    stroke: var(--main-color);
+  }
+  .upStairsRow svg path:first-child {
+    fill: var(--lightOrangeColor);
+  }
+  .upStairsRow svg {
+    fill: var(--lightOrangeColor);
   }
 }

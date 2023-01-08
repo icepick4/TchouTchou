@@ -18,6 +18,7 @@
 
 
     $result = $travel->getTravelById($id);
+    $detail = $travel->getTravelTimeDetail($id);
     $depart = $station->get_station_name($result['START_STATION_ID']);
     $arrivee = $station->get_station_name($result['END_STATION_ID']);
 
@@ -31,9 +32,9 @@
     <div>
         <h1><?= TRAVEL ?> n° <?= $result['TRAVEL_ID'] ?></h1>
         <p><?= TRAIN ?> n° <?= $result['TRAIN_ID'] ?></p>
-        <p><?= START_TIME ?> : <?= $result['START_TIME'] ?></p>
-        <p><?= LATE_TIME ?> : <?= $result['LATE_TIME'] ?></p>
-        <p><?= START_STATION ?> : <?= $depart['STATION_NAME'] ?></p>
-        <p><?= END_STATION ?> : <?= $arrivee['STATION_NAME'] ?></p>
+        <?php foreach ($detail as $value) {
+            ?><p><?= $station->get_station_name($value['STATION_ID'])['STATION_NAME'] ?> ● <?= $value['ARRIVAL_TIME'] ?> - <?= $value['DEPARTURE_TIME'] ?></p>
+        <?php } ?>
+        
     </div>
     

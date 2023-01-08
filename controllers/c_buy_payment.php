@@ -18,7 +18,7 @@ for($i = 2; $i <= $nbr; $i++){
     $buffer = 'firstname_' .$i;
     $firstname .= "//" . $_POST[$buffer];
 }
-
+$seats = explode("//", $_POST['seat']);
 
 require_once(PATH_MODELS . 'UserDAO.php');
 require_once(PATH_MODELS . 'StationDAO.php');

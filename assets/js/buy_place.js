@@ -124,7 +124,10 @@ let seatChoice = true;
 let seatArray = document.querySelector("#seatArray").innerText.split("//");
 let nbrSeats = parseInt(document.querySelector("#nbrSeats").innerText);
 let selectedSeats = [];
+let seats = document.getElementsByTagName("fieldset");
 let inputs = document.querySelectorAll("fieldset input");
+let errorNames = document.getElementById("error-names");
+let errorNameEmpty = document.getElementById("error-names-empty");
 var nextButton;
 var previousButton;
 
@@ -139,9 +142,22 @@ function checkform() {
   inputs.forEach((input) => {
     if (input.value == "") {
       valid = false;
+      errorNameEmpty.style.display = "block";
     }
   });
+  for (let i = 0; i < seats.length; i++) {
+    console.log(i);
+    let input1 = seats[i].children[1].children[0].children[1].value;
+    let input2 = seats[i].children[1].children[1].children[1].value;
+    console.log(input1, input2);
+    if (input1 === input2 && input1 != "" && input2 != "") {
+      valid = false;
+      errorNames.style.display = "block";
+    }
+  }
   if (valid && seatChoice) {
+    errorNames.style.display = "none";
+    errorNameEmpty.style.display = "none";
     document.querySelector("#continueButton").classList.remove("disabled");
   } else {
     document.querySelector("#continueButton").classList.add("disabled");
@@ -165,6 +181,11 @@ function loadWagon(id) {
     console.log("error");
   }
   xmlhttp.send();
+  if (typeTrain.innerText == "TGVDuplex") {
+    setTimeout(function () {
+      changeFloor();
+    }, 300);
+  }
 }
 
 function changeWagon(id) {
@@ -196,4 +217,25 @@ if (document.querySelector("#content") != null) {
 
   seatChoice = false;
   document.onload = changeWagon(currentWagon);
+}
+
+let slider = document.querySelector(".switch");
+
+if (slider != null) {
+  slider.addEventListener("click", function () {
+    changeFloor();
+  });
+}
+
+function changeFloor() {
+  let input = document.querySelector(".switch input");
+  let down = document.querySelector(".wagon:last-child");
+  let up = document.querySelector(".wagon");
+  if (input.checked) {
+    down.style.display = "none";
+    up.style.display = "flex";
+  } else {
+    down.style.display = "flex";
+    up.style.display = "none";
+  }
 }

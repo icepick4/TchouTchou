@@ -16,6 +16,7 @@
   transition: 0.2s;
   transform: scale(1.1);
 }
+
 .ticket {
   display: flex;
   flex-direction: column;
@@ -26,25 +27,32 @@
   background-color: transparent;
   width: 100%;
 }
+
 .ticket div {
   display: flex;
   margin-bottom: 20px;
   margin-left: 20px;
 }
+
 .ticket div svg {
   width: 30px;
+  transform: translateY(-5px);
 }
+
 .ticket p:first-child {
   font-size: 1.5em;
 }
+
 .ticket p span {
   font-weight: bold;
   color: var(--main-color);
 }
+
 .ticket div p {
   font-size: 1em;
   margin: 0;
 }
+
 .ticket p {
   font-size: 1em;
   font-weight: bold;
@@ -75,7 +83,14 @@
   .tickets {
     width: 96%;
   }
+
   #title-ticket-list h1 {
     margin: 0;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .ticket p {
+    color: #000;
   }
 }

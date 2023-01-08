@@ -1,8 +1,7 @@
 table {
   border-collapse: collapse;
   table-layout: fixed;
-  width: 50%;
-  border: 1px solid #ddd;
+  width: 60%;
   font-size: 12px;
   margin: 0 auto;
   margin-top: 2%;
@@ -10,27 +9,27 @@ table {
 }
 
 table tr {
-  border: 1px solid #ddd;
   font-size: 20px;
 }
 
-table td,
-table th {
+table td:not(:last-child),
+table th:not(:last-child) {
   border: 1px solid #ddd;
 }
 
 table tr th {
   color: var(--txt-white-color);
+  padding: 10px;
 }
 
-table tr:first-child {
+table tr:first-child th:not(:last-child) {
   font-size: 25px;
   font-weight: bold;
   background-color: var(--main-color);
-  color: #000;
+  color: #ffffff;
 }
 
-table tr:nth-child(even) {
+table tr:nth-child(even) td:not(:last-child) {
   background-color: var(--border-input);
 }
 
@@ -62,6 +61,7 @@ table td {
 
 #search:focus {
   outline: none;
+  cursor: text;
 }
 
 #clear-search {
@@ -86,6 +86,14 @@ form {
   display: flex;
 }
 
+form .links {
+  transition: all 0.2s ease-in-out;
+}
+
+form .links:hover {
+  transform: scale(1.08);
+}
+
 input {
   background-color: var(--main-color);
   color: #fff;
@@ -100,10 +108,12 @@ table select {
   border-end-start-radius: 15px;
   border-start-start-radius: 15px;
 }
+
 table input {
   border-end-end-radius: 15px;
   border-start-end-radius: 15px;
 }
+
 input:hover {
   background-color: #fff;
   transition-duration: 0.2s;
@@ -125,11 +135,13 @@ form fieldset input[type="submit"] {
 #main > form {
   width: 50%;
 }
+
 form fieldset {
   border: 3px solid var(--main-color);
   border-radius: 15px;
   width: 100%;
 }
+
 form fieldset select {
   border-radius: 15px;
 
@@ -139,4 +151,106 @@ form fieldset select {
 form fieldset legend {
   font-weight: bold;
   font-size: 150%;
+}
+
+.del-button {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition-duration: 0.2s;
+}
+
+.del-button:hover {
+  scale: 1.1;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+tr th:last-child {
+  background-color: transparent;
+  border: none;
+}
+
+tr th:last-child,
+tr td:last-child {
+  width: 7%;
+}
+
+tr td:last-child {
+  background-color: transparent;
+  border: none;
+}
+
+@media (prefers-color-scheme: light) {
+  table tr:nth-child(even) td {
+    background-color: rgb(110, 107, 107);
+    color: #fff;
+  }
+
+  #search {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+@media (max-width: 1768px) {
+  #main > form {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  #search {
+    width: 90%;
+  }
+
+  #clear-search {
+    right: 5%;
+  }
+}
+
+@media (max-width: 1000px) {
+  table tr th {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  table tr td {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 580px) {
+  table tr th {
+    font-size: 12px;
+  }
+
+  table tr td {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  table tr th {
+    font-size: 10px;
+  }
+
+  table tr td {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  table tr th {
+    font-size: 8px;
+  }
+
+  table tr td {
+    font-size: 8px;
+  }
 }

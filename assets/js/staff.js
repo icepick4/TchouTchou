@@ -7,7 +7,6 @@ firedButtonList.forEach((element) => {
   element.addEventListener("click", function () {
     let id = element.getAttribute("value");
     var xhttp = new XMLHttpRequest();
-    console.log("ajax/firedEmployee.php?" + "id=" + id);
     xhttp.open(
       "GET",
       "ajax/firedEmployee.php?" + "id=" + id + "&user_id=" + getFlags(flag)[0],

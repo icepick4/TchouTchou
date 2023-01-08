@@ -29,10 +29,25 @@ table th {
   cursor: auto;
 }
 
-img {
+table img {
   width: 25px;
   height: 25px;
   transform: rotate(90deg) translateX(15%);
+  transition: transform 0.5s;
+}
+
+table th:hover img {
+  animation: arrow-animation 0.3s infinite alternate;
+}
+
+@keyframes arrow-animation {
+  0% {
+    transform: rotate(90deg) translateX(-5%);
+  }
+
+  100% {
+    transform: rotate(90deg) translateX(25%);
+  }
 }
 
 
@@ -41,7 +56,7 @@ table td {
 }
 
 table tr:nth-child(even) {
-  background-color: rgb(97, 88, 88);
+  background-color: rgb(110, 107, 107);
   color: white;
 }
 

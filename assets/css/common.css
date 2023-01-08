@@ -2,21 +2,27 @@
   --light-main-color: #ffc34d;
   --main-color: #ff9b05;
   --second-color: #ff6b08;
+  --third-color: #ff3d00;
   --txt-white-color: #ffffff;
   --bg-white-color: #efeded;
   --bg-black-color: #1e1e1e;
-  --bg-black-second-color: #4f3510;
+  --bg-black-second-color: #815a22;
   --bg-header-color: #151616;
   --border-input: #343434;
   --radius: 8px;
   --margin: 4px;
   --hover: 0.5s;
 }
+
 img {
-  -moz-user-select: none; /* Firefox */
-  -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
-  -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
-  user-select: none; /* Propriété standard */
+  -moz-user-select: none;
+  /* Firefox */
+  -webkit-user-select: none;
+  /* Chrome, Safari, Opéra depuis la version 15 */
+  -ms-user-select: none;
+  /* Internet explorer depuis la version 10 et Edge */
+  user-select: none;
+  /* Propriété standard */
   pointer-events: none;
 }
 
@@ -45,12 +51,14 @@ body {
   flex-direction: column;
   text-align: center;
 }
+
 .alert-form {
   border: 2px solid red;
   background-color: #ff000069;
   border-radius: 5px;
   padding: 5px 30px;
 }
+
 .alert-form.success {
   background-color: #00ff0069;
   border: 2px solid rgb(0, 199, 0);
@@ -103,9 +111,11 @@ body {
     background-color: var(--bg-black-color);
     color: var(--bg-white-color);
   }
+
   html {
     overflow-x: hidden;
   }
+
   .links a {
     color: white;
   }
