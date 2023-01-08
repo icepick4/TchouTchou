@@ -24,7 +24,7 @@
       return actions.order.capture().then(function(orderData) {
         // Successful capture! For dev/demo purposes:
         const transaction = orderData.purchase_units[0].payments.captures[0];
-        let link = 'ajax/addTicket.php?nbr=<?= $nbr . "&seat=" . $seat . "&travel=" . $travel . "&line=" . $line . "&from=" . $from . "&to=" . $to . "&user_id=" . $_SESSION['user_id'] . "&firstname=" . $firstname . "&name=" . $name ?> ';
+        let link = 'index.php?api=add_ticket&nbr=<?= $nbr . "&seat=" . $seat . "&travel=" . $travel . "&line=" . $line . "&from=" . $from . "&to=" . $to . "&user_id=" . $_SESSION['user_id'] . "&firstname=" . $firstname . "&name=" . $name ?> ';
         var xhttp = new XMLHttpRequest();
         xhttp.open(
           "GET",

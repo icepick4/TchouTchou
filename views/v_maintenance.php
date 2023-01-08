@@ -85,4 +85,6 @@ if ($trains != null) {
 
 
 
-<?php require_once(PATH_VIEWS . 'footer.php');
+<?php
+require_once(PATH_VIEWS . 'go_up.php');
+require_once(PATH_VIEWS . 'footer.php');

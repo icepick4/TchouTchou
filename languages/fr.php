@@ -1,53 +1,23 @@
 <?php
-
-define('LOGO', 'Logo de la compagnie'); // Affiché si image non trouvée
-//define('MENU_ACCUEIL', 'Accueil');
-define('TITRE_PAGE_ACCUEIL', 'Page d\'accueil');
-
-//HEADER & FOOTER
+//TITLE
 define('TITLE', 'Tchoutchou');
 define('TITLE_HOME', 'Accueil');
 define('TITLE_PURCHASE', 'Achats');
 define('TITLE_SEARCH', 'Rechercher');
-//define('TITLE_TICKET', 'Vos billets');
-//define('TITLE_LOGIN', 'Se connecter');
-//define('TITLE_LOGOUT', 'Se déconnecter');
 define('TITLE_INFORMATION', 'Informations');
 define('TITLE_CONTACT', 'Nous Contacter');
 define('TITLE_COMPANY', 'Notre Entreprise');
 define('TITLE_INFORM_YOU', 'Vous Informer');
 define('TITLE_QUICK_ACCESS', 'Accès Rapide');
-//define('TITLE_MESSAGES', 'Messages');
 define('TITLE_PLATFORM_MANAGER', 'Gestion des Quais');
-define('STATION_INFORMATION', 'Gares & Quais');
-define('TERMS_OF_USE', 'Condtions Générales');
-define('PRIVACY_POLICY', 'Politique de Confidentialité');
-define('STATION_LIST', 'Liste des Gares');
+define('TITLE_TERMS_OF_USE', 'Conditions Générales');
+define('TITLE_PRIVACY_POLICY', 'Politique de Confidentialité');
+define('TITLE_STATION_LIST', 'Liste des Gares');
 define('TITLE_GITPULL', 'git pull');
 define('TITLE_STAFF', 'Gestion du Personnel');
 define('TITLE_MAINTENANCE', 'Maintenance');
 define('TITLE_ALERT', 'Alertes');
-define('CGU', 'les conditions générales d\'utilisation');
-define('PLEASE_ACCEPT', 'Veuillez accepter ');
-define('RETURN_BUTTON', 'Retour');
-define('TRAIN_ID', 'Identifiant');
-define('TRAIN_TYPE', 'Type');
-define('TRAIN_CAPACITY', 'Capacité');
-define('TRAIN_SPEED', 'Vitesse');
-define('TRAIN_LENGTH', 'Longueur');
-define('TRAIN_STATUS', 'Statut');
-define('TRAIN_FREE', 'Libre');
-define('TRAIN_USE', 'En cours d\'utilisation');
-define('TRAIN_MAINTENANCE', 'En maintenance');
-define('ADD_TRAIN', 'Ajouter un train');
-define('BTN_ADD', 'Ajouter');
 define('TITLE_PLANNING', 'Planning');
-define('YOUR_TRAVEL', 'Votre voyage');
-define('MESSAGE', 'Mes Messages');
-define('TICKETS_DETAIL', 'Détails de vos billets');
-define('SELECT_SEATS', 'Sélectionnez vos sièges');
-define('MODIFY', 'Modifier');
-define('DELETE', 'Supprimer');
 
 // DAYS & MONTHS
 define('MONDAY', 'Lundi');
@@ -70,14 +40,42 @@ define('OCTOBER', 'Octobre');
 define('NOVEMBER', 'Novembre');
 define('DECEMBER', 'Décembre');
 
+//TRAIN PAGES
+define('TRAIN_ID', 'Identifiant');
+define('TRAIN_TYPE', 'Type');
+define('TRAIN_CAPACITY', 'Capacité');
+define('TRAIN_SPEED', 'Vitesse');
+define('TRAIN_LENGTH', 'Longueur');
+define('TRAIN_STATUS', 'Statut');
+define('TRAIN_FREE', 'Libre');
+define('TRAIN_USE', 'En cours d\'utilisation');
+define('TRAIN_MAINTENANCE', 'En maintenance');
+define('ADD_TRAIN', 'Ajouter un train');
+
+//REGISTER PAGE
+define('PLEASE_ACCEPT', 'Veuillez accepter ');
+
+//BUTTONS
+define('BTN_RETURN', 'Retour');
+define('BTN_ADD', 'Ajouter');
+define('BTN_DELETE', 'Supprimer');
+
+//TICKET
+define('YOUR_TRAVEL', 'Votre voyage');
+define('TICKETS_DETAIL', 'Détails de vos billets');
+define('NO_TICKET', 'Vous n\'avez pas de billet pour le moment !');
+define('NO_TICKET_RELATED', 'Aucun billet ne correspond !');
+
+//BUY TICKET
+define('SELECT_SEATS', 'Sélectionnez vos sièges');
+
 //Home
 define('MY_ACCOUNT', 'Mon Compte');
 define('MY_TICKETS', 'Mes Billets');
 define('MY_MESSAGES', 'Mes Messages');
 define('BUY_TICKET', 'Acheter un billet');
-define('NO_TICKET', 'Vous n\'avez pas de billet pour le moment !');
-define('NO_TICKET_RELATED', 'Aucun billet ne correspond !');
 
+//FAQ
 define('HOW_TO_BUY', 'Comment acheter un billet ?');
 define('HOW_TO_BUY_TEXT', 'Pour acheter un billet, il vous suffit de vous rendre sur la page d\'achat de billet, de sélectionner votre trajet et de valider votre achat. Vous recevrez ensuite un mail de confirmation avec le détail de votre billet.');
 define('HOW_TO_SEE_TICKET', 'Comment voir mes billets ?');
@@ -88,8 +86,6 @@ define('HOW_TO_SEE_MESSAGES', 'Comment voir mes messages ?');
 define('HOW_TO_SEE_MESSAGES_TEXT', 'Pour voir vos messages, il vous suffit de vous rendre sur la page "Mes messages" après vous être connecté avec votre adresse mail et votre mot de passe. Vous pourrez alors voir vos messages.');
 define('HOW_TO_SEND_MESSAGES', 'Comment envoyer une demande d\'assistance ?');
 define('HOW_TO_SEND_MESSAGES_TEXT', 'Pour envoyer une demande d\'assistance, il vous suffit de vous rendre dans la section "Nous contacter" et d\'envoyer une demande d\assitance en expliquant le motif de votre demande. Un membre de notre équipe vous répondra dans les plus brefs délais.');
-// CART
-define('CART', 'Panier');
 
 // LOGIN & REGISTER
 define('LOGIN', 'Connexion');
@@ -98,7 +94,6 @@ define('REGISTER', 'Inscription');
 define('TOREGISTER', "S'inscrire");
 define('PASSWORD', 'Mot de passe');
 define('CONFIRMPASSWORD', 'Confirmer le mot de passe');
-
 define('ERROR_NAME', 'Le nom ne peut contenir de nombre');
 define('ERROR_FIRSTNAME', 'Le prénom ne peut contenir de nombre');
 define('ERROR_MAIL', 'Mail invalide');
@@ -110,7 +105,7 @@ define('ERROR_CHARACTER', 'Nombre de caractères insuffisants');
 define('DELETE_ACCOUNT', 'Supprimer mon compte');
 define('MAIL_ALREADY_USED', 'Cette adresse mail est déjà utilisée');
 
-//contact
+//CONTACT
 define('NAME', 'Nom');
 define('FIRST_NAME', 'Prénom');
 define('PHONE', 'Numéro de téléphone');
@@ -119,7 +114,7 @@ define('SUBJECT', 'Sujet');
 define('DESC', 'Description');
 define('SUBMIT', 'Envoyer');
 
-// erreur
+//ERROR
 define('TEXTE_PAGE_404', 'Oops, la page demandée n\'existe pas !');
 define('MESSAGE_ERREUR', "Une erreur s'est produite");
 define('UNKWOWN_MAIL', 'Mail inconnu');
@@ -150,8 +145,7 @@ define('DELAY_OF', 'Retard de');
 define('MIN', 'min');
 define('FULL_SCREEN', 'Plein écran');
 
-//tickets
-
+//TICKETS
 define('TICKET_DETAIL', 'Détails de votre ticket');
 define('DURATION', 'Durée');
 define('TRAVEL', 'Voyage');
@@ -161,7 +155,7 @@ define('MINUTES', 'minutes');
 define('TRAVEL_TO', 'Voyage vers ');
 define('BUY', 'Acheter');
 
-//home client
+//HOME CLIENT
 define('WELCOME_PT1', 'Bienvenue sur ');
 define('WELCOME_PT2', ', votre site de réservation de tickets de train en ligne !');
 define('WELCOME_TEXT', "Nous sommes heureux de vous accueillir sur notre plateforme et de vous offrir la possibilité de réserver en quelques clics des tickets de train pour votre prochain voyage. Que vous souhaitiez vous déplacer en France ou en Europe, nous avons ce qu'il vous faut.");
@@ -172,8 +166,8 @@ define('MESSAGE_TEXT', "Vous pouvez également nous contacter directement depuis
 define('PLANNING_TEXT', "Vous pouvez également consulter le planning de vos trajet, pour savoir quand ils partent et quand ils arrivent. Vous pouvez ainsi préparer votre voyage en avance et vous assurer que vous serez à l'heure pour votre train.");
 define('ALERT_LIST', 'Listes des alertes');
 define('ALERT_LIST_TEXT', 'Vous pouvez consulter la liste des alertes, pour savoir leur provenance, leur localisation et leur impact.');
-//home employee
 
+//HOME EMPLOYEE
 define('WELCOME', 'Bienvenue ');
 define('WELCOME_TEXT_EMP', "Vous êtes actuellement connecté en tant qu'employé, vous pouvez accéder à votre espace de travail en cliquant sur les boutons ci-dessous.");
 define('PLATFORM_MANAGER', 'Gestion des quais');
@@ -183,7 +177,6 @@ define('MAINTENANCE', 'Entretien');
 define('MAINTENANCE_TEXT', 'Accéder au service de maintenance');
 
 //PALTFORM MANAGER
-
 define('SELECT_STATION', 'Choisir la station');
 define('SELECT_HUB', 'Choisir le hub');
 define('CONFIG_PANNEL', 'Panneau de Configuration');
@@ -195,7 +188,7 @@ define('CLOSE', 'Fermé');
 define('OPEN', 'Ouvert');
 define('CONFIRM', 'Confirmer');
 
-//messages
+//MESSAGES
 define('NO_MESSAGES', 'Vous n\'avez jamais cherché à contacter notre support jusqu\'à maintenant !');
 define('NO_MESSAGE_BTN', 'Accéder au formulaire de contact');
 define('CHOOSE_MESSAGE', 'Vous devez choisir une discussion sur la gauche de votre écran pour charger les messages');
@@ -207,8 +200,7 @@ define('SEND', 'Envoyer');
 define('STORAGE', 'Archive');
 define('MESSAGE_TOO_LONG', 'Votre message est trop long (il ne doit pas excéder 1000 caractères)');
 
-
-//alertes
+//ALERTS
 define('LOCATION', 'Localisation');
 define('DESCRIPTION', 'Description');
 define('SEND_ALERT', 'Envoyer une alerte');
@@ -232,7 +224,7 @@ define('ALERT_NOT_FINISHED', 'Marquer comme terminée');
 define('ALERT_FINISHED', 'L\'alerte est déjà terminée');
 define('SHOW_ALL_ALERTS', 'Afficher aussi les alertes terminées');
 
-//purchase
+//PURCHASE
 define('NO_TRAVEL_FOUND', 'Aucun voyage ne correspond à votre recherche');
 define('SEARCH_TRAVEL', 'Rechercher un voyage');
 define('PREVIOUS', 'Précédent');
@@ -254,13 +246,13 @@ define('ERROR_NAMES_EMPTY', 'Vous devez remplir tous les champs de nom et préno
 define('GROUND_LEVEL',"Rez-de-chaussée");
 define('FIRST_LEVEL',"Premier étage");
 
-//tri
+//TRI
 define('SORT_STATION', 'Trier par Gare');
 define('SORT_CITY', 'Trier par Ville');
 define('SORT_REGION', 'Trier par Département');
 define('SORT_COUNTRY', 'Trier par Pays');
 
-//staff
+//STAFF
 define('DEPARTMENT', 'Service');
 define('ADD_STAFF', 'Ajouter un employé');
 define('IDENTITY', 'Identité');
@@ -269,3 +261,9 @@ define('ADMINISTRATOR', 'Administrateur');
 define('DRIVER', 'Conducteur');
 define('SERVICE', 'Service');
 define('SUPPORT', 'Support');
+
+//ALT
+define('ALT_WOMEN_WITH_LUGGAGE', 'Femme avec bagages');
+define('ALT_PHONE_SEARCH', 'Recherche par téléphone');
+define('ALT_WOMEN_SEARCH','Femme faisant une recherche');
+define('ALT_ARROW_RIGHT', 'Flèche vers la droite');

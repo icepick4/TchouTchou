@@ -4,10 +4,8 @@
 <body>
 
     <?php
-    chdir("../");
-    //pour utiliser le fichier de config de base
-    $skipSession = true;
-    require_once('./config/configuration.php');
+    
+    
     require_once(PATH_MODELS . 'AlertDAO.php');
 
     //ici tu met le php que tu veux avec le dao et la requete dessus qui va s'executer

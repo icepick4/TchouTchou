@@ -13,7 +13,7 @@ $staff = new StaffDAO();
 
 <?php if (!isset($_SESSION['user_id']) || !$staff->isEmployee($_SESSION['user_id'])) { ?>
 <article>
-	<img src="assets/images/travel.svg">
+	<img src="assets/images/travel.svg" alt=<?= ALT_WOMEN_WITH_LUGGAGE ?>>
 	<div class="arti">
 		<h2>
 			<?= WELCOME_PT1 . '<span>Tchoutchou</span>' . WELCOME_PT2; ?>
@@ -27,7 +27,7 @@ $staff = new StaffDAO();
 	</div>
 </article>
 <article>
-	<img src="assets/images/destination.svg">
+	<img src="assets/images/destination.svg" alt=<?= ALT_PHONE_SEARCH ?>>
 	<div class="arti">
 		<h2>
 			<?= TITLE_SEARCH ?>
@@ -40,16 +40,16 @@ $staff = new StaffDAO();
 				<p>
 					<?= WELCOME_GO ?>
 				</p>
-				<img src="assets/images/arrow.svg">
+				<img src="assets/images/arrow.svg" alt=<?= ALT_ARROW_RIGHT?>>
 			</div>
 		</a>
 	</div>
 </article>
 <article>
-	<img src="assets/images/search.svg">
+	<img src="assets/images/search.svg" alt=<?= ALT_WOMEN_SEARCH?>>
 	<div class="arti">
 		<h2>
-			<?= STATION_LIST ?>
+			<?= TITLE_STATION_LIST ?>
 		</h2>
 		<p>
 			<?= STATION_TEXT ?>
@@ -59,14 +59,14 @@ $staff = new StaffDAO();
 				<p>
 					<?= WELCOME_GO ?>
 				</p>
-				<img src="assets/images/arrow.svg">
+				<img src="assets/images/arrow.svg" alt=<?= ALT_ARROW_RIGHT?>>
 			</div>
 		</a>
 	</div>
 </article>
 <?php } else { ?>
 <article>
-	<img src="assets/images/work_il.svg">
+	<img src="assets/images/work_il.svg" alt=<?= ALT_ARROW_RIGHT?>>
 	<div class="arti">
 		<h2>
 			<?= WELCOME ?>
@@ -91,7 +91,7 @@ $staff = new StaffDAO();
 				<p>
 					<?= WELCOME_GO ?>
 				</p>
-				<img src="assets/images/arrow.svg">
+				<img src="assets/images/arrow.svg" alt=<?= ALT_ARROW_RIGHT?>>
 			</div>
 		</a>
 	</div>
@@ -112,7 +112,7 @@ if ($staff->isDriver($_SESSION['user_id'])) { ?>
 					<p>
 						<?= WELCOME_GO ?>
 					</p>
-					<img src="assets/images/arrow.svg">
+					<img src="assets/images/arrow.svg" alt=<?= ALT_ARROW_RIGHT?>>
 				</div>
 			</a>
 		</div>
@@ -133,7 +133,7 @@ if ($staff->isDriver($_SESSION['user_id'])) { ?>
 				<p>
 					<?= WELCOME_GO ?>
 				</p>
-				<img src="assets/images/arrow.svg">
+				<img src="assets/images/arrow.svg" alt=<?= ALT_ARROW_RIGHT?>>
 			</div>
 		</a>
 	</div>
@@ -152,7 +152,7 @@ if ($staff->isDriver($_SESSION['user_id'])) { ?>
 				<p>
 					<?= WELCOME_GO ?>
 				</p>
-				<img src="assets/images/arrow.svg">
+				<img src="assets/images/arrow.svg" alt=<?= ALT_ARROW_RIGHT?>>
 			</div>
 		</a>
 	</div>
@@ -163,7 +163,7 @@ if ($staff->isDriver($_SESSION['user_id'])) { ?>
 	<img src="assets/images/message.svg">
 	<div class="arti">
 		<h2>
-			<?= MESSAGE ?>
+			<?= MY_MESSAGES ?>
 		</h2>
 		<p>
 			<?= MESSAGE_TEXT ?>
