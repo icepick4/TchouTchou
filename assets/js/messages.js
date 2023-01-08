@@ -58,7 +58,7 @@ function loadMessage(id) {
     };
     xmlhttp.open(
         'GET',
-        'ajax/messageRequest.php?number=' + id + '&id=' + getFlags(flag)[0],
+        'index.php?api=message_request&number=' + id + '&id=' + getFlags(flag)[0],
         true
     );
     xmlhttp.send();
