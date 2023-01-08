@@ -8,6 +8,19 @@
   width: 100%;
 }
 
+#boxArrow {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+#boxArrow:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#exchangArrow {
+  width: 2rem;
+  margin: auto;
+}
 input {
   height: 30px;
   border: 2px solid var(--main-color);
@@ -96,7 +109,7 @@ form div button:last-child {
   font-style: italic;
 }
 
-#main>img {
+#main > img {
   width: 25%;
   height: 25%;
   padding-top: 7rem;
@@ -116,7 +129,7 @@ form div button:last-child {
   pointer-events: none;
 }
 
-.ticket-container>div:first-child {
+.ticket-container > div:first-child {
   flex-grow: 2;
   display: flex;
   justify-content: center;
@@ -124,7 +137,7 @@ form div button:last-child {
   flex-direction: column;
 }
 
-.ticket-container>div:first-child>div:first-child {
+.ticket-container > div:first-child > div:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,7 +145,7 @@ form div button:last-child {
   gap: 2rem;
 }
 
-.ticket-container>div:first-child>div:last-child {
+.ticket-container > div:first-child > div:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,36 +153,44 @@ form div button:last-child {
   font-weight: bold;
 }
 
-.ticket-container>div:first-child>div:last-child img,
-.ticket-container>div:first-child>div:last-child p {
+.ticket-container > div:first-child > div:last-child img,
+.ticket-container > div:first-child > div:last-child p {
   align-self: center;
 }
 
-.ticket-container>div:first-child>div:last-child img {
+.ticket-container > div:first-child > div:last-child img {
   width: 2.25rem;
   height: 2.25rem;
   padding: 0;
 }
 
-.ticket-container>div:first-child>div:first-child div:first-child,
-.ticket-container>div:first-child>div:first-child div:last-child {
+.ticket-container > div:first-child > div:first-child div:first-child,
+.ticket-container > div:first-child > div:first-child div:last-child {
   flex-grow: 1;
 }
 
-.ticket-container>div:first-child>div:first-child div:first-child p:first-child,
-.ticket-container>div:first-child>div:first-child div:last-child p:first-child,
-.ticket-container>div:nth-child(2)>p {
+.ticket-container
+  > div:first-child
+  > div:first-child
+  div:first-child
+  p:first-child,
+.ticket-container
+  > div:first-child
+  > div:first-child
+  div:last-child
+  p:first-child,
+.ticket-container > div:nth-child(2) > p {
   font-weight: bolder;
   font-size: 200%;
 }
 
-.ticket-container>div:first-child>div:first-child div:nth-child(2) {
+.ticket-container > div:first-child > div:first-child div:nth-child(2) {
   border-top: 3px solid white;
   padding: 0 0.5rem;
   flex-grow: 0.5;
 }
 
-.ticket-container>div:last-child {
+.ticket-container > div:last-child {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -179,11 +200,11 @@ form div button:last-child {
   padding: 1rem;
 }
 
-.ticket-container>div:nth-child(2)>p:first-child {
+.ticket-container > div:nth-child(2) > p:first-child {
   color: var(--main-color);
 }
 
-.ticket-container>div:last-child>form input {
+.ticket-container > div:last-child > form input {
   padding: 5% 20%;
   border: 2.5px solid var(--main-color);
   border-radius: 15px;
@@ -288,7 +309,6 @@ input::-webkit-inner-spin-button {
   display: block;
 }
 
-
 @media (max-width: 1100px) {
   #form {
     flex-direction: column;
@@ -325,7 +345,7 @@ input::-webkit-inner-spin-button {
     color-scheme: dark;
   }
 
-  .ticket-container>div:first-child>div:first-child div:nth-child(2) {
+  .ticket-container > div:first-child > div:first-child div:nth-child(2) {
     border-top: 3px solid rgb(0, 0, 0);
   }
 }
