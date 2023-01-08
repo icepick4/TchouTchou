@@ -63,4 +63,11 @@ class TravelDAO extends DAO
         $args = array(':travel_id' => $travel_id);
         return $this->queryRow($sql, $args);
     }
+
+    public function getTravelTimeDetail($travel_id)
+    {
+        $sql = 'SELECT ats.station_id, TO_CHAR(arrival_time,\'HH24:MI\') as arrival_time,TO_CHAR(departure_time,\'HH24:MI\') as departure_time from line_stop ls inner join travel t on ls.line_id = t.line_id INNER JOIN ARRIVAL_TO_STATION ats ON ats.travel_id = t.travel_id and ats.station_id = ls.station_id where t.travel_id = :travel_id';
+        $args = array(':travel_id' => $travel_id);
+        return $this->queryAll($sql, $args);
+    }
 }
