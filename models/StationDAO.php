@@ -91,7 +91,7 @@ class StationDAO extends DAO
 
     /* can not close if occuped*/
     public function set_platform_status($station_id, $hub_id, $platform_letter, $new_status ){
-        $sql = 'UPDATE PLATFORM SET PLATFORM_STATUS = :new_status WHERE STATION_ID = :station_id
+        $sql = 'UPDATE PLATFORM SET PLATFORM_STATUS = :new_status, PLATFORM_UTILISATION = 0, PLATFORM_USER = null WHERE STATION_ID = :station_id
         AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platform_letter
         AND (:new_status = 1 or PLATFORM_UTILISATION = 0)';
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id, 

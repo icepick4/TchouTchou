@@ -184,7 +184,7 @@ async function change_hub() {
 
 async function load() {
   in_hub.innerHTML = "";
-  showIncoming();
+  
   startLoadingAnim(1);
   load_hub_op(in_station_name.value)
     .then((finish) => {
@@ -197,6 +197,7 @@ async function load() {
     .then((finish) => {
       stopLoadinAnim(2);
     });
+    //showIncoming();
 }
 
 async function load_hub_op(id) {
@@ -336,15 +337,10 @@ async function getIncoming(station_id) {
   return data;
 }
 
-async function showIncoming(force = false) {
-  const data = await getIncoming(in_station_name.value);
+async function showIncoming(data) {
+  
 
-  if (
-    force == true ||
-    last_update_incoming_train != JSON.stringify(data["incoming"])
-  ) {
-    console.log("update incoming");
-    last_update_incoming_train = JSON.stringify(data["incoming"]);
+    last_update_incoming_train = await JSON.stringify(data["incoming"]);
     incoming_list.innerHTML = "";
     for (var i = 0; i < data["incoming"].length; i++) {
       let incoming = incoming_temp.content
@@ -353,18 +349,22 @@ async function showIncoming(force = false) {
       incoming.querySelector("p").innerHTML = data["incoming"][i]["TRAIN_ID"];
       incoming.querySelector("select").train_id = data["incoming"][i]["TRAIN_ID"];
       if (data["incoming"][i]["PLATFORM"] != null) {
-        console.log("add option");
+        //console.log("add option");
         let tmp_option = document.createElement("option");
         tmp_option.setAttribute("selected", true);
         tmp_option.innerHTML = data["incoming"][i]["PLATFORM"];
         incoming.querySelector("select").appendChild(tmp_option);
         
       }
-      incoming.querySelector("select").addEventListener("change",changePlatformUser);
 
+      incoming.querySelector("select").addEventListener("change",changePlatformUser);
+      incoming.querySelector("select").disabled = false;
       incoming_list.appendChild(incoming);
     }
-  }
+
+   
+  
+ 
 }
 
 async function getAvailablePlatform(station_id, hub_id) {
@@ -378,20 +378,21 @@ async function getAvailablePlatform(station_id, hub_id) {
   return await rep.json();
 }
 
-async function setAvailablePlatform() {
+async function setAvailablePlatform(availablePlatform) {
   const incoming_list_select = incoming_list.querySelectorAll("select");
 
-  const data = await getAvailablePlatform(in_station_name.value, in_hub.value);
-  const availablePlatform = data["available_platform"];
 
-  if (
-    last_update_available_platform !=
-    JSON.stringify(availablePlatform) + incoming_list_select.length
-  ) {
     last_update_available_platform =
-      JSON.stringify(availablePlatform) + incoming_list_select.length;
+      await JSON.stringify(availablePlatform) + incoming_list_select.length;
+
     for (var i = 0; i < incoming_list_select.length; i++) {
-      console.log(availablePlatform);
+      console.log("liste before",incoming_list_select[i].options);
+      if (incoming_list_select[i].value !=  "None"){
+        incoming_list_select[i].options.length = 2;
+      }else{
+        incoming_list_select[i].options.length = 1;
+      }
+      console.log("liste after",incoming_list_select[i].options);
       availablePlatform.forEach((letter) => {
         let tmp_option = document.createElement("option");
         tmp_option.innerHTML = letter;
@@ -399,18 +400,33 @@ async function setAvailablePlatform() {
         incoming_list_select[i].appendChild(tmp_option);
       });
     }
-  }
+
+  
 }
 
 async function updateIncomingTrain() {
-  await showIncoming();
-  await setAvailablePlatform();
+  const incoming = await getIncoming(in_station_name.value);
+  const incoming_list_select = incoming_list.querySelectorAll("select");
+  let availablePlatform = await getAvailablePlatform(
+    in_station_name.value, in_hub.value);
+  availablePlatform = availablePlatform["available_platform"];
+
+  if (last_update_incoming_train != JSON.stringify(incoming["incoming"])){
+    await showIncoming(incoming);
+
+    await setAvailablePlatform(availablePlatform);
+  }else if (last_update_available_platform !=
+    JSON.stringify(availablePlatform) + incoming_list_select.length
+    ){
+    await setAvailablePlatform(availablePlatform);
+  }
 }
 
 function changePlatformUser(evt) {
   console.log("change",evt.target.value, evt.target.train_id);
   setPlatformUser(in_station_name.value,
     in_hub.value,evt.target.value,evt.target.train_id );
+  evt.target.disabled = true;
 }
 
 async function setPlatformUser(station_id, hub_id, letter, train_id){
