@@ -1,269 +1,279 @@
 #title {
-  font-size: 2em;
-  font-weight: 600;
-  text-decoration: none;
-  display: block;
-  padding: 10px 0;
-  border-bottom: 2px solid #e5e5e5;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 2%;
+	font-size: 2em;
+	font-weight: 600;
+	text-decoration: none;
+	display: block;
+	padding: 10px 0;
+	border-bottom: 2px solid #e5e5e5;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 2%;
 }
 
 .infos {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .infos table {
-  width: auto;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 2%;
-  border-spacing: 30px 30px;
-  border-radius: 10px;
-  font-size: 1.5em;
-  background-color: transparent;
-  border: var(--main-color) 3px solid;
-  box-shadow: 10px 10px 8px 0px rgb(0, 0, 0, 0.3);
+	width: auto;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 2%;
+	border-spacing: 30px 30px;
+	border-radius: 10px;
+	font-size: 1.5em;
+	background-color: transparent;
+	border: var(--main-color) 3px solid;
+	box-shadow: 10px 10px 8px 0px rgb(0, 0, 0, 0.3);
 }
 
 .infos svg {
-  fill: white;
-  stroke: white;
-  width: 32px;
-  height: 32px;
+	fill: white;
+	stroke: white;
+	width: 32px;
+	height: 32px;
 }
 
 .infos svg:hover {
-  cursor: pointer;
-  transform: scale(1.2);
+	cursor: pointer;
+	transform: scale(1.2);
 }
 
 .infos button {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background-color: transparent;
-  color: white;
-  font-size: 1.5em;
-  font-weight: 600;
-  border-radius: 10px;
-  cursor: pointer;
-  transform: translateY(0px);
+	width: 100%;
+	height: 100%;
+	border: none;
+	background-color: transparent;
+	color: white;
+	font-size: 1.5em;
+	font-weight: 600;
+	border-radius: 10px;
+	cursor: pointer;
+	transform: translateY(0px);
 }
 
 .infos button:active {
-  transform: translateY(2px);
+	transform: translateY(2px);
 }
 
 /*border between rows*/
 .infos table td:first-child {
-  border-bottom: 2px solid #5c5858;
+	border-bottom: 2px solid #5c5858;
 }
 
 table td {
-  text-align: center;
-  width: auto;
+	text-align: center;
+	width: auto;
 }
 
-form input:not([type="submit"]) {
-  width: 100%
+form input:not([type='submit']) {
+	width: 100%;
 }
 
 form input {
-  background-color: transparent;
-  color: white;
-  outline: none;
-  border: none;
-  cursor: text;
-  font-size: 1em;
-  pointer-events: none;
-  box-sizing: border-box;
+	background-color: transparent;
+	color: white;
+	outline: none;
+	border: none;
+	cursor: text;
+	font-size: 1em;
+	pointer-events: none;
+	box-sizing: border-box;
 }
 
-form input[type="submit"] {
-  opacity: 0;
-  pointer-events: none;
+form input[type='submit'] {
+	opacity: 0;
+	pointer-events: none;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 .input {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
-.display-input input:not(input[type="submit"]) {
-  pointer-events: all;
-  color: #000;
-  border: 1px solid #d8d2d2;
-  border-radius: 10px;
-  background-color: var(--main-color);
-  background-color: #fff;
+.display-input input:not(input[type='submit']) {
+	pointer-events: all;
+	color: #000;
+	border: 1px solid #d8d2d2;
+	border-radius: 10px;
+	background-color: var(--main-color);
+	background-color: #fff;
 }
 
-.display-input input[type="submit"] {
-  opacity: 1;
-  pointer-events: all;
-  cursor: pointer;
+.display-input input[type='submit'] {
+	opacity: 1;
+	pointer-events: all;
+	cursor: pointer;
 }
 
 .info {
-  opacity: 0;
-  color: red;
-  font-size: 0.7rem;
-  font-style: italic;
+	opacity: 0;
+	color: red;
+	font-size: 0.7rem;
+	font-style: italic;
 }
 
 #delete-account {
-  text-decoration: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+	text-decoration: none;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
 }
 
 p.info {
-  font-size: 2rem;
-  color: red;
+	font-size: 2rem;
+	color: red;
 }
 
 .links {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 6%;
-  width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 6%;
+	width: 100%;
 }
 
 .links div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .links div p {
-  margin: auto;
+	margin: auto;
 }
 
 .links div svg {
-  padding-right: 5%;
-  width: 3rem;
-  fill: black;
-  stroke: black;
+	padding-right: 5%;
+	width: 3rem;
+	fill: black;
+	stroke: black;
+}
+
+#deletesvg {
+	width: 2rem;
+	padding-left: 10px;
+}
+
+#disconnectsvg {
+	width: 2.5rem;
+	padding-left: 2px;
 }
 
 @media (prefers-color-scheme: dark) {
-  .content div svg {
-    padding-right: 5%;
-    width: 3rem;
-    fill: white;
-    stroke: white;
-  }
+	.content div svg {
+		padding-right: 5%;
+		width: 3rem;
+		fill: white;
+		stroke: white;
+	}
 
-  form input {
-    color: white;
-  }
+	form input {
+		color: white;
+	}
 
-  .infos table {
-    box-shadow: 10px 10px 8px 0px rgb(0, 0, 0, 0.3);
-  }
+	.infos table {
+		box-shadow: 10px 10px 8px 0px rgb(0, 0, 0, 0.3);
+	}
 }
 
 @media (prefers-color-scheme: light) {
-  .infos {
-    border-color: #000;
-  }
+	.infos {
+		border-color: #000;
+	}
 
-  table svg {
-    filter: invert(100%);
-  }
+	table svg {
+		filter: invert(100%);
+	}
 
-  form input {
-    color: #000;
-  }
+	form input {
+		color: #000;
+	}
 
-  .infos table {
-    background-color: #cecaca;
-  }
+	.infos table {
+		background-color: #cecaca;
+	}
 
-  .display-input input:not(input[type="submit"]) {
-    pointer-events: all;
-    color: #000;
-    border: 1px solid #3f3d3d;
-    border-radius: 10px;
-  }
+	.display-input input:not(input[type='submit']) {
+		pointer-events: all;
+		color: #000;
+		border: 1px solid #3f3d3d;
+		border-radius: 10px;
+	}
 }
 
 @media only screen and (max-width: 900px) {
-  .content {
-    flex-direction: column;
-  }
+	.content {
+		flex-direction: column;
+	}
 
-  .infos table {
-    font-size: 1em;
-    border-spacing: 5px 5px;
-  }
+	.infos table {
+		font-size: 1em;
+		border-spacing: 5px 5px;
+	}
 
-  .infos {
-    width: 100%;
-  }
+	.infos {
+		width: 100%;
+	}
 
-  .links p {
-    display: block;
-  }
+	.links p {
+		display: block;
+	}
 }
 
 @media only screen and (max-width: 600px) {
-  .infos table {
-    border: none;
-    box-shadow: none;
-  }
+	.infos table {
+		border: none;
+		box-shadow: none;
+	}
 
-  .infos table tr td:first-child {
-    display: none;
-  }
+	.infos table tr td:first-child {
+		display: none;
+	}
 
-  .links {
-    font-size: 10px;
-  }
+	.links {
+		font-size: 10px;
+	}
 }
 
 @media only screen and (max-width: 1250px) {
-  .links p {
-    display: none;
-  }
+	.links p {
+		display: none;
+	}
 
-  .links a {
-    width: 100%;
-  }
+	.links a {
+		width: 100%;
+	}
 }
 
 @media only screen and (min-width: 0px) and (max-width: 900px) {
-  .links p {
-    display: block;
-  }
+	.links p {
+		display: block;
+	}
 
-  .links a {
-    width: 50%;
-  }
+	.links a {
+		width: 50%;
+	}
 }
 
 @media only screen and (hover: none) and (pointer: coarse) {
-  .infos svg:hover {
-    transform: scale(1);
-  }
+	.infos svg:hover {
+		transform: scale(1);
+	}
 }
