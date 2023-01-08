@@ -351,14 +351,16 @@ async function showIncoming(force = false) {
         .cloneNode(true)
         .querySelector("div.approching_train");
       incoming.querySelector("p").innerHTML = data["incoming"][i]["TRAIN_ID"];
-      //console.log("pla letter :"+data["incoming"][i]["PLATFORM"]+";")
+      incoming.querySelector("select").train_id = data["incoming"][i]["TRAIN_ID"];
       if (data["incoming"][i]["PLATFORM"] != null) {
         console.log("add option");
         let tmp_option = document.createElement("option");
         tmp_option.setAttribute("selected", true);
         tmp_option.innerHTML = data["incoming"][i]["PLATFORM"];
         incoming.querySelector("select").appendChild(tmp_option);
+        
       }
+      incoming.querySelector("select").addEventListener("change",changePlatformUser);
 
       incoming_list.appendChild(incoming);
     }
@@ -405,6 +407,26 @@ async function updateIncomingTrain() {
   await setAvailablePlatform();
 }
 
+function changePlatformUser(evt) {
+  console.log("change",evt.target.value, evt.target.train_id);
+  setPlatformUser(in_station_name.value,
+    in_hub.value,evt.target.value,evt.target.train_id );
+}
+
+async function setPlatformUser(station_id, hub_id, letter, train_id){
+  const setPlatformUser_res = await fetch(
+    "index.php?api=set_platfrom_user&station_id=" +
+      station_id +
+      "&hub_id=" +
+      hub_id +
+      "&train_id=" + 
+      train_id + 
+      "&platform_letter=" + 
+      letter 
+  );
+
+}
+
 function setIfDefined(value, input) {
   if (!value == "") {
     input.value = value;
@@ -433,13 +455,3 @@ update_platform();
 autoUpdate();
 
 
-const tmptmp = await fetch(
-    "index.php?api=set_platfrom_user&station_id=" +
-      1 +
-      "&hub_id=" +
-      1 +
-      "&train_id=" + 
-      32 + 
-      "&platform_letter=" + 
-      "A" 
-  );
