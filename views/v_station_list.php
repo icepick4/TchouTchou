@@ -65,9 +65,10 @@ if ($stations != null) {
                                                 }
                                                 ?></p>
 <?php
-} ?>
+}
+require_once(PATH_VIEWS . 'go_up.php');
+?>
 <!--  Fin de la page -->
-
 <!--  Pied de page -->
 <?php
 require_once(PATH_VIEWS . 'footer.php');
