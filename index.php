@@ -22,9 +22,9 @@ if (isset($_GET['page'])) {
   if (!is_file(PATH_CONTROLLERS . $_GET['page'] . ".php")) {
     $page = '404'; //page demandée inexistante
   }
-}else if (isset($_GET['page'])) {
-  $page = htmlspecialchars($_GET['page']); // http://.../index.php?page=toto
-  if (!is_file(PATH_CONTROLLERS . $_GET['page'] . ".php")) {
+}else if (isset($_GET['api'])) {
+  $page = htmlspecialchars($_GET['api']); // http://.../index.php?page=toto
+  if (!is_file(PATH_API . $_GET['api'] . ".php")) {
     $page = '404'; //page demandée inexistante
   }
 } else
