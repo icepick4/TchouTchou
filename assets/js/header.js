@@ -26,8 +26,6 @@ let achat = document.querySelector(
   "body > header:nth-child(1) > nav:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)"
 );
 
-console.log(getFlags(flag)[0]);
-
 if (getFlags(flag)[0] == " ") {
   achat.href = "#";
   achat.addEventListener("click", function () {
