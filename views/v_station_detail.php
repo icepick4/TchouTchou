@@ -7,7 +7,7 @@ require_once(PATH_VIEWS . 'header.php');
 
 <!--  Début de la page -->
 <div class="container">
-    <button onclick="document.location.href='index.php?page=station_list'"><?= RETURN_BUTTON ?></button>
+    <button onclick="document.location.href='index.php?page=station_list'"><?= BTN_RETURN ?></button>
     <?php if (isset($station_name['STATION_NAME'])) { ?>
         <label class="switch">
             <input type="checkbox">

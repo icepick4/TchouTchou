@@ -51,7 +51,7 @@
         </label>
         <div>
                 <input type="checkbox" id="cgu" required><label for="cgu">
-                        <?= PLEASE_ACCEPT ?><a href="index.php?page=cgu"><?= CGU ?></a>
+                        <?= PLEASE_ACCEPT ?><a href="index.php?page=cgu"><?= TITLE_TERMS_OF_USE ?></a>
                 </label>
         </div>
         <input type="submit" value=<?= TOREGISTER ?>></input>

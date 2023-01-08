@@ -46,7 +46,7 @@ if ($ticket != null) {
     
     </div>
     <div id="button-set-ticket">
-    <button id="delete-button"><?= DELETE ?></button>
+    <button id="delete-button"><?= BTN_DELETE ?></button>
     </div>
     <div class="links-content">
         <div class="link-ticket-list">

@@ -45,7 +45,7 @@
             for ($i = 0; $i < $_POST['nbr']; $i++) { ?>
                 <fieldset>
                     <?php if ($trainType == "TER") { ?>
-                        <label><?= NO_SEAT_NUMBER . $i+1 ?></label>
+                        <label><?= NO_SEAT_NUMBER . strval($i+1) ?></label>
                     <?php } else { ?>
                         <label><?= SEAT_NUMBER ?><span id=<?= 'seat_' . ($i + 1) ?>></span></label>
                     <?php } ?>

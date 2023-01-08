@@ -9,11 +9,11 @@
 			<h2>
 				<?= TITLE_COMPANY ?>
 			</h2>
-			<a href="index.php?page=cgu"><?= TERMS_OF_USE ?></a>
+			<a href="index.php?page=cgu"><?= TITLE_TERMS_OF_USE ?></a>
 			<a href="index.php?page=privacy_policy">
-				<?= PRIVACY_POLICY ?>
+				<?= TITLE_PRIVACY_POLICY ?>
 			</a>
-			<a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img
+			<a id="license" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img
 					alt="Licence Creative Commons" style="border-width:0"
 					src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 		</nav>
