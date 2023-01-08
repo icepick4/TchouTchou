@@ -24,7 +24,7 @@ define('PATH_CONST', './config/');
 define('PATH_TEXTES', './languages/');
 define('PATH_JS', './assets/js/');
 define('PATH_MAILER', './PHPMailer/');
-define('PATH_API','./ajax/a_');
+define('PATH_API','./api/a_');
 //future
 //define('PATH_API','./api/a_');
 

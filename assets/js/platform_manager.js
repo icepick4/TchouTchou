@@ -431,3 +431,15 @@ load();
 update_platform();
 
 autoUpdate();
+
+
+const tmptmp = await fetch(
+    "index.php?api=set_platfrom_user&station_id=" +
+      1 +
+      "&hub_id=" +
+      1 +
+      "&train_id=" + 
+      32 + 
+      "&platform_letter=" + 
+      "A" 
+  );

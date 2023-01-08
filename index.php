@@ -16,6 +16,7 @@ require_once('./lib/foncBase.php');
 require_once(PATH_TEXTES . LANG . '.php');
 require_once(PATH_IMAGES . 'svg.php');
 
+$type = 'page';
 //vérification de la page demandée 
 if (isset($_GET['page'])) {
   $page = htmlspecialchars($_GET['page']); // http://.../index.php?page=toto
@@ -26,9 +27,16 @@ if (isset($_GET['page'])) {
   $page = htmlspecialchars($_GET['api']); // http://.../index.php?page=toto
   if (!is_file(PATH_API . $_GET['api'] . ".php")) {
     $page = '404'; //page demandée inexistante
+  }else{
+    $type = 'api';
   }
 } else
   $page = 'home'; //page d'accueil du site - http://.../index.php
 
 //appel du controller
-require_once(PATH_CONTROLLERS . $page . '.php');
+if ($type == 'api'){
+    require_once(PATH_API . $page . '.php');
+}else{
+  require_once(PATH_CONTROLLERS . $page . '.php');
+}
+
