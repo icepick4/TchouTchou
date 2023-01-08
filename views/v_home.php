@@ -163,7 +163,7 @@ if ($staff->isDriver($_SESSION['user_id'])) { ?>
 	<img src="assets/images/message.svg">
 	<div class="arti">
 		<h2>
-			<?= MESSAGE ?>
+			<?= MY_MESSAGES ?>
 		</h2>
 		<p>
 			<?= MESSAGE_TEXT ?>
