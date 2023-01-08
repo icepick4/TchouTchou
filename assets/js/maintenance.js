@@ -9,7 +9,7 @@ delButtonList.forEach((element) => {
     var xhttp = new XMLHttpRequest();
     xhttp.open(
       "GET",
-      "ajax/deleteTrain.php?" +
+      "index.php?api=delete_train&" +
         "train_id=" +
         id +
         "&user_id=" +
