@@ -1,7 +1,6 @@
 <?php
 
 define('LOGO', 'Logo de la compagnie'); // Affiché si image non trouvée
-//define('MENU_ACCUEIL', 'Accueil');
 define('TITRE_PAGE_ACCUEIL', 'Page d\'accueil');
 
 //HEADER & FOOTER
@@ -9,15 +8,11 @@ define('TITLE', 'Tchoutchou');
 define('TITLE_HOME', 'Accueil');
 define('TITLE_PURCHASE', 'Achats');
 define('TITLE_SEARCH', 'Rechercher');
-//define('TITLE_TICKET', 'Vos billets');
-//define('TITLE_LOGIN', 'Se connecter');
-//define('TITLE_LOGOUT', 'Se déconnecter');
 define('TITLE_INFORMATION', 'Informations');
 define('TITLE_CONTACT', 'Nous Contacter');
 define('TITLE_COMPANY', 'Notre Entreprise');
 define('TITLE_INFORM_YOU', 'Vous Informer');
 define('TITLE_QUICK_ACCESS', 'Accès Rapide');
-//define('TITLE_MESSAGES', 'Messages');
 define('TITLE_PLATFORM_MANAGER', 'Gestion des Quais');
 define('STATION_INFORMATION', 'Gares & Quais');
 define('TERMS_OF_USE', 'Condtions Générales');
@@ -269,3 +264,9 @@ define('ADMINISTRATOR', 'Administrateur');
 define('DRIVER', 'Conducteur');
 define('SERVICE', 'Service');
 define('SUPPORT', 'Support');
+
+//alt
+define('ALT_WOMEN_WITH_LUGGAGE', 'Femme avec bagages');
+define('ALT_PHONE_SEARCH', 'Recherche par téléphone');
+define('ALT_WOMEN_SEARCH','Femme faisant une recherche');
+define('ALT_ARROW_RIGHT', 'Flèche vers la droite');
