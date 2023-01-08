@@ -49,7 +49,7 @@ $staff = new StaffDAO();
 	<img src="assets/images/search.svg" alt=<?= ALT_WOMEN_SEARCH?>>
 	<div class="arti">
 		<h2>
-			<?= STATION_LIST ?>
+			<?= TITLE_STATION_LIST ?>
 		</h2>
 		<p>
 			<?= STATION_TEXT ?>
