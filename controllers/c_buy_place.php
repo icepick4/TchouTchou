@@ -36,18 +36,12 @@ $trains = $travel->getTravelsOn($date, $from, $to);
             if($trains[$i]['LINE_ID'] != $line){
                 $exist = false;
             }
-           
-            if($trains[$i]['START_STATION_ID'] != $from){
-                $exist = false;
-            }
         }
-        if($exist == true){
+        if($exist){
             break;
         }
     }
-    if($exist == false){
-        header('Location: index.php?page=buy&error=1');
-    }
+    
 
 
 
