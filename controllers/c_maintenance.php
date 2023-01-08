@@ -12,11 +12,12 @@ if ($_SESSION['logged'] && ($staff->isService($_SESSION['user_id']) || $staff->i
         $status = $_POST['status'];
         $train_id = $_POST['train_id'];
         $train->updateTrainStatus($status, $train_id);
+        header("Refresh:0");
     }
     if (isset($_POST['train_type'])) {
         $train_type = $_POST['train_type'];
         $train->addTrain($train_type);
-        header("Location: index.php?page=maintenance");
+        header("Refresh:0");
     }
 } else {
     header("Location: index.php?page=home");
