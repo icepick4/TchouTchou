@@ -1,4 +1,7 @@
 <?php
+define('SVG_DOUBLE_ARROW','<svg id="switch" width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 4H16M1 4L4 1M1 4L4 7M1 9H16M16 9L13 6M16 9L13 12" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>');
 define('SVG_EDIT_PARAM_FIRST_NAME', '<svg id="edit-first-name" ');
 define('SVG_EDIT_PARAM_LAST_NAME', '<svg id="edit-last-name" ');
 define('SVG_EDIT_PARAM_PHONE', '<svg id="edit-phone" ');
