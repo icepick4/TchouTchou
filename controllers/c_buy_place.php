@@ -5,7 +5,7 @@ if($_SESSION['logged'] == false){
     exit();
 }
 
-if(!isset($_POST['price']) || !isset($_POST['nbr']) || !isset($_POST['travel']) || !isset($_POST['line']) || !isset($_POST['from']) || !isset($_POST['to']) || !isset($_POST['name_1']) || !isset($_POST['firstname_1'])){
+if(!isset($_POST['price']) || !isset($_POST['nbr']) || !isset($_POST['travel']) || !isset($_POST['line']) || !isset($_POST['from']) || !isset($_POST['to'])){
     header('Location: index.php?page=buy');
     exit();
 }
