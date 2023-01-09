@@ -1,5 +1,15 @@
 <?php
 
+if($_SESSION['logged'] == false){
+    header('Location: index.php?page=login');
+    exit();
+}
+
+if(!isset($_POST['price']) || !isset($_POST['nbr']) || !isset($_POST['travel']) || !isset($_POST['line']) || !isset($_POST['from']) || !isset($_POST['to']) || !isset($_POST['name_1']) || !isset($_POST['firstname_1'])){
+    header('Location: index.php?page=buy');
+    exit();
+}
+
 $price = intval($_POST['price']);
 $nbr = intval($_POST['nbr']);
 

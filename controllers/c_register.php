@@ -1,5 +1,11 @@
 <?php
 require_once(PATH_MODELS . 'UserDAO.php');
+
+if($_SESSION['logged'] == true){
+    header('Location: index.php?page=home');
+    exit();
+}
+
 if (
     isset($_POST["name"]) &&
     isset($_POST["fname"]) &&

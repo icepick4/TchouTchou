@@ -20,6 +20,7 @@
         }
         $staff->firedEmployee(intval($_GET['id']));
         $user->setUserType(intval($_GET['id']), 0);
+        header("Refresh:0");
     } else {
         header("Location: index.php?page=staff");
         die();

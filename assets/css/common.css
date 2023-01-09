@@ -72,6 +72,7 @@ body {
   width: 100px;
   height: 100px;
   transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
 }
 
 .go-up:hover {
@@ -91,6 +92,12 @@ body {
   100% {
     transform: rotate(180deg);
   }
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .links a {

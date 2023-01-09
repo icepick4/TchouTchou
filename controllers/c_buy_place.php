@@ -1,5 +1,15 @@
 <?php
 
+if($_SESSION['logged'] == false){
+    header('Location: index.php?page=login');
+    exit();
+}
+
+if(!isset($_POST['price']) || !isset($_POST['nbr']) || !isset($_POST['travel']) || !isset($_POST['line']) || !isset($_POST['from']) || !isset($_POST['to'])){
+    header('Location: index.php?page=buy');
+    exit();
+}
+
 require_once(PATH_MODELS . 'TrainDAO.php');
 require_once(PATH_MODELS . 'TravelDAO.php');
 $train = new TrainDAO();
@@ -36,18 +46,12 @@ $trains = $travel->getTravelsOn($date, $from, $to);
             if($trains[$i]['LINE_ID'] != $line){
                 $exist = false;
             }
-           
-            if($trains[$i]['START_STATION_ID'] != $from){
-                $exist = false;
-            }
         }
-        if($exist == true){
+        if($exist){
             break;
         }
     }
-    if($exist == false){
-        header('Location: index.php?page=buy&error=1');
-    }
+    
 
 
 

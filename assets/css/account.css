@@ -125,7 +125,6 @@ form {
 	text-decoration: none;
 	background: none;
 	border: none;
-	font-size: 1.5rem;
 	cursor: pointer;
 }
 
@@ -164,6 +163,10 @@ p.info {
 	width: 3rem;
 	fill: black;
 	stroke: black;
+}
+
+.links a {
+	width: 120%;
 }
 
 #deletesvg {
@@ -275,5 +278,11 @@ p.info {
 @media only screen and (hover: none) and (pointer: coarse) {
 	.infos svg:hover {
 		transform: scale(1);
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.links svg {
+		display: none;
 	}
 }

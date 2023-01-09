@@ -102,7 +102,7 @@ define('ERROR_PASSWORD_TOO_WEAK', 'Le mot de passe doit contenir au moins une le
 define('ERROR_PASSWORD_DIFFERENT', 'Les mots de passe sont différents');
 define('ERROR_FORM', 'Veuillez corriger les erreurs avant d\'envoyer vos informations');
 define('ERROR_CHARACTER', 'Nombre de caractères insuffisants');
-define('DELETE_ACCOUNT', 'Supprimer mon compte');
+define('DELETE_ACCOUNT', 'Suppression');
 define('MAIL_ALREADY_USED', 'Cette adresse mail est déjà utilisée');
 
 //CONTACT
@@ -243,8 +243,8 @@ define('EMPTY_INPUT_BUY', 'Vous devez remplir tous les champs');
 define('WRONG_STATIONS', 'Veuillez choisir des gares existantes');
 define('ERROR_NAMES', 'Vous ne pouvez pas avoir les mêmes nom et prénom');
 define('ERROR_NAMES_EMPTY', 'Vous devez remplir tous les champs de nom et prénom');
-define('GROUND_LEVEL',"Rez-de-chaussée");
-define('FIRST_LEVEL',"Premier étage");
+define('GROUND_LEVEL', "Rez-de-chaussée");
+define('FIRST_LEVEL', "Premier étage");
 
 //TRI
 define('SORT_STATION', 'Trier par Gare');
@@ -261,9 +261,9 @@ define('ADMINISTRATOR', 'Administrateur');
 define('DRIVER', 'Conducteur');
 define('SERVICE', 'Service');
 define('SUPPORT', 'Support');
-
+define('RH', 'Ressources Humaines');
 //ALT
 define('ALT_WOMEN_WITH_LUGGAGE', 'Femme avec bagages');
 define('ALT_PHONE_SEARCH', 'Recherche par téléphone');
-define('ALT_WOMEN_SEARCH','Femme faisant une recherche');
+define('ALT_WOMEN_SEARCH', 'Femme faisant une recherche');
 define('ALT_ARROW_RIGHT', 'Flèche vers la droite');

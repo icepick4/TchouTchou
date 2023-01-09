@@ -3,6 +3,19 @@
 require_once(PATH_MODELS . 'StationDAO.php');
 require_once(PATH_MODELS . 'TrainDAO.php');
 require_once(PATH_MODELS . 'TravelDAO.php');
+require_once(PATH_MODELS . 'StaffDAO.php');
+
+if($_SESSION['logged'] == false){
+    header('Location: index.php?page=login');
+    exit();
+}
+
+$user = new StaffDAO();
+
+if($user->isStation($_SESSION['user_id'])){
+    header('Location: index.php?page=home');
+    exit();
+}
 
 $station = new StationDAO();
 $train = new TrainDAO();

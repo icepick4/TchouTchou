@@ -25,9 +25,22 @@ let fullScreenButton = document.querySelector("#fullScreenButton");
 fullScreenButton.addEventListener("click", toggleFullScreen);
 
 function toggleFullScreen() {
+  let element;
+  let header = document.createElement("h2");
   if (info == 0) {
-    departures.requestFullscreen();
+    element = departures;
+    header.innerHTML = switchButton.children[2].innerText;
   } else {
-    arrivals.requestFullscreen();
+    element = arrivals;
+    header.innerHTML = switchButton.children[3].innerHTML;
   }
+  element.prepend(header);
+  element.requestFullscreen();
+
+  
+  element.addEventListener("fullscreenchange", function () {
+    if (!document.fullscreenElement) {
+      header.remove();
+    }
+  });
 }
