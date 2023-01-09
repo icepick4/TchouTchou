@@ -62,6 +62,7 @@ p {
   flex-direction: column;
   justify-content: space-between;
   overflow-wrap: break-word;
+  border-left: solid 2px var(--main-color);
 }
 
 #messages p {
@@ -289,15 +290,15 @@ p.noMessage {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: var(--main-color);
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px var(--main-color);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(95px);
@@ -332,11 +333,11 @@ input:checked + .slider:before {
   opacity: 0;
 }
 
-input:checked ~ #intern {
+input:checked~#intern {
   opacity: 0;
 }
 
-input:checked ~ #extern {
+input:checked~#extern {
   opacity: 1;
 }
 
