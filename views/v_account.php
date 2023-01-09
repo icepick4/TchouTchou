@@ -122,6 +122,7 @@ if ($_SESSION['logged']) {
     <div id="lang">
         <p id="CONFIRM"><?= CONFIRM ?></p>
         <p id="CANCEL"><?= CANCEL ?></p>
+        <p id="SUCCES_LOGOUT"><?=SUCCES_LOGOUT ?></p>
     </div>
 <?php
 

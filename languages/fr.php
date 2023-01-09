@@ -190,6 +190,7 @@ define('CLOSE', 'Fermé');
 define('OPEN', 'Ouvert');
 define('CONFIRM', 'Confirmer');
 define('CANCEL','Annuler');
+define('SUCCES_LOGOUT','Vous êtes déconnecter');
 
 //MESSAGES
 define('NO_MESSAGES', 'Vous n\'avez jamais cherché à contacter notre support jusqu\'à maintenant !');
