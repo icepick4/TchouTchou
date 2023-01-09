@@ -4,7 +4,7 @@
 
 <?php require_once(PATH_VIEWS . 'alert_trigger.php'); ?>
 
-<form method="post" action="index.php?page=al">
+<form method="post" action="index.php?page=alert_trigger">
     <p id="info" class="info"><?= SELECT_ALERT_TYPE ?></p>
     <p id="info2" class="info"><?= AUTHORIZE_LOCATION ?></p>
     <div id="alertContainer">

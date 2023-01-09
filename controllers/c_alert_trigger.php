@@ -9,11 +9,8 @@ if ($_SESSION['logged'] && $staff->isDriver($_SESSION['user_id'])) {
    
         $planning = new PlanningDAO();
         $alerts = new AlertDAO();
-    
         $driver = $staff->getDriverID($_SESSION['user_id']);
-        //remplacer 22 par l'heure actuelle
-        $travel = $planning->getDriverTravelForTheDayByHour($driver, 22);
-    
+        $travel = $planning->getDriverTravelForTheDayByHour($driver, date("H")+1);
         $alerts->createAlert($travel[0]['TRAVEL_ID'], $_POST['alertType'], $_POST['message'], $_POST['infoposition']);
         $alert = choixAlert('alert_created');
     }
