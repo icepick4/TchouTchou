@@ -11,12 +11,12 @@
   <title>
     <?= TITLE ?>
   </title>
-  <link rel="shortcut icon" type="image/png" href="<?php echo PATH_IMAGES . "favicon.ico" ?>" />
-  <link href="<?php echo PATH_CSS . "common.css" ?>" rel="stylesheet" />
-  <link href="<?php echo PATH_CSS . "header.css" ?>" rel="stylesheet" />
-  <link href="<?php echo PATH_CSS . "footer.css" ?>" rel="stylesheet" />
-  <link href="<?php echo PATH_CSS . "modal.css" ?>" rel="stylesheet" />
-  <link href="<?php echo PATH_CSS . $page . ".css" ?>" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="<?= PATH_IMAGES . "favicon.ico" ?>" />
+  <link href="<?= PATH_CSS . "common.css" ?>" rel="stylesheet" />
+  <link href="<?= PATH_CSS . "header.css" ?>" rel="stylesheet" />
+  <link href="<?= PATH_CSS . "footer.css" ?>" rel="stylesheet" />
+  <link href="<?= PATH_CSS . "modal.css" ?>" rel="stylesheet" />
+  <link href="<?= PATH_CSS . $page . ".css" ?>" rel="stylesheet" />
 </head>
 <script src=<?= PATH_JS . 'header.js?flag=' . $_SESSION['user_id'] ?> type="module" defer></script>
 
@@ -28,7 +28,7 @@
           <?= SVG_LOGO ?>
         </a>
         <button id="header-button">
-          <img src="<?php echo PATH_IMAGES . "arrow.png" ?>" alt="arrow-header" />
+          <img src="<?= PATH_IMAGES . "arrow.png" ?>" alt="arrow-header" />
         </button>
       </div>
       <ul>
@@ -65,7 +65,7 @@
       </ul>
     </nav>
     <nav>
-      <a href="index.php?page=<?php echo $_SESSION['logged'] ? "account" : "login" ?>" class="logo" id="account-logo">
+      <a href="index.php?page=<?= $_SESSION['logged'] ? "account" : "login" ?>" class="logo" id="account-logo">
         <?= SVG_ACCOUNT ?>
       </a>
     </nav>

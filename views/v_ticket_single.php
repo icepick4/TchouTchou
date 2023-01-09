@@ -9,44 +9,44 @@
 if ($ticket != null) {
 
 ?>
-    <h1 id="title-trip"><?= TRAVEL_TO ?><span class="colored"><?php echo $ticket[0]['END_STATION_NAME'] ?></span></h1>
+    <h1 id="title-trip"><?= TRAVEL_TO ?><span class="colored"><?= $ticket[0]['END_STATION_NAME'] ?></span></h1>
     <h2 id="title-ticket"><?= YOUR_TRAVEL ?></h2>
     <div id="travel_details">
-        <p><?php 
-            echo(getDay($ticket[0]['DEPARTURE_DATE'])).' ';
-            echo ' '.date('d',strtotime($ticket[0]['DEPARTURE_DATE'])).' ';
-            echo(getMonth($ticket[0]['DEPARTURE_DATE']));
-     ?></p>
-        <p><span class="colored"><?php echo $ticket[0]['DEPARTURE_TIME']?></span> ● <?= $ticket[0]['START_STATION_NAME']?></p>
-        <p>Voyage n°<span class="colored"><?php echo $ticket[0]['TRAVEL_ID']?></span></p>
-        <p><span class="colored"><?php echo $ticket[0]['END_TIME']?></span> ● <?= $ticket[0]['END_STATION_NAME']?></p>
+        <p><?php
+            echo (getDay($ticket[0]['DEPARTURE_DATE'])) . ' ';
+            echo ' ' . date('d', strtotime($ticket[0]['DEPARTURE_DATE'])) . ' ';
+            echo (getMonth($ticket[0]['DEPARTURE_DATE']));
+            ?></p>
+        <p><span class="colored"><?= $ticket[0]['DEPARTURE_TIME'] ?></span> ● <?= $ticket[0]['START_STATION_NAME'] ?></p>
+        <p>Voyage n°<span class="colored"><?= $ticket[0]['TRAVEL_ID'] ?></span></p>
+        <p><span class="colored"><?= $ticket[0]['END_TIME'] ?></span> ● <?= $ticket[0]['END_STATION_NAME'] ?></p>
     </div>
     <?php if (sizeof($ticket) > 1) { ?>
         <h2 id="title-ticket-list"><?= TICKETS_DETAIL ?></h2>
-    <?php } else {?>
+    <?php } else { ?>
         <h2 id="title-ticket"><?= TICKET_DETAIL ?></h2>
     <?php } ?>
     <div id="travel-tickets">
         <?php $i = 1;
-            foreach ($ticket as $ticket_unit) { 
-                ?>
-            
+        foreach ($ticket as $ticket_unit) {
+        ?>
+
             <div class="ticket">
                 <p>Voyageur n°<?= $i++ ?></p>
                 <div>
-                    <p><?= $ticket_unit['FIRSTNAME']?></p>
-                    <p><?= $ticket_unit['LASTNAME']?></p>
+                    <p><?= $ticket_unit['FIRSTNAME'] ?></p>
+                    <p><?= $ticket_unit['LASTNAME'] ?></p>
                     <div>
                         <?= SVG_SEAT ?>
-                        <p><?= $ticket_unit['PLACE_ID']?></p>
+                        <p><?= $ticket_unit['PLACE_ID'] ?></p>
                     </div>
                 </div>
             </div>
         <?php } ?>
-    
+
     </div>
     <div id="button-set-ticket">
-    <button id="delete-button"><?= BTN_DELETE ?></button>
+        <button id="delete-button"><?= BTN_DELETE ?></button>
     </div>
     <div class="links-content">
         <div class="link-ticket-list">
@@ -61,8 +61,8 @@ if ($ticket != null) {
         </div>
     </div>
 <?php
-}else{
-    echo '<h1 id="title-trip">'.NO_TICKET_RELATED.'</h1>';
+} else {
+    echo '<h1 id="title-trip">' . NO_TICKET_RELATED . '</h1>';
 }
 
 ?>

@@ -7,9 +7,9 @@
 <?php
 
 if ($_SESSION['logged']) {
-    ?>
+?>
     <h1 id="title"><?= WELCOME ?>
-        <?php echo $result['USER_FIRSTNAME'] ?>
+        <?= $result['USER_FIRSTNAME'] ?>
     </h1>
     <div class="content">
         <div class="links">
@@ -50,8 +50,7 @@ if ($_SESSION['logged']) {
                                 <?= ERROR_FIRSTNAME ?>
                             </label>
                             <div class="input">
-                                <input type="text" name="first-name" id="first-name"
-                                    value="<?php echo $result['USER_FIRSTNAME'] ?>">
+                                <input type="text" name="first-name" id="first-name" value="<?php echo $result['USER_FIRSTNAME'] ?>">
                                 <input type="submit" value="OK">
                             </div>
                         </form>
@@ -70,8 +69,7 @@ if ($_SESSION['logged']) {
                                 <?= ERROR_NAME ?>
                             </label>
                             <div class="input">
-                                <input type="text" name="last-name" id="last-name"
-                                    value="<?php echo $result['USER_LASTNAME'] ?>">
+                                <input type="text" name="last-name" id="last-name" value="<?php echo $result['USER_LASTNAME'] ?>">
                                 <input type="submit" value="OK">
                             </div>
                         </form>
@@ -89,7 +87,7 @@ if ($_SESSION['logged']) {
                                 <?= ERROR_PHONE ?>
                             </label>
                             <div class="input">
-                                <input type="text" name="phone" id="phone" value="<?php echo $result['USER_PHONE'] ?>">
+                                <input type="text" name="phone" id="phone" value="<?= $result['USER_PHONE'] ?>">
                                 <input type="submit" value="OK">
                             </div>
                         </form>
@@ -107,7 +105,7 @@ if ($_SESSION['logged']) {
                                 <?= ERROR_MAIL ?>
                             </label>
                             <div class="input">
-                                <input type="text" name="mail" id="mail" value="<?php echo $result['USER_MAIL'] ?>">
+                                <input type="text" name="mail" id="mail" value="<?= $result['USER_MAIL'] ?>">
                                 <input type="submit" value="OK">
                             </div>
                         </form>
