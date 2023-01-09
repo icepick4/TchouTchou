@@ -33,7 +33,7 @@
       </div>
       <ul>
         <li><a href="index.php?page=buy"><?= TITLE_PURCHASE ?></a></li>
-        <li id="account-text"><a href="index.php?page=account"><? MY_ACCOUNT ?></a></li>
+        <li id="account-text"><a href="index.php?page=account"><?= MY_ACCOUNT ?></a></li>
         <?php
         $user = new UserDAO();
         $staff = new StaffDAO();

@@ -51,7 +51,7 @@
                 $extern = true; ?>
                 <a onclick='console.log(<?= $id_discussion ?>);
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "ajax/addMessageToStorage.php?id=<?= $id_discussion ?>", true);
+    xhttp.open("GET", "index.php?api=add_message_to_storage&id=<?= $id_discussion ?>", true);
     xhttp.send();setTimeout(function(){window.location.replace("index.php?page=messages&extern=true")},200);'><img src="/assets/images/storage.svg" id="storageImage"></a>
 
         <?php }

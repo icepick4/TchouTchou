@@ -10,3 +10,11 @@ arrow.addEventListener('click', function () {
         }
     }, 2);
 });
+
+document.addEventListener('scroll', function () {
+    if (window.pageYOffset > 500) {
+        arrow.style.transform = 'rotate(180deg) translateX(0px)';
+    } else {
+        arrow.style.transform = 'rotate(180deg) translateX(-150px)';
+    }
+});
