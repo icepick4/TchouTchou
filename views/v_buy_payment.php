@@ -4,10 +4,10 @@
 <script>
   paypal.Buttons({
     style: {
-                color: "blue",
-                shape: "rect",
-                layout: "vertical"
-              },
+      color: "blue",
+      shape: "rect",
+      layout: "vertical"
+    },
     // Sets up the transaction when a payment button is clicked
     createOrder: (data, actions) => {
       return actions.order.create({
@@ -50,7 +50,7 @@
 <script src=<?= PATH_JS . 'buy_payment.js' ?> type="module" defer></script>
 <div id="travel-payment">
   <div id="travel-details">
-    <h1>Détails de votre voyage vers <span><?= $to_station_name ?></h1>
+    <h1> <?= DETAIL_TRAVEL_TO ?> <span><?= $to_station_name ?></h1>
     <div id="travel_details">
       <p><?php
           echo getDay($from_station_date_departure);
@@ -61,20 +61,20 @@
       <p>Voyage n°<span class="colored"><?= $_POST['travel'] ?></span></p>
       <p><span class="colored"><?= $to_station_time_arrival ?></span> ● <?= $to_station_name ?></p>
     </div>
-    <?php for ($i=1;$i<=$nbr;$i++){
-      $name = 'name_'.$i;
-      $firstname = 'firstname_'.$i;
-      ?>
+    <?php for ($i = 1; $i <= $nbr; $i++) {
+      $name = 'name_' . $i;
+      $firstname = 'firstname_' . $i;
+    ?>
       <div>
-        <h2><?= 'Voyageur n° '.$i?></h2>
-        <p><?= $_POST[$firstname];?></p>
+        <h2><?= NB_TRAVELLER . $i ?></h2>
+        <p><?= $_POST[$firstname]; ?></p>
         <p><?= $_POST[$name] ?></p>
         <div>
-            <?= SVG_SEAT ?>
-            <p><?= $seats[$i-1]?></p>
+          <?= SVG_SEAT ?>
+          <p><?= $seats[$i - 1] ?></p>
         </div>
       </div><?php
-    } ?>
+          } ?>
   </div>
   <div id="paypal-button-container">
     <p><?= $_POST['price'] ?> €</p>
