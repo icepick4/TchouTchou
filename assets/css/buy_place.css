@@ -275,6 +275,7 @@ fieldset > label {
   font-weight: bold;
   text-align: center;
   width: 100%;
+  color: white;
 }
 
 fieldset #name {
@@ -293,9 +294,6 @@ fieldset #first-name,
   text-align: left;
 }
 
-fieldset #name label {
-  color: white;
-}
 
 fieldset input {
   border-radius: 5px;
@@ -381,6 +379,16 @@ input:checked ~ span #elevatedFloor {
 }
 
 @media (prefers-color-scheme: light) {
+
+  fieldset{
+    background-color: #bebebe;
+    filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3)) drop-shadow(-10px -10px 8px rgb(0, 0, 0, 0.15));
+  }
+  fieldset > label{
+    color: #000;
+    font
+  }
+
   .seat svg {
     fill: none;
   }
