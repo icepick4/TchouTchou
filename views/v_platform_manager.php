@@ -10,13 +10,13 @@ require_once(PATH_VIEWS . 'header.php');
 <!--  Début de la page -->
 
 
-<h2 id="title"><?=PLATFORM_MANAGER_TITLE?></h2>
+<h2 id="title"><?= PLATFORM_MANAGER_TITLE ?></h2>
 <div class="control_pannel">
 	<fieldset>
-		<legend><?=CONFIG_PANNEL?></legend>
+		<legend><?= CONFIG_PANNEL ?></legend>
 		<div class="select_option">
-			<h3><?=SELECT_STATION?></h3>
-			<h3><?=SELECT_HUB?></h3>
+			<h3><?= SELECT_STATION ?></h3>
+			<h3><?= SELECT_HUB ?></h3>
 
 			<select id="station_name">
 				<?php
@@ -34,9 +34,9 @@ require_once(PATH_VIEWS . 'header.php');
 	</fieldset>
 
 	<fieldset id="incoming">
-		<legend><?=APPROACHING_TRAIN?></legend>
+		<legend><?= APPROACHING_TRAIN ?></legend>
 		<div id="approching_list">
-			
+
 		</div>
 		<template id="approching_train">
 			<div class="approching_train">
@@ -50,50 +50,52 @@ require_once(PATH_VIEWS . 'header.php');
 </div>
 <div class="ihm_quais">
 	<fieldset>
-		<legend><?=PLATFORMS?></legend>
+		<legend><?= PLATFORMS ?></legend>
 
 		<div class="aiguillage">
 
 
-	<div class="suport_rail">
-		<div id="reference"></div>
-		<div class="start"></div>
-		<div class="finish"></div>
-		<div id="connection-liste"></div>
-		<template id="connection">
-			<svg class="rail">
-			  <line x1="50" y1="100" x2="200" y2="10" class="arrow" />
-			</svg>
-		</template>
-	</div>
-	<div class="list_quai"></div>
-	<template id="platforms">
-
-		<div class="quai block">
-
-			<div class="quai_info">
-				<label id="letter"><?=LETTER?></label>
-				<button class="btn_actif"><p><?=CLOSE?></p></button>
-				<div class="train_icon_box">
-
-					<img class="logo_train  no_train " src="assets/images/logo_simple_train.svg">
-
-				</div>
-			<label class="train_number"><?=TRAIN_NUMBER?></label>
+			<div class="suport_rail">
+				<div id="reference"></div>
+				<div class="start"></div>
+				<div class="finish"></div>
+				<div id="connection-liste"></div>
+				<template id="connection">
+					<svg class="rail">
+						<line x1="50" y1="100" x2="200" y2="10" class="arrow" />
+					</svg>
+				</template>
 			</div>
-		</div>
-	</template>	
+			<div class="list_quai"></div>
+			<template id="platforms">
+
+				<div class="quai block">
+
+					<div class="quai_info">
+						<label id="letter"><?= LETTER ?></label>
+						<button class="btn_actif">
+							<p><?= CLOSE ?></p>
+						</button>
+						<div class="train_icon_box">
+
+							<img class="logo_train  no_train " src="assets/images/logo_simple_train.svg">
+
+						</div>
+						<label class="train_number"><?= TRAIN_NUMBER ?></label>
+					</div>
+				</div>
+			</template>
 		</div>
 	</fieldset>
-	
+
 </div>
 
 <!--  Fin de la page -->
 
 <div class="lang">
-	<p id="CLOSE"><?=CLOSE?></p>
-	<p id="OPEN"><?=OPEN?></p>
-	<p id="CONFIRM"><?=CONFIRM?></p>
+	<p id="CLOSE"><?= CLOSE ?></p>
+	<p id="OPEN"><?= OPEN ?></p>
+	<p id="CONFIRM"><?= CONFIRM ?></p>
 </div>
 
 <!--  Pied de page -->

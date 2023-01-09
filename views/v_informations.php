@@ -35,8 +35,7 @@
 <script>
     let fullScreenButton = document.getElementById('fullScreenButton');
     let map = document.getElementById('map');
-    fullScreenButton.addEventListener('click', function () {
-        console.log('click');
+    fullScreenButton.addEventListener('click', function() {
         map.requestFullscreen();
     });
 </script>

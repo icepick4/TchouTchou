@@ -68,6 +68,8 @@ define('NO_TICKET_RELATED', 'Aucun billet ne correspond !');
 
 //BUY TICKET
 define('SELECT_SEATS', 'Sélectionnez vos sièges');
+define('DETAIL_TRAVEL_TO', 'Détail de votre voyage vers');
+define('NB_TRAVELLER', 'Voyageur n° ');
 
 //Home
 define('MY_ACCOUNT', 'Mon Compte');

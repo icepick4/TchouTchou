@@ -44,7 +44,7 @@ require_once(PATH_VIEWS . 'header.php');
 <?php
 if (!isset($_POST['date']) and !isset($_POST['from']) and !isset($_POST['to']) and empty($_POST['date'])) {
 ?>
-    <img src="<?php echo PATH_IMAGES . "searchmap.svg" ?>" id="main-img">
+    <img src="<?= PATH_IMAGES . "searchmap.svg" ?>" id="main-img">
 <?php
 };
 ?>
@@ -70,7 +70,7 @@ if (!isset($_POST['date']) and !isset($_POST['from']) and !isset($_POST['to']) a
                     </div>
                 </div>
                 <div>
-                    <img src="<?php echo PATH_IMAGES . "seat.svg" ?>">
+                    <img src="<?= PATH_IMAGES . "seat.svg" ?>">
                     <p><?= $trains[$i]['EMPTY_SEATS']['EMPTYSEATS'] ?></p>
                 </div>
             </div>

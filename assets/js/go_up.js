@@ -15,8 +15,6 @@ document.addEventListener('scroll', function () {
     let scroll =
         (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
         100;
-    console.log(scroll);
-    console.log(window.innerHeight);
     if (scroll < 10) {
         arrow.classList.add('hidden-go-up');
     } else if (
