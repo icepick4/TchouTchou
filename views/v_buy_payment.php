@@ -65,7 +65,7 @@
       $name = 'name_'.$i;
       $firstname = 'firstname_'.$i;
       ?>
-      <div>
+      <div class="traveler-info">
         <h2><?= 'Voyageur n° '.$i?></h2>
         <p><?= $_POST[$firstname];?></p>
         <p><?= $_POST[$name] ?></p>
