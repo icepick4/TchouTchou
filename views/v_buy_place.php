@@ -62,11 +62,12 @@
                 </fieldset>
             <?php }
             ?>
+            <input type="submit" value="<?= VALIDATE ?>" id="continueButton" class="disabled">
         </div>
         <p id="error-names" class="error"><?= ERROR_NAMES ?></p>
+        <p id="error-names-people" class="error"><?= ERROR_NAMES_PEOPLE ?></p>
         <p id="error-names-empty" class="error"><?= ERROR_NAMES_EMPTY ?></p>
 
-        <input type="submit" value="<?= VALIDATE ?>" id="continueButton" class="disabled">
     </form>
 
 </article>

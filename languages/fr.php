@@ -76,7 +76,7 @@ define('MY_ACCOUNT', 'Mon Compte');
 define('MY_TICKETS', 'Mes Billets');
 define('MY_MESSAGES', 'Mes Messages');
 define('BUY_TICKET', 'Acheter un billet');
-
+echo
 //FAQ
 define('HOW_TO_BUY', 'Comment acheter un billet ?');
 define('HOW_TO_BUY_TEXT', 'Pour acheter un billet, il vous suffit de vous rendre sur la page d\'achat de billet, de sélectionner votre trajet et de valider votre achat. Vous recevrez ensuite un mail de confirmation avec le détail de votre billet.');
@@ -244,6 +244,7 @@ define('ERROR_DATE', 'La date de départ ne peut pas être antérieure à la dat
 define('EMPTY_INPUT_BUY', 'Vous devez remplir tous les champs');
 define('WRONG_STATIONS', 'Veuillez choisir des gares existantes');
 define('ERROR_NAMES', 'Vous ne pouvez pas avoir les mêmes nom et prénom');
+define('ERROR_NAMES_PEOPLE', 'Vous ne pouvez pas avoir les mêmes nom et prénom pour deux personnes différentes');
 define('ERROR_NAMES_EMPTY', 'Vous devez remplir tous les champs de nom et prénom');
 define('GROUND_LEVEL', "Rez-de-chaussée");
 define('FIRST_LEVEL', "Premier étage");
