@@ -10,13 +10,9 @@ if ($_SESSION['logged'] && $staff->isService($_SESSION['user_id']) || $staff->is
         die();
     }
     $alerts = new AlertDAO();
-    echo $_GET['id'];
-    print_r(array(intval(substr($_GET['id'],0,sizeof($_GET['id'])-6)),intval(substr($_GET['id'],-6,2)),intval(substr($_GET['id'],-4,2)),intval(substr($_GET['id'],-2,2))));
-    $alert = $alerts->getAlertByDetail(intval(substr($_GET['id'],0,sizeof($_GET['id'])-6)),intval(substr($_GET['id'],-6,2)),intval(substr($_GET['id'],-4,2)),intval(substr($_GET['id'],-2,2)));
-    print_r($alert);
+    $alert = $alerts->getAlertByDetail(substr($_GET['id'],0,sizeof($_GET['id'])-7),substr($_GET['id'],-6,2),substr($_GET['id'],-4,2),substr($_GET['id'],-2,2));
     $coord = $alert['ALERT_LOCATION'];
     $coord = explode('//', $coord);
-    print_r($coord);
     $logo = choixImage($alert['ALERT_TYPE_ID']);
 } else {
     header("Location: index.php?page=home");
