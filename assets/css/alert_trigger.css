@@ -53,6 +53,10 @@ a.active {
   width: 100%;
 }
 
+#map {
+  height: 40vh;
+}
+
 #positionButton {
   position: absolute;
   top: 50%;
