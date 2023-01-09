@@ -72,7 +72,7 @@ body {
   width: 75px;
   height: 75px;
   transform: rotate(180deg);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;

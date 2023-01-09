@@ -38,6 +38,7 @@ table tr td:not(:first-child) {
   background-color: var(--main-color);
   cursor: pointer;
 }
+
 table tr:nth-child(even) {
   background-color: var(--border-input);
 }
@@ -73,6 +74,7 @@ table td {
 #infoModalClose {
   transition: all 0.5s ease-in-out;
 }
+
 #infoModalClose:hover {
   cursor: pointer;
   transform: scale(1.1);
@@ -100,10 +102,26 @@ table td {
   table tr {
     font-size: 15px;
   }
+
   table td {
     padding: 3px;
   }
+
   table {
     overflow: scroll;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  table tr td:first-child {
+    color: #fff;
+  }
+
+  #infoModalContent h1 {
+    color: var(--main-color);
+  }
+
+  #infoModalContent p {
+    color: #fff;
   }
 }

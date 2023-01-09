@@ -467,10 +467,15 @@ form input[type="submit"]:hover {
   }
 
   #search {
-    background-color: rgb(97, 93, 93);
+    background-color: transparent;
+    color: #000;
   }
 
   form input:not([type="submit"]) {
     color: #000;
+  }
+
+  #searchautocomplete-list div {
+    color: #fff;
   }
 }
