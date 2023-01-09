@@ -45,8 +45,19 @@
 <?php
 foreach ($alertList as $alert) {
     ?>
-    
-        <tr class="alerts" onclick="document.location.href='index.php?page=alert_single&id=<?php echo $alert['TRAVEL_ID'].$alert['ALERT_TYPE_ID'].substr($alert['DATETIME_TRAVEL'],-5,2).substr($alert['DATETIME_TRAVEL'],-2,2)?>'" >
+        <?php 
+            if ($alert['ALERT_TYPE_ID'] <10)
+            {
+                
+                ?><script>
+                    console.log("<?= 'index.php?page=alert_single&id='.$alert['TRAVEL_ID'].'0'.$alert['ALERT_TYPE_ID'].substr($alert['DATETIME_TRAVEL'],-5,2).substr($alert['DATETIME_TRAVEL'],-2,2) ?>");
+                </script>
+                <tr class="alerts" onclick="document.location.href=<?='index.php?page=alert_single&id='.$alert['TRAVEL_ID'].'0'.$alert['ALERT_TYPE_ID'].substr($alert['DATETIME_TRAVEL'],-5,2).substr($alert['DATETIME_TRAVEL'],-2,2)?>" >
+            <?php } else {?>
+                <tr class="alerts" onclick="document.location.href=<?='index.php?page=alert_single&id='.$alert['TRAVEL_ID'].$alert['ALERT_TYPE_ID'].substr($alert['DATETIME_TRAVEL'],-5,2).substr($alert['DATETIME_TRAVEL'],-2,2)?>" >
+            <?php
+            }
+        ?>
             <td><?= $alert['ALERT_TYPE_LABEL'] ?></td>
             <td><?= $alert['TRAVEL_ID'] ?></td>
             <td><?= $alert['ALERT_MESSAGE'] ?></td>
