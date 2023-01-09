@@ -94,8 +94,6 @@ require_once(PATH_VIEWS . 'header.php');
             }
         };
         
-        console.log(document.fullscreenElement)
-        
     }
     
     function addHeader(){
