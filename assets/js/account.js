@@ -16,6 +16,8 @@ const fnameInput = document.getElementById('first-name');
 const forms = document.getElementsByTagName('form');
 const deconnexion = document.querySelectorAll('.link-profile')[2];
 const deleteAccount = document.getElementById('delete-account');
+const LANG_CONFIRM = document.querySelector("div#lang #CONFIRM");
+const LANG_CANCEL = document.querySelector("div#lang #CANCEL");
 //get the flag in src of script
 const script = document.querySelector('script[src*="account.js"]');
 let flag = script.outerHTML;
@@ -31,8 +33,8 @@ deleteAccount.addEventListener('click', function prompt() {
 	let modal = new ConfirmModal(
 		getFlags(flag)[0] + ' ?',
 		null,
-		'Confirm',
-		'Cancel'
+		LANG_CONFIRM,
+		LANG_CANCEL
 	);
 	document.querySelector('#btnmodal-0').addEventListener('click', () => {
 		window.location =

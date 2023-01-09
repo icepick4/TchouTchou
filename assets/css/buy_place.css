@@ -1,6 +1,7 @@
 :root {
   --grayColor: #595550;
   --lightOrangeColor: #feb84e;
+  --grey: rgba(66, 57, 57, 0.3);
 }
 
 .seat {
@@ -255,7 +256,7 @@ button.disabled,
 }
 
 fieldset {
-  background-color: var(--bg-black-second-color);
+  background-color: var(--bg-black-color);
   border: none;
   border-radius: 15px;
   display: flex;
@@ -269,11 +270,12 @@ fieldset {
 }
 
 fieldset > label {
-  color: white;
+  color: var(--main-color);
   font-size: 1.5rem;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   width: 100%;
+  color: white;
 }
 
 fieldset #name {
@@ -289,11 +291,9 @@ fieldset #first-name,
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  text-align: left;
 }
 
-fieldset #name label {
-  color: white;
-}
 
 fieldset input {
   border-radius: 5px;
@@ -379,6 +379,16 @@ input:checked ~ span #elevatedFloor {
 }
 
 @media (prefers-color-scheme: light) {
+
+  fieldset{
+    background-color: #bebebe;
+    filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3)) drop-shadow(-10px -10px 8px rgb(0, 0, 0, 0.15));
+  }
+  fieldset > label{
+    color: #000;
+    font
+  }
+
   .seat svg {
     fill: none;
   }

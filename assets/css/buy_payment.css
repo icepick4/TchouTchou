@@ -108,11 +108,40 @@ h1 span {
 
 @media (prefers-color-scheme: light) {
   p {
-    color: #fff;
+    color: #000;
+    
   }
 
   h1 {
-    color: #fff;
+    color: #000;
+  }
+  div#travel-details{
+    background-color: #dedede;
+
+  }
+  div#travel_details{
+
+    border-color: #000;
+  }
+
+  div#travel-details > div:not(#travel_details){
+    border-color: #000;
+  }
+  #travel_details p:nth-child(3) {
+    border-color: #000;
+  }
+  #travel_details p:first-child {
+    opacity: 1;
+  }
+  svg > path{
+    fill: black;
+    stroke: black;
+  }
+
+  div#paypal-button-container{
+    background-color: #dedede;
+    filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3)) drop-shadow(-10px -10px 8px rgb(0, 0, 0, 0.3));
+
   }
 }
 

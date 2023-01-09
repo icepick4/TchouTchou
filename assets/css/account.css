@@ -179,6 +179,10 @@ p.info {
 	padding-left: 2px;
 }
 
+div#lang{
+	display: none;
+}
+
 @media (prefers-color-scheme: dark) {
 	.content div svg {
 		padding-right: 5%;

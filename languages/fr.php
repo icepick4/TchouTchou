@@ -189,6 +189,7 @@ define('LETTER', 'Lettre');
 define('CLOSE', 'Fermé');
 define('OPEN', 'Ouvert');
 define('CONFIRM', 'Confirmer');
+define('CANCEL','Annuler');
 
 //MESSAGES
 define('NO_MESSAGES', 'Vous n\'avez jamais cherché à contacter notre support jusqu\'à maintenant !');

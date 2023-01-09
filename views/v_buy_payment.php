@@ -61,6 +61,7 @@
       <p>Voyage n°<span class="colored"><?= $_POST['travel'] ?></span></p>
       <p><span class="colored"><?= $to_station_time_arrival ?></span> ● <?= $to_station_name ?></p>
     </div>
+
     <?php for ($i = 1; $i <= $nbr; $i++) {
       $name = 'name_' . $i;
       $firstname = 'firstname_' . $i;
@@ -68,6 +69,7 @@
       <div>
         <h2><?= NB_TRAVELLER . $i ?></h2>
         <p><?= $_POST[$firstname]; ?></p>
+
         <p><?= $_POST[$name] ?></p>
         <div>
           <?= SVG_SEAT ?>
