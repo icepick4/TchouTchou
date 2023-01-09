@@ -34,7 +34,7 @@ deleteAccount.addEventListener('click', function prompt() {
 		'Confirm',
 		'Cancel'
 	);
-	modal.buttons[0].addEventListener('click', () => {
+	document.querySelector('#btnmodal-0').addEventListener('click', () => {
 		window.location =
 			'index.php?page=delete_account&verif=' + getFlags(flag)[1];
 	});

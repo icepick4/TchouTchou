@@ -2,7 +2,7 @@ import { getFlags } from './functions.js';
 import { ConfirmModal } from './modal.js';
 const script = document.querySelector('script[src*="ticket_single.js"]');
 let flag = script.outerHTML;
-let deleteButton = document.getElementById('delete-button');
+const deleteButton = document.getElementById('delete-button');
 let url = window.location.href;
 
 deleteButton.addEventListener('click', function () {
@@ -12,7 +12,9 @@ deleteButton.addEventListener('click', function () {
 		'Confirmer',
 		'Annuler'
 	);
-	confirm.buttons[0].addEventListener('click', deleteTickets());
+	document
+		.querySelector('#btnmodal-0')
+		.addEventListener('click', deleteTickets);
 });
 
 function deleteTickets() {
