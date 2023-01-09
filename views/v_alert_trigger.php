@@ -15,7 +15,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 5,
     center: myLatlng,
-    mapId:  '4c07f10564f43214' // custom map
+    mapId:  'ff96761909dd93c7' // custom map
   });
 
   // default marker for simplicity
