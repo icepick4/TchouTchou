@@ -29,7 +29,7 @@ table th {
   cursor: auto;
 }
 
-table img {
+table thead th img {
   width: 25px;
   height: 25px;
   transform: rotate(90deg) translateX(15%);

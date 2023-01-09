@@ -12,9 +12,21 @@ arrow.addEventListener('click', function () {
 });
 
 document.addEventListener('scroll', function () {
-    if (window.pageYOffset > 500) {
-        arrow.style.transform = 'rotate(180deg) translateX(0px)';
-    } else {
-        arrow.style.transform = 'rotate(180deg) translateX(-150px)';
+    let scroll =
+        (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
+        100;
+    console.log(scroll);
+    console.log(window.innerHeight);
+    if (scroll < 10) {
+        arrow.classList.add('hidden-go-up');
+    } else if (
+        10 <= scroll &&
+        scroll <= 98 &&
+        document.body.scrollHeight > 1000
+    ) {
+        arrow.classList.remove('hidden-go-up');
+        arrow.classList.remove('footer-go-up');
+    } else if (scroll > 98 && document.body.scrollHeight > 1000) {
+        arrow.classList.add('footer-go-up');
     }
 });
