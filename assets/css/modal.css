@@ -157,7 +157,7 @@
 }
 
 .success--modal .modal--header {
-	background-color: lime;
+	background-color: var(--main-color);
 }
 
 /* Info Modal */
@@ -166,7 +166,7 @@
 }
 
 .info--modal .modal--header {
-	background-color: #1d95d1;
+	background-color: var(--main-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -214,12 +214,12 @@
 	/* Success Modal */
 
 	.success--modal .modal--header {
-		background-color: rgb(0, 117, 0);
+		background-color: var(--main-color);
 	}
 
 	/* Info Modal */
 
 	.info--modal .modal--header {
-		background-color: #125a7d;
+		background-color: var(--main-color);
 	}
 }
