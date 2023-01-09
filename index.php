@@ -23,20 +23,20 @@ if (isset($_GET['page'])) {
   if (!is_file(PATH_CONTROLLERS . $_GET['page'] . ".php")) {
     $page = '404'; //page demandée inexistante
   }
-}else if (isset($_GET['api'])) {
+} else if (isset($_GET['api'])) {
   $page = htmlspecialchars($_GET['api']); // http://.../index.php?page=toto
   if (!is_file(PATH_API . $_GET['api'] . ".php")) {
     $page = '404'; //page demandée inexistante
-  }else{
+  } else {
     $type = 'api';
   }
 } else
   $page = 'home'; //page d'accueil du site - http://.../index.php
 
 //appel du controller
-if ($type == 'api'){
-    require_once(PATH_API . $page . '.php');
-}else{
+if ($type == 'api') {
+  require_once(PATH_API . $page . '.php');
+} else {
   require_once(PATH_CONTROLLERS . $page . '.php');
 }
-
+require_once(PATH_VIEWS . 'go_up.php');

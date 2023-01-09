@@ -69,13 +69,39 @@ body {
   bottom: 10px;
   right: 10px;
   z-index: 100;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
+  transform: rotate(180deg);
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden-go-up {
+  transform: rotate(180deg) translateX(-50vw);
+}
+
+.footer-go-up {
+  position: fixed;
+  bottom: 175px;
+  right: 10px;
+  z-index: 100;
+  width: 75px;
+  height: 75px;
   transform: rotate(180deg);
   transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .go-up:hover {
+  cursor: pointer;
+  animation: animation-arrow-go-up 0.5s ease-in-out infinite alternate;
+}
+
+.footer-go-up:hover {
   cursor: pointer;
   animation: animation-arrow-go-up 0.5s ease-in-out infinite alternate;
 }
@@ -93,6 +119,7 @@ body {
     transform: rotate(180deg);
   }
 }
+
 
 .links {
   display: flex;
@@ -184,4 +211,10 @@ body {
 ::selection {
   background-color: var(--main-color);
   color: white;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .go-up {
+    display: none;
+  }
 }
