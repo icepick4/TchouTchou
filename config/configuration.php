@@ -23,6 +23,9 @@ define('PATH_CONST', './config/');
 define('PATH_TEXTES', './languages/');
 define('PATH_JS', './assets/js/');
 define('PATH_MAILER', './PHPMailer/');
+define('PATH_API','./api/a_');
+//future
+//define('PATH_API','./api/a_');
 
 //sous dossiers
 define('PATH_CSS', PATH_ASSETS . 'css/');

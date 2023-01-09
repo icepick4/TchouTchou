@@ -9,6 +9,16 @@
         <p id="typeTrain" style="display:none"><?= $trainType ?></p>
         <h1><?= SELECT_SEATS ?></h1>
 
+        <?php if($trainType == "TGVDuplex"){ ?>
+            <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round">
+                        <p id="groundFloor"><?= GROUND_LEVEL ?></p>
+                        <p id="elevatedFloor"><?= FIRST_LEVEL ?></p>
+                    </span>
+                </label>
+        <?php } ?>
+
         <div id="content"></div>
 
         <div id="buttonContainer">
@@ -35,7 +45,7 @@
             for ($i = 0; $i < $_POST['nbr']; $i++) { ?>
                 <fieldset>
                     <?php if ($trainType == "TER") { ?>
-                        <label><?= NO_SEAT_NUMBER . $i ?></label>
+                        <label><?= NO_SEAT_NUMBER . strval($i+1) ?></label>
                     <?php } else { ?>
                         <label><?= SEAT_NUMBER ?><span id=<?= 'seat_' . ($i + 1) ?>></span></label>
                     <?php } ?>

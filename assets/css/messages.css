@@ -17,6 +17,7 @@ p {
   margin: 1em;
   display: flex;
   min-width: 98%;
+  max-width: 98%;
   height: 64vh;
   border: 3px solid var(--main-color);
   border-radius: 12px;
@@ -25,7 +26,8 @@ p {
 #resume {
   overflow-y: scroll;
   overflow-x: hidden;
-  width: 25%;
+  min-width: 25%;
+  max-width: 25%;
   min-height: 100%;
   border-right: 1px solid #fff;
   display: flex;
@@ -53,7 +55,8 @@ p {
 #messages {
   /* overflow-y: scroll; */
   overflow-x: hidden;
-  width: 100%;
+  min-width: 75%;
+  max-width: 100%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -66,6 +69,7 @@ p {
   margin: 0.5em;
   border-radius: 12px;
   z-index: -2;
+  max-width: 50%;
 }
 
 .error {
@@ -285,15 +289,15 @@ p.noMessage {
   transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: var(--main-color);
 }
 
-input:focus+.slider {
+input:focus + .slider {
   box-shadow: 0 0 1px var(--main-color);
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(95px);
@@ -328,11 +332,11 @@ input:checked+.slider:before {
   opacity: 0;
 }
 
-input:checked~#intern {
+input:checked ~ #intern {
   opacity: 0;
 }
 
-input:checked~#extern {
+input:checked ~ #extern {
   opacity: 1;
 }
 
@@ -468,6 +472,4 @@ form input[type="submit"]:hover {
   form input:not([type="submit"]) {
     color: #000;
   }
-
-
 }

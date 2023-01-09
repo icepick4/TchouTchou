@@ -17,6 +17,7 @@ require_once(PATH_VIEWS . 'header.php');
                                                                                                                                 } ?>>
             <i class="clear-search">X</i>
         </div>
+        <a id="boxArrow"><img src="<?= PATH_IMAGES . "exchangeArrow.svg" ?>" id="exchangArrow"></a>
         <div class="container">
             <input type="text" id="search2" autocomplete="off" placeholder="<?= END_STATION ?>" name="to" class="search" <?php if (isset($_POST['to'])) {
                                                                                                                                 echo 'value="' . $_POST['to'] . '"';
@@ -85,6 +86,7 @@ if (!isset($_POST['date']) and !isset($_POST['from']) and !isset($_POST['to']) a
                     <input type="hidden" name="to" value="<?= $to_id ?>">
                     <input type="hidden" name="price" value="<?= intval($trains[$i]['PRICE']) * intval($_POST['nbr']) ?>">
                     <input type="hidden" name="nbr" id="nbr" value="<?= $_POST['nbr'] ?>">
+                    <input type="hidden" name="date" id="date" value="<?= $_POST['date']; ?>" />
                     <input type="submit" value="<?= BUY ?>">
                 </form>
             </div>

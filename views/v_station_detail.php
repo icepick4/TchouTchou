@@ -7,7 +7,7 @@ require_once(PATH_VIEWS . 'header.php');
 
 <!--  Début de la page -->
 <div class="container">
-    <button onclick="document.location.href='index.php?page=station_list'"><?= RETURN_BUTTON ?></button>
+    <button onclick="document.location.href='index.php?page=station_list'"><?= BTN_RETURN ?></button>
     <?php if (isset($station_name['STATION_NAME'])) { ?>
         <label class="switch">
             <input type="checkbox">
@@ -30,41 +30,7 @@ require_once(PATH_VIEWS . 'header.php');
             <?php
             if ($departTravels) { ?>
 
-                <table>
-                    <tbody>
-                        <?php
-                        foreach ($departTravels as $travel) {
-                        ?>
-                            <tr>
-                                <td><?= SVG_LOGO ?></td>
-                                <td>
-                                    <p><? if ($travel['LATE_TIME'] == null) {
-                                            echo ON_TIME;
-                                        } else {
-                                            echo DELAY_OF . $travel['LATE_TIME'] . MIN;
-                                        }  ?></p>
-                                    <p>n°<?= $travel['TRAIN_ID'] ?></p>
-                                </td>
-                                <td>
-                                    <h4><?= strTo24Time($travel['DEPARTURE_TIME']) ?></h4>
-                                </td>
-                                <td>
-                                    <h3><?= $travel['DESTINATION'] ?></h3>
-                                    <p><? if ($travel['LATE_TIME'] == null) {
-                                            echo ON_TIME;
-                                        } else {
-                                            echo DELAY_OF . $travel['LATE_TIME'] . MIN;
-                                        }  ?></p>
-                                </td>
-                                <td><? $platform = $train->get_platform_used_for_travel($travel['TRAVEL_ID'], $_GET['id']);
-                                    if ($platform['PLATFORM_LETTER'] != null)
-                                        echo "<p>" . $platform['PLATFORM_LETTER'] . "</p>"; ?></td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                
             <? } else { ?>
                 <h2><?= NO_DEPARTURE ?></h2>
             <?php };
@@ -73,40 +39,7 @@ require_once(PATH_VIEWS . 'header.php');
         <section id="arrivals">
             <?php
             if ($arrivalTravels) { ?>
-                <table>
-                    <tbody>
-                        <?php
-                        foreach ($arrivalTravels as $travel) { ?>
-                            <tr>
-                                <td><?= SVG_LOGO ?></td>
-                                <td>
-                                    <p><? if ($travel['LATE_TIME'] == null) {
-                                            echo ON_TIME;
-                                        } else {
-                                            echo DELAY_OF . $travel['LATE_TIME'] . MIN;
-                                        }  ?></p>
-                                    <p>n°<?= $travel['TRAIN_ID'] ?></p>
-                                </td>
-                                <td>
-                                    <h4><?= strTo24Time($travel['ARRIVAL_TIME']) ?></h4>
-                                </td>
-                                <td>
-                                    <h3><?= $travel['DESTINATION'] ?></h3>
-                                    <p><? if ($travel['LATE_TIME'] == null) {
-                                            echo ON_TIME;
-                                        } else {
-                                            echo DELAY_OF . $travel['LATE_TIME'] . MIN;
-                                        }  ?></p>
-                                </td>
-                                <td><? $platform = $train->get_platform_used_for_travel($travel['TRAVEL_ID'], $_GET['id']);
-                                    if ($platform['PLATFORM_LETTER'] != null)
-                                        echo "<p>" . $platform['PLATFORM_LETTER'] . "</p>"; ?></td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                
             <?php
             } else { ?><h2><?= NO_ARRIVAL ?></h2><?php }
                                             } ?>
@@ -121,4 +54,69 @@ require_once(PATH_VIEWS . 'header.php');
     <!--  Fin de la page -->
 
     <!--  Pied de page -->
-    <? require_once(PATH_VIEWS . 'footer.php');
+    <? require_once(PATH_VIEWS . 'footer.php'); ?>
+
+<script>
+
+    function loadBoard(){
+        let departures = document.getElementById('departures')
+        let arrivals = document.getElementById('arrivals')
+        var xhttp = new XMLHttpRequest();
+        xhttp.open(
+            'GET',
+            'index.php?api=departures&id=' +
+                <?= $_GET['id'] ?>,
+            true
+        );
+        xhttp.send();
+        xhttp.onload = function () {
+            if (this.status == 200) {
+                if(departures != null){
+                    departures.innerHTML = this.responseText;
+                    addHeader();
+                }
+            }
+        };
+        var xhttp = new XMLHttpRequest();
+        xhttp.open(
+            'GET',
+            'index.php?api=arrivals&id=' +
+                <?= $_GET['id'] ?>,
+            true
+        );
+        xhttp.send();
+        xhttp.onload = function () {
+            if (this.status == 200) {
+                if(arrivals!= null){
+                    arrivals.innerHTML = this.responseText;
+                    addHeader();
+                }
+            }
+        };
+        
+    }
+    
+    function addHeader(){
+        if(document.fullscreenElement){
+            let header = document.createElement('h2');
+            let switchButton = document.getElementsByClassName('switch')[0];
+            if (document.fullscreenElement == departures) {
+                element = departures;
+                header.innerHTML = switchButton.children[2].innerText;
+            } else {
+                element = arrivals;
+                header.innerHTML = switchButton.children[3].innerHTML;
+            }
+            element.prepend(header);
+            element.addEventListener("fullscreenchange", function () {
+                if (!document.fullscreenElement) {
+                    header.remove();
+                }
+            });
+        }
+    }
+
+    document.onload = loadBoard();
+    setInterval(loadBoard, 10000);
+
+</script>

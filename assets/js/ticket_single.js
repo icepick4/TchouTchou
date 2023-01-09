@@ -22,7 +22,7 @@ function deleteTickets() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.open(
 		'GET',
-		'ajax/deleteTicket.php?ticket=' +
+		'index.php?api=delete_ticket&ticket=' +
 			url.slice(url.indexOf('&ticket=') + 8) +
 			'&id=' +
 			getFlags(flag)[0],

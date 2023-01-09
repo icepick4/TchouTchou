@@ -1,5 +1,5 @@
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
-<script src=<?= PATH_JS . 'maintenance.js' ?> type="module" defer></script>
+<script src=<?= PATH_JS . 'maintenance.js?flag=' . $_SESSION['user_id'] ?> type="module" defer></script>
 
 
 <!--  Début de la page -->
@@ -24,6 +24,7 @@ if ($trains != null) {
             <th><?= TRAIN_SPEED ?></th>
             <th><?= TRAIN_LENGTH ?></th>
             <th COLSPAN=2><?= TRAIN_STATUS ?></th>
+            <th></th>
 
         </tr>
         <?php
@@ -56,6 +57,9 @@ if ($trains != null) {
                         <input class='links' type="submit" value=<?= SUBMIT ?>></input>
                     </form>
                 </td>
+                <td>
+                    <button value=<?= $train['TRAIN_ID'] ?> class="del-button">✖</button>
+                </td>
 
             </tr>
         <?php
@@ -81,4 +85,6 @@ if ($trains != null) {
 
 
 
-<?php require_once(PATH_VIEWS . 'footer.php');
+<?php
+require_once(PATH_VIEWS . 'go_up.php');
+require_once(PATH_VIEWS . 'footer.php');

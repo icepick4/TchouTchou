@@ -23,6 +23,7 @@ if (!$_SESSION['logged']) {
         if (isset($_SESSION['user_id'])) {
             if (!(strlen($_POST['message']) > 1000)) {
                 $mailbox->insertMessage($_POST['message'], $_POST['discussion_id'], $_SESSION['user_id']);
+                $mailbox->storeDiscussion($_POST['discussion_id'], 1);
                 $messageTooLong = 0;
             } else {
                 $messageTooLong = 1;
