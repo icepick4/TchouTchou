@@ -50,6 +50,8 @@
 	<p id="copyright">Tchoutchou Copyright ©2022</p>
 	<script src=<?= PATH_JS . 'footer.js' ?> type="module"></script>
 </footer>
+<div id="lang">
+	<p id="SUCCES_LOGOUT"><?= SUCCES_LOGOUT ?></p>
 </body>
 
 </html>
