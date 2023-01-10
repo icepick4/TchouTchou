@@ -1,5 +1,4 @@
 <?php
-
 // TITLE
 define('TITLE', 'Tchoutchou');
 define('TITLE_HOME', 'Inicio');

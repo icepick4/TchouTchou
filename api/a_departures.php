@@ -26,7 +26,7 @@
                                     <p>n°<?= $travel['TRAIN_ID'] ?></p>
                                 </td>
                                 <td>
-                                    <h4><?= strTo24Time($travel['DEPARTURE_TIME']) ?></h4>
+                                    <h4><?= $travel['DEPARTURE_TIME']) ?></h4>
                                 </td>
                                 <td>
                                     <h3><?= $travel['DESTINATION'] ?></h3>

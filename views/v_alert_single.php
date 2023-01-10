@@ -14,13 +14,16 @@
 
     <h1><?= ALERT_DOES_NOT_EXIST ?></h1>
 
-<?php } else { ?>
-
-    <h1><?= ALERTS_HEADER . $alert['TRAVEL_ID'] ?></h1>
-    <div id="alert_box">
-        <div id="alert_header">
-            <p><?= $alert['DATETIME_TRAVEL'] ?></p>
-            <img class="alertLogo" src="<?= PATH_IMAGES . $logo ?>" alt="logo de l'alerte">
+    <?php }else{ ?>
+        
+        <h1><?= ALERTS_HEADER . $alert['TRAVEL_ID']?></h1>
+        <div id="alert_box">
+            <div id="alert_header">
+                <p><?= $alert['DATETIME_TRAVEL'] ?></p>
+                <img class="alertLogo" src="<?= PATH_IMAGES . $logo ?>" alt="logo de l'alerte">
+            </div>
+            <p><?= $alert['ALERT_MESSAGE'] ?></p>
+            <button id="finishButton" class="<? if($alert['ALERT_STATUS']!=1 || $staff->isStation($_SESSION['user_id'])){ echo "disabled";}?> " ><? if($alert['ALERT_STATUS']==1){ echo ALERT_NOT_FINISHED; }else{ echo ALERT_FINISHED; } ?></button>
         </div>
         <p><?= $alert['ALERT_MESSAGE'] ?></p>
         <button id="finishButton" class="<? if ($alert['ALERT_STATUS'] != 1 || $user->isStation($_SESSION['user_id'])) echo "disabled"; ?> "><? if ($alert['ALERT_STATUS'] == 1) {
