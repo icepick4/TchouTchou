@@ -131,7 +131,7 @@ class StationDAO extends DAO
 
     public function get_station_arrivals_with_platform($id,$days)
     {
-        $sql = 'SELECT TRAVEL_ID, LINE_ID, TRAIN_ID, LATE_TIME, ARRIVAL_TIME,  DESTINATION, PLATFORM from INCOMING_TRAIN_WITH_PLATFORM
+        $sql = 'SELECT TRAVEL_ID, LINE_ID, TRAIN_ID, LATE_TIME, ARRIVAL_TIME, ORIGIN, PLATFORM from INCOMING_TRAIN_WITH_PLATFORM
             where 
             STATION_ID = :id
             AND ARRIVAL_TIME >= SYSDATE

@@ -332,7 +332,9 @@ async function getIncoming(station_id) {
   const rep = await fetch(
     "index.php?page=platform_manager&station_id=" + station_id + "&incoming="
   );
-  let data = await rep.json();
+  let data = await rep.text();
+  console.log(data)
+  //let data = await rep.json();
   //console.log("incoming",station_id,data)
   return data;
 }
@@ -341,12 +343,14 @@ async function showIncoming(data) {
   
 
     last_update_incoming_train = await JSON.stringify(data["incoming"]);
+    console.log("json", last_update_incoming_train)
     incoming_list.innerHTML = "";
     for (var i = 0; i < data["incoming"].length; i++) {
       let incoming = incoming_temp.content
         .cloneNode(true)
         .querySelector("div.approching_train");
-      incoming.querySelector("p").innerHTML = data["incoming"][i]["TRAIN_ID"];
+      incoming.querySelector("p.train_nb").innerHTML = data["incoming"][i]["TRAIN_ID"];
+      incoming.querySelector("p.train_origin").innerHTML = data["incoming"][i]["ORIGIN"];
       incoming.querySelector("select").train_id = data["incoming"][i]["TRAIN_ID"];
       if (data["incoming"][i]["PLATFORM"] != null) {
         //console.log("add option");
