@@ -48,7 +48,7 @@ class TicketDAO extends DAO
         FROM TICKET TK 
         INNER JOIN TRAVEL TR 
         ON TK.TRAVEL_ID = TR.TRAVEL_ID 
-        WHERE TK.USER_ID = :id ORDER BY DEPARTURE_TIME';
+        WHERE TK.USER_ID = :id ORDER BY DEPARTURE_DATE ASC';
         $args = array(':id' => $id, );
         return $this->queryAll($sql, $args);
     }
