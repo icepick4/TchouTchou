@@ -193,6 +193,8 @@ define('CANCEL','Annuler');
 //MODALE
 define('SUCCES_LOGOUT','Vous êtes déconnecter');
 define('LOGIN_NEEDED','Vous devez être connecter pour accéder a cette page');
+define('DELETE_TICKET','Supprimer les tickets');
+define('DELETE_TICKET_QUESTION','Êtes vous sûr de supprimer vos tickets ?');
 
 //MESSAGES
 define('NO_MESSAGES', 'Vous n\'avez jamais cherché à contacter notre support jusqu\'à maintenant !');
