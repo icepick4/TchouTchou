@@ -337,6 +337,10 @@ input::-webkit-inner-spin-button {
     filter: invert(1);
   }
 
+  .ticket-container>div:first-child>div:last-child img {
+    filter: invert(1);
+  }
+
   input[type="date"] {
     color-scheme: dark;
   }
