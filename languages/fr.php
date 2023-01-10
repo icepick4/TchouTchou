@@ -76,7 +76,6 @@ define('MY_ACCOUNT', 'Mon Compte');
 define('MY_TICKETS', 'Mes Billets');
 define('MY_MESSAGES', 'Mes Messages');
 define('BUY_TICKET', 'Acheter un billet');
-echo
 //FAQ
 define('HOW_TO_BUY', 'Comment acheter un billet ?');
 define('HOW_TO_BUY_TEXT', 'Pour acheter un billet, il vous suffit de vous rendre sur la page d\'achat de billet, de sélectionner votre trajet et de valider votre achat. Vous recevrez ensuite un mail de confirmation avec le détail de votre billet.');
