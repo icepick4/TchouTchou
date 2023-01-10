@@ -131,7 +131,7 @@ svg {
   width: 15%;
 }
 
-.custom.large .halfRow > div {
+.custom.large .halfRow>div {
   width: 41%;
 }
 
@@ -269,7 +269,7 @@ fieldset {
   filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3));
 }
 
-fieldset > label {
+fieldset>label {
   color: var(--main-color);
   font-size: 1.5rem;
   font-weight: bold;
@@ -331,7 +331,7 @@ fieldset input {
   border: 2px solid var(--main-color);
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px var(--main-color);
 }
 
@@ -340,11 +340,11 @@ input:focus + .slider {
   border-radius: 34px;
 }
 
-input:checked ~ span #groundFloor {
+input:checked~span #groundFloor {
   background-color: unset;
 }
 
-input:checked ~ span #elevatedFloor {
+input:checked~span #elevatedFloor {
   background-color: var(--main-color);
 }
 
@@ -380,13 +380,13 @@ input:checked ~ span #elevatedFloor {
 
 @media (prefers-color-scheme: light) {
 
-  fieldset{
+  fieldset {
     background-color: #bebebe;
     filter: drop-shadow(10px 10px 8px rgb(0, 0, 0, 0.3)) drop-shadow(-10px -10px 8px rgb(0, 0, 0, 0.15));
   }
-  fieldset > label{
+
+  fieldset>label {
     color: #000;
-    font
   }
 
   .seat svg {
@@ -400,37 +400,52 @@ input:checked ~ span #elevatedFloor {
   .seat:hover p {
     color: white;
   }
+
   .wagon {
     border-color: var(--main-color);
   }
+
   .seat.selected p {
     color: white;
   }
+
   .baggageRow svg rect:first-child {
     fill: var(--lightOrangeColor);
   }
+
   .tableRow svg rect {
     fill: var(--lightOrangeColor);
   }
+
   .tableRow svg path {
     stroke: var(--main-color);
   }
+
   .endRow svg path:first-child {
     fill: var(--lightOrangeColor);
   }
+
   .endRow svg:first-child path {
     stroke: var(--main-color);
   }
+
   .downStairsRow svg path:first-child {
     fill: var(--lightOrangeColor);
   }
+
   .exitRow svg path {
     stroke: var(--main-color);
   }
+
   .upStairsRow svg path:first-child {
     fill: var(--lightOrangeColor);
   }
+
   .upStairsRow svg {
     fill: var(--lightOrangeColor);
+  }
+
+  .upStairsRow svg {
+    background-color: var(--lightOrangeColor);
   }
 }
