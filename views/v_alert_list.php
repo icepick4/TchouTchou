@@ -42,7 +42,6 @@
         </thead>
         <tbody>
 
-<<<<<<< HEAD
 <?php
 foreach ($alertList as $alert) {
     ?>
@@ -54,8 +53,6 @@ foreach ($alertList as $alert) {
                     echo 'index.php?page=alert_single&id='.$alert['TRAVEL_ID'].'0'.$alert['ALERT_TYPE_ID'].substr($alert['DATETIME_TRAVEL'],-5,2).substr($alert['DATETIME_TRAVEL'],-2,2)."'"?>">
             <?php } else {?>
                 <tr class="alerts" onclick="document.location.href='<?='index.php?page=alert_single&id='.$alert['TRAVEL_ID'].$alert['ALERT_TYPE_ID'].substr($alert['DATETIME_TRAVEL'],-5,2).substr($alert['DATETIME_TRAVEL'],-2,2)."'"?>">
-=======
->>>>>>> a36ef26b3b63414e5831678cbec90d637009cfc3
             <?php
             foreach ($alertList as $alert) {
             ?>
