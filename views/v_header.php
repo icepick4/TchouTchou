@@ -70,7 +70,7 @@
       </a>
     </nav>
   </header>
-  <div id="lan">
+  <div id="lang">
     <p id="LOGIN_NEEDED"> <?= LOGIN_NEEDED ?> </p>
   </div>
 
