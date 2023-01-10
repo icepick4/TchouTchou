@@ -107,15 +107,15 @@ td:nth-child(5) p {
   transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: var(--main-color);
 }
 
-input:focus+.slider {
+input:focus + .slider {
   box-shadow: 0 0 1px var(--main-color);
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(175px);
@@ -170,11 +170,11 @@ input:checked+.slider:before {
   opacity: 0;
 }
 
-input:checked~#departuresText {
+input:checked ~ #departuresText {
   opacity: 0;
 }
 
-input:checked~#arrivalsText {
+input:checked ~ #arrivalsText {
   opacity: 1;
 }
 
@@ -213,6 +213,24 @@ label p {
   margin: 0 auto;
   padding: 0.5em 1em;
   font-size: 1em;
+}
+
+.clignoting {
+  animation-duration: 0.8s;
+  animation-name: flash;
+  animation-iteration-count: infinite;
+  transition: none;
+}
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (prefers-color-scheme: light) {
