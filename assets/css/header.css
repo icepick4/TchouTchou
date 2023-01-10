@@ -164,9 +164,9 @@ header> :nth-child(2n) {
   align-items: center;
 }
 
-/* header ul li:nth-child(2) {
+header ul li:nth-child(2) {
   display: none;
-} */
+}
 
 #header-button {
   display: none;
