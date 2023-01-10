@@ -1,4 +1,4 @@
-<link href="<?php echo PATH_CSS . $page . ".css" ?>" rel="stylesheet" />
+<link href="<?= PATH_CSS . $page . ".css" ?>" rel="stylesheet" />
 
 
 <script src=<?= PATH_JS . 'go_up.js' ?> type="module" defer></script>

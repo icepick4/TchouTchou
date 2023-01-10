@@ -9,14 +9,14 @@
         <p id="typeTrain" style="display:none"><?= $trainType ?></p>
         <h1><?= SELECT_SEATS ?></h1>
 
-        <?php if($trainType == "TGVDuplex"){ ?>
+        <?php if ($trainType == "TGVDuplex") { ?>
             <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round">
-                        <p id="groundFloor"><?= GROUND_LEVEL ?></p>
-                        <p id="elevatedFloor"><?= FIRST_LEVEL ?></p>
-                    </span>
-                </label>
+                <input type="checkbox">
+                <span class="slider round">
+                    <p id="groundFloor"><?= GROUND_LEVEL ?></p>
+                    <p id="elevatedFloor"><?= FIRST_LEVEL ?></p>
+                </span>
+            </label>
         <?php } ?>
 
         <div id="content"></div>
@@ -45,7 +45,7 @@
             for ($i = 0; $i < $_POST['nbr']; $i++) { ?>
                 <fieldset>
                     <?php if ($trainType == "TER") { ?>
-                        <label><?= NO_SEAT_NUMBER . strval($i+1) ?></label>
+                        <label><?= NO_SEAT_NUMBER . strval($i + 1) ?></label>
                     <?php } else { ?>
                         <label><?= SEAT_NUMBER ?><span id=<?= 'seat_' . ($i + 1) ?>></span></label>
                     <?php } ?>
@@ -62,11 +62,12 @@
                 </fieldset>
             <?php }
             ?>
+            <input type="submit" value="<?= VALIDATE ?>" id="continueButton" class="disabled">
         </div>
         <p id="error-names" class="error"><?= ERROR_NAMES ?></p>
+        <p id="error-names-people" class="error"><?= ERROR_NAMES_PEOPLE ?></p>
         <p id="error-names-empty" class="error"><?= ERROR_NAMES_EMPTY ?></p>
 
-        <input type="submit" value="<?= VALIDATE ?>" id="continueButton" class="disabled">
     </form>
 
 </article>

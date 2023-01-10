@@ -16,11 +16,14 @@ const fnameInput = document.getElementById('first-name');
 const forms = document.getElementsByTagName('form');
 const deconnexion = document.querySelectorAll('.link-profile')[2];
 const deleteAccount = document.getElementById('delete-account');
+const LANG_CONFIRM = document.querySelector("div#lang #CONFIRM").innerHTML;
+const LANG_CANCEL = document.querySelector("div#lang #CANCEL").innerHTML;
+const LANG_SUCCES_LOGOUT = document.querySelector("div#lang #SUCCES_LOGOUT").innerHTML;
 //get the flag in src of script
 const script = document.querySelector('script[src*="account.js"]');
 let flag = script.outerHTML;
 deconnexion.addEventListener('click', function () {
-	let modal = new SuccessModal('Successfully logout', null, 2);
+	let modal = new SuccessModal(LANG_SUCCES_LOGOUT, null, 2);
 	localStorage.clear();
 	setTimeout(() => {
 		window.location = 'index.php?page=logout';
@@ -31,8 +34,8 @@ deleteAccount.addEventListener('click', function prompt() {
 	let modal = new ConfirmModal(
 		getFlags(flag)[0] + ' ?',
 		null,
-		'Confirm',
-		'Cancel'
+		LANG_CONFIRM,
+		LANG_CANCEL
 	);
 	document.querySelector('#btnmodal-0').addEventListener('click', () => {
 		window.location =

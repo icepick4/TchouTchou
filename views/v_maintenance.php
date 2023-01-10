@@ -32,19 +32,19 @@ if ($trains != null) {
         ?>
             <tr>
                 <td>
-                    <h3><?php echo $train['TRAIN_ID'] ?></h3>
+                    <h3><?= $train['TRAIN_ID'] ?></h3>
                 </td>
                 <td>
-                    <h3><?php echo $train['TRAIN_TYPE_LABEL'] ?></h3>
+                    <h3><?= $train['TRAIN_TYPE_LABEL'] ?></h3>
                 </td>
                 <td>
-                    <h3><?php echo $train['TRAIN_CAPACITY'] ?></h3>
+                    <h3><?= $train['TRAIN_CAPACITY'] ?></h3>
                 </td>
                 <td>
-                    <h3><?php echo $train['TRAIN_SPEED'] ?></h3>
+                    <h3><?= $train['TRAIN_SPEED'] ?></h3>
                 </td>
                 <td>
-                    <h3><?php echo $train['TRAIN_LENGTH'] . ' m' ?></h3>
+                    <h3><?= $train['TRAIN_LENGTH'] . ' m' ?></h3>
                 </td>
                 <td COLSPAN=2>
                     <form method="post" action="index.php?page=maintenance">
