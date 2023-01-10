@@ -72,7 +72,7 @@ foreach ($alertList as $alert) {
                     <td><?= $alert['TRAVEL_ID'] ?></td>
                     <td><?= $alert['ALERT_MESSAGE'] ?></td>
                     <td><?= $alert['DATETIME_TRAVEL'] ?></td>
-                    <? if (isset($_GET['showAll'])) { ?>
+                    <?php if (isset($_GET['showAll'])) { ?>
                         <td><? if ($alert['ALERT_STATUS'] == 0) {
                                 echo FINISHED_ALERTS;
                             } else {
@@ -83,7 +83,7 @@ foreach ($alertList as $alert) {
 
                 <?php
             }
-
+        }
                 ?>
         </tbody>
     </table>
