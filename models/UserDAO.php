@@ -16,7 +16,7 @@ class UserDAO extends DAO
      */
     public function getUserByMail($mail)
     {
-        $sql = 'SELECT * FROM USER_DATA where USER_MAIL = :mail';
+        $sql = 'SELECT * FROM USER_DATA where lower(USER_MAIL) = lower(:mail)';
         $args = array(':mail' => $mail,);
         return $this->queryRow($sql, $args);
     }
@@ -57,7 +57,7 @@ class UserDAO extends DAO
      */
     public function getAllUserMail()
     {
-        $sql = 'SELECT USER_MAIL FROM USER_DATA';
+        $sql = 'SELECT USER_MAIL FROM lower(USER_DATA)';
         return $this->queryAll($sql);
     }
 

@@ -42,31 +42,21 @@
         </thead>
         <tbody>
 
-<?php }
-foreach ($alertList as $alert) {
-    ?>
-        <?php
-        if ($alert['ALERT_TYPE_ID'] < 10) {
-            ?>
-                <tr class="alerts" onclick="document.location.href='<?php
-                echo 'index.php?page=alert_single&id=' . $alert['TRAVEL_ID'] . '0' . $alert['ALERT_TYPE_ID'] . substr($alert['DATETIME_TRAVEL'], -5, 2) . substr($alert['DATETIME_TRAVEL'], -2, 2) . "'" ?>">
-            <?php } else { ?>
-                <tr class="alerts" onclick="document.location.href='<?='index.php?page=alert_single&id=' . $alert['TRAVEL_ID'] . $alert['ALERT_TYPE_ID'] . substr($alert['DATETIME_TRAVEL'], -5, 2) . substr($alert['DATETIME_TRAVEL'], -2, 2) . "'" ?>">
             <?php
             foreach ($alertList as $alert) {
-                ?>
+            ?>
                 <?php
                 if ($alert['ALERT_TYPE_ID'] < 10) {
 
-                    ?><script>
-                        console.log("<?='index.php?page=alert_single&id=' . $alert['TRAVEL_ID'] . '0' . $alert['ALERT_TYPE_ID'] . substr($alert['DATETIME_TRAVEL'], -5, 2) . substr($alert['DATETIME_TRAVEL'], -2, 2) ?>");
+                ?><script>
+                        console.log("<?= 'index.php?page=alert_single&id=' . $alert['TRAVEL_ID'] . '0' . $alert['ALERT_TYPE_ID'] . substr($alert['DATETIME_TRAVEL'], -5, 2) . substr($alert['DATETIME_TRAVEL'], -2, 2) ?>");
                     </script>
-                    <tr class="alerts" onclick="document.location.href=<?='index.php?page=alert_single&id=' . $alert['TRAVEL_ID'] . '0' . $alert['ALERT_TYPE_ID'] . substr($alert['DATETIME_TRAVEL'], -5, 2) . substr($alert['DATETIME_TRAVEL'], -2, 2) ?>">
+                    <tr class="alerts" onclick="document.location.href=<?= 'index.php?page=alert_single&id=' . $alert['TRAVEL_ID'] . '0' . $alert['ALERT_TYPE_ID'] . substr($alert['DATETIME_TRAVEL'], -5, 2) . substr($alert['DATETIME_TRAVEL'], -2, 2) ?>">
                     <?php } else { ?>
-                    <tr class="alerts" onclick="document.location.href=<?='index.php?page=alert_single&id=' . $alert['TRAVEL_ID'] . $alert['ALERT_TYPE_ID'] . substr($alert['DATETIME_TRAVEL'], -5, 2) . substr($alert['DATETIME_TRAVEL'], -2, 2) ?>">
+                    <tr class="alerts" onclick="document.location.href=<?= 'index.php?page=alert_single&id=' . $alert['TRAVEL_ID'] . $alert['ALERT_TYPE_ID'] . substr($alert['DATETIME_TRAVEL'], -5, 2) . substr($alert['DATETIME_TRAVEL'], -2, 2) ?>">
                     <?php
                 }
-                ?>
+                    ?>
                     <td><?= $alert['ALERT_TYPE_LABEL'] ?></td>
                     <td><?= $alert['TRAVEL_ID'] ?></td>
                     <td><?= $alert['ALERT_MESSAGE'] ?></td>
@@ -83,14 +73,12 @@ foreach ($alertList as $alert) {
                 <?php
             }
 
-            ?>
+                ?>
         </tbody>
     </table>
 
 
-<?php } 
-}
-?>
+<?php } ?>
 
 <?php if (!isset($_GET['showAll'])) { ?>
     <a id="buttonAllAlert" href="index.php?page=alert_list&showAll=true"><?= SHOW_ALL_ALERTS ?></a>
