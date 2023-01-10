@@ -70,6 +70,9 @@
       </a>
     </nav>
   </header>
+  <div id="lang">
+    <p id="LOGIN_NEEDED"> <?= LOGIN_NEEDED ?> </p>
+  </div>
 
 
   <section id="main">

@@ -73,11 +73,12 @@
 	color: white;
 	float: right;
 	font-size: 2rem;
+	
 }
 
 .close--modal:hover,
 .close--modal:focus {
-	color: lightcoral;
+	color: #FFF;
 	text-decoration: none;
 	cursor: pointer;
 	outline: none;
@@ -123,7 +124,7 @@
 /* Confirm Modal */
 
 .confirm--modal .modal--header {
-	background-color: cadetblue;
+	background-color: var(--main-color);
 }
 
 .confirm--modal .modal--footer-button:nth-child(1) {
@@ -186,7 +187,7 @@
 	}
 
 	.confirm--modal .modal--header .close--modal:hover {
-		color: rgb(77, 6, 21);
+		color: #FFF;
 	}
 
 	.confirm--modal .modal--footer-button:nth-child(1) {

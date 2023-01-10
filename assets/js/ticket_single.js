@@ -3,14 +3,18 @@ import { ConfirmModal } from './modal.js';
 const script = document.querySelector('script[src*="ticket_single.js"]');
 let flag = script.outerHTML;
 const deleteButton = document.getElementById('delete-button');
+const LANG_DELETE_TICKET = document.querySelector("#lang #DELETE_TICKET").innerHTML;
+const LANG_DELETE_TICKET_QUESTION = document.querySelector("#lang #DELETE_TICKET_QUESTION").innerHTML;
+const LANG_CONFIRM = document.querySelector("#lang #CONFIRM").innerHTML;
+const LANG_CANCEL = document.querySelector("#lang #CANCEL").innerHTML;
 let url = window.location.href;
 
 deleteButton.addEventListener('click', function () {
 	let confirm = new ConfirmModal(
-		'Supprimer les tickets',
-		'Êtes vous sûr de supprimer vos tickets ?',
-		'Confirmer',
-		'Annuler'
+		LANG_DELETE_TICKET,
+		LANG_DELETE_TICKET_QUESTION,
+		LANG_CONFIRM,
+		LANG_CANCEL
 	);
 	document
 		.querySelector('#btnmodal-0')

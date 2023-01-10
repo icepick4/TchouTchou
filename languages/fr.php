@@ -189,7 +189,12 @@ define('CLOSE', 'Fermé');
 define('OPEN', 'Ouvert');
 define('CONFIRM', 'Confirmer');
 define('CANCEL','Annuler');
-define('SUCCES_LOGOUT','Vous êtes déconnecter');
+
+//MODALE
+define('SUCCES_LOGOUT','Vous êtes déconnecté');
+define('LOGIN_NEEDED','Vous devez être connecté pour accéder a cette page');
+define('DELETE_TICKET','Supprimer les tickets');
+define('DELETE_TICKET_QUESTION','Êtes vous sûr de supprimer vos tickets ?');
 
 //MESSAGES
 define('NO_MESSAGES', 'Vous n\'avez jamais cherché à contacter notre support jusqu\'à maintenant !');

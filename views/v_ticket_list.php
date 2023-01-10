@@ -18,7 +18,7 @@ for ($i = 0; $i < count($tickets); $i++) {
     <div class="tickets">
         <a href="index.php?page=ticket_single&ticket=<?= $tickets[$i]['TRAVEL_ID'] ?>">
             <div class="ticket">
-                <p><?= $tickets[$i]['DEPARTURE_DATE'] ?> ● Voyage à <span><?= $tickets[$i]['START_STATION_NAME'] ?></span></p>
+                <p><?= $tickets[$i]['DEPARTURE_DATE'] ?> <span id="point">●</span> Voyage à <span><?= $tickets[$i]['START_STATION_NAME'] ?></span></p>
                 <p><?= $tickets[$i]['DEPARTURE_TIME'] ?> - <?= $tickets[$i]['START_STATION_NAME'] ?></p>
                 <p><?= $tickets[$i]['END_TIME'] ?> - <?= $tickets[$i]['END_STATION_NAME'] ?></p>
                 <div><?= SVG_ACCOUNT ?><p>x<?= $tickets[$i]['NBR'] ?></p>

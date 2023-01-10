@@ -25,7 +25,8 @@
   border-radius: 15px;
   margin: 1%;
   background-color: transparent;
-  width: 100%;
+  width: 40vw;
+  /* max-width: 75vw; */
 }
 
 .ticket div {
@@ -43,7 +44,7 @@
   font-size: 1.5em;
 }
 
-.ticket p span {
+.ticket p span:not(#point) {
   font-weight: bold;
   color: var(--main-color);
 }
@@ -79,6 +80,12 @@
   margin-top: 3%;
 }
 
+@media only screen and (max-width: 1200px) {
+  .ticket {
+    width: 50vw;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .tickets {
     width: 96%;
@@ -89,8 +96,20 @@
   }
 }
 
+@media only screen and (max-width: 650px) {
+  .ticket {
+    width: 80vw;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   .ticket p {
     color: #000;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  #point {
+    display: none;
   }
 }
