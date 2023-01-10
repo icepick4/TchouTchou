@@ -89,7 +89,9 @@ foreach ($alertList as $alert) {
     </table>
 
 
-<?php } ?>
+<?php } 
+}
+?>
 
 <?php if (!isset($_GET['showAll'])) { ?>
     <a id="buttonAllAlert" href="index.php?page=alert_list&showAll=true"><?= SHOW_ALL_ALERTS ?></a>

@@ -20,7 +20,7 @@ class PlanningDAO extends DAO
                 INNER JOIN TRAVEL_WITH_ET ON TRAVEL.TRAVEL_ID = TRAVEL_WITH_ET.TRAVEL_ID 
                 WHERE DRIVER_ID = :driverID
                 AND TO_CHAR(START_TIME,'."'".'HH24'."'".') = :hour 
-                AND TO_CHAR(START_TIME,'."'".'D'."'".') = TO_CHAR(SYSDATE,'."'".'D'."'".')';
+                AND TO_CHAR(START_TIME,'."'".'DD/MM'."'".') = TO_CHAR(SYSDATE,'."'".'DD/MM'."'".')';
         $args = array(':driverId' => $driverID, ':hour' => $hour);
         return $this->queryAll($sql, $args);
     }
