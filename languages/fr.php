@@ -191,8 +191,8 @@ define('CONFIRM', 'Confirmer');
 define('CANCEL','Annuler');
 
 //MODALE
-define('SUCCES_LOGOUT','Vous êtes déconnecter');
-define('LOGIN_NEEDED','Vous devez être connecter pour accéder a cette page');
+define('SUCCES_LOGOUT','Vous êtes déconnecté');
+define('LOGIN_NEEDED','Vous devez être connecté pour accéder a cette page');
 define('DELETE_TICKET','Supprimer les tickets');
 define('DELETE_TICKET_QUESTION','Êtes vous sûr de supprimer vos tickets ?');
 
