@@ -1,3 +1,4 @@
+const LANG_LOGIN_NEEDED = document.querySelector("#lang #LOGIN_NEEDED").innerHTML;
 let arrow = document.getElementById("header-button");
 
 arrow.addEventListener("click", function () {
@@ -31,7 +32,7 @@ if (getFlags(flag)[0] == " ") {
   achat.addEventListener("click", function () {
     achat.disabled;
     let modal = new SuccessModal(
-      "Vous devez être connecter pour accéder a cette page",
+      LANG_LOGIN_NEEDED,
       null,
       2
     );

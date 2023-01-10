@@ -223,3 +223,7 @@ body {
     display: none;
   }
 }
+
+div#lang{
+  display: none;
+}
