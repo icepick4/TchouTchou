@@ -69,5 +69,14 @@ if ($ticket != null) {
 
 <!--  Fin de la page -->
 
+<!--  Lang -->
+<div id="lang">
+    <p id="DELETE_TICKET"><?= DELETE_TICKET ?> </p>
+    <p id="DELETE_TICKET_QUESTION"><?= DELETE_TICKET_QUESTION ?> </p>
+    <p id="CONFIRM"><?= CONFIRM ?> </p>
+    <p id="CANCEL"><?=CANCEL ?></p>
+
+</div>
+
 <!--  Pied de page -->
 <?php require_once(PATH_VIEWS . 'footer.php');
