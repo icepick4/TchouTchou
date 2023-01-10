@@ -182,6 +182,10 @@ body {
   .links a {
     color: white;
   }
+
+  .go-up img {
+    filter: brightness(0) invert(1);
+  }
 }
 
 * {
@@ -212,6 +216,7 @@ body {
   background-color: var(--main-color);
   color: white;
 }
+
 
 @media only screen and (hover: none) and (pointer: coarse) {
   .go-up {
