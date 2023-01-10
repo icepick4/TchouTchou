@@ -17,11 +17,11 @@ L'objet de ce projet est de réaliser un site de réservation de billets de trai
 # Périmètre
 Ce projet est réalisé par un groupe de 5 personnes d’un niveau équivalent en 2ème année du BUT informatique. Le projet n'utilisera pas de framework, ni de PWA. Le développement du projet se fait en dehors des heures de cours avec deux heures toutes les deux semaines de réunion avec notre tuteur. Le projet se déroule sur 4 mois et se termine par une soutenance de 40 minutes.
 
-# CONTRIBUER AU PROJET
+# Contribuer au Projet
 
 Tout d'abord choisissez entre soit fork ou clone le projet, pour commencer à développer sur le projet en local référez vous à la partie sur <a href="#docker">docker</a>. Une fois le serveur local mis en place, si vous constatez un bug n'hésitez pas a créer une issue, si vous développez une nouvelle fonctionnalité ou en améliorez une, faites une pull request. De plus pour repérer les bugs vous pouvez simplement visiter notre site <a href="http://tchoutchou.ovh">Tchoutchou</a>.
 
-Pour update le server il suift de aller sur ce <a href="http://82.65.238.70:5569/">lien</a>
+Pour update le server il suift de aller sur ce <a href="http://82.65.238.70:5569/">lien</a> et attendre que la page charge
 
 Pour facilement avoir accès à toutes les branches,
 après avoir cloner le repo :
@@ -30,27 +30,38 @@ après avoir cloner le repo :
 pour plus d'infos cliquez <a href="https://morgan.cugerone.com/blog/how-to-use-git-worktree-and-in-a-clean-way/">ici</a>
 
 
-Pour le serveur il est conseillé d'utiliser Filezilla ou WinSCP en synchronisant son répertoire de travail et le dossier public_html de l'univ
+
 # Base de données
 
-Les trajets disponibles au tier 1 sont disponibles <a href="https://forge.univ-lyon1.fr/p2103642/sae-sncf/-/raw/main/bdd/overview.pdf?inline=true" target="_blank">ici</a>
+Un graphe de la BDD est disponible ici.
 
-# FIGMA
+Les trajets disponibles des differnets tiers sont disponibles <a href="https://forge.univ-lyon1.fr/p2103642/sae-sncf/-/raw/main/bdd/overview.pdf?inline=true" target="_blank">ici</a>
+
+Un fichier .sql est disponible pour pouvoir recrée la base de donnée en local [ :warning: à  venir ]
+
+# Figma
 
 Accès vers notre <a href="https://www.figma.com/file/JoDxjyH653MXO4MKjn987D/SNCF?node-id=10%3A10">figma</a>
 
-# SNCF DATA
+Merci de garder un historique des modifications / étapes (avant de modifier une frame, veuillez la dupliquer)
+
+
+# Sncf Data
+
+Voici des liens vers des datasets
+
 <a href="https://ressources.data.sncf.com/explore/dataset/referentiel-gares-voyageurs/table/?disjunctive.gare_ug_libelle&sort=gare_alias_libelle_noncontraint">Gares</a>
+<br>
 <a href="https://ressources.data.sncf.com/explore/dataset/liste-des-quais/table/">Quais</a>
 
 
-# DOCKER
+# Docker
+
 
 Il faut évidemment avoir docker installé
 
-L’objectif de docker est de créer un serveur php en local,
-ce qui permet de dev en local sans passer par le serveur de l’iut.
 
+## Web
  
 Il faut commencer par récupérer l”os”:
 
@@ -72,3 +83,6 @@ pour le demarrer
 Une fois le docker construit et lancé, rendez-vous sur http://localhost/
 Vous pouvez dès à présent faire vos modifications en local et développer !
 
+## Oracle
+
+[:warning: à venir]
