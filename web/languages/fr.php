@@ -103,6 +103,7 @@ define('ERROR_PASSWORD_TOO_WEAK', 'Le mot de passe doit contenir au moins une le
 define('ERROR_PASSWORD_DIFFERENT', 'Les mots de passe sont différents');
 define('ERROR_FORM', 'Veuillez corriger les erreurs avant d\'envoyer vos informations');
 define('ERROR_CHARACTER', 'Nombre de caractères insuffisants');
+define('ERROR_LENGTH', 'Le nombre de caractères ne doit pas excéder 255 caractères');
 define('DELETE_ACCOUNT', 'Suppression');
 define('MAIL_ALREADY_USED', 'Cette adresse mail est déjà utilisée');
 
@@ -188,13 +189,13 @@ define('LETTER', 'Lettre');
 define('CLOSE', 'Fermé');
 define('OPEN', 'Ouvert');
 define('CONFIRM', 'Confirmer');
-define('CANCEL','Annuler');
+define('CANCEL', 'Annuler');
 
 //MODALE
-define('SUCCES_LOGOUT','Vous êtes déconnecté');
-define('LOGIN_NEEDED','Vous devez être connecté pour accéder a cette page');
-define('DELETE_TICKET','Supprimer les tickets');
-define('DELETE_TICKET_QUESTION','Êtes vous sûr de supprimer vos tickets ?');
+define('SUCCES_LOGOUT', 'Vous êtes déconnecté');
+define('LOGIN_NEEDED', 'Vous devez être connecté pour accéder a cette page');
+define('DELETE_TICKET', 'Supprimer les tickets');
+define('DELETE_TICKET_QUESTION', 'Êtes vous sûr de supprimer vos tickets ?');
 
 //MESSAGES
 define('NO_MESSAGES', 'Vous n\'avez jamais cherché à contacter notre support jusqu\'à maintenant !');
