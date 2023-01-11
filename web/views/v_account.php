@@ -11,6 +11,7 @@ if ($_SESSION['logged']) {
     <h1 id="title"><?= WELCOME ?>
         <?= $result['USER_FIRSTNAME'] ?>
     </h1>
+    <p id="error-length"> <?= ERROR_LENGTH ?></p>
     <div class="content">
         <div class="links">
             <a class="link-profile" href="index.php?page=ticket_list">
@@ -122,7 +123,7 @@ if ($_SESSION['logged']) {
     <div id="lang">
         <p id="CONFIRM"><?= CONFIRM ?></p>
         <p id="CANCEL"><?= CANCEL ?></p>
-        <p id="SUCCES_LOGOUT"><?=SUCCES_LOGOUT ?></p>
+        <p id="SUCCES_LOGOUT"><?= SUCCES_LOGOUT ?></p>
     </div>
 <?php
 
