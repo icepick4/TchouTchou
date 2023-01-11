@@ -20,6 +20,7 @@
         <?php } ?>
         <label class="error shown"><?= ERROR_CHARACTER ?></label>
         <input type="text" id="subject" name="subject" placeholder="<?= SUBJECT ?>">
+        <label class="error shown"><?= ERROR_LENGTH ?></label>
         <label class="error shown"><?= ERROR_CHARACTER ?></label>
         <textarea id="desc" name="desc" rows="10" cols="30" maxlength="4000" placeholder="<?= DESC ?>"></textarea>
         <label class="error shown"><?= ERROR_FORM ?></label>

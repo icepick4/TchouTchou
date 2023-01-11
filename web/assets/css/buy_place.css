@@ -256,7 +256,7 @@ button.disabled,
 }
 
 fieldset {
-  background-color: var(--bg-black-color);
+  background-color: var(--bg-black-second-color);
   border: none;
   border-radius: 15px;
   display: flex;
