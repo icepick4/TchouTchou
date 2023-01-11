@@ -18,10 +18,10 @@
     ?>
 
 
-
+<table>
     <thead>
         <tr>
-            <th colspan="200"><?= $day?></th>
+            <th colspan="200"><? if(strlen($day)==1){echo "0" . $day;}else{echo $day;}?></th>
         </tr>
     </thead>
     <tbody>
@@ -50,5 +50,9 @@
         $i++;};
         ?>
     </tbody>
-
+</table>
+<div id="buttonContainer">
+    <button id="previousButton" class="btn"><?= PREVIOUS ?></button>
+    <button id="nextButton" class="btn"><?= NEXT ?></button>
+</div>
     

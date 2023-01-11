@@ -11,6 +11,13 @@
 	margin-bottom: 2%;
 }
 
+#error-length {
+	color: red;
+	font-size: 1.25em;
+	text-align: center;
+	display: none;
+}
+
 .infos {
 	display: flex;
 	justify-content: center;

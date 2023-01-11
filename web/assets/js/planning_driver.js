@@ -59,22 +59,22 @@ function openCalendar(day) {
       initModal();
       let title = document.querySelector("th").innerText;
       currentDate = parseInt(title.innerText);
+      setTimeout(function () {
+        var currentDate = parseInt(
+          document.querySelector("th").innerText.substring(0, 2)
+        );
+        let nextButton = document.querySelector("#nextButton");
+        nextButton.addEventListener("click", function () {
+          openCalendar(currentDate + 1);
+        });
+        let previousButton = document.querySelector("#previousButton");
+        previousButton.addEventListener("click", function () {
+          openCalendar(currentDate - 1);
+        });
+      }, 10000);
     }
   };
 }
 
 var currentDate;
 document.onload = openCalendar(date.getDate());
-setTimeout(function () {
-  currentDate = parseInt(
-    document.querySelector("th").innerText.substring(0, 2)
-  );
-  let nextButton = document.querySelector("#nextButton");
-  nextButton.addEventListener("click", function () {
-    openCalendar(currentDate + 1);
-  });
-  let previousButton = document.querySelector("#previousButton");
-  previousButton.addEventListener("click", function () {
-    openCalendar(currentDate - 1);
-  });
-}, 100000);
