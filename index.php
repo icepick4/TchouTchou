@@ -38,5 +38,6 @@ if ($type == 'api') {
   require_once(PATH_API . $page . '.php');
 } else {
   require_once(PATH_CONTROLLERS . $page . '.php');
+  require_once(PATH_VIEWS . 'go_up.php');
 }
-require_once(PATH_VIEWS . 'go_up.php');
+

@@ -8,3 +8,4 @@
 			$station_infos["hub"][$i] = $stations[$i]["TERMINAL_ID"];
 		}
 		echo json_encode($station_infos);
+}
