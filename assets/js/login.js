@@ -13,7 +13,6 @@ email.addEventListener('change', function () {
     } else {
         email.classList.remove('is-valid');
         email.classList.add('is-invalid');
-        info.innerHTML = 'Invalid email address';
         info.style.display = 'block';
     }
 });
@@ -23,7 +22,6 @@ function formVerify(evt) {
     if (!verif) {
         evt.preventDefault();
         email.classList.add('is-invalid');
-        info.innerHTML = 'Please enter a valid email address to continue';
         info.style.display = 'block';
     }
 }
