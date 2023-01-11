@@ -98,6 +98,26 @@ table td {
   transition: opacity 0.4s 0.2s ease-out, transform 0.4s 0.2s ease-out;
 }
 
+#buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  min-width: 400px;
+}
+.btn {
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  color: white;
+  background-color: var(--main-color);
+  padding: 10px 20px;
+  transition: var(--hover);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
 @media only screen and (max-width: 800px) {
   table tr {
     font-size: 15px;
