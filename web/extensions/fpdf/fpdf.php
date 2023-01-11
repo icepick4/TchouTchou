@@ -362,6 +362,10 @@ function AddPage($orientation='', $size='', $rotation=0)
 function Header()
 {
 	// To be implemented in your own inherited class
+	$this->Image('assets/images/logo_orange.png', 30, 8, 20);
+	$this->SetFont('Arial', 'B', 15);
+	$this->SetTextColor(255,155,5);
+	$this->Cell(0,20, 'Tchoutchou',0,2,'C');
 }
 
 function Footer()
