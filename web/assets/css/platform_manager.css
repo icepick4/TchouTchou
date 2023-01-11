@@ -51,11 +51,11 @@ h3 {
 
 .control_pannel fieldset#incoming div#approching_list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 .approching_train {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .approching_train .item {

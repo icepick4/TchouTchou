@@ -162,7 +162,7 @@ async function switch_actif(el) {
     this.querySelector("p").innerHTML = LANG_OPEN;
     newStatus = 1;
   }
-  console.log("[api] switch_actif");
+
   const rep = await fetch(
     "index.php?api=set_platform_status&station_id=" +
       in_station_name.value +
@@ -202,7 +202,7 @@ async function load() {
 }
 
 async function load_hub_op(id) {
-  console.log("[api] load_hub_op");
+
   const rep = await fetch("index.php?api=get_hub&station_id=" + id);
 
   let data = await rep.json();
@@ -273,7 +273,7 @@ async function update_platform() {
   }
   hub = in_hub.value;
 
-  console.log("[api] update_platform");
+
   const rep = await fetch(
     "index.php?api=get_platform&station_id=" +
       station_id +
@@ -333,14 +333,11 @@ function setPlatformValues(platform, value) {
 }
 
 async function getIncoming(station_id) {
-  console.log("[api] getIncoming");
+
   const rep = await fetch(
     "index.php?api=get_incoming_train&station_id=" + station_id + "&incoming="
   );
-  let data = await rep.text();
-  console.log(data)
-  //let data = await rep.json();
-  //console.log("incoming",station_id,data)
+  let data = await rep.json();
   return data;
 }
 
@@ -348,7 +345,7 @@ async function showIncoming(data) {
   
 
     last_update_incoming_train = await JSON.stringify(data["incoming"]);
-    console.log("json", last_update_incoming_train)
+
     incoming_list.innerHTML = "";
     for (var i = 0; i < data["incoming"].length; i++) {
       let incoming = incoming_temp.content
@@ -377,7 +374,7 @@ async function showIncoming(data) {
 }
 
 async function getAvailablePlatform(station_id, hub_id) {
-  console.log("[api] getAvailablePlatform");
+
   const rep = await fetch(
     "index.php?api=get_available_platform&station_id=" +
       station_id +
@@ -396,13 +393,13 @@ async function setAvailablePlatform(availablePlatform) {
       await JSON.stringify(availablePlatform) + incoming_list_select.length;
 
     for (var i = 0; i < incoming_list_select.length; i++) {
-      console.log("liste before",incoming_list_select[i].options);
+
       if (incoming_list_select[i].value !=  "None"){
         incoming_list_select[i].options.length = 2;
       }else{
         incoming_list_select[i].options.length = 1;
       }
-      console.log("liste after",incoming_list_select[i].options);
+
       availablePlatform.forEach((letter) => {
         let tmp_option = document.createElement("option");
         tmp_option.innerHTML = letter;
@@ -425,10 +422,12 @@ async function updateIncomingTrain() {
     await showIncoming(incoming);
 
     await setAvailablePlatform(availablePlatform);
+    console.log("update incoming both")
   }else if (last_update_available_platform !=
     JSON.stringify(availablePlatform) + incoming_list_select.length
     ){
     await setAvailablePlatform(availablePlatform);
+    console.log("update incoming")
   }
 }
 
@@ -440,7 +439,7 @@ function changePlatformUser(evt) {
 }
 
 async function setPlatformUser(station_id, hub_id, letter, train_id){
-  console.log("[api] setPlatformUser");
+
   const setPlatformUser_res = await fetch(
     "index.php?api=set_platform_user&station_id=" +
       station_id +
