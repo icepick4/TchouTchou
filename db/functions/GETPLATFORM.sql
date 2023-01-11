@@ -1,0 +1,40 @@
+create or replace FUNCTION GETPLATFORM 
+(
+v_STATION_ID IN STATION.STATION_ID%type,
+  v_TRAIN_ID IN TRAIN.TRAIN_ID%type 
+) RETURN NUMBER AS 
+
+CURSOR c_dispo_plat is
+     SELECT PLATFORM_LETTER, TERMINAL_ID FROM PLATFORM p, TRAIN t, TRAIN_TYPE ty 
+WHERE t.TRAIN_TYPE_ID = ty.TRAIN_TYPE_ID AND ty.TRAIN_LENGTH < p.PLATFORM_LENGTH 
+AND PLATFORM_STATUS= 1 AND PLATFORM_UTILISATION=0 AND PLATFORM_USER IS NULL
+AND STATION_ID = v_STATION_ID AND t.TRAIN_ID=v_TRAIN_ID ;
+
+v_dispo_plat c_dispo_plat%rowtype;
+v_already NUMBER;
+BEGIN
+
+select count(*) into v_already from PLATFORM WHERE STATION_ID = v_STATION_ID AND PLATFORM_USER=v_TRAIN_ID;
+
+if v_already>0 then
+    RETURN 1;
+END IF;
+
+OPEN c_dispo_plat;
+
+FETCH c_dispo_plat INTO v_dispo_plat ;
+IF c_dispo_plat%NOTFOUND THEN -- if no result 
+    return 0;
+    END IF;
+
+Update PLATFORM 
+    SET PLATFORM_USER= v_TRAIN_ID
+    WHERE STATION_ID = v_STATION_ID AND PLATFORM_LETTER = v_dispo_plat.PLATFORM_LETTER
+    AND TERMINAL_ID = v_dispo_plat.TERMINAL_ID;
+
+CLOSE c_dispo_plat;
+return 1;
+
+
+
+END GETPLATFORM;

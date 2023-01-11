@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION getEmptySeatsBetweenTwoStation (v_travel_id IN NUMBER, v_first_station_id IN NUMBER, v_last_station_id IN NUMBER )
+create or replace FUNCTION getEmptySeatsBetweenTwoStation (v_travel_id IN NUMBER, v_first_station_id IN NUMBER, v_last_station_id IN NUMBER )
 RETURN NUMBER AS
 v_capacity NUMBER := 0;
 v_train_capacity NUMBER := 0;
