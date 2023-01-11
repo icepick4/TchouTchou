@@ -1,4 +1,5 @@
 # [SAE-SNCF](http://tchoutchou.ovh)
+
 ![MKT](https://img.shields.io/badge/license-MIT_License-red.svg)
 <img src="https://img.shields.io/badge/license-Creative%20Commons-red">
 ![MKT](https://img.shields.io/badge/version-v1.0.0-blue.svg)
@@ -12,9 +13,11 @@ Afin de moderniser ses services, la SNCF lance en 2021 son application de réser
 Étant nous-mêmes utilisateurs de ces applications nous avons pu constater leurs défauts, leurs qualités mais également les améliorations que nous aurions aimé y apporter. Au vu de ce constat, nous avons donc cherché à proposer une solution technique à ce postulat.
 
 # Objectif
+
 L'objet de ce projet est de réaliser un site de réservation de billets de train avec des options pour consulter le trafic. Le projet est constitué d’un site internet avec une version PC et mobile pour les clients mais aussi d’une partie pour l’entreprise afin de gérer le trafic.
 
 # Périmètre
+
 Ce projet est réalisé par un groupe de 5 personnes d’un niveau équivalent en 2ème année du BUT informatique. Le projet n'utilisera pas de framework, ni de PWA. Le développement du projet se fait en dehors des heures de cours avec deux heures toutes les deux semaines de réunion avec notre tuteur. Le projet se déroule sur 4 mois et se termine par une soutenance de 40 minutes.
 
 # Contribuer au Projet
@@ -25,11 +28,9 @@ Pour update le server il suift de aller sur ce <a href="http://82.65.238.70:5569
 
 Pour facilement avoir accès à toutes les branches,
 après avoir cloner le repo :
- ```git worktree add ../<nom dossier> <nom branche>  ```
+`git worktree add ../<nom dossier> <nom branche>  `
 
 pour plus d'infos cliquez <a href="https://morgan.cugerone.com/blog/how-to-use-git-worktree-and-in-a-clean-way/">ici</a>
-
-
 
 # Base de données
 
@@ -37,14 +38,13 @@ Un graphe de la BDD est disponible ici.
 
 Les trajets disponibles des différents tiers sont disponibles <a href="rapport.pdf" target="_blank">ici</a>
 
-Un fichier .sql est disponible pour pouvoir recrée la base de donnée en local [ :warning: à  venir ]
+Un fichier .sql est disponible pour pouvoir recrée la base de donnée en local [ :warning: à venir ]
 
 # Figma
 
 Accès vers notre <a href="https://www.figma.com/file/JoDxjyH653MXO4MKjn987D/SNCF?node-id=10%3A10">figma</a>
 
 Merci de garder un historique des modifications / étapes (avant de modifier une frame, veuillez la dupliquer)
-
 
 # Sncf Data
 
@@ -54,33 +54,29 @@ Voici des liens vers des datasets
 <br>
 <a href="https://ressources.data.sncf.com/explore/dataset/liste-des-quais/table/">Quais</a>
 
-
 # Docker
-
 
 Il faut évidemment avoir docker installé
 
-
 ## Web
- 
+
 Il faut commencer par récupérer l”os”:
 
-```docker pull kmcgill88/php-oracle```
+`docker pull kmcgill88/php-oracle`
 
 Pour lancer le serveur:
 
-:warning: Placez vous dans le repo puis ,<br>
+:warning: Placez vous à la sourcerepo puis tapez cette commande,<br>
 
-```docker run -it  -p 80:80 --mount type=bind,source=$(pwd),target=/var/www/html  --name=web kmcgill88/php-oracle```
+`docker run -it  -p 80:80 --mount type=bind,source=$(pwd/web),target=/var/www/html  --name=web kmcgill88/php-oracle`
 pour construire et lancer le serveur la permière fois
-
 
 Le serveur se mettra directement à jour à chaque modification
 
-``` docker stop web```
+` docker stop web`
 pour l'arreter
 
-``` docker start web```
+` docker start web`
 pour le demarrer
 
 Une fois le docker construit et lancé, rendez-vous sur http://localhost/
@@ -90,14 +86,13 @@ Vous pouvez dès à présent faire vos modifications en local et développer !
 
 Il faut commencer par récupérer l'image:
 
-```docker pull gvenzl/oracle-xe```
+`docker pull gvenzl/oracle-xe`
 
 puis:
 
-```docker run -it  -p 1521:1521 -e ORACLE_PASSWORD=<your password> -v oracle-volume:/opt/oracle/oradata --name=DBB kmcgill88/php-oracle```
+`docker run -it  -p 1521:1521 -e ORACLE_PASSWORD=<your password> -v oracle-volume:/opt/oracle/oradata --name=DBB kmcgill88/php-oracle`
 
 dernière etape:
 construire la BDD à partir du fichier <a href="random/bdd/Backup.sql">Backup.sql</a>
-
 
 [:warning: à venir]
