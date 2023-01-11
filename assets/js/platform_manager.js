@@ -162,8 +162,9 @@ async function switch_actif(el) {
     this.querySelector("p").innerHTML = LANG_OPEN;
     newStatus = 1;
   }
+  console.log("[api] switch_actif");
   const rep = await fetch(
-    "index.php?page=platform_manager&station_id=" +
+    "index.php?api=set_platform_status&station_id=" +
       in_station_name.value +
       "&hub_id=" +
       in_hub.value +
@@ -201,7 +202,8 @@ async function load() {
 }
 
 async function load_hub_op(id) {
-  const rep = await fetch("index.php?page=platform_manager&station_id=" + id);
+  console.log("[api] load_hub_op");
+  const rep = await fetch("index.php?api=get_hub&station_id=" + id);
 
   let data = await rep.json();
 
@@ -223,8 +225,9 @@ async function load_hub_op(id) {
 
 // in_station_name.value, in_hub.value
 async function load_platform(station_id, hub) {
+  console.log("[api] load_platform");
   const rep = await fetch(
-    "index.php?page=platform_manager&station_id=" +
+    "index.php?api=get_platform&station_id=" +
       station_id +
       "&hub_id=" +
       hub
@@ -270,8 +273,9 @@ async function update_platform() {
   }
   hub = in_hub.value;
 
+  console.log("[api] update_platform");
   const rep = await fetch(
-    "index.php?page=platform_manager&station_id=" +
+    "index.php?api=get_platform&station_id=" +
       station_id +
       "&hub_id=" +
       hub
@@ -329,8 +333,9 @@ function setPlatformValues(platform, value) {
 }
 
 async function getIncoming(station_id) {
+  console.log("[api] getIncoming");
   const rep = await fetch(
-    "index.php?page=platform_manager&station_id=" + station_id + "&incoming="
+    "index.php?api=get_incoming_train&station_id=" + station_id + "&incoming="
   );
   let data = await rep.text();
   console.log(data)
@@ -372,8 +377,9 @@ async function showIncoming(data) {
 }
 
 async function getAvailablePlatform(station_id, hub_id) {
+  console.log("[api] getAvailablePlatform");
   const rep = await fetch(
-    "index.php?page=platform_manager&station_id=" +
+    "index.php?api=get_available_platform&station_id=" +
       station_id +
       "&hub_id=" +
       hub_id +
@@ -434,8 +440,9 @@ function changePlatformUser(evt) {
 }
 
 async function setPlatformUser(station_id, hub_id, letter, train_id){
+  console.log("[api] setPlatformUser");
   const setPlatformUser_res = await fetch(
-    "index.php?api=set_platfrom_user&station_id=" +
+    "index.php?api=set_platform_user&station_id=" +
       station_id +
       "&hub_id=" +
       hub_id +
