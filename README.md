@@ -93,6 +93,6 @@ puis:
 `docker run -it  -p 1521:1521 -e ORACLE_PASSWORD=<your password> -v oracle-volume:/opt/oracle/oradata --name=DBB kmcgill88/php-oracle`
 
 dernière etape:
-construire la BDD à partir du fichier <a href="random/bdd/Backup.sql">Backup.sql</a>
+construire la BDD à partir du fichier <a href="db/Backup.sql">Backup.sql</a>
 
 [:warning: à venir]
