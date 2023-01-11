@@ -134,8 +134,9 @@ class StationDAO extends DAO
         $sql = 'SELECT TRAVEL_ID, LINE_ID, TRAIN_ID, LATE_TIME, ARRIVAL_TIME, ORIGIN, PLATFORM from INCOMING_TRAIN_WITH_PLATFORM
             where 
             STATION_ID = :id
-            AND ARRIVAL_TIME >= SYSDATE
-            AND ARRIVAL_TIME <= SYSDATE + :days';
+            AND ARRIVAL_TIME+(NVL(LATE_TIME,0)/1440)  >= SYSDATE
+            AND ARRIVAL_TIME+(NVL(LATE_TIME,0)/1440)  <= SYSDATE + :days
+            ORDER BY ARRIVAL_TIME+(NVL(LATE_TIME,0)/1440) DESC NULLS LAST';
         $args = array(':id' => $id , ':days' => $days);
         return $this->queryAll($sql, $args);
     }
