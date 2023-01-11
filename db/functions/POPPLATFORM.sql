@@ -1,0 +1,32 @@
+create or replace FUNCTION POPPLATFORM 
+(
+v_STATION_ID IN STATION.STATION_ID%type,
+  v_TRAIN_ID IN TRAIN.TRAIN_ID%type 
+) RETURN NUMBER AS 
+
+
+
+
+v_already NUMBER;
+BEGIN
+
+select count(*) into v_already from PLATFORM WHERE STATION_ID = v_STATION_ID AND PLATFORM_USER=v_TRAIN_ID;
+
+if v_already=0 then
+    RETURN 1;
+END IF;
+
+
+Update PLATFORM 
+    SET PLATFORM_USER= NULL, PLATFORM_UTILISATION=0 
+    WHERE STATION_ID = v_STATION_ID AND PLATFORM_USER =v_TRAIN_ID;
+
+
+return 1;
+
+
+
+END POPPLATFORM;
+
+
+
