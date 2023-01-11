@@ -37,13 +37,14 @@ function choixAlert($message)
     return $alert;
 }
 
-function choixImage($id){
+function choixImage($id)
+{
     switch ($id) {
         case '1':
             $result = 'alert_bomb.svg';
             break;
         case '2':
-            $result= 'alert_gun.svg';
+            $result = 'alert_gun.svg';
             break;
         case '3':
             $result = 'alert_rescue.svg';
@@ -82,9 +83,10 @@ function choixImage($id){
     return $result;
 }
 
-function getDay($input){
+function getDay($input)
+{
     $day = date('l', strtotime($input));
-    switch($day){
+    switch ($day) {
         case 'Monday':
             $result = MONDAY;
             break;
@@ -113,9 +115,10 @@ function getDay($input){
     return $result;
 }
 
-function getMonth($input){
+function getMonth($input)
+{
     $month = date('F', strtotime($input));
-    switch($month){
+    switch ($month) {
         case 'January':
             $result = JANUARY;
             break;
@@ -160,22 +163,22 @@ function getMonth($input){
 }
 
 function hashPassword($password)
-    {
-        return password_hash($password, PASSWORD_DEFAULT);
-    }
+{
+    return password_hash($password, PASSWORD_DEFAULT);
+}
 
-    function strTo24Time($time)
-    {
-        $time = date("H:i",strtotime(str_replace(".",":",substr($time,10,5)).substr($time,strlen($time) -2,2)));
-        return $time;
+function strTo24Time($time)
+{
+    $time = date("H:i", strtotime(str_replace(".", ":", substr($time, 10, 5)) . substr($time, strlen($time) - 2, 2)));
+    return $time;
+}
+
+function minToHourMin($min)
+{
+    $hour = floor($min / 60);
+    $min = $min % 60;
+    if ($min < 10) {
+        $min = "0" . $min;
     }
-    
-    function minToHourMin($min)
-    {
-        $hour = floor($min / 60);
-        $min = $min % 60;
-        if ($min < 10) {
-            $min = "0" . $min;
-        }
-        return $hour . "h" . $min;
-    }
+    return $hour . "h" . $min;
+}

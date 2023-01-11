@@ -2,5 +2,4 @@ z_*
 config/config_connection.php
 **/PHPMailer
 .phpdoc/
-doc/
 Cxamppphplogsphp_error_log
