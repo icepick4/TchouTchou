@@ -66,9 +66,9 @@ Il faut commencer par récupérer l”os”:
 
 Pour lancer le serveur:
 
-:warning: Placez vous à la sourcerepo puis tapez cette commande,<br>
+:warning: Placez vous à la source du repo puis tapez cette commande,<br>
 
-`docker run -it  -p 80:80 --mount type=bind,source=$(pwd/web),target=/var/www/html  --name=web kmcgill88/php-oracle`
+`docker run -it  -p 80:80 --mount type=bind,source=$(pwd)/web,target=/var/www/html  --name=web kmcgill88/php-oracle`
 pour construire et lancer le serveur la permière fois
 
 Le serveur se mettra directement à jour à chaque modification
