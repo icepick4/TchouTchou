@@ -17,9 +17,9 @@
     </div>
 </div>
 
-<div>
-    <button id="previousButton"><?= PREVIOUS ?></button>
-    <button id="nextButton"><?= NEXT ?></button>
+<div id="buttonContainer">
+    <button id="previousButton" class="btn"><?= PREVIOUS ?></button>
+    <button id="nextButton" class="btn"><?= NEXT ?></button>
 </div>
 
 <!--  Pied de page -->

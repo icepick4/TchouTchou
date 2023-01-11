@@ -42,6 +42,7 @@ function initModal() {
 }
 
 function openCalendar(day) {
+  console.log("test");
   var xmlhttp2 = new XMLHttpRequest();
   xmlhttp2.open(
     "GET",
@@ -56,19 +57,24 @@ function openCalendar(day) {
     if (this.readyState == 4 && this.status == 200) {
       document.querySelector("#planning").innerHTML = this.responseText;
       initModal();
-      let currentDate = parseInt(
-        document.querySelector("th").innerText.substring(0, 2)
-      );
-      let nextButton = document.querySelector("#nextButton");
-      nextButton.addEventListener("click", function () {
-        openCalendar(currentDate + 1);
-      });
-      let previousButton = document.querySelector("#previousButton");
-      previousButton.addEventListener("click", function () {
-        openCalendar(currentDate - 1);
-      });
+      let title = document.querySelector("th").innerText;
+      currentDate = parseInt(title.innerText.substring(0, title.indexOf("-")));
     }
   };
 }
 
+var currentDate;
 document.onload = openCalendar(date.getDate());
+setTimeout(function () {
+  currentDate = parseInt(
+    document.querySelector("th").innerText.substring(0, 2)
+  );
+  let nextButton = document.querySelector("#nextButton");
+  nextButton.addEventListener("click", function () {
+    openCalendar(currentDate + 1);
+  });
+  let previousButton = document.querySelector("#previousButton");
+  previousButton.addEventListener("click", function () {
+    openCalendar(currentDate - 1);
+  });
+}, 1000);

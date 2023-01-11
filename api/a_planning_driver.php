@@ -21,7 +21,7 @@
 
     <thead>
         <tr>
-            <th colspan="200"><?= $date['SYSDATE'] ?></th>
+            <th colspan="200"><?= $date['SYSDATE']?></th>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +29,7 @@
     $i = 0;
     while ($i<24) {
         if($i<10) $i = '0'.$i;
-    $result = $planning->getDriverTravelForTheDayByHour($driver, $i);
+    $result = $planning->getDriverTravelForTheDayByHour($driver, $i, $day);
     ?>
         <tr>
             <td><?= $i ?>h</td>
