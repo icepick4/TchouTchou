@@ -35,7 +35,7 @@ pour plus d'infos cliquez <a href="https://morgan.cugerone.com/blog/how-to-use-g
 
 Un graphe de la BDD est disponible ici.
 
-Les trajets disponibles des differnets tiers sont disponibles <a href="https://forge.univ-lyon1.fr/p2103642/sae-sncf/-/raw/main/bdd/overview.pdf?inline=true" target="_blank">ici</a>
+Les trajets disponibles des différents tiers sont disponibles <a href="rapport.pdf" target="_blank">ici</a>
 
 Un fichier .sql est disponible pour pouvoir recrée la base de donnée en local [ :warning: à  venir ]
 
@@ -69,10 +69,13 @@ Il faut commencer par récupérer l”os”:
 
 Pour lancer le serveur:
 
-Déplacez vous dans le dossier que vous voulez faire héberger puis ,<br>
+:warning: Placez vous dans le repo puis ,<br>
 
 ```docker run -it  -p 80:80 --mount type=bind,source=$(pwd),target=/var/www/html  --name=web kmcgill88/php-oracle```
 pour construire et lancer le serveur la permière fois
+
+
+Le serveur se mettra directement à jour à chaque modification
 
 ``` docker stop web```
 pour l'arreter
@@ -84,5 +87,17 @@ Une fois le docker construit et lancé, rendez-vous sur http://localhost/
 Vous pouvez dès à présent faire vos modifications en local et développer !
 
 ## Oracle
+
+Il faut commencer par récupérer l'image:
+
+```docker pull gvenzl/oracle-xe```
+
+puis:
+
+```docker run -it  -p 1521:1521 -e ORACLE_PASSWORD=<your password> -v oracle-volume:/opt/oracle/oradata --name=DBB kmcgill88/php-oracle```
+
+dernière etape:
+construire la BDD à partir du fichier <a href="random/bdd/Backup.sql">Backup.sql</a>
+
 
 [:warning: à venir]

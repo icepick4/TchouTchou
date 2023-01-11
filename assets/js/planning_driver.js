@@ -1,4 +1,5 @@
 const date = new Date();
+
 import { getFlags } from "./functions.js";
 
 const script = document.querySelector('script[src*="planning_driver.js"]');
@@ -41,25 +42,39 @@ function initModal() {
 }
 
 function openCalendar(day) {
-  let link =
-    "index.php?api=planning&day=" + day + "&driverID=" + getFlags(flag)[0];
-  console.log(link);
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function () {
+  console.log("test");
+  var xmlhttp2 = new XMLHttpRequest();
+  xmlhttp2.open(
+    "GET",
+    "index.php?api=planning_driver&day=" +
+      day +
+      "&driverID=" +
+      getFlags(flag)[0],
+    true
+  );
+  xmlhttp2.send();
+  xmlhttp2.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       document.querySelector("#planning").innerHTML = this.responseText;
-      setTimeout(() => {
-        initModal();
-      }, 200);
+      initModal();
+      let title = document.querySelector("th").innerText;
+      currentDate = parseInt(title.innerText.substring(0, title.indexOf("-")));
     }
   };
-
-  xmlhttp.open("GET", link, true);
 }
 
+var currentDate;
 document.onload = openCalendar(date.getDate());
-
-let button = document.querySelector("#test");
-button.addEventListener("click", function () {
-  openCalendar(date.getDate());
-});
+setTimeout(function () {
+  currentDate = parseInt(
+    document.querySelector("th").innerText.substring(0, 2)
+  );
+  let nextButton = document.querySelector("#nextButton");
+  nextButton.addEventListener("click", function () {
+    openCalendar(currentDate + 1);
+  });
+  let previousButton = document.querySelector("#previousButton");
+  previousButton.addEventListener("click", function () {
+    openCalendar(currentDate - 1);
+  });
+}, 1000);

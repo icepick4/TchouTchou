@@ -11,15 +11,17 @@
     $day = intval($_GET['day']);
     $driver = intval($_GET['driverID']);
 
-    echo($driver);
+
 
     $date = $planning->getSysdate();
 
     ?>
 
+
+
     <thead>
         <tr>
-            <th colspan="200"><?= $date['SYSDATE'] ?></th>
+            <th colspan="200"><?= $date['SYSDATE']?></th>
         </tr>
     </thead>
     <tbody>
@@ -27,7 +29,7 @@
     $i = 0;
     while ($i<24) {
         if($i<10) $i = '0'.$i;
-    $result = $planning->getDriverTravelForTheDayByHour($driver, $i);
+    $result = $planning->getDriverTravelForTheDayByHour($driver, $i, $day);
     ?>
         <tr>
             <td><?= $i ?>h</td>
@@ -48,4 +50,5 @@
         $i++;};
         ?>
     </tbody>
+
     
