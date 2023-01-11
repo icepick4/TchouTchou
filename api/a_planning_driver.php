@@ -11,11 +11,13 @@
     $day = intval($_GET['day']);
     $driver = intval($_GET['driverID']);
 
-    echo($driver);
+
 
     $date = $planning->getSysdate();
 
     ?>
+
+
 
     <thead>
         <tr>
@@ -48,4 +50,5 @@
         $i++;};
         ?>
     </tbody>
+
     

@@ -17,7 +17,10 @@
     </div>
 </div>
 
-<button id="test">test</button>
+<div>
+    <button id="previousButton"><?= PREVIOUS ?></button>
+    <button id="nextButton"><?= NEXT ?></button>
+</div>
 
 <!--  Pied de page -->
 <?php require_once(PATH_VIEWS . 'footer.php');
