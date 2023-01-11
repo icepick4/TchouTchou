@@ -32,12 +32,18 @@ if ($_SESSION['logged']) {
                     <p><?= LOGOUT ?></p>
                 </div>
             </a>
-            <a class="link-profile" id="delete-account">
-                <div>
-                    <?= SVG_DELETE ?>
-                    <p><?= DELETE_ACCOUNT ?></p>
-                </div>
-            </a>
+            <?php
+            if ($result['USER_CATEGORIE_ID'] == 0) {
+            ?>
+                <a class="link-profile" id="delete-account">
+                    <div>
+                        <?= SVG_DELETE ?>
+                        <p><?= DELETE_ACCOUNT ?></p>
+                    </div>
+                </a>
+            <?php
+            }
+            ?>
         </div>
         <div class="infos">
             <table id="table">
