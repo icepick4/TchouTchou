@@ -45,11 +45,6 @@ class UserDAO extends DAO
         return $this->queryAll($sql);
     }
     
-    public function getAllClient()
-    {
-        $sql = 'SELECT * FROM USER_DATA WHERE USER_CATEGORIE_ID = 0';
-        return $this->queryAll($sql);
-    }
 
     /**
      * Function to insert a new user
@@ -61,10 +56,6 @@ class UserDAO extends DAO
         return $this->queryAll($sql);
     }
 
-    public function isCustomer($id)
-    {
-        return $this->getUserType($id) == 0;
-    }
     /**
      * Function to update the user's first name
      * @param number $id The user's id

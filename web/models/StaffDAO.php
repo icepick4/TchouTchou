@@ -1,12 +1,12 @@
 <?php
 
-require_once(PATH_MODELS . 'DAO.php');
+require_once(PATH_MODELS . 'UserDAO.php');
 
 /**
  * Class UserDAO
  * 
  */
-class StaffDAO extends DAO
+class StaffDAO extends UserDAO
 {
     public function getAllStaff()
     {
@@ -122,20 +122,6 @@ class StaffDAO extends DAO
         $sql = 'SELECT DRIVER_ID FROM DRIVER WHERE USER_ID = :id';
         $args = array(':id' => $id);
         return $this->queryRow($sql, $args)['DRIVER_ID'];
-    }
-
-    /**
-     * Function to get the category of a user
-     *
-     * @param  number $id The user's id
-     * @return array The user's category
-     *
-     */
-    public function getUserType($id)
-    {
-        $sql = 'SELECT USER_CATEGORIE_ID FROM USER_DATA WHERE USER_ID = :id';
-        $args = array(':id' => $id);
-        return $this->queryRow($sql, $args)['USER_CATEGORIE_ID'];
     }
 
     public function addEmployee($id,$staff_id)

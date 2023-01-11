@@ -9,7 +9,7 @@ if (!$_SESSION['logged']) {
     die();
 } else {
     $mailbox = new MessageDAO();
-    $discussions = $mailbox->getUserDisussions($_SESSION['user_id']);
+    $discussions = $mailbox->getUserDiscussions($_SESSION['user_id']);
     $isEmployee = false;
     $isSupport = false;
     if ($staff->isEmployee($_SESSION['user_id'])) {

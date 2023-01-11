@@ -1,8 +1,8 @@
 <?php
 require_once(PATH_MODELS . 'StaffDAO.php');
-require_once(PATH_MODELS . 'UserDAO.php');
+require_once(PATH_MODELS . 'CustomerDAO.php');
 $staff = new StaffDAO();
-$user = new UserDAO();
+$customer = new CustomerDAO();
 
 
 if ($_SESSION['logged'] && ($staff->isAdministrator($_SESSION['user_id']) || $staff->isHumanResource($_SESSION['user_id']))) {
@@ -11,7 +11,7 @@ if ($_SESSION['logged'] && ($staff->isAdministrator($_SESSION['user_id']) || $st
             $user_identity_create = $_POST['user_identity_create'];
             $staff_type_create = $_POST['staff_type_create'];
             $staff->addEmployee($user_identity_create, $staff_type_create);
-            $user->setUserType($user_identity_create, 1);
+            $staff->setUserType($user_identity_create, 1);
             header("Location: index.php?page=staff");
         }
     }
@@ -31,7 +31,7 @@ if ($_SESSION['logged'] && ($staff->isAdministrator($_SESSION['user_id']) || $st
             header("Refresh:0");
         }
     }
-    $user_list_not_employees = $user->getAllClient();
+    $user_list_not_employees = $customer->getAllCustomers();
     $staff_list = $staff->getAllStaff();
     $staff_type = $staff->getAllStaffType();
     require_once(PATH_VIEWS . $page . '.php');
