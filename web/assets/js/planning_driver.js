@@ -58,7 +58,7 @@ function openCalendar(day) {
       document.querySelector("#planning").innerHTML = this.responseText;
       initModal();
       let title = document.querySelector("th").innerText;
-      currentDate = parseInt(title.innerText.substring(0, title.indexOf("-")));
+      currentDate = parseInt(title.innerText);
     }
   };
 }
@@ -77,4 +77,4 @@ setTimeout(function () {
   previousButton.addEventListener("click", function () {
     openCalendar(currentDate - 1);
   });
-}, 1000);
+}, 100000);

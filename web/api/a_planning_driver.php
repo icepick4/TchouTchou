@@ -21,7 +21,7 @@
 
     <thead>
         <tr>
-            <th colspan="200"><?= $date['SYSDATE']?></th>
+            <th colspan="200"><?= $day?></th>
         </tr>
     </thead>
     <tbody>
