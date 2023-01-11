@@ -15,8 +15,7 @@ $staff = new StaffDAO();
 $planning = new PlanningDAO();
 
 $driver = $staff->getDriverID($_SESSION['user_id']);
-$date = $planning->getSysdate();
-
+$date = $planning->getSysdate()['DATE'];
 if($driver == null){
     header('Location: index.php?page=login');
     exit();

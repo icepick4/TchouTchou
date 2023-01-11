@@ -70,7 +70,9 @@ table td {
   opacity: 1;
   pointer-events: all;
 }
-
+#infoModalContent {
+  height: 100%;
+}
 #infoModalClose {
   transition: all 0.5s ease-in-out;
 }

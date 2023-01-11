@@ -24,9 +24,9 @@
     define('LATE_TIME', 'Late time');
     ?>
 
-
+    <h1><?= TRAVEL ?> n° <?= $result['TRAVEL_ID'] ?></h1>
     <div>
-        <h1><?= TRAVEL ?> n° <?= $result['TRAVEL_ID'] ?></h1>
+        
         <p><?= TRAIN ?> n° <?= $result['TRAIN_ID'] ?></p>
         <?php foreach ($detail as $value) {
             ?><p><?= $station->get_station_name($value['STATION_ID'])['STATION_NAME'] ?> ● <?= $value['ARRIVAL_TIME'] ?> - <?= $value['DEPARTURE_TIME'] ?></p>

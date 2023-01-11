@@ -10,7 +10,7 @@ class PlanningDAO extends DAO
 {
     public function getSysdate()
     {
-        $sql = 'SELECT SYSDATE FROM DUAL';
+        $sql = 'SELECT TO_CHAR(SYSDATE,\'DD/MM/YYYY\') AS "DATE" FROM DUAL';
         return $this->queryRow($sql);
     }
     public function getDriverTravelForTheDayByHour($driverID,$hour,$day)
@@ -20,7 +20,7 @@ class PlanningDAO extends DAO
                 INNER JOIN TRAVEL_WITH_ET ON TRAVEL.TRAVEL_ID = TRAVEL_WITH_ET.TRAVEL_ID 
                 WHERE DRIVER_ID = :driverID
                 AND TO_CHAR(START_TIME,'."'".'HH24'."'".') = :hour 
-                AND TO_CHAR(START_TIME,'."'".'DD'."'".') = :day
+                AND TO_CHAR(START_TIME,\'DD/MM/YYYY\') = :day
                 AND TO_CHAR(START_TIME,'."'".'MM'."'".') = TO_CHAR(SYSDATE,'."'".'MM'."'".')';
         $args = array(':driverId' => $driverID, ':hour' => $hour, ':day' => $day);
         return $this->queryAll($sql, $args);

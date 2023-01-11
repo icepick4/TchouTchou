@@ -8,12 +8,12 @@
     require_once(PATH_MODELS . 'PlanningDAO.php');
 
     $planning = new PlanningDAO();
-    $day = intval($_GET['day']);
+    $date = $_GET['date'];
     $driver = intval($_GET['driverID']);
 
 
 
-    $date = $planning->getSysdate();
+    
 
     ?>
 
@@ -21,7 +21,8 @@
 <table>
     <thead>
         <tr>
-            <th colspan="200"><? if(strlen($day)==1){echo "0" . $day;}else{echo $day;}?></th>
+            <?php echo 'DATE'.print_r($date);?>
+            <th colspan="200"><?=$date?></th>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +30,7 @@
     $i = 0;
     while ($i<24) {
         if($i<10) $i = '0'.$i;
-    $result = $planning->getDriverTravelForTheDayByHour($driver, $i, $day);
+    $result = $planning->getDriverTravelForTheDayByHour($driver, $i, $date);
     ?>
         <tr>
             <td><?= $i ?>h</td>
