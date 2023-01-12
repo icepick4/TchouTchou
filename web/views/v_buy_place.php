@@ -9,7 +9,7 @@
         <p id="typeTrain" style="display:none"><?= $trainType ?></p>
         <h1><?= SELECT_SEATS ?></h1>
 
-        <?php if ($trainType == "TGVDuplex") { ?>
+        <?php if ($trainType == "TGVDuplex" || $trainType == "TGVNOL") { ?>
             <label class="switch">
                 <input type="checkbox">
                 <span class="slider round">
