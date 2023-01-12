@@ -32,6 +32,12 @@ if ($_SESSION['logged']) {
                     <p><?= LOGOUT ?></p>
                 </div>
             </a>
+            <a class="link-profile" href="pdf.php" target="_blank">
+                <div>
+                    <?= SVG_DATA ?>
+                    <p><?= YOUR_DATA ?></p>
+                </div>
+            </a>
             <?php
             if ($result['USER_CATEGORIE_ID'] == 0) {
             ?>
