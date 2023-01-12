@@ -44,7 +44,7 @@ class UserDAO extends DAO
         $sql = 'SELECT * FROM USER_DATA';
         return $this->queryAll($sql);
     }
-    
+
 
     /**
      * Function to insert a new user
@@ -52,7 +52,7 @@ class UserDAO extends DAO
      */
     public function getAllUserMail()
     {
-        $sql = 'SELECT USER_MAIL FROM lower(USER_DATA)';
+        $sql = 'SELECT lower(USER_MAIL) FROM USER_DATA';
         return $this->queryAll($sql);
     }
 
@@ -158,5 +158,4 @@ class UserDAO extends DAO
         $args = array(':id' => $id);
         return $this->queryRow($sql, $args)['USER_CATEGORIE_ID'];
     }
-
 }

@@ -8,6 +8,5 @@ if (isset($_GET['verif'])) {
             $user->deleteUser($_SESSION['user_id']);
             $_SESSION = array();
         }
-        header("Location: index.php?page=home");
     }
 }
