@@ -61,7 +61,12 @@
         if (isset($_SESSION['user_id']) && $staff->isDriver($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=planning_driver">' . TITLE_PLANNING . '</a></li>';
           echo '<li><a href="index.php?page=alert_trigger">' . TITLE_ALERT . '</a></li>';
-        } ?>
+        } 
+        if ($staff->isAdministrator($_SESSION['user_id'])) {
+          echo '<li><a href="index.php?page=travel">' . TITLE_TRAVEL. '</a></li>';
+        }
+        ?>
+
       </ul>
     </nav>
     <nav>
