@@ -75,14 +75,6 @@ a.active {
   resize: none;
   width: 94%;
   height: 100px;
-}
-
-#infoPosition {
-  width: 93%;
-}
-
-#infoPosition,
-#message {
   margin: 10px 0;
   background-color: var(--bg-black-color);
   border: 3px solid var(--main-color);
@@ -91,6 +83,8 @@ a.active {
   padding: 3%;
   font-size: 1.2em;
 }
+
+
 
 input[type="submit"] {
   margin: 10px 0;
@@ -108,3 +102,13 @@ input[type="submit"]:hover {
   cursor: pointer;
   transform: scale(1.04);
 }
+
+@media (prefers-color-scheme: light) {
+
+  #message {
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+  }
+
+
+  }
