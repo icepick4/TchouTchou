@@ -13,7 +13,7 @@ class MessageDAO extends DAO
             $args = array(':id' => $discussion_id['MAX'] + 1, ':subject' => $subject, ':user_id' => $user_id, ':destination_id' => $destination_id);
         } else {
             $sql = 'INSERT INTO DISCUSSION (DISCUSSION_ID,DISCUSSION_SUBJECT,USER_MAIL,USER_PHONE,USER_LASTNAME,USER_FIRSTNAME,DESTINATION_ID) VALUES (:id,:subject,:mail,:phone,:lastname,:firstname,:destination_id)';
-            $args = array(':id' => $discussion_id['MAX'] + 1, ':subject' => $subject, ':mail' => $mail, ':phone' => $phone, ':lastname' => $lastName, ':firstname' => $firstname, ':destination_id' => $destination_id );
+            $args = array(':id' => $discussion_id['MAX'] + 1, ':subject' => $subject, ':mail' => $mail, ':phone' => $phone, ':lastname' => $lastName, ':firstname' => $firstname, ':destination_id' => $destination_id);
         }
         $this->queryEdit($sql, $args);
         return $discussion_id['MAX'] + 1;
@@ -27,7 +27,7 @@ class MessageDAO extends DAO
 
     public function getUserDiscussions($user_id)
     {
-        $sql = 'SELECT * FROM DISCUSSION WHERE (USER_ID = :user_id OR DESTINATION_ID = :user_id) AND (DESTINATION_ID IN (SELECT USER_ID FROM EMPLOYEES_DATA WHERE EMPLOYEES_DATA.EMPLOYEE_ACCESS = 5)  AND USER_ID NOT IN (SELECT USER_ID FROM EMPLOYEES_DATA)) ORDER BY CREATION_TIME DESC';
+        $sql = 'SELECT * FROM DISCUSSION WHERE (USER_ID = :user_id OR DESTINATION_ID = :user_id) AND (DESTINATION_ID IN (SELECT USER_ID FROM EMPLOYEES_DATA WHERE EMPLOYEES_DATA.EMPLOYEE_ACCESS = 5)  AND (USER_ID NOT IN (SELECT USER_ID FROM EMPLOYEES_DATA) OR USER_ID IS NULL)) ORDER BY CREATION_TIME DESC';
         $args = array(':user_id' => $user_id);
         return $this->queryAll($sql, $args);
     }
@@ -60,7 +60,8 @@ class MessageDAO extends DAO
         return $this->queryRow($sql, $args);
     }
 
-    public function storeDiscussion($id, $status){
+    public function storeDiscussion($id, $status)
+    {
         $sql = 'UPDATE DISCUSSION SET STATUS = :status WHERE DISCUSSION_ID = :id';
         $args = array(':id' => $id, ':status' => $status);
         $this->queryEdit($sql, $args);
