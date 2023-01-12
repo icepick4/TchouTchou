@@ -278,3 +278,7 @@ define('ALT_WOMEN_WITH_LUGGAGE', 'Femme avec bagages');
 define('ALT_PHONE_SEARCH', 'Recherche par téléphone');
 define('ALT_WOMEN_SEARCH', 'Femme faisant une recherche');
 define('ALT_ARROW_RIGHT', 'Flèche vers la droite');
+
+
+//TRAVEL
+define('TITLE_TRAVEL', 'Trajet');
