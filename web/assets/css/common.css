@@ -169,8 +169,8 @@ body {
   padding-bottom: 5%;
 }
 
-.disabled{
-  color : gray;
+.deactivated {
+  color : #a0a0a0;
 }
 
 @media (prefers-color-scheme: dark) {
