@@ -37,13 +37,12 @@ h3 {
 .control_pannel {
   width: auto;
   margin: 5px;
-  display: flex;
-  height: 14vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 8rem;
 }
 
-.control_pannel fieldset {
-  width: 50%;
-}
+
 
 .control_pannel fieldset#incoming {
   overflow-y: scroll;
@@ -337,7 +336,9 @@ svg.rail {
 
 @media only screen and (max-width: 800px) {
   .control_pannel {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    height: 15rem;
   }
 }

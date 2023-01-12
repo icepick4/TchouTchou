@@ -144,4 +144,12 @@ class StaffDAO extends UserDAO
         $args = array(':USER_ID' => $user_id);
         return $this->queryRow($sql, $args)['NBR'];
     }
+
+
+    public function getEmployeeStation($user_id)
+    {
+        $sql = 'SELECT STATION_ATTACH FROM EMPLOYEES_DATA  WHERE USER_ID = :USER_ID AND EMPLOYEE_ACCESS = 2';
+        $args = array(':USER_ID' => $user_id);
+        return $this->queryRow($sql, $args);
+    }
 }

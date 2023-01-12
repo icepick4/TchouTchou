@@ -7,6 +7,12 @@
     
 let marker;
 let map;
+let mapId ="4c07f10564f43214";
+
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    mapId ="ff96761909dd93c7";
+}
 
 
 function initMap() {
@@ -15,7 +21,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 5,
     center: myLatlng,
-    mapId:  'ff96761909dd93c7' // custom map
+    mapId:  mapId // custom map
   });
 
   // default marker for simplicity
