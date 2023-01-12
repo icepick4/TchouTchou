@@ -135,8 +135,31 @@ table td {
 }
 
 @media (prefers-color-scheme: light) {
-  table tr td:first-child {
-    color: #fff;
+
+  :root{
+     --bg-color: lightgrey;
+     --border-color: black;
+     --text-color: black;
+  }
+
+
+  table {
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-color);
+  }
+
+
+  table tr{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+    
+  }
+
+  table td{
+    border-color: var(--border-color);
+    color: var(--text-color);
+    background-color: var(--bg-color);
   }
 
   #infoModalContent h1 {
