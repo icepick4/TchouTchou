@@ -169,6 +169,10 @@ body {
   padding-bottom: 5%;
 }
 
+.disabled{
+  color : gray;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: var(--bg-black-color);
