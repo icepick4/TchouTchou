@@ -7,7 +7,7 @@ class TravelDAO extends DAO
 
     public function getTravelsOn($date_travel, $station_from, $station_to)
     {
-        $sql = 'SELECT t.PRICE,
+        $sql = 'SELECT
         TO_CHAR(t.START_TIME, \'HH24:MI\') AS START_TIME,
         TO_CHAR(tet.END_TIME, \'HH24:MI\') AS END_TIME,
         TIME_MIN AS DURATION, 
