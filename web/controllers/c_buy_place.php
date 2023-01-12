@@ -68,6 +68,8 @@ if($trainType['TRAIN_TYPE_ID'] < 4){
     $trainType = "TGVDuplex";
 }else if($trainType['TRAIN_TYPE_ID'] == 5){
     $trainType = "TGV";
+}else if($trainType['TRAIN_TYPE_ID'] == 6){
+    $trainType = "TGVNOL";
 }else{
     $trainType = "problème";
 }
