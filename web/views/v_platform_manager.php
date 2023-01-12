@@ -7,6 +7,8 @@ require_once(PATH_VIEWS . 'header.php');
 
 
 
+
+
 <!--  Début de la page -->
 
 
@@ -15,11 +17,21 @@ require_once(PATH_VIEWS . 'header.php');
 	<fieldset>
 		<legend><?= CONFIG_PANNEL ?></legend>
 		<div class="select_option">
-			<h3><?= SELECT_STATION ?></h3>
+
+			<h3
+			<?php if (isset($_SESSION['STATION_ATTACH'])){ ?>
+				class="deactivated"
+			<?php }?>
+			><?= SELECT_STATION ?></h3>
 			<h3><?= SELECT_HUB ?></h3>
 
+			<?php
+			if (isset($_SESSION['STATION_ATTACH'])){
+				?>
+				<select id="station_name" disabled>
+			<?php }else{ ?>
 			<select id="station_name">
-				<?php
+				<?php }
 				if ($stations != null) {
 					foreach ($stations as $station) {
 
