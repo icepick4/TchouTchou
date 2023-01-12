@@ -35,6 +35,15 @@ class StationDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
+    public function get_station($id)
+    {
+        $sql = 'SELECT 
+        STATION_NAME, STATION_ID FROM STATION S 
+        WHERE STATION_ID = :id';
+        $args = array(':id' => $id);
+        return $this->queryAll($sql, $args);
+    }
+
     public function get_station_departure($id)
     {
         $sql = 'SELECT TRAVEL.TRAVEL_ID, TRAVEL.LINE_ID, TRAVEL.TRAIN_ID, TRAVEL.LATE_TIME, TO_CHAR(DEPARTURE_TIME+(NVL(TRAVEL.LATE_TIME,0)/1440),\'HH24:MI\') AS DEPARTURE_TIME, STATION_NAME AS DESTINATION FROM TRAVEL 
