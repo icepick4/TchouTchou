@@ -10,8 +10,8 @@
     ?>
     
 
-<div id="train_duplex" class="nol">
-    <h2>wagon duplex</h2>
+<div id="train_nol" class="nol">
+    <h2>wagon TGV NOL</h2>
     <div class="wagon <?= $wagon+1 ?>">
             <div class="row seatRow">
                 <div class="seat" id="1">

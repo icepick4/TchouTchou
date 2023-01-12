@@ -199,10 +199,10 @@ function loadWagon(id) {
     console.log("error");
   }
   xmlhttp.send();
-  if (typeTrain.innerText == "TGVDuplex") {
+  if (typeTrain.innerText == "TGVDuplex" || typeTrain.innerText == "TGVNOL") {
     setTimeout(function () {
       changeFloor();
-    }, 300);
+    }, 100);
   }
 }
 
