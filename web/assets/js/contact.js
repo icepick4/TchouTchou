@@ -93,7 +93,7 @@ function formVerify(evt) {
     } else {
         var verif = true;
     }
-    if (!verif) {
+    if (!verif || desc.value.length == 0) {
         evt.preventDefault();
         error[7].classList.remove('shown');
     } else {

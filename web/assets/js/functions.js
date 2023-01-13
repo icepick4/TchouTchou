@@ -17,7 +17,7 @@ export function validatePhone(phoneNumber) {
 }
 
 export function validateName(name) {
-    var regExName = new RegExp("^[a-zA-Z-' ]{2,254}$");
+    var regExName = new RegExp('^[A-Za-zÀ-ÿ\s\-\']{2,254}$');
     return regExName.test(name);
 }
 
