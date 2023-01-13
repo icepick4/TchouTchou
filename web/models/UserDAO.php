@@ -47,13 +47,28 @@ class UserDAO extends DAO
 
 
     /**
-     * Function to insert a new user
+     * Function to get all the users emails
      * @return array The users's mails
      */
     public function getAllUserMail()
     {
         $sql = 'SELECT lower(USER_MAIL) FROM USER_DATA';
         return $this->queryAll($sql);
+    }
+
+    /**
+     * Return True if the email is already used
+     * False either
+     * @param string $mail The user's mail
+     */
+    public function isMailUsed($mail)
+    {
+        $sql = 'SELECT * FROM USER_DATA WHERE USER_MAIL = LOWER(:mail)';
+        $args = array(':mail' => $mail,);
+        if($this->queryRow($sql, $args) == null){
+            return false;
+        }
+        return true;
     }
 
     /**

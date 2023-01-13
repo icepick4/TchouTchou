@@ -20,16 +20,11 @@ if (
     $phone = $_POST["phone"];
     $email = $_POST["email"];
 
-    $mails = $user->getAllUserMail();
-    $mail = array('USER_MAIL' => $email);
-
-    if (in_array($mail, $mails)) {
+    if ($user->isMailUsed($email)) {
         $alert = choixAlert('Mail_already_used');
     } else {
         if ($_POST["password"] == $_POST["confirmPassword"]) {
-
             $password = hashPassword($_POST["password"]);
-
             $user->insertUser($email, $phone, $password, $name, $fname, 0);
             header('Location: index.php?page=login');
             exit();
