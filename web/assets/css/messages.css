@@ -421,6 +421,13 @@ form input[type="submit"]:hover {
   transform: scale(1.1);
 }
 
+@media only screen and (max-width: 1375px) {
+  #headerResume {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   h1 {
     font-size: 3em;
