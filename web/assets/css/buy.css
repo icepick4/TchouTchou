@@ -14,9 +14,12 @@
   transition: all 0.3s;
 }
 
+.rotate-arrow{
+  transform: rotate(180deg);
+}
+
 #boxArrow:hover {
   cursor: pointer;
-  transform: scale(1.1);
 }
 
 #exchangArrow {
@@ -45,6 +48,23 @@ input[type="submit"] {
   background-color: var(--main-color);
   transition: 0.3s;
   color: var(--txt-white-color);
+}
+
+.clicked{
+  animation: clicked 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clicked {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 input[type="submit"]:hover {
@@ -92,7 +112,7 @@ form div button:last-child {
 }
 
 .buttonNumber {
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
 .tickets {

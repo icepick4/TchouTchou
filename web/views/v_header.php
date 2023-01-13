@@ -39,7 +39,9 @@
         $staff = new StaffDAO();
         if (!$staff->isEmployee($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=informations">' . TITLE_INFORMATION . '</a></li>';
-        } ?>
+          echo '<li><a href="index.php?page=ticket_list">' . MY_TICKETS . '</a></li>';
+        }
+        ?>
         <li><a href="index.php?page=station_list"><?= TITLE_STATION_LIST ?></a></li>
         <?php
         if (isset($_SESSION['user_id'])) {

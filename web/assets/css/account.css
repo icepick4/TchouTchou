@@ -84,10 +84,12 @@ form input {
 	color: white;
 	outline: none;
 	border: none;
+	border-radius: 10px;
 	cursor: text;
 	font-size: 1em;
 	pointer-events: none;
 	box-sizing: border-box;
+	transition: all 0.3s;
 }
 
 form input[type='submit'] {

@@ -397,7 +397,6 @@ form input[type="submit"]:hover {
   background-color: var(--border-input);
   margin-top: 0;
   border-top-right-radius: 8px;
-  z-index: 100;
 }
 
 #messages h2 {

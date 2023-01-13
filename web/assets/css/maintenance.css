@@ -195,7 +195,13 @@ tr td:last-child {
   }
 }
 
-@media (max-width: 1768px) {
+@media (max-width: 1750px){
+  table tr:first-child th:not(:last-child){
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1400px) {
   #main > form {
     width: 100%;
   }
@@ -214,7 +220,7 @@ tr td:last-child {
 }
 
 @media (max-width: 1000px) {
-  table tr th {
+  table tr:first-child th:not(:last-child) {
     font-size: 15px;
   }
 }
@@ -226,7 +232,7 @@ tr td:last-child {
 }
 
 @media (max-width: 580px) {
-  table tr th {
+  table tr:first-child th:not(:last-child) {
     font-size: 12px;
   }
 
@@ -236,7 +242,7 @@ tr td:last-child {
 }
 
 @media (max-width: 500px) {
-  table tr th {
+  table tr:first-child th:not(:last-child) {
     font-size: 10px;
   }
 
@@ -246,7 +252,7 @@ tr td:last-child {
 }
 
 @media (max-width: 400px) {
-  table tr th {
+  table tr:first-child th:not(:last-child) {
     font-size: 8px;
   }
 

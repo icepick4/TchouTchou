@@ -11,6 +11,17 @@ var stations = document.querySelector("#stationsArray").innerText.split("//");
 
 let boxArrow = document.querySelector("#boxArrow");
 
+let seatButton = document.getElementsByClassName("buttonNumber");
+
+for (let i = 0; i < seatButton.length; i++) {
+  seatButton[i].addEventListener("click", function (e) {
+    seatButton[i].classList.add("clicked");
+    setTimeout(function () {
+      seatButton[i].classList.remove("clicked");
+    }, 100);
+  });
+}
+
 function searchWithAutocomplete(input, arr) {
   input.addEventListener("keyup", function (event) {
     var a, b, i;
@@ -95,5 +106,6 @@ boxArrow.addEventListener("click", function () {
   let temp = search1.value;
   search1.value = search2.value;
   search2.value = temp;
+  boxArrow.classList.toggle("rotate-arrow");
   document.querySelector("#submit").click();
 });

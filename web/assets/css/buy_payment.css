@@ -8,6 +8,21 @@
   gap: 2rem;
 }
 
+#travel-payment{
+  animation: appear-slide 1s ease-in-out;
+}
+
+@keyframes appear-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 #travel-details {
   display: flex;
   flex-direction: column;

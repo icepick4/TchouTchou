@@ -69,7 +69,7 @@ function sort(column) {
     let rows = table.querySelectorAll('tr');
     let switching = true;
     let shouldSwitch;
-    let dir = 'asc';
+    let dir = 'desc';
     let switchcount = 0;
     let i = 1;
     while (switching) {
@@ -96,8 +96,8 @@ function sort(column) {
             switching = true;
             switchcount++;
         } else {
-            if (switchcount == 0 && dir == 'asc') {
-                dir = 'desc';
+            if (switchcount == 0 && dir == 'desc') {
+                dir = 'asc';
                 switching = true;
             }
         }
