@@ -15,6 +15,13 @@ if ($staff_list != null) {
         <i id="clear-search">X</i>
     </div>
 
+    <?php
+    
+        foreach ($staff_list as $type_title => $staff_splited) {
+        ?>
+
+    <h2><?= constant(strtoupper($type_title)) ?></h2>
+
 
     <table>
         <tr>
@@ -26,7 +33,7 @@ if ($staff_list != null) {
 
         </tr>
         <?php
-        foreach ($staff_list as $staff) {
+        foreach ($staff_splited as $staff) {
         ?>
             <tr>
                 <td>
@@ -53,13 +60,21 @@ if ($staff_list != null) {
                     </form>
                 </td>
                 <td>
+                    <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 3){ ?>
+                    <button value=<?= $staff['USER_ID'] ?> class="more-button">...</button>
+                    <?php }else{ ?>
                     <button value=<?= $staff['USER_ID'] ?> class="fired-button">✖</button>
+
+                    <?php } ?>
                 </td>
             </tr>
         <?php
         }
         ?>
     </table>
+    <?php
+        }
+        ?>
 
 <?php
 } ?>

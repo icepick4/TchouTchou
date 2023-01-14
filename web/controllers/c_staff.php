@@ -32,7 +32,7 @@ if ($_SESSION['logged'] && ($staff->isAdministrator($_SESSION['user_id']) || $st
         }
     }
     $user_list_not_employees = $customer->getAllCustomers();
-    $staff_list = $staff->getAllStaff();
+    $staff_list = $staff->getAllStaffSlpied();
     $staff_type = $staff->getAllStaffType();
     require_once(PATH_VIEWS . $page . '.php');
 } else {
