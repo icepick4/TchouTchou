@@ -10,8 +10,25 @@ class StaffDAO extends UserDAO
 {
     public function getAllStaff()
     {
-        $sql = 'SELECT * FROM EMPLOYEES_DATA INNER JOIN USER_DATA ON EMPLOYEES_DATA.USER_ID = USER_DATA.USER_ID INNER JOIN EMPLOYEE_CATEGORIE ON EMPLOYEES_DATA.EMPLOYEE_ACCESS = EMPLOYEE_CATEGORIE.EMPLOYEE_CATEGORIE_ID ';
+        $sql = 'SELECT * FROM EMPLOYEES_DATA INNER JOIN USER_DATA ON EMPLOYEES_DATA.USER_ID = USER_DATA.USER_ID INNER JOIN EMPLOYEE_CATEGORIE ON EMPLOYEES_DATA.EMPLOYEE_ACCESS = EMPLOYEE_CATEGORIE.EMPLOYEE_CATEGORIE_ID ORDER BY EMPLOYEE_CATEGORIE_ID';
         return $this->queryAll($sql);   
+    }
+
+    public function getAllStaffSlpied()
+    {
+        $staff_list = $this->getAllStaff();
+        $staff_split = array();
+        foreach ($staff_list as $staff) {
+ 
+            if ( !isset($staff_split[$staff['EMPLOYEE_CATEGORIE_LABEL']])
+                || $staff_split[$staff['EMPLOYEE_CATEGORIE_LABEL']] == null){
+                $staff_split[$staff['EMPLOYEE_CATEGORIE_LABEL']] = array();
+                }
+            array_push($staff_split[$staff['EMPLOYEE_CATEGORIE_LABEL']], $staff);
+        }
+
+        return $staff_split;
+         
     }
 
     public function getAllStaffType()
