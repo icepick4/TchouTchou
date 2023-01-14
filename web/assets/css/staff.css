@@ -164,7 +164,7 @@ form fieldset legend {
 }
 
 
-.fired-button {
+.right-button  {
   background-color: var(--main-color);
   color: #fff;
   border: none;
@@ -173,7 +173,7 @@ form fieldset legend {
   transition-duration: 0.2s;
 }
 
-.fired-button:hover {
+.right-button:hover {
   scale: 1.1;
   transition-duration: 0.2s;
   cursor: pointer;

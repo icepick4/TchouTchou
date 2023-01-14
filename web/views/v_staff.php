@@ -61,9 +61,12 @@ if ($staff_list != null) {
                 </td>
                 <td>
                     <?php if ($staff['EMPLOYEE_CATEGORIE_ID'] == 3){ ?>
-                    <button value=<?= $staff['USER_ID'] ?> class="more-button">...</button>
+                        <a href="index.php?page=driver_details&user_id=<?= $staff['USER_ID'] ?> " 
+                        >
+                    <button value=<?= $staff['USER_ID'] ?> class="right-button more-button">...</button>
+                </a>
                     <?php }else{ ?>
-                    <button value=<?= $staff['USER_ID'] ?> class="fired-button">✖</button>
+                    <button value=<?= $staff['USER_ID'] ?> class="right-button fired-button">✖</button>
 
                     <?php } ?>
                 </td>
