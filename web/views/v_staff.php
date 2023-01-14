@@ -78,7 +78,8 @@ if ($staff_list != null) {
             <label for="staff_type"><?= TYPE ?></label>
             <select name="staff_type_create" id="staff_type_create" class="staff_type">
                 <?php foreach ($staff_type as $staff_type) { ?>
-                    <option value=<?= $staff_type['EMPLOYEE_CATEGORIE_ID'] ?>><?= $staff_type['EMPLOYEE_CATEGORIE_LABEL'] ?></option>
+                    <option value=<?= $staff_type['EMPLOYEE_CATEGORIE_ID'] ?>><?= 
+                    constant(strtoupper($staff_type['EMPLOYEE_CATEGORIE_LABEL'])) ?></option>
                 <?php } ?>
             </select>
         </div>
