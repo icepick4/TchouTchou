@@ -4,10 +4,6 @@ if($_SESSION['logged'] == false){
     header('Location: index.php?page=home');
     exit();
 }
-
-
-
-
 require_once(PATH_MODELS . 'DAO.php');
 require_once(PATH_MODELS . 'StaffDAO.php');
 require_once(PATH_MODELS . 'PlanningDAO.php');

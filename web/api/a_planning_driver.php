@@ -11,17 +11,12 @@
     $date = $_GET['date'];
     $driver = intval($_GET['driverID']);
 
-
-
-    
-
     ?>
 
 
 <table>
     <thead>
         <tr>
-            <?php echo 'DATE'.print_r($date);?>
             <th colspan="200"><?=$date?></th>
         </tr>
     </thead>
