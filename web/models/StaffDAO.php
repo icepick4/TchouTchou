@@ -126,7 +126,7 @@ class StaffDAO extends UserDAO
 
     public function addEmployee($id,$staff_id)
     {
-        $sql = 'INSERT INTO EMPLOYEES_DATA VALUES (:id,:staff_id)';
+        $sql = 'INSERT INTO EMPLOYEES_DATA VALUES (:id,:staff_id, null)';
         $args = array(':id' => $id,':staff_id' => $staff_id);
         $this->queryEdit($sql, $args);
     }
