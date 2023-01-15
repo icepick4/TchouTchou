@@ -20,6 +20,15 @@ L'objet de ce projet est de réaliser un site de réservation de billets de trai
 
 Ce projet est réalisé par un groupe de 5 personnes d’un niveau équivalent en 2ème année du BUT informatique. Le projet n'utilisera pas de framework, ni de PWA. Le développement du projet se fait en dehors des heures de cours avec deux heures toutes les deux semaines de réunion avec notre tuteur. Le projet se déroule sur 4 mois et se termine par une soutenance de 40 minutes.
 
+# Outils et technologies utilisés
+Ce projet utilise volontairement aucun framework <br>
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
+<img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
+<img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/>
+<img src="https://img.shields.io/badge/PHP-%23800080?style=for-the-badge&logo=php&logoColor=white"/>
+<img src="https://img.shields.io/badge/SQL-%23ff0000?style=for-the-badge&logo=oracle&logoColor=white"/>
+
+
 # Contribuer au Projet
 
 Tout d'abord choisissez entre soit fork ou clone le projet, pour commencer à développer sur le projet en local référez vous à la partie sur <a href="#docker">docker</a>. Une fois le serveur local mis en place, si vous constatez un bug n'hésitez pas a créer une issue, si vous développez une nouvelle fonctionnalité ou en améliorez une, faites une pull request. De plus pour repérer les bugs vous pouvez simplement visiter notre site <a href="http://tchoutchou.ovh">Tchoutchou</a>.
@@ -96,3 +105,9 @@ dernière etape:
 construire la BDD à partir du fichier <a href="db/Backup.sql">Backup.sql</a>
 
 [:warning: à venir]
+
+# Auteur
+
+<a href="https://github.com/icepick4/TchouTchou/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=icepick4/TchouTchou" />
+</a>
