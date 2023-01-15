@@ -5,6 +5,11 @@ if ($_SESSION['logged'] && ($staff->isAdministrator($_SESSION['user_id']) || $st
 	&& isset($_SESSION["driver_id"])
 	)
 {
+	$driver_id = $_SESSION["driver_id"];
+	foreach ($_GET['ABILITIES'] as $key => $value) {
+		//echo $driver_id, $key, $value;
+		$staff->setDriverAbility($driver_id,$key,$value );
+	}
 print_r($_GET['ABILITIES']);
 
 print($_SESSION["driver_id"]);

@@ -180,13 +180,20 @@ class StaffDAO extends UserDAO
     }
 
     public function setDriverAbility($driver_id, $ability, $value){
-        if ($value == 0){$value = null;}
 
-        if ($value == null){
+
+        if ($value == 'false'){
+            echo 'remove : ' , $value;
             $sql = 'DELETE FROM DRIVER_ABILITY WHERE DRIVER_ID = :driver_id';
             $args = array(':driver_id' => $driver_id);
         }else{
-            $sql = 'INSERT INTO DRIVER_ABILITY VALUES (:driver_id, :ability';
+            echo 'add : ' , $value;
+            $sql = 'BEGIN
+            INSERT INTO DRIVER_ABILITY VALUES (:driver_id, :ability);
+            EXCEPTION
+                WHEN dup_val_on_index THEN
+                    NULL; -- Intentionally ignore duplicates
+            END;';
             $args = array(':driver_id' => $driver_id, 
                 ':ability' => $ability);
         }
