@@ -40,6 +40,7 @@
 
 <div id="lang">
 	<p id="ABILITIES_UPDATED"><?= ABILITIES_UPDATED ?></p>
+	<p id="DRIVER_ID"><?= $user_id ?></p>
 </div>
 
 
