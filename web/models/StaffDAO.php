@@ -184,8 +184,10 @@ class StaffDAO extends UserDAO
 
         if ($value == 'false'){
             echo 'remove : ' , $value;
-            $sql = 'DELETE FROM DRIVER_ABILITY WHERE DRIVER_ID = :driver_id';
-            $args = array(':driver_id' => $driver_id);
+            $sql = 'DELETE FROM DRIVER_ABILITY WHERE DRIVER_ID = :driver_id
+            AND TRAIN_TYPE_ID = :ability';
+            $args = array(':driver_id' => $driver_id, 
+                ':ability' => $ability);
         }else{
             echo 'add : ' , $value;
             $sql = 'BEGIN

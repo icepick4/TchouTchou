@@ -1,5 +1,7 @@
+import { SuccessModal } from './modal.js';
 const btn_validate = document.querySelector("#SUBMIT");
 const btn_delete = document.querySelector("#DELETE");
+const LANG_ABILITIES_UPDATED = document.querySelector("#lang #ABILITIES_UPDATED").innerHTML;
 btn_validate.addEventListener('click',ev => 
 	setDriverAbilites(getAbilitesValues()));
 
@@ -24,6 +26,11 @@ function setDriverAbilites(data){
 
 	console.log(URL);
 	fetch(URL);
+	showModale();
 
+}
+
+function showModale() {
+	let modal = new SuccessModal(LANG_ABILITIES_UPDATED, null, 1.5);
 }
 

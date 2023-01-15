@@ -245,3 +245,6 @@ define('ALT_WOMEN_WITH_LUGGAGE', 'Woman with luggage');
 define('ALT_PHONE_SEARCH', 'Search by phone');
 define('ALT_WOMEN_SEARCH','Woman searching');
 define('ALT_ARROW_RIGHT', 'Arrow pointing right');
+
+//TMP MODALE
+define('ABILITIES_UPDATED','Abilities successfully updated');

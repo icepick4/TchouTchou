@@ -31,10 +31,15 @@
 
 <div class="top-bar">
 	<p></p>
-<button id="SUBMIT"><?= SUBMIT ?></button>
+<button  id="SUBMIT"><?= SUBMIT ?></button>
 
 <button id="DELETE"><?= BTN_DELETE ?></button>
 
+</div>
+
+
+<div id="lang">
+	<p id="ABILITIES_UPDATED"><?= ABILITIES_UPDATED ?></p>
 </div>
 
 
