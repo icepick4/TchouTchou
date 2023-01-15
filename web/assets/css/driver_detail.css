@@ -8,3 +8,13 @@ button {
   border-radius: var(--radius);
   cursor: pointer;
 }
+
+.top-bar{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin-top: 3rem;
+  justify-items: center;
+  align-items: center;
+}

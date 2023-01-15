@@ -2,10 +2,15 @@
 require_once(PATH_MODELS . 'StaffDAO.php');
 
 $staff = new StaffDAO();
+$user = new UserDAO();
 
 
 
-if ($_SESSION['logged'] && ($staff->isAdministrator($_SESSION['user_id']) || $staff->isHumanResource($_SESSION['user_id']))) {
+if ($_SESSION['logged'] && ($staff->isAdministrator($_SESSION['user_id']) || $staff->isHumanResource($_SESSION['user_id'])) && isset($_GET["user_id"])) {
+
+
+    
+        $driver_name = $user->getUserById($_GET["user_id"])['USER_LASTNAME'];
 
 	    require_once(PATH_VIEWS . $page . '.php');
 } else {
