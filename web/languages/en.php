@@ -238,6 +238,7 @@ define('DRIVER', 'Driver');
 define('SERVICE', 'Service');
 define('SUPPORT', 'Support');
 define('RH','Human Resources');
+define('ABILITIES','Abilities');
 
 //ALT
 define('ALT_WOMEN_WITH_LUGGAGE', 'Woman with luggage');

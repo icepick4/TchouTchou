@@ -10,7 +10,7 @@
 
 
 <div class="abilities-card">
-	<h2>abilities</h2>
+	<h2><?= ABILITIES ?></h2>
 	<div class="abilities-list">
 		<?php 
 		foreach ($driver_abilities as $ability) {		
