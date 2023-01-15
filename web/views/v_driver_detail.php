@@ -41,6 +41,10 @@
 <div id="lang">
 	<p id="ABILITIES_UPDATED"><?= ABILITIES_UPDATED ?></p>
 	<p id="DRIVER_ID"><?= $user_id ?></p>
+	<p id="FIRE_EMPLOYEE"><?= FIRE_EMPLOYEE ?> </p>
+    <p id="FIRE_EMPLOYEE_QUESTION"><?= FIRE_EMPLOYEE_QUESTION ?> </p>
+    <p id="CONFIRM"><?= CONFIRM ?> </p>
+    <p id="CANCEL"><?=CANCEL ?></p>
 </div>
 
 

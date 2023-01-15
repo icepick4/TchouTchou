@@ -197,7 +197,9 @@ define('CANCEL', 'Cancel');
 define('SUCCES_LOGOUT', 'You are disconnected');
 define('LOGIN_NEEDED', 'You must be logged in to access this page');
 define('DELETE_TICKET', 'Delete tickets');
-define('DELETE_TICKET_QUESTION', 'Are you sure you want to delete your tickets?');
+define('DELETE_TICKET_QUESTION', 'Are you sure you want to delete your tickets ?');
+define('FIRE_EMPLOYEE','Fire employee');
+define('FIRE_EMPLOYEE_QUESTION','Are you sure you want to fire this employee ?');
 
 //MESSAGES
 define('NO_MESSAGES', 'You never tried to contact our support until now !');
