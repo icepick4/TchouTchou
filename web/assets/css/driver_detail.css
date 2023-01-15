@@ -22,7 +22,7 @@ button {
 .abilities-card{
   margin-top: 3rem;
   margin-bottom: 3rem;
-  width: 50vh;
+  width: 50vw;
   max-width: 50rem;
   height: 50vh;
   border: 2px solid var(--main-color);
@@ -40,4 +40,25 @@ button {
 .abilitie{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+
 }
+
+.abilitie label{
+  justify-self: start;
+  margin-left: 1rem;
+}
+
+.abilitie input{
+  transform: scale(1.5);
+  accent-color: var(--main-color);
+}
+
+@media only screen and (max-width: 500px) {
+  .abilities-card{
+    width: 90vw;
+  }
+
+
+  }
