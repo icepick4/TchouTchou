@@ -179,5 +179,21 @@ class StaffDAO extends UserDAO
 
     }
 
+    public function setDriverAbility($driver_id, $ability, $value){
+        if ($value == 0){$value = null;}
+
+        if ($value == null){
+            $sql = 'DELETE FROM DRIVER_ABILITY WHERE DRIVER_ID = :driver_id';
+            $args = array(':driver_id' => $driver_id);
+        }else{
+            $sql = 'INSERT INTO DRIVER_ABILITY VALUES (:driver_id, :ability';
+            $args = array(':driver_id' => $driver_id, 
+                ':ability' => $ability);
+        }
+
+        $this->queryEdit($sql, $args);
+
+    }
+
 
 }
