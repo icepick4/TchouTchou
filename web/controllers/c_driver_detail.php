@@ -10,6 +10,7 @@ if ($_SESSION['logged'] && ($staff->isAdministrator($_SESSION['user_id']) || $st
 
 
         $driver_id = $staff->getDriverID($_GET["user_id"]);
+        $_SESSION['driver_id'] = $driver_id;
         $driver_name = $user->getUserById($_GET["user_id"])['USER_LASTNAME'];
 
         $driver_abilities = $staff->getDriverAbility($driver_id);

@@ -25,7 +25,7 @@ function getAbilitesValues(){
 
 function setDriverAbilites(data){
 
-	let URL = "index.php?api=set_driver_abilities&DRIVER_ID="+driver_id;
+	let URL = "index.php?api=set_driver_abilities";
 
 	Object.entries(data).forEach((tuple, value) => {
 		console.log(tuple,value)
@@ -40,4 +40,3 @@ function setDriverAbilites(data){
 
 }
 
-//index.php?api=set_driver_abilities&DRIVER_IDundefined&ABILITIES[1,true]=0&ABILITIES[2,true]=1&ABILITIES[3,true]=2&ABILITIES[4,true]=3&ABILITIES[5,true]=4&ABILITIES[6,true]=5
