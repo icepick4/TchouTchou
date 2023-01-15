@@ -68,12 +68,15 @@ define('NO_TICKET_RELATED', 'No ticket matches!');
 
 //BUY TICKET
 define('SELECT_SEATS', 'Select your seats');
+define('DETAIL_TRAVEL_TO', 'Details of your trip to');
+define('NB_TRAVELLER', 'Traveler No. ');
 
 //HOME
 define('MY_ACCOUNT', 'My Account');
 define('MY_TICKETS', 'My Tickets');
 define('MY_MESSAGES', 'My Messages');
 define('BUY_TICKET', 'Buy a ticket');
+define('YOUR_DATA', 'Your Data');
 
 //FAQ
 define('HOW_TO_BUY', 'How to buy a ticket?');
@@ -102,6 +105,7 @@ define('ERROR_PASSWORD_TOO_WEAK', 'Password must contain at least one uppercase 
 define('ERROR_PASSWORD_DIFFERENT', 'Passwords are different');
 define('ERROR_FORM', 'Please correct errors before submitting your information');
 define('ERROR_CHARACTER', 'Insufficient number of characters');
+define('ERROR_LENGTH', 'The number of characters must not exceed 255 characters');
 define('DELETE_ACCOUNT', 'Delete my account');
 define('MAIL_ALREADY_USED', 'This email address is already in use');
 
@@ -176,6 +180,37 @@ define('WELCOME_GO', 'access');
 define('MAINTENANCE', 'Maintenance');
 define('MAINTENANCE_TEXT', 'Access the maintenance service');
 
+//PALTFORM MANAGER
+define('SELECT_STATION', 'Choose the station');
+define('SELECT_HUB', 'Choose  le hub');
+define('CONFIG_PANNEL', 'Control Panel');
+define('PLATFORM_MANAGER_TITLE', 'Dock Manager');
+define('APPROACHING_TRAIN', 'Train in Approach');
+define('PLATFORMS', 'Platforms');
+define('LETTER', 'Letter');
+define('CLOSE', 'Closed');
+define('OPEN', 'Open');
+define('CONFIRM', 'Confirm');
+define('CANCEL', 'Cancel');
+
+//MODALE
+define('SUCCES_LOGOUT', 'You are disconnected');
+define('LOGIN_NEEDED', 'You must be logged in to access this page');
+define('DELETE_TICKET', 'Delete tickets');
+define('DELETE_TICKET_QUESTION', 'Are you sure you want to delete your tickets?');
+
+//MESSAGES
+define('NO_MESSAGES', 'You never tried to contact our support until now !');
+define('NO_MESSAGE_BTN', 'Go to the contact form');
+define('CHOOSE_MESSAGE', 'You must choose a discussion on the left of your screen to load the messages');
+define('INTERN', 'Internal');
+define('EXTERN', 'External');
+define('YOUR_MESSAGE', "Your message");
+define('MESSAGES', 'Messages');
+define('SEND', 'Send');
+define('STORAGE', 'Archive');
+define('MESSAGE_TOO_LONG', 'Your message is too long (it should not exceed 1000 characters)');
+
 //ALERTS
 define('LOCATION', 'Location');
 define('DESCRIPTION', 'Description');
@@ -218,6 +253,7 @@ define('ERROR_DATE', 'The departure date cannot be before today');
 define('EMPTY_INPUT_BUY', 'You must fill in all fields');
 define('WRONG_STATIONS', 'Please choose existing stations');
 define('ERROR_NAMES', 'You cannot have the same first and last name');
+define('ERROR_NAMES_PEOPLE', 'You cannot have the same first and last name for two different people');
 define('ERROR_NAMES_EMPTY', 'You must fill in all first and last name fields');
 define('GROUND_LEVEL',"Ground level");
 define('FIRST_LEVEL',"First floor");
@@ -239,6 +275,7 @@ define('SERVICE', 'Service');
 define('SUPPORT', 'Support');
 define('RH','Human Resources');
 define('ABILITIES','Abilities');
+define('FIRE','Fire');
 
 //ALT
 define('ALT_WOMEN_WITH_LUGGAGE', 'Woman with luggage');

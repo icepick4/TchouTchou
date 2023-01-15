@@ -77,6 +77,7 @@ define('MY_TICKETS', 'Mes Billets');
 define('MY_MESSAGES', 'Mes Messages');
 define('BUY_TICKET', 'Acheter un billet');
 define('YOUR_DATA', 'Vos données');
+
 //FAQ
 define('HOW_TO_BUY', 'Comment acheter un billet ?');
 define('HOW_TO_BUY_TEXT', 'Pour acheter un billet, il vous suffit de vous rendre sur la page d\'achat de billet, de sélectionner votre trajet et de valider votre achat. Vous recevrez ensuite un mail de confirmation avec le détail de votre billet.');
@@ -273,6 +274,7 @@ define('DRIVER', 'Conducteur');
 define('SERVICE', 'Service');
 define('SUPPORT', 'Support');
 define('RH', 'Ressources Humaines');
+
 //ALT
 define('ALT_WOMEN_WITH_LUGGAGE', 'Femme avec bagages');
 define('ALT_PHONE_SEARCH', 'Recherche par téléphone');

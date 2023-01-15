@@ -33,7 +33,7 @@
 	<p></p>
 <button  id="SUBMIT"><?= SUBMIT ?></button>
 
-<button id="DELETE"><?= BTN_DELETE ?></button>
+<button id="DELETE"><?= FIRE ?></button>
 
 </div>
 
