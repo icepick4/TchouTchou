@@ -27,6 +27,9 @@ Ce projet utilise volontairement aucun framework <br>
 <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/>
 <img src="https://img.shields.io/badge/PHP-%23800080?style=for-the-badge&logo=php&logoColor=white"/>
 <img src="https://img.shields.io/badge/SQL-%23ff0000?style=for-the-badge&logo=oracle&logoColor=white"/>
+<img src="https://img.shields.io/badge/Docker-%230db7ed?style=for-the-badge&logo=docker&logoColor=white"/>
+
+
 
 
 # Contribuer au Projet
