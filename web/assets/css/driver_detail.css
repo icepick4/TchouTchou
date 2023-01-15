@@ -18,3 +18,26 @@ button {
   justify-items: center;
   align-items: center;
 }
+
+.abilities-card{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  width: 50vh;
+  max-width: 50rem;
+  height: 50vh;
+  border: 2px solid var(--main-color);
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 4rem 1fr;
+}
+
+.abilities-list{
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow-y: scroll;
+}
+
+.abilitie{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
