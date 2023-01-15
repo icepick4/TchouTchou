@@ -173,9 +173,9 @@ class StaffDAO extends UserDAO
     public function getDriverAbility($driver_id){
         $sql = '    SELECT  tt.TRAIN_TYPE_ID, tt.TRAIN_TYPE_LABEL,
      nvl((SELECT 1 FROM TCHOU.DRIVER_ABILITY da2 
-     WHERE da2.DRIVER_ID = :driver_id AND da2.TRAIN_TYPE_ID= TT.TRAIN_TYPE_ID  ),0) AS  DRIVER_ABILITY fROM tchou.TRAIN_TYPE tt;'
+     WHERE da2.DRIVER_ID = :driver_id AND da2.TRAIN_TYPE_ID= TT.TRAIN_TYPE_ID  ),0) AS  DRIVER_ABILITY fROM tchou.TRAIN_TYPE tt';
         $args = array(':driver_id' => $driver_id);
-        return $this->queryRow($sql, $args);
+        return $this->queryAll($sql, $args);
 
     }
 

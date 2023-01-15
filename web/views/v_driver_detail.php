@@ -11,56 +11,20 @@
 <div class="abilities-card">
 	<h2>abilities</h2>
 	<div class="abilities-list">
+		<?php 
+		foreach ($driver_abilities as $ability) {		
+		?>
 		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
+		 <label class="abilities_name"><?= $ability['TRAIN_TYPE_LABEL'] ?></label>
+		 <input 
+		 <?php if($ability['DRIVER_ABILITY'] == 1){ ?> checked <?php } ?>
+		 type="checkbox" value="<?= $ability['TRAIN_TYPE_ID'] ?>">
 		</div>
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
-
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
-		<div class="abilitie">
-		 <label class="abilities_name">abilities_name</label>
-		 <input type="checkbox">
-		</div>
+		<?php
+		}
+		?>
 		
+
 	</div>
 </div>
 

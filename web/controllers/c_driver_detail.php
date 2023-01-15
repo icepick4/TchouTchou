@@ -12,6 +12,10 @@ if ($_SESSION['logged'] && ($staff->isAdministrator($_SESSION['user_id']) || $st
     
         $driver_name = $user->getUserById($_GET["user_id"])['USER_LASTNAME'];
 
+        $driver_abilities = $staff->getDriverAbility($staff->getDriverID($_GET["user_id"]));
+
+ 
+
 	    require_once(PATH_VIEWS . $page . '.php');
 } else {
     header("Location: index.php?page=home");
