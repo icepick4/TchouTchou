@@ -15,7 +15,7 @@ define('TITLE_PRIVACY_POLICY', 'Politique de Confidentialité');
 define('TITLE_STATION_LIST', 'Liste des Gares');
 define('TITLE_GITPULL', 'git pull');
 define('TITLE_STAFF', 'Gestion du Personnel');
-define('TITLE_MAINTENANCE', 'Maintenance');
+define('TITLE_MAINTENANCE', 'Gestion des trains');
 define('TITLE_ALERT', 'Alertes');
 define('TITLE_PLANNING', 'Planning');
 
@@ -213,6 +213,7 @@ define('MESSAGES', 'Messages');
 define('SEND', 'Envoyer');
 define('STORAGE', 'Archive');
 define('MESSAGE_TOO_LONG', 'Votre message est trop long (il ne doit pas excéder 1000 caractères)');
+define('CONTACT_PRO', 'Contact interne professionnel');
 
 //ALERTS
 define('LOCATION', 'Localisation');
