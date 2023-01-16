@@ -68,11 +68,17 @@ if ($_SESSION['logged']) {
                             </div>
                         </form>
                     </td>
-                    <td>
-                        <button>
-                            <?= SVG_EDIT_PARAM_FIRST_NAME . SVG_EDIT ?>
-                        </button>
-                    </td>
+                    <?php
+                    if (!$staff->isEmployee($_SESSION['user_id'])){
+                    ?>
+                        <td>
+                            <button>
+                                <?= SVG_EDIT_PARAM_FIRST_NAME . SVG_EDIT ?>
+                            </button>
+                        </td>
+                    <?php
+                    }
+                    ?>
                 </tr>
                 <tr>
                     <td><?= NAME ?></td>
@@ -87,10 +93,16 @@ if ($_SESSION['logged']) {
                             </div>
                         </form>
                     </td>
-                    <td><button>
-                            <?= SVG_EDIT_PARAM_LAST_NAME . SVG_EDIT ?>
-                        </button>
-                    </td>
+                    <?php
+                    if (!$staff->isEmployee($_SESSION['user_id'])){
+                    ?>
+                        <td><button>
+                                <?= SVG_EDIT_PARAM_LAST_NAME . SVG_EDIT ?>
+                            </button>
+                        </td>
+                    <?php
+                    }
+                    ?>
                 </tr>
                 <tr>
                     <td><?= PHONE ?></td>
@@ -105,10 +117,16 @@ if ($_SESSION['logged']) {
                             </div>
                         </form>
                     </td>
-                    <td><button>
-                            <?= SVG_EDIT_PARAM_PHONE . SVG_EDIT ?>
-                        </button>
-                    </td>
+                    <?php
+                    if (!$staff->isEmployee($_SESSION['user_id'])){
+                    ?>
+                        <td><button>
+                                <?= SVG_EDIT_PARAM_PHONE . SVG_EDIT ?>
+                            </button>
+                        </td>
+                    <?php
+                    }
+                    ?>
                 </tr>
                 <tr>
                     <td><?= EMAIL ?></td>
@@ -123,10 +141,16 @@ if ($_SESSION['logged']) {
                             </div>
                         </form>
                     </td>
-                    <td><button>
-                            <?= SVG_EDIT_PARAM_MAIL . SVG_EDIT ?>
-                        </button>
-                    </td>
+                    <?php
+                    if (!$staff->isEmployee($_SESSION['user_id'])){
+                    ?>
+                        <td><button>
+                                <?= SVG_EDIT_PARAM_MAIL . SVG_EDIT ?>
+                            </button>
+                        </td>
+                    <?php
+                    }
+                    ?>
                 </tr>
             </table>
 

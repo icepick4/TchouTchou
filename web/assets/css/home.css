@@ -79,16 +79,6 @@ article:first-child {
   align-self: center;
 }
 
-/*
-article > img {
-  width: 35%;
-  height: auto;
-  max-height: 90%;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin: var(--margin2);
-}*/
-
 article div.arti {
   height: auto;
   margin-top: auto;

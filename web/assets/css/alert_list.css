@@ -151,3 +151,13 @@ table td {
     font-size: 10px;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  table tr:nth-child(odd) {
+    background-color: var(--bg-white-color);
+  }
+
+  table tr:nth-child(even) {
+    background-color: rgb(110, 107, 107);
+  }
+}

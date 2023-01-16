@@ -39,13 +39,15 @@
         $staff = new StaffDAO();
         if (!$staff->isEmployee($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=informations">' . TITLE_INFORMATION . '</a></li>';
-          echo '<li><a href="index.php?page=ticket_list">' . MY_TICKETS . '</a></li>';
         }
         ?>
         <li><a href="index.php?page=station_list"><?= TITLE_STATION_LIST ?></a></li>
         <?php
         if (isset($_SESSION['user_id'])) {
           echo '<li><a href="index.php?page=messages">' . MY_MESSAGES . '</a></li>';
+          if (!$staff->isEmployee($_SESSION['user_id'])){
+            echo '<li><a href="index.php?page=ticket_list">' . MY_TICKETS . '</a></li>';
+          }
         } ?>
         <?php
         if (isset($_SESSION['user_id']) && ($staff->isStation($_SESSION['user_id']) || $staff->isAdministrator($_SESSION['user_id']))) {
