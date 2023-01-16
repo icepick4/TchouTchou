@@ -88,18 +88,13 @@ Vous pouvez dès à présent faire vos modifications en local et développer !
 
 ## Oracle
 
-Il faut commencer par récupérer l'image:
+1. Commencez par récupérer l'image: docker pull gvenzl/oracle-xe
+2. Ensuite, lancez le container: </br>
+docker run -it -p 1521:1521 -e ORACLE_PASSWORD=<your password> -v oracle-volume:/opt/oracle/oradata --name=DBB gvenzl/oracle-xe
+3. Une fois le container lancé, vous pouvez vous connecter à l'utilisateur system en utilisant le mot de passe utilisé lors de la création du container. Nous vous recommandons fortement de créer un utilisateur dédié pour plus de sécurité. </br>De plus, nous avons utilisé un utilisateur nommé `Tchou` pour l'intégralité de notre site, certaines requête sql y font référence, pour éviter tout souci nous vous recommandons fortement d'utiliser le même nom d'utilisateur.
+4. Construisez la base de données à partir du fichier <a href="db/Backup.sql">Backup.sql</a>
+5. En cas de problème vous pouvez consulter directement le <a href="https://github.com/gvenzl/oci-oracle-xe">git du docker</a> pour plus d’information.
 
-`docker pull gvenzl/oracle-xe`
-
-puis:
-
-`docker run -it  -p 1521:1521 -e ORACLE_PASSWORD=<your password> -v oracle-volume:/opt/oracle/oradata --name=DBB  gvenzl/oracle-xe`
-
-dernière etape:
-construire la BDD à partir du fichier <a href="db/Backup.sql">Backup.sql</a>
-
-[:warning: à venir]
 
 # Setup
 
