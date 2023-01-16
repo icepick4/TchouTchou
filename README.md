@@ -101,6 +101,30 @@ construire la BDD à partir du fichier <a href="db/Backup.sql">Backup.sql</a>
 
 [:warning: à venir]
 
+# Setup
+
+
+1. Clonez le projet sur votre machine locale.
+2. Pour accéder à la base de données, vous devez ajouter un fichier config_connection.php dans le répertoire /web/config.
+3. Le contenu du fichier doit être comme suit:
+```PHP
+<?php
+
+// Accès base de données
+const BD_HOST = '<adresse_ip>';
+const BD_DBNAME = '';
+const BD_USER = '<nom_utilisateur>';
+const BD_PWD = '<mot_de_passe>';
+const BD_PORT = '<port_par_default:1521>'; 
+const BD_SID = 'xe';
+```
+
+4. Remplacez <adresse_ip>, <nom_utilisateur>, et <mot_de_passe> avec les informations appropriées pour votre base de données.
+5. Le port par défaut est 1521, et le SID est 'xe', mais vous pouvez le changer si nécessaire.
+
+</br>
+Remarque : Pour des raisons de sécurité, ce fichier est exclu par défaut. Vous devez donc ajouter le fichier config_connection.php et remplir les informations nécessaires pour accéder à la base de données.
+
 # Auteur
 
 <a href="https://github.com/icepick4/TchouTchou/graphs/contributors">
