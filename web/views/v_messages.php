@@ -88,7 +88,7 @@
             }
             echo '<p id="users" style="display:none">';
             foreach ($employees as $employee) {
-                echo $employee["USER_FIRSTNAME"] . "//";
+                echo $employee["USER_FIRSTNAME"] . ' ' . $employee["USER_LASTNAME"] . "//";
             }
             echo '</p>';
             ?>
