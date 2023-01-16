@@ -1,6 +1,6 @@
 <?php
 require_once(PATH_MODELS . 'UserDAO.php');
-
+require_once(PATH_MODELS . 'StaffDAO.php');
 if (!$_SESSION['logged']) {
     header("Location: index.php?page=login");
     die();
@@ -21,6 +21,7 @@ if (!$_SESSION['logged']) {
     $result = $user->getUserById($_SESSION['user_id']);
 }
 
+$staff = new StaffDAO();
 
 
 require_once(PATH_VIEWS . $page . '.php');
