@@ -58,14 +58,6 @@ Accès vers notre <a href="https://www.figma.com/file/JoDxjyH653MXO4MKjn987D/SNC
 
 Merci de garder un historique des modifications / étapes (avant de modifier une frame, veuillez la dupliquer)
 
-# Sncf Data
-
-Voici des liens vers des datasets
-
-<a href="https://ressources.data.sncf.com/explore/dataset/referentiel-gares-voyageurs/table/?disjunctive.gare_ug_libelle&sort=gare_alias_libelle_noncontraint">Gares</a>
-<br>
-<a href="https://ressources.data.sncf.com/explore/dataset/liste-des-quais/table/">Quais</a>
-
 # Docker
 
 Il faut évidemment avoir docker installé
@@ -85,10 +77,10 @@ pour construire et lancer le serveur la permière fois
 
 Le serveur se mettra directement à jour à chaque modification
 
-` docker stop web`
+`docker stop web`
 pour l'arreter
 
-` docker start web`
+`docker start web`
 pour le demarrer
 
 Une fois le docker construit et lancé, rendez-vous sur http://localhost/
