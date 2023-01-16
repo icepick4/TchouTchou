@@ -42,7 +42,7 @@
 
     ?><div id="headermsg">
         <h2><?php echo ($discussionData['DISCUSSION_SUBJECT']); ?> - <?php if (isset($receiver)) {
-                                                                            echo $receiver['USER_FIRSTNAME'];
+                                                                            echo $receiver['USER_FIRSTNAME'] . ' ' . $receiver['USER_LASTNAME'];
                                                                         } else {
                                                                             echo  "Support";
                                                                         } ?></h2>
