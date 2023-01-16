@@ -182,3 +182,27 @@ function minToHourMin($min)
     }
     return $hour . "h" . $min;
 }
+
+function getEmloyeeLabel($category){
+    switch ($category) {
+        case 1:
+            $result = ADMINISTRATOR;
+            break;
+        case 2:
+            $result = STATION;
+            break;
+        case 3:
+            $result = DRIVER;
+            break;
+        case 4:
+            $result = SERVICE;
+            break;
+        case 5:
+            $result = SUPPORT;
+            break;
+        case 6:
+            $result = RH;
+            break;
+        }
+    return $result;
+}

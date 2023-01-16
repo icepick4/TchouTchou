@@ -21,15 +21,12 @@
         $id_destinataire = abs($id_discussion);
 
 
-        $mailbox->insertDiscussion("contact pro", $user_id, null, null, null, null, $id_destinataire);
+        $mailbox->insertDiscussion(CONTACT_PRO, $user_id, null, null, null, null, $id_destinataire);
         $discussion_id = $mailbox->getDiscussionBetweenUsers($user_id, $id_destinataire);
         $id_discussion = $discussion_id["DISCUSSION_ID"];
     }
 
     $discussionData = $mailbox->getDiscussionSubjectById($id_discussion);
-
-
-
 
     if ($staff->isEmployee($user_id)) {
         $discussion = $mailbox->getDiscussionHeaderById($id_discussion);
@@ -42,7 +39,7 @@
 
     ?><div id="headermsg">
         <h2><?php echo ($discussionData['DISCUSSION_SUBJECT']); ?> - <?php if (isset($receiver)) {
-                                                                            echo $receiver['USER_FIRSTNAME'];
+                                                                            echo $receiver['USER_FIRSTNAME'] . ' ' . $receiver['USER_LASTNAME'] . ' - ' . getEmloyeeLabel($staff->getEmployeeType($receiver['USER_ID']));
                                                                         } else {
                                                                             echo  "Support";
                                                                         } ?></h2>
