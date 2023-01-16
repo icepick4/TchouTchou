@@ -79,7 +79,7 @@
                                                     echo $discussion_id["DISCUSSION_ID"];
                                                 } ?></p>
                         <h3>
-                            <?= $employee['USER_FIRSTNAME'] ?>
+                            <?= $employee['USER_FIRSTNAME'] .' '. $employee['USER_LASTNAME'] ?>
                         </h3>
 
                     </div>
@@ -146,7 +146,7 @@
                                                         echo $discussion_id["DISCUSSION_ID"];
                                                     } ?></p>
                             <h3>
-                                <?= $employee['USER_FIRSTNAME'] ?>
+                                <?= $employee['USER_FIRSTNAME'] .' '. $employee['USER_LASTNAME'] ?>
                             </h3>
 
                         </div>
