@@ -237,6 +237,7 @@ define('ALERT_DOES_NOT_EXIST', 'Cette alerte n\'existe pas');
 define('ALERT_NOT_FINISHED', 'Marquer comme terminée');
 define('ALERT_FINISHED', 'L\'alerte est déjà terminée');
 define('SHOW_ALL_ALERTS', 'Afficher aussi les alertes terminées');
+define('ERROR_MAIL_USED', 'Cette adresse mail est déjà utilisée');
 
 //PURCHASE
 define('NO_TRAVEL_FOUND', 'Aucun voyage ne correspond à votre recherche');

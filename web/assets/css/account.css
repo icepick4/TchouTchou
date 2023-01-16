@@ -18,6 +18,12 @@
 	display: none;
 }
 
+#error-mail-used {
+	color: red;
+	font-size: 1.25em;
+	text-align: center;
+}
+
 .infos {
 	display: flex;
 	justify-content: center;
