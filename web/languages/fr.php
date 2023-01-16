@@ -198,6 +198,9 @@ define('SUCCES_LOGOUT', 'Vous êtes déconnecté');
 define('LOGIN_NEEDED', 'Vous devez être connecté pour accéder a cette page');
 define('DELETE_TICKET', 'Supprimer les tickets');
 define('DELETE_TICKET_QUESTION', 'Êtes vous sûr de supprimer vos tickets ?');
+define('ABILITIES_UPDATED','Habileté mises à jour avec succès');
+define('FIRE_EMPLOYEE','Licencier un employé');
+define('FIRE_EMPLOYEE_QUESTION','Êtes-vous sûr de vouloir licencier cet employé ?');
 
 //MESSAGES
 define('NO_MESSAGES', 'Vous n\'avez jamais cherché à contacter notre support jusqu\'à maintenant !');
@@ -274,6 +277,8 @@ define('DRIVER', 'Conducteur');
 define('SERVICE', 'Service');
 define('SUPPORT', 'Support');
 define('RH', 'Ressources Humaines');
+define('ABILITIES','Habilité');
+define('FIRE','Licencier');
 
 //ALT
 define('ALT_WOMEN_WITH_LUGGAGE', 'Femme avec bagages');
