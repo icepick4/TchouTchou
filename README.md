@@ -58,14 +58,6 @@ Accès vers notre <a href="https://www.figma.com/file/JoDxjyH653MXO4MKjn987D/SNC
 
 Merci de garder un historique des modifications / étapes (avant de modifier une frame, veuillez la dupliquer)
 
-# Sncf Data
-
-Voici des liens vers des datasets
-
-<a href="https://ressources.data.sncf.com/explore/dataset/referentiel-gares-voyageurs/table/?disjunctive.gare_ug_libelle&sort=gare_alias_libelle_noncontraint">Gares</a>
-<br>
-<a href="https://ressources.data.sncf.com/explore/dataset/liste-des-quais/table/">Quais</a>
-
 # Docker
 
 Il faut évidemment avoir docker installé
@@ -85,10 +77,10 @@ pour construire et lancer le serveur la permière fois
 
 Le serveur se mettra directement à jour à chaque modification
 
-` docker stop web`
+`docker stop web`
 pour l'arreter
 
-` docker start web`
+`docker start web`
 pour le demarrer
 
 Une fois le docker construit et lancé, rendez-vous sur http://localhost/
@@ -108,6 +100,30 @@ dernière etape:
 construire la BDD à partir du fichier <a href="db/Backup.sql">Backup.sql</a>
 
 [:warning: à venir]
+
+# Setup
+
+
+1. Clonez le projet sur votre machine locale.
+2. Pour accéder à la base de données, vous devez ajouter un fichier config_connection.php dans le répertoire /web/config.
+3. Le contenu du fichier doit être comme suit:
+```PHP
+<?php
+
+// Accès base de données
+const BD_HOST = '<adresse_ip>';
+const BD_DBNAME = '';
+const BD_USER = '<nom_utilisateur>';
+const BD_PWD = '<mot_de_passe>';
+const BD_PORT = '<port_par_default:1521>'; 
+const BD_SID = 'xe';
+```
+
+4. Remplacez <adresse_ip>, <nom_utilisateur>, et <mot_de_passe> avec les informations appropriées pour votre base de données.
+5. Le port par défaut est 1521, et le SID est 'xe', mais vous pouvez le changer si nécessaire.
+
+</br>
+Remarque : Pour des raisons de sécurité, ce fichier est exclu par défaut. Vous devez donc ajouter le fichier config_connection.php et remplir les informations nécessaires pour accéder à la base de données.
 
 # Auteur
 
