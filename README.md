@@ -94,7 +94,7 @@ Il faut commencer par récupérer l'image:
 
 puis:
 
-`docker run -it  -p 1521:1521 -e ORACLE_PASSWORD=<your password> -v oracle-volume:/opt/oracle/oradata --name=DBB kmcgill88/php-oracle`
+`docker run -it  -p 1521:1521 -e ORACLE_PASSWORD=<your password> -v oracle-volume:/opt/oracle/oradata --name=DBB  gvenzl/oracle-xe`
 
 dernière etape:
 construire la BDD à partir du fichier <a href="db/Backup.sql">Backup.sql</a>
