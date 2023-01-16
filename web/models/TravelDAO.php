@@ -77,4 +77,11 @@ class TravelDAO extends DAO
         $args = array(':travel_id' => $travel_id);
         return $this->queryRow($sql, $args);
     }
+
+    public function getPlatformAssignedForTravelInStation($train_id, $station_id)
+    {
+        $sql = 'SELECT PLATFORM_LETTER FROM PLATFORM WHERE PLATFORM_USER = :train_id AND STATION_ID = :station_id';
+        $args = array(':train_id' => $train_id, ':station_id' => $station_id);
+        return $this->queryRow($sql, $args);
+    }
 }

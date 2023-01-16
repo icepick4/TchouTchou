@@ -11,20 +11,21 @@
 
 
 <form method="post" action="index.php?page=travel">
-
-    <div class="container">
-        <input type="text" id="search1" autocomplete="off" placeholder="<?= START_STATION ?>" name="from" class="search" <?php if (isset($_GET['from'])) {echo 'value="' . $_GET['from'] . '"';} ?>>
-        <i class="clear-search">X</i>
+    <h2>Départ - Destination</h2>
+    <div id="city-selector">
+        <div class="container">
+            <input type="text" id="search1" autocomplete="off" placeholder="<?= START_STATION ?>" name="from" class="search" <?php if (isset($_GET['from'])) {echo 'value="' . $_GET['from'] . '"';} ?>>
+            <i class="clear-search">X</i>
+        </div>
+        <a id="boxArrow"><img src="<?= PATH_IMAGES . "exchangeArrow.svg" ?>" id="exchangArrow"></a>
+        <div class="container">
+            <input type="text" id="search2" autocomplete="off" placeholder="<?= END_STATION ?>" name="to" class="search" <?php if (isset($_GET['to'])) {echo 'value="' . $_GET['to'] . '"';} ?>>
+            <i class="clear-search">X</i>
+        </div>
     </div>
-    <a id="boxArrow"><img src="<?= PATH_IMAGES . "exchangeArrow.svg" ?>" id="exchangArrow"></a>
-    <div class="container">
-        <input type="text" id="search2" autocomplete="off" placeholder="<?= END_STATION ?>" name="to" class="search" <?php if (isset($_GET['to'])) {echo 'value="' . $_GET['to'] . '"';} ?>>
-        <i class="clear-search">X</i>
-    </div>
+    <h2>Trajet</h2>
+    <input type="submit" value="Login"><?= CREATE ?></input>
 
-        <label></label>
-        <input type="email" name="mail" id="email" placeholder="<?= EMAIL ?>"></input>
-        <input type="submit" value="Login"></input>
-    </form>
+</form>
 <!--  Pied de page -->
 <?php require_once(PATH_VIEWS . 'footer.php');
