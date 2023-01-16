@@ -13,6 +13,7 @@ $user = new UserDAO();
 $discussion = new MessageDAO();
 $pdf->SetFont('Arial', '', 18);
 $allDiscussion = $discussion->getUserDiscussions($_SESSION['user_id']);
+$i = 0;
 foreach ($allDiscussion as $value) {
     $currentDiscussion = $discussion->getDiscussionById($value['DISCUSSION_ID']);
     $pdf->Cell(0, 10, $value['DISCUSSION_SUBJECT'], 0, 2);
@@ -20,7 +21,10 @@ foreach ($allDiscussion as $value) {
         $text = $user->getUserById($message['SENDER_ID'])['USER_FIRSTNAME'] . ' : ' . $message['MESSAGE_CONTENT'];
         $pdf->Cell(0, 10, $text, 0, 2);
     }
-    $pdf->AddPage();
+    if ($i < count($allDiscussion) - 1){
+        $pdf->AddPage();
+    }
+    $i++;
 }
 
 $pdf->Output();
