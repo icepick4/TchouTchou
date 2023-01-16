@@ -11,6 +11,13 @@ if ($_SESSION['logged']) {
     <h1 id="title"><?= WELCOME ?>
         <?= $result['USER_FIRSTNAME'] ?>
     </h1>
+    <?php
+    if($mail_already_used == 1){
+        ?>
+        <p id="error-mail-used"><?= ERROR_MAIL_USED ?></p>
+        <?php
+    }
+    ?>
     <p id="error-length"> <?= ERROR_LENGTH ?></p>
     <div class="content">
         <div class="links">

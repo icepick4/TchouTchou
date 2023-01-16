@@ -5,7 +5,6 @@ if (isset($_POST["mail"]) && isset($_POST["password"])) {
     $mail = $_POST["mail"];
     $user = new UserDAO();
     $result = $user->getUserByMail($mail);
-
     if (!empty($result)) {
         if (password_verify($_POST["password"], $result['USER_PASSWORD'])) {
             //$TODO : faire un notif quand connexion réussie

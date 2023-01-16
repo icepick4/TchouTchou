@@ -1,6 +1,7 @@
 <?php
 require_once(PATH_MODELS . 'UserDAO.php');
 require_once(PATH_MODELS . 'StaffDAO.php');
+$mail_already_used = false;
 if (!$_SESSION['logged']) {
     header("Location: index.php?page=login");
     die();
@@ -16,7 +17,13 @@ if (!$_SESSION['logged']) {
         $user->updatePhone($_SESSION['user_id'], $_POST['phone']);
     }
     if (isset($_POST['mail'])) {
-        $user->updateMail($_SESSION['user_id'], $_POST['mail']);
+        $result = $user->getUserByMail($_POST['mail']);
+        if(empty($result)){
+            $user->updateMail($_SESSION['user_id'], $_POST['mail']);
+        }
+        else{
+            $mail_already_used = true;
+        }
     }
     $result = $user->getUserById($_SESSION['user_id']);
 }
