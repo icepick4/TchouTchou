@@ -60,7 +60,10 @@ Merci de garder un historique des modifications / étapes (avant de modifier une
 
 # Docker
 
-Il faut évidemment avoir docker installé
+Il faut évidemment avoir docker installé.
+
+</br><a href="https://docs.docker.com/engine/install/">Comment installer docker ?</a>
+
 
 ## Web
 
