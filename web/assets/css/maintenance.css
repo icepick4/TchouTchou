@@ -140,6 +140,11 @@ form fieldset {
   border: 3px solid var(--main-color);
   border-radius: 15px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 form fieldset select {
@@ -195,8 +200,8 @@ tr td:last-child {
   }
 }
 
-@media (max-width: 1750px){
-  table tr:first-child th:not(:last-child){
+@media (max-width: 1750px) {
+  table tr:first-child th:not(:last-child) {
     font-size: 20px;
   }
 }
