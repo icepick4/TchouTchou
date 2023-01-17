@@ -59,6 +59,7 @@ define('PLEASE_ACCEPT', 'Veuillez accepter ');
 define('BTN_RETURN', 'Retour');
 define('BTN_ADD', 'Ajouter');
 define('BTN_DELETE', 'Supprimer');
+define('BTN_CREATE', 'Créer');
 
 //TICKET
 define('YOUR_TRAVEL', 'Votre voyage');

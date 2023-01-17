@@ -89,3 +89,23 @@
   width: 2rem;
   margin: auto;
 }
+
+form {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 3rem;
+  border: 5px solid var(--main-color);
+  border-radius: 10px;
+}
+
+#city-selector {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}

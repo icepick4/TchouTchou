@@ -24,7 +24,7 @@
         </div>
     </div>
     <h2>Trajet</h2>
-    <input type="submit" value="Login"><?= CREATE ?></input>
+    <input type="submit" value=<?= BTN_CREATE ?>></input>
 
 </form>
 <!--  Pied de page -->
