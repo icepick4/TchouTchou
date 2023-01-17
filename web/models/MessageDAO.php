@@ -27,7 +27,16 @@ class MessageDAO extends DAO
 
     public function getUserDiscussions($user_id)
     {
-        $sql = 'SELECT * FROM DISCUSSION WHERE (USER_ID = :user_id OR DESTINATION_ID = :user_id) AND (DESTINATION_ID IN (SELECT USER_ID FROM EMPLOYEES_DATA WHERE EMPLOYEES_DATA.EMPLOYEE_ACCESS = 5)  AND (USER_ID NOT IN (SELECT USER_ID FROM EMPLOYEES_DATA) OR USER_ID IS NULL)) ORDER BY CREATION_TIME DESC';
+        $sql = 'SELECT DISCUSSION_ID, 
+                DISCUSSION_SUBJECT,
+                USER_ID, USER_MAIL,
+                USER_PHONE,
+                USER_LASTNAME,
+                USER_FIRSTNAME,
+                TO_CHAR(CREATION_TIME, \'DD/MM/YYYY HH24:MI\') AS CREATION_TIME,
+                DESTINATION_ID,
+                STATUS
+        FROM DISCUSSION WHERE (USER_ID = :user_id OR DESTINATION_ID = :user_id) AND (DESTINATION_ID IN (SELECT USER_ID FROM EMPLOYEES_DATA WHERE EMPLOYEES_DATA.EMPLOYEE_ACCESS = 5)  AND (USER_ID NOT IN (SELECT USER_ID FROM EMPLOYEES_DATA) OR USER_ID IS NULL)) ORDER BY CREATION_TIME DESC';
         $args = array(':user_id' => $user_id);
         return $this->queryAll($sql, $args);
     }
@@ -41,7 +50,9 @@ class MessageDAO extends DAO
 
     public function getDiscussionById($id)
     {
-        $sql = 'SELECT * FROM MESSAGE WHERE DISCUSSION_ID = :id ORDER BY MESSAGE_TIME ASC';
+        $sql = 'SELECT DISCUSSION_ID, SENDER_ID, MESSAGE_CONTENT, 
+                TO_CHAR(MESSAGE_TIME, \'DD/MM/YYYY HH24:MI\') AS MESSAGE_TIME
+         FROM MESSAGE WHERE DISCUSSION_ID = :id ORDER BY MESSAGE_TIME ASC';
         $args = array(':id' => $id);
         return $this->queryAll($sql, $args);
     }
