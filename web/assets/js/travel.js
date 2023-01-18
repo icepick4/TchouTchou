@@ -108,7 +108,9 @@ function searchLines() {
           ":" +
           minute;
         element.addEventListener("click", function (e) {
-          console.log(e.target.value);
+          console.log(
+            e.target.parentElement.parentElement.children[3].innerText
+          );
           console.log("&datetime=" + datetime);
           var xhttp = new XMLHttpRequest();
           xhttp.open(
