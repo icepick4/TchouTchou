@@ -80,6 +80,13 @@ function searchLines() {
   xhttp.onload = function () {
     if (this.status == 200) {
       document.querySelector("#lines").innerHTML = this.responseText;
+      let select = document.getElementsByName("line_id");
+      select.forEach((element) => {
+        console.log(element);
+        element.addEventListener("click", function (e) {
+          console.log(e.target.value);
+        });
+      });
     }
   };
 }
