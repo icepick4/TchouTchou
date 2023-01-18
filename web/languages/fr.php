@@ -283,6 +283,7 @@ define('SUPPORT', 'Support');
 define('RH', 'Ressources Humaines');
 define('ABILITIES','Habilité');
 define('FIRE','Licencier');
+define('CLIENT', 'Client');
 
 //ALT
 define('ALT_WOMEN_WITH_LUGGAGE', 'Femme avec bagages');
