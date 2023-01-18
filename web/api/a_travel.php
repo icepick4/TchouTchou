@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<script src=<?= PATH_JS . 'travel_line.js' ?> type="module" defer></script>
 <body>
 
     <?php
@@ -27,22 +27,30 @@
     
 
 ?>
-    
+<table>
+    <tr>
+        <th>Ligne</th>
+        <th>Nombre d'arrêts</th>
+        <th>Détails</th>
+        <th>Durée</th>
+        <th></th>
+    </tr>
 <?php foreach ($lines as $line) { 
-    
-    $time = $travel->getLineTime($line['LINE_ID'])['DURATION']; 
-    $freeDriver = $staff->getFreeDriver($time,$date) ?>
-    <div>
-        <p>Line: <?= $line['LINE_ID'] ?></p>
-        <p>station id: <?= $line['STATION_ID'] ?></p>
-        <p>order stop: <?= $line['ORDER_STOP'] ?></p>
-        <p>duration time: <?= $line['DURATION_TIME'] ?></p>
-        <p>line time: <?= $time ?></p>
-        <? foreach ($freeDriver as $driver) { ?>
-            <p>free driver: <?= $driver['STAFF_ID'] ?></p>
-        <? } ?>
-       <? print_r($line); ?>
-    </div>
+    $stops = $travel->getLineStops($line['LINE_ID']);
+    $duration = $travel->getLineDuration($line['LINE_ID'],$to,$from)['DURATION'];
+    $duration = minToHourMin($duration);
+    ?>
+    <tr>
+        <td><?= $line['LINE_ID'] ?></td>
+        <td><?= $line['NBR_STOP'] ?></td>
+        <td><?php foreach ($stops as $stop) {
+            if ($stop != end($stops)) {
+                echo $stop['STATION_NAME'] . ' - ';
+            } else {
+                echo $stop['STATION_NAME'];};}?></td>
+        <td class="time"><?= $duration ?></td>
+        <td><input type="radio" name="line_id" value="<?= $line['LINE_ID'] ?>"></td>
+       </tr>
 
 <?php } ?>
-    
+</table>

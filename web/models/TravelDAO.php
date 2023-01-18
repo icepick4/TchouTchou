@@ -85,17 +85,24 @@ class TravelDAO extends DAO
         return $this->queryRow($sql, $args);
     }
 
-    public function getLineTime($line_id)
-    {
-        $sql = 'SELECT COUNT(MIN) AS "DURATION" FROM ARRIVAL_TO_STATION WHERE LINE_ID = :line_id GROUP BY LINE_ID';
-        $args = array(':line_id' => $line_id);
-        return $this->queryRow($sql, $args);
-    }
-
     public function getLineBetweenTwoPoints($start_station_id, $end_station_id)
     {
-        $sql = 'SELECT * FROM LINE_STOP LS1 WHERE STATION_ID = :end_station AND ORDER_STOP = (SELECT MAX(ORDER_STOP) FROM LINE_STOP LS2 WHERE LS2.LINE_ID = LS1.LINE_ID) AND :start_station = (SELECT STATION_ID FROM LINE_STOP LS3 WHERE LS3.LINE_ID = LS1.LINE_ID AND ORDER_STOP = 1)';
+        $sql = 'SELECT LINE_ID, ORDER_STOP -2 AS "NBR_STOP" FROM LINE_STOP LS1 WHERE STATION_ID = :end_station AND ORDER_STOP = (SELECT MAX(ORDER_STOP) FROM LINE_STOP LS2 WHERE LS2.LINE_ID = LS1.LINE_ID) AND :start_station = (SELECT STATION_ID FROM LINE_STOP LS3 WHERE LS3.LINE_ID = LS1.LINE_ID AND ORDER_STOP = 1)';
         $args = array(':start_station' => $start_station_id, ':end_station' => $end_station_id);
         return $this->queryAll($sql, $args);
+    }
+    
+    public function getLineStops($line_id)
+    {
+        $sql = 'SELECT STATION_NAME FROM LINE_STOP  INNER JOIN STATION ON LINE_STOP.STATION_ID = STATION.STATION_ID WHERE LINE_ID = :line_id';
+        $args = array(':line_id' => $line_id);
+        return $this->queryAll($sql, $args);
+    }
+
+    public function getLineDuration($line_id,$to,$from)
+    {
+        $sql = 'SELECT getTimeArrival(:line_id,:from_station_id,:to_station_id,1) AS "DURATION" FROM DUAL';
+        $args = array(':line_id' => $line_id, ':from_station_id' => $from, ':to_station_id' => $to);
+        return $this->queryRow($sql, $args);
     }
 }

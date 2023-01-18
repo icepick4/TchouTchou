@@ -10,7 +10,7 @@ if(!isset($_POST['price']) || !isset($_POST['nbr']) || !isset($_POST['travel']) 
     exit();
 }
 
-$price = intval($_POST['price']);
+$price = floatval($_POST['price']);
 $nbr = intval($_POST['nbr']);
 
 $travel = $_POST['travel'];
