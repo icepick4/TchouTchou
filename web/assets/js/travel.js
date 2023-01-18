@@ -60,3 +60,28 @@ boxArrow.addEventListener("click", function () {
   search2.value = temp;
   // faut cliquer pour refresh document.querySelector("").click();
 });
+
+function searchLines() {
+  console.log(
+    "index.php?api=travel&from=" + search1.value + "&to=" + search2.value
+  );
+  var xhttp = new XMLHttpRequest();
+  xhttp.open(
+    "GET",
+    "index.php?api=travel&from=" +
+      search1.value +
+      "&to=" +
+      search2.value +
+      "&date=" +
+      document.querySelector("#date").value,
+    true
+  );
+  xhttp.send();
+  xhttp.onload = function () {
+    if (this.status == 200) {
+      document.querySelector("#lines").innerHTML = this.responseText;
+    }
+  };
+}
+
+document.querySelector("#lineButton").addEventListener("click", searchLines);
