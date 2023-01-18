@@ -83,8 +83,43 @@ function searchLines() {
       let select = document.getElementsByName("line_id");
       select.forEach((element) => {
         console.log(element);
+        let time = document.getElementsByClassName("time");
+        let date = document
+          .querySelector("#date")
+          .value.split("T")[0]
+          .split("-");
+        let hour = document
+          .querySelector("#date")
+          .value.split("T")[1]
+          .split(":")[0];
+        let minute = document
+          .querySelector("#date")
+          .value.split("T")[1]
+          .split(":")[1];
+        let datetime =
+          date[2] +
+          "/" +
+          date[1] +
+          "/" +
+          date[0][2] +
+          date[0][3] +
+          " " +
+          hour +
+          ":" +
+          minute;
         element.addEventListener("click", function (e) {
           console.log(e.target.value);
+          console.log("&datetime=" + datetime);
+          var xhttp = new XMLHttpRequest();
+          xhttp.open(
+            "GET",
+            "index.php?api=travel_staff&time=" +
+              search1.value +
+              "&datetime=" +
+              datetime,
+            true
+          );
+          xhttp.send();
         });
       });
     }

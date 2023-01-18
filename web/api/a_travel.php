@@ -48,7 +48,7 @@
                 echo $stop['STATION_NAME'] . ' - ';
             } else {
                 echo $stop['STATION_NAME'];};}?></td>
-        <td><?= $duration ?></td>
+        <td class="time"><?= $duration ?></td>
         <td><input type="radio" name="line_id" value="<?= $line['LINE_ID'] ?>"></td>
        </tr>
 

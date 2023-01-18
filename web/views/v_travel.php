@@ -24,7 +24,7 @@
         </div>
     </div>
     <h2>Trajet</h2>
-    <input type="date" name="date" id="date" />
+    <input type="datetime-local" name="date" id="date" />
     <button id="lineButton" ><?= BTN_CREATE ?></input>
 
 </section>
