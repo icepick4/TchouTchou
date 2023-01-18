@@ -60,3 +60,72 @@ boxArrow.addEventListener("click", function () {
   search2.value = temp;
   // faut cliquer pour refresh document.querySelector("").click();
 });
+
+function searchLines() {
+  console.log(
+    "index.php?api=travel&from=" + search1.value + "&to=" + search2.value
+  );
+  var xhttp = new XMLHttpRequest();
+  xhttp.open(
+    "GET",
+    "index.php?api=travel&from=" +
+      search1.value +
+      "&to=" +
+      search2.value +
+      "&date=" +
+      document.querySelector("#date").value,
+    true
+  );
+  xhttp.send();
+  xhttp.onload = function () {
+    if (this.status == 200) {
+      document.querySelector("#lines").innerHTML = this.responseText;
+      let select = document.getElementsByName("line_id");
+      select.forEach((element) => {
+        console.log(element);
+        let time = document.getElementsByClassName("time");
+        let date = document
+          .querySelector("#date")
+          .value.split("T")[0]
+          .split("-");
+        let hour = document
+          .querySelector("#date")
+          .value.split("T")[1]
+          .split(":")[0];
+        let minute = document
+          .querySelector("#date")
+          .value.split("T")[1]
+          .split(":")[1];
+        let datetime =
+          date[2] +
+          "/" +
+          date[1] +
+          "/" +
+          date[0][2] +
+          date[0][3] +
+          " " +
+          hour +
+          ":" +
+          minute;
+        element.addEventListener("click", function (e) {
+          console.log(
+            e.target.parentElement.parentElement.children[3].innerText
+          );
+          console.log("&datetime=" + datetime);
+          var xhttp = new XMLHttpRequest();
+          xhttp.open(
+            "GET",
+            "index.php?api=travel_staff&time=" +
+              search1.value +
+              "&datetime=" +
+              datetime,
+            true
+          );
+          xhttp.send();
+        });
+      });
+    }
+  };
+}
+
+document.querySelector("#lineButton").addEventListener("click", searchLines);

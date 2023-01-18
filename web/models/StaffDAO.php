@@ -204,5 +204,10 @@ class StaffDAO extends UserDAO
 
     }
 
+    public function getFreeDriver($time_duration,$start_time_selected) {
+        $sql = 'SELECT DRIVER_ID FROM DRIVER WHERE DRIVER_ID NOT IN (SELECT DRIVER_ID FROM TRAVEL_WITH_ET WHERE END_TIME > TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\') AND START_TIME > TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\') AND START_TIME < TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\')+:time_duration/1440) GROUP BY DRIVER_ID ORDER BY DRIVER_ID;';
+        $args = array(':time_duration' => $time_duration, ':start_time_selected' => $start_time_selected);
+        return $this->queryAll($sql, $args);
+    }
 
 }

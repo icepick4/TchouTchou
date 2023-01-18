@@ -22,15 +22,24 @@
     define('LINE', 'Line');
     define('START_TIME', 'Start time');
     define('LATE_TIME', 'Late time');
+
     ?>
 
+    
     <h1><?= TRAVEL ?> n° <?= $result['TRAVEL_ID'] ?></h1>
     <div>
-        
-        <p><?= TRAIN ?> n° <?= $result['TRAIN_ID'] ?></p>
+        <p><?= TRAIN ?> n° <span><?= $result['TRAIN_ID'] ?></span></p>
         <?php foreach ($detail as $value) {
-            ?><p><?= $station->get_station_name($value['STATION_ID'])['STATION_NAME'] ?> ● <?= $value['ARRIVAL_TIME'] ?> - <?= $value['DEPARTURE_TIME'] ?></p>
-        <?php } ?>
+            $platform = $travel->getPlatformAssignedForTravelInStation($result['TRAIN_ID'],$value['STATION_ID'])['PLATFORM_LETTER'];
+            if ($value == $detail[0]) {
+                ?><p>● <?= $station->get_station_name($value['STATION_ID'])['STATION_NAME'].' '.$value['DEPARTURE_TIME']; if (isset($platform)){?> - Voie <span><?php echo $platform; ?></span><?php }?></p>
+            <?php } elseif ($value == end($detail)) {
+                ?><p>● <?= $station->get_station_name($value['STATION_ID'])['STATION_NAME'].' '.$value['ARRIVAL_TIME']; if (isset($platform)){?> - Voie <span><?php echo $platform; ?></span><?php }?></p>
+            <?php } else {
+                ?><p>● <?= $station->get_station_name($value['STATION_ID'])['STATION_NAME'] . ' ' . $value['ARRIVAL_TIME'] ?> - <?= $value['DEPARTURE_TIME']; if (isset($platform)){?> - Voie <span><?php echo $platform; ?></span><?php }?></p>
+            <?php } if ($value != end($detail)) { ?>
+                <div></div>
+        <?php }} ?>
         
     </div>
     

@@ -59,6 +59,7 @@ define('PLEASE_ACCEPT', 'Veuillez accepter ');
 define('BTN_RETURN', 'Retour');
 define('BTN_ADD', 'Ajouter');
 define('BTN_DELETE', 'Supprimer');
+define('BTN_CREATE', 'Créer');
 
 //TICKET
 define('YOUR_TRAVEL', 'Votre voyage');
@@ -158,6 +159,7 @@ define('BACK_TICKETS', 'Retournez à vos tickets');
 define('MINUTES', 'minutes');
 define('TRAVEL_TO', 'Voyage vers ');
 define('BUY', 'Acheter');
+define('DATE', 'Date');
 
 //HOME CLIENT
 define('WELCOME_PT1', 'Bienvenue sur ');
