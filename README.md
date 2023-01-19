@@ -66,27 +66,18 @@ Il faut évidemment avoir docker installé.
 
 ## Web
 
-Il faut commencer par récupérer l”os”:
+1. Téléchargez l'image en utilisant la commande : `docker pull kmcgill88/php-oracle`
 
-`docker pull kmcgill88/php-oracle`
+2. Pour construire le serveur, placez-vous dans le répertoire source du repo et utilisez la commande suivante :</br>
+`docker run -d -p 80:80 --mount type=bind,source=$(pwd)/web,target=/var/www/html --name=web kmcgill88/php-oracle`
 
-Pour lancer le serveur:
-
-:warning: Placez vous à la source du repo puis tapez cette commande,<br>
-
-`docker run -it  -p 80:80 --mount type=bind,source=$(pwd)/web,target=/var/www/html  --name=web kmcgill88/php-oracle`
-pour construire et lancer le serveur la permière fois
-
-Le serveur se mettra directement à jour à chaque modification
-
-`docker stop web`
-pour l'arreter
-
+3. Pour arréter et lancer le serveur pour la première fois, utilisez les commandes suivantes :</br>
+`docker stop web`</br>
 `docker start web`
-pour le demarrer
 
-Une fois le docker construit et lancé, rendez-vous sur http://localhost/
-Vous pouvez dès à présent faire vos modifications en local et développer !
+4. Une fois le docker construit et lancé, rendez-vous sur http://localhost/ pour accéder à votre site. Vous pouvez maintenant faire vos modifications en local et développer !
+
+
 
 ## Oracle
 
