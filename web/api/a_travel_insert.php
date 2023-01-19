@@ -14,6 +14,6 @@
     $train_id = $_GET['train_id'];
     $datetime = $_GET['datetime'];
     $driver_id = $_GET['driver_id'];
-    $travel_id = $_GET['travel_id'];
+    $line_id = $_GET['line_id'];
     
-    $travel->//méthode insert dao ici
+    $travel->insertTravel($line_id, $driver_id, $train_id, $datetime);

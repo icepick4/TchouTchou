@@ -5,7 +5,7 @@ let boxArrow = document.querySelector("#boxArrow");
 let inputDate = document.querySelector("#date");
 let TravelDatetime;
 let TravelDriverId;
-let TravelId;
+let TravelLineId;
 let time;
 
 function searchWithAutocomplete(input, arr) {
@@ -117,7 +117,7 @@ function searchDriver() {
       minute;
     element.addEventListener("click", function (e) {
       TravelDatetime = datetime;
-      TravelId = element.getAttribute("value");
+      TravelLineId = element.getAttribute("value");
       var xhttp = new XMLHttpRequest();
       xhttp.open(
         "GET",
@@ -179,8 +179,8 @@ function insertTravel() {
           TravelDatetime +
           "&driver_id=" +
           TravelDriverId +
-          "&travel_id=" +
-          TravelId,
+          "&line_id=" +
+          TravelLineId,
         true
       );
       xhttp.send();
