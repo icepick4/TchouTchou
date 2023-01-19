@@ -50,7 +50,6 @@ Un graphe de la BDD est disponible ici.
 
 Les trajets disponibles des différents tiers sont disponibles <a href="rapport.pdf" target="_blank">ici</a>
 
-Un fichier .sql est disponible pour pouvoir recrée la base de donnée en local [ :warning: à venir ]
 
 # Figma
 
