@@ -161,4 +161,10 @@ button.button:hover {
   transform: scale(1.1);
 }
 
-
+button:disabled {
+  opacity: 0.5;
+}
+button:disabled:hover {
+  transform: none;
+  cursor: unset;
+}

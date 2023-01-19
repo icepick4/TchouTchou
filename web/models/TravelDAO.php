@@ -13,9 +13,8 @@ class TravelDAO extends DAO
      */
     public function getTravelsOn($date_travel, $station_from, $station_to)
     {
-        $sql = 'SELECT
-        TO_CHAR(t.START_TIME, \'HH24:MI\') AS START_TIME,
-        TO_CHAR(tet.END_TIME, \'HH24:MI\') AS END_TIME,
+        $sql = 'SELECT  TO_CHAR(t.START_TIME,\'HH24:MI\') AS START_TIME,
+        TO_CHAR(tet.END_TIME,\'HH24:MI\') AS END_TIME,
         TIME_MIN AS DURATION, 
         t.TRAVEL_ID,
         l.LINE_ID, 
@@ -29,12 +28,13 @@ class TravelDAO extends DAO
         INNER JOIN TRAIN_TYPE trt ON tr.TRAIN_TYPE_ID = trt.TRAIN_TYPE_ID
         WHERE :station_from IN (SELECT STATION_ID FROM LINE_STOP l2 WHERE l2.LINE_ID = l.LINE_ID)
         AND :station_to IN (SELECT STATION_ID FROM LINE_STOP l2 WHERE l2.LINE_ID = l.LINE_ID AND ORDER_STOP > (SELECT ORDER_STOP FROM LINE_STOP WHERE l2.LINE_ID = LINE_ID AND STATION_ID = :station_from))
+        AND :station_to IN (SELECT STATION_ID FROM LINE_STOP l2 WHERE l2.LINE_ID = l.LINE_ID AND ORDER_STOP > (SELECT ORDER_STOP FROM LINE_STOP WHERE l2.LINE_ID = LINE_ID AND STATION_ID = :station_from))
         AND l.LINE_ID IN (
             SELECT LINE_ID 
             FROM TRAVEL 
-            WHERE TO_CHAR(t.START_TIME,\'DD/MM/YY\') = TO_CHAR(TO_DATE(:date_travel,\'YYYY/MM/DD\'),\'DD/MM/YY\')
-            AND ((TO_CHAR(t.START_TIME,\'DD/MM/YYYY\') > TO_CHAR(SYSDATE,\'DD/MM/YY\')) OR (TO_CHAR(t.START_TIME,\'HH24:MI\') > TO_CHAR(SYSDATE,\'HH24:MI\')))) ORDER BY t.START_TIME ASC';
-        $args = array(':date_travel' => str_replace('-', '/', $date_travel), ':station_from' => $station_from, ':station_to' => $station_to);
+            WHERE (TO_CHAR(t.START_TIME,\'DD/MM/YY\') = TO_CHAR(TO_DATE(:date_travel,\'YYYY-MM-DD\'),\'DD/MM/YY\') AND (TO_CHAR(t.START_TIME,\'HH24:MI\') > TO_CHAR(SYSDATE,\'HH24:MI\')))
+            OR (TO_CHAR(t.START_TIME,\'DD/MM/YY\') > TO_CHAR(SYSDATE,\'DD/MM/YY\'))) ORDER BY t.START_TIME ASC';
+        $args = array(':date_travel' => str_replace('-','/',$date_travel), ':station_from' => $station_from, ':station_to' => $station_to);
         return $this->queryAll($sql, $args);
     }
 
@@ -180,8 +180,10 @@ class TravelDAO extends DAO
      */
     public function insertTravel($line_id, $driver_id, $train_id, $start_time)
     {
-        $sql = 'INSERT INTO TRAVEL (LINE_ID, DRIVER_ID, TRAIN_ID, START_TIME) VALUES (:line_id, :driver_id, :train_id, :start_time)';
+        $sql = 'INSERT INTO TRAVEL (LINE_ID, DRIVER_ID, TRAIN_ID, START_TIME) VALUES (:line_id, :driver_id, :train_id, TO_DATE(:start_time,\'DD/MM/YY HH24:MI\'))';
+        
         $args = array(':line_id' => $line_id, ':driver_id' => $driver_id, ':train_id' => $train_id, ':start_time' => $start_time);
-        return $this->execute($sql, $args);
+        print_r($args);
+        return $this->queryEdit($sql, $args);
     }
 }
