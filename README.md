@@ -34,7 +34,7 @@ Ce projet utilise volontairement aucun framework <br>
 
 # Contribuer au Projet
 
-Tout d'abord choisissez entre soit fork ou clone le projet, pour commencer à développer sur le projet en local référez vous à la partie sur <a href="#docker">docker</a>. Une fois le serveur local mis en place, si vous constatez un bug n'hésitez pas a créer une issue, si vous développez une nouvelle fonctionnalité ou en améliorez une, faites une pull request. De plus pour repérer les bugs vous pouvez simplement visiter notre site <a href="http://tchoutchou.ovh">Tchoutchou</a>.
+Tout d'abord choisissez entre soit fork ou clone le projet, pour commencer à développer sur le projet en local référez vous à la partie sur <a href="#docker">docker</a> afin de mettre en place le serveur web et la base de données Oracle. Une fois le serveur local mis en place, vous pouvez setup votre base de données en suivant ces <a href="#setup">étapes</a>. Si vous constatez un bug n'hésitez pas a créer une issue, si vous développez une nouvelle fonctionnalité ou en améliorez une, faites une pull request. De plus pour repérer les bugs vous pouvez simplement visiter notre site <a href="http://tchoutchou.ovh">Tchoutchou</a>.
 
 Pour update le server il suift de aller sur ce <a href="http://82.65.238.70:5569/">lien</a> et attendre que la page charge
 
@@ -46,9 +46,13 @@ pour plus d'infos cliquez <a href="https://morgan.cugerone.com/blog/how-to-use-g
 
 # Base de données
 
-Un graphe de la BDD est disponible ici.
+Un graphe de la BDD est disponible <a href="https://forge.univ-lyon1.fr/p2103642/sae-sncf/-/raw/main/doc/schemaDB.pdf">ici</a>.
 
-Les trajets disponibles des différents tiers sont disponibles <a href="rapport.pdf" target="_blank">ici</a>
+Les trajets disponibles des différents tiers sont disponibles ici :
+
+- <a href="https://forge.univ-lyon1.fr/p2103642/sae-sncf/-/raw/main/doc/carte1.svg">Tier 1</a>
+- <a href="https://forge.univ-lyon1.fr/p2103642/sae-sncf/-/raw/main/doc/carte2.svg">Tier 2</a>
+- <a href="https://forge.univ-lyon1.fr/p2103642/sae-sncf/-/raw/main/doc/carte3.svg">Tier 3</a>
 
 
 # Figma
@@ -64,7 +68,7 @@ Il faut évidemment avoir docker installé.
 </br><a href="https://docs.docker.com/engine/install/">Comment installer docker ?</a>
 
 
-## Web
+### Web
 
 Il faut commencer par récupérer l”os”:
 
@@ -88,7 +92,7 @@ pour le demarrer
 Une fois le docker construit et lancé, rendez-vous sur http://localhost/
 Vous pouvez dès à présent faire vos modifications en local et développer !
 
-## Oracle
+### Oracle
 
 1. Commencez par récupérer l'image: `docker pull gvenzl/oracle-xe`
 2. Ensuite, lancez le container: </br>
