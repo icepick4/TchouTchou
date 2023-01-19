@@ -105,4 +105,11 @@ class TravelDAO extends DAO
         $args = array(':line_id' => $line_id, ':from_station_id' => $from, ':to_station_id' => $to);
         return $this->queryRow($sql, $args);
     }
+
+    public function insertTravel($line_id, $driver_id, $train_id,$start_time)
+    {
+        $sql = 'INSERT INTO TRAVEL (LINE_ID, DRIVER_ID, TRAIN_ID, START_TIME) VALUES (:line_id, :driver_id, :train_id, :start_time)';
+        $args = array(':line_id' => $line_id, ':driver_id' => $driver_id, ':train_id' => $train_id, ':start_time' => $start_time);
+        return $this->execute($sql, $args);
+    }
 }

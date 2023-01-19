@@ -21,24 +21,21 @@
 
     $date = $_GET['date'];
 
-    echo $date;
-
     $lines = $travel->getLineBetweenTwoPoints($from, $to);
     
 
 ?>
 <table>
     <tr>
-        <th>Ligne</th>
-        <th>Nombre d'arrêts</th>
-        <th>Détails</th>
-        <th>Durée</th>
+        <th><?= HEADER_LINE ?></th>
+        <th><?= HEADER_STOPS ?></th>
+        <th><?= HEADER_DETAILS ?></th>
+        <th><?= HEADER_DURATION ?></th>
         <th></th>
     </tr>
 <?php foreach ($lines as $line) { 
     $stops = $travel->getLineStops($line['LINE_ID']);
     $duration = $travel->getLineDuration($line['LINE_ID'],$to,$from)['DURATION'];
-    $duration = minToHourMin($duration);
     ?>
     <tr>
         <td><?= $line['LINE_ID'] ?></td>
@@ -48,7 +45,7 @@
                 echo $stop['STATION_NAME'] . ' - ';
             } else {
                 echo $stop['STATION_NAME'];};}?></td>
-        <td class="time"><?= $duration ?></td>
+        <td class="time" value=<?= $duration?>><?= minToHourMin($duration) ?></td>
         <td><input type="radio" name="line_id" value="<?= $line['LINE_ID'] ?>"></td>
        </tr>
 

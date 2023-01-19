@@ -60,6 +60,7 @@ define('BTN_RETURN', 'Retour');
 define('BTN_ADD', 'Ajouter');
 define('BTN_DELETE', 'Supprimer');
 define('BTN_CREATE', 'Créer');
+define('BTN_SEARCH', 'Rechercher');
 
 //TICKET
 define('YOUR_TRAVEL', 'Votre voyage');
@@ -291,6 +292,16 @@ define('ALT_PHONE_SEARCH', 'Recherche par téléphone');
 define('ALT_WOMEN_SEARCH', 'Femme faisant une recherche');
 define('ALT_ARROW_RIGHT', 'Flèche vers la droite');
 
-
 //TRAVEL
 define('TITLE_TRAVEL', 'Trajet');
+define('HEADER_LINE', 'Ligne');
+define('HEADER_STOPS', 'Arrêts');
+define('HEADER_DETAILS', 'Détails');
+define('HEADER_DURATION', 'Durée');
+define('HEADER_FIRSTNAME', 'Prénom');
+define('HEADER_LASTNAME', 'Nom');
+define('HEADER_TYPE', 'Type');
+define('HEADER_CAPACITY', 'Capacité');
+define('HEADER_SPEED', 'Vitesse');
+define('HEADER_LENGTH', 'Longueur');
+define('ERROR_TRAVEL_TEXT', 'Vous devez remplir tous les champs');

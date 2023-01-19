@@ -50,7 +50,6 @@ Un graphe de la BDD est disponible ici.
 
 Les trajets disponibles des différents tiers sont disponibles <a href="rapport.pdf" target="_blank">ici</a>
 
-Un fichier .sql est disponible pour pouvoir recrée la base de donnée en local [ :warning: à venir ]
 
 # Figma
 
@@ -67,27 +66,18 @@ Il faut évidemment avoir docker installé.
 
 ## Web
 
-Il faut commencer par récupérer l”os”:
+1. Téléchargez l'image en utilisant la commande : `docker pull kmcgill88/php-oracle`
 
-`docker pull kmcgill88/php-oracle`
+2. Pour construire le serveur, placez-vous dans le répertoire source du repo et utilisez la commande suivante :</br>
+`docker run -d -p 80:80 --mount type=bind,source=$(pwd)/web,target=/var/www/html --name=web kmcgill88/php-oracle`
 
-Pour lancer le serveur:
-
-:warning: Placez vous à la source du repo puis tapez cette commande,<br>
-
-`docker run -it  -p 80:80 --mount type=bind,source=$(pwd)/web,target=/var/www/html  --name=web kmcgill88/php-oracle`
-pour construire et lancer le serveur la permière fois
-
-Le serveur se mettra directement à jour à chaque modification
-
-`docker stop web`
-pour l'arreter
-
+3. Pour arréter et lancer le serveur pour la première fois, utilisez les commandes suivantes :</br>
+`docker stop web`</br>
 `docker start web`
-pour le demarrer
 
-Une fois le docker construit et lancé, rendez-vous sur http://localhost/
-Vous pouvez dès à présent faire vos modifications en local et développer !
+4. Une fois le docker construit et lancé, rendez-vous sur http://localhost/ pour accéder à votre site. Vous pouvez maintenant faire vos modifications en local et développer !
+
+
 
 ## Oracle
 
@@ -125,6 +115,13 @@ Remarque : Pour des raisons de sécurité, ce fichier est exclu par défaut. Vou
 
 # Auteur
 
-<a href="https://github.com/icepick4/TchouTchou/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=icepick4/TchouTchou" />
-</a>
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/Niskko"><img src="https://avatars.githubusercontent.com/u/53410604?v=4" width="100px;" alt="Loïc Pupier"/><br /><sub><b>Loïc Pupier</b></sub></a></td>
+      <td align="center"><a href="https://github.com/icepick4"><img src="https://avatars.githubusercontent.com/u/82316285?v=4" width="100px;" alt="Remi Jara"/><br /><sub><b>Remi Jara</b></sub></a></td>
+      <td align="center"><a href="https://github.com/Larcherbc"><img src="https://avatars.githubusercontent.com/u/65121325?v=4" width="100px;" alt="Jules Rabec"/><br /><sub><b>Jules Rabec</b></sub></a></td>
+      <td align="center"><a href="https://github.com/Qypol342"><img src="https://avatars.githubusercontent.com/u/37497007?v=4" width="100px;" alt="Loan Maeght"/><br /><sub><b>Loan Maeght</b></sub></a></td>
+      <td align="center"><a href="https://github.com/Psykoxen"><img src="https://avatars.githubusercontent.com/u/58462517?v=4" width="100px;" alt="Antoine Voillot"/><br /><sub><b>Antoine Voillot</b></sub></a></td>
+    </tr>
+  </tbody>

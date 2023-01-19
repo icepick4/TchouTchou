@@ -205,9 +205,14 @@ class StaffDAO extends UserDAO
     }
 
     public function getFreeDriver($time_duration,$start_time_selected) {
-        $sql = 'SELECT DRIVER_ID FROM DRIVER WHERE DRIVER_ID NOT IN (SELECT DRIVER_ID FROM TRAVEL_WITH_ET WHERE END_TIME > TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\') AND START_TIME > TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\') AND START_TIME < TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\')+:time_duration/1440) GROUP BY DRIVER_ID ORDER BY DRIVER_ID;';
-        $args = array(':time_duration' => $time_duration, ':start_time_selected' => $start_time_selected);
+        $sql = 'SELECT DRIVER_ID FROM DRIVER WHERE DRIVER_ID NOT IN (SELECT DRIVER_ID FROM TRAVEL_WITH_ET WHERE END_TIME > TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\') AND START_TIME > TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\') AND START_TIME < TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\')+:time_duration/1440) GROUP BY DRIVER_ID ORDER BY DRIVER_ID';
+        $args = array(':start_time_selected' => $start_time_selected , ':time_duration' => intval($time_duration));
         return $this->queryAll($sql, $args);
     }
 
+    public function getDriverDetails($driver_id) {
+        $sql = 'SELECT USER_MAIL, USER_LASTNAME, USER_FIRSTNAME, DRIVER_ID FROM USER_DATA INNER JOIN DRIVER ON USER_DATA.USER_ID = DRIVER.USER_ID WHERE DRIVER.DRIVER_ID = :driver_id';
+        $args = array(':driver_id' => $driver_id);
+        return $this->queryRow($sql, $args);
+    }
 }
