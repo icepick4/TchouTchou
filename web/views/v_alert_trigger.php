@@ -49,7 +49,13 @@ function initMap() {
 
 function getPos(){
   console.log(marker.position.lat()+"//"+ marker.position.lng());
+  document.getElementById("infoposition").value = marker.position.lat()+"//"+ marker.position.lng();
 }
+
+setTimeout(() => {
+  document.querySelector("#locationContainer").addEventListener("click", getPos);
+}, 5000);
+
 </script>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOE0WOjNXmymZ-seKlbzVcSvW-Xaz-sYo&callback=initMap">
@@ -80,6 +86,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOE0WOjNXmymZ-seKlbzVcSvW
     </div>
     <textarea id="message" name="message" placeholder="<?= DESCRIPTION ?>" required></textarea>
     <input type="hidden" id="alertType" name="alertType">
+    <input type="hidden" id="infoposition" name="infoposition">
     <input type="submit" value="<?= SEND_ALERT ?>" >
 </form>
 

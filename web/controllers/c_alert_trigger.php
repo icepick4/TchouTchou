@@ -5,12 +5,13 @@ require_once(PATH_MODELS.'PlanningDAO.php');
 require_once(PATH_MODELS.'StaffDAO.php');
 $staff = new StaffDAO();
 if ($_SESSION['logged'] && $staff->isDriver($_SESSION['user_id'])) {
+    print_r($_POST);
     if(isset($_POST['alertType']) && isset($_POST['message']) && isset($_POST['infoposition'])){
-   
+        
         $planning = new PlanningDAO();
         $alerts = new AlertDAO();
         $driver = $staff->getDriverID($_SESSION['user_id']);
-        $travel = $planning->getDriverTravelForTheDayByHour($driver, date("H")+1);
+        $travel = $planning->getDriverTravelForTheDayByHour($driver, date("H")+1, $planning->getSysdate()['DATE']);
         $alerts->createAlert($travel[0]['TRAVEL_ID'], $_POST['alertType'], $_POST['message'], $_POST['infoposition']);
         $alert = choixAlert('alert_created');
     }
