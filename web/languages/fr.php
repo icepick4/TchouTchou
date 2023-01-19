@@ -294,3 +294,4 @@ define('ALT_ARROW_RIGHT', 'Flèche vers la droite');
 
 //TRAVEL
 define('TITLE_TRAVEL', 'Trajet');
+define('ERROR_TRAVEL_TEXT', 'Vous devez remplir tous les champs');

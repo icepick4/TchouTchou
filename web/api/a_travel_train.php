@@ -29,7 +29,7 @@
             <td><?= $data['TRAIN_CAPACITY'] ?></td>
             <td><?= $data['TRAIN_SPEED'] ?></td>
             <td><?= $data['TRAIN_LENGTH'] ?></td>
-            <td><input type="radio" name="driver_id" value="<?= $data['DRIVER_ID'] ?>"></td>
+            <td><input type="radio" name="train_id" value="<?= $data['TRAIN_ID'] ?>"></td>
         <?php
         }
         ?>

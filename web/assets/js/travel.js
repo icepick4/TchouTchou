@@ -2,6 +2,11 @@ let input = document.getElementById("search1");
 let input2 = document.getElementById("search2");
 var stations = document.querySelector("#stationsArray").innerText.split("//");
 let boxArrow = document.querySelector("#boxArrow");
+let inputDate = document.querySelector("#date");
+let TravelDatetime;
+let TravelDriverId;
+let TravelId;
+let time;
 
 function searchWithAutocomplete(input, arr) {
   input.addEventListener("keyup", function (event) {
@@ -62,9 +67,9 @@ boxArrow.addEventListener("click", function () {
 });
 
 function searchLines() {
-  console.log(
-    "index.php?api=travel&from=" + search1.value + "&to=" + search2.value
-  );
+  // console.log(
+  //   "index.php?api=travel&from=" + search1.value + "&to=" + search2.value
+  // );
   var xhttp = new XMLHttpRequest();
   xhttp.open(
     "GET",
@@ -80,75 +85,121 @@ function searchLines() {
   xhttp.onload = function () {
     if (this.status == 200) {
       document.querySelector("#lines").innerHTML = this.responseText;
-      let select = document.getElementsByName("line_id");
-      select.forEach((element) => {
-        let time =
-          element.parentElement.parentElement.children[3].getAttribute("value");
-        let date = document
-          .querySelector("#date")
-          .value.split("T")[0]
-          .split("-");
-        let hour = document
-          .querySelector("#date")
-          .value.split("T")[1]
-          .split(":")[0];
-        let minute = document
-          .querySelector("#date")
-          .value.split("T")[1]
-          .split(":")[1];
-        let datetime =
-          date[2] +
-          "/" +
-          date[1] +
-          "/" +
-          date[0][2] +
-          date[0][3] +
-          " " +
-          hour +
-          ":" +
-          minute;
-        element.addEventListener("click", function (e) {
-          var xhttp = new XMLHttpRequest();
-          xhttp.open(
-            "GET",
-            "index.php?api=travel_staff&time=" + time + "&datetime=" + datetime,
-            true
-          );
-          xhttp.send();
-          xhttp.onload = function () {
-            if (this.status == 200) {
-              document.querySelector("#staff").innerHTML = this.responseText;
-              let select = document.getElementsByName("driver_id");
-              select.forEach((element) => {
-                let driver_id = element.getAttribute("value");
-                element.addEventListener("click", function (e) {
-                  var xhttp = new XMLHttpRequest();
-                  xhttp.open(
-                    "GET",
-                    "index.php?api=travel_train&driver_id=" +
-                      driver_id +
-                      "&datetime=" +
-                      datetime +
-                      "&time=" +
-                      time,
-                    true
-                  );
-                  xhttp.send();
-                  xhttp.onload = function () {
-                    if (this.status == 200) {
-                      document.querySelector("#train").innerHTML =
-                        this.responseText;
-                      this.responseText;
-                    }
-                  };
-                });
-              });
-            }
-          };
-        });
-      });
+      searchDriver();
     }
   };
 }
 
+function searchDriver() {
+  let select = document.getElementsByName("line_id");
+  select.forEach((element) => {
+    time =
+      element.parentElement.parentElement.children[3].getAttribute("value");
+    let date = document.querySelector("#date").value.split("T")[0].split("-");
+    let hour = document
+      .querySelector("#date")
+      .value.split("T")[1]
+      .split(":")[0];
+    let minute = document
+      .querySelector("#date")
+      .value.split("T")[1]
+      .split(":")[1];
+    let datetime =
+      date[2] +
+      "/" +
+      date[1] +
+      "/" +
+      date[0][2] +
+      date[0][3] +
+      " " +
+      hour +
+      ":" +
+      minute;
+    element.addEventListener("click", function (e) {
+      TravelDatetime = datetime;
+      TravelId = element.getAttribute("value");
+      var xhttp = new XMLHttpRequest();
+      xhttp.open(
+        "GET",
+        "index.php?api=travel_staff&time=" + time + "&datetime=" + datetime,
+        true
+      );
+      xhttp.send();
+      xhttp.onload = function () {
+        if (this.status == 200) {
+          document.querySelector("#staff").innerHTML = this.responseText;
+          searchTrain();
+        }
+      };
+    });
+  });
+}
+
+function searchTrain() {
+  let select = document.getElementsByName("driver_id");
+  select.forEach((element) => {
+    let driver_id = element.getAttribute("value");
+    element.addEventListener("click", function (e) {
+      TravelDriverId = driver_id;
+      var xhttp = new XMLHttpRequest();
+      xhttp.open(
+        "GET",
+        "index.php?api=travel_train&driver_id=" +
+          driver_id +
+          "&datetime=" +
+          TravelDatetime +
+          "&time=" +
+          time,
+        true
+      );
+      xhttp.send();
+      xhttp.onload = function () {
+        if (this.status == 200) {
+          document.querySelector("#train").innerHTML = this.responseText;
+          insertTravel();
+        }
+      };
+    });
+  });
+}
+
+function insertTravel() {
+  let select = document.getElementsByName("train_id");
+  console.log(select);
+  select.forEach((element) => {
+    let train_id = element.getAttribute("value");
+    // console.log(train_id, TravelDatetime, TravelDriverId, TravelId);
+    element.addEventListener("click", function (e) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.open(
+        "GET",
+        "index.php?api=travel_insert&train_id=" +
+          train_id +
+          "&datetime=" +
+          TravelDatetime +
+          "&driver_id=" +
+          TravelDriverId +
+          "&travel_id=" +
+          TravelId,
+        true
+      );
+      xhttp.send();
+    });
+  });
+}
+
 document.querySelector("#lineButton").addEventListener("click", searchLines);
+
+search1.addEventListener("change", checkInput);
+search2.addEventListener("change", checkInput);
+inputDate.addEventListener("change", checkInput);
+
+function checkInput() {
+  if (search1.value != "" && search2.value != "" && inputDate.value != "") {
+    document.querySelector("#lineButton").disabled = false;
+    document.querySelector("#errorText").classList.add("hidden");
+  } else {
+    document.querySelector("#lineButton").disabled = true;
+    document.querySelector("#errorText").classList.remove("hidden");
+  }
+}
