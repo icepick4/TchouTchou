@@ -33,5 +33,12 @@
     
 </section>
 
+<section id="staff">
+    
+</section>
+
+<section id="train">
+    
+</section>
 <!--  Pied de page -->
 <?php require_once(PATH_VIEWS . 'footer.php');

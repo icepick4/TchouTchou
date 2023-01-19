@@ -63,5 +63,19 @@ class TrainDAO extends DAO
         $sql = 'SELECT COUNT(TRAVEL_ID) AS NBR FROM TRAVEL WHERE TRAIN_ID = :train_id';
         $args = array(':train_id' => $train_id);
         return $this->queryRow($sql, $args);
-    } 
+    }
+    
+    public function getFreeTrain($time,$datetime,$driver_id)
+    {
+        $sql = 'SELECT TRAIN_ID FROM TRAIN WHERE TRAIN_ID NOT IN (SELECT TRAIN_ID FROM TRAVEL_WITH_ET WHERE END_TIME > TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\') AND START_TIME > TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\') AND START_TIME < TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\')+:time_duration/1440) AND TRAIN_TYPE_ID IN (SELECT TRAIN_TYPE_ID FROM DRIVER_ABILITY WHERE DRIVER_ID = :driver_id) GROUP BY TRAIN_ID ORDER BY TRAIN_ID';
+        $args = array(':time_duration' => $time, ':start_time_selected' => $datetime, ':driver_id' => $driver_id);
+        return $this->queryAll($sql, $args);
+    }
+
+    public function getTrainDetails($train_id)
+    {
+        $sql = 'SELECT * FROM TRAIN INNER JOIN TRAIN_TYPE ON TRAIN.TRAIN_TYPE_ID = TRAIN_TYPE.TRAIN_TYPE_ID WHERE TRAIN_ID = :train_id';
+        $args = array(':train_id' => $train_id);
+        return $this->queryRow($sql, $args);
+    }
 }

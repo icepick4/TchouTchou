@@ -82,8 +82,8 @@ function searchLines() {
       document.querySelector("#lines").innerHTML = this.responseText;
       let select = document.getElementsByName("line_id");
       select.forEach((element) => {
-        console.log(element);
-        let time = document.getElementsByClassName("time");
+        let time =
+          element.parentElement.parentElement.children[3].getAttribute("value");
         let date = document
           .querySelector("#date")
           .value.split("T")[0]
@@ -108,20 +108,43 @@ function searchLines() {
           ":" +
           minute;
         element.addEventListener("click", function (e) {
-          console.log(
-            e.target.parentElement.parentElement.children[3].innerText
-          );
-          console.log("&datetime=" + datetime);
           var xhttp = new XMLHttpRequest();
           xhttp.open(
             "GET",
-            "index.php?api=travel_staff&time=" +
-              search1.value +
-              "&datetime=" +
-              datetime,
+            "index.php?api=travel_staff&time=" + time + "&datetime=" + datetime,
             true
           );
           xhttp.send();
+          xhttp.onload = function () {
+            if (this.status == 200) {
+              document.querySelector("#staff").innerHTML = this.responseText;
+              let select = document.getElementsByName("driver_id");
+              select.forEach((element) => {
+                let driver_id = element.getAttribute("value");
+                element.addEventListener("click", function (e) {
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.open(
+                    "GET",
+                    "index.php?api=travel_train&driver_id=" +
+                      driver_id +
+                      "&datetime=" +
+                      datetime +
+                      "&time=" +
+                      time,
+                    true
+                  );
+                  xhttp.send();
+                  xhttp.onload = function () {
+                    if (this.status == 200) {
+                      document.querySelector("#train").innerHTML =
+                        this.responseText;
+                      this.responseText;
+                    }
+                  };
+                });
+              });
+            }
+          };
         });
       });
     }

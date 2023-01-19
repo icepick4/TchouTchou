@@ -122,13 +122,15 @@ input#date {
   font-size: 15px;
 }
 
-#lines {
+#lines,
+#staff {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 table {
   min-width: 45%;
   max-width: 45%;

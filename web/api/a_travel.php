@@ -38,7 +38,6 @@
 <?php foreach ($lines as $line) { 
     $stops = $travel->getLineStops($line['LINE_ID']);
     $duration = $travel->getLineDuration($line['LINE_ID'],$to,$from)['DURATION'];
-    $duration = minToHourMin($duration);
     ?>
     <tr>
         <td><?= $line['LINE_ID'] ?></td>
@@ -48,7 +47,7 @@
                 echo $stop['STATION_NAME'] . ' - ';
             } else {
                 echo $stop['STATION_NAME'];};}?></td>
-        <td class="time"><?= $duration ?></td>
+        <td class="time" value=<?= $duration?>><?= minToHourMin($duration) ?></td>
         <td><input type="radio" name="line_id" value="<?= $line['LINE_ID'] ?>"></td>
        </tr>
 
