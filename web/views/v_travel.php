@@ -25,6 +25,7 @@
     </div>
     <h2>Trajet</h2>
     <input type="datetime-local" name="date" id="date" />
+    <p id="errorText" class="hidden"><?= ERROR_TRAVEL_TEXT ?></p>
     <button id="lineButton" ><?= BTN_CREATE ?></input>
 
 </section>

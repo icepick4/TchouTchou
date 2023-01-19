@@ -300,3 +300,4 @@ define('HEADER_TYPE', 'Type');
 define('HEADER_CAPACITY', 'Capacity');
 define('HEADER_SPEED', 'Speed');
 define('HEADER_LENGTH', 'Length');
+define('ERROR_TRAVEL_TEXT', 'No travel found matching your search');

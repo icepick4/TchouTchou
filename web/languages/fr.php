@@ -303,3 +303,4 @@ define('HEADER_TYPE', 'Type');
 define('HEADER_CAPACITY', 'Capacité');
 define('HEADER_SPEED', 'Vitesse');
 define('HEADER_LENGTH', 'Longueur');
+define('ERROR_TRAVEL_TEXT', 'Vous devez remplir tous les champs');

@@ -139,3 +139,7 @@ table {
   margin: 1rem;
   padding: 3rem;
 }
+
+p.hidden {
+  opacity: 0;
+}
