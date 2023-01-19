@@ -8,54 +8,64 @@ require_once(PATH_MODELS . 'UserDAO.php');
  */
 class StaffDAO extends UserDAO
 {
+
+    /**
+     * Permet de récupérer tous les employés
+     * @return Array
+     */
     public function getAllStaff()
     {
         $sql = 'SELECT * FROM EMPLOYEES_DATA INNER JOIN USER_DATA ON EMPLOYEES_DATA.USER_ID = USER_DATA.USER_ID INNER JOIN EMPLOYEE_CATEGORIE ON EMPLOYEES_DATA.EMPLOYEE_ACCESS = EMPLOYEE_CATEGORIE.EMPLOYEE_CATEGORIE_ID ORDER BY EMPLOYEE_CATEGORIE_ID';
-        return $this->queryAll($sql);   
+        return $this->queryAll($sql);
     }
 
+    /**
+     * Permet de récupérer tous les employés par types d'employés
+     * @return array<array>
+     */
     public function getAllStaffSlpied()
     {
         $staff_list = $this->getAllStaff();
         $staff_split = array();
         foreach ($staff_list as $staff) {
- 
-            if ( !isset($staff_split[$staff['EMPLOYEE_CATEGORIE_LABEL']])
-                || $staff_split[$staff['EMPLOYEE_CATEGORIE_LABEL']] == null){
+
+            if (
+                !isset($staff_split[$staff['EMPLOYEE_CATEGORIE_LABEL']])
+                || $staff_split[$staff['EMPLOYEE_CATEGORIE_LABEL']] == null
+            ) {
                 $staff_split[$staff['EMPLOYEE_CATEGORIE_LABEL']] = array();
-                }
+            }
             array_push($staff_split[$staff['EMPLOYEE_CATEGORIE_LABEL']], $staff);
         }
 
         return $staff_split;
-         
+
     }
 
+    /**
+     * Permet de récupérer tous les types d'employés
+     * @return Array
+     */
     public function getAllStaffType()
     {
         $sql = 'SELECT * FROM EMPLOYEE_CATEGORIE';
-        return $this->queryAll($sql);   
+        return $this->queryAll($sql);
     }
 
+    /**
+     * Permet de tester si un utilisateur est un employé
+     * @param mixed $id
+     * @return bool
+     */
     public function isEmployee($id)
     {
         return $this->getUserType($id) == 1;
     }
 
     /**
-     * Function to check if the user is a customer
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the user is a customer, false otherwise
-     *
-     */
-
-    /**
-     * Function to get the employee type of an employee
-     *
-     * @param  number $id The user's id
-     * @return array The employee type
-     *
+     * Permet de récupérer le type d'un employé
+     * @param mixed $id
+     * @return mixed
      */
     public function getEmployeeType($id)
     {
@@ -64,18 +74,23 @@ class StaffDAO extends UserDAO
         return $this->queryRow($sql, $args)['EMPLOYEE_ACCESS'];
     }
 
+    /**
+     * Permet de modifier le type d'un employé
+     * @param mixed $id
+     * @param mixed $type
+     * @return void
+     */
     public function setEmployeeType($id, $type)
     {
         $sql = 'UPDATE EMPLOYEES_DATA SET EMPLOYEE_ACCESS = :type WHERE USER_ID = :id';
         $args = array(':id' => $id, ':type' => $type);
         $this->queryEdit($sql, $args);
     }
+
     /**
-     * Function to check if the employee is a manager
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the employee is a manager, false otherwise
-     *
+     * Permet de tester si un utilisateur est un administrateur
+     * @param mixed $id
+     * @return bool
      */
     public function isAdministrator($id)
     {
@@ -83,11 +98,9 @@ class StaffDAO extends UserDAO
     }
 
     /**
-     * Function to check if the employee is a station
-     *
-     * @param  number $id The user's id
-     * @return boolean True if the employee is a station, false otherwise
-     *
+     * Permet de tester si un utilisateur est un employé de station
+     * @param mixed $id
+     * @return bool
      */
     public function isStation($id)
     {
@@ -118,22 +131,41 @@ class StaffDAO extends UserDAO
         return $this->getEmployeeType($id) == 4;
     }
 
+    /**
+     * Permet de tester si un utilisateur est un employé de support
+     * @param mixed $id
+     * @return bool
+     */
     public function isSupport($id)
     {
         return $this->getEmployeeType($id) == 5;
     }
 
+    /**
+     * Permet de tester si un utilisateur est un employé de ressources humaines
+     * @param mixed $id
+     * @return bool
+     */
     public function isHumanResource($id)
     {
         return $this->getEmployeeType($id) == 6;
     }
 
+    /**
+     * Permet de récupérer tous les employés
+     * @return Array
+     */
     public function getAllEmployees()
     {
         $sql = 'SELECT * FROM USER_DATA WHERE USER_CATEGORIE_ID = 1';
         return $this->queryAll($sql);
     }
 
+    /**
+     * Permet de récupérer l'id d'un conducteur
+     * @param mixed $id
+     * @return mixed
+     */
     public function getDriverID($id)
     {
         $sql = 'SELECT DRIVER_ID FROM DRIVER WHERE USER_ID = :id';
@@ -141,13 +173,24 @@ class StaffDAO extends UserDAO
         return $this->queryRow($sql, $args)['DRIVER_ID'];
     }
 
-    public function addEmployee($id,$staff_id)
+    /**
+     * Permet d'ajouter un employé
+     * @param mixed $id
+     * @param mixed $staff_id
+     * @return void
+     */
+    public function addEmployee($id, $staff_id)
     {
         $sql = 'INSERT INTO EMPLOYEES_DATA VALUES (:id,:staff_id, null)';
-        $args = array(':id' => $id,':staff_id' => $staff_id);
+        $args = array(':id' => $id, ':staff_id' => $staff_id);
         $this->queryEdit($sql, $args);
     }
 
+    /**
+     * Permet de virer un employé
+     * @param mixed $id
+     * @return void
+     */
     public function firedEmployee($id)
     {
         $sql = 'DELETE FROM EMPLOYEES_DATA WHERE USER_ID = :id';
@@ -155,6 +198,11 @@ class StaffDAO extends UserDAO
         $this->queryEdit($sql, $args);
     }
 
+    /**
+     * Permet de récupérer le nombre de trajets effectués par un conducteur
+     * @param mixed $user_id
+     * @return mixed
+     */
     public function getNbrDriverTravelPlanned($user_id)
     {
         $sql = 'SELECT COUNT(*) AS NBR FROM TRAVEL INNER JOIN DRIVER ON TRAVEL.DRIVER_ID = DRIVER.DRIVER_ID WHERE USER_ID = :USER_ID ';
@@ -163,6 +211,11 @@ class StaffDAO extends UserDAO
     }
 
 
+    /**
+     * Permet de récupérer de récupérer l'employé d'une station
+     * @param mixed $user_id
+     * @return array
+     */
     public function getEmployeeStation($user_id)
     {
         $sql = 'SELECT STATION_ATTACH FROM EMPLOYEES_DATA  WHERE USER_ID = :USER_ID AND EMPLOYEE_ACCESS = 2';
@@ -170,7 +223,13 @@ class StaffDAO extends UserDAO
         return $this->queryRow($sql, $args);
     }
 
-    public function getDriverAbility($driver_id){
+    /**
+     * Permet de récupérer les informations d'un conducteur et les types de trains qu'il peut conduire
+     * @param mixed $driver_id
+     * @return Array
+     */
+    public function getDriverAbility($driver_id)
+    {
         $sql = '    SELECT  tt.TRAIN_TYPE_ID, tt.TRAIN_TYPE_LABEL,
      nvl((SELECT 1 FROM TCHOU.DRIVER_ABILITY da2 
      WHERE da2.DRIVER_ID = :driver_id AND da2.TRAIN_TYPE_ID= TT.TRAIN_TYPE_ID  ),0) AS  DRIVER_ABILITY fROM tchou.TRAIN_TYPE tt';
@@ -179,38 +238,63 @@ class StaffDAO extends UserDAO
 
     }
 
-    public function setDriverAbility($driver_id, $ability, $value){
+    /**
+     * Permet de modifier les capacités d'un conducteur
+     * @param mixed $driver_id
+     * @param mixed $ability
+     * @param mixed $value
+     * @return void
+     */
+    public function setDriverAbility($driver_id, $ability, $value)
+    {
 
 
-        if ($value == 'false'){
-            echo 'remove : ' , $value;
+        if ($value == 'false') {
+            echo 'remove : ', $value;
             $sql = 'DELETE FROM DRIVER_ABILITY WHERE DRIVER_ID = :driver_id
             AND TRAIN_TYPE_ID = :ability';
-            $args = array(':driver_id' => $driver_id, 
-                ':ability' => $ability);
-        }else{
-            echo 'add : ' , $value;
+            $args = array(
+                ':driver_id' => $driver_id,
+                ':ability' => $ability
+            );
+        } else {
+            echo 'add : ', $value;
             $sql = 'BEGIN
             INSERT INTO DRIVER_ABILITY VALUES (:driver_id, :ability);
             EXCEPTION
                 WHEN dup_val_on_index THEN
                     NULL; -- Intentionally ignore duplicates
             END;';
-            $args = array(':driver_id' => $driver_id, 
-                ':ability' => $ability);
+            $args = array(
+                ':driver_id' => $driver_id,
+                ':ability' => $ability
+            );
         }
 
         $this->queryEdit($sql, $args);
 
     }
 
-    public function getFreeDriver($time_duration,$start_time_selected) {
+    /**
+     * Permet de récupérer les conducteurs disponibles
+     * @param mixed $time_duration
+     * @param mixed $start_time_selected
+     * @return Array
+     */
+    public function getFreeDriver($time_duration, $start_time_selected)
+    {
         $sql = 'SELECT DRIVER_ID FROM DRIVER WHERE DRIVER_ID NOT IN (SELECT DRIVER_ID FROM TRAVEL_WITH_ET WHERE END_TIME > TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\') AND START_TIME > TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\') AND START_TIME < TO_DATE(:start_time_selected,\'DD/MM/YY HH24:MI\')+:time_duration/1440) GROUP BY DRIVER_ID ORDER BY DRIVER_ID';
-        $args = array(':start_time_selected' => $start_time_selected , ':time_duration' => intval($time_duration));
+        $args = array(':start_time_selected' => $start_time_selected, ':time_duration' => intval($time_duration));
         return $this->queryAll($sql, $args);
     }
 
-    public function getDriverDetails($driver_id) {
+    /**
+     * Permet de récupérer les informations d'un conducteur
+     * @param mixed $driver_id
+     * @return array
+     */
+    public function getDriverDetails($driver_id)
+    {
         $sql = 'SELECT USER_MAIL, USER_LASTNAME, USER_FIRSTNAME, DRIVER_ID FROM USER_DATA INNER JOIN DRIVER ON USER_DATA.USER_ID = DRIVER.USER_ID WHERE DRIVER.DRIVER_ID = :driver_id';
         $args = array(':driver_id' => $driver_id);
         return $this->queryRow($sql, $args);
