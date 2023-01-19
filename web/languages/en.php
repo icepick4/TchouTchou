@@ -184,7 +184,7 @@ define('MAINTENANCE_TEXT', 'Access the maintenance service');
 define('SELECT_STATION', 'Choose the station');
 define('SELECT_HUB', 'Choose  le hub');
 define('CONFIG_PANNEL', 'Control Panel');
-define('PLATFORM_MANAGER_TITLE', 'Dock Manager');
+define('PLATFORM_MANAGER_TITLE', 'Platform Manager');
 define('APPROACHING_TRAIN', 'Train in Approach');
 define('PLATFORMS', 'Platforms');
 define('LETTER', 'Letter');

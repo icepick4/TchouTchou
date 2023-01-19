@@ -184,7 +184,11 @@ function minToHourMin($min)
 }
 
 function getEmloyeeLabel($category){
+    echo $category;
     switch ($category) {
+        case 0:
+            $result = CLIENT;
+            break;
         case 1:
             $result = ADMINISTRATOR;
             break;
