@@ -5,7 +5,6 @@ require_once(PATH_MODELS.'PlanningDAO.php');
 require_once(PATH_MODELS.'StaffDAO.php');
 $staff = new StaffDAO();
 if ($_SESSION['logged'] && $staff->isDriver($_SESSION['user_id'])) {
-    print_r($_POST);
     if(isset($_POST['alertType']) && isset($_POST['message']) && isset($_POST['infoposition'])){
         
         $planning = new PlanningDAO();
