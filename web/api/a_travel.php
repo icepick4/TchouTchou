@@ -21,18 +21,16 @@
 
     $date = $_GET['date'];
 
-    echo $date;
-
     $lines = $travel->getLineBetweenTwoPoints($from, $to);
     
 
 ?>
 <table>
     <tr>
-        <th>Ligne</th>
-        <th>Nombre d'arrêts</th>
-        <th>Détails</th>
-        <th>Durée</th>
+        <th><?= HEADER_LINE ?></th>
+        <th><?= HEADER_STOPS ?></th>
+        <th><?= HEADER_DETAILS ?></th>
+        <th><?= HEADER_DURATION ?></th>
         <th></th>
     </tr>
 <?php foreach ($lines as $line) { 

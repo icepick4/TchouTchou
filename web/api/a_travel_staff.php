@@ -11,9 +11,9 @@
     ?>
     <table>
         <tr>
-            <th>Id</th>
-            <th>Prénom</th>
-            <th>Nom</th>
+            <th>ID</th>
+            <th><?= HEADER_FIRSTNAME ?></th>
+            <th><?= HEADER_LASTNAME ?></th>
             <th></th>
         </tr>
     <?php

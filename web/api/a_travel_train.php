@@ -12,11 +12,11 @@
     ?>
     <table>
         <tr>
-            <th>Id</th>
-            <th>Type</th>
-            <th>Capacité</th>
-            <th>Vitesse</th>
-            <th>Longueur</th>
+            <th>ID</th>
+            <th><?= HEADER_TYPE ?></th>
+            <th><?= HEADER_CAPACITY ?></th>
+            <th><?= HEADER_SPEED ?></th>
+            <th><?= HEADER_LENGTH ?></th>
             <th></th>
         </tr>
     <?php

@@ -287,3 +287,16 @@ define('ALT_ARROW_RIGHT', 'Arrow pointing right');
 
 //TMP MODALE
 define('ABILITIES_UPDATED','Abilities successfully updated');
+
+//TRAVEL
+define('TITLE_TRAVEL', 'Travel');
+define('HEADER_LINE', 'Line');
+define('HEADER_STOPS', 'Stops');
+define('HEADER_DETAILS', 'Details');
+define('HEADER_DURATION', 'Duration');
+define('HEADER_FIRSTNAME', 'First name');
+define('HEADER_LASTNAME', 'Last name');
+define('HEADER_TYPE', 'Type');
+define('HEADER_CAPACITY', 'Capacity');
+define('HEADER_SPEED', 'Speed');
+define('HEADER_LENGTH', 'Length');
