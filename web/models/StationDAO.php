@@ -3,8 +3,12 @@
 require_once(PATH_MODELS . 'DAO.php');
 
 class StationDAO extends DAO
-{   
-    /* get lists of hubs from station id */
+{
+    /**
+     * Permet de récupréer tous les terminaux d'une gare
+     * @param mixed $station_id
+     * @return Array
+     */
     public function get_hubs($station_id)
     {
         $sql = 'SELECT DISTINCT TERMINAL_ID 
@@ -16,7 +20,12 @@ class StationDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
-    /* get list of platforms from station id and hub id*/
+    /**
+     * Permet de récupérer toutes les plateformes d'un terminal d'une gare
+     * @param mixed $station_id
+     * @param mixed $hub_id
+     * @return Array
+     */
     public function get_platforms($station_id, $hub_id)
     {
         $sql = 'SELECT * FROM TCHOU.PLATFORM p 
@@ -24,7 +33,11 @@ class StationDAO extends DAO
         $args = array(':station_id' => $station_id, ':hub_id' => $hub_id);
         return $this->queryAll($sql, $args);
     }
-    
+
+    /**
+     * Permet de récupérer toutes les gares
+     * @return Array
+     */
     public function get_stations()
     {
         $sql = 'SELECT CITY_NAME, 
@@ -35,6 +48,11 @@ class StationDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
+    /**
+     * Permet de récupérer une gare en fonction de son id
+     * @param mixed $id
+     * @return Array
+     */
     public function get_station($id)
     {
         $sql = 'SELECT 
@@ -44,6 +62,11 @@ class StationDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
+    /**
+     * Permet de récupérer une gare en fonction de son nom
+     * @param mixed $name
+     * @return array
+     */
     public function get_station_from_name($name)
     {
         $sql = 'SELECT 
@@ -53,6 +76,11 @@ class StationDAO extends DAO
         return $this->queryRow($sql, $args);
     }
 
+    /**
+     * Permet de récupérer les arrivées d'une gare
+     * @param mixed $id
+     * @return Array
+     */
     public function get_station_departure($id)
     {
         $sql = 'SELECT TRAVEL.TRAVEL_ID, TRAVEL.LINE_ID, TRAVEL.TRAIN_ID, TRAVEL.LATE_TIME, TO_CHAR(DEPARTURE_TIME+(NVL(TRAVEL.LATE_TIME,0)/1440),\'HH24:MI\') AS DEPARTURE_TIME, STATION_NAME AS DESTINATION FROM TRAVEL 
@@ -70,7 +98,13 @@ class StationDAO extends DAO
         return $this->queryAll($sql, $args);
     }
 
-    public function get_station_arrivals_days($id,$days)
+    /**
+     * Permet de récupérer les arrivées d'une gare pour un jour
+     * @param mixed $id
+     * @param mixed $days
+     * @return Array
+     */
+    public function get_station_arrivals_days($id, $days)
     {
         $sql = 'SELECT TRAVEL.TRAVEL_ID, TRAVEL.LINE_ID, TRAVEL.TRAIN_ID, TRAVEL.LATE_TIME, TO_CHAR(ARRIVAL_TIME+(NVL(TRAVEL.LATE_TIME,0)/1440),\'HH24:MI\') AS ARRIVAL_TIME, STATION_NAME AS DESTINATION FROM TRAVEL 
         INNER JOIN LINE_STOP ON TRAVEL.LINE_ID = LINE_STOP.LINE_ID 
@@ -83,15 +117,25 @@ class StationDAO extends DAO
         AND ARRIVAL_TIME +(NVL(TRAVEL.LATE_TIME,0)/1440) >= SYSDATE
         AND ARRIVAL_TIME +(NVL(TRAVEL.LATE_TIME,0)/1440) <= SYSDATE + :days
         ORDER BY ARRIVAL_TIME ASC';
-        $args = array(':id' => $id , ':days' => $days);
+        $args = array(':id' => $id, ':days' => $days);
         return $this->queryAll($sql, $args);
     }
 
+    /**
+     * Permet de récupérer les arrivées d'une gare
+     * @param mixed $id
+     * @return Array
+     */
     public function get_station_arrivals($id)
     {
-        return $this->get_station_arrivals_days($id,5/24);
+        return $this->get_station_arrivals_days($id, 5 / 24);
     }
 
+    /**
+     * Permet de récupérer le nom d'une gare en fonction de son id
+     * @param mixed $station_id
+     * @return array
+     */
     public function get_station_name($station_id)
     {
         $sql = 'SELECT STATION_NAME FROM STATION WHERE STATION_ID = :station_id';
@@ -99,7 +143,14 @@ class StationDAO extends DAO
         return $this->queryRow($sql, $args);
     }
 
-    public function get_platform_used_for_travel($travel_id,$station)
+
+    /**
+     * Permet de récupérer les gares d'une ligne
+     * @param mixed $travel_id
+     * @param mixed $station
+     * @return array
+     */
+    public function get_platform_used_for_travel($travel_id, $station)
     {
         $sql = 'SELECT PLATFORM_LETTER FROM PLATFORM P INNER JOIN TRAVEL TR ON P.PLATFORM_USER = TR.TRAIN_ID WHERE TR.TRAVEL_ID = :travel_id AND P.STATION_ID = :station';
         $args = array(':travel_id' => $travel_id, ':station' => $station);
@@ -108,31 +159,73 @@ class StationDAO extends DAO
 
 
     /* can not close if occuped*/
-    public function set_platform_status($station_id, $hub_id, $platform_letter, $new_status ){
+    /**
+     * Permet de changer le status d'une plateforme
+     * @param mixed $station_id
+     * @param mixed $hub_id
+     * @param mixed $platform_letter
+     * @param mixed $new_status
+     * @return void
+     */
+    public function set_platform_status($station_id, $hub_id, $platform_letter, $new_status)
+    {
         $sql = 'UPDATE PLATFORM SET PLATFORM_STATUS = :new_status, PLATFORM_UTILISATION = 0, PLATFORM_USER = null WHERE STATION_ID = :station_id
         AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platform_letter
         AND (:new_status = 1 or PLATFORM_UTILISATION = 0)';
-        $args = array(':station_id' => $station_id, ':hub_id' => $hub_id, 
-            ':platform_letter' => $platform_letter, ':new_status' => $new_status);
+        $args = array(
+            ':station_id' => $station_id,
+            ':hub_id' => $hub_id,
+            ':platform_letter' => $platform_letter,
+            ':new_status' => $new_status
+        );
         $this->queryEdit($sql, $args);
     }
 
-    public function set_platform_status_open($station_id, $hub_id, $platform_letter){
+    /**
+     * Permet d'ouvrir une plateforme
+     * @param mixed $station_id
+     * @param mixed $hub_id
+     * @param mixed $platform_letter
+     * @return void
+     */
+    public function set_platform_status_open($station_id, $hub_id, $platform_letter)
+    {
         $new_status = 1;
         $this->set_platform_status($station_id, $hub_id, $platform_letter, $new_status);
     }
 
-    public function set_platform_status_close($station_id, $hub_id, $platform_letter){
+    /**
+     * Permet de fermer une plateforme
+     * @param mixed $station_id
+     * @param mixed $hub_id
+     * @param mixed $platform_letter
+     * @return void
+     */
+    public function set_platform_status_close($station_id, $hub_id, $platform_letter)
+    {
         $new_status = 0;
         $this->set_platform_status($station_id, $hub_id, $platform_letter, $new_status);
     }
 
+    /**
+     * Permet de récupérer les dates de départ d'une ligne
+     * @param mixed $travel_id
+     * @param mixed $station_id
+     * @return array
+     */
     public function get_station_departure_date_for_travel($travel_id, $station_id)
     {
         $sql = 'SELECT TO_CHAR(DEPARTURE_TIME,\'MM/DD/YYYY\') AS DEPARTURE_DATE FROM ARRIVAL_TO_STATION WHERE TRAVEL_ID = :travel_id AND STATION_ID = :station_id';
         $args = array(':travel_id' => $travel_id, ':station_id' => $station_id);
         return $this->queryRow($sql, $args);
     }
+
+    /**
+     * Permet de récupérer la gare de départ d'une ligne
+     * @param mixed $travel_id
+     * @param mixed $station_id
+     * @return array
+     */
     public function get_station_departure_for_travel($travel_id, $station_id)
     {
         $sql = 'SELECT TO_CHAR(DEPARTURE_TIME,\'HH24:MI\') AS DEPARTURE_TIME FROM ARRIVAL_TO_STATION WHERE TRAVEL_ID = :travel_id AND STATION_ID = :station_id';
@@ -140,6 +233,12 @@ class StationDAO extends DAO
         return $this->queryRow($sql, $args);
     }
 
+    /**
+     * Permet de récupérer la gare d'arrivée d'une ligne
+     * @param mixed $travel_id
+     * @param mixed $station_id
+     * @return array
+     */
     public function get_station_arrival_for_travel($travel_id, $station_id)
     {
         $sql = 'SELECT TO_CHAR(ARRIVAL_TIME,\'HH24:MI\') AS ARRIVAL_TIME FROM ARRIVAL_TO_STATION WHERE TRAVEL_ID = :travel_id AND STATION_ID = :station_id';
@@ -147,7 +246,13 @@ class StationDAO extends DAO
         return $this->queryRow($sql, $args);
     }
 
-    public function get_station_arrivals_with_platform($id,$days)
+    /**
+     * Permet de récupérer les gares d'arrivée d'une ligne avec les plateformes
+     * @param mixed $id
+     * @param mixed $days
+     * @return Array
+     */
+    public function get_station_arrivals_with_platform($id, $days)
     {
         $sql = 'SELECT TRAVEL_ID, LINE_ID, TRAIN_ID, LATE_TIME, ARRIVAL_TIME, ORIGIN, PLATFORM from INCOMING_TRAIN_WITH_PLATFORM
             where 
@@ -155,11 +260,18 @@ class StationDAO extends DAO
             AND ARRIVAL_TIME+(NVL(LATE_TIME,0)/1440)  >= SYSDATE
             AND ARRIVAL_TIME+(NVL(LATE_TIME,0)/1440)  <= SYSDATE + :days
             ORDER BY ARRIVAL_TIME+(NVL(LATE_TIME,0)/1440) DESC NULLS LAST';
-        $args = array(':id' => $id , ':days' => $days);
+        $args = array(':id' => $id, ':days' => $days);
         return $this->queryAll($sql, $args);
     }
 
-    public function get_available_platform($id,$hub){
+    /**
+     * Permet de récupérer les plateformes disponibles
+     * @param mixed $id
+     * @param mixed $hub
+     * @return Array
+     */
+    public function get_available_platform($id, $hub)
+    {
         $sql = 'SELECT PLATFORM_LETTER  FROM TCHOU.PLATFORM p 
         WHERE 
         STATION_ID = :id 
@@ -168,23 +280,50 @@ class StationDAO extends DAO
         AND PLATFORM_STATUS = 1 
         AND PLATFORM_USER IS NULL';
 
-        $args = array(':id' => $id , ':hub' => $hub);
+        $args = array(':id' => $id, ':hub' => $hub);
         return $this->queryAll($sql, $args);
     }
 
-    public function clear_platform_of_user($station_id,$hub_id,
-        $user_id){
+    /**
+     * Permet de supprimer les plateformes d'un utilisateur
+     * @param mixed $station_id
+     * @param mixed $hub_id
+     * @param mixed $user_id
+     * @return void
+     */
+    public function clear_platform_of_user(
+        $station_id,
+        $hub_id,
+        $user_id
+    )
+    {
         $sql = 'UPDATE PLATFORM SET PLATFORM_USER = NULL WHERE STATION_ID = :station_id
         AND TERMINAL_ID = :hub_id 
         AND PLATFORM_USER = :user_id
         AND  PLATFORM_UTILISATION = 0';
-        $args = array(':station_id' => $station_id, ':hub_id' => $hub_id, 
-             ':user_id' => $user_id);
+        $args = array(
+            ':station_id' => $station_id,
+            ':hub_id' => $hub_id,
+            ':user_id' => $user_id
+        );
         $this->queryEdit($sql, $args);
     }
 
-    public function set_platform_user($station_id,$hub_id,
-        $platform_letter,$user_id){
+    /**
+     * Permet de supprimer les plateformes d'un utilisateur
+     * @param mixed $station_id
+     * @param mixed $hub_id
+     * @param mixed $platform_letter
+     * @param mixed $user_id
+     * @return void
+     */
+    public function set_platform_user(
+        $station_id,
+        $hub_id,
+        $platform_letter,
+        $user_id
+    )
+    {
         $sql = 'UPDATE PLATFORM p SET PLATFORM_USER = :user_id  
         WHERE STATION_ID = :station_id
         AND TERMINAL_ID = :hub_id AND PLATFORM_LETTER = :platform_letter
@@ -196,8 +335,12 @@ class StationDAO extends DAO
         STATION_ID = p.STATION_ID 
         AND TERMINAL_ID = p.TERMINAL_ID
         AND PLATFORM_USER IS NOT NULL)';
-        $args = array(':station_id' => $station_id, ':hub_id' => $hub_id, 
-            ':platform_letter' => $platform_letter, ':user_id' => $user_id);
+        $args = array(
+            ':station_id' => $station_id,
+            ':hub_id' => $hub_id,
+            ':platform_letter' => $platform_letter,
+            ':user_id' => $user_id
+        );
         $this->queryEdit($sql, $args);
     }
 
