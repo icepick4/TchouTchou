@@ -60,6 +60,7 @@ define('BTN_RETURN', 'Retour');
 define('BTN_ADD', 'Ajouter');
 define('BTN_DELETE', 'Supprimer');
 define('BTN_CREATE', 'Créer');
+define('BTN_SEARCH', 'Rechercher');
 
 //TICKET
 define('YOUR_TRAVEL', 'Votre voyage');

@@ -26,7 +26,7 @@
     <h2>Trajet</h2>
     <input type="datetime-local" name="date" id="date" />
     <p id="errorText" class="hidden"><?= ERROR_TRAVEL_TEXT ?></p>
-    <button id="lineButton" ><?= BTN_CREATE ?></input>
+    <button id="lineButton" class="button" ><?= BTN_SEARCH ?></input>
 
 </section>
 
@@ -41,5 +41,8 @@
 <section id="train">
     
 </section>
+
+<button id="createButton" class="button" style="display:none" ><?= BTN_CREATE ?></input>
+
 <!--  Pied de page -->
 <?php require_once(PATH_VIEWS . 'footer.php');

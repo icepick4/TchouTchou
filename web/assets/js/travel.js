@@ -6,6 +6,7 @@ let inputDate = document.querySelector("#date");
 let TravelDatetime;
 let TravelDriverId;
 let TravelLineId;
+let TravelTrainId;
 let time;
 
 function searchWithAutocomplete(input, arr) {
@@ -165,28 +166,37 @@ function searchTrain() {
 
 function insertTravel() {
   let select = document.getElementsByName("train_id");
-  console.log(select);
+  // console.log(select);
   select.forEach((element) => {
     let train_id = element.getAttribute("value");
     // console.log(train_id, TravelDatetime, TravelDriverId, TravelId);
     element.addEventListener("click", function (e) {
-      var xhttp = new XMLHttpRequest();
-      xhttp.open(
-        "GET",
-        "index.php?api=travel_insert&train_id=" +
-          train_id +
-          "&datetime=" +
-          TravelDatetime +
-          "&driver_id=" +
-          TravelDriverId +
-          "&line_id=" +
-          TravelLineId,
-        true
-      );
-      xhttp.send();
+      document.querySelector("#createButton").style.display = "block";
+      TravelTrainId = train_id;
     });
   });
 }
+
+document.querySelector("#createButton").addEventListener("click", function () {
+  // console.log(TravelTrainId, TravelDatetime, TravelDriverId, TravelLineId);
+  var xhttp = new XMLHttpRequest();
+  xhttp.open(
+    "GET",
+    "index.php?api=travel_insert&train_id=" +
+      TravelTrainId +
+      "&datetime=" +
+      TravelDatetime +
+      "&driver_id=" +
+      TravelDriverId +
+      "&line_id=" +
+      TravelLineId,
+    true
+  );
+  xhttp.send();
+  xhttp.onload = function () {
+    location.reload();
+  };
+});
 
 document.querySelector("#lineButton").addEventListener("click", searchLines);
 
