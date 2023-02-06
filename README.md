@@ -1,4 +1,4 @@
-# [SAE-SNCF](http://tchoutchou.ovh)
+# [Tchoutchou](http://tchoutchou.ovh)
 
 ![MKT](https://img.shields.io/badge/license-MIT_License-red.svg)
 <img src="https://img.shields.io/badge/license-Creative%20Commons-red">
